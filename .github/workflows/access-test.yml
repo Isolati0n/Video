@@ -58,6 +58,10 @@ jobs:
     if: inputs.set == 'opt3'
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        attempt: [1, 2, 3, 4, 5, 6]   # each attempt registers a fresh WARP account = (usually) a fresh egress IP
     steps:
       - uses: actions/checkout@v5
       - uses: ./.github/actions/setup
@@ -78,7 +82,7 @@ jobs:
       - name: Egress IP after
         run: curl -s https://api.ipify.org; echo; curl -s https://www.cloudflare.com/cdn-cgi/trace | grep -E "^(ip|warp|colo)="
       - name: Probe
-        run: python scripts/access_probe.py warp "${{ inputs.video_id }}"
+        run: python scripts/access_probe.py "warp-${{ matrix.attempt }}" "${{ inputs.video_id }}"
 
   opt5:
     if: inputs.set == 'opt5'
