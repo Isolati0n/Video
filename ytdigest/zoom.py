@@ -13,7 +13,7 @@ import os
 import re
 from pathlib import Path
 
-from .common import FPS, GH, ROOT, digest_dir, gh_output, hms, log, parse_ts
+from .common import FPS, GH, ROOT, digest_dir, gh_output, log, parse_ts
 from .sheets import grid, label, save_jpeg, tile_text
 from .video import Archive
 
