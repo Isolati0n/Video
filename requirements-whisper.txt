@@ -1,0 +1,2 @@
+# Only installed by the transcript job when a video has no captions
+faster-whisper==1.2.1

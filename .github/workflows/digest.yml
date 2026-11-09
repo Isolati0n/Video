@@ -1,0 +1,233 @@
+name: digest
+
+on:
+  issues:
+    types: [labeled]
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+    inputs:
+      url:
+        description: YouTube URL or video id
+        required: true
+      issue:
+        description: Issue number to comment on (optional)
+        required: false
+      recalibrate:
+        description: Re-detect the HUD even if config/hud/<id>.json exists
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+  actions: read
+
+concurrency:
+  group: digest-${{ github.event.issue.number || github.run_id }}
+  cancel-in-progress: false
+
+env:
+  CHUNK_SECONDS: "1200"        # one parallel analysis job per 20 minutes of video
+  PYTHON_VERSION: "3.12"
+  DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  request:
+    if: >-
+      github.event_name != 'issue_comment' ||
+      startsWith(github.event.comment.body, '/digest') ||
+      startsWith(github.event.comment.body, '/hud') ||
+      startsWith(github.event.comment.body, '/recalibrate')
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.req.outputs.run }}
+      issue: ${{ steps.req.outputs.issue }}
+      target: ${{ steps.req.outputs.target }}
+      video_id: ${{ steps.req.outputs.video_id }}
+      mode: ${{ steps.req.outputs.mode }}
+      sets: ${{ steps.req.outputs.sets }}
+      force: ${{ steps.req.outputs.force }}
+      started: ${{ steps.req.outputs.started }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+      - run: pip install requests==2.32.5
+      - id: req
+        run: |
+          python -m ytdigest.request digest
+          echo "started=$(date +%s)" >> "$GITHUB_OUTPUT"
+      - if: steps.req.outputs.error != ''
+        env:
+          MSG: ${{ steps.req.outputs.error }}
+        run: python -m ytdigest.notify error "${{ steps.req.outputs.issue }}" "$MSG"
+      - if: steps.req.outputs.run == 'true'
+        run: python -m ytdigest.notify started "${{ steps.req.outputs.issue }}" "${{ steps.req.outputs.video_id }}" "Digest (${{ steps.req.outputs.mode }})"
+
+  prepare:
+    needs: request
+    if: needs.request.outputs.run == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    outputs:
+      chunks: ${{ steps.prep.outputs.chunks }}
+      has_captions: ${{ steps.prep.outputs.has_captions }}
+      blocked: ${{ steps.prep.outputs.blocked }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ env.DEFAULT_BRANCH }}
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+      - name: System packages
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+      - run: pip install -r requirements.txt
+      - name: Download + archive to release
+        id: prep
+        env:
+          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+        run: python -m ytdigest.prepare "${{ needs.request.outputs.video_id }}" work
+      - name: HUD calibration
+        id: cal
+        env:
+          SETS: ${{ needs.request.outputs.sets }}
+        run: |
+          args=()
+          for s in $SETS; do args+=(--set "$s"); done
+          [ "${{ needs.request.outputs.force }}" = "true" ] && args+=(--force)
+          python -m ytdigest.calibrate "${{ needs.request.outputs.video_id }}" work --archive-dir work/archive "${args[@]}"
+          status=$(cat work/calibration_status.txt)
+          sha=$(scripts/commit.sh "HUD calibration for ${{ needs.request.outputs.video_id }} ($status)" \
+                config/hud digests/${{ needs.request.outputs.video_id }}/calibration.png)
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+      - name: Post calibration image
+        if: steps.cal.outputs.status != 'existing'
+        run: python -m ytdigest.notify calibration "${{ needs.request.outputs.issue }}" "${{ needs.request.outputs.video_id }}" "${{ steps.cal.outputs.sha }}" "${{ steps.cal.outputs.status }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: prep
+          path: |
+            work/info.json
+            work/captions.vtt
+            work/parts.json
+          if-no-files-found: ignore
+          retention-days: 3
+
+  analyze:
+    needs: [request, prepare]
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: true
+      matrix:
+        chunk: ${{ fromJSON(needs.prepare.outputs.chunks) }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ env.DEFAULT_BRANCH }}   # includes the calibration commit
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+      - name: System packages
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg tesseract-ocr > /dev/null
+      - run: pip install -r requirements.txt
+      - name: Analyse every frame at 25 fps (${{ matrix.chunk.start }}s - ${{ matrix.chunk.end }}s)
+        run: python -m ytdigest.analyze "${{ needs.request.outputs.video_id }}" ${{ matrix.chunk.start }} ${{ matrix.chunk.end }} out --workdir work
+      - uses: actions/upload-artifact@v4
+        with:
+          name: chunk-${{ matrix.chunk.idx }}
+          path: out
+          retention-days: 3
+          compression-level: 0
+
+  transcript:
+    needs: [request, prepare]
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: requirements*.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: prep
+          path: work
+      - name: System packages
+        if: needs.prepare.outputs.has_captions != 'true'
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+      - run: pip install -r requirements.txt
+      - if: needs.prepare.outputs.has_captions != 'true'
+        run: pip install -r requirements-whisper.txt
+      - name: Cache whisper model
+        if: needs.prepare.outputs.has_captions != 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-small-v1
+      - run: python -m ytdigest.transcript "${{ needs.request.outputs.video_id }}" work transcript
+      - uses: actions/upload-artifact@v4
+        with:
+          name: transcript
+          path: transcript
+          retention-days: 3
+
+  finalize:
+    needs: [request, prepare, analyze, transcript]
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ env.DEFAULT_BRANCH }}
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+      - name: System packages
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: chunk-*
+          path: chunks
+      - uses: actions/download-artifact@v4
+        with:
+          name: transcript
+          path: transcript
+      - uses: actions/download-artifact@v4
+        with:
+          name: prep
+          path: work
+      - name: Events, contact sheets, index
+        run: python -m ytdigest.finalize "${{ needs.request.outputs.video_id }}" chunks transcript work --started ${{ needs.request.outputs.started }}
+      - name: Commit digest
+        id: commit
+        run: |
+          vid="${{ needs.request.outputs.video_id }}"
+          sha=$(scripts/commit.sh "Digest for $vid" "digests/$vid")
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+      - run: python -m ytdigest.notify done "${{ needs.request.outputs.issue }}" "${{ needs.request.outputs.video_id }}" "${{ steps.commit.outputs.sha }}"
+
+  report-failure:
+    needs: [request, prepare, analyze, transcript, finalize]
+    if: failure() && needs.request.outputs.run == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+      - run: pip install requests==2.32.5 numpy==2.2.6 opencv-python-headless==4.12.0.88
+      - run: python -m ytdigest.notify failed "${{ needs.request.outputs.issue }}" "Digest of ${{ needs.request.outputs.video_id }}" "${{ needs.prepare.outputs.blocked }}"

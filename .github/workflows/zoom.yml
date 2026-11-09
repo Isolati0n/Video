@@ -1,0 +1,72 @@
+name: zoom
+
+on:
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+    inputs:
+      video_id:
+        description: Video id (must have been digested / archived)
+        required: true
+      range:
+        description: Time range H:MM:SS-H:MM:SS
+        required: true
+      fps:
+        description: Frames per second (default 25)
+        required: false
+        default: "25"
+      issue:
+        description: Issue number to comment on (optional)
+        required: false
+
+permissions:
+  contents: write
+  issues: write
+  actions: read
+
+concurrency:
+  group: zoom-${{ github.event.issue.number || github.run_id }}
+  cancel-in-progress: false
+
+env:
+  PYTHON_VERSION: "3.12"
+  DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  zoom:
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.event.comment.body, '/zoom')
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ env.DEFAULT_BRANCH }}
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+      - run: pip install -r requirements.txt
+      - id: req
+        run: python -m ytdigest.request zoom
+      - if: steps.req.outputs.error != ''
+        env:
+          MSG: ${{ steps.req.outputs.error }}
+        run: python -m ytdigest.notify error "${{ steps.req.outputs.issue }}" "$MSG"
+      - if: steps.req.outputs.run == 'true'
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+      - id: zoom
+        if: steps.req.outputs.run == 'true'
+        env:
+          RANGE: ${{ steps.req.outputs.range }}
+          FPS: ${{ steps.req.outputs.fps }}
+        run: python -m ytdigest.zoom "${{ steps.req.outputs.video_id }}" "$RANGE" work --fps "$FPS"
+      - id: commit
+        if: steps.req.outputs.run == 'true'
+        run: |
+          sha=$(scripts/commit.sh "Zoom ${{ steps.req.outputs.video_id }} ${{ steps.zoom.outputs.path }}" "${{ steps.zoom.outputs.path }}")
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+      - if: steps.req.outputs.run == 'true'
+        run: python -m ytdigest.notify zoom "${{ steps.req.outputs.issue }}" "${{ steps.req.outputs.video_id }}" "${{ steps.zoom.outputs.path }}" "${{ steps.zoom.outputs.frames }}" "${{ steps.zoom.outputs.sheets }}" "${{ steps.commit.outputs.sha }}"
+      - if: failure() && steps.req.outputs.run == 'true'
+        run: python -m ytdigest.notify failed "${{ steps.req.outputs.issue }}" "Zoom ${{ steps.req.outputs.video_id }} ${{ steps.req.outputs.range }}"
