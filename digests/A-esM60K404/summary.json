@@ -1,0 +1,35 @@
+{
+  "video_id": "A-esM60K404",
+  "title": "NECROMANCER vs DRUID \u2014 The Most Brutal PvP Matchup? | D2R  -   Bulk duels",
+  "duration_s": 3419.3,
+  "frames": 85482,
+  "events": 1295,
+  "event_counts": {
+    "death": 21,
+    "life_refill": 33,
+    "teleport": 580,
+    "text": 272,
+    "run_burst": 125,
+    "life_drop": 102,
+    "mana_refill": 102,
+    "area_change": 43,
+    "poisoned": 17
+  },
+  "sheets": 825,
+  "tiles_skipped_static": 92,
+  "max_sheet_bytes": 310859,
+  "transcript_lines": 66,
+  "transcript_source": "faster-whisper small int8 (language: fr)",
+  "stats": {
+    "shift_median_px": 0.6,
+    "shift_p99_px": 60.0,
+    "frames": 85482,
+    "game_frames": 84483,
+    "life_median": 94.4,
+    "mana_median": 93.2,
+    "life_min": 0.0,
+    "poison_frames": 580,
+    "ocr_samples_with_text": 484
+  },
+  "runtime_s": 1123
+}
