@@ -10,7 +10,7 @@
     "t": 0.0,
     "f": 0,
     "type": "text_change",
-    "desc": "New on-screen text: SUPER SMASH CON 2018 / GRAND FINALS / FOLLOW @SUPERSMASHCON / 08:00 00 / VGBOOTCAMP / PARTNERS / [A] | ARMADA / FOX MVG | MEW2KING",
+    "desc": "New on-screen text: 08:00 00 / [A] | ARMADA / FOX MVG | MEW2KING",
     "source": "generic"
   },
   {
@@ -38,7 +38,7 @@
     "t": 13.0,
     "f": 780,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / VGBOOTCAMP / PARTNERS / Fox | MEW2KING",
+    "desc": "New on-screen text: Fox | MEW2KING",
     "source": "generic"
   },
   {
@@ -84,13 +84,6 @@
     "source": "generic"
   },
   {
-    "t": 65.0,
-    "f": 3900,
-    "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP / PARTNERS",
-    "source": "generic"
-  },
-  {
     "t": 65.18,
     "f": 3911,
     "type": "scene_change",
@@ -117,7 +110,7 @@
     "t": 67.0,
     "f": 4020,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / IAL THANKS / [A] u ARMADA",
+    "desc": "New on-screen text: IAL THANKS / [A] u ARMADA",
     "source": "generic"
   },
   {
@@ -132,6 +125,13 @@
     "f": 4440,
     "type": "text_change",
     "desc": "New on-screen text: 06:46 98",
+    "source": "generic"
+  },
+  {
+    "t": 79.0,
+    "f": 4740,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | MEW2KING IL]",
     "source": "generic"
   },
   {
@@ -167,24 +167,10 @@
     "source": "generic"
   },
   {
-    "t": 130.0,
-    "f": 7800,
-    "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP",
-    "source": "generic"
-  },
-  {
     "t": 131.0,
     "f": 7860,
     "type": "text_change",
     "desc": "New on-screen text: FOX MVG | MEW2KING IL]",
-    "source": "generic"
-  },
-  {
-    "t": 132.0,
-    "f": 7920,
-    "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / PARTNERS",
     "source": "generic"
   },
   {
@@ -202,10 +188,24 @@
     "source": "generic"
   },
   {
-    "t": 139.0,
-    "f": 8340,
+    "t": 144.0,
+    "f": 8640,
     "type": "text_change",
-    "desc": "New on-screen text: FOLLOW @SUPERSMASHCON",
+    "desc": "New on-screen text: 05:36 96 / FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 148.0,
+    "f": 8880,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 150.0,
+    "f": 9000,
+    "type": "text_change",
+    "desc": "New on-screen text: ENERATIONS / GAMES, REPAIR, TOYS, & MORE",
     "source": "generic"
   },
   {
@@ -248,10 +248,10 @@
     "source": "generic"
   },
   {
-    "t": 184.0,
-    "f": 11040,
+    "t": 195.0,
+    "f": 11700,
     "type": "text_change",
-    "desc": "New on-screen text: SUPER SMASH CON 2018 / GRAND FINALS / FOLLOW @SUPERSMASHCON / VGBOOTCAMP / PARTNERS",
+    "desc": "New on-screen text: MELEE SINGLES GRAND FINALS",
     "source": "generic"
   },
   {
@@ -259,13 +259,6 @@
     "f": 11760,
     "type": "text_change",
     "desc": "New on-screen text: #SSC2018",
-    "source": "generic"
-  },
-  {
-    "t": 197.0,
-    "f": 11820,
-    "type": "text_change",
-    "desc": "New on-screen text: \u2018eM MELEE SINGLES GRAND FINALS",
     "source": "generic"
   },
   {
@@ -280,6 +273,13 @@
     "f": 11940,
     "type": "text_change",
     "desc": "New on-screen text: urvival test! / HEADY TO",
+    "source": "generic"
+  },
+  {
+    "t": 203.0,
+    "f": 12180,
+    "type": "text_change",
+    "desc": "New on-screen text: FOLLOW @SUPERSMA:",
     "source": "generic"
   },
   {
@@ -318,14 +318,14 @@
     "t": 248.0,
     "f": 14880,
     "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP / {CIAL THAN)",
+    "desc": "New on-screen text: {CIAL THAN)",
     "source": "generic"
   },
   {
     "t": 251.0,
     "f": 15060,
     "type": "text_change",
-    "desc": "New on-screen text: PARTNERS / TA] | ARMADA",
+    "desc": "New on-screen text: TA] | ARMADA",
     "source": "generic"
   },
   {
@@ -352,20 +352,6 @@
     "source": "generic"
   },
   {
-    "t": 257.0,
-    "f": 15420,
-    "type": "text_change",
-    "desc": "New on-screen text: SMASH CON 2018",
-    "source": "generic"
-  },
-  {
-    "t": 258.0,
-    "f": 15480,
-    "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS",
-    "source": "generic"
-  },
-  {
     "t": 261.33,
     "f": 15680,
     "type": "motion_burst",
@@ -373,6 +359,20 @@
     "source": "generic",
     "end": 261.62,
     "peak": 15.0
+  },
+  {
+    "t": 264.0,
+    "f": 15840,
+    "type": "text_change",
+    "desc": "New on-screen text: 0% & GEICO / | rox | 1 / [A] | ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 265.0,
+    "f": 15900,
+    "type": "text_change",
+    "desc": "New on-screen text: \"OX MVG tu",
+    "source": "generic"
   },
   {
     "t": 267.12,
@@ -409,27 +409,6 @@
     "source": "generic"
   },
   {
-    "t": 302.0,
-    "f": 18120,
-    "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP",
-    "source": "generic"
-  },
-  {
-    "t": 303.0,
-    "f": 18180,
-    "type": "text_change",
-    "desc": "New on-screen text: PARTNERS",
-    "source": "generic"
-  },
-  {
-    "t": 304.0,
-    "f": 18240,
-    "type": "text_change",
-    "desc": "New on-screen text: FOLLOW @SUPERSMASHCON \u2014",
-    "source": "generic"
-  },
-  {
     "t": 305.0,
     "f": 18300,
     "type": "text_change",
@@ -444,17 +423,38 @@
     "source": "generic"
   },
   {
-    "t": 307.0,
-    "f": 18420,
-    "type": "text_change",
-    "desc": "New on-screen text: SMASH CON 2018 / GRAND FINALS",
-    "source": "generic"
-  },
-  {
     "t": 308.0,
     "f": 18480,
     "type": "text_change",
     "desc": "New on-screen text: to BRICKS",
+    "source": "generic"
+  },
+  {
+    "t": 310.0,
+    "f": 18600,
+    "type": "text_change",
+    "desc": "New on-screen text: 06:35 ss / AT LAUREL PARK.",
+    "source": "generic"
+  },
+  {
+    "t": 311.0,
+    "f": 18660,
+    "type": "text_change",
+    "desc": "New on-screen text: | RES FOX MVG | MEW2KING [L]",
+    "source": "generic"
+  },
+  {
+    "t": 312.0,
+    "f": 18720,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS",
+    "source": "generic"
+  },
+  {
+    "t": 316.0,
+    "f": 18960,
+    "type": "text_change",
+    "desc": "New on-screen text: Fox | MEW2KING [LI",
     "source": "generic"
   },
   {
@@ -506,7 +506,7 @@
     "t": 361.0,
     "f": 21660,
     "type": "text_change",
-    "desc": "New on-screen text: IAL THANKS / PARTNERS",
+    "desc": "New on-screen text: IAL THANKS",
     "source": "generic"
   },
   {
@@ -550,14 +550,7 @@
     "t": 375.0,
     "f": 22500,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / pxtsenreo ay / | & GEICO",
-    "source": "generic"
-  },
-  {
-    "t": 380.0,
-    "f": 22800,
-    "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP / PARTNERS",
+    "desc": "New on-screen text: pxtsenreo ay / | & GEICO",
     "source": "generic"
   },
   {
@@ -574,6 +567,13 @@
     "f": 22860,
     "type": "text_change",
     "desc": "New on-screen text: | FOX MVG | MEW2KING / [A] | ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 386.0,
+    "f": 23160,
+    "type": "text_change",
+    "desc": "New on-screen text: ECIAL THANKS TO OUR",
     "source": "generic"
   },
   {
@@ -611,17 +611,10 @@
     "source": "generic"
   },
   {
-    "t": 421.0,
-    "f": 25260,
-    "type": "text_change",
-    "desc": "New on-screen text: PARTNERS",
-    "source": "generic"
-  },
-  {
     "t": 423.0,
     "f": 25380,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / VGBOOTCAMP / FOX MVG | MEW2KING tu",
+    "desc": "New on-screen text: FOX MVG | MEW2KING tu",
     "source": "generic"
   },
   {
@@ -666,6 +659,13 @@
     "f": 25920,
     "type": "text_change",
     "desc": "New on-screen text: pxtsenreo ay",
+    "source": "generic"
+  },
+  {
+    "t": 434.0,
+    "f": 26040,
+    "type": "text_change",
+    "desc": "New on-screen text: \u2018OLLOW @SUI",
     "source": "generic"
   },
   {
@@ -722,21 +722,14 @@
     "t": 487.0,
     "f": 29220,
     "type": "text_change",
-    "desc": "New on-screen text: PARTNERS / = FOX MVG | MEW2KING IL]",
-    "source": "generic"
-  },
-  {
-    "t": 491.0,
-    "f": 29460,
-    "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP",
+    "desc": "New on-screen text: = FOX MVG | MEW2KING IL]",
     "source": "generic"
   },
   {
     "t": 494.0,
     "f": 29640,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / TA] | ARMADA",
+    "desc": "New on-screen text: TA] | ARMADA",
     "source": "generic"
   },
   {
@@ -750,7 +743,7 @@
     "t": 500.0,
     "f": 30000,
     "type": "text_change",
-    "desc": "New on-screen text: THANKS T / PARTNERS",
+    "desc": "New on-screen text: THANKS T",
     "source": "generic"
   },
   {
@@ -765,6 +758,13 @@
     "f": 30120,
     "type": "loud_peak",
     "desc": "Loud peak -12 dBFS (+12 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 506.0,
+    "f": 30360,
+    "type": "text_change",
+    "desc": "New on-screen text: 03:19 86",
     "source": "generic"
   },
   {
@@ -795,17 +795,10 @@
     "peak": 12.4
   },
   {
-    "t": 541.0,
-    "f": 32460,
-    "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS",
-    "source": "generic"
-  },
-  {
     "t": 544.0,
     "f": 32640,
     "type": "text_change",
-    "desc": "New on-screen text: IAL THANKS / PARTNERS",
+    "desc": "New on-screen text: IAL THANKS",
     "source": "generic"
   },
   {
@@ -835,7 +828,7 @@
     "t": 552.0,
     "f": 33120,
     "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP / | _ Fox | Mew2KING",
+    "desc": "New on-screen text: | _ Fox | Mew2KING",
     "source": "generic"
   },
   {
@@ -853,13 +846,6 @@
     "source": "generic"
   },
   {
-    "t": 557.0,
-    "f": 33420,
-    "type": "text_change",
-    "desc": "New on-screen text: PARTNERS",
-    "source": "generic"
-  },
-  {
     "t": 557.95,
     "f": 33477,
     "type": "motion_burst",
@@ -867,6 +853,20 @@
     "source": "generic",
     "end": 558.08,
     "peak": 13.5
+  },
+  {
+    "t": 559.0,
+    "f": 33540,
+    "type": "text_change",
+    "desc": "New on-screen text: COMBAT ARENA",
+    "source": "generic"
+  },
+  {
+    "t": 562.0,
+    "f": 33720,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA",
+    "source": "generic"
   },
   {
     "t": 566.02,
@@ -907,13 +907,6 @@
     "f": 36000,
     "type": "text_change",
     "desc": "New on-screen text: IAL THANKS",
-    "source": "generic"
-  },
-  {
-    "t": 601.0,
-    "f": 36060,
-    "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP",
     "source": "generic"
   },
   {
@@ -961,10 +954,17 @@
     "source": "generic"
   },
   {
-    "t": 610.0,
-    "f": 36600,
+    "t": 612.0,
+    "f": 36720,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS",
+    "desc": "New on-screen text: FOX MVG Sa [Al AMADA",
+    "source": "generic"
+  },
+  {
+    "t": 614.0,
+    "f": 36840,
+    "type": "text_change",
+    "desc": "New on-screen text: ENERATIONS / GAMES, REPAIR, TOYS, & MORE. / Fox | MEW2KING",
     "source": "generic"
   },
   {
@@ -1021,7 +1021,7 @@
     "t": 663.0,
     "f": 39780,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / 06:44 71",
+    "desc": "New on-screen text: 06:44 71",
     "source": "generic"
   },
   {
@@ -1044,14 +1044,14 @@
     "t": 666.0,
     "f": 39960,
     "type": "text_change",
-    "desc": "New on-screen text: SMASH CON 2018 / IAL THANKS",
+    "desc": "New on-screen text: IAL THANKS",
     "source": "generic"
   },
   {
     "t": 667.0,
     "f": 40020,
     "type": "text_change",
-    "desc": "New on-screen text: PARTNERS / Fox | MEW2KING",
+    "desc": "New on-screen text: Fox | MEW2KING",
     "source": "generic"
   },
   {
@@ -1103,13 +1103,6 @@
     "peak": 14.4
   },
   {
-    "t": 721.0,
-    "f": 43260,
-    "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / VGBOOTCAMP / PARTNERS",
-    "source": "generic"
-  },
-  {
     "t": 723.0,
     "f": 43380,
     "type": "text_change",
@@ -1157,7 +1150,7 @@
     "t": 734.0,
     "f": 44040,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / PARTNERS / to BRICKS",
+    "desc": "New on-screen text: to BRICKS",
     "source": "generic"
   },
   {
@@ -1168,17 +1161,24 @@
     "source": "generic"
   },
   {
-    "t": 737.0,
-    "f": 44220,
-    "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP",
+    "t": 738.77,
+    "f": 44326,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
     "source": "generic"
   },
   {
     "t": 738.77,
     "f": 44326,
-    "type": "scene_change",
-    "desc": "Scene change (picture jumps to different content)",
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 743.0,
+    "f": 44580,
+    "type": "text_change",
+    "desc": "New on-screen text: MELEE SINGLES GRAND FINALS",
     "source": "generic"
   },
   {
@@ -1208,21 +1208,14 @@
     "t": 786.0,
     "f": 47160,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / eo BRICKS",
-    "source": "generic"
-  },
-  {
-    "t": 790.0,
-    "f": 47400,
-    "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP",
+    "desc": "New on-screen text: eo BRICKS",
     "source": "generic"
   },
   {
     "t": 791.0,
     "f": 47460,
     "type": "text_change",
-    "desc": "New on-screen text: SUPER SMASH CON 2018 / PARTNERS / tw BRICKS / 2 FOX MVG | MEW2KING IL] (iu)",
+    "desc": "New on-screen text: tw BRICKS / 2 FOX MVG | MEW2KING IL] (iu)",
     "source": "generic"
   },
   {
@@ -1247,6 +1240,13 @@
     "source": "generic"
   },
   {
+    "t": 799.0,
+    "f": 47940,
+    "type": "text_change",
+    "desc": "New on-screen text: 07:27 59",
+    "source": "generic"
+  },
+  {
     "t": 819.5,
     "f": 49170,
     "type": "loud_peak",
@@ -1263,13 +1263,6 @@
     "peak": 25.9
   },
   {
-    "t": 842.0,
-    "f": 50520,
-    "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP",
-    "source": "generic"
-  },
-  {
     "t": 843.0,
     "f": 50580,
     "type": "text_change",
@@ -1280,7 +1273,7 @@
     "t": 844.0,
     "f": 50640,
     "type": "text_change",
-    "desc": "New on-screen text: PARTNERS / TA] | ARMADA",
+    "desc": "New on-screen text: TA] | ARMADA",
     "source": "generic"
   },
   {
@@ -1315,7 +1308,14 @@
     "t": 851.0,
     "f": 51060,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / MIGAMES AT LAUREL PARK.",
+    "desc": "New on-screen text: MIGAMES AT LAUREL PARK.",
+    "source": "generic"
+  },
+  {
+    "t": 852.0,
+    "f": 51120,
+    "type": "text_change",
+    "desc": "New on-screen text: mY AN ARMADA FOX MVG | MEW2KING ILI",
     "source": "generic"
   },
   {
@@ -1345,7 +1345,7 @@
     "t": 903.0,
     "f": 54180,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / TA] ARMADA",
+    "desc": "New on-screen text: TA] ARMADA",
     "source": "generic"
   },
   {
@@ -1370,13 +1370,6 @@
     "source": "generic"
   },
   {
-    "t": 907.0,
-    "f": 54420,
-    "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP / PARTNERS",
-    "source": "generic"
-  },
-  {
     "t": 909.0,
     "f": 54540,
     "type": "text_change",
@@ -1388,6 +1381,13 @@
     "f": 54840,
     "type": "text_change",
     "desc": "New on-screen text: MVG | MEW2KING",
+    "source": "generic"
+  },
+  {
+    "t": 918.0,
+    "f": 55080,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] [ARMADA",
     "source": "generic"
   },
   {
@@ -1423,38 +1423,10 @@
     "source": "generic"
   },
   {
-    "t": 963.0,
-    "f": 57780,
-    "type": "text_change",
-    "desc": "New on-screen text: PARTNERS",
-    "source": "generic"
-  },
-  {
-    "t": 967.0,
-    "f": 58020,
-    "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS",
-    "source": "generic"
-  },
-  {
     "t": 969.0,
     "f": 58140,
     "type": "text_change",
     "desc": "New on-screen text: 04:37 61",
-    "source": "generic"
-  },
-  {
-    "t": 970.0,
-    "f": 58200,
-    "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP",
-    "source": "generic"
-  },
-  {
-    "t": 973.0,
-    "f": 58380,
-    "type": "text_change",
-    "desc": "New on-screen text: SUPER SMASH CON 2018",
     "source": "generic"
   },
   {
@@ -1465,17 +1437,38 @@
     "source": "generic"
   },
   {
+    "t": 976.0,
+    "f": 58560,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 977.0,
+    "f": 58620,
+    "type": "text_change",
+    "desc": "New on-screen text: 04:29 61",
+    "source": "generic"
+  },
+  {
+    "t": 988.0,
+    "f": 59280,
+    "type": "text_change",
+    "desc": "New on-screen text: MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 989.0,
+    "f": 59340,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] |ARMADA",
+    "source": "generic"
+  },
+  {
     "t": 995.85,
     "f": 59751,
     "type": "scene_change",
     "desc": "Scene change (picture jumps to different content)",
-    "source": "generic"
-  },
-  {
-    "t": 1021.0,
-    "f": 61260,
-    "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP / PARTNERS",
     "source": "generic"
   },
   {
@@ -1569,6 +1562,13 @@
     "source": "generic"
   },
   {
+    "t": 1046.0,
+    "f": 62760,
+    "type": "text_change",
+    "desc": "New on-screen text: Game setup",
+    "source": "generic"
+  },
+  {
     "t": 1062.9,
     "f": 63774,
     "type": "motion_burst",
@@ -1625,14 +1625,7 @@
     "t": 1089.0,
     "f": 65340,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / VGBOOTCAMP / PARTNERS / [Al | ARMADA / FOX MVG | MEW2KING [L]",
-    "source": "generic"
-  },
-  {
-    "t": 1090.0,
-    "f": 65400,
-    "type": "text_change",
-    "desc": "New on-screen text: SUPER SMASH CON 2018",
+    "desc": "New on-screen text: [Al | ARMADA / FOX MVG | MEW2KING [L]",
     "source": "generic"
   },
   {
@@ -1650,10 +1643,17 @@
     "source": "generic"
   },
   {
+    "t": 1096.0,
+    "f": 65760,
+    "type": "text_change",
+    "desc": "New on-screen text: MIGAMES AT LAUREL PARK.",
+    "source": "generic"
+  },
+  {
     "t": 1141.0,
     "f": 68460,
     "type": "text_change",
-    "desc": "New on-screen text: 06:42 58 / VGBOOTCAMP",
+    "desc": "New on-screen text: 06:42 58",
     "source": "generic"
   },
   {
@@ -1671,17 +1671,10 @@
     "source": "generic"
   },
   {
-    "t": 1145.0,
-    "f": 68700,
-    "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS",
-    "source": "generic"
-  },
-  {
     "t": 1146.0,
     "f": 68760,
     "type": "text_change",
-    "desc": "New on-screen text: PARTNERS / eo BRICKS",
+    "desc": "New on-screen text: eo BRICKS",
     "source": "generic"
   },
   {
@@ -1699,10 +1692,17 @@
     "source": "generic"
   },
   {
-    "t": 1150.0,
-    "f": 69000,
+    "t": 1151.0,
+    "f": 69060,
     "type": "text_change",
-    "desc": "New on-screen text: SUPER SMASH CON 2018 / FOLLOW @SUPERSMASHCON",
+    "desc": "New on-screen text: THANKS TO OUR",
+    "source": "generic"
+  },
+  {
+    "t": 1152.0,
+    "f": 69120,
+    "type": "text_change",
+    "desc": "New on-screen text: AT LAUREL PARK",
     "source": "generic"
   },
   {
@@ -1725,7 +1725,7 @@
     "t": 1201.0,
     "f": 72060,
     "type": "text_change",
-    "desc": "New on-screen text: \u2018SPECIAL THANKS 1\u00a2 / PARTNERS",
+    "desc": "New on-screen text: \u2018SPECIAL THANKS 1\u00a2",
     "source": "generic"
   },
   {
@@ -1733,13 +1733,6 @@
     "f": 72240,
     "type": "text_change",
     "desc": "New on-screen text: 05:39 58",
-    "source": "generic"
-  },
-  {
-    "t": 1206.0,
-    "f": 72360,
-    "type": "text_change",
-    "desc": "New on-screen text: [ SMASH CON 2018 / VGBOOTCAMP",
     "source": "generic"
   },
   {
@@ -1760,7 +1753,7 @@
     "t": 1210.0,
     "f": 72600,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / [Al] ARMADA",
+    "desc": "New on-screen text: [Al] ARMADA",
     "source": "generic"
   },
   {
@@ -1768,6 +1761,13 @@
     "f": 72720,
     "type": "text_change",
     "desc": "New on-screen text: FOX MVG | iia)",
+    "source": "generic"
+  },
+  {
+    "t": 1215.0,
+    "f": 72900,
+    "type": "text_change",
+    "desc": "New on-screen text: PREEENTED",
     "source": "generic"
   },
   {
@@ -1808,7 +1808,7 @@
     "t": 1262.0,
     "f": 75720,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / AT LAUREL PARK. / | MVG | MEW2KING IL]",
+    "desc": "New on-screen text: AT LAUREL PARK. / | MVG | MEW2KING IL]",
     "source": "generic"
   },
   {
@@ -1830,13 +1830,6 @@
     "f": 76020,
     "type": "text_change",
     "desc": "New on-screen text: [A] | ARMADA",
-    "source": "generic"
-  },
-  {
-    "t": 1268.0,
-    "f": 76080,
-    "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP",
     "source": "generic"
   },
   {
@@ -1888,6 +1881,13 @@
     "f": 77447,
     "type": "scene_change",
     "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 1303.0,
+    "f": 78180,
+    "type": "text_change",
+    "desc": "New on-screen text: #SSC2018 / MELEE SINGLES GRAND FINALS / SUPER SMASH CON 2018",
     "source": "generic"
   },
   {
@@ -1959,14 +1959,14 @@
     "t": 1381.0,
     "f": 82860,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / VGBOOTCAMP / PARTNERS / 15% ee BRICKS / [A] | ARMADA IL] / Q FOX MVG | MEW2KING ILI",
+    "desc": "New on-screen text: 15% ee BRICKS / [A] | ARMADA IL] / Q FOX MVG | MEW2KING ILI",
     "source": "generic"
   },
   {
     "t": 1382.0,
     "f": 82920,
     "type": "text_change",
-    "desc": "New on-screen text: SUPER SMASH CON 2018 / 07:46 84",
+    "desc": "New on-screen text: 07:46 84",
     "source": "generic"
   },
   {
@@ -2001,7 +2001,7 @@
     "t": 1394.0,
     "f": 83640,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / VGBOOTCAMP / PARTNERS / \u00a9 7 Fox MVG | MEW2KING / [A] | ARMADA IL]",
+    "desc": "New on-screen text: \u00a9 7 Fox MVG | MEW2KING / [A] | ARMADA IL]",
     "source": "generic"
   },
   {
@@ -2045,14 +2045,7 @@
     "t": 1441.0,
     "f": 86460,
     "type": "text_change",
-    "desc": "New on-screen text: FOLLOW \u2018@SUPERSMASHCON / 06:47 83",
-    "source": "generic"
-  },
-  {
-    "t": 1442.0,
-    "f": 86520,
-    "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP",
+    "desc": "New on-screen text: 06:47 83",
     "source": "generic"
   },
   {
@@ -2070,13 +2063,6 @@
     "source": "generic"
   },
   {
-    "t": 1446.0,
-    "f": 86760,
-    "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / PARTNERS",
-    "source": "generic"
-  },
-  {
     "t": 1447.0,
     "f": 86820,
     "type": "text_change",
@@ -2088,6 +2074,20 @@
     "f": 87000,
     "type": "text_change",
     "desc": "New on-screen text: \u00a9 7 Fox MVG | MEW2KING / [A] | ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 1452.0,
+    "f": 87120,
+    "type": "text_change",
+    "desc": "New on-screen text: 06:36 a1",
+    "source": "generic"
+  },
+  {
+    "t": 1456.0,
+    "f": 87360,
+    "type": "text_change",
+    "desc": "New on-screen text: 06:32 64",
     "source": "generic"
   },
   {
@@ -2112,13 +2112,6 @@
     "source": "generic"
   },
   {
-    "t": 1507.0,
-    "f": 90420,
-    "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP",
-    "source": "generic"
-  },
-  {
     "t": 1510.0,
     "f": 90600,
     "type": "text_change",
@@ -2129,7 +2122,7 @@
     "t": 1511.0,
     "f": 90660,
     "type": "text_change",
-    "desc": "New on-screen text: IAL THANKS TO / PARTNERS",
+    "desc": "New on-screen text: IAL THANKS TO",
     "source": "generic"
   },
   {
@@ -2154,17 +2147,17 @@
     "source": "generic"
   },
   {
+    "t": 1518.0,
+    "f": 91080,
+    "type": "text_change",
+    "desc": "New on-screen text: O Fox MvG | MEW2KING |",
+    "source": "generic"
+  },
+  {
     "t": 1560.0,
     "f": 93600,
     "type": "text_change",
     "desc": "New on-screen text: 04:48 83",
-    "source": "generic"
-  },
-  {
-    "t": 1562.0,
-    "f": 93720,
-    "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS",
     "source": "generic"
   },
   {
@@ -2175,13 +2168,6 @@
     "source": "generic",
     "end": 1562.77,
     "peak": 20.2
-  },
-  {
-    "t": 1563.0,
-    "f": 93780,
-    "type": "text_change",
-    "desc": "New on-screen text: PARTNERS",
-    "source": "generic"
   },
   {
     "t": 1564.0,
@@ -2222,7 +2208,21 @@
     "t": 1572.0,
     "f": 94320,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND ule / 04:36 83 / VGBOOTCAMP / {CIAL THANKS TO / IADA IL]",
+    "desc": "New on-screen text: GRAND ule / 04:36 83 / {CIAL THANKS TO / IADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 1575.0,
+    "f": 94500,
+    "type": "text_change",
+    "desc": "New on-screen text: PREEENTED BY",
+    "source": "generic"
+  },
+  {
+    "t": 1578.0,
+    "f": 94680,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA IL]",
     "source": "generic"
   },
   {
@@ -2242,13 +2242,6 @@
     "source": "generic"
   },
   {
-    "t": 1624.0,
-    "f": 97440,
-    "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP",
-    "source": "generic"
-  },
-  {
     "t": 1625.4,
     "f": 97524,
     "type": "text_change",
@@ -2263,17 +2256,10 @@
     "source": "generic"
   },
   {
-    "t": 1627.0,
-    "f": 97620,
-    "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS",
-    "source": "generic"
-  },
-  {
     "t": 1628.0,
     "f": 97680,
     "type": "text_change",
-    "desc": "New on-screen text: PARTNERS / MVG | MEW2KING IL] ls] |",
+    "desc": "New on-screen text: MVG | MEW2KING IL] ls] |",
     "source": "generic"
   },
   {
@@ -2288,6 +2274,20 @@
     "f": 97980,
     "type": "text_change",
     "desc": "New on-screen text: mY AN ARMADA (\u00b0) O__ FOX MVG | MEW2KING u |",
+    "source": "generic"
+  },
+  {
+    "t": 1634.0,
+    "f": 98040,
+    "type": "text_change",
+    "desc": "New on-screen text: \u2018SPECIAL THANKS. / Cee [Al ARMADA FOX MVG | MEW2KING ILI |",
+    "source": "generic"
+  },
+  {
+    "t": 1635.0,
+    "f": 98100,
+    "type": "text_change",
+    "desc": "New on-screen text: 03:33 86 / OQ FOX MVG | MEW2KING IL]",
     "source": "generic"
   },
   {
@@ -2432,10 +2432,10 @@
     "source": "generic"
   },
   {
-    "t": 1751.0,
-    "f": 105060,
+    "t": 1752.0,
+    "f": 105120,
     "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP / PARTNERS",
+    "desc": "New on-screen text: ack BRICKS / 18% FOX MEW2KING wn BC",
     "source": "generic"
   },
   {
@@ -2465,14 +2465,14 @@
     "t": 1803.0,
     "f": 108180,
     "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP / THANKS TO OUR / PARTNERS",
+    "desc": "New on-screen text: THANKS TO OUR",
     "source": "generic"
   },
   {
     "t": 1805.0,
     "f": 108300,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / \u00a9 BRICKS",
+    "desc": "New on-screen text: \u00a9 BRICKS",
     "source": "generic"
   },
   {
@@ -2550,24 +2550,10 @@
     "source": "generic"
   },
   {
-    "t": 1867.0,
-    "f": 112020,
-    "type": "text_change",
-    "desc": "New on-screen text: SUPER SMASH CON 2018 / FOLLOW @SUPERSMASHCON",
-    "source": "generic"
-  },
-  {
-    "t": 1868.0,
-    "f": 112080,
-    "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP / PARTNERS",
-    "source": "generic"
-  },
-  {
     "t": 1870.0,
     "f": 112200,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / \u201c96% 144 / MIGAMES AT LAUREL PARK",
+    "desc": "New on-screen text: \u201c96% 144 / MIGAMES AT LAUREL PARK",
     "source": "generic"
   },
   {
@@ -2594,17 +2580,31 @@
     "peak": 12.7
   },
   {
-    "t": 1921.0,
-    "f": 115260,
+    "t": 1886.0,
+    "f": 113160,
     "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP / [Al | ARMADA",
+    "desc": "New on-screen text: IAL THANKS TO",
     "source": "generic"
   },
   {
-    "t": 1922.0,
-    "f": 115320,
+    "t": 1888.0,
+    "f": 113280,
     "type": "text_change",
-    "desc": "New on-screen text: FOLLOW @SUPERSMASHCON | / SUPER SMASH CON 2018 / GRAND FINALS / PARTNERS",
+    "desc": "New on-screen text: FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 1921.0,
+    "f": 115260,
+    "type": "text_change",
+    "desc": "New on-screen text: [Al | ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 1924.0,
+    "f": 115440,
+    "type": "text_change",
+    "desc": "New on-screen text: 7 GRAND FINALS FOLLOW @SUPERSMASHCON",
     "source": "generic"
   },
   {
@@ -2650,10 +2650,10 @@
     "source": "generic"
   },
   {
-    "t": 1935.0,
-    "f": 116100,
+    "t": 1943.0,
+    "f": 116580,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS",
+    "desc": "New on-screen text: IAL THANKS",
     "source": "generic"
   },
   {
@@ -2674,14 +2674,7 @@
     "t": 1982.0,
     "f": 118920,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / 03:30 81 / THANKS T",
-    "source": "generic"
-  },
-  {
-    "t": 1984.0,
-    "f": 119040,
-    "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP",
+    "desc": "New on-screen text: 03:30 81 / THANKS T",
     "source": "generic"
   },
   {
@@ -2706,10 +2699,17 @@
     "source": "generic"
   },
   {
-    "t": 1989.0,
-    "f": 119340,
+    "t": 1990.0,
+    "f": 119400,
     "type": "text_change",
-    "desc": "New on-screen text: PARTNERS",
+    "desc": "New on-screen text: 116% 58 %",
+    "source": "generic"
+  },
+  {
+    "t": 1998.0,
+    "f": 119880,
+    "type": "text_change",
+    "desc": "New on-screen text: KS TO OUR",
     "source": "generic"
   },
   {
@@ -2888,7 +2888,7 @@
     "t": 2162.0,
     "f": 129720,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / VGBOOTCAMP / \u2018SPECIAL THANKS TO OUR / PARTNERS / MIGAMES AT LAUREL PARK. / A FOX MVG | MEW2KING IL] / [A] | ARMADA IL]",
+    "desc": "New on-screen text: \u2018SPECIAL THANKS TO OUR / MIGAMES AT LAUREL PARK. / A FOX MVG | MEW2KING IL] / [A] | ARMADA IL]",
     "source": "generic"
   },
   {
@@ -2966,7 +2966,7 @@
     "t": 2176.0,
     "f": 130560,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / PRESENTEO BY",
+    "desc": "New on-screen text: PRESENTEO BY",
     "source": "generic"
   },
   {
@@ -3005,14 +3005,7 @@
     "t": 2225.0,
     "f": 133500,
     "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP / FOX MVG | MEW2KING IL]",
-    "source": "generic"
-  },
-  {
-    "t": 2226.0,
-    "f": 133560,
-    "type": "text_change",
-    "desc": "New on-screen text: SUPER SMASH CON 2018 / FOLLOW @SUPERSMASHCON",
+    "desc": "New on-screen text: FOX MVG | MEW2KING IL]",
     "source": "generic"
   },
   {
@@ -3023,24 +3016,31 @@
     "source": "generic"
   },
   {
-    "t": 2231.0,
-    "f": 133860,
-    "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS",
-    "source": "generic"
-  },
-  {
-    "t": 2234.0,
-    "f": 134040,
-    "type": "text_change",
-    "desc": "New on-screen text: PARTNERS",
-    "source": "generic"
-  },
-  {
     "t": 2235.0,
     "f": 134100,
     "type": "text_change",
     "desc": "New on-screen text: All ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 2236.0,
+    "f": 134160,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | tu",
+    "source": "generic"
+  },
+  {
+    "t": 2237.0,
+    "f": 134220,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS 1",
+    "source": "generic"
+  },
+  {
+    "t": 2238.0,
+    "f": 134280,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA IL] / FOX MVG | MEW2KING IL]",
     "source": "generic"
   },
   {
@@ -3060,13 +3060,6 @@
     "source": "generic",
     "end": 2266.48,
     "peak": 13.2
-  },
-  {
-    "t": 2285.0,
-    "f": 137100,
-    "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / VGBOOTCAMP",
-    "source": "generic"
   },
   {
     "t": 2286.0,
@@ -3092,20 +3085,6 @@
     "source": "generic"
   },
   {
-    "t": 2297.0,
-    "f": 137820,
-    "type": "text_change",
-    "desc": "New on-screen text: PARTNERS",
-    "source": "generic"
-  },
-  {
-    "t": 2298.0,
-    "f": 137880,
-    "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS",
-    "source": "generic"
-  },
-  {
     "t": 2299.0,
     "f": 137940,
     "type": "text_change",
@@ -3123,7 +3102,28 @@
     "t": 2305.0,
     "f": 138300,
     "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP / ENERATIONS / GAMES, REPAIR, TOYS, & MORE,",
+    "desc": "New on-screen text: ENERATIONS / GAMES, REPAIR, TOYS, & MORE,",
+    "source": "generic"
+  },
+  {
+    "t": 2307.0,
+    "f": 138420,
+    "type": "text_change",
+    "desc": "New on-screen text: THANKS T",
+    "source": "generic"
+  },
+  {
+    "t": 2312.0,
+    "f": 138720,
+    "type": "text_change",
+    "desc": "New on-screen text: I ARMADA / \\ MVG | MEW2KING [LI",
+    "source": "generic"
+  },
+  {
+    "t": 2313.0,
+    "f": 138780,
+    "type": "text_change",
+    "desc": "New on-screen text: [Al | ARMADA IL]",
     "source": "generic"
   },
   {
@@ -3152,17 +3152,10 @@
     "source": "generic"
   },
   {
-    "t": 2342.0,
-    "f": 140520,
-    "type": "text_change",
-    "desc": "New on-screen text: PARTNERS",
-    "source": "generic"
-  },
-  {
     "t": 2343.0,
     "f": 140580,
     "type": "text_change",
-    "desc": "New on-screen text: CON 2018 / VGBOOTCAMP",
+    "desc": "New on-screen text: CON 2018",
     "source": "generic"
   },
   {
@@ -3187,17 +3180,24 @@
     "source": "generic"
   },
   {
-    "t": 2351.0,
-    "f": 141060,
-    "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS",
-    "source": "generic"
-  },
-  {
     "t": 2353.0,
     "f": 141180,
     "type": "text_change",
     "desc": "New on-screen text: FOX MVG ow 1",
+    "source": "generic"
+  },
+  {
+    "t": 2354.0,
+    "f": 141240,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 2355.0,
+    "f": 141300,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS",
     "source": "generic"
   },
   {
@@ -3244,24 +3244,10 @@
     "source": "generic"
   },
   {
-    "t": 2402.0,
-    "f": 144120,
-    "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / VGBOOTCAMP",
-    "source": "generic"
-  },
-  {
     "t": 2403.0,
     "f": 144180,
     "type": "text_change",
     "desc": "New on-screen text: FOX MVG | MEW2KING IL]",
-    "source": "generic"
-  },
-  {
-    "t": 2405.0,
-    "f": 144300,
-    "type": "text_change",
-    "desc": "New on-screen text: PARTNERS",
     "source": "generic"
   },
   {
@@ -3275,7 +3261,7 @@
     "t": 2413.0,
     "f": 144780,
     "type": "text_change",
-    "desc": "New on-screen text: SUPER CON 2018 / PRESENTED BY",
+    "desc": "New on-screen text: PRESENTED BY",
     "source": "generic"
   },
   {
@@ -3309,6 +3295,20 @@
     "source": "generic",
     "end": 2421.13,
     "peak": 15.9
+  },
+  {
+    "t": 2423.0,
+    "f": 145380,
+    "type": "text_change",
+    "desc": "New on-screen text: THANKS TO OUR / Lo BRICKS / [A] | ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 2426.0,
+    "f": 145560,
+    "type": "text_change",
+    "desc": "New on-screen text: ARMADA |",
+    "source": "generic"
   },
   {
     "t": 2429.5,
@@ -3380,7 +3380,7 @@
     "t": 2470.0,
     "f": 148200,
     "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP / IAL THANKS",
+    "desc": "New on-screen text: IAL THANKS",
     "source": "generic"
   },
   {
@@ -3417,7 +3417,7 @@
     "t": 2482.0,
     "f": 148920,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / RES FOX MVG | MEW2KING [LI",
+    "desc": "New on-screen text: RES FOX MVG | MEW2KING [LI",
     "source": "generic"
   },
   {
@@ -3530,13 +3530,6 @@
     "source": "generic"
   },
   {
-    "t": 2593.0,
-    "f": 155580,
-    "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / GEOOTCAMP",
-    "source": "generic"
-  },
-  {
     "t": 2593.83,
     "f": 155630,
     "type": "motion_burst",
@@ -3549,7 +3542,7 @@
     "t": 2594.0,
     "f": 155640,
     "type": "text_change",
-    "desc": "New on-screen text: PARTNERS / MVG | MEW2KING IL] / [Al | ARMADA IL]",
+    "desc": "New on-screen text: MVG | MEW2KING IL] / [Al | ARMADA IL]",
     "source": "generic"
   },
   {
@@ -3557,6 +3550,13 @@
     "f": 155760,
     "type": "text_change",
     "desc": "New on-screen text: \u2018SPECIAL THANKS TO OUR / XESS Fox MVG | MEW2KING [LI",
+    "source": "generic"
+  },
+  {
+    "t": 2597.0,
+    "f": 155820,
+    "type": "text_change",
+    "desc": "New on-screen text: Wve [ MEW2KING",
     "source": "generic"
   },
   {
@@ -3633,14 +3633,7 @@
     "t": 2645.0,
     "f": 158700,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / 07:09 51",
-    "source": "generic"
-  },
-  {
-    "t": 2647.0,
-    "f": 158820,
-    "type": "text_change",
-    "desc": "New on-screen text: V@BOOTCAMP",
+    "desc": "New on-screen text: 07:09 51",
     "source": "generic"
   },
   {
@@ -3683,17 +3676,24 @@
     "source": "generic"
   },
   {
-    "t": 2657.0,
-    "f": 159420,
+    "t": 2659.0,
+    "f": 159540,
     "type": "text_change",
-    "desc": "New on-screen text: SUPER SMASH CON 2018",
+    "desc": "New on-screen text: CON 2018",
     "source": "generic"
   },
   {
-    "t": 2658.0,
-    "f": 159480,
+    "t": 2663.0,
+    "f": 159780,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS",
+    "desc": "New on-screen text: PRESENTED",
+    "source": "generic"
+  },
+  {
+    "t": 2664.0,
+    "f": 159840,
+    "type": "text_change",
+    "desc": "New on-screen text: \u2018SPECIAL THANKS TO OUR",
     "source": "generic"
   },
   {
@@ -3754,7 +3754,7 @@
     "t": 2701.0,
     "f": 162060,
     "type": "text_change",
-    "desc": "New on-screen text: PARTNERS / LA) | ARMADA [ul",
+    "desc": "New on-screen text: LA) | ARMADA [ul",
     "source": "generic"
   },
   {
@@ -3768,7 +3768,7 @@
     "t": 2704.0,
     "f": 162240,
     "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP / rox | MEW2KING IL]",
+    "desc": "New on-screen text: rox | MEW2KING IL]",
     "source": "generic"
   },
   {
@@ -3809,10 +3809,10 @@
     "source": "generic"
   },
   {
-    "t": 2710.0,
-    "f": 162600,
+    "t": 2711.0,
+    "f": 162660,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS",
+    "desc": "New on-screen text: 94% 175% / FOX MVG | MEW2KING",
     "source": "generic"
   },
   {
@@ -3852,24 +3852,10 @@
     "peak": 21.8
   },
   {
-    "t": 2760.0,
-    "f": 165600,
-    "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS",
-    "source": "generic"
-  },
-  {
     "t": 2763.0,
     "f": 165780,
     "type": "text_change",
     "desc": "New on-screen text: FOX MVG | MEW2KING IL]",
-    "source": "generic"
-  },
-  {
-    "t": 2764.0,
-    "f": 165840,
-    "type": "text_change",
-    "desc": "New on-screen text: SUPER CON 2018 / FOLLOW @SUPERSMASHCON | |",
     "source": "generic"
   },
   {
@@ -3890,7 +3876,7 @@
     "t": 2769.0,
     "f": 166140,
     "type": "text_change",
-    "desc": "New on-screen text: CON 2018 / PARTNERS",
+    "desc": "New on-screen text: CON 2018",
     "source": "generic"
   },
   {
@@ -3905,6 +3891,20 @@
     "f": 166380,
     "type": "text_change",
     "desc": "New on-screen text: 2 ARMADA [ul",
+    "source": "generic"
+  },
+  {
+    "t": 2775.0,
+    "f": 166500,
+    "type": "text_change",
+    "desc": "New on-screen text: 04:59 51",
+    "source": "generic"
+  },
+  {
+    "t": 2777.0,
+    "f": 166620,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | MEW2KING [LI",
     "source": "generic"
   },
   {
@@ -3944,27 +3944,6 @@
     "peak": 13.7
   },
   {
-    "t": 2821.0,
-    "f": 169260,
-    "type": "text_change",
-    "desc": "New on-screen text: PARTNERS",
-    "source": "generic"
-  },
-  {
-    "t": 2822.0,
-    "f": 169320,
-    "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS",
-    "source": "generic"
-  },
-  {
-    "t": 2823.0,
-    "f": 169380,
-    "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP",
-    "source": "generic"
-  },
-  {
     "t": 2824.0,
     "f": 169440,
     "type": "text_change",
@@ -4002,10 +3981,17 @@
     "peak": 14.7
   },
   {
-    "t": 2834.0,
-    "f": 170040,
+    "t": 2835.0,
+    "f": 170100,
     "type": "text_change",
-    "desc": "New on-screen text: PARTNERS",
+    "desc": "New on-screen text: FOX MVG | MEW2KING tu",
+    "source": "generic"
+  },
+  {
+    "t": 2837.0,
+    "f": 170220,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS",
     "source": "generic"
   },
   {
@@ -4016,6 +4002,20 @@
     "source": "generic",
     "end": 2837.23,
     "peak": 12.8
+  },
+  {
+    "t": 2839.0,
+    "f": 170340,
+    "type": "text_change",
+    "desc": "New on-screen text: ENERATIONS / GAMES, REPAIR, TOYS, & MORE.",
+    "source": "generic"
+  },
+  {
+    "t": 2840.0,
+    "f": 170400,
+    "type": "text_change",
+    "desc": "New on-screen text: =A Fox | / [A] LARMADA",
+    "source": "generic"
   },
   {
     "t": 2840.48,
@@ -4086,17 +4086,10 @@
     "peak": 19.4
   },
   {
-    "t": 2897.0,
-    "f": 173820,
-    "type": "text_change",
-    "desc": "New on-screen text: PARTNERS",
-    "source": "generic"
-  },
-  {
     "t": 2899.0,
     "f": 173940,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / [Al | ARMADA / MVG | MEW2KING IL]",
+    "desc": "New on-screen text: [Al | ARMADA / MVG | MEW2KING IL]",
     "source": "generic"
   },
   {
@@ -4121,17 +4114,10 @@
     "source": "generic"
   },
   {
-    "t": 2909.0,
-    "f": 174540,
-    "type": "text_change",
-    "desc": "New on-screen text: SUPER SMASH CON 2018 / FOLLOW @SUPERSMASHCON",
-    "source": "generic"
-  },
-  {
     "t": 2912.0,
     "f": 174720,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / [A] | ARMADA IL]",
+    "desc": "New on-screen text: [A] | ARMADA IL]",
     "source": "generic"
   },
   {
@@ -4142,17 +4128,17 @@
     "source": "generic"
   },
   {
-    "t": 2940.0,
-    "f": 176400,
+    "t": 2917.0,
+    "f": 175020,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS",
+    "desc": "New on-screen text: COMBAT ARENA",
     "source": "generic"
   },
   {
-    "t": 2943.0,
-    "f": 176580,
+    "t": 2920.0,
+    "f": 175200,
     "type": "text_change",
-    "desc": "New on-screen text: PARTNERS",
+    "desc": "New on-screen text: MVG | MEW2KING IL]",
     "source": "generic"
   },
   {
@@ -4167,13 +4153,6 @@
     "f": 176700,
     "type": "text_change",
     "desc": "New on-screen text: \u2018SPECIAL THANKS TO Ot",
-    "source": "generic"
-  },
-  {
-    "t": 2953.0,
-    "f": 177180,
-    "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS",
     "source": "generic"
   },
   {
@@ -4195,6 +4174,27 @@
     "f": 177360,
     "type": "text_change",
     "desc": "New on-screen text: THANKS T",
+    "source": "generic"
+  },
+  {
+    "t": 2959.0,
+    "f": 177540,
+    "type": "text_change",
+    "desc": "New on-screen text: Ig GEICO",
+    "source": "generic"
+  },
+  {
+    "t": 2961.0,
+    "f": 177660,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX | MEW2KING",
+    "source": "generic"
+  },
+  {
+    "t": 2964.0,
+    "f": 177840,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS",
     "source": "generic"
   },
   {
@@ -4230,13 +4230,6 @@
     "source": "generic"
   },
   {
-    "t": 3005.0,
-    "f": 180300,
-    "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS",
-    "source": "generic"
-  },
-  {
     "t": 3005.63,
     "f": 180338,
     "type": "motion_burst",
@@ -4267,17 +4260,10 @@
     "source": "generic"
   },
   {
-    "t": 3014.0,
-    "f": 180840,
-    "type": "text_change",
-    "desc": "New on-screen text: PARTNERS",
-    "source": "generic"
-  },
-  {
     "t": 3018.0,
     "f": 181080,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / [A] | ARMADA IL]",
+    "desc": "New on-screen text: [A] | ARMADA IL]",
     "source": "generic"
   },
   {
@@ -4285,6 +4271,20 @@
     "f": 181440,
     "type": "text_change",
     "desc": "New on-screen text: FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 3026.0,
+    "f": 181560,
+    "type": "text_change",
+    "desc": "New on-screen text: THANKS T",
+    "source": "generic"
+  },
+  {
+    "t": 3032.0,
+    "f": 181920,
+    "type": "text_change",
+    "desc": "New on-screen text: | ARMADA IL]",
     "source": "generic"
   },
   {
@@ -4330,7 +4330,7 @@
     "t": 3070.0,
     "f": 184200,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS / FOX = | MEW2KING / [A] | ARMADA",
+    "desc": "New on-screen text: FOX = | MEW2KING / [A] | ARMADA",
     "source": "generic"
   },
   {
@@ -4348,20 +4348,6 @@
     "source": "generic"
   },
   {
-    "t": 3084.0,
-    "f": 185040,
-    "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS",
-    "source": "generic"
-  },
-  {
-    "t": 3085.0,
-    "f": 185100,
-    "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP",
-    "source": "generic"
-  },
-  {
     "t": 3087.0,
     "f": 185220,
     "type": "text_change",
@@ -4369,10 +4355,17 @@
     "source": "generic"
   },
   {
-    "t": 3124.0,
-    "f": 187440,
+    "t": 3091.0,
+    "f": 185460,
     "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS",
+    "desc": "New on-screen text: ~ COMBAT ARENA",
+    "source": "generic"
+  },
+  {
+    "t": 3092.0,
+    "f": 185520,
+    "type": "text_change",
+    "desc": "New on-screen text: ENERATIONS / GAMES, REPAIR, TOYS, & MORE. / [A] | ARMADA IL]",
     "source": "generic"
   },
   {
@@ -4404,21 +4397,14 @@
     "t": 3130.0,
     "f": 187800,
     "type": "text_change",
-    "desc": "New on-screen text: IAL. THANKS TO / PARTNERS",
+    "desc": "New on-screen text: IAL. THANKS TO",
     "source": "generic"
   },
   {
     "t": 3134.0,
     "f": 188040,
     "type": "text_change",
-    "desc": "New on-screen text: SUPER SMASH CON 2018 / FOLLOW @SUPERSMASHCON / OX MVG | tu",
-    "source": "generic"
-  },
-  {
-    "t": 3137.0,
-    "f": 188220,
-    "type": "text_change",
-    "desc": "New on-screen text: GRAND FINALS",
+    "desc": "New on-screen text: OX MVG | tu",
     "source": "generic"
   },
   {
@@ -4429,17 +4415,31 @@
     "source": "generic"
   },
   {
-    "t": 3142.0,
-    "f": 188520,
+    "t": 3145.0,
+    "f": 188700,
     "type": "text_change",
-    "desc": "New on-screen text: VGBOOTCAMP",
+    "desc": "New on-screen text: IAL THANKS",
     "source": "generic"
   },
   {
-    "t": 3143.0,
-    "f": 188580,
+    "t": 3146.0,
+    "f": 188760,
     "type": "text_change",
-    "desc": "New on-screen text: PARTNERS",
+    "desc": "New on-screen text: [A] | ARMAD. / FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 3147.0,
+    "f": 188820,
+    "type": "text_change",
+    "desc": "New on-screen text: ENERATIONS / GAMES, REPAIR, TOYS, & MORE",
+    "source": "generic"
+  },
+  {
+    "t": 3149.0,
+    "f": 188940,
+    "type": "text_change",
+    "desc": "New on-screen text: TAl| ARMADA",
     "source": "generic"
   },
   {
