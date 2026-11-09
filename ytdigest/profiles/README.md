@@ -6,7 +6,7 @@ where the interesting things are on screen, and what counts as an event.
 | profile | what it adds |
 |---|---|
 | `generic` (default) | nothing: the core only |
-| `d2r` | Diablo II: Resurrected PvP: HUD calibration, life/mana %, poison, death, potion refills, area changes, teleports, fast movement; analysed at 25 fps |
+| `d2r` | an example game profile (Diablo II: Resurrected PvP): see [d2r.md](d2r.md) |
 
 Choose one with a line in the issue (or in a `/digest` comment):
 
@@ -14,8 +14,9 @@ Choose one with a line in the issue (or in a `/digest` comment):
 profile: d2r
 ```
 
-No line = `generic`. The tool may *suggest* a profile ("this looks like D2R, comment `/digest profile: d2r`")
-but never switches by itself. The choice is stored in `config/videos/<video_id>.json`, so re-runs keep it.
+No line = `generic`. Every profile has a **detector** (`detect(frames)`, 0..1); on a generic run all registered detectors
+look at a few sample frames and any that recognise the content are suggested in the issue ("this looks like X, comment
+`/digest profile: x`"). A profile is never selected silently. The choice is stored in `config/videos/<video_id>.json`, so re-runs keep it.
 `python -m ytdigest.profiles` lists what is installed.
 
 ## What a profile can do
@@ -26,7 +27,8 @@ Every hook is optional:
 | hook | when it runs | what for |
 |---|---|---|
 | `fps` (attribute) | always | analysis rate; `None` = the video's native fps (max 60). D2R sets 25 |
-| `suggest(frames)` | on a generic run, 12 sample frames | 0..1 "does this look like my content?" (a suggestion only) |
+| `detect(frames)` | on a generic run, 12 sample frames | the profile's detector: 0..1 "does this look like my content?" (a suggestion only; return 0.0 when unsure) |
+| `zoom_label(rec)`, `zoom_legend` | `/zoom` | short per-frame text from the stored record, added to the zoom tile labels |
 | `calibrate(arc, cfg, force, sets, samples)` | once per video | find regions on screen, return the config + an annotated image for the issue |
 | `analyzer(cfg, w, h, fps)` | every frame | extra per-frame fields stored in `frames.jsonl.gz` (the generic fields are always there) |
 | `derive_events(recs, fps, cfg)` | after all frames are analysed | extra events (`{"t", "f", "type", "desc", "source"}`) |
@@ -48,7 +50,7 @@ Every hook is optional:
    prints the per-frame keys it produced and the events it found in the first 20 seconds.
 5. Use it: comment `/digest profile: melee` on the video's issue.
 
-`d2r.py` is the worked example (calibration, analyzer, events, accuracy check). Behaviour of a profile
+`d2r.py` is the worked example (calibration, analyzer, events, accuracy check; docs in `d2r.md`). Behaviour of a profile
 must not depend on anything outside its module except the hooks above.
 
 Profile results are separate from the generic ones: profile events carry `"source": "<name>"`, generic

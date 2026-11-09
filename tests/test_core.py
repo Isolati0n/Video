@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from ytdigest import events as E, keyframes, ocr, profiles  # noqa: E402
+from ytdigest import events as E, furniture, keyframes, ocr, profiles  # noqa: E402
 from ytdigest.prepare import snap_fps  # noqa: E402
 
 
@@ -73,6 +73,86 @@ def test_keyframes():
     ev = [{"t": float(i), "f": i, "type": "teleport"} for i in range(500)] + [{"t": 5.5, "f": 5, "type": "death"}]
     d = keyframes.dense_events(ev, {"teleport", "death"}, 3600)
     assert any(e["type"] == "death" for e in d) and len(d) <= keyframes.DENSE_MAX_PER_HOUR
+
+
+def line(text, x, y, conf=90):
+    return {"text": text, "conf": conf, "x": x, "y": y}
+
+
+def test_furniture_suppression():
+    # a menu bar that is on screen the whole video, a clock at a fixed place that keeps changing,
+    # a slide that stays for half the video, and slide titles that change
+    entries = []
+    for i in range(100):
+        lines = [line("Preview File Edit View Window Help", 50, 10), line(f"Wed May 28 {i}:{i % 60:02d} PM", 800, 10),
+                 line(f"Slide title number {i // 10}", 300, 300)]
+        if i < 50:
+            lines.append(line("A caption that stays for half the video", 300, 600))
+        entries.append({"t": float(i), "f": i * 30, "lines": lines})
+    kept, furn = furniture.suppress(entries, 100.0)
+    gone = {x["text"] for x in furn}
+    assert "Preview File Edit View Window Help" in gone, gone
+    texts = {ln["text"] for e in kept for ln in e["lines"]}
+    assert any(t.startswith("Wed May 28") for t in texts)                 # changing text at a fixed place is content
+    assert "A caption that stays for half the video" in texts              # present in 3 of 5 slices only: content
+    assert any(t.startswith("Slide title number") for t in texts)
+
+
+def test_text_keyframes_and_flags():
+    ents = []
+    for t in range(0, 60):
+        title = "Alpha slide about cats" if t < 30 else "Beta slide about dogs"
+        ents.append({"t": float(t), "f": t, "lines": [line(title, 100, 120), line("Some body line of text here", 100, 200),
+                                                         line(f"Footnote {t % 2} of the page", 100, 900)]})
+    kf = keyframes.text_keyframes(ents, set(range(60)), 60)
+    assert [k["t"] for k in kf] == [0.0, 31.0], kf                          # one per slide, not per flicker
+    mathy = ocr.classify_text([line("Pr[A V B] < Pr[A] + Pr[B].", 0, 0), line("f (E[X]) <E[f(X)] .", 0, 0, 60)])
+    assert "math" in mathy["flags"], mathy
+    plain = ocr.classify_text([line("Basic Inequalities", 0, 0), line("Hoeffding Inequality", 0, 0)])
+    assert plain["flags"] == [], plain
+    assert "dense" in ocr.classify_text([line(f"line {i} of many many words", 0, 0) for i in range(14)])["flags"]
+
+
+def test_pip_detection():
+    import cv2
+    import numpy as np
+    from ytdigest import pip
+
+    class Arc:
+        duration = 120.0
+
+        def frames(self, a, b, fps, size):
+            rng = np.random.default_rng(int(a * 10))
+            for k in range(int((b - a) * fps)):
+                img = np.full((180, 320, 3), 200, np.uint8)               # a still slide ...
+                cv2.putText(img, "Slide", (60, 90), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 0), 3)
+                img[110:180, 0:100] = rng.integers(0, 255, (70, 100, 3), dtype=np.uint8)   # ... and a moving webcam
+                yield a + k / fps, img
+
+    r = pip.detect(Arc())
+    assert r and r["rect"][0] <= 0.05 and r["rect"][1] >= 0.4 and r["rect"][2] < 0.5, r
+
+    class Still(Arc):
+        def frames(self, a, b, fps, size):
+            for k in range(int((b - a) * fps)):
+                yield a + k / fps, np.full((180, 320, 3), 120, np.uint8)
+
+    assert pip.detect(Still()) is None
+
+
+def test_detectors_are_extensible():
+    class Fake(profiles.Profile):
+        name = "fake"
+        def detect(self, frames):
+            return 0.8
+    profiles._load_all()
+    profiles._REGISTRY["fake"] = Fake()
+    try:
+        found = dict(profiles.suggestions([None] * 5))
+        assert found.get("fake") == 0.8, found
+        assert "generic" not in found
+    finally:
+        del profiles._REGISTRY["fake"]
 
 
 def test_d2r_profile_needs_calibration():

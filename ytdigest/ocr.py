@@ -1,4 +1,4 @@
-"""Tesseract OCR for D2R text overlays (chat, centre messages, area name)."""
+"""Tesseract OCR: whole-frame text (the generic core) and small bright-text regions (for profiles)."""
 from __future__ import annotations
 
 import os
@@ -13,7 +13,7 @@ WORD = re.compile(r"[A-Za-z]{2,}")
 
 
 def _prep(crop: np.ndarray) -> np.ndarray:
-    # D2R text is bright (white/yellow/green/blue/gold) over a darker game scene:
+    # Overlay text in games is bright (white/yellow/green/blue/gold) over a darker scene:
     # keep pixels whose brightest channel is high, black text on white for tesseract.
     m = crop.max(axis=2)
     m = cv2.resize(m, None, fx=2, fy=2, interpolation=cv2.INTER_CUBIC)  # 720p chat glyphs are ~10 px
@@ -55,36 +55,10 @@ def ocr_regions(crops: dict) -> dict:
     return out
 
 
-NUM_RE = re.compile(r"(\d{1,5})\s*/\s*(\d{1,5})")
-
-
-def read_orb_numbers(crop: np.ndarray) -> tuple[int, int] | None:
-    """'Life: 1551 / 7679' / 'Mana: 582 / 852' printed above the orbs (when the game shows them)
-    -> (current, maximum), or None. Used to calibrate and verify the orb readings.
-    Two thresholds are tried (fixed, then Otsu) because the text colour differs between setups."""
-    if crop.size == 0:
-        return None
-    g = cv2.resize(crop.max(axis=2), None, fx=4, fy=4, interpolation=cv2.INTER_CUBIC)
-    candidates = [cv2.threshold(g, 150, 255, cv2.THRESH_BINARY)[1],
-                  cv2.threshold(g, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]]
-    for bw in candidates:
-        try:
-            txt = pytesseract.image_to_string(
-                255 - bw, config="--oem 1 --psm 7 -c tessedit_char_whitelist=0123456789/:LifeMana ", timeout=3)
-        except Exception:
-            return None
-        m = NUM_RE.search(txt)
-        if m:
-            cur, mx = int(m.group(1)), int(m.group(2))
-            if 0 <= cur <= mx and mx > 0:
-                return cur, mx
-    return None
-
-
 # ------------------------------------------------------------------------ whole-frame OCR (generic core)
 def good_line(text: str, conf: float) -> bool:
     """Keep real-looking text (words, and short numbers such as '87%' or '3:21'); drop OCR noise
-    from scenery, textures and HUD art."""
+    from scenery, textures and interface art."""
     t = text.strip()
     if len(t) < 3 or conf < 60:
         return False
@@ -114,12 +88,50 @@ def ocr_frame(frame: np.ndarray, lang: str = "eng") -> list[dict]:
             continue
         key = (d["block_num"][i], d["par_num"][i], d["line_num"][i])
         lines.setdefault(key, []).append((w, float(d["conf"][i]), d["top"][i], d["left"][i]))
+    fh, fw = frame.shape[:2]
     out = []
     for words in lines.values():
         words.sort(key=lambda x: x[3])
         text = " ".join(w for w, _, _, _ in words)
         conf = sum(c for _, c, _, _ in words) / len(words)
         if good_line(text, conf):
-            out.append({"text": text, "conf": round(conf), "y": int(min(t for _, _, t, _ in words))})
-    out.sort(key=lambda x: x["y"])
+            # x, y = top-left of the line as permille of the frame (0-1000), so positions compare across videos
+            out.append({"text": text, "conf": round(conf), "x": int(1000 * words[0][3] / fw),
+                        "y": int(1000 * min(t for _, _, t, _ in words) / fh)})
+    out.sort(key=lambda x: (x["y"], x["x"]))
     return out
+
+
+# ------------------------------------------------------------------------ what a reader should look at
+LOW_CONF = 72          # a line with average word confidence below this is flagged
+MATH_CHARS = set("∑∫≤≥≈≠±√∞∈∂∇⊂⊆∪∩∀∃∧∨→←⇒λμσπθΔΣΩαβγδεφψω^_{}[]<>=~")
+MATH_RE = re.compile(r"(Pr\s*\[|E\s*\[|Var\s*\[|\blog\b|\bexp\b|\\frac|\d\s*[=<>]\s*\w|\w\s*[=<>]{1,2}\s*\w+\s*[+\-*/]|[A-Za-z]\(\w+\)\s*[=<>+\-]|\|\s*\w+\s*\|)")
+
+
+def looks_mathy(text: str) -> bool:
+    """Formulas come out of OCR as bracket/operator soup: many operator and bracket characters
+    next to a few letters, or recognisable patterns such as Pr[...] and f(x) = ..."""
+    t = text.strip()
+    if MATH_RE.search(t):
+        return True
+    sym = sum(1 for c in t if c in MATH_CHARS or c in "+-*/=|\\")
+    return len(t) >= 6 and sym >= 3 and sym / len(t) >= 0.15
+
+
+def classify_text(lines: list[dict]) -> dict:
+    """Flags for one frame's OCR lines: ['math', 'dense', 'low_conf'] plus numbers.
+    A reader (an AI) should open the image for any flagged keyframe instead of trusting the text."""
+    if not lines:
+        return {"flags": [], "lines": 0, "chars": 0, "low_conf_share": 0.0}
+    n = len(lines)
+    chars = sum(len(x["text"]) for x in lines)
+    low = sum(1 for x in lines if x.get("conf", 100) < LOW_CONF)
+    mathy = sum(1 for x in lines if looks_mathy(x["text"]))
+    flags = []
+    if mathy >= 1 and (mathy >= 2 or mathy / n >= 0.2):
+        flags.append("math")
+    if n >= 12 or chars >= 400:
+        flags.append("dense")
+    if n >= 2 and low / n >= 0.3:
+        flags.append("low_conf")
+    return {"flags": flags, "lines": n, "chars": chars, "low_conf_share": round(low / n, 2), "math_lines": mathy}

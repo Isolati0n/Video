@@ -46,6 +46,7 @@ jobs:
       github.event_name != 'issue_comment' ||
       startsWith(github.event.comment.body, '/digest') ||
       startsWith(github.event.comment.body, '/hud') ||
+      startsWith(github.event.comment.body, '/set') ||
       startsWith(github.event.comment.body, '/recalibrate') ||
       startsWith(github.event.comment.body, '/ingest')
     runs-on: ubuntu-latest
@@ -89,7 +90,7 @@ jobs:
           ref: ${{ env.DEFAULT_BRANCH }}
       - uses: ./.github/actions/setup
         with:
-          apt: ffmpeg tesseract-ocr   # tesseract: calibration reads the on-screen life/mana numbers
+          apt: ffmpeg tesseract-ocr   # tesseract: profile calibration may use OCR
       - name: Already archived in the Release?
         id: plan
         run: python -m ytdigest.prepare plan "${{ needs.request.outputs.video_id }}" work

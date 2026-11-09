@@ -42,8 +42,8 @@ class MeleeProfile(Profile):
     dense_types = {"stock_lost", "percent_spike"}      # events that get dense frames on the contact sheets
     colors = {"stock_lost": (0, 0, 220), "percent_spike": (0, 165, 255)}
 
-    def suggest(self, frames):
-        # TODO: return 0..1 when the frames look like Melee (e.g. HUD layout at the bottom). Return 0.0
+    def detect(self, frames):
+        # TODO: return 0..1 when the frames look like Melee (e.g. the on-screen layout at the bottom). Return 0.0
         # when unsure: a wrong suggestion is worse than none, and a profile is never chosen silently.
         return 0.0
 

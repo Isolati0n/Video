@@ -18,7 +18,7 @@ from .common import GH, MAX_FPS, ROOT, digest_dir, gh_output, load_json, log, pa
 from .sheets import grid, label, save_jpeg, tile_text
 from .video import Archive
 
-MAX_FRAMES = 3000  # 2 minutes at 25 fps -> 750 sheets
+MAX_FRAMES = 3000  # frames per zoom (750 sheets)
 
 
 def frame_data(vid: str, ta: float, tb: float, afps: float) -> dict:
@@ -52,6 +52,7 @@ def main():
     arc = Archive(a.video_id, a.workdir, a.archive_dir)
     meta = load_json(digest_dir(a.video_id) / "meta.json", {}) or {}
     saved = videoconfig.load(a.video_id) or {}
+    zprof = profiles.get(saved.get("profile"))
     afps = float(meta.get("fps") or profiles.analysis_fps(arc.native_fps, profiles.get(saved.get("profile"))))
     explicit = bool(str(a.fps).strip())
     fps = max(0.1, min(float(MAX_FPS), float(a.fps))) if explicit else min(arc.native_fps, float(MAX_FPS))   # zoom ignores FPS_CAP: it is for looking closely
@@ -86,10 +87,7 @@ def main():
     for t, frame in arc.frames(ta, tb, fps):
         f = int(round(t * fps))
         rec = data.get(int(round(t * afps)), {})
-        extra = ""
-        if rec.get("life") is not None:
-            extra = f"  L{rec['life']:.0f} M{rec['mana']:.0f}"
-        txt = tile_text(t, f, fps=fps) + extra
+        txt = tile_text(t, f, fps=fps) + zprof.zoom_label(rec)
         batch.append((txt, label(frame, txt)))
         n += 1
         if len(batch) == 4:
@@ -99,7 +97,7 @@ def main():
         f"# Zoom {a.video_id} {a_s.strip()}-{b_s.strip()} at {fps:g} fps\n\n"
         f"{n} frames at full {arc.width}x{arc.height}, 2x2 per sheet, reading order left-right, top-bottom. "
         f"Labels: HH:MM:SS.ff (frame within the second at {fps:g} fps), f = frame number at {fps:g} fps, "
-        f"L/M = life/mana % from frames.jsonl.gz when available. Sheets are Release assets: "
+        f"{zprof.zoom_legend} Sheets are Release assets: "
         f"{asset_base}/sheet_NNNN.jpg\n\n"
         "| sheet | frames |\n|---|---|\n" + "\n".join(rows) + "\n")
 

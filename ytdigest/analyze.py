@@ -3,12 +3,12 @@
   python -m ytdigest.analyze <video_id> <start> <end> <outdir> [--archive-dir DIR] [--workdir DIR]
          [--profile NAME]
 
-The rate is the video's native fps (capped at 60), or the profile's own if it sets one (D2R: 25).
+The rate is the video's native fps (capped at 60), or the profile's own if it sets one.
 
 Writes into <outdir>:
   frames-<k0>.jsonl.gz   one JSON record per frame (generic fields below, plus the profile's extras)
-  text-<k0>.jsonl.gz     whole-frame OCR: {"t", "f", "lines": [{"text", "conf"}]}
-  thumbs/<frame>.jpg     640x360 candidates for the contact sheets (changed picture, or every 10 s)
+  text-<k0>.jsonl.gz     whole-frame OCR: {"t", "f", "lines": [{"text", "conf", "x", "y"}]}  (x, y: permille of the frame)
+  thumbs/<frame>.jpg     640x360 candidates for the contact sheets (changed picture, every 10 s, or an OCR frame)
 
 Generic record keys:
   f       frame number at the analysis rate (t = f / fps)
@@ -32,7 +32,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 
-from . import profiles, videoconfig
+from . import pip, profiles, videoconfig
 from .common import log
 from .ocr import ocr_frame
 from .video import Archive
@@ -85,6 +85,10 @@ def main():
     prof = profiles.get(a.profile or saved.get("profile") or "generic")
     cfg = saved.get("config") or {}
     arc = Archive(a.video_id, a.workdir, a.archive_dir)
+    hmask = saved.get("hash_mask")
+    mx0, my0, mx1, my1 = (None,) * 4
+    if hmask:   # webcam / picture-in-picture: ignored by the generic picture-change measures
+        mx0, my0, mx1, my1 = pip.mask_rect(hmask["rect"], SW, SH)
     fps = profiles.analysis_fps(arc.native_fps, prof)
     fps_i = max(1, int(round(fps)))
     if type(prof).analyzer is not profiles.Profile.analyzer and not cfg:
@@ -122,21 +126,27 @@ def main():
                 lines = fut.result()
                 if lines:
                     tout.write(json.dumps({"t": round(tt, 3), "f": kk,
-                                           "lines": [{"text": x["text"], "conf": x["conf"]} for x in lines]},
+                                           "lines": [{"text": x["text"], "conf": x["conf"], "x": x["x"], "y": x["y"]} for x in lines]},
                                           separators=(",", ":")) + "\n")
 
         for t, frame in arc.frames(a.start - pre, a.end, fps):
             k = int(round(t * fps))
             small = cv2.resize(frame, (SW, SH), interpolation=cv2.INTER_AREA)
-            gray = cv2.cvtColor(small, cv2.COLOR_BGR2GRAY)
-            hsv = cv2.cvtColor(small, cv2.COLOR_BGR2HSV)
+            gray = cv2.cvtColor(small, cv2.COLOR_BGR2GRAY)   # what profiles get (unmasked)
+            if mx0 is not None:
+                gsmall = small.copy()
+                gsmall[my0:my1, mx0:mx1] = 128
+                ggray = cv2.cvtColor(gsmall, cv2.COLOR_BGR2GRAY)
+            else:
+                gsmall, ggray = small, gray
+            hsv = cv2.cvtColor(gsmall, cv2.COLOR_BGR2HSV)
             hist = histo(hsv)
             if prev_gray is None:
                 motion, cut = None, False
             else:
-                motion = float(cv2.absdiff(gray, prev_gray).mean())
+                motion = float(cv2.absdiff(ggray, prev_gray).mean())
                 cut = bool(cv2.compareHist(prev_hist, hist, cv2.HISTCMP_BHATTACHARYYA) > 0.45)
-            prev_gray, prev_hist = gray, hist
+            prev_gray, prev_hist = ggray, hist
             rec = {"f": k, "t": round(k / fps, 3)}
             if an is not None:
                 an.process(frame, gray, k, t, rec)   # profile extras (also on the lead-in frame, to keep its state)
@@ -147,10 +157,10 @@ def main():
             if cut:
                 rec["cut"] = True
                 cut_since_thumb = True
-            ph = phash(gray)
+            ph = phash(ggray)
             rec["phash"] = ph
             rec["bright"] = round(bright, 1)
-            rec["sig"] = signature(small)
+            rec["sig"] = signature(gsmall)
 
             fut = None
             crops = rec.pop("_ocr_crops", None)
@@ -168,9 +178,13 @@ def main():
                                 [cv2.IMWRITE_JPEG_QUALITY, 88])
                     last_thumb_hash, last_thumb_sec, cut_since_thumb = h, sec, False
             if prof.generic_ocr and bright >= 14 and (new_sec or cut) and t - last_ocr_t >= OCR_MIN_GAP:
-                if last_ocr_gray is None or changed_blocks(gray, last_ocr_gray) >= 1:
+                if last_ocr_gray is None or changed_blocks(ggray, last_ocr_gray) >= 1:
                     text_pending.append((t, k, pool.submit(ocr_frame, frame.copy())))
-                    last_ocr_gray, last_ocr_t = gray, t
+                    tp = thumbs / f"{k:09d}.jpg"      # a text-driven keyframe needs an image at this frame
+                    if not tp.exists():
+                        cv2.imwrite(str(tp), cv2.resize(frame, (640, 360), interpolation=cv2.INTER_AREA),
+                                    [cv2.IMWRITE_JPEG_QUALITY, 88])
+                    last_ocr_gray, last_ocr_t = ggray, t
             pending.append((rec, fut))
             if len(pending) > 400:
                 flush(block=len(pending) > 2000)

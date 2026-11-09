@@ -80,7 +80,7 @@ def dedupe_text(entries: list[dict]) -> list[dict]:
     for e in entries:
         t = e["t"]
         recent = [(tt, k) for tt, k in recent if t - tt <= GP["text_recent_s"]]
-        new = []
+        new, new_conf = [], []
         for ln in e["lines"]:
             key = _norm(ln["text"])
             if len(key) < 3:
@@ -88,9 +88,10 @@ def dedupe_text(entries: list[dict]) -> list[dict]:
             if any(key == k or (len(key) >= 8 and (key in k or k in key)) or _similar(key, k) for _, k in recent):
                 continue
             new.append(ln["text"])
+            new_conf.append(ln.get("conf", 100))
             recent.append((t, key))
         if new:
-            out.append({"t": t, "f": e["f"], "new": new, "all": [ln["text"] for ln in e["lines"]]})
+            out.append({"t": t, "f": e["f"], "new": new, "conf": new_conf, "all": [ln["text"] for ln in e["lines"]]})
     return out
 
 

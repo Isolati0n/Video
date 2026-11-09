@@ -15,7 +15,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 
-from . import profiles, videoconfig
+from . import pip, profiles, videoconfig
 from .common import digest_dir, gh_output, log
 from .video import Archive
 
@@ -63,7 +63,18 @@ def main():
             res = prof.calibrate(arc, cfg, force=force, sets=a.set, samples=sample_frames(arc, 40, fps))
         if res is not None:
             cfg, status, image, comment = res.cfg, res.status, res.image, res.comment_md
-    videoconfig.save(a.video_id, name, cfg)
+    # generic: a moving corner region (webcam / picture-in-picture) is masked out of the picture-change measures
+    pip_note = ""
+    if saved.get("pip_checked") and not a.force:
+        mask = saved.get("hash_mask")
+    else:
+        mask = pip.detect(arc)
+        if mask:
+            r = mask["rect"]
+            pip_note = (f"ℹ️ Found a {mask['kind']} at x {r[0]:.0%}-{r[0] + r[2]:.0%}, y {r[1]:.0%}-{r[1] + r[3]:.0%} "
+                        "of the frame. It is ignored when deciding whether the picture changed (so a repeated slide "
+                        "is not split into several keyframes). The pixels are still in every frame and sheet.")
+    videoconfig.save(a.video_id, name, cfg, hash_mask=mask, pip_checked=True)
 
     out = digest_dir(a.video_id)
     out.mkdir(parents=True, exist_ok=True)
@@ -84,7 +95,7 @@ def main():
             suggestion = (f"💡 This video looks like **{p.title}** (confidence {conf:.0%}). It is being digested with "
                           f"the generic profile. To use the `{best}` profile ({p.description}) comment "
                           f"`/digest profile: {best}`.")
-    (a.workdir / "suggestion.md").write_text(suggestion)
+    (a.workdir / "suggestion.md").write_text("\n\n".join(x for x in (pip_note, suggestion) if x))
     log(f"profile={name} fps={fps:g} status={status} suggestion={'yes' if suggestion else 'no'}")
     gh_output(profile=name, analysis_fps=f"{fps:g}", status=status)
 

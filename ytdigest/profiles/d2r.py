@@ -18,6 +18,7 @@ from collections import Counter
 
 import cv2
 import numpy as np
+import pytesseract
 
 from ..common import hms, log
 from . import Analyzer, Calibration, Profile
@@ -365,6 +366,35 @@ def fit_curve(pairs: list[tuple[float, float]]) -> list[list[float]] | None:
     return [[round(x, 4), round(float(y), 2)] for x, y in zip(xs, ys)]
 
 
+# =============================================================================== on-screen numbers
+NUM_RE = re.compile(r"(\d{1,5})\s*/\s*(\d{1,5})")
+
+
+def read_orb_numbers(crop: np.ndarray) -> tuple[int, int] | None:
+    """'Life: 1551 / 7679' / 'Mana: 582 / 852' printed above the orbs (when the game shows them)
+    -> (current, maximum), or None. Used to calibrate and verify the orb readings.
+    Two thresholds are tried (fixed, then Otsu) because the text colour differs between setups."""
+    if crop.size == 0:
+        return None
+    g = cv2.resize(crop.max(axis=2), None, fx=4, fy=4, interpolation=cv2.INTER_CUBIC)
+    candidates = [cv2.threshold(g, 150, 255, cv2.THRESH_BINARY)[1],
+                  cv2.threshold(g, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]]
+    for bw in candidates:
+        try:
+            txt = pytesseract.image_to_string(
+                255 - bw, config="--oem 1 --psm 7 -c tessedit_char_whitelist=0123456789/:LifeMana ", timeout=3)
+        except Exception:
+            return None
+        m = NUM_RE.search(txt)
+        if m:
+            cur, mx = int(m.group(1)), int(m.group(2))
+            if 0 <= cur <= mx and mx > 0:
+                return cur, mx
+    return None
+
+
+
+
 # =============================================================================== calibration
 def apply_sets(cfg: dict, sets: list[str]) -> list[str]:
     changed = []
@@ -386,7 +416,6 @@ def orb_numbers_check(arc, cfg: dict, fps: float, n: int = 80) -> None:
     """Some D2R setups print 'Life: cur / max' above the orbs. If they are on screen, use them as
     ground truth: fit the raw-height -> value curve on half of the samples and report the error on
     the other half (held-out), then refit on all of them."""
-    from .. import ocr
     W, H = arc.width, arc.height
     reader = HudReader({**cfg, "curve": None, "hud_ref": None}, W, H)
     d = arc.duration
@@ -399,7 +428,7 @@ def orb_numbers_check(arc, cfg: dict, fps: float, n: int = 80) -> None:
         raw = {"life": reader.life.read(f)[0], "mana": reader.mana.read(f)[0]}
         for kind in rows:
             x0, y0, x1, y1 = number_box(cfg[kind], W, H)
-            got = ocr.read_orb_numbers(f[y0:y1, x0:x1])
+            got = read_orb_numbers(f[y0:y1, x0:x1])
             if got:
                 rows[kind].append((raw[kind], got[0], got[1]))
     notes, curves = cfg.setdefault("notes", {}), {}
@@ -746,7 +775,7 @@ class D2RProfile(Profile):
               "mana_refill": (255, 140, 40), "poisoned": (60, 255, 60), "area_change": (0, 220, 255),
               "off_hud": (128, 128, 128), "teleport": (255, 0, 255), "run_burst": (255, 128, 192)}
 
-    def suggest(self, frames):
+    def detect(self, frames):
         """Two stable white glare spots at the orb positions plus red/blue liquid next to them."""
         if len(frames) < 4:
             return 0.0
@@ -798,6 +827,11 @@ class D2RProfile(Profile):
         t, f = best
         img = annotate(f, cfg, f"{arc.vid} @ {hms(t)}  HUD calibration ({status})")
         return Calibration(cfg, status, img, calibration_comment(arc.vid, cfg))
+
+    def zoom_label(self, rec):
+        return f"  L{rec['life']:.0f} M{rec['mana']:.0f}" if rec.get("life") is not None else ""
+
+    zoom_legend = "L/M = life/mana % from frames.jsonl.gz when available."
 
     def analyzer(self, cfg, width, height, fps):
         return D2RAnalyzer(cfg, width, height, fps)

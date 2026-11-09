@@ -212,7 +212,7 @@ def fetch(vid: str, work: Path):
     dl = work / "dl"
     dl.mkdir(exist_ok=True)
     cap = None
-    if vid == SELFTEST_ID:  # offline self-test: synthetic clip with known orb values, no YouTube
+    if vid == SELFTEST_ID:  # offline self-test: a generated clip with known content, no YouTube
         secs = os.environ.get("SELFTEST_SECONDS", "90")
         subprocess.run([sys.executable, "tests/synthetic.py", str(dl / "syn"), secs], check=True)
         (dl / "syn" / f"{SELFTEST_ID}.part000.mp4").rename(dl / "src.mp4")

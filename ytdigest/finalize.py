@@ -20,8 +20,9 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import cv2
+import numpy as np
 
-from . import audio, keyframes, profiles, videoconfig
+from . import audio, furniture, keyframes, ocr as ocrmod, profiles, videoconfig
 from . import events as E
 from .common import GH, digest_dir, hms, load_json, log, save_json
 from .index_repo import repo_base
@@ -94,6 +95,11 @@ def main():
     recs = E.load_frames(merged)
     text = E.load_text(list(a.chunks_dir.rglob("text-*.jsonl.gz")))
     log(f"merged {len(parts)} chunks, {len(recs)} frames, {len(text)} OCR frames with text")
+    n_text_raw = len(text)
+    furn: list[dict] = []
+    if text:  # menu bars, watermarks and other persistent overlays are removed (and listed in ocr.json)
+        text, furn = furniture.suppress(text, arc.duration)
+        log(f"OCR furniture: {len(furn)} persistent lines suppressed; {len(text)} of {n_text_raw} OCR frames still have text")
 
     # --- events: generic core + profile rules
     a_events, a_stats = audio.audio_events(arc, fps)
@@ -115,15 +121,34 @@ def main():
     segs = tr["segments"]
 
     # --- on-screen text (timestamped, de-duplicated)
-    if not text:  # profile-region OCR (e.g. d2r chat / centre / area name) -> same shape
-        text = [{"t": r["t"], "f": r["f"], "lines": [{"text": ln, "conf": 0} for v in r["ocr"].values() for ln in v.split(" | ")]}
+    if not text:  # a profile that reads its own text regions instead of whole-frame OCR -> same shape
+        text = [{"t": r["t"], "f": r["f"], "lines": [{"text": ln, "conf": 100} for v in r["ocr"].values() for ln in v.split(" | ")]}
                 for r in recs if r.get("ocr")]
     deduped = E.dedupe_text(text)
+    low_n = 0
+
+    def mark(d):
+        nonlocal low_n
+        parts = []
+        for txt, cf in zip(d["new"], d["conf"]):
+            if cf < ocrmod.LOW_CONF:
+                low_n += 1
+                parts.append("[?] " + txt)
+            else:
+                parts.append(txt)
+        return " | ".join(parts)
+
     (out / "ocr.md").write_text(
         f"# On-screen text: {title}\n\nWhole-frame OCR about once a second and on every scene change; a line is listed "
-        "once, when it first appears. OCR makes mistakes (see README, *What this can and cannot see*).\n\n"
-        + "\n".join(f"[{hms(d['t'])}] " + " | ".join(d["new"]) for d in deduped) + "\n")
-    save_json(out / "ocr.json", [{"t": d["t"], "f": d["f"], "new": d["new"]} for d in deduped])
+        "once, when it first appears. `[?]` marks a low-confidence line (average word confidence below "
+        f"{ocrmod.LOW_CONF}): treat it, and any formula, as a hint and look at the image. Text that sits at the same place "
+        f"through the whole video (menu bars, watermarks, overlays: {len(furn)} lines here) is left out; see `ocr.json`. "
+        "OCR makes mistakes (see README, *What this can and cannot see*).\n\n"
+        + "\n".join(f"[{hms(d['t'])}] " + mark(d) for d in deduped) + "\n")
+    save_json(out / "ocr.json", {"furniture_suppressed": furn,
+                                 "entries": [{"t": d["t"], "f": d["f"], "new": d["new"], "conf": d["conf"],
+                                              "low": [x for x, cf in zip(d["new"], d["conf"]) if cf < ocrmod.LOW_CONF]}
+                                             for d in deduped]})
 
     # --- keyframes (scene detection + perceptual-hash dedupe) and dense frames around events
     cands = []
@@ -133,9 +158,15 @@ def main():
     cands.sort(key=lambda c: c["t"])
     phash_by_f = {r["f"]: r["phash"] for r in recs}
     cut_times = [r["t"] for r in recs if r.get("cut")]
-    keys = keyframes.select(cands, phash_by_f, cut_times)
+    motions = [r["motion"] for r in recs if r.get("motion") is not None]
+    slide_like = bool(motions) and float(np.median(motions)) < keyframes.SLIDE_LIKE_MOTION and bool(text)
+    tindex = keyframes.TextIndex(text)
+    thumb_frames = {c["f"] for c in cands}
+    text_kf = keyframes.text_keyframes(text, thumb_frames, arc.duration) if slide_like else []
+    keys = keyframes.select(cands, phash_by_f, cut_times, tindex, text_kf, slide_like)
     dense_ev = keyframes.dense_events(ev, prof.dense_types, arc.duration)
-    log(f"keyframes: {len(keys)} of {len(cands)} candidates; dense frames around {len(dense_ev)} of {len(ev)} events")
+    log(f"keyframes: {len(keys)} of {len(cands)} candidates ({sum(1 for k in keys if k['reason'] == 'text')} text-driven, "
+        f"slide-like={slide_like}); dense frames around {len(dense_ev)} of {len(ev)} events")
     evdir = a.workdir / "event_frames"
     evdir.mkdir(parents=True, exist_ok=True)
     tiles = [(c["t"], 0, None, c["f"], c["path"]) for c in keys]
@@ -148,6 +179,14 @@ def main():
                 cv2.imwrite(str(p), fr, [cv2.IMWRITE_JPEG_QUALITY, 90])
             tiles.append((t, 1, e, f, p))
     tiles.sort(key=lambda x: (x[0], x[1]))
+
+    # flags for the reader: which keyframes carry formulas, dense text or shaky OCR
+    kf_by_f = {}
+    for c in keys:
+        e = tindex.at(c["t"])
+        cl = ocrmod.classify_text(e["lines"]) if e else {"flags": [], "lines": 0, "chars": 0, "low_conf_share": 0.0}
+        kf_by_f[c["f"]] = {"t": round(c["t"], 2), "f": c["f"], "reason": c["reason"], "flags": cl["flags"],
+                           "ocr_lines": cl["lines"], "ocr_chars": cl["chars"], "low_conf_share": cl["low_conf_share"]}
 
     # --- contact sheets: 3x3 tiles of 640x360
     sheets_dir = a.workdir / "sheets_out"
@@ -176,6 +215,9 @@ def main():
         sizes.append(save_jpeg(grid(imgs, 3, 3), sheets_dir / name))
         files.append(sheets_dir / name)
         sheet_rows.append((name, batch[0][0], batch[-1][0]))
+        for pos, (t, is_ev, e, f, src) in enumerate(batch):
+            if not is_ev and f in kf_by_f:
+                kf_by_f[f]["sheet"], kf_by_f[f]["tile"] = name, pos + 1
 
     # --- tiny thumbnails that stay in git (regular keyframes only)
     tdir = out / "thumbs"
@@ -228,20 +270,25 @@ def main():
            f"- Profile: `{prof.name}` ({prof.title}); analysed at {fps:g} fps (video is {arc.native_fps:g} fps)",
            f"- Archive: GitHub Release `{vid}` (720p H.264 parts + parts.json)",
            "- Files: [transcript.md](transcript.md), [ocr.md](ocr.md) (on-screen text), [events.md](events.md), `events.json`, "
-           "`frames.jsonl.gz` (one JSON per frame), `thumbs/overview_*.jpg` (tiny thumbnails, at most 360 per hour of video)"
+           "`frames.jsonl.gz` (one JSON per frame), `thumbs/overview_*.jpg` (tiny thumbnails, at most 360 per hour of video), `keyframes.json` (every keyframe with its reason and flags)"
            + (", [calibration.png](calibration.png)" if (out / "calibration.png").exists() else ""),
            f"- Sheets: {len(sheet_rows)} contact sheets (3x3 tiles of 640x360; white label = keyframe chosen by scene "
            "change / picture change, coloured border + yellow label = dense frames around an event with HH:MM:SS.ff and frame "
            f"number f). Stored in {sheets_where}",
            "- Events: " + ", ".join(f"{k}={v}" for k, v in sorted(counts.items())),
            "- Zoom: comment `/zoom " + vid + " H:MM:SS-H:MM:SS [fps]` on the issue for every frame of a range (native rate by default).",
-           "", "| sheet | time range | events | on-screen text | transcript |", "|---|---|---|---|---|"]
+           "- **Look at the image** column: keyframes whose OCR is a hint, not the content (`math` = formulas, `dense` = a lot of "
+           "text, `low_conf` = shaky OCR). Open that tile instead of trusting `ocr.md`; flags are also in `keyframes.json`.",
+           "", "| sheet | time range | events | on-screen text | look at the image | transcript |", "|---|---|---|---|---|---|"]
     rows = []
     for name, ta, tb in sheet_rows:
         evs = [e for e in ev if ta <= e["t"] <= tb and e["type"] != "text_change"][:5]
         evtxt = "<br>".join(f"{hms(e['t'])} {e['type']}: {e['desc'][:70]}" for e in evs).replace("|", "/")
+        look = "<br>".join(f"{hms(k['t'])} (tile {k['tile']}): {', '.join(k['flags'])}" for k in kf_by_f.values()
+                           if k.get("sheet") == name and k["flags"])
         rows.append(f"| [{name}]({sheet_url(name)}) | {hms(ta)}-{hms(tb)} | {evtxt} | "
-                    f"{ocr_excerpt(ta, tb).replace('|', '/')} | {excerpt(ta, tb).replace('|', '/')} |")
+                    f"{ocr_excerpt(ta, tb).replace('|', '/')} | {look} | {excerpt(ta, tb).replace('|', '/')} |")
+    save_json(out / "keyframes.json", sorted(kf_by_f.values(), key=lambda k: k["t"]))
     (out / "index.md").write_text("\n".join(hdr + rows) + "\n")
 
     git_bytes = sum(p.stat().st_size for p in out.rglob("*") if p.is_file() and "sheets" not in p.relative_to(out).parts)
@@ -252,7 +299,10 @@ def main():
     summary = {"video_id": vid, "title": title, "profile": prof.name, "fps": fps, "native_fps": arc.native_fps,
                "duration_s": round(dur, 1), "frames": len(recs), "events": len(ev), "event_counts": counts,
                "events_by_source": event_sources, "keyframes": len(keys), "keyframe_candidates": len(cands),
-               "dense_events": len(dense_ev), "sheets": len(sheet_rows), "max_sheet_bytes": max(sizes) if sizes else 0,
+               "dense_events": len(dense_ev), "text_keyframes": sum(1 for k in keys if k["reason"] == "text"),
+               "slide_like": slide_like, "ocr_furniture_lines": len(furn), "ocr_low_conf_lines": low_n,
+               "flagged_keyframes": sum(1 for k in kf_by_f.values() if k["flags"]),
+               "hash_mask": (saved.get("hash_mask") or {}).get("rect"), "sheets": len(sheet_rows), "max_sheet_bytes": max(sizes) if sizes else 0,
                "sheet_bytes_total": sum(sizes), "git_bytes": git_bytes, "transcript_lines": len(segs),
                "transcript_source": tr.get("source"), "ocr_entries": len(deduped), "stats": stats, "runtime_s": round(runtime)}
     save_json(out / "summary.json", summary)

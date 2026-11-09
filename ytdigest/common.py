@@ -36,12 +36,14 @@ def parse_video_id(text: str) -> str | None:
     return m.group(1) if m else None
 
 
-def hms(t: float, frac: bool = False, fps: float = 25) -> str:
+def hms(t: float, frac: bool = False, fps: float | None = None) -> str:
     t = max(0.0, t)
     h, rem = divmod(int(t), 3600)
     m, s = divmod(rem, 60)
     out = f"{h:02d}:{m:02d}:{s:02d}"
     if frac:
+        if not fps:
+            raise ValueError("hms(frac=True) needs the frame rate")
         out += f".{int(round((t - int(t)) * fps)):02d}f"  # frame within second
     return out
 

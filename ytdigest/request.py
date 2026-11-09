@@ -4,7 +4,8 @@ Digest triggers
   - issue labeled "digest"              -> YouTube URL from the issue body (or title); an optional line
                                            "profile: d2r" in the body picks a profile (default: generic)
   - comment "/digest [url] [profile: x]" -> (re)run; reuses the Release archive if present
-  - comment "/hud <id> life=x,y,w,h ..." -> set a profile's calibration values and re-run the analysis
+  - comment "/set <id> key=value ..."    -> set the video's profile calibration values (keys belong to the profile;
+                                           "/hud" is an alias) and re-run the analysis
   - comment "/recalibrate <id>"          -> redo the profile's calibration and re-run the analysis
   - comment "/ingest <release-tag | file-url> [as <name>] [profile: x]"
                                          -> digest a file you uploaded to a Release (phone) or a direct file URL
@@ -98,19 +99,20 @@ def main():
         text = c.get("body") or ""
         words = (text.strip().splitlines()[0] if text.strip() else "").split()
         cmd = words[0].lower() if words else ""
-        prof = find_profile(text, body if cmd in ("/digest", "/hud", "/recalibrate") else "")
-        if kind == "digest" and cmd in ("/digest", "/hud", "/recalibrate"):
+        prof = find_profile(text, body if cmd in ("/digest", "/hud", "/set", "/recalibrate") else "")
+        if kind == "digest" and cmd in ("/digest", "/hud", "/set", "/recalibrate"):
             arg = words[1] if len(words) > 1 else ""
             tgt = find_target(arg, body, issue.get("title"))
             if not tgt and arg and SAFE_ID.fullmatch(arg) and cmd != "/digest":
-                tgt = arg   # /hud and /recalibrate also accept the id of an ingested file
+                tgt = arg   # /set and /recalibrate also accept the id of an ingested file
             out.update(run="true" if tgt else "false", target=tgt or "", mode=cmd[1:], profile=prof)
-            if cmd == "/hud":
+            if cmd in ("/hud", "/set"):
                 sets = [w for w in words[2:] if "=" in w]
                 out["sets"] = " ".join(sets)
                 if not sets:
-                    out.update(run="false", error="Usage: /hud <video_id> life=x,y,w,h mana=x,y,w,h "
-                               "[skills=..] [chat=..] [center=..] [top_right=..] [full_life=0.9] (percent of frame; d2r profile)")
+                    out.update(run="false", error="Usage: /set <video_id> key=value [key=value ...]. The keys belong to the "
+                               "video's profile (see ytdigest/profiles/README.md and the profile's own docs); the generic "
+                               "profile has none.")
             if cmd == "/recalibrate":
                 out["force"] = "true"
             if not tgt:
@@ -143,8 +145,8 @@ def main():
     mode = out["mode"]
     t = out.get("target", "")
     vid = (parse_video_id(t) or (t if SAFE_ID.fullmatch(t or "") else "")) if mode != "ingest" else t
-    if mode in ("hud", "recalibrate", "zoom", "delete", "digest", "label", "dispatch"):
-        vid = parse_video_id(t) or (t if SAFE_ID.fullmatch(t or "") and mode in ("hud", "recalibrate", "zoom", "delete") else "")
+    if mode in ("hud", "set", "recalibrate", "zoom", "delete", "digest", "label", "dispatch"):
+        vid = parse_video_id(t) or (t if SAFE_ID.fullmatch(t or "") and mode in ("hud", "set", "recalibrate", "zoom", "delete") else "")
     out["video_id"] = vid
     if out["run"] == "true" and not vid:
         out.update(run="false", error=f"Could not read a video id from {t!r}")

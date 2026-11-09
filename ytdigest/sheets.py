@@ -44,9 +44,11 @@ def grid(tiles: list[np.ndarray], cols: int, rows: int) -> np.ndarray:
     return out
 
 
-def tile_text(t: float, f: int | None = None, tag: str = "", fps: float = 25) -> str:
+def tile_text(t: float, f: int | None = None, tag: str = "", fps: float | None = None) -> str:
     """HH:MM:SS.ff fN: ff = frame within the second at the analysis rate, N = frame number."""
     s = hms(t)
     if f is not None:
+        if not fps:
+            raise ValueError("tile_text with a frame number needs the frame rate")
         s += f".{f % max(1, int(round(fps))):02d} f{f}"
     return s + (f"  {tag}" if tag else "")

@@ -3,9 +3,13 @@
 The core analyses EVERY video the same way (native fps, motion, cuts, hashes, whole-frame OCR,
 generic events). A profile adds three optional things:
 
-  1. calibration     find regions on screen once per video (e.g. the D2R life/mana orbs)
-  2. frame analyzer  extra per-frame fields (e.g. life %, mana %), computed while the frames stream by
+  1. calibration     find regions on screen once per video (e.g. where a health bar is)
+  2. frame analyzer  extra per-frame fields (e.g. a health percentage), computed while the frames stream by
   3. event rules     extra events derived from the stored frames
+
+Every profile also exposes a `detect(frames)` detector: when a video is digested with the generic profile,
+all registered detectors look at a few sample frames and any that recognise the content are suggested in the
+issue ("this looks like ..."). A profile is never selected silently.
 
 See profiles/README.md for how to add one. A module in this folder is picked up automatically when
 its name does not start with an underscore and it defines `PROFILE`.
@@ -50,9 +54,10 @@ class Profile:
     colors: dict[str, tuple] = {}     # event type -> BGR border colour on contact sheets
 
     # -- optional hooks -------------------------------------------------------------------------
-    def suggest(self, frames: list[np.ndarray]) -> float:
-        """0..1: how much do these sample frames look like this profile's content? Used only to
-        SUGGEST a profile in the issue; a profile is never selected silently."""
+    def detect(self, frames: list[np.ndarray]) -> float:
+        """The profile's detector: 0..1, how much do these sample frames look like this profile's content?
+        Used only to SUGGEST a profile in the issue. Return 0.0 when unsure: a wrong suggestion is
+        worse than none."""
         return 0.0
 
     def calibrate(self, arc, cfg: dict | None, *, force: bool = False, sets: list[str] | None = None,
@@ -64,6 +69,12 @@ class Profile:
 
     def derive_events(self, recs: list[dict], fps: float, cfg: dict) -> tuple[list[dict], dict]:
         return [], {}
+
+    def zoom_label(self, rec: dict) -> str:
+        """Short text added to each frame label in /zoom sheets, from the stored per-frame record."""
+        return ""
+
+    zoom_legend = ""   # one sentence explaining zoom_label, shown in the zoom index
 
     def events_note(self) -> str:
         return ""
@@ -109,5 +120,12 @@ def get(name: str | None) -> Profile:
 
 def suggestions(frames: list[np.ndarray], exclude: str = "generic") -> list[tuple[str, float]]:
     _load_all()
-    out = [(n, p.suggest(frames)) for n, p in _REGISTRY.items() if n != exclude]
+    out = []
+    for n, p in _REGISTRY.items():
+        if n == exclude:
+            continue
+        try:
+            out.append((n, float(p.detect(frames))))
+        except Exception as e:  # a broken detector must not break a digest
+            print(f"detector of profile {n} failed: {e}", file=__import__("sys").stderr)
     return sorted([(n, c) for n, c in out if c >= 0.5], key=lambda x: -x[1])

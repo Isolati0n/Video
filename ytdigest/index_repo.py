@@ -20,7 +20,7 @@ def repo_base() -> tuple[str, str, str]:
         slug = slug or url.removesuffix(".git").split("github.com")[-1].lstrip(":/")
         branch = branch or subprocess.check_output(["git", "-C", str(ROOT), "rev-parse", "--abbrev-ref", "HEAD"],
                                                    text=True).strip()
-    return slug, branch, f"https://raw.githubusercontent.com/{slug}/{branch}"
+    return slug, branch, f"https://raw.githubusercontent.com/{slug}/HEAD"   # HEAD = the default branch, so links survive a rename
 
 
 def build() -> str:

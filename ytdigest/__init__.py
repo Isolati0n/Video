@@ -1,1 +1,1 @@
-"""yt-digest: turn long D2R PvP videos into data an AI can analyse."""
+"""yt-digest: turn any video into data an AI can read (transcript, on-screen text, events, frames, contact sheets)."""
