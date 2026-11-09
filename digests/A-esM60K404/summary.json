@@ -1,9 +1,12 @@
 {
   "video_id": "A-esM60K404",
   "title": "NECROMANCER vs DRUID \u2014 The Most Brutal PvP Matchup? | D2R  -   Bulk duels",
+  "profile": "d2r",
+  "fps": 25.0,
+  "native_fps": 30.0,
   "duration_s": 3419.3,
   "frames": 85482,
-  "events": 1244,
+  "events": 1274,
   "event_counts": {
     "death": 21,
     "life_refill": 33,
@@ -12,18 +15,40 @@
     "run_burst": 125,
     "life_drop": 100,
     "mana_refill": 177,
+    "loud_peak": 30,
     "area_change": 43,
     "poisoned": 17
   },
-  "sheets": 802,
-  "tiles_skipped_static": 94,
-  "max_sheet_bytes": 304965,
-  "transcript_lines": 67,
+  "events_by_source": {
+    "d2r": 1244,
+    "generic": 30
+  },
+  "keyframes": 1612,
+  "keyframe_candidates": 3241,
+  "dense_events": 240,
+  "sheets": 286,
+  "max_sheet_bytes": 324209,
+  "sheet_bytes_total": 47794283,
+  "git_bytes": 3581481,
+  "transcript_lines": 66,
   "transcript_source": "faster-whisper small int8 (language: fr)",
+  "ocr_entries": 405,
   "stats": {
+    "motion_median": 0.73,
+    "motion_threshold": 10.4,
+    "static_seconds": 0.0,
+    "ocr_runs_with_text": 0,
+    "ocr_new_text_entries": 0,
+    "ocr_lines_unique": 0,
+    "frames": 85482,
+    "cuts": 67,
+    "black_frames": 241,
+    "audio_median_db": -30.7,
+    "audio_max_db": -10.9,
+    "silence_seconds": 0.0,
+    "loud_peaks": 30,
     "shift_median_px": 0.6,
     "shift_p99_px": 60.0,
-    "frames": 85482,
     "game_frames": 84483,
     "life_median": 93.8,
     "mana_median": 88.4,
@@ -31,5 +56,5 @@
     "poison_frames": 580,
     "ocr_samples_with_text": 484
   },
-  "runtime_s": 788
+  "runtime_s": 427
 }

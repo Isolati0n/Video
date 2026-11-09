@@ -1,6 +1,6 @@
 # Events: NECROMANCER vs DRUID — The Most Brutal PvP Matchup? | D2R  -   Bulk duels
 
-Derived by code from `frames.jsonl.gz` (25 fps). Orb values are estimates from orb fill; '?' marks guesses about the cause.
+Derived by code from `frames.jsonl.gz` (25 fps, profile `d2r`), the whole-frame OCR and the audio track. '?' marks guesses about the cause. 
 
 | type | count |
 |---|---|
@@ -8,1257 +8,1288 @@ Derived by code from `frames.jsonl.gz` (25 fps). Orb values are estimates from o
 | death | 21 |
 | life_drop | 100 |
 | life_refill | 33 |
+| loud_peak | 30 |
 | mana_refill | 177 |
 | poisoned | 17 |
 | run_burst | 125 |
 | teleport | 456 |
 | text | 272 |
 
-Stats: shift_median_px=0.6, shift_p99_px=60.0, frames=85482, game_frames=84483, life_median=93.8, mana_median=88.4, life_min=0.0, poison_frames=580, ocr_samples_with_text=484
+Stats: motion_median=0.73, motion_threshold=10.4, static_seconds=0.0, ocr_runs_with_text=0, ocr_new_text_entries=0, ocr_lines_unique=0, frames=85482, cuts=67, black_frames=241, audio_median_db=-30.7, audio_max_db=-10.9, silence_seconds=0.0, loud_peaks=30, shift_median_px=0.6, shift_p99_px=60.0, game_frames=84483, life_median=93.8, mana_median=88.4, life_min=0.0, poison_frames=580, ocr_samples_with_text=484
 
 ## Timeline
 
-- [00:00:00] (f0) **death**: Death? life orb empty for >= 0.4s
-- [00:00:00] (f15) **life_refill**: Life refill +99% (0% -> 99%) in 0.40s (rejuvenation potion?)
-- [00:00:05] (f138) **teleport**: 2 view jumps in 0.0s (teleport chain?)
-- [00:00:06] (f150) **text**: Text (center): Super Mana / MANA Pati
-- [00:00:07] (f175) **text**: Text (center): Surek MANA
-- [00:00:08] (f200) **text**: Text (center): Super / MANA P&TION
-- [00:00:08] (f207) **run_burst**: Fast movement 1.2s, avg camera shift 2.6 px/frame (~264 px/s at 720p; run/whirlwind/charge?)
-- [00:00:09] (f236) **life_drop**: Life drop -99% (99% -> 0%) in 0.04s
-- [00:00:10] (f254) **life_refill**: Life refill +99% (0% -> 99%) in 0.36s (rejuvenation potion?)
-- [00:00:29] (f740) **run_burst**: Fast movement 1.0s, avg camera shift 1.7 px/frame (~173 px/s at 720p; run/whirlwind/charge?)
-- [00:00:30] (f767) **teleport**: View jump in one frame (motion 9, match 0.01): teleport?
-- [00:00:35] (f875) **text**: Text (chat): Super Mana P
-- [00:00:35] (f875) **text**: Text (center): Mana PaTian / Super Mana Parion ff
-- [00:00:37] (f927) **mana_refill**: Mana refill +63% (33% -> 96%) in 2.92s (mana/rejuv potion?)
-- [00:00:40] (f1010) **teleport**: View jump in one frame (motion 6, match 0.16): teleport?
-- [00:00:43] (f1089) **life_drop**: Life drop -23% (100% -> 77%) in 0.04s
-- [00:00:45] (f1133) **teleport**: 2 view jumps in 1.0s (teleport chain?)
-- [00:00:51] (f1293) **teleport**: View jump in one frame (motion 8, match 0.12): teleport?
-- [00:00:54] (f1366) **teleport**: View jump in one frame (motion 13, match 0.01): teleport?
-- [00:00:57] (f1428) **teleport**: View jump in one frame (motion 11, match 0.02): teleport?
-- [00:01:08] (f1713) **mana_refill**: Mana refill +13% (46% -> 58%) in 0.08s (mana/rejuv potion?)
-- [00:01:09] (f1749) **teleport**: View jump in one frame (motion 9, match -0.12): teleport?
-- [00:01:10] (f1760) **life_drop**: Life drop -23% (65% -> 42%) in 0.04s
-- [00:01:22] (f2052) **teleport**: 2 view jumps in 1.4s (teleport chain?)
-- [00:01:26] (f2168) **teleport**: View jump in one frame (motion 12, match 0.03): teleport?
-- [00:01:35] (f2392) **mana_refill**: Mana refill +13% (39% -> 52%) in 0.12s (mana/rejuv potion?)
-- [00:01:36] (f2423) **mana_refill**: Mana refill +15% (58% -> 74%) in 0.40s (mana/rejuv potion?)
-- [00:01:40] (f2509) **teleport**: 3 view jumps in 1.4s (teleport chain?)
-- [00:01:43] (f2584) **teleport**: View jump in one frame (motion 8, match 0.06): teleport?
-- [00:01:51] (f2793) **mana_refill**: Mana refill +13% (46% -> 58%) in 0.04s (mana/rejuv potion?)
-- [00:01:52] (f2813) **mana_refill**: Mana refill +21% (46% -> 67%) in 0.52s (mana/rejuv potion?)
-- [00:01:53] (f2825) **teleport**: View jump in one frame (motion 11, match 0.14): teleport?
-- [00:01:54] (f2873) **teleport**: 2 view jumps in 0.4s (teleport chain?)
-- [00:01:57] (f2929) **life_refill**: Life refill +66% (32% -> 99%) in 0.12s (rejuvenation potion?)
-- [00:01:58] (f2950) **text**: Text (center): per Mana
-- [00:02:04] (f3106) **run_burst**: Fast movement 0.8s, avg camera shift 2.5 px/frame (~251 px/s at 720p; run/whirlwind/charge?)
-- [00:02:07] (f3175) **text**: Text (top_right): SKILL TREE |
-- [00:02:08] (f3208) **teleport**: View jump in one frame (motion 8, match 0.03): teleport?
-- [00:02:11] (f3288) **teleport**: View jump in one frame (motion 7, match 0.19): teleport?
-- [00:02:14] (f3351) **teleport**: 2 view jumps in 1.1s (teleport chain?)
-- [00:02:33] (f3827) **mana_refill**: Mana refill +39% (26% -> 65%) in 0.48s (mana/rejuv potion?)
-- [00:02:34] (f3867) **mana_refill**: Mana refill +26% (39% -> 65%) in 0.16s (mana/rejuv potion?)
-- [00:02:35] (f3888) **teleport**: View jump in one frame (motion 12, match 0.08): teleport?
-- [00:02:38] (f3951) **life_drop**: Life drop -23% (100% -> 77%) in 0.04s
-- [00:02:38] (f3962) **mana_refill**: Mana refill +14% (79% -> 93%) in 0.44s (mana/rejuv potion?)
-- [00:02:38] (f3963) **teleport**: View jump in one frame (motion 11, match 0.15): teleport?
-- [00:02:42] (f4068) **teleport**: View jump in one frame (motion 6, match 0.12): teleport?
-- [00:02:46] (f4151) **teleport**: View jump in one frame (motion 12, match 0.00): teleport?
-- [00:02:50] (f4260) **teleport**: 2 view jumps in 0.3s (teleport chain?)
-- [00:02:57] (f4433) **teleport**: 2 view jumps in 0.3s (teleport chain?)
-- [00:02:58] (f4457) **mana_refill**: Mana refill +19% (39% -> 58%) in 0.52s (mana/rejuv potion?)
-- [00:02:59] (f4489) **life_drop**: Life drop -25% (70% -> 45%) in 0.04s
-- [00:03:03] (f4592) **teleport**: View jump in one frame (motion 11, match -0.06): teleport?
-- [00:03:08] (f4708) **life_drop**: Life drop -15% (39% -> 24%) in 0.04s
-- [00:03:08] (f4720) **life_drop**: Life drop -24% (24% -> 0%) in 0.60s
-- [00:03:08] (f4723) **teleport**: View jump in one frame (motion 6, match -0.04): teleport?
-- [00:03:09] (f4728) **death**: Death? life orb empty for >= 0.4s
-- [00:03:14] (f4858) **teleport**: View jump in one frame (motion 6, match 0.20): teleport?
-- [00:03:16] (f4906) **run_burst**: Fast movement 0.9s, avg camera shift 2.3 px/frame (~228 px/s at 720p; run/whirlwind/charge?)
-- [00:03:18] (f4951) **life_refill**: Life refill +99% (0% -> 99%) in 0.04s (rejuvenation potion?)
-- [00:03:19] (f4998) **teleport**: View jump in one frame (motion 7, match 0.19): teleport?
-- [00:03:26] (f5150) **text**: Text (center): Nw see
-- [00:03:28] (f5213) **teleport**: View jump in one frame (motion 6, match -0.11): teleport?
-- [00:03:34] (f5351) **mana_refill**: Mana refill +27% (31% -> 58%) in 0.04s (mana/rejuv potion?)
-- [00:03:34] (f5372) **mana_refill**: Mana refill +13% (52% -> 65%) in 0.24s (mana/rejuv potion?)
-- [00:03:34] (f5372) **teleport**: 2 view jumps in 0.1s (teleport chain?)
-- [00:03:39] (f5483) **teleport**: View jump in one frame (motion 13, match -0.05): teleport?
-- [00:03:42] (f5551) **run_burst**: Fast movement 1.6s, avg camera shift 1.9 px/frame (~186 px/s at 720p; run/whirlwind/charge?)
-- [00:03:52] (f5813) **teleport**: View jump in one frame (motion 12, match -0.02): teleport?
-- [00:03:56] (f5900) **text**: Text (chat): HEALTH SHRINE
-- [00:03:56] (f5918) **teleport**: View jump in one frame (motion 14, match -0.01): teleport?
-- [00:04:00] (f6012) **life_refill**: Life refill +23% (77% -> 100%) in 0.04s (rejuvenation potion?)
-- [00:04:00] (f6012) **mana_refill**: Mana refill +22% (74% -> 96%) in 0.28s (mana/rejuv potion?)
-- [00:04:04] (f6113) **teleport**: View jump in one frame (motion 6, match 0.20): teleport?
-- [00:04:04] (f6121) **run_burst**: Fast movement 1.2s, avg camera shift 2.5 px/frame (~250 px/s at 720p; run/whirlwind/charge?)
-- [00:04:08] (f6213) **teleport**: 2 view jumps in 0.1s (teleport chain?)
-- [00:04:23] (f6598) **teleport**: 2 view jumps in 0.0s (teleport chain?)
-- [00:04:28] (f6703) **life_drop**: Life drop -88% (100% -> 12%) in 0.04s
-- [00:04:28] (f6704) **teleport**: View jump in one frame (motion 21, match -0.08): teleport?
-- [00:04:29] (f6725) **text**: Text (chat): Featured
-- [00:04:29] (f6725) **text**: Text (center): Crush darkness in Ladder Season 15, now \ / live Ni
-- [00:04:30] (f6758) **life_refill**: Life refill +86% (12% -> 99%) in 0.04s (rejuvenation potion?)
-- [00:04:30] (f6758) **mana_refill**: Mana refill +90% (3% -> 93%) in 0.04s (mana/rejuv potion?)
-- [00:04:30] (f6759) **teleport**: View jump in one frame (motion 22, match 0.04): teleport?
-- [00:04:30] (f6761) **run_burst**: Fast movement 1.0s, avg camera shift 1.8 px/frame (~183 px/s at 720p; run/whirlwind/charge?)
-- [00:04:31] (f6799) **life_drop**: Life drop -99% (99% -> 0%) in 0.36s
-- [00:04:32] (f6808) **death**: Death? life orb empty for >= 0.4s
-- [00:04:32] (f6822) **life_refill**: Life refill +99% (0% -> 99%) in 0.48s (rejuvenation potion?)
-- [00:04:43] (f7076) **teleport**: 2 view jumps in 0.3s (teleport chain?)
-- [00:04:45] (f7130) **teleport**: 2 view jumps in 0.3s (teleport chain?)
-- [00:04:51] (f7275) **text**: Text (top_right): SKILL TREE ‘ |
-- [00:04:55] (f7375) **teleport**: View jump in one frame (motion 12, match 0.03): teleport?
-- [00:04:59] (f7477) **run_burst**: Fast movement 1.1s, avg camera shift 1.6 px/frame (~159 px/s at 720p; run/whirlwind/charge?)
-- [00:05:01] (f7544) **life_drop**: Life drop -17% (99% -> 82%) in 0.04s
-- [00:05:02] (f7554) **life_drop**: Life drop -42% (82% -> 39%) in 0.80s
-- [00:05:11] (f7783) **teleport**: View jump in one frame (motion 8, match 0.10): teleport?
-- [00:05:14] (f7855) **teleport**: View jump in one frame (motion 14, match 0.06): teleport?
-- [00:05:17] (f7933) **teleport**: 3 view jumps in 1.2s (teleport chain?)
-- [00:05:20] (f8000) **area_change**: Area name: Smith TREE
-- [00:05:21] (f8025) **teleport**: 3 view jumps in 1.2s (teleport chain?)
-- [00:05:21] (f8025) **text**: Text (chat): YOU CAN RUN.
-- [00:05:27] (f8199) **mana_refill**: Mana refill +53% (2% -> 55%) in 0.08s (mana/rejuv potion?)
-- [00:05:36] (f8419) **mana_refill**: Mana refill +79% (14% -> 93%) in 0.44s (mana/rejuv potion?)
-- [00:05:36] (f8423) **life_refill**: Life refill +74% (26% -> 100%) in 0.28s (rejuvenation potion?)
-- [00:05:38] (f8450) **area_change**: Area name: INVENTORY
-- [00:05:42] (f8550) **text**: Text (center): RivATE STASH
-- [00:05:44] (f8617) **life_drop**: Life drop -81% (100% -> 19%) in 0.04s
-- [00:05:48] (f8700) **area_change**: Area name: INVENTORY
-- [00:06:08] (f9209) **teleport**: View jump in one frame (motion 16, match 0.06): teleport?
-- [00:06:15] (f9380) **teleport**: View jump in one frame (motion 7, match 0.03): teleport?
-- [00:06:17] (f9425) **text**: Text (chat): Fire 4
-- [00:06:17] (f9430) **teleport**: 2 view jumps in 1.3s (teleport chain?)
-- [00:06:24] (f9620) **mana_refill**: Mana refill +13% (75% -> 88%) in 0.52s (mana/rejuv potion?)
-- [00:06:31] (f9781) **mana_refill**: Mana refill +22% (74% -> 96%) in 0.68s (mana/rejuv potion?)
-- [00:06:34] (f9868) **teleport**: 2 view jumps in 0.3s (teleport chain?)
-- [00:06:36] (f9918) **teleport**: View jump in one frame (motion 8, match 0.11): teleport?
-- [00:06:39] (f9996) **mana_refill**: Mana refill +17% (58% -> 75%) in 0.44s (mana/rejuv potion?)
-- [00:06:41] (f10027) **mana_refill**: Mana refill +20% (75% -> 96%) in 0.92s (mana/rejuv potion?)
-- [00:06:44] (f10116) **teleport**: View jump in one frame (motion 8, match 0.15): teleport?
-- [00:06:48] (f10203) **teleport**: 2 view jumps in 0.4s (teleport chain?)
-- [00:06:49] (f10232) **mana_refill**: Mana refill +43% (52% -> 96%) in 1.44s (mana/rejuv potion?)
-- [00:06:52] (f10315) **teleport**: View jump in one frame (motion 8, match 0.11): teleport?
-- [00:06:55] (f10393) **teleport**: 2 view jumps in 1.0s (teleport chain?)
-- [00:06:58] (f10458) **teleport**: View jump in one frame (motion 8, match 0.17): teleport?
-- [00:07:00] (f10520) **mana_refill**: Mana refill +41% (52% -> 93%) in 0.12s (mana/rejuv potion?)
-- [00:07:00] (f10522) **life_refill**: Life refill +33% (67% -> 100%) in 0.04s (rejuvenation potion?)
-- [00:07:07] (f10675) **text**: Text (center): Matta
-- [00:07:10] (f10759) **teleport**: 3 view jumps in 1.1s (teleport chain?)
-- [00:07:13] (f10838) **teleport**: 2 view jumps in 0.8s (teleport chain?)
-- [00:07:23] (f11092) **mana_refill**: Mana refill +46% (23% -> 70%) in 0.04s (mana/rejuv potion?)
-- [00:07:24] (f11113) **run_burst**: Fast movement 1.6s, avg camera shift 2.4 px/frame (~241 px/s at 720p; run/whirlwind/charge?)
-- [00:07:26] (f11158) **teleport**: View jump in one frame (motion 7, match 0.17): teleport?
-- [00:07:30] (f11271) **teleport**: View jump in one frame (motion 16, match 0.11): teleport?
-- [00:07:33] (f11330) **teleport**: 4 view jumps in 2.2s (teleport chain?)
-- [00:07:35] (f11382) **mana_refill**: Mana refill +12% (58% -> 70%) in 0.04s (mana/rejuv potion?)
-- [00:07:38] (f11457) **mana_refill**: Mana refill +12% (84% -> 96%) in 0.48s (mana/rejuv potion?)
-- [00:07:40] (f11518) **teleport**: 2 view jumps in 0.6s (teleport chain?)
-- [00:07:44] (f11612) **teleport**: View jump in one frame (motion 9, match 0.16): teleport?
-- [00:07:48] (f11700) **teleport**: View jump in one frame (motion 7, match 0.17): teleport?
-- [00:07:51] (f11788) **teleport**: View jump in one frame (motion 9, match 0.20): teleport?
-- [00:07:55] (f11888) **teleport**: View jump in one frame (motion 6, match 0.04): teleport?
-- [00:07:56] (f11903) **run_burst**: Fast movement 1.0s, avg camera shift 1.8 px/frame (~182 px/s at 720p; run/whirlwind/charge?)
-- [00:07:58] (f11959) **teleport**: View jump in one frame (motion 17, match 0.01): teleport?
-- [00:08:00] (f12003) **teleport**: 2 view jumps in 0.2s (teleport chain?)
-- [00:08:04] (f12122) **teleport**: 2 view jumps in 0.2s (teleport chain?)
-- [00:08:09] (f12246) **run_burst**: Fast movement 0.9s, avg camera shift 1.8 px/frame (~179 px/s at 720p; run/whirlwind/charge?)
-- [00:08:11] (f12288) **teleport**: 2 view jumps in 0.6s (teleport chain?)
-- [00:08:14] (f12355) **run_burst**: Fast movement 0.8s, avg camera shift 2.2 px/frame (~223 px/s at 720p; run/whirlwind/charge?)
-- [00:08:16] (f12409) **life_drop**: Life drop -29% (72% -> 43%) in 1.00s
-- [00:08:17] (f12442) **life_drop**: Life drop -43% (43% -> 0%) in 0.72s
-- [00:08:17] (f12445) **death**: Death? life orb empty for >= 0.4s
-- [00:08:20] (f12513) **teleport**: View jump in one frame (motion 19, match 0.01): teleport?
-- [00:08:21] (f12542) **mana_refill**: Mana refill +13% (70% -> 84%) in 0.52s (mana/rejuv potion?)
-- [00:08:22] (f12563) **teleport**: View jump in one frame (motion 5, match 0.16): teleport?
-- [00:08:28] (f12717) **mana_refill**: Mana refill +14% (72% -> 86%) in 0.48s (mana/rejuv potion?)
-- [00:08:32] (f12813) **teleport**: 3 view jumps in 1.0s (teleport chain?)
-- [00:08:33] (f12825) **text**: Text (center): AND EXIT *
-- [00:08:33] (f12836) **life_drop**: Life drop -99% (99% -> 0%) in 0.08s
-- [00:08:33] (f12837) **poisoned**: Poisoned (green life orb) for 2.6s
-- [00:08:34] (f12850) **text**: Text (chat): te Senn
-- [00:08:35] (f12875) **text**: Text (chat): fe Senn
-- [00:08:35] (f12887) **life_drop**: Life drop -15% (17% -> 2%) in 0.04s
-- [00:08:35] (f12888) **death**: Death? life orb empty for >= 0.4s
-- [00:08:36] (f12903) **area_change**: Area change / loading: HUD gone 3.2s (dark+other)
-- [00:08:39] (f12982) **teleport**: View jump in one frame (motion 34, match 0.11): teleport?
-- [00:08:41] (f13038) **teleport**: View jump in one frame (motion 17, match 0.03): teleport?
-- [00:08:44] (f13100) **text**: Text (top_right): INVENTORY ‘ |
-- [00:08:50] (f13251) **teleport**: 2 view jumps in 0.4s (teleport chain?)
-- [00:08:51] (f13275) **text**: Text (chat): Super Mana
-- [00:08:51] (f13275) **text**: Text (center): Lever / Surek Mana
-- [00:09:07] (f13698) **mana_refill**: Mana refill +14% (31% -> 46%) in 0.04s (mana/rejuv potion?)
-- [00:09:12] (f13803) **mana_refill**: Mana refill +43% (22% -> 65%) in 0.04s (mana/rejuv potion?)
-- [00:09:13] (f13844) **teleport**: View jump in one frame (motion 8, match 0.10): teleport?
-- [00:09:19] (f13998) **teleport**: View jump in one frame (motion 17, match 0.20): teleport?
-- [00:09:20] (f14007) **mana_refill**: Mana refill +19% (42% -> 62%) in 0.04s (mana/rejuv potion?)
-- [00:09:20] (f14020) **mana_refill**: Mana refill +23% (46% -> 69%) in 0.68s (mana/rejuv potion?)
-- [00:09:25] (f14132) **teleport**: View jump in one frame (motion 7, match -0.09): teleport?
-- [00:09:30] (f14274) **mana_refill**: Mana refill +15% (74% -> 88%) in 0.56s (mana/rejuv potion?)
-- [00:09:31] (f14295) **life_drop**: Life drop -18% (74% -> 56%) in 0.04s
-- [00:09:37] (f14443) **teleport**: View jump in one frame (motion 18, match -0.04): teleport?
-- [00:09:42] (f14552) **teleport**: View jump in one frame (motion 16, match 0.08): teleport?
-- [00:09:45] (f14637) **teleport**: View jump in one frame (motion 9, match 0.17): teleport?
-- [00:09:51] (f14783) **mana_refill**: Mana refill +43% (23% -> 67%) in 0.32s (mana/rejuv potion?)
-- [00:09:52] (f14823) **teleport**: View jump in one frame (motion 5, match 0.03): teleport?
-- [00:09:54] (f14864) **teleport**: View jump in one frame (motion 21, match 0.17): teleport?
-- [00:09:56] (f14921) **mana_refill**: Mana refill +14% (77% -> 91%) in 0.52s (mana/rejuv potion?)
-- [00:09:58] (f14956) **teleport**: 3 view jumps in 1.7s (teleport chain?)
-- [00:10:02] (f15059) **life_drop**: Life drop -21% (40% -> 20%) in 0.24s
-- [00:10:03] (f15075) **area_change**: Area name: TREE i
-- [00:10:03] (f15078) **teleport**: View jump in one frame (motion 9, match 0.17): teleport?
-- [00:10:11] (f15288) **teleport**: View jump in one frame (motion 18, match 0.03): teleport?
-- [00:10:13] (f15342) **teleport**: View jump in one frame (motion 9, match -0.04): teleport?
-- [00:10:18] (f15472) **teleport**: 2 view jumps in 0.2s (teleport chain?)
-- [00:10:19] (f15475) **text**: Text (chat): Life ale.
-- [00:10:21] (f15528) **teleport**: 4 view jumps in 2.0s (teleport chain?)
-- [00:10:27] (f15684) **teleport**: View jump in one frame (motion 17, match 0.05): teleport?
-- [00:10:28] (f15704) **mana_refill**: Mana refill +33% (22% -> 55%) in 0.04s (mana/rejuv potion?)
-- [00:10:31] (f15787) **teleport**: View jump in one frame (motion 8, match 0.08): teleport?
-- [00:10:33] (f15843) **death**: Death? life orb empty for >= 0.4s
-- [00:10:33] (f15843) **teleport**: View jump in one frame (motion 10, match 0.02): teleport?
-- [00:10:40] (f16000) **text**: Text (center): PRESS CONTINUE.
-- [00:10:40] (f16003) **mana_refill**: Mana refill +35% (23% -> 58%) in 0.04s (mana/rejuv potion?)
-- [00:10:40] (f16013) **teleport**: 2 view jumps in 0.7s (teleport chain?)
-- [00:10:41] (f16025) **text**: Text (center): Save ano Exit
-- [00:10:41] (f16035) **area_change**: Area change / loading: HUD gone 3.1s (dark+other)
-- [00:10:44] (f16112) **teleport**: View jump in one frame (motion 29, match 0.05): teleport?
-- [00:10:46] (f16150) **text**: Text (chat): ‘Gave] You
-- [00:10:52] (f16318) **run_burst**: Fast movement 0.9s, avg camera shift 2.5 px/frame (~251 px/s at 720p; run/whirlwind/charge?)
-- [00:10:54] (f16356) **run_burst**: Fast movement 1.1s, avg camera shift 1.8 px/frame (~183 px/s at 720p; run/whirlwind/charge?)
-- [00:10:56] (f16414) **teleport**: View jump in one frame (motion 8, match 0.02): teleport?
-- [00:10:57] (f16425) **text**: Text (center): Lever 96
-- [00:11:00] (f16500) **text**: Text (center): Super Mana / Surer MANA
-- [00:11:01] (f16543) **teleport**: View jump in one frame (motion 8, match 0.01): teleport?
-- [00:11:03] (f16593) **mana_refill**: Mana refill +19% (74% -> 93%) in 0.60s (mana/rejuv potion?)
-- [00:11:07] (f16699) **teleport**: View jump in one frame (motion 8, match 0.11): teleport?
-- [00:11:09] (f16743) **teleport**: View jump in one frame (motion 18, match 0.04): teleport?
-- [00:11:12] (f16808) **teleport**: View jump in one frame (motion 9, match 0.16): teleport?
-- [00:11:17] (f16947) **teleport**: View jump in one frame (motion 11, match 0.13): teleport?
-- [00:11:20] (f17001) **mana_refill**: Mana refill +65% (9% -> 74%) in 0.72s (mana/rejuv potion?)
-- [00:11:21] (f17032) **teleport**: View jump in one frame (motion 22, match 0.15): teleport?
-- [00:11:26] (f17158) **teleport**: 2 view jumps in 1.2s (teleport chain?)
-- [00:11:34] (f17358) **teleport**: 2 view jumps in 1.3s (teleport chain?)
-- [00:11:41] (f17532) **teleport**: View jump in one frame (motion 7, match 0.19): teleport?
-- [00:11:43] (f17580) **life_drop**: Life drop -27% (91% -> 65%) in 0.04s
-- [00:11:44] (f17604) **teleport**: View jump in one frame (motion 17, match 0.05): teleport?
-- [00:11:49] (f17731) **run_burst**: Fast movement 0.8s, avg camera shift 2.3 px/frame (~234 px/s at 720p; run/whirlwind/charge?)
-- [00:11:54] (f17873) **teleport**: View jump in one frame (motion 19, match 0.18): teleport?
-- [00:11:55] (f17875) **text**: Text (chat): Fire ue 4
-- [00:11:57] (f17945) **teleport**: View jump in one frame (motion 16, match 0.01): teleport?
-- [00:11:59] (f17980) **mana_refill**: Mana refill +41% (21% -> 62%) in 0.28s (mana/rejuv potion?)
-- [00:12:01] (f18031) **mana_refill**: Mana refill +13% (46% -> 58%) in 0.12s (mana/rejuv potion?)
-- [00:12:01] (f18033) **teleport**: View jump in one frame (motion 8, match 0.17): teleport?
-- [00:12:03] (f18083) **teleport**: View jump in one frame (motion 8, match 0.14): teleport?
-- [00:12:06] (f18155) **mana_refill**: Mana refill +14% (58% -> 72%) in 0.04s (mana/rejuv potion?)
-- [00:12:06] (f18173) **teleport**: 2 view jumps in 1.5s (teleport chain?)
-- [00:12:07] (f18175) **text**: Text (top_right): Skink TREE i |
-- [00:12:08] (f18200) **mana_refill**: Mana refill +12% (84% -> 96%) in 0.52s (mana/rejuv potion?)
-- [00:12:10] (f18263) **teleport**: 2 view jumps in 1.4s (teleport chain?)
-- [00:12:13] (f18347) **teleport**: 2 view jumps in 1.2s (teleport chain?)
-- [00:12:18] (f18466) **teleport**: View jump in one frame (motion 6, match 0.18): teleport?
-- [00:12:20] (f18514) **teleport**: View jump in one frame (motion 10, match 0.17): teleport?
-- [00:12:23] (f18595) **teleport**: View jump in one frame (motion 25, match 0.15): teleport?
-- [00:12:24] (f18600) **text**: Text (chat): Fire 28
-- [00:12:26] (f18674) **teleport**: 2 view jumps in 1.4s (teleport chain?)
-- [00:12:34] (f18872) **teleport**: View jump in one frame (motion 10, match 0.19): teleport?
-- [00:12:40] (f19012) **teleport**: View jump in one frame (motion 9, match 0.20): teleport?
-- [00:12:42] (f19061) **mana_refill**: Mana refill +34% (15% -> 49%) in 0.16s (mana/rejuv potion?)
-- [00:12:43] (f19084) **mana_refill**: Mana refill +20% (46% -> 66%) in 0.28s (mana/rejuv potion?)
-- [00:12:43] (f19090) **teleport**: View jump in one frame (motion 8, match 0.18): teleport?
-- [00:12:46] (f19172) **mana_refill**: Mana refill +19% (46% -> 65%) in 0.08s (mana/rejuv potion?)
-- [00:12:51] (f19288) **mana_refill**: Mana refill +13% (23% -> 36%) in 0.12s (mana/rejuv potion?)
-- [00:12:52] (f19300) **teleport**: View jump in one frame (motion 13, match 0.16): teleport?
-- [00:12:54] (f19359) **mana_refill**: Mana refill +13% (52% -> 65%) in 0.04s (mana/rejuv potion?)
-- [00:13:02] (f19563) **life_refill**: Life refill +66% (32% -> 99%) in 0.04s (rejuvenation potion?)
-- [00:13:05] (f19641) **run_burst**: Fast movement 2.8s, avg camera shift 2.4 px/frame (~245 px/s at 720p; run/whirlwind/charge?)
-- [00:13:16] (f19900) **text**: Text (chat): Strona
-- [00:13:19] (f19975) **text**: Text (chat): fe but
-- [00:13:20] (f20000) **text**: Text (chat): stron«
-- [00:13:21] (f20025) **text**: Text (chat): Se Stand
-- [00:13:22] (f20050) **text**: Text (chat): makes me stil
-- [00:13:24] (f20100) **text**: Text (chat): me stand
-- [00:13:26] (f20150) **text**: Text (chat): bul stand
-- [00:13:27] (f20175) **text**: Text (chat): stand
-- [00:13:30] (f20250) **text**: Text (chat): stand stl
-- [00:13:30] (f20258) **teleport**: View jump in one frame (motion 7, match 0.18): teleport?
-- [00:13:32] (f20303) **teleport**: View jump in one frame (motion 6, match 0.10): teleport?
-- [00:13:33] (f20348) **run_burst**: Fast movement 1.2s, avg camera shift 1.5 px/frame (~149 px/s at 720p; run/whirlwind/charge?)
-- [00:13:38] (f20466) **run_burst**: Fast movement 1.2s, avg camera shift 2.4 px/frame (~241 px/s at 720p; run/whirlwind/charge?)
-- [00:13:41] (f20536) **mana_refill**: Mana refill +16% (29% -> 46%) in 0.48s (mana/rejuv potion?)
-- [00:13:43] (f20581) **mana_refill**: Mana refill +33% (46% -> 79%) in 0.96s (mana/rejuv potion?)
-- [00:13:45] (f20625) **text**: Text (chat): to see mec using it tbh
-- [00:13:45] (f20633) **mana_refill**: Mana refill +12% (84% -> 96%) in 0.48s (mana/rejuv potion?)
-- [00:13:48] (f20700) **text**: Text (chat): bine 4
-- [00:13:48] (f20703) **teleport**: View jump in one frame (motion 14, match 0.01): teleport?
-- [00:13:48] (f20710) **run_burst**: Fast movement 1.0s, avg camera shift 3.1 px/frame (~306 px/s at 720p; run/whirlwind/charge?)
-- [00:13:52] (f20800) **text**: Text (center): Super Mana PeTiaNn / POTION
-- [00:13:54] (f20850) **text**: Text (chat): “anes me stand shill without / : gutta
-- [00:13:55] (f20875) **text**: Text (chat): bul ME
-- [00:14:01] (f21033) **teleport**: 2 view jumps in 0.6s (teleport chain?)
-- [00:14:06] (f21171) **mana_refill**: Mana refill +42% (26% -> 69%) in 0.92s (mana/rejuv potion?)
-- [00:14:08] (f21205) **mana_refill**: Mana refill +16% (72% -> 88%) in 0.72s (mana/rejuv potion?)
-- [00:14:13] (f21338) **teleport**: 3 view jumps in 1.6s (teleport chain?)
-- [00:14:21] (f21528) **teleport**: View jump in one frame (motion 6, match 0.18): teleport?
-- [00:14:31] (f21798) **teleport**: View jump in one frame (motion 9, match 0.20): teleport?
-- [00:14:35] (f21898) **teleport**: View jump in one frame (motion 7, match 0.04): teleport?
-- [00:14:42] (f22056) **life_refill**: Life refill +14% (86% -> 100%) in 0.04s (rejuvenation potion?)
-- [00:14:43] (f22075) **text**: Text (chat): PaINTs:
-- [00:14:43] (f22075) **text**: Text (center): PaINTs:
-- [00:14:45] (f22131) **run_burst**: Fast movement 2.6s, avg camera shift 3.1 px/frame (~306 px/s at 720p; run/whirlwind/charge?)
-- [00:15:04] (f22600) **text**: Text (chat): but me / Casting / bul worth / ume wen / . pare to see nec / seems mice
-- [00:15:07] (f22687) **teleport**: View jump in one frame (motion 8, match 0.04): teleport?
-- [00:15:10] (f22753) **teleport**: View jump in one frame (motion 7, match 0.06): teleport?
-- [00:15:16] (f22900) **area_change**: Area name: TREE i
-- [00:15:20] (f23022) **teleport**: 2 view jumps in 0.5s (teleport chain?)
-- [00:15:24] (f23104) **teleport**: 3 view jumps in 0.8s (teleport chain?)
-- [00:15:28] (f23213) **teleport**: View jump in one frame (motion 11, match 0.06): teleport?
-- [00:15:30] (f23250) **text**: Text (top_right): Shick |
-- [00:15:31] (f23296) **run_burst**: Fast movement 0.8s, avg camera shift 1.9 px/frame (~194 px/s at 720p; run/whirlwind/charge?)
-- [00:15:34] (f23351) **teleport**: View jump in one frame (motion 11, match -0.04): teleport?
-- [00:15:38] (f23450) **mana_refill**: Mana refill +15% (52% -> 67%) in 0.04s (mana/rejuv potion?)
-- [00:15:38] (f23470) **teleport**: View jump in one frame (motion 11, match 0.07): teleport?
-- [00:15:41] (f23530) **mana_refill**: Mana refill +12% (81% -> 93%) in 0.48s (mana/rejuv potion?)
-- [00:15:44] (f23615) **teleport**: View jump in one frame (motion 11, match 0.20): teleport?
-- [00:15:45] (f23640) **run_burst**: Fast movement 0.9s, avg camera shift 2.9 px/frame (~289 px/s at 720p; run/whirlwind/charge?)
-- [00:15:45] (f23647) **mana_refill**: Mana refill +12% (79% -> 91%) in 0.52s (mana/rejuv potion?)
-- [00:15:49] (f23740) **run_burst**: Fast movement 1.5s, avg camera shift 1.5 px/frame (~146 px/s at 720p; run/whirlwind/charge?)
-- [00:15:55] (f23888) **teleport**: View jump in one frame (motion 14, match 0.15): teleport?
-- [00:15:57] (f23935) **life_drop**: Life drop -45% (84% -> 39%) in 0.56s
-- [00:15:58] (f23957) **life_drop**: Life drop -22% (39% -> 17%) in 0.72s
-- [00:16:03] (f24078) **teleport**: View jump in one frame (motion 7, match 0.10): teleport?
-- [00:16:09] (f24236) **life_drop**: Life drop -16% (16% -> 0%) in 0.08s
-- [00:16:09] (f24238) **death**: Death? life orb empty for >= 0.4s
-- [00:16:10] (f24250) **text**: Text (center): TD NUE
-- [00:16:11] (f24275) **text**: Text (center): Press ESO NUT.
-- [00:16:11] (f24282) **teleport**: 2 view jumps in 0.8s (teleport chain?)
-- [00:16:12] (f24301) **life_drop**: Life drop -96% (96% -> 0%) in 0.24s
-- [00:16:12] (f24302) **poisoned**: Poisoned (green life orb) for 0.4s
-- [00:16:12] (f24313) **area_change**: Area change / loading: HUD gone 3.0s (dark+other)
-- [00:16:15] (f24389) **teleport**: View jump in one frame (motion 47, match 0.16): teleport?
-- [00:16:17] (f24441) **teleport**: View jump in one frame (motion 13, match 0.16): teleport?
-- [00:16:19] (f24491) **run_burst**: Fast movement 1.1s, avg camera shift 2.3 px/frame (~234 px/s at 720p; run/whirlwind/charge?)
-- [00:16:21] (f24536) **run_burst**: Fast movement 2.3s, avg camera shift 2.6 px/frame (~261 px/s at 720p; run/whirlwind/charge?)
-- [00:16:25] (f24625) **text**: Text (center): Lever 99
-- [00:16:26] (f24650) **text**: Text (center): SUPER Mana / Lever 96
-- [00:16:32] (f24804) **teleport**: View jump in one frame (motion 8, match 0.04): teleport?
-- [00:16:33] (f24825) **text**: Text (chat): Super |
-- [00:16:33] (f24825) **text**: Text (center): Surer Mana / Super Mana / Super
-- [00:16:34] (f24871) **mana_refill**: Mana refill +31% (36% -> 67%) in 0.92s (mana/rejuv potion?)
-- [00:16:36] (f24900) **text**: Text (chat): ta nec using / But seems nice
-- [00:16:46] (f25162) **life_drop**: Life drop -26% (100% -> 74%) in 0.04s
-- [00:16:47] (f25182) **life_drop**: Life drop -25% (77% -> 52%) in 0.28s
-- [00:16:49] (f25226) **life_drop**: Life drop -26% (54% -> 28%) in 0.04s
-- [00:16:49] (f25237) **life_drop**: Life drop -21% (28% -> 7%) in 0.64s
-- [00:16:50] (f25265) **death**: Death? life orb empty for >= 0.4s
-- [00:16:52] (f25306) **life_refill**: Life refill +96% (2% -> 99%) in 0.20s (rejuvenation potion?)
-- [00:16:53] (f25325) **text**: Text (center): per Mana ‘
-- [00:16:57] (f25431) **run_burst**: Fast movement 1.2s, avg camera shift 3.2 px/frame (~317 px/s at 720p; run/whirlwind/charge?)
-- [00:17:02] (f25557) **teleport**: 3 view jumps in 1.8s (teleport chain?)
-- [00:17:09] (f25742) **life_drop**: Life drop -17% (99% -> 82%) in 0.04s
-- [00:17:10] (f25755) **teleport**: View jump in one frame (motion 7, match 0.08): teleport?
-- [00:17:11] (f25775) **text**: Text (top_right): Stith T&ee |
-- [00:17:13] (f25825) **text**: Text (chat): Fire ge
-- [00:17:16] (f25900) **text**: Text (chat): Fine 4
-- [00:17:17] (f25939) **life_drop**: Life drop -27% (72% -> 45%) in 0.04s
-- [00:17:18] (f25953) **life_drop**: Life drop -15% (45% -> 30%) in 0.52s
-- [00:17:21] (f26049) **life_drop**: Life drop -26% (26% -> 0%) in 0.28s
-- [00:17:22] (f26053) **death**: Death? life orb empty for >= 0.4s
-- [00:17:24] (f26100) **text**: Text (top_right): SKILL !
-- [00:17:26] (f26155) **run_burst**: Fast movement 0.8s, avg camera shift 2.3 px/frame (~225 px/s at 720p; run/whirlwind/charge?)
-- [00:17:30] (f26273) **teleport**: View jump in one frame (motion 11, match 0.09): teleport?
-- [00:17:34] (f26357) **teleport**: View jump in one frame (motion 8, match 0.13): teleport?
-- [00:17:34] (f26360) **mana_refill**: Mana refill +12% (84% -> 96%) in 0.56s (mana/rejuv potion?)
-- [00:17:38] (f26460) **teleport**: View jump in one frame (motion 10, match -0.07): teleport?
-- [00:17:40] (f26502) **teleport**: 2 view jumps in 1.4s (teleport chain?)
-- [00:17:42] (f26563) **poisoned**: Poisoned (green life orb) for 1.2s
-- [00:17:43] (f26586) **teleport**: View jump in one frame (motion 6, match 0.11): teleport?
-- [00:17:43] (f26595) **poisoned**: Poisoned (green life orb) for 0.6s
-- [00:17:45] (f26631) **teleport**: View jump in one frame (motion 11, match 0.17): teleport?
-- [00:17:45] (f26634) **run_burst**: Fast movement 1.6s, avg camera shift 1.7 px/frame (~172 px/s at 720p; run/whirlwind/charge?)
-- [00:17:47] (f26691) **run_burst**: Fast movement 1.2s, avg camera shift 1.9 px/frame (~187 px/s at 720p; run/whirlwind/charge?)
-- [00:17:49] (f26736) **life_refill**: Life refill +100% (0% -> 100%) in 0.08s (rejuvenation potion?)
-- [00:17:50] (f26773) **teleport**: View jump in one frame (motion 7, match 0.18): teleport?
-- [00:17:51] (f26796) **run_burst**: Fast movement 2.1s, avg camera shift 2.1 px/frame (~213 px/s at 720p; run/whirlwind/charge?)
-- [00:17:54] (f26853) **run_burst**: Fast movement 1.5s, avg camera shift 2.7 px/frame (~275 px/s at 720p; run/whirlwind/charge?)
-- [00:17:55] (f26875) **text**: Text (top_right): Super Perian / Sucer / Mania
-- [00:17:57] (f26938) **teleport**: 2 view jumps in 0.4s (teleport chain?)
-- [00:18:15] (f27382) **teleport**: View jump in one frame (motion 9, match 0.06): teleport?
-- [00:18:16] (f27411) **run_burst**: Fast movement 1.1s, avg camera shift 2.0 px/frame (~197 px/s at 720p; run/whirlwind/charge?)
-- [00:18:22] (f27553) **life_drop**: Life drop -40% (100% -> 60%) in 0.08s
-- [00:18:24] (f27611) **teleport**: View jump in one frame (motion 9, match 0.20): teleport?
-- [00:18:26] (f27650) **teleport**: View jump in one frame (motion 16, match 0.01): teleport?
-- [00:18:29] (f27733) **life_drop**: Life drop -23% (62% -> 39%) in 0.16s
-- [00:18:30] (f27752) **run_burst**: Fast movement 1.0s, avg camera shift 2.3 px/frame (~226 px/s at 720p; run/whirlwind/charge?)
-- [00:18:30] (f27757) **teleport**: View jump in one frame (motion 9, match 0.05): teleport?
-- [00:18:33] (f27838) **teleport**: View jump in one frame (motion 13, match 0.19): teleport?
-- [00:18:37] (f27943) **teleport**: View jump in one frame (motion 12, match 0.07): teleport?
-- [00:18:39] (f27994) **teleport**: View jump in one frame (motion 6, match 0.20): teleport?
-- [00:18:46] (f28160) **teleport**: View jump in one frame (motion 6, match 0.08): teleport?
-- [00:18:46] (f28171) **run_burst**: Fast movement 0.8s, avg camera shift 2.6 px/frame (~263 px/s at 720p; run/whirlwind/charge?)
-- [00:18:49] (f28237) **mana_refill**: Mana refill +26% (33% -> 58%) in 0.68s (mana/rejuv potion?)
-- [00:18:50] (f28272) **mana_refill**: Mana refill +20% (52% -> 72%) in 0.80s (mana/rejuv potion?)
-- [00:18:54] (f28373) **life_drop**: Life drop -24% (24% -> 0%) in 0.20s
-- [00:18:55] (f28378) **death**: Death? life orb empty for >= 0.4s
-- [00:18:55] (f28389) **teleport**: View jump in one frame (motion 31, match 0.20): teleport?
-- [00:18:57] (f28435) **area_change**: Area change / loading: HUD gone 0.5s (dark+other)
-- [00:18:57] (f28447) **teleport**: 2 view jumps in 0.7s (teleport chain?)
-- [00:18:58] (f28463) **life_drop**: Life drop -100% (100% -> 0%) in 0.36s
-- [00:18:58] (f28464) **poisoned**: Poisoned (green life orb) for 0.6s
-- [00:18:59] (f28475) **text**: Text (chat): Lives / [Lobby
-- [00:18:59] (f28478) **area_change**: Area change / loading: HUD gone 3.0s (dark+other)
-- [00:19:02] (f28554) **teleport**: View jump in one frame (motion 49, match 0.13): teleport?
-- [00:19:03] (f28575) **text**: Text (center): stash
-- [00:19:07] (f28675) **text**: Text (center): THE TRADE / CANCEL
-- [00:19:09] (f28731) **run_burst**: Fast movement 1.0s, avg camera shift 1.9 px/frame (~190 px/s at 720p; run/whirlwind/charge?)
-- [00:19:10] (f28761) **run_burst**: Fast movement 2.6s, avg camera shift 2.8 px/frame (~285 px/s at 720p; run/whirlwind/charge?)
-- [00:19:13] (f28830) **teleport**: 2 view jumps in 0.5s (teleport chain?)
-- [00:19:20] (f29005) **mana_refill**: Mana refill +16% (72% -> 88%) in 0.56s (mana/rejuv potion?)
-- [00:19:29] (f29233) **mana_refill**: Mana refill +13% (52% -> 65%) in 0.08s (mana/rejuv potion?)
-- [00:19:32] (f29310) **teleport**: View jump in one frame (motion 13, match 0.09): teleport?
-- [00:19:34] (f29367) **teleport**: View jump in one frame (motion 11, match 0.00): teleport?
-- [00:19:37] (f29446) **teleport**: View jump in one frame (motion 8, match 0.10): teleport?
-- [00:19:39] (f29476) **life_drop**: Life drop -26% (94% -> 68%) in 0.04s
-- [00:19:43] (f29578) **mana_refill**: Mana refill +19% (77% -> 96%) in 0.44s (mana/rejuv potion?)
-- [00:19:46] (f29663) **teleport**: View jump in one frame (motion 12, match 0.02): teleport?
-- [00:19:53] (f29828) **teleport**: 3 view jumps in 2.4s (teleport chain?)
-- [00:19:57] (f29947) **teleport**: View jump in one frame (motion 9, match -0.02): teleport?
-- [00:19:58] (f29961) **run_burst**: Fast movement 1.1s, avg camera shift 1.9 px/frame (~190 px/s at 720p; run/whirlwind/charge?)
-- [00:20:02] (f30066) **life_drop**: Life drop -24% (67% -> 43%) in 0.08s
-- [00:20:05] (f30125) **text**: Text (top_right): SKILL |
-- [00:20:06] (f30157) **run_burst**: Fast movement 1.4s, avg camera shift 1.6 px/frame (~164 px/s at 720p; run/whirlwind/charge?)
-- [00:20:08] (f30204) **mana_refill**: Mana refill +13% (26% -> 39%) in 0.56s (mana/rejuv potion?)
-- [00:20:08] (f30209) **teleport**: View jump in one frame (motion 11, match 0.07): teleport?
-- [00:20:09] (f30235) **mana_refill**: Mana refill +23% (52% -> 75%) in 0.52s (mana/rejuv potion?)
-- [00:20:10] (f30257) **teleport**: View jump in one frame (motion 7, match -0.08): teleport?
-- [00:20:17] (f30428) **teleport**: View jump in one frame (motion 5, match -0.13): teleport?
-- [00:20:20] (f30512) **mana_refill**: Mana refill +13% (46% -> 58%) in 0.36s (mana/rejuv potion?)
-- [00:20:23] (f30592) **teleport**: View jump in one frame (motion 7, match 0.14): teleport?
-- [00:20:25] (f30637) **teleport**: View jump in one frame (motion 8, match -0.03): teleport?
-- [00:20:28] (f30700) **area_change**: Area name: Shick TREE
-- [00:20:29] (f30743) **teleport**: View jump in one frame (motion 12, match -0.01): teleport?
-- [00:20:30] (f30772) **mana_refill**: Mana refill +13% (39% -> 52%) in 0.12s (mana/rejuv potion?)
-- [00:20:31] (f30786) **mana_refill**: Mana refill +13% (52% -> 65%) in 0.60s (mana/rejuv potion?)
-- [00:20:32] (f30803) **teleport**: View jump in one frame (motion 10, match 0.13): teleport?
-- [00:20:34] (f30871) **teleport**: 4 view jumps in 3.2s (teleport chain?)
-- [00:20:42] (f31068) **teleport**: 2 view jumps in 0.4s (teleport chain?)
-- [00:20:44] (f31119) **life_drop**: Life drop -25% (32% -> 7%) in 0.20s
-- [00:20:47] (f31188) **teleport**: View jump in one frame (motion 8, match 0.18): teleport?
-- [00:20:50] (f31273) **teleport**: View jump in one frame (motion 7, match 0.02): teleport?
-- [00:20:52] (f31321) **life_refill**: Life refill +88% (12% -> 100%) in 0.28s (rejuvenation potion?)
-- [00:20:52] (f31321) **mana_refill**: Mana refill +68% (25% -> 93%) in 0.04s (mana/rejuv potion?)
-- [00:20:56] (f31401) **run_burst**: Fast movement 1.2s, avg camera shift 2.3 px/frame (~225 px/s at 720p; run/whirlwind/charge?)
-- [00:20:57] (f31436) **run_burst**: Fast movement 1.0s, avg camera shift 2.7 px/frame (~269 px/s at 720p; run/whirlwind/charge?)
-- [00:21:00] (f31500) **text**: Text (center): FOTION / Surer MANA / Super Mana
-- [00:21:01] (f31525) **text**: Text (center): SUPER
-- [00:21:27] (f32188) **teleport**: View jump in one frame (motion 12, match 0.16): teleport?
-- [00:21:28] (f32200) **text**: Text (chat): Poison 2
-- [00:21:32] (f32311) **mana_refill**: Mana refill +30% (29% -> 58%) in 0.16s (mana/rejuv potion?)
-- [00:21:33] (f32326) **teleport**: 2 view jumps in 0.4s (teleport chain?)
-- [00:21:33] (f32333) **mana_refill**: Mana refill +13% (39% -> 52%) in 0.32s (mana/rejuv potion?)
-- [00:21:34] (f32352) **mana_refill**: Mana refill +23% (46% -> 69%) in 0.64s (mana/rejuv potion?)
-- [00:21:35] (f32390) **teleport**: View jump in one frame (motion 7, match 0.13): teleport?
-- [00:21:37] (f32443) **mana_refill**: Mana refill +12% (81% -> 93%) in 0.56s (mana/rejuv potion?)
-- [00:21:38] (f32464) **run_burst**: Fast movement 0.9s, avg camera shift 2.0 px/frame (~205 px/s at 720p; run/whirlwind/charge?)
-- [00:21:39] (f32498) **life_drop**: Life drop -46% (100% -> 54%) in 0.16s
-- [00:21:40] (f32518) **run_burst**: Fast movement 0.9s, avg camera shift 1.7 px/frame (~170 px/s at 720p; run/whirlwind/charge?)
-- [00:21:45] (f32626) **teleport**: View jump in one frame (motion 6, match 0.16): teleport?
-- [00:21:48] (f32723) **teleport**: 3 view jumps in 1.6s (teleport chain?)
-- [00:21:54] (f32856) **teleport**: View jump in one frame (motion 9, match 0.05): teleport?
-- [00:21:54] (f32860) **run_burst**: Fast movement 1.0s, avg camera shift 2.8 px/frame (~278 px/s at 720p; run/whirlwind/charge?)
-- [00:21:59] (f32994) **teleport**: View jump in one frame (motion 5, match 0.11): teleport?
-- [00:22:01] (f33033) **teleport**: View jump in one frame (motion 6, match 0.18): teleport?
-- [00:22:06] (f33173) **teleport**: View jump in one frame (motion 5, match -0.03): teleport?
-- [00:22:11] (f33288) **life_refill**: Life refill +56% (44% -> 100%) in 0.04s (rejuvenation potion?)
-- [00:22:11] (f33288) **mana_refill**: Mana refill +70% (23% -> 93%) in 0.04s (mana/rejuv potion?)
-- [00:22:13] (f33346) **run_burst**: Fast movement 0.9s, avg camera shift 1.7 px/frame (~168 px/s at 720p; run/whirlwind/charge?)
-- [00:22:19] (f33488) **teleport**: 3 view jumps in 1.4s (teleport chain?)
-- [00:22:20] (f33523) **life_drop**: Life drop -86% (99% -> 12%) in 0.04s
-- [00:22:21] (f33525) **text**: Text (chat): Featured
-- [00:22:21] (f33525) **text**: Text (center): Diablo
-- [00:22:22] (f33550) **text**: Text (center): ANAHEIM, CA
-- [00:22:27] (f33675) **text**: Text (chat): Featured
-- [00:22:27] (f33675) **text**: Text (center): Crush darkness in Ladder Season 15, now \ ri
-- [00:22:28] (f33700) **text**: Text (center): Leam More
-- [00:22:28] (f33702) **life_refill**: Life refill +86% (12% -> 99%) in 0.16s (rejuvenation potion?)
-- [00:22:28] (f33702) **mana_refill**: Mana refill +90% (3% -> 93%) in 0.08s (mana/rejuv potion?)
-- [00:22:28] (f33703) **teleport**: 2 view jumps in 0.0s (teleport chain?)
-- [00:22:34] (f33871) **run_burst**: Fast movement 1.4s, avg camera shift 2.6 px/frame (~259 px/s at 720p; run/whirlwind/charge?)
-- [00:22:42] (f34068) **teleport**: View jump in one frame (motion 14, match 0.18): teleport?
-- [00:22:50] (f34251) **teleport**: View jump in one frame (motion 13, match 0.01): teleport?
-- [00:22:54] (f34350) **teleport**: View jump in one frame (motion 6, match 0.10): teleport?
-- [00:22:59] (f34487) **run_burst**: Fast movement 1.0s, avg camera shift 2.7 px/frame (~270 px/s at 720p; run/whirlwind/charge?)
-- [00:23:02] (f34562) **life_drop**: Life drop -29% (99% -> 70%) in 0.04s
-- [00:23:06] (f34663) **life_refill**: Life refill +27% (72% -> 99%) in 0.04s (rejuvenation potion?)
-- [00:23:06] (f34663) **mana_refill**: Mana refill +23% (72% -> 96%) in 0.04s (mana/rejuv potion?)
-- [00:23:08] (f34700) **area_change**: Area name: INVENTORY
-- [00:23:08] (f34700) **text**: Text (center): per Mana
-- [00:23:11] (f34799) **run_burst**: Fast movement 0.9s, avg camera shift 2.6 px/frame (~258 px/s at 720p; run/whirlwind/charge?)
-- [00:23:25] (f35126) **run_burst**: Fast movement 1.6s, avg camera shift 1.7 px/frame (~170 px/s at 720p; run/whirlwind/charge?)
-- [00:23:25] (f35138) **teleport**: View jump in one frame (motion 11, match 0.20): teleport?
-- [00:23:30] (f35273) **mana_refill**: Mana refill +17% (79% -> 96%) in 0.40s (mana/rejuv potion?)
-- [00:23:34] (f35350) **text**: Text (center): TIANA / 7 Mana
-- [00:23:41] (f35525) **text**: Text (chat): stamina / Fire 4
-- [00:23:41] (f35531) **teleport**: View jump in one frame (motion 13, match -0.03): teleport?
-- [00:23:45] (f35628) **mana_refill**: Mana refill +21% (31% -> 52%) in 0.48s (mana/rejuv potion?)
-- [00:23:47] (f35697) **run_burst**: Fast movement 0.9s, avg camera shift 2.2 px/frame (~221 px/s at 720p; run/whirlwind/charge?)
-- [00:23:49] (f35744) **teleport**: View jump in one frame (motion 10, match 0.14): teleport?
-- [00:23:51] (f35789) **life_drop**: Life drop -23% (100% -> 77%) in 0.04s
-- [00:23:52] (f35803) **teleport**: View jump in one frame (motion 6, match 0.02): teleport?
-- [00:23:53] (f35841) **run_burst**: Fast movement 1.0s, avg camera shift 2.5 px/frame (~249 px/s at 720p; run/whirlwind/charge?)
-- [00:23:54] (f35850) **text**: Text (top_right): Stick TREE |
-- [00:23:55] (f35878) **teleport**: 2 view jumps in 0.3s (teleport chain?)
-- [00:23:59] (f35982) **mana_refill**: Mana refill +13% (46% -> 58%) in 0.56s (mana/rejuv potion?)
-- [00:23:59] (f35993) **teleport**: 2 view jumps in 0.2s (teleport chain?)
-- [00:24:02] (f36069) **run_burst**: Fast movement 0.8s, avg camera shift 4.2 px/frame (~417 px/s at 720p; run/whirlwind/charge?)
-- [00:24:11] (f36294) **teleport**: View jump in one frame (motion 8, match 0.16): teleport?
-- [00:24:17] (f36447) **life_drop**: Life drop -25% (67% -> 42%) in 0.08s
-- [00:24:18] (f36460) **teleport**: View jump in one frame (motion 7, match 0.11): teleport?
-- [00:24:22] (f36550) **area_change**: Area name: SKILL TREE
-- [00:24:23] (f36593) **teleport**: View jump in one frame (motion 10, match 0.07): teleport?
-- [00:24:24] (f36607) **mana_refill**: Mana refill +12% (58% -> 70%) in 0.56s (mana/rejuv potion?)
-- [00:24:24] (f36618) **life_drop**: Life drop -23% (40% -> 17%) in 0.12s
-- [00:24:25] (f36643) **teleport**: View jump in one frame (motion 11, match 0.05): teleport?
-- [00:24:29] (f36737) **teleport**: View jump in one frame (motion 10, match 0.16): teleport?
-- [00:24:31] (f36788) **teleport**: 2 view jumps in 0.6s (teleport chain?)
-- [00:24:34] (f36865) **teleport**: View jump in one frame (motion 10, match -0.10): teleport?
-- [00:24:37] (f36925) **teleport**: View jump in one frame (motion 14, match 0.14): teleport?
-- [00:24:42] (f37063) **mana_refill**: Mana refill +50% (11% -> 62%) in 0.68s (mana/rejuv potion?)
-- [00:24:45] (f37134) **teleport**: View jump in one frame (motion 11, match 0.12): teleport?
-- [00:24:46] (f37167) **death**: Death? life orb empty for >= 0.4s
-- [00:24:47] (f37184) **mana_refill**: Mana refill +19% (39% -> 58%) in 0.12s (mana/rejuv potion?)
-- [00:24:48] (f37210) **mana_refill**: Mana refill +18% (52% -> 70%) in 0.20s (mana/rejuv potion?)
-- [00:24:48] (f37213) **teleport**: View jump in one frame (motion 11, match 0.03): teleport?
-- [00:24:49] (f37246) **mana_refill**: Mana refill +22% (74% -> 96%) in 0.56s (mana/rejuv potion?)
-- [00:24:50] (f37255) **life_refill**: Life refill +99% (0% -> 99%) in 0.12s (rejuvenation potion?)
-- [00:24:51] (f37275) **text**: Text (chat): Paints: 500
-- [00:24:51] (f37275) **text**: Text (center): perk Mana / Paints: 500
-- [00:24:52] (f37306) **run_burst**: Fast movement 0.9s, avg camera shift 1.8 px/frame (~181 px/s at 720p; run/whirlwind/charge?)
-- [00:24:54] (f37373) **run_burst**: Fast movement 1.3s, avg camera shift 2.8 px/frame (~276 px/s at 720p; run/whirlwind/charge?)
-- [00:25:15] (f37898) **teleport**: View jump in one frame (motion 6, match 0.20): teleport?
-- [00:25:21] (f38029) **teleport**: 2 view jumps in 0.4s (teleport chain?)
-- [00:25:27] (f38178) **teleport**: 2 view jumps in 1.4s (teleport chain?)
-- [00:25:30] (f38259) **teleport**: View jump in one frame (motion 13, match 0.20): teleport?
-- [00:25:37] (f38436) **run_burst**: Fast movement 1.5s, avg camera shift 2.7 px/frame (~273 px/s at 720p; run/whirlwind/charge?)
-- [00:25:38] (f38455) **teleport**: View jump in one frame (motion 8, match 0.09): teleport?
-- [00:25:41] (f38548) **mana_refill**: Mana refill +19% (39% -> 58%) in 0.20s (mana/rejuv potion?)
-- [00:25:49] (f38725) **text**: Text (chat): Defense BaD
-- [00:25:49] (f38727) **teleport**: 3 view jumps in 1.4s (teleport chain?)
-- [00:25:49] (f38747) **life_drop**: Life drop -15% (86% -> 72%) in 0.04s
-- [00:25:55] (f38877) **teleport**: 2 view jumps in 0.4s (teleport chain?)
-- [00:25:58] (f38962) **life_drop**: Life drop -42% (70% -> 28%) in 0.36s
-- [00:26:01] (f39037) **mana_refill**: Mana refill +14% (72% -> 86%) in 0.08s (mana/rejuv potion?)
-- [00:26:07] (f39177) **run_burst**: Fast movement 1.2s, avg camera shift 2.7 px/frame (~273 px/s at 720p; run/whirlwind/charge?)
-- [00:26:11] (f39275) **text**: Text (chat): Life Fale
-- [00:26:12] (f39307) **teleport**: View jump in one frame (motion 6, match 0.13): teleport?
-- [00:26:14] (f39364) **teleport**: View jump in one frame (motion 7, match -0.09): teleport?
-- [00:26:16] (f39418) **teleport**: View jump in one frame (motion 8, match 0.13): teleport?
-- [00:26:18] (f39468) **mana_refill**: Mana refill +12% (81% -> 93%) in 0.52s (mana/rejuv potion?)
-- [00:26:19] (f39488) **teleport**: 2 view jumps in 1.0s (teleport chain?)
-- [00:26:27] (f39680) **teleport**: View jump in one frame (motion 11, match 0.15): teleport?
-- [00:26:28] (f39717) **life_refill**: Life refill +76% (22% -> 99%) in 0.04s (rejuvenation potion?)
-- [00:26:33] (f39826) **run_burst**: Fast movement 1.0s, avg camera shift 2.2 px/frame (~222 px/s at 720p; run/whirlwind/charge?)
-- [00:26:36] (f39900) **text**: Text (chat): neacd
-- [00:26:40] (f40000) **text**: Text (chat): old xdD / same thet
-- [00:26:41] (f40025) **text**: Text (chat): fe same the
-- [00:26:43] (f40075) **text**: Text (chat): The that
-- [00:26:46] (f40150) **text**: Text (chat): same the / just pure eng
-- [00:26:47] (f40175) **text**: Text (chat): or pure eng
-- [00:26:48] (f40200) **text**: Text (chat): the tenor / just pure
-- [00:26:49] (f40225) **text**: Text (chat): same bubi wonder the tat
-- [00:26:50] (f40250) **text**: Text (chat): helbed / (Gavel not sure
-- [00:26:52] (f40300) **text**: Text (chat): just pare / Gavel
-- [00:26:53] (f40340) **teleport**: View jump in one frame (motion 7, match -0.01): teleport?
-- [00:26:56] (f40400) **text**: Text (chat): terra:
-- [00:26:57] (f40425) **text**: Text (chat): Gave] sure
-- [00:27:00] (f40500) **text**: Text (chat): SUPER
-- [00:27:00] (f40500) **text**: Text (center): SUPER TIANA / Mana Petien / Sueer
-- [00:27:01] (f40525) **text**: Text (center): DUPER / Super Mana / LeveL / Super
-- [00:27:02] (f40550) **text**: Text (chat): helps
-- [00:27:02] (f40550) **text**: Text (center): Supek / Druip
-- [00:27:04] (f40600) **text**: Text (chat): but terror yeneral
-- [00:27:13] (f40825) **text**: Text (chat): used correctly
-- [00:27:14] (f40857) **run_burst**: Fast movement 1.4s, avg camera shift 1.8 px/frame (~176 px/s at 720p; run/whirlwind/charge?)
-- [00:27:15] (f40895) **teleport**: View jump in one frame (motion 8, match 0.11): teleport?
-- [00:27:19] (f40975) **text**: Text (center): 51S Mana / HEALING PeTian
-- [00:27:19] (f40999) **run_burst**: Fast movement 0.9s, avg camera shift 4.1 px/frame (~411 px/s at 720p; run/whirlwind/charge?)
-- [00:27:20] (f41005) **teleport**: 2 view jumps in 0.1s (teleport chain?)
-- [00:27:20] (f41007) **life_drop**: Life drop -88% (100% -> 12%) in 0.16s
-- [00:27:21] (f41025) **text**: Text (chat): Featured
-- [00:27:21] (f41025) **text**: Text (center): ANAHEIM, CA .
-- [00:27:22] (f41050) **text**: Text (center): ANAHEIM, GA
-- [00:27:23] (f41080) **life_refill**: Life refill +86% (12% -> 99%) in 0.04s (rejuvenation potion?)
-- [00:27:23] (f41080) **mana_refill**: Mana refill +92% (3% -> 96%) in 0.04s (mana/rejuv potion?)
-- [00:27:23] (f41081) **teleport**: View jump in one frame (motion 25, match 0.07): teleport?
-- [00:27:24] (f41123) **teleport**: View jump in one frame (motion 5, match 0.11): teleport?
-- [00:27:26] (f41153) **run_burst**: Fast movement 1.3s, avg camera shift 2.1 px/frame (~212 px/s at 720p; run/whirlwind/charge?)
-- [00:27:34] (f41357) **life_drop**: Life drop -11% (100% -> 89%) in 0.48s
-- [00:27:34] (f41374) **teleport**: View jump in one frame (motion 7, match 0.12): teleport?
-- [00:27:36] (f41418) **teleport**: View jump in one frame (motion 13, match -0.03): teleport?
-- [00:27:41] (f41527) **mana_refill**: Mana refill +34% (31% -> 65%) in 0.24s (mana/rejuv potion?)
-- [00:27:41] (f41531) **run_burst**: Fast movement 0.8s, avg camera shift 1.6 px/frame (~156 px/s at 720p; run/whirlwind/charge?)
-- [00:27:42] (f41567) **mana_refill**: Mana refill +13% (52% -> 65%) in 0.04s (mana/rejuv potion?)
-- [00:27:45] (f41635) **teleport**: View jump in one frame (motion 6, match 0.12): teleport?
-- [00:27:48] (f41722) **teleport**: View jump in one frame (motion 12, match 0.12): teleport?
-- [00:27:53] (f41836) **life_drop**: Life drop -25% (82% -> 56%) in 0.04s
-- [00:27:53] (f41844) **life_drop**: Life drop -30% (56% -> 26%) in 0.76s
-- [00:27:55] (f41898) **teleport**: View jump in one frame (motion 13, match 0.14): teleport?
-- [00:27:58] (f41954) **teleport**: View jump in one frame (motion 10, match 0.18): teleport?
-- [00:28:00] (f42018) **teleport**: View jump in one frame (motion 7, match 0.17): teleport?
-- [00:28:05] (f42142) **mana_refill**: Mana refill +17% (79% -> 96%) in 0.12s (mana/rejuv potion?)
-- [00:28:05] (f42144) **life_refill**: Life refill +76% (24% -> 100%) in 0.04s (rejuvenation potion?)
-- [00:28:15] (f42390) **run_burst**: Fast movement 1.0s, avg camera shift 2.5 px/frame (~247 px/s at 720p; run/whirlwind/charge?)
-- [00:28:23] (f42596) **run_burst**: Fast movement 1.0s, avg camera shift 1.7 px/frame (~169 px/s at 720p; run/whirlwind/charge?)
-- [00:28:28] (f42703) **mana_refill**: Mana refill +29% (39% -> 69%) in 0.04s (mana/rejuv potion?)
-- [00:28:28] (f42715) **mana_refill**: Mana refill +17% (67% -> 84%) in 0.60s (mana/rejuv potion?)
-- [00:28:32] (f42807) **teleport**: View jump in one frame (motion 8, match 0.16): teleport?
-- [00:28:33] (f42829) **run_burst**: Fast movement 1.2s, avg camera shift 1.7 px/frame (~168 px/s at 720p; run/whirlwind/charge?)
-- [00:28:36] (f42900) **area_change**: Area name: SKILL TREE
-- [00:28:36] (f42915) **life_drop**: Life drop -30% (99% -> 68%) in 0.80s
-- [00:28:38] (f42964) **teleport**: View jump in one frame (motion 6, match 0.18): teleport?
-- [00:28:41] (f43045) **teleport**: View jump in one frame (motion 6, match 0.19): teleport?
-- [00:28:45] (f43127) **life_drop**: Life drop -26% (70% -> 44%) in 0.44s
-- [00:28:45] (f43148) **teleport**: 3 view jumps in 2.6s (teleport chain?)
-- [00:28:51] (f43275) **text**: Text (chat): Fives us 4
-- [00:28:55] (f43379) **run_burst**: Fast movement 1.1s, avg camera shift 2.4 px/frame (~244 px/s at 720p; run/whirlwind/charge?)
-- [00:28:59] (f43497) **teleport**: View jump in one frame (motion 10, match 0.08): teleport?
-- [00:29:05] (f43628) **teleport**: View jump in one frame (motion 9, match 0.15): teleport?
-- [00:29:11] (f43796) **teleport**: View jump in one frame (motion 15, match 0.19): teleport?
-- [00:29:17] (f43949) **run_burst**: Fast movement 0.8s, avg camera shift 1.5 px/frame (~151 px/s at 720p; run/whirlwind/charge?)
-- [00:29:21] (f44042) **mana_refill**: Mana refill +48% (7% -> 55%) in 0.04s (mana/rejuv potion?)
-- [00:29:22] (f44070) **mana_refill**: Mana refill +71% (22% -> 93%) in 0.32s (mana/rejuv potion?)
-- [00:29:23] (f44077) **life_refill**: Life refill +58% (40% -> 99%) in 0.20s (rejuvenation potion?)
-- [00:29:24] (f44100) **text**: Text (top_right): INVER |
-- [00:29:28] (f44204) **run_burst**: Fast movement 1.0s, avg camera shift 2.3 px/frame (~231 px/s at 720p; run/whirlwind/charge?)
-- [00:29:41] (f44537) **run_burst**: Fast movement 1.0s, avg camera shift 2.5 px/frame (~249 px/s at 720p; run/whirlwind/charge?)
-- [00:29:44] (f44611) **teleport**: 2 view jumps in 0.4s (teleport chain?)
-- [00:29:50] (f44750) **text**: Text (center): Super Mana / Mana Ma P / SuPer ANA POT
-- [00:29:58] (f44957) **mana_refill**: Mana refill +13% (39% -> 52%) in 0.44s (mana/rejuv potion?)
-- [00:29:58] (f44963) **teleport**: View jump in one frame (motion 7, match 0.17): teleport?
-- [00:29:59] (f44979) **mana_refill**: Mana refill +15% (52% -> 67%) in 0.60s (mana/rejuv potion?)
-- [00:30:04] (f45100) **text**: Text (top_right): TREE i |
-- [00:30:05] (f45142) **mana_refill**: Mana refill +12% (81% -> 93%) in 0.40s (mana/rejuv potion?)
-- [00:30:07] (f45190) **life_drop**: Life drop -54% (100% -> 46%) in 0.40s
-- [00:30:08] (f45200) **text**: Text (top_right): SKILL TREE : |
-- [00:30:09] (f45236) **teleport**: View jump in one frame (motion 14, match -0.03): teleport?
-- [00:30:11] (f45280) **teleport**: View jump in one frame (motion 14, match 0.03): teleport?
-- [00:30:21] (f45528) **teleport**: View jump in one frame (motion 16, match 0.00): teleport?
-- [00:30:23] (f45598) **mana_refill**: Mana refill +12% (79% -> 91%) in 0.60s (mana/rejuv potion?)
-- [00:30:26] (f45673) **teleport**: View jump in one frame (motion 9, match 0.11): teleport?
-- [00:30:31] (f45777) **teleport**: View jump in one frame (motion 8, match 0.20): teleport?
-- [00:30:38] (f45950) **text**: Text (top_right): THREE |
-- [00:30:39] (f45993) **life_drop**: Life drop -37% (37% -> 0%) in 1.20s
-- [00:30:40] (f46023) **death**: Death? life orb empty for >= 0.4s
-- [00:30:42] (f46065) **area_change**: Area change / loading: HUD gone 0.5s (dark+other)
-- [00:30:43] (f46077) **teleport**: 2 view jumps in 1.0s (teleport chain?)
-- [00:30:44] (f46101) **life_drop**: Life drop -80% (99% -> 19%) in 0.08s
-- [00:30:44] (f46102) **poisoned**: Poisoned (green life orb) for 0.5s
-- [00:30:44] (f46114) **area_change**: Area change / loading: HUD gone 3.1s (dark+other)
-- [00:30:47] (f46191) **teleport**: View jump in one frame (motion 41, match 0.03): teleport?
-- [00:30:53] (f46325) **text**: Text (center): TRADE
-- [00:30:54] (f46350) **text**: Text (chat): PoINTs: 500
-- [00:30:54] (f46350) **text**: Text (center): per Mana / PoINTs: 500
-- [00:30:55] (f46377) **run_burst**: Fast movement 1.0s, avg camera shift 2.4 px/frame (~242 px/s at 720p; run/whirlwind/charge?)
-- [00:30:55] (f46392) **teleport**: View jump in one frame (motion 14, match 0.20): teleport?
-- [00:31:01] (f46530) **teleport**: View jump in one frame (motion 6, match 0.14): teleport?
-- [00:31:03] (f46575) **text**: Text (center): Necromancer / Leven 96
-- [00:31:08] (f46700) **text**: Text (top_right): Stith TREE ‘ |
-- [00:31:09] (f46731) **run_burst**: Fast movement 1.0s, avg camera shift 3.1 px/frame (~308 px/s at 720p; run/whirlwind/charge?)
-- [00:31:26] (f47166) **life_drop**: Life drop -32% (100% -> 68%) in 0.28s
-- [00:31:27] (f47182) **mana_refill**: Mana refill +13% (52% -> 65%) in 0.12s (mana/rejuv potion?)
-- [00:31:27] (f47188) **teleport**: 2 view jumps in 1.4s (teleport chain?)
-- [00:31:30] (f47250) **text**: Text (chat): Five ot i4
-- [00:31:31] (f47277) **mana_refill**: Mana refill +29% (23% -> 52%) in 0.04s (mana/rejuv potion?)
-- [00:31:33] (f47328) **teleport**: View jump in one frame (motion 7, match 0.07): teleport?
-- [00:31:35] (f47376) **teleport**: 2 view jumps in 1.4s (teleport chain?)
-- [00:31:38] (f47464) **teleport**: View jump in one frame (motion 16, match -0.01): teleport?
-- [00:31:44] (f47615) **teleport**: View jump in one frame (motion 13, match 0.12): teleport?
-- [00:31:46] (f47671) **life_drop**: Life drop -21% (45% -> 24%) in 0.04s
-- [00:31:47] (f47679) **life_drop**: Life drop -24% (24% -> 0%) in 0.76s
-- [00:31:47] (f47680) **death**: Death? life orb empty for >= 0.4s
-- [00:31:49] (f47725) **text**: Text (center): ELC Fo
-- [00:31:49] (f47728) **teleport**: 2 view jumps in 0.8s (teleport chain?)
-- [00:31:49] (f47748) **life_drop**: Life drop -99% (99% -> 0%) in 0.20s
-- [00:31:49] (f47749) **poisoned**: Poisoned (green life orb) for 0.8s
-- [00:31:50] (f47768) **area_change**: Area change / loading: HUD gone 3.0s (dark+other)
-- [00:31:53] (f47842) **teleport**: View jump in one frame (motion 35, match 0.10): teleport?
-- [00:31:57] (f47936) **teleport**: 2 view jumps in 0.6s (teleport chain?)
-- [00:31:59] (f47988) **teleport**: View jump in one frame (motion 5, match 0.13): teleport?
-- [00:32:00] (f48006) **run_burst**: Fast movement 1.2s, avg camera shift 2.4 px/frame (~240 px/s at 720p; run/whirlwind/charge?)
-- [00:32:01] (f48041) **run_burst**: Fast movement 1.1s, avg camera shift 2.2 px/frame (~224 px/s at 720p; run/whirlwind/charge?)
-- [00:32:03] (f48098) **teleport**: 2 view jumps in 0.9s (teleport chain?)
-- [00:32:04] (f48100) **text**: Text (center): Super Mana
-- [00:32:05] (f48125) **text**: Text (chat): Ear Su / Level 99?
-- [00:32:05] (f48125) **text**: Text (center): Lever 96
-- [00:32:06] (f48150) **text**: Text (chat): Ras's Ear / Levert 99 / ANCIENT
-- [00:32:06] (f48150) **text**: Text (center): Lever 99 / Super / Druio
-- [00:32:07] (f48175) **text**: Text (center): Lever / Ear MANA
-- [00:32:08] (f48200) **text**: Text (chat): Levet 99 / ANCIENT S
-- [00:32:08] (f48200) **text**: Text (center): NECKSMANCER / Surex Mana
-- [00:32:09] (f48225) **text**: Text (chat): Levei 99
-- [00:32:12] (f48303) **teleport**: View jump in one frame (motion 8, match 0.14): teleport?
-- [00:32:13] (f48325) **text**: Text (center): Super PaTiGNn / Surer Mana / Super Mana
-- [00:32:14] (f48370) **run_burst**: Fast movement 0.8s, avg camera shift 1.7 px/frame (~173 px/s at 720p; run/whirlwind/charge?)
-- [00:32:19] (f48487) **mana_refill**: Mana refill +37% (33% -> 70%) in 0.48s (mana/rejuv potion?)
-- [00:32:20] (f48524) **mana_refill**: Mana refill +19% (72% -> 91%) in 0.68s (mana/rejuv potion?)
-- [00:32:23] (f48580) **teleport**: View jump in one frame (motion 19, match 0.18): teleport?
-- [00:32:25] (f48635) **life_drop**: Life drop -23% (100% -> 77%) in 0.04s
-- [00:32:28] (f48700) **text**: Text (chat): Fire 28
-- [00:32:31] (f48793) **teleport**: 2 view jumps in 0.3s (teleport chain?)
-- [00:32:36] (f48908) **teleport**: View jump in one frame (motion 6, match 0.12): teleport?
-- [00:32:40] (f49009) **teleport**: View jump in one frame (motion 17, match -0.10): teleport?
-- [00:32:47] (f49183) **life_drop**: Life drop -15% (65% -> 50%) in 0.68s
-- [00:32:50] (f49258) **teleport**: View jump in one frame (motion 20, match 0.08): teleport?
-- [00:32:51] (f49287) **mana_refill**: Mana refill +12% (79% -> 91%) in 0.04s (mana/rejuv potion?)
-- [00:32:54] (f49368) **teleport**: 3 view jumps in 1.4s (teleport chain?)
-- [00:32:56] (f49417) **mana_refill**: Mana refill +39% (27% -> 67%) in 0.04s (mana/rejuv potion?)
-- [00:32:57] (f49432) **life_drop**: Life drop -22% (43% -> 21%) in 0.76s
-- [00:32:58] (f49458) **life_drop**: Life drop -21% (21% -> 0%) in 0.76s
-- [00:32:58] (f49459) **death**: Death? life orb empty for >= 0.4s
-- [00:33:00] (f49510) **teleport**: 2 view jumps in 0.7s (teleport chain?)
-- [00:33:01] (f49527) **life_drop**: Life drop -100% (100% -> 0%) in 0.32s
-- [00:33:01] (f49528) **poisoned**: Poisoned (green life orb) for 0.6s
-- [00:33:01] (f49542) **area_change**: Area change / loading: HUD gone 3.2s (dark+other)
-- [00:33:04] (f49622) **teleport**: 2 view jumps in 0.4s (teleport chain?)
-- [00:33:06] (f49671) **teleport**: 2 view jumps in 0.6s (teleport chain?)
-- [00:33:10] (f49763) **teleport**: View jump in one frame (motion 5, match 0.17): teleport?
-- [00:33:13] (f49848) **teleport**: 3 view jumps in 1.3s (teleport chain?)
-- [00:33:14] (f49850) **text**: Text (chat): Super Mana / Super / Mana Patian
-- [00:33:14] (f49850) **text**: Text (center): Super Mana Mana
-- [00:33:15] (f49875) **area_change**: Area name: Super Mana
-- [00:33:15] (f49875) **text**: Text (center): Mana POTION
-- [00:33:16] (f49900) **area_change**: Area name: LEVEL
-- [00:33:16] (f49900) **text**: Text (center): Lever 96 ‘ Dr
-- [00:33:17] (f49925) **text**: Text (center): Super Mana PoTiaNn / Surek MANA / Super / NECROMANCER Ras’ / Lever 96 ' De
-- [00:33:21] (f50025) **text**: Text (center): Suver Mana
-- [00:33:21] (f50030) **run_burst**: Fast movement 1.0s, avg camera shift 2.7 px/frame (~266 px/s at 720p; run/whirlwind/charge?)
-- [00:33:22] (f50058) **teleport**: View jump in one frame (motion 6, match 0.20): teleport?
-- [00:33:24] (f50107) **mana_refill**: Mana refill +13% (39% -> 52%) in 0.48s (mana/rejuv potion?)
-- [00:33:25] (f50139) **mana_refill**: Mana refill +15% (52% -> 67%) in 0.24s (mana/rejuv potion?)
-- [00:33:34] (f50372) **teleport**: View jump in one frame (motion 9, match 0.06): teleport?
-- [00:33:39] (f50477) **life_drop**: Life drop -28% (100% -> 72%) in 0.04s
-- [00:33:39] (f50489) **teleport**: 2 view jumps in 1.4s (teleport chain?)
-- [00:33:48] (f50723) **mana_refill**: Mana refill +45% (22% -> 67%) in 0.20s (mana/rejuv potion?)
-- [00:33:50] (f50751) **mana_refill**: Mana refill +17% (62% -> 79%) in 0.12s (mana/rejuv potion?)
-- [00:33:56] (f50901) **run_burst**: Fast movement 0.8s, avg camera shift 1.4 px/frame (~144 px/s at 720p; run/whirlwind/charge?)
-- [00:34:00] (f51012) **teleport**: View jump in one frame (motion 10, match 0.13): teleport?
-- [00:34:03] (f51098) **teleport**: View jump in one frame (motion 8, match 0.06): teleport?
-- [00:34:05] (f51142) **mana_refill**: Mana refill +27% (58% -> 86%) in 0.04s (mana/rejuv potion?)
-- [00:34:05] (f51148) **teleport**: View jump in one frame (motion 8, match 0.17): teleport?
-- [00:34:06] (f51156) **mana_refill**: Mana refill +14% (72% -> 86%) in 0.60s (mana/rejuv potion?)
-- [00:34:07] (f51195) **mana_refill**: Mana refill +12% (79% -> 91%) in 0.44s (mana/rejuv potion?)
-- [00:34:09] (f51245) **life_drop**: Life drop -22% (46% -> 24%) in 0.72s
-- [00:34:11] (f51283) **teleport**: View jump in one frame (motion 16, match 0.18): teleport?
-- [00:34:15] (f51375) **teleport**: View jump in one frame (motion 10, match 0.19): teleport?
-- [00:34:17] (f51438) **teleport**: 2 view jumps in 1.0s (teleport chain?)
-- [00:34:22] (f51565) **teleport**: View jump in one frame (motion 12, match 0.15): teleport?
-- [00:34:23] (f51588) **run_burst**: Fast movement 1.3s, avg camera shift 1.7 px/frame (~168 px/s at 720p; run/whirlwind/charge?)
-- [00:34:27] (f51691) **teleport**: 2 view jumps in 0.9s (teleport chain?)
-- [00:34:35] (f51892) **mana_refill**: Mana refill +71% (22% -> 93%) in 0.52s (mana/rejuv potion?)
-- [00:34:36] (f51904) **life_refill**: Life refill +83% (17% -> 100%) in 0.04s (rejuvenation potion?)
-- [00:34:37] (f51925) **area_change**: Area name: INVENTSRY
-- [00:34:37] (f51925) **text**: Text (center): Cast: 9OO / per MANA
-- [00:34:44] (f52108) **teleport**: View jump in one frame (motion 6, match 0.16): teleport?
-- [00:35:03] (f52575) **text**: Text (chat): Fire 4
-- [00:35:04] (f52608) **teleport**: 2 view jumps in 1.4s (teleport chain?)
-- [00:35:07] (f52693) **teleport**: 2 view jumps in 0.2s (teleport chain?)
-- [00:35:10] (f52756) **teleport**: View jump in one frame (motion 21, match 0.02): teleport?
-- [00:35:12] (f52803) **teleport**: 2 view jumps in 0.5s (teleport chain?)
-- [00:35:13] (f52830) **life_drop**: Life drop -33% (100% -> 67%) in 0.32s
-- [00:35:13] (f52848) **life_drop**: Life drop -24% (67% -> 43%) in 0.64s
-- [00:35:17] (f52939) **teleport**: 2 view jumps in 0.6s (teleport chain?)
-- [00:35:20] (f53007) **teleport**: 3 view jumps in 1.6s (teleport chain?)
-- [00:35:25] (f53143) **teleport**: View jump in one frame (motion 10, match 0.18): teleport?
-- [00:35:27] (f53190) **teleport**: 2 view jumps in 1.4s (teleport chain?)
-- [00:35:31] (f53284) **teleport**: View jump in one frame (motion 17, match 0.00): teleport?
-- [00:35:33] (f53333) **teleport**: View jump in one frame (motion 12, match 0.14): teleport?
-- [00:35:34] (f53357) **run_burst**: Fast movement 0.8s, avg camera shift 2.5 px/frame (~251 px/s at 720p; run/whirlwind/charge?)
-- [00:35:35] (f53390) **run_burst**: Fast movement 0.8s, avg camera shift 1.8 px/frame (~184 px/s at 720p; run/whirlwind/charge?)
-- [00:35:37] (f53430) **life_drop**: Life drop -32% (32% -> 0%) in 0.12s
-- [00:35:37] (f53433) **death**: Death? life orb empty for >= 0.4s
-- [00:35:38] (f53450) **text**: Text (center): PRESS
-- [00:35:38] (f53473) **area_change**: Area change / loading: HUD gone 0.4s (dark+other)
-- [00:35:39] (f53484) **teleport**: 2 view jumps in 0.8s (teleport chain?)
-- [00:35:40] (f53502) **life_drop**: Life drop -100% (100% -> 0%) in 0.28s
-- [00:35:40] (f53503) **poisoned**: Poisoned (green life orb) for 0.6s
-- [00:35:40] (f53518) **area_change**: Area change / loading: HUD gone 3.0s (dark+other)
-- [00:35:43] (f53593) **teleport**: View jump in one frame (motion 29, match 0.05): teleport?
-- [00:35:46] (f53667) **teleport**: 2 view jumps in 0.6s (teleport chain?)
-- [00:35:49] (f53745) **run_burst**: Fast movement 1.0s, avg camera shift 2.4 px/frame (~236 px/s at 720p; run/whirlwind/charge?)
-- [00:35:53] (f53825) **text**: Text (chat): Druip / Lever 99
-- [00:35:53] (f53825) **text**: Text (center): ever 99
-- [00:35:53] (f53838) **teleport**: 2 view jumps in 1.2s (teleport chain?)
-- [00:35:55] (f53875) **text**: Text (center): Super Mana / Mania
-- [00:35:56] (f53900) **text**: Text (center): Druid / MANA PeTION / SUPER
-- [00:35:57] (f53934) **teleport**: View jump in one frame (motion 7, match -0.02): teleport?
-- [00:35:58] (f53950) **text**: Text (chat): Lever 9?
-- [00:35:58] (f53950) **text**: Text (center): LeveL 96
-- [00:35:59] (f53975) **text**: Text (chat): Lever 99
-- [00:36:03] (f54093) **teleport**: View jump in one frame (motion 9, match 0.03): teleport?
-- [00:36:04] (f54100) **text**: Text (center): Super HEALING P&TION / Super MANA PaTION
-- [00:36:05] (f54125) **text**: Text (chat): Super
-- [00:36:05] (f54125) **text**: Text (center): HEALING / Lever / Super Mana Potion / Super Mana Retion
-- [00:36:08] (f54200) **text**: Text (chat): Lever 76 / Suver Mana Patian
-- [00:36:09] (f54242) **mana_refill**: Mana refill +34% (31% -> 65%) in 0.04s (mana/rejuv potion?)
-- [00:36:11] (f54275) **text**: Text (chat): NECROMANC / Lever 96 / Lever 99
-- [00:36:11] (f54275) **text**: Text (center): Super Mana
-- [00:36:11] (f54284) **mana_refill**: Mana refill +17% (79% -> 96%) in 0.56s (mana/rejuv potion?)
-- [00:36:14] (f54350) **teleport**: View jump in one frame (motion 18, match 0.07): teleport?
-- [00:36:21] (f54530) **teleport**: View jump in one frame (motion 10, match 0.11): teleport?
-- [00:36:25] (f54642) **teleport**: 2 view jumps in 1.0s (teleport chain?)
-- [00:36:26] (f54671) **run_burst**: Fast movement 1.0s, avg camera shift 1.9 px/frame (~191 px/s at 720p; run/whirlwind/charge?)
-- [00:36:28] (f54706) **teleport**: 2 view jumps in 1.3s (teleport chain?)
-- [00:36:30] (f54770) **mana_refill**: Mana refill +12% (84% -> 96%) in 0.04s (mana/rejuv potion?)
-- [00:36:32] (f54822) **teleport**: 7 view jumps in 3.4s (teleport chain?)
-- [00:36:40] (f55000) **mana_refill**: Mana refill +17% (79% -> 96%) in 0.72s (mana/rejuv potion?)
-- [00:36:40] (f55024) **teleport**: View jump in one frame (motion 21, match 0.20): teleport?
-- [00:36:45] (f55136) **teleport**: View jump in one frame (motion 12, match 0.20): teleport?
-- [00:36:48] (f55208) **life_drop**: Life drop -27% (91% -> 65%) in 0.04s
-- [00:36:53] (f55347) **teleport**: 2 view jumps in 1.4s (teleport chain?)
-- [00:37:03] (f55588) **life_refill**: Life refill +42% (58% -> 100%) in 0.40s (rejuvenation potion?)
-- [00:37:03] (f55597) **mana_refill**: Mana refill +12% (84% -> 96%) in 0.24s (mana/rejuv potion?)
-- [00:37:10] (f55766) **teleport**: View jump in one frame (motion 7, match 0.13): teleport?
-- [00:37:12] (f55800) **text**: Text (chat): Super
-- [00:37:12] (f55800) **text**: Text (center): Super Mana
-- [00:37:28] (f56206) **teleport**: View jump in one frame (motion 11, match 0.06): teleport?
-- [00:37:35] (f56393) **mana_refill**: Mana refill +43% (22% -> 65%) in 0.04s (mana/rejuv potion?)
-- [00:37:39] (f56487) **mana_refill**: Mana refill +15% (55% -> 70%) in 0.44s (mana/rejuv potion?)
-- [00:37:43] (f56591) **teleport**: 2 view jumps in 0.6s (teleport chain?)
-- [00:37:43] (f56592) **mana_refill**: Mana refill +14% (79% -> 93%) in 0.12s (mana/rejuv potion?)
-- [00:37:49] (f56745) **teleport**: View jump in one frame (motion 8, match 0.14): teleport?
-- [00:37:52] (f56823) **teleport**: 4 view jumps in 3.0s (teleport chain?)
-- [00:37:59] (f56975) **text**: Text (top_right): SkiLL TREE |
-- [00:37:59] (f56976) **teleport**: View jump in one frame (motion 9, match 0.10): teleport?
-- [00:38:01] (f57032) **teleport**: View jump in one frame (motion 14, match 0.03): teleport?
-- [00:38:03] (f57075) **teleport**: View jump in one frame (motion 13, match 0.14): teleport?
-- [00:38:07] (f57181) **teleport**: 2 view jumps in 0.2s (teleport chain?)
-- [00:38:09] (f57247) **teleport**: 2 view jumps in 0.2s (teleport chain?)
-- [00:38:12] (f57310) **teleport**: View jump in one frame (motion 11, match 0.14): teleport?
-- [00:38:14] (f57374) **teleport**: View jump in one frame (motion 17, match 0.13): teleport?
-- [00:38:18] (f57454) **mana_refill**: Mana refill +83% (10% -> 93%) in 0.20s (mana/rejuv potion?)
-- [00:38:18] (f57458) **life_refill**: Life refill +22% (77% -> 99%) in 0.04s (rejuvenation potion?)
-- [00:38:19] (f57475) **area_change**: Area name: INVENTORY
-- [00:38:21] (f57540) **run_burst**: Fast movement 0.8s, avg camera shift 2.4 px/frame (~241 px/s at 720p; run/whirlwind/charge?)
-- [00:38:23] (f57575) **run_burst**: Fast movement 0.8s, avg camera shift 2.1 px/frame (~211 px/s at 720p; run/whirlwind/charge?)
-- [00:38:25] (f57642) **teleport**: 2 view jumps in 0.5s (teleport chain?)
-- [00:38:26] (f57650) **text**: Text (chat): HIANA P / Mana Pat
-- [00:38:26] (f57650) **text**: Text (center): Super
-- [00:38:27] (f57675) **text**: Text (center): MANA POTION Pat / MANA POTION EAR / Lever 96
-- [00:38:40] (f58013) **teleport**: View jump in one frame (motion 10, match 0.19): teleport?
-- [00:38:45] (f58125) **text**: Text (center): Cuesr
-- [00:38:45] (f58137) **teleport**: 2 view jumps in 0.1s (teleport chain?)
-- [00:38:53] (f58325) **text**: Text (chat): me nec
-- [00:38:58] (f58450) **text**: Text (chat): was ag one
-- [00:39:00] (f58500) **text**: Text (chat): qa one / stomped me like
-- [00:39:03] (f58575) **text**: Text (chat): was ane / me like / tind some its
-- [00:39:04] (f58600) **text**: Text (chat): qg one / stomped me line nec / find some its cool
-- [00:39:09] (f58725) **text**: Text (chat): Ind Some COO!
-- [00:39:10] (f58750) **text**: Text (chat): tind ts cool
-- [00:39:16] (f58914) **teleport**: View jump in one frame (motion 10, match 0.06): teleport?
-- [00:39:17] (f58943) **life_drop**: Life drop -18% (100% -> 82%) in 0.04s
-- [00:39:19] (f58998) **teleport**: 2 view jumps in 1.1s (teleport chain?)
-- [00:39:20] (f59016) **mana_refill**: Mana refill +36% (7% -> 42%) in 0.16s (mana/rejuv potion?)
-- [00:39:22] (f59055) **mana_refill**: Mana refill +24% (42% -> 66%) in 0.08s (mana/rejuv potion?)
-- [00:39:23] (f59091) **mana_refill**: Mana refill +15% (21% -> 36%) in 0.04s (mana/rejuv potion?)
-- [00:39:24] (f59119) **mana_refill**: Mana refill +13% (33% -> 46%) in 0.12s (mana/rejuv potion?)
-- [00:39:25] (f59141) **mana_refill**: Mana refill +19% (46% -> 65%) in 0.40s (mana/rejuv potion?)
-- [00:39:26] (f59152) **teleport**: 3 view jumps in 1.6s (teleport chain?)
-- [00:39:31] (f59299) **life_drop**: Life drop -26% (72% -> 46%) in 0.12s
-- [00:39:32] (f59308) **life_drop**: Life drop -39% (46% -> 7%) in 0.80s
-- [00:39:34] (f59372) **mana_refill**: Mana refill +12% (81% -> 93%) in 0.08s (mana/rejuv potion?)
-- [00:39:34] (f59372) **teleport**: 2 view jumps in 1.1s (teleport chain?)
-- [00:39:35] (f59375) **text**: Text (chat): Fire 4
-- [00:39:38] (f59473) **teleport**: 3 view jumps in 1.3s (teleport chain?)
-- [00:39:39] (f59477) **death**: Death? life orb empty for >= 0.4s
-- [00:39:46] (f59668) **teleport**: 3 view jumps in 0.8s (teleport chain?)
-- [00:39:47] (f59688) **life_drop**: Life drop -100% (100% -> 0%) in 0.20s
-- [00:39:47] (f59689) **poisoned**: Poisoned (green life orb) for 0.5s
-- [00:39:48] (f59701) **area_change**: Area change / loading: HUD gone 3.2s (dark+other)
-- [00:39:51] (f59780) **teleport**: View jump in one frame (motion 42, match 0.04): teleport?
-- [00:39:53] (f59845) **teleport**: 2 view jumps in 0.7s (teleport chain?)
-- [00:39:55] (f59884) **run_burst**: Fast movement 0.8s, avg camera shift 2.1 px/frame (~212 px/s at 720p; run/whirlwind/charge?)
-- [00:39:56] (f59920) **run_burst**: Fast movement 1.0s, avg camera shift 2.4 px/frame (~239 px/s at 720p; run/whirlwind/charge?)
-- [00:39:58] (f59955) **run_burst**: Fast movement 1.0s, avg camera shift 2.4 px/frame (~245 px/s at 720p; run/whirlwind/charge?)
-- [00:39:59] (f59995) **teleport**: 3 view jumps in 2.2s (teleport chain?)
-- [00:40:00] (f60000) **text**: Text (chat): Lever 9? / Mana Patian / MANA PNB's Eak / Supek MANA / Super Mana Portia
-- [00:40:01] (f60025) **text**: Text (chat): Ras’s Ear / 99 PNB's Ear / Lever 96
-- [00:40:01] (f60025) **text**: Text (center): @N LeveL 96
-- [00:40:02] (f60050) **area_change**: Area name: Super Mana
-- [00:40:02] (f60050) **text**: Text (chat): Druio
-- [00:40:02] (f60050) **text**: Text (center): Super / Surer Mana / wy MANA / MANA POTION
-- [00:40:03] (f60075) **text**: Text (center): ina Potion
-- [00:40:07] (f60192) **run_burst**: Fast movement 1.2s, avg camera shift 3.3 px/frame (~333 px/s at 720p; run/whirlwind/charge?)
-- [00:40:08] (f60200) **text**: Text (center): CER 154 Garo LEVEL / Druip / ’ ANCIENT Swor
-- [00:40:09] (f60234) **run_burst**: Fast movement 0.8s, avg camera shift 2.7 px/frame (~273 px/s at 720p; run/whirlwind/charge?)
-- [00:40:12] (f60300) **text**: Text (chat): stomped me / find same opening
-- [00:40:14] (f60366) **mana_refill**: Mana refill +18% (52% -> 70%) in 0.04s (mana/rejuv potion?)
-- [00:40:16] (f60405) **run_burst**: Fast movement 0.8s, avg camera shift 2.2 px/frame (~219 px/s at 720p; run/whirlwind/charge?)
-- [00:40:16] (f60422) **mana_refill**: Mana refill +17% (79% -> 96%) in 0.92s (mana/rejuv potion?)
-- [00:40:22] (f60562) **teleport**: 2 view jumps in 0.6s (teleport chain?)
-- [00:40:29] (f60737) **teleport**: View jump in one frame (motion 14, match 0.02): teleport?
-- [00:40:30] (f60755) **mana_refill**: Mana refill +15% (74% -> 88%) in 0.60s (mana/rejuv potion?)
-- [00:40:30] (f60768) **life_drop**: Life drop -28% (100% -> 72%) in 0.04s
-- [00:40:31] (f60781) **life_drop**: Life drop -22% (72% -> 50%) in 0.56s
-- [00:40:37] (f60927) **teleport**: View jump in one frame (motion 12, match 0.14): teleport?
-- [00:40:38] (f60971) **life_drop**: Life drop -38% (45% -> 7%) in 0.12s
-- [00:40:39] (f60987) **death**: Death? life orb empty for >= 0.4s
-- [00:40:42] (f61055) **life_refill**: Life refill +99% (0% -> 99%) in 0.20s (rejuvenation potion?)
-- [00:40:45] (f61137) **teleport**: View jump in one frame (motion 7, match 0.15): teleport?
-- [00:40:46] (f61155) **run_burst**: Fast movement 1.2s, avg camera shift 2.1 px/frame (~208 px/s at 720p; run/whirlwind/charge?)
-- [00:40:47] (f61190) **run_burst**: Fast movement 1.6s, avg camera shift 2.0 px/frame (~196 px/s at 720p; run/whirlwind/charge?)
-- [00:40:49] (f61225) **text**: Text (chat): bine 4
-- [00:40:50] (f61250) **text**: Text (chat): had Sarre
-- [00:40:53] (f61332) **teleport**: View jump in one frame (motion 5, match 0.16): teleport?
-- [00:40:55] (f61392) **teleport**: View jump in one frame (motion 8, match 0.06): teleport?
-- [00:41:01] (f61542) **teleport**: 2 view jumps in 0.4s (teleport chain?)
-- [00:41:03] (f61587) **life_drop**: Life drop -26% (100% -> 74%) in 0.04s
-- [00:41:04] (f61600) **text**: Text (top_right): Skick TREE |
-- [00:41:06] (f61670) **teleport**: 2 view jumps in 0.3s (teleport chain?)
-- [00:41:14] (f61852) **teleport**: View jump in one frame (motion 17, match 0.11): teleport?
-- [00:41:16] (f61901) **teleport**: 2 view jumps in 0.4s (teleport chain?)
-- [00:41:17] (f61925) **text**: Text (chat): COLD DAMAGE RECEIVED. 4
-- [00:41:20] (f62019) **life_drop**: Life drop -25% (67% -> 42%) in 0.04s
-- [00:41:27] (f62180) **run_burst**: Fast movement 0.8s, avg camera shift 1.9 px/frame (~194 px/s at 720p; run/whirlwind/charge?)
-- [00:41:29] (f62232) **teleport**: 2 view jumps in 0.2s (teleport chain?)
-- [00:41:37] (f62432) **life_refill**: Life refill +61% (39% -> 100%) in 0.20s (rejuvenation potion?)
-- [00:41:37] (f62432) **mana_refill**: Mana refill +68% (27% -> 96%) in 0.04s (mana/rejuv potion?)
-- [00:41:38] (f62450) **text**: Text (center): ben Mana ‘
-- [00:41:39] (f62480) **run_burst**: Fast movement 1.0s, avg camera shift 2.1 px/frame (~215 px/s at 720p; run/whirlwind/charge?)
-- [00:41:40] (f62515) **run_burst**: Fast movement 0.8s, avg camera shift 2.5 px/frame (~246 px/s at 720p; run/whirlwind/charge?)
-- [00:41:42] (f62550) **run_burst**: Fast movement 0.8s, avg camera shift 2.4 px/frame (~244 px/s at 720p; run/whirlwind/charge?)
-- [00:42:31] (f63790) **teleport**: 2 view jumps in 0.1s (teleport chain?)
-- [00:42:39] (f63989) **teleport**: View jump in one frame (motion 13, match 0.20): teleport?
-- [00:42:43] (f64075) **text**: Text (chat): Fire Lightning 4
-- [00:42:43] (f64088) **teleport**: View jump in one frame (motion 9, match 0.13): teleport?
-- [00:42:47] (f64179) **teleport**: 2 view jumps in 0.7s (teleport chain?)
-- [00:42:47] (f64192) **mana_refill**: Mana refill +34% (31% -> 65%) in 0.60s (mana/rejuv potion?)
-- [00:42:49] (f64225) **mana_refill**: Mana refill +26% (39% -> 65%) in 0.68s (mana/rejuv potion?)
-- [00:42:51] (f64275) **text**: Text (chat): Fire ue
-- [00:42:51] (f64277) **teleport**: 4 view jumps in 3.0s (teleport chain?)
-- [00:42:57] (f64444) **teleport**: 3 view jumps in 1.4s (teleport chain?)
-- [00:43:00] (f64500) **area_change**: Area name: SRILL TREE
-- [00:43:01] (f64531) **teleport**: 2 view jumps in 0.8s (teleport chain?)
-- [00:43:10] (f64761) **teleport**: 2 view jumps in 1.4s (teleport chain?)
-- [00:43:12] (f64802) **run_burst**: Fast movement 1.1s, avg camera shift 1.5 px/frame (~146 px/s at 720p; run/whirlwind/charge?)
-- [00:43:15] (f64897) **teleport**: View jump in one frame (motion 9, match 0.18): teleport?
-- [00:43:16] (f64900) **area_change**: Area name: TREE i
-- [00:43:17] (f64942) **teleport**: View jump in one frame (motion 7, match 0.07): teleport?
-- [00:43:22] (f65065) **teleport**: View jump in one frame (motion 8, match 0.07): teleport?
-- [00:43:24] (f65100) **area_change**: Area name: Shik The
-- [00:43:26] (f65166) **teleport**: View jump in one frame (motion 9, match 0.11): teleport?
-- [00:43:28] (f65208) **life_drop**: Life drop -22% (72% -> 50%) in 0.04s
-- [00:43:32] (f65307) **teleport**: View jump in one frame (motion 14, match 0.17): teleport?
-- [00:43:33] (f65327) **mana_refill**: Mana refill +27% (31% -> 58%) in 0.88s (mana/rejuv potion?)
-- [00:43:34] (f65365) **teleport**: View jump in one frame (motion 6, match 0.20): teleport?
-- [00:43:38] (f65453) **life_drop**: Life drop -54% (54% -> 0%) in 0.36s
-- [00:43:38] (f65462) **death**: Death? life orb empty for >= 0.4s
-- [00:43:38] (f65462) **teleport**: View jump in one frame (motion 33, match 0.09): teleport?
-- [00:43:40] (f65507) **area_change**: Area change / loading: HUD gone 0.5s (dark+other)
-- [00:43:40] (f65519) **teleport**: 2 view jumps in 0.7s (teleport chain?)
-- [00:43:41] (f65525) **text**: Text (center): Save ano
-- [00:43:41] (f65535) **life_drop**: Life drop -98% (100% -> 2%) in 0.36s
-- [00:43:41] (f65536) **poisoned**: Poisoned (green life orb) for 0.5s
-- [00:43:41] (f65548) **area_change**: Area change / loading: HUD gone 3.0s (dark+other)
-- [00:43:44] (f65622) **teleport**: View jump in one frame (motion 49, match 0.01): teleport?
-- [00:43:47] (f65675) **text**: Text (center): stash
-- [00:43:48] (f65713) **teleport**: 2 view jumps in 0.3s (teleport chain?)
-- [00:43:49] (f65733) **run_burst**: Fast movement 1.3s, avg camera shift 2.1 px/frame (~207 px/s at 720p; run/whirlwind/charge?)
-- [00:43:50] (f65770) **run_burst**: Fast movement 1.0s, avg camera shift 2.3 px/frame (~231 px/s at 720p; run/whirlwind/charge?)
-- [00:43:52] (f65805) **run_burst**: Fast movement 1.1s, avg camera shift 2.8 px/frame (~276 px/s at 720p; run/whirlwind/charge?)
-- [00:43:53] (f65837) **teleport**: View jump in one frame (motion 6, match 0.07): teleport?
-- [00:43:55] (f65875) **text**: Text (center): Lever 99
-- [00:43:57] (f65925) **area_change**: Area name: Surer Mana
-- [00:43:57] (f65925) **text**: Text (center): Super Mana / PNB's Bar / Necromancer
-- [00:44:00] (f66000) **text**: Text (center): Druip
-- [00:44:04] (f66117) **teleport**: View jump in one frame (motion 6, match 0.16): teleport?
-- [00:44:05] (f66130) **run_burst**: Fast movement 0.8s, avg camera shift 2.3 px/frame (~228 px/s at 720p; run/whirlwind/charge?)
-- [00:44:15] (f66392) **teleport**: View jump in one frame (motion 7, match 0.10): teleport?
-- [00:44:17] (f66437) **teleport**: View jump in one frame (motion 6, match 0.20): teleport?
-- [00:44:24] (f66607) **life_drop**: Life drop -23% (91% -> 68%) in 0.04s
-- [00:44:24] (f66620) **teleport**: 2 view jumps in 0.4s (teleport chain?)
-- [00:44:27] (f66692) **teleport**: View jump in one frame (motion 13, match 0.17): teleport?
-- [00:44:37] (f66934) **teleport**: View jump in one frame (motion 8, match 0.08): teleport?
-- [00:44:40] (f67000) **text**: Text (top_right): Skink Tree |
-- [00:44:43] (f67097) **teleport**: View jump in one frame (motion 9, match 0.13): teleport?
-- [00:44:48] (f67206) **teleport**: View jump in one frame (motion 6, match 0.06): teleport?
-- [00:44:50] (f67259) **teleport**: View jump in one frame (motion 7, match 0.20): teleport?
-- [00:44:51] (f67293) **mana_refill**: Mana refill +33% (29% -> 62%) in 0.44s (mana/rejuv potion?)
-- [00:44:53] (f67325) **mana_refill**: Mana refill +19% (39% -> 58%) in 0.44s (mana/rejuv potion?)
-- [00:44:58] (f67450) **run_burst**: Fast movement 0.9s, avg camera shift 3.7 px/frame (~369 px/s at 720p; run/whirlwind/charge?)
-- [00:44:59] (f67476) **teleport**: View jump in one frame (motion 9, match 0.06): teleport?
-- [00:45:02] (f67570) **mana_refill**: Mana refill +67% (26% -> 93%) in 0.16s (mana/rejuv potion?)
-- [00:45:02] (f67573) **life_refill**: Life refill +38% (60% -> 99%) in 0.04s (rejuvenation potion?)
-- [00:45:07] (f67690) **run_burst**: Fast movement 1.0s, avg camera shift 2.9 px/frame (~288 px/s at 720p; run/whirlwind/charge?)
-- [00:45:13] (f67827) **teleport**: 2 view jumps in 0.4s (teleport chain?)
-- [00:45:26] (f68158) **run_burst**: Fast movement 2.2s, avg camera shift 1.6 px/frame (~163 px/s at 720p; run/whirlwind/charge?)
-- [00:45:31] (f68276) **teleport**: 2 view jumps in 0.5s (teleport chain?)
-- [00:45:35] (f68375) **teleport**: 2 view jumps in 1.5s (teleport chain?)
-- [00:45:38] (f68469) **teleport**: View jump in one frame (motion 13, match 0.18): teleport?
-- [00:45:52] (f68815) **teleport**: View jump in one frame (motion 6, match -0.06): teleport?
-- [00:45:54] (f68862) **life_drop**: Life drop -17% (89% -> 72%) in 0.28s
-- [00:45:54] (f68864) **mana_refill**: Mana refill +19% (77% -> 96%) in 0.24s (mana/rejuv potion?)
-- [00:45:55] (f68889) **life_drop**: Life drop -41% (72% -> 30%) in 0.28s
-- [00:45:56] (f68916) **teleport**: View jump in one frame (motion 11, match -0.05): teleport?
-- [00:45:59] (f68978) **mana_refill**: Mana refill +18% (77% -> 96%) in 0.60s (mana/rejuv potion?)
-- [00:46:05] (f69147) **teleport**: View jump in one frame (motion 13, match -0.03): teleport?
-- [00:46:06] (f69171) **mana_refill**: Mana refill +27% (69% -> 96%) in 0.80s (mana/rejuv potion?)
-- [00:46:07] (f69181) **life_drop**: Life drop -26% (26% -> 0%) in 0.44s
-- [00:46:07] (f69192) **death**: Death? life orb empty for >= 0.4s
-- [00:46:09] (f69237) **area_change**: Area change / loading: HUD gone 0.4s (dark+other)
-- [00:46:09] (f69248) **teleport**: 2 view jumps in 0.8s (teleport chain?)
-- [00:46:10] (f69266) **life_drop**: Life drop -81% (99% -> 18%) in 0.28s
-- [00:46:10] (f69267) **poisoned**: Poisoned (green life orb) for 0.4s
-- [00:46:11] (f69278) **area_change**: Area change / loading: HUD gone 3.1s (dark+other)
-- [00:46:14] (f69356) **teleport**: View jump in one frame (motion 51, match -0.00): teleport?
-- [00:46:17] (f69442) **run_burst**: Fast movement 1.1s, avg camera shift 1.7 px/frame (~167 px/s at 720p; run/whirlwind/charge?)
-- [00:46:23] (f69588) **teleport**: View jump in one frame (motion 15, match 0.14): teleport?
-- [00:46:24] (f69601) **run_burst**: Fast movement 1.1s, avg camera shift 2.3 px/frame (~226 px/s at 720p; run/whirlwind/charge?)
-- [00:46:27] (f69675) **text**: Text (chat): Gave! so
-- [00:46:28] (f69700) **text**: Text (chat): SO Intense
-- [00:46:28] (f69718) **teleport**: View jump in one frame (motion 10, match 0.20): teleport?
-- [00:46:29] (f69725) **text**: Text (chat): SUPER
-- [00:46:29] (f69725) **text**: Text (center): PNB's Ear / Lever 96 . / SUPER Mans PeTION
-- [00:46:29] (f69747) **run_burst**: Fast movement 1.0s, avg camera shift 2.4 px/frame (~237 px/s at 720p; run/whirlwind/charge?)
-- [00:46:30] (f69750) **text**: Text (top_right): CROMANCER / Lever 96
-- [00:46:30] (f69771) **mana_refill**: Mana refill +15% (81% -> 96%) in 0.04s (mana/rejuv potion?)
-- [00:46:31] (f69775) **text**: Text (chat): Gare} teve thing / ‘Gavel?
-- [00:46:35] (f69890) **teleport**: View jump in one frame (motion 11, match 0.08): teleport?
-- [00:46:38] (f69952) **run_burst**: Fast movement 0.8s, avg camera shift 2.6 px/frame (~261 px/s at 720p; run/whirlwind/charge?)
-- [00:46:40] (f70011) **teleport**: View jump in one frame (motion 6, match 0.07): teleport?
-- [00:46:41] (f70041) **life_drop**: Life drop -22% (99% -> 77%) in 0.04s
-- [00:46:41] (f70049) **life_drop**: Life drop -23% (77% -> 54%) in 0.76s
-- [00:46:45] (f70139) **mana_refill**: Mana refill +35% (30% -> 65%) in 0.44s (mana/rejuv potion?)
-- [00:46:46] (f70170) **mana_refill**: Mana refill +15% (74% -> 88%) in 0.48s (mana/rejuv potion?)
-- [00:46:48] (f70205) **run_burst**: Fast movement 0.8s, avg camera shift 1.8 px/frame (~182 px/s at 720p; run/whirlwind/charge?)
-- [00:46:51] (f70280) **run_burst**: Fast movement 0.8s, avg camera shift 1.7 px/frame (~169 px/s at 720p; run/whirlwind/charge?)
-- [00:46:55] (f70390) **teleport**: 3 view jumps in 1.9s (teleport chain?)
-- [00:47:01] (f70538) **teleport**: View jump in one frame (motion 9, match -0.03): teleport?
-- [00:47:06] (f70651) **teleport**: View jump in one frame (motion 9, match 0.17): teleport?
-- [00:47:08] (f70721) **mana_refill**: Mana refill +12% (58% -> 70%) in 0.08s (mana/rejuv potion?)
-- [00:47:09] (f70734) **mana_refill**: Mana refill +17% (69% -> 86%) in 0.60s (mana/rejuv potion?)
-- [00:47:18] (f70958) **mana_refill**: Mana refill +19% (46% -> 65%) in 0.08s (mana/rejuv potion?)
-- [00:47:19] (f70993) **mana_refill**: Mana refill +14% (79% -> 93%) in 0.76s (mana/rejuv potion?)
-- [00:47:22] (f71058) **teleport**: 3 view jumps in 1.2s (teleport chain?)
-- [00:47:25] (f71142) **teleport**: View jump in one frame (motion 6, match 0.10): teleport?
-- [00:47:28] (f71217) **mana_refill**: Mana refill +14% (79% -> 93%) in 0.52s (mana/rejuv potion?)
-- [00:47:29] (f71225) **area_change**: Area name: Skict TREE
-- [00:47:31] (f71297) **teleport**: View jump in one frame (motion 9, match 0.16): teleport?
-- [00:47:37] (f71436) **teleport**: View jump in one frame (motion 7, match 0.08): teleport?
-- [00:47:39] (f71489) **teleport**: View jump in one frame (motion 11, match 0.12): teleport?
-- [00:47:40] (f71504) **run_burst**: Fast movement 1.1s, avg camera shift 2.4 px/frame (~236 px/s at 720p; run/whirlwind/charge?)
-- [00:47:43] (f71582) **mana_refill**: Mana refill +19% (33% -> 52%) in 0.48s (mana/rejuv potion?)
-- [00:47:44] (f71609) **mana_refill**: Mana refill +19% (46% -> 65%) in 0.44s (mana/rejuv potion?)
-- [00:47:45] (f71637) **teleport**: View jump in one frame (motion 8, match 0.16): teleport?
-- [00:47:45] (f71646) **mana_refill**: Mana refill +19% (72% -> 91%) in 0.64s (mana/rejuv potion?)
-- [00:47:46] (f71660) **run_burst**: Fast movement 0.8s, avg camera shift 2.4 px/frame (~235 px/s at 720p; run/whirlwind/charge?)
-- [00:47:47] (f71675) **area_change**: Area name: Skint TREE
-- [00:47:52] (f71810) **teleport**: View jump in one frame (motion 6, match 0.09): teleport?
-- [00:47:55] (f71882) **life_drop**: Life drop -16% (16% -> 0%) in 0.16s
-- [00:47:55] (f71886) **death**: Death? life orb empty for >= 0.4s
-- [00:47:56] (f71924) **mana_refill**: Mana refill +20% (75% -> 96%) in 0.04s (mana/rejuv potion?)
-- [00:47:57] (f71925) **text**: Text (center): ESC TR
-- [00:47:57] (f71930) **area_change**: Area change / loading: HUD gone 0.5s (dark+other)
-- [00:47:57] (f71942) **teleport**: 2 view jumps in 0.8s (teleport chain?)
-- [00:47:58] (f71950) **text**: Text (center): 2 Save
-- [00:47:58] (f71961) **life_drop**: Life drop -100% (100% -> 0%) in 0.24s
-- [00:47:58] (f71962) **poisoned**: Poisoned (green life orb) for 0.6s
-- [00:47:59] (f71975) **text**: Text (chat): te Seng
-- [00:47:59] (f71976) **area_change**: Area change / loading: HUD gone 2.9s (dark+other)
-- [00:48:01] (f72048) **teleport**: View jump in one frame (motion 52, match 0.06): teleport?
-- [00:48:04] (f72100) **text**: Text (center): Stash
-- [00:48:05] (f72138) **run_burst**: Fast movement 1.2s, avg camera shift 1.6 px/frame (~160 px/s at 720p; run/whirlwind/charge?)
-- [00:48:06] (f72172) **teleport**: 2 view jumps in 0.8s (teleport chain?)
-- [00:48:08] (f72200) **text**: Text (chat): Rab is busy
-- [00:48:09] (f72225) **text**: Text (chat): Rac is busy
-- [00:48:09] (f72225) **text**: Text (center): GE Phe TRAvE / CANCEL
-- [00:48:10] (f72250) **text**: Text (top_right): INVENTORY :
-- [00:48:10] (f72259) **run_burst**: Fast movement 1.2s, avg camera shift 1.8 px/frame (~182 px/s at 720p; run/whirlwind/charge?)
-- [00:48:12] (f72300) **run_burst**: Fast movement 2.0s, avg camera shift 2.5 px/frame (~245 px/s at 720p; run/whirlwind/charge?)
-- [00:48:14] (f72355) **run_burst**: Fast movement 2.0s, avg camera shift 2.8 px/frame (~278 px/s at 720p; run/whirlwind/charge?)
-- [00:48:26] (f72663) **teleport**: View jump in one frame (motion 9, match 0.09): teleport?
-- [00:48:32] (f72811) **teleport**: View jump in one frame (motion 5, match -0.05): teleport?
-- [00:48:36] (f72902) **teleport**: View jump in one frame (motion 11, match 0.08): teleport?
-- [00:48:41] (f73042) **teleport**: View jump in one frame (motion 6, match -0.06): teleport?
-- [00:48:42] (f73059) **mana_refill**: Mana refill +13% (39% -> 52%) in 0.04s (mana/rejuv potion?)
-- [00:48:42] (f73071) **mana_refill**: Mana refill +20% (58% -> 79%) in 0.60s (mana/rejuv potion?)
-- [00:48:50] (f73258) **life_drop**: Life drop -27% (94% -> 67%) in 0.40s
-- [00:48:50] (f73273) **teleport**: 2 view jumps in 0.4s (teleport chain?)
-- [00:48:55] (f73382) **teleport**: 3 view jumps in 1.6s (teleport chain?)
-- [00:48:59] (f73481) **teleport**: View jump in one frame (motion 10, match 0.18): teleport?
-- [00:49:05] (f73636) **teleport**: 2 view jumps in 0.3s (teleport chain?)
-- [00:49:07] (f73679) **run_burst**: Fast movement 1.3s, avg camera shift 1.9 px/frame (~194 px/s at 720p; run/whirlwind/charge?)
-- [00:49:08] (f73700) **text**: Text (top_right): Shick ‘ |
-- [00:49:13] (f73842) **teleport**: View jump in one frame (motion 9, match 0.18): teleport?
-- [00:49:14] (f73862) **run_burst**: Fast movement 0.9s, avg camera shift 2.2 px/frame (~224 px/s at 720p; run/whirlwind/charge?)
-- [00:49:15] (f73875) **text**: Text (chat): SUPER / Ear Bar
-- [00:49:15] (f73875) **text**: Text (center): Supek Mana
-- [00:49:30] (f74262) **life_refill**: Life refill +35% (65% -> 100%) in 0.12s (rejuvenation potion?)
-- [00:49:30] (f74263) **mana_refill**: Mana refill +66% (27% -> 93%) in 0.08s (mana/rejuv potion?)
-- [00:49:31] (f74275) **area_change**: Area name: INVENTORY
-- [00:49:33] (f74340) **run_burst**: Fast movement 1.6s, avg camera shift 1.9 px/frame (~188 px/s at 720p; run/whirlwind/charge?)
-- [00:49:36] (f74400) **run_burst**: Fast movement 1.0s, avg camera shift 2.0 px/frame (~195 px/s at 720p; run/whirlwind/charge?)
-- [00:49:37] (f74447) **teleport**: 4 view jumps in 1.3s (teleport chain?)
-- [00:49:45] (f74625) **text**: Text (center): Ras's Ear / Lever 99 / Surer Mana / Super Mana
-- [00:49:47] (f74698) **mana_refill**: Mana refill +12% (74% -> 86%) in 0.48s (mana/rejuv potion?)
-- [00:49:50] (f74762) **teleport**: 2 view jumps in 0.2s (teleport chain?)
-- [00:49:53] (f74844) **teleport**: View jump in one frame (motion 8, match 0.18): teleport?
-- [00:49:55] (f74882) **teleport**: View jump in one frame (motion 6, match 0.07): teleport?
-- [00:49:57] (f74943) **teleport**: View jump in one frame (motion 11, match -0.01): teleport?
-- [00:50:07] (f75183) **teleport**: View jump in one frame (motion 17, match 0.05): teleport?
-- [00:50:12] (f75314) **mana_refill**: Mana refill +35% (23% -> 58%) in 0.72s (mana/rejuv potion?)
-- [00:50:12] (f75324) **life_drop**: Life drop -17% (96% -> 79%) in 0.32s
-- [00:50:13] (f75338) **life_drop**: Life drop -25% (79% -> 54%) in 0.80s
-- [00:50:14] (f75365) **teleport**: View jump in one frame (motion 7, match 0.07): teleport?
-- [00:50:17] (f75442) **teleport**: View jump in one frame (motion 12, match 0.11): teleport?
-- [00:50:24] (f75607) **teleport**: View jump in one frame (motion 15, match 0.06): teleport?
-- [00:50:32] (f75817) **life_refill**: Life refill +56% (43% -> 99%) in 0.16s (rejuvenation potion?)
-- [00:50:52] (f76312) **teleport**: View jump in one frame (motion 9, match 0.11): teleport?
-- [00:50:54] (f76355) **run_burst**: Fast movement 0.8s, avg camera shift 1.6 px/frame (~163 px/s at 720p; run/whirlwind/charge?)
-- [00:51:00] (f76500) **text**: Text (chat): Defense bao
-- [00:51:03] (f76593) **teleport**: 3 view jumps in 1.2s (teleport chain?)
-- [00:51:05] (f76636) **mana_refill**: Mana refill +21% (31% -> 52%) in 0.08s (mana/rejuv potion?)
-- [00:51:05] (f76649) **mana_refill**: Mana refill +23% (46% -> 69%) in 0.76s (mana/rejuv potion?)
-- [00:51:09] (f76726) **teleport**: View jump in one frame (motion 8, match 0.20): teleport?
-- [00:51:11] (f76775) **area_change**: Area name: SkiLL TREE
-- [00:51:13] (f76831) **mana_refill**: Mana refill +18% (77% -> 96%) in 0.56s (mana/rejuv potion?)
-- [00:51:13] (f76837) **teleport**: View jump in one frame (motion 9, match 0.16): teleport?
-- [00:51:23] (f77084) **teleport**: View jump in one frame (motion 5, match 0.15): teleport?
-- [00:51:25] (f77140) **run_burst**: Fast movement 1.0s, avg camera shift 2.4 px/frame (~244 px/s at 720p; run/whirlwind/charge?)
-- [00:51:28] (f77203) **teleport**: View jump in one frame (motion 7, match 0.09): teleport?
-- [00:51:30] (f77267) **teleport**: 2 view jumps in 1.1s (teleport chain?)
-- [00:51:30] (f77271) **mana_refill**: Mana refill +19% (74% -> 93%) in 0.60s (mana/rejuv potion?)
-- [00:51:38] (f77471) **teleport**: 2 view jumps in 0.4s (teleport chain?)
-- [00:51:42] (f77552) **life_drop**: Life drop -63% (84% -> 21%) in 0.88s
-- [00:51:45] (f77642) **teleport**: 2 view jumps in 0.4s (teleport chain?)
-- [00:51:46] (f77650) **text**: Text (chat): COLE 3°
-- [00:51:54] (f77853) **teleport**: View jump in one frame (motion 13, match -0.03): teleport?
-- [00:52:01] (f78029) **teleport**: View jump in one frame (motion 6, match 0.08): teleport?
-- [00:52:05] (f78137) **life_refill**: Life refill +84% (16% -> 100%) in 0.32s (rejuvenation potion?)
-- [00:52:05] (f78139) **mana_refill**: Mana refill +35% (58% -> 93%) in 0.04s (mana/rejuv potion?)
-- [00:52:10] (f78260) **run_burst**: Fast movement 1.0s, avg camera shift 2.2 px/frame (~217 px/s at 720p; run/whirlwind/charge?)
-- [00:52:23] (f78587) **run_burst**: Fast movement 1.1s, avg camera shift 3.2 px/frame (~322 px/s at 720p; run/whirlwind/charge?)
-- [00:52:24] (f78600) **text**: Text (center): CHEST
-- [00:52:24] (f78617) **teleport**: View jump in one frame (motion 8, match 0.03): teleport?
-- [00:52:33] (f78834) **run_burst**: Fast movement 0.8s, avg camera shift 1.9 px/frame (~189 px/s at 720p; run/whirlwind/charge?)
-- [00:52:33] (f78847) **teleport**: View jump in one frame (motion 9, match 0.03): teleport?
-- [00:52:36] (f78912) **teleport**: View jump in one frame (motion 13, match 0.04): teleport?
-- [00:52:38] (f78952) **teleport**: View jump in one frame (motion 6, match 0.13): teleport?
-- [00:52:40] (f79005) **run_burst**: Fast movement 0.9s, avg camera shift 2.5 px/frame (~253 px/s at 720p; run/whirlwind/charge?)
-- [00:52:44] (f79102) **teleport**: View jump in one frame (motion 7, match 0.15): teleport?
-- [00:52:44] (f79106) **mana_refill**: Mana refill +13% (52% -> 65%) in 0.08s (mana/rejuv potion?)
-- [00:52:47] (f79191) **mana_refill**: Mana refill +12% (84% -> 96%) in 0.60s (mana/rejuv potion?)
-- [00:52:48] (f79217) **teleport**: View jump in one frame (motion 11, match 0.16): teleport?
-- [00:52:51] (f79275) **area_change**: Area name: Stith TREF
-- [00:52:53] (f79336) **life_drop**: Life drop -26% (96% -> 70%) in 0.04s
-- [00:53:00] (f79501) **teleport**: View jump in one frame (motion 11, match 0.03): teleport?
-- [00:53:02] (f79551) **teleport**: View jump in one frame (motion 9, match -0.05): teleport?
-- [00:53:04] (f79622) **life_drop**: Life drop -10% (68% -> 58%) in 0.04s
-- [00:53:06] (f79657) **teleport**: 2 view jumps in 0.7s (teleport chain?)
-- [00:53:10] (f79751) **mana_refill**: Mana refill +14% (52% -> 66%) in 0.16s (mana/rejuv potion?)
-- [00:53:12] (f79809) **teleport**: 2 view jumps in 0.3s (teleport chain?)
-- [00:53:13] (f79834) **mana_refill**: Mana refill +12% (81% -> 93%) in 0.44s (mana/rejuv potion?)
-- [00:53:17] (f79947) **teleport**: View jump in one frame (motion 14, match 0.19): teleport?
-- [00:53:18] (f79950) **text**: Text (chat): Fire 4
-- [00:53:21] (f80047) **mana_refill**: Mana refill +12% (84% -> 96%) in 0.40s (mana/rejuv potion?)
-- [00:53:22] (f80057) **teleport**: View jump in one frame (motion 6, match 0.09): teleport?
-- [00:53:24] (f80107) **teleport**: View jump in one frame (motion 11, match 0.01): teleport?
-- [00:53:29] (f80242) **teleport**: View jump in one frame (motion 7, match 0.15): teleport?
-- [00:53:31] (f80297) **teleport**: View jump in one frame (motion 9, match 0.13): teleport?
-- [00:53:33] (f80348) **run_burst**: Fast movement 0.9s, avg camera shift 1.6 px/frame (~156 px/s at 720p; run/whirlwind/charge?)
-- [00:53:37] (f80425) **text**: Text (top_right): Shick |
-- [00:53:41] (f80538) **teleport**: View jump in one frame (motion 7, match 0.10): teleport?
-- [00:53:47] (f80687) **life_refill**: Life refill +58% (40% -> 99%) in 0.04s (rejuvenation potion?)
-- [00:53:47] (f80687) **mana_refill**: Mana refill +12% (84% -> 96%) in 0.04s (mana/rejuv potion?)
-- [00:53:55] (f80875) **area_change**: Area name: SEILL TREE
-- [00:53:58] (f80950) **text**: Text (chat): aight
-- [00:53:59] (f80975) **text**: Text (chat): an bro
-- [00:54:04] (f81104) **teleport**: View jump in one frame (motion 6, match 0.05): teleport?
-- [00:54:08] (f81219) **run_burst**: Fast movement 1.0s, avg camera shift 2.2 px/frame (~221 px/s at 720p; run/whirlwind/charge?)
-- [00:54:09] (f81225) **text**: Text (center): Supek Mana / Surer / Mana Patian / Super MANA
-- [00:54:14] (f81353) **teleport**: View jump in one frame (motion 6, match -0.03): teleport?
-- [00:54:16] (f81422) **teleport**: View jump in one frame (motion 6, match 0.07): teleport?
-- [00:54:17] (f81426) **mana_refill**: Mana refill +14% (58% -> 72%) in 0.16s (mana/rejuv potion?)
-- [00:54:17] (f81441) **mana_refill**: Mana refill +20% (75% -> 96%) in 0.64s (mana/rejuv potion?)
-- [00:54:19] (f81478) **mana_refill**: Mana refill +70% (26% -> 96%) in 0.20s (mana/rejuv potion?)
-- [00:54:25] (f81641) **life_drop**: Life drop -18% (100% -> 82%) in 0.04s
-- [00:54:29] (f81731) **mana_refill**: Mana refill +13% (46% -> 58%) in 0.12s (mana/rejuv potion?)
-- [00:54:31] (f81791) **mana_refill**: Mana refill +17% (79% -> 96%) in 0.84s (mana/rejuv potion?)
-- [00:54:38] (f81974) **teleport**: View jump in one frame (motion 11, match 0.01): teleport?
-- [00:54:46] (f82162) **teleport**: 2 view jumps in 1.0s (teleport chain?)
-- [00:54:50] (f82272) **teleport**: View jump in one frame (motion 6, match 0.13): teleport?
-- [00:55:02] (f82552) **teleport**: 2 view jumps in 0.5s (teleport chain?)
-- [00:55:04] (f82611) **mana_refill**: Mana refill +19% (23% -> 42%) in 0.04s (mana/rejuv potion?)
-- [00:55:05] (f82629) **mana_refill**: Mana refill +36% (29% -> 65%) in 0.36s (mana/rejuv potion?)
-- [00:55:06] (f82669) **mana_refill**: Mana refill +26% (39% -> 65%) in 0.04s (mana/rejuv potion?)
-- [00:55:07] (f82681) **mana_refill**: Mana refill +15% (52% -> 67%) in 0.60s (mana/rejuv potion?)
-- [00:55:09] (f82732) **teleport**: 2 view jumps in 0.3s (teleport chain?)
-- [00:55:11] (f82792) **teleport**: View jump in one frame (motion 7, match 0.01): teleport?
-- [00:55:23] (f83075) **text**: Text (chat): ga bro
-- [00:55:24] (f83100) **text**: Text (chat): Se wen
-- [00:55:25] (f83125) **text**: Text (chat): Se wer
-- [00:55:27] (f83175) **text**: Text (chat): Gavel / ga pro
-- [00:55:28] (f83200) **text**: Text (chat): ke bro / you back
-- [00:55:29] (f83225) **text**: Text (chat): Ke bro so / gg bro
-- [00:55:30] (f83250) **text**: Text (chat): ya bre
-- [00:55:31] (f83275) **text**: Text (chat): arourd
-- [00:55:32] (f83300) **text**: Text (chat): Se not su
-- [00:55:33] (f83325) **text**: Text (chat): Se not
-- [00:55:36] (f83400) **text**: Text (chat): tli be
-- [00:55:36] (f83416) **life_refill**: Life refill +40% (60% -> 100%) in 0.04s (rejuvenation potion?)
-- [00:55:37] (f83425) **text**: Text (chat): sane tno
-- [00:55:37] (f83425) **text**: Text (center): CANCEL
-- [00:55:44] (f83611) **life_drop**: Life drop -100% (100% -> 0%) in 0.92s
-- [00:55:44] (f83611) **teleport**: 2 view jumps in 0.9s (teleport chain?)
-- [00:55:45] (f83625) **text**: Text (center): EXIT e
-- [00:55:45] (f83634) **death**: Death? life orb empty for >= 0.4s
-- [00:55:45] (f83634) **poisoned**: Poisoned (green life orb) for 3.8s
-- [00:55:47] (f83675) **text**: Text (chat): Levee
-- [00:55:48] (f83700) **text**: Text (chat): Lever
-- [00:55:49] (f83746) **poisoned**: Poisoned (green life orb) for 1.4s
-- [00:55:50] (f83750) **text**: Text (chat): (Lobby Seno
-- [00:55:51] (f83775) **text**: Text (chat): [Lobby
-- [00:55:52] (f83800) **text**: Text (chat): Welcome to EUFC / AK to the Ov? / # Welcomer / Welcame @Pulse / Scr @ ime: the / to the ce yt
-- [00:55:52] (f83800) **text**: Text (center): me to EUFC
-- [00:55:53] (f83825) **text**: Text (chat): to the ty! / payers / ace and we you / to EUFC! / @ the arena / a to the
-- [00:55:53] (f83825) **text**: Text (top_right): League of Legends 1
-- [00:55:54] (f83850) **area_change**: Area name: League of
-- [00:55:54] (f83850) **text**: Text (chat): to the / ten players / Geed we you athe / tournaments / to the PyP
-- [00:55:56] (f83900) **text**: Text (chat): ry your / ve players / Welcome: / i to the
-- [00:55:57] (f83925) **text**: Text (chat): be here pretty mach ail da: / what we / Pulse / iets try nes: / can nave / yap over gare ping
-- [00:55:57] (f83925) **text**: Text (center): Du same / utim back in few tours / all day
-- [00:56:00] (f84000) **text**: Text (chat): a Pulse / lets try druy nes / & can ya find if have high ping / yap over ad
-- [00:56:00] (f84000) **text**: Text (center): Do some mus / ul in back in few hours again
-- [00:56:02] (f84050) **text**: Text (chat): tets ner / fied a nave high
-- [00:56:03] (f84075) **text**: Text (chat): Pulse / lets try ner / yep ad
-- [00:56:04] (f84100) **text**: Text (chat): what we / lets try / can ya find pame? if have high ping / yap finnish ad
-- [00:56:05] (f84125) **text**: Text (chat): playin
-- [00:56:06] (f84150) **text**: Text (chat): iels try / a game? make / always yap over finn.sh ping ad
-- [00:56:08] (f84200) **text**: Text (chat): ‘at try / find a u have high ping / a Pulse / ppl yap over pare ad / = u stream?
-- [00:56:09] (f84225) **text**: Text (chat): Pulse
-- [00:56:12] (f84300) **text**: Text (chat): lets try dru nes / ate unec / fied 4 u have pant / ppl always yap over ping ad / dic u strearn?
-- [00:56:12] (f84300) **text**: Text (center): utim back in feve again / ich all day
-- [00:56:13] (f84325) **text**: Text (chat): fied 4 u might pant
-- [00:56:14] (f84350) **text**: Text (chat): lots try nec / ppl always yap over finnish pame ping ad
-- [00:56:15] (f84375) **text**: Text (chat): Pulse
-- [00:56:16] (f84400) **text**: Text (chat): lots try / fied 4 u pant / ppl always yap over pame ping ad
-- [00:56:18] (f84450) **text**: Text (chat): fied a fame? u ave pant / dic u strearn?
-- [00:56:20] (f84500) **text**: Text (chat): . lets try dru / can a ifi make mipht have high ping / a Pulse / ppl abvays yap over finn sh pane ad
-- [00:56:21] (f84525) **text**: Text (chat): Pulse
-- [00:56:24] (f84600) **text**: Text (chat): lets try / canya tind a game? if i make u have high ping / ppl always yap over ping ad / stream?
-- [00:56:26] (f84650) **text**: Text (chat): i¢ Pulse / can ya find a u have high ping / ppl atways yap over finn.sh pame ping ad
-- [00:56:27] (f84675) **text**: Text (chat): Pulse
-- [00:56:28] (f84700) **text**: Text (chat): a Pulse / ppl always yap over pame ping ad / strearn?
-- [00:56:30] (f84750) **text**: Text (chat): lets try dru v / canya tind a game? if i make u have high ping
-- [00:56:32] (f84800) **text**: Text (chat): lots try / canya find 4 make u might have hiph ping / ppl always yap over xd / did u stream?
-- [00:56:33] (f84825) **text**: Text (chat): Pulse
-- [00:56:36] (f84900) **text**: Text (chat): can ya find 4 game? make u might have high ping / ppl yap over finnish ping xd
-- [00:56:38] (f84950) **text**: Text (chat): lots try / did u stream?
-- [00:56:39] (f84975) **text**: Text (chat): Pulse
-- [00:56:41] (f85043) **teleport**: View jump in one frame (motion 21, match 0.01): teleport?
-- [00:56:42] (f85050) **poisoned**: Poisoned (green life orb) for 3.9s
-- [00:56:50] (f85250) **text**: Text (chat): Pulse / a Pulse / yan cver finn sh
-- [00:56:51] (f85275) **text**: Text (chat): tots try / yan over
-- [00:56:52] (f85300) **text**: Text (chat): 7, a Pulse / abvays yap over fina sh gare ad
-- [00:56:54] (f85350) **text**: Text (chat): lets try
-- [00:56:55] (f85378) **poisoned**: Poisoned (green life orb) for 4.2s
+- [00:00:00] (f0) **death** [d2r]: Death? life orb empty for >= 0.4s
+- [00:00:00] (f15) **life_refill** [d2r]: Life refill +99% (0% -> 99%) in 0.40s (rejuvenation potion?)
+- [00:00:05] (f138) **teleport** [d2r]: 2 view jumps in 0.0s (teleport chain?)
+- [00:00:06] (f150) **text** [d2r]: Text (center): Super Mana / MANA Pati
+- [00:00:07] (f175) **text** [d2r]: Text (center): Surek MANA
+- [00:00:08] (f200) **text** [d2r]: Text (center): Super / MANA P&TION
+- [00:00:08] (f207) **run_burst** [d2r]: Fast movement 1.2s, avg camera shift 2.6 px/frame (~264 px/s at 720p; run/whirlwind/charge?)
+- [00:00:09] (f236) **life_drop** [d2r]: Life drop -99% (99% -> 0%) in 0.04s
+- [00:00:10] (f254) **life_refill** [d2r]: Life refill +99% (0% -> 99%) in 0.36s (rejuvenation potion?)
+- [00:00:29] (f740) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 1.7 px/frame (~173 px/s at 720p; run/whirlwind/charge?)
+- [00:00:30] (f767) **teleport** [d2r]: View jump in one frame (motion 9, match 0.01): teleport?
+- [00:00:35] (f875) **text** [d2r]: Text (chat): Super Mana P
+- [00:00:35] (f875) **text** [d2r]: Text (center): Mana PaTian / Super Mana Parion ff
+- [00:00:37] (f927) **mana_refill** [d2r]: Mana refill +63% (33% -> 96%) in 2.92s (mana/rejuv potion?)
+- [00:00:40] (f1010) **teleport** [d2r]: View jump in one frame (motion 6, match 0.16): teleport?
+- [00:00:43] (f1089) **life_drop** [d2r]: Life drop -23% (100% -> 77%) in 0.04s
+- [00:00:45] (f1133) **teleport** [d2r]: 2 view jumps in 1.0s (teleport chain?)
+- [00:00:51] (f1293) **teleport** [d2r]: View jump in one frame (motion 8, match 0.12): teleport?
+- [00:00:54] (f1366) **teleport** [d2r]: View jump in one frame (motion 13, match 0.01): teleport?
+- [00:00:57] (f1428) **teleport** [d2r]: View jump in one frame (motion 11, match 0.02): teleport?
+- [00:01:08] (f1713) **mana_refill** [d2r]: Mana refill +13% (46% -> 58%) in 0.08s (mana/rejuv potion?)
+- [00:01:09] (f1749) **teleport** [d2r]: View jump in one frame (motion 9, match -0.12): teleport?
+- [00:01:10] (f1760) **life_drop** [d2r]: Life drop -23% (65% -> 42%) in 0.04s
+- [00:01:22] (f2052) **teleport** [d2r]: 2 view jumps in 1.4s (teleport chain?)
+- [00:01:26] (f2168) **teleport** [d2r]: View jump in one frame (motion 12, match 0.03): teleport?
+- [00:01:35] (f2392) **mana_refill** [d2r]: Mana refill +13% (39% -> 52%) in 0.12s (mana/rejuv potion?)
+- [00:01:36] (f2423) **mana_refill** [d2r]: Mana refill +15% (58% -> 74%) in 0.40s (mana/rejuv potion?)
+- [00:01:40] (f2509) **teleport** [d2r]: 3 view jumps in 1.4s (teleport chain?)
+- [00:01:43] (f2584) **teleport** [d2r]: View jump in one frame (motion 8, match 0.06): teleport?
+- [00:01:51] (f2793) **mana_refill** [d2r]: Mana refill +13% (46% -> 58%) in 0.04s (mana/rejuv potion?)
+- [00:01:52] (f2813) **mana_refill** [d2r]: Mana refill +21% (46% -> 67%) in 0.52s (mana/rejuv potion?)
+- [00:01:53] (f2825) **teleport** [d2r]: View jump in one frame (motion 11, match 0.14): teleport?
+- [00:01:54] (f2873) **teleport** [d2r]: 2 view jumps in 0.4s (teleport chain?)
+- [00:01:56] (f2900) **loud_peak**: Loud peak -18 dBFS (+13 dB over typical): shout, impact or music hit?
+- [00:01:57] (f2929) **life_refill** [d2r]: Life refill +66% (32% -> 99%) in 0.12s (rejuvenation potion?)
+- [00:01:58] (f2950) **text** [d2r]: Text (center): per Mana
+- [00:02:04] (f3106) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 2.5 px/frame (~251 px/s at 720p; run/whirlwind/charge?)
+- [00:02:07] (f3175) **text** [d2r]: Text (top_right): SKILL TREE |
+- [00:02:08] (f3208) **teleport** [d2r]: View jump in one frame (motion 8, match 0.03): teleport?
+- [00:02:11] (f3288) **teleport** [d2r]: View jump in one frame (motion 7, match 0.19): teleport?
+- [00:02:14] (f3351) **teleport** [d2r]: 2 view jumps in 1.1s (teleport chain?)
+- [00:02:33] (f3827) **mana_refill** [d2r]: Mana refill +39% (26% -> 65%) in 0.48s (mana/rejuv potion?)
+- [00:02:34] (f3867) **mana_refill** [d2r]: Mana refill +26% (39% -> 65%) in 0.16s (mana/rejuv potion?)
+- [00:02:35] (f3888) **teleport** [d2r]: View jump in one frame (motion 12, match 0.08): teleport?
+- [00:02:38] (f3951) **life_drop** [d2r]: Life drop -23% (100% -> 77%) in 0.04s
+- [00:02:38] (f3962) **mana_refill** [d2r]: Mana refill +14% (79% -> 93%) in 0.44s (mana/rejuv potion?)
+- [00:02:38] (f3963) **teleport** [d2r]: View jump in one frame (motion 11, match 0.15): teleport?
+- [00:02:42] (f4068) **teleport** [d2r]: View jump in one frame (motion 6, match 0.12): teleport?
+- [00:02:46] (f4151) **teleport** [d2r]: View jump in one frame (motion 12, match 0.00): teleport?
+- [00:02:50] (f4260) **teleport** [d2r]: 2 view jumps in 0.3s (teleport chain?)
+- [00:02:57] (f4433) **teleport** [d2r]: 2 view jumps in 0.3s (teleport chain?)
+- [00:02:58] (f4457) **mana_refill** [d2r]: Mana refill +19% (39% -> 58%) in 0.52s (mana/rejuv potion?)
+- [00:02:59] (f4489) **life_drop** [d2r]: Life drop -25% (70% -> 45%) in 0.04s
+- [00:03:03] (f4592) **teleport** [d2r]: View jump in one frame (motion 11, match -0.06): teleport?
+- [00:03:08] (f4708) **life_drop** [d2r]: Life drop -15% (39% -> 24%) in 0.04s
+- [00:03:08] (f4720) **life_drop** [d2r]: Life drop -24% (24% -> 0%) in 0.60s
+- [00:03:08] (f4723) **teleport** [d2r]: View jump in one frame (motion 6, match -0.04): teleport?
+- [00:03:09] (f4728) **death** [d2r]: Death? life orb empty for >= 0.4s
+- [00:03:14] (f4858) **teleport** [d2r]: View jump in one frame (motion 6, match 0.20): teleport?
+- [00:03:16] (f4906) **run_burst** [d2r]: Fast movement 0.9s, avg camera shift 2.3 px/frame (~228 px/s at 720p; run/whirlwind/charge?)
+- [00:03:18] (f4951) **life_refill** [d2r]: Life refill +99% (0% -> 99%) in 0.04s (rejuvenation potion?)
+- [00:03:19] (f4998) **teleport** [d2r]: View jump in one frame (motion 7, match 0.19): teleport?
+- [00:03:24] (f5100) **loud_peak**: Loud peak -17 dBFS (+13 dB over typical): shout, impact or music hit?
+- [00:03:26] (f5150) **text** [d2r]: Text (center): Nw see
+- [00:03:28] (f5213) **teleport** [d2r]: View jump in one frame (motion 6, match -0.11): teleport?
+- [00:03:34] (f5351) **mana_refill** [d2r]: Mana refill +27% (31% -> 58%) in 0.04s (mana/rejuv potion?)
+- [00:03:34] (f5372) **mana_refill** [d2r]: Mana refill +13% (52% -> 65%) in 0.24s (mana/rejuv potion?)
+- [00:03:34] (f5372) **teleport** [d2r]: 2 view jumps in 0.1s (teleport chain?)
+- [00:03:39] (f5483) **teleport** [d2r]: View jump in one frame (motion 13, match -0.05): teleport?
+- [00:03:42] (f5551) **run_burst** [d2r]: Fast movement 1.6s, avg camera shift 1.9 px/frame (~186 px/s at 720p; run/whirlwind/charge?)
+- [00:03:52] (f5813) **teleport** [d2r]: View jump in one frame (motion 12, match -0.02): teleport?
+- [00:03:56] (f5900) **text** [d2r]: Text (chat): HEALTH SHRINE
+- [00:03:56] (f5918) **teleport** [d2r]: View jump in one frame (motion 14, match -0.01): teleport?
+- [00:04:00] (f6012) **life_refill** [d2r]: Life refill +23% (77% -> 100%) in 0.04s (rejuvenation potion?)
+- [00:04:00] (f6012) **mana_refill** [d2r]: Mana refill +22% (74% -> 96%) in 0.28s (mana/rejuv potion?)
+- [00:04:04] (f6113) **teleport** [d2r]: View jump in one frame (motion 6, match 0.20): teleport?
+- [00:04:04] (f6121) **run_burst** [d2r]: Fast movement 1.2s, avg camera shift 2.5 px/frame (~250 px/s at 720p; run/whirlwind/charge?)
+- [00:04:08] (f6213) **teleport** [d2r]: 2 view jumps in 0.1s (teleport chain?)
+- [00:04:23] (f6598) **teleport** [d2r]: 2 view jumps in 0.0s (teleport chain?)
+- [00:04:28] (f6703) **life_drop** [d2r]: Life drop -88% (100% -> 12%) in 0.04s
+- [00:04:28] (f6704) **teleport** [d2r]: View jump in one frame (motion 21, match -0.08): teleport?
+- [00:04:29] (f6725) **text** [d2r]: Text (chat): Featured
+- [00:04:29] (f6725) **text** [d2r]: Text (center): Crush darkness in Ladder Season 15, now \ / live Ni
+- [00:04:30] (f6758) **life_refill** [d2r]: Life refill +86% (12% -> 99%) in 0.04s (rejuvenation potion?)
+- [00:04:30] (f6758) **mana_refill** [d2r]: Mana refill +90% (3% -> 93%) in 0.04s (mana/rejuv potion?)
+- [00:04:30] (f6759) **teleport** [d2r]: View jump in one frame (motion 22, match 0.04): teleport?
+- [00:04:30] (f6761) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 1.8 px/frame (~183 px/s at 720p; run/whirlwind/charge?)
+- [00:04:31] (f6799) **life_drop** [d2r]: Life drop -99% (99% -> 0%) in 0.36s
+- [00:04:32] (f6808) **death** [d2r]: Death? life orb empty for >= 0.4s
+- [00:04:32] (f6822) **life_refill** [d2r]: Life refill +99% (0% -> 99%) in 0.48s (rejuvenation potion?)
+- [00:04:43] (f7076) **teleport** [d2r]: 2 view jumps in 0.3s (teleport chain?)
+- [00:04:45] (f7130) **teleport** [d2r]: 2 view jumps in 0.3s (teleport chain?)
+- [00:04:51] (f7275) **text** [d2r]: Text (top_right): SKILL TREE ‘ |
+- [00:04:55] (f7375) **teleport** [d2r]: View jump in one frame (motion 12, match 0.03): teleport?
+- [00:04:59] (f7477) **run_burst** [d2r]: Fast movement 1.1s, avg camera shift 1.6 px/frame (~159 px/s at 720p; run/whirlwind/charge?)
+- [00:05:01] (f7544) **life_drop** [d2r]: Life drop -17% (99% -> 82%) in 0.04s
+- [00:05:02] (f7554) **life_drop** [d2r]: Life drop -42% (82% -> 39%) in 0.80s
+- [00:05:11] (f7783) **teleport** [d2r]: View jump in one frame (motion 8, match 0.10): teleport?
+- [00:05:14] (f7855) **teleport** [d2r]: View jump in one frame (motion 14, match 0.06): teleport?
+- [00:05:17] (f7933) **teleport** [d2r]: 3 view jumps in 1.2s (teleport chain?)
+- [00:05:20] (f8000) **area_change** [d2r]: Area name: Smith TREE
+- [00:05:21] (f8025) **teleport** [d2r]: 3 view jumps in 1.2s (teleport chain?)
+- [00:05:21] (f8025) **text** [d2r]: Text (chat): YOU CAN RUN.
+- [00:05:27] (f8199) **mana_refill** [d2r]: Mana refill +53% (2% -> 55%) in 0.08s (mana/rejuv potion?)
+- [00:05:36] (f8419) **mana_refill** [d2r]: Mana refill +79% (14% -> 93%) in 0.44s (mana/rejuv potion?)
+- [00:05:36] (f8423) **life_refill** [d2r]: Life refill +74% (26% -> 100%) in 0.28s (rejuvenation potion?)
+- [00:05:38] (f8450) **area_change** [d2r]: Area name: INVENTORY
+- [00:05:42] (f8550) **loud_peak**: Loud peak -15 dBFS (+16 dB over typical): shout, impact or music hit?
+- [00:05:42] (f8550) **text** [d2r]: Text (center): RivATE STASH
+- [00:05:44] (f8617) **life_drop** [d2r]: Life drop -81% (100% -> 19%) in 0.04s
+- [00:05:48] (f8700) **area_change** [d2r]: Area name: INVENTORY
+- [00:06:08] (f9209) **teleport** [d2r]: View jump in one frame (motion 16, match 0.06): teleport?
+- [00:06:15] (f9380) **teleport** [d2r]: View jump in one frame (motion 7, match 0.03): teleport?
+- [00:06:17] (f9425) **text** [d2r]: Text (chat): Fire 4
+- [00:06:17] (f9430) **teleport** [d2r]: 2 view jumps in 1.3s (teleport chain?)
+- [00:06:24] (f9620) **mana_refill** [d2r]: Mana refill +13% (75% -> 88%) in 0.52s (mana/rejuv potion?)
+- [00:06:31] (f9781) **mana_refill** [d2r]: Mana refill +22% (74% -> 96%) in 0.68s (mana/rejuv potion?)
+- [00:06:34] (f9868) **teleport** [d2r]: 2 view jumps in 0.3s (teleport chain?)
+- [00:06:36] (f9918) **teleport** [d2r]: View jump in one frame (motion 8, match 0.11): teleport?
+- [00:06:39] (f9996) **mana_refill** [d2r]: Mana refill +17% (58% -> 75%) in 0.44s (mana/rejuv potion?)
+- [00:06:41] (f10027) **mana_refill** [d2r]: Mana refill +20% (75% -> 96%) in 0.92s (mana/rejuv potion?)
+- [00:06:44] (f10116) **teleport** [d2r]: View jump in one frame (motion 8, match 0.15): teleport?
+- [00:06:48] (f10203) **teleport** [d2r]: 2 view jumps in 0.4s (teleport chain?)
+- [00:06:49] (f10232) **mana_refill** [d2r]: Mana refill +43% (52% -> 96%) in 1.44s (mana/rejuv potion?)
+- [00:06:52] (f10315) **teleport** [d2r]: View jump in one frame (motion 8, match 0.11): teleport?
+- [00:06:55] (f10393) **teleport** [d2r]: 2 view jumps in 1.0s (teleport chain?)
+- [00:06:58] (f10458) **teleport** [d2r]: View jump in one frame (motion 8, match 0.17): teleport?
+- [00:07:00] (f10520) **mana_refill** [d2r]: Mana refill +41% (52% -> 93%) in 0.12s (mana/rejuv potion?)
+- [00:07:00] (f10522) **life_refill** [d2r]: Life refill +33% (67% -> 100%) in 0.04s (rejuvenation potion?)
+- [00:07:07] (f10675) **text** [d2r]: Text (center): Matta
+- [00:07:10] (f10759) **teleport** [d2r]: 3 view jumps in 1.1s (teleport chain?)
+- [00:07:13] (f10838) **teleport** [d2r]: 2 view jumps in 0.8s (teleport chain?)
+- [00:07:23] (f11092) **mana_refill** [d2r]: Mana refill +46% (23% -> 70%) in 0.04s (mana/rejuv potion?)
+- [00:07:24] (f11113) **run_burst** [d2r]: Fast movement 1.6s, avg camera shift 2.4 px/frame (~241 px/s at 720p; run/whirlwind/charge?)
+- [00:07:26] (f11158) **teleport** [d2r]: View jump in one frame (motion 7, match 0.17): teleport?
+- [00:07:30] (f11271) **teleport** [d2r]: View jump in one frame (motion 16, match 0.11): teleport?
+- [00:07:33] (f11330) **teleport** [d2r]: 4 view jumps in 2.2s (teleport chain?)
+- [00:07:35] (f11382) **mana_refill** [d2r]: Mana refill +12% (58% -> 70%) in 0.04s (mana/rejuv potion?)
+- [00:07:38] (f11457) **mana_refill** [d2r]: Mana refill +12% (84% -> 96%) in 0.48s (mana/rejuv potion?)
+- [00:07:40] (f11518) **teleport** [d2r]: 2 view jumps in 0.6s (teleport chain?)
+- [00:07:44] (f11612) **teleport** [d2r]: View jump in one frame (motion 9, match 0.16): teleport?
+- [00:07:48] (f11700) **teleport** [d2r]: View jump in one frame (motion 7, match 0.17): teleport?
+- [00:07:51] (f11788) **teleport** [d2r]: View jump in one frame (motion 9, match 0.20): teleport?
+- [00:07:55] (f11888) **teleport** [d2r]: View jump in one frame (motion 6, match 0.04): teleport?
+- [00:07:56] (f11903) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 1.8 px/frame (~182 px/s at 720p; run/whirlwind/charge?)
+- [00:07:58] (f11959) **teleport** [d2r]: View jump in one frame (motion 17, match 0.01): teleport?
+- [00:08:00] (f12003) **teleport** [d2r]: 2 view jumps in 0.2s (teleport chain?)
+- [00:08:04] (f12122) **teleport** [d2r]: 2 view jumps in 0.2s (teleport chain?)
+- [00:08:09] (f12246) **run_burst** [d2r]: Fast movement 0.9s, avg camera shift 1.8 px/frame (~179 px/s at 720p; run/whirlwind/charge?)
+- [00:08:11] (f12288) **teleport** [d2r]: 2 view jumps in 0.6s (teleport chain?)
+- [00:08:14] (f12355) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 2.2 px/frame (~223 px/s at 720p; run/whirlwind/charge?)
+- [00:08:16] (f12409) **life_drop** [d2r]: Life drop -29% (72% -> 43%) in 1.00s
+- [00:08:17] (f12442) **life_drop** [d2r]: Life drop -43% (43% -> 0%) in 0.72s
+- [00:08:17] (f12445) **death** [d2r]: Death? life orb empty for >= 0.4s
+- [00:08:20] (f12513) **teleport** [d2r]: View jump in one frame (motion 19, match 0.01): teleport?
+- [00:08:21] (f12542) **mana_refill** [d2r]: Mana refill +13% (70% -> 84%) in 0.52s (mana/rejuv potion?)
+- [00:08:22] (f12563) **teleport** [d2r]: View jump in one frame (motion 5, match 0.16): teleport?
+- [00:08:28] (f12717) **mana_refill** [d2r]: Mana refill +14% (72% -> 86%) in 0.48s (mana/rejuv potion?)
+- [00:08:32] (f12813) **teleport** [d2r]: 3 view jumps in 1.0s (teleport chain?)
+- [00:08:33] (f12825) **text** [d2r]: Text (center): AND EXIT *
+- [00:08:33] (f12836) **life_drop** [d2r]: Life drop -99% (99% -> 0%) in 0.08s
+- [00:08:33] (f12837) **poisoned** [d2r]: Poisoned (green life orb) for 2.6s
+- [00:08:34] (f12850) **text** [d2r]: Text (chat): te Senn
+- [00:08:35] (f12875) **text** [d2r]: Text (chat): fe Senn
+- [00:08:35] (f12887) **life_drop** [d2r]: Life drop -15% (17% -> 2%) in 0.04s
+- [00:08:35] (f12888) **death** [d2r]: Death? life orb empty for >= 0.4s
+- [00:08:36] (f12903) **area_change** [d2r]: Area change / loading: HUD gone 3.2s (dark+other)
+- [00:08:39] (f12982) **teleport** [d2r]: View jump in one frame (motion 34, match 0.11): teleport?
+- [00:08:41] (f13038) **teleport** [d2r]: View jump in one frame (motion 17, match 0.03): teleport?
+- [00:08:44] (f13100) **text** [d2r]: Text (top_right): INVENTORY ‘ |
+- [00:08:50] (f13251) **teleport** [d2r]: 2 view jumps in 0.4s (teleport chain?)
+- [00:08:51] (f13275) **text** [d2r]: Text (chat): Super Mana
+- [00:08:51] (f13275) **text** [d2r]: Text (center): Lever / Surek Mana
+- [00:09:07] (f13698) **mana_refill** [d2r]: Mana refill +14% (31% -> 46%) in 0.04s (mana/rejuv potion?)
+- [00:09:12] (f13803) **mana_refill** [d2r]: Mana refill +43% (22% -> 65%) in 0.04s (mana/rejuv potion?)
+- [00:09:13] (f13844) **teleport** [d2r]: View jump in one frame (motion 8, match 0.10): teleport?
+- [00:09:19] (f13998) **teleport** [d2r]: View jump in one frame (motion 17, match 0.20): teleport?
+- [00:09:20] (f14007) **mana_refill** [d2r]: Mana refill +19% (42% -> 62%) in 0.04s (mana/rejuv potion?)
+- [00:09:20] (f14020) **mana_refill** [d2r]: Mana refill +23% (46% -> 69%) in 0.68s (mana/rejuv potion?)
+- [00:09:25] (f14132) **teleport** [d2r]: View jump in one frame (motion 7, match -0.09): teleport?
+- [00:09:30] (f14274) **mana_refill** [d2r]: Mana refill +15% (74% -> 88%) in 0.56s (mana/rejuv potion?)
+- [00:09:31] (f14295) **life_drop** [d2r]: Life drop -18% (74% -> 56%) in 0.04s
+- [00:09:37] (f14443) **teleport** [d2r]: View jump in one frame (motion 18, match -0.04): teleport?
+- [00:09:42] (f14552) **teleport** [d2r]: View jump in one frame (motion 16, match 0.08): teleport?
+- [00:09:45] (f14637) **teleport** [d2r]: View jump in one frame (motion 9, match 0.17): teleport?
+- [00:09:51] (f14783) **mana_refill** [d2r]: Mana refill +43% (23% -> 67%) in 0.32s (mana/rejuv potion?)
+- [00:09:52] (f14823) **teleport** [d2r]: View jump in one frame (motion 5, match 0.03): teleport?
+- [00:09:54] (f14864) **teleport** [d2r]: View jump in one frame (motion 21, match 0.17): teleport?
+- [00:09:56] (f14921) **mana_refill** [d2r]: Mana refill +14% (77% -> 91%) in 0.52s (mana/rejuv potion?)
+- [00:09:58] (f14956) **teleport** [d2r]: 3 view jumps in 1.7s (teleport chain?)
+- [00:10:02] (f15059) **life_drop** [d2r]: Life drop -21% (40% -> 20%) in 0.24s
+- [00:10:03] (f15075) **area_change** [d2r]: Area name: TREE i
+- [00:10:03] (f15078) **teleport** [d2r]: View jump in one frame (motion 9, match 0.17): teleport?
+- [00:10:11] (f15288) **teleport** [d2r]: View jump in one frame (motion 18, match 0.03): teleport?
+- [00:10:13] (f15342) **teleport** [d2r]: View jump in one frame (motion 9, match -0.04): teleport?
+- [00:10:18] (f15472) **teleport** [d2r]: 2 view jumps in 0.2s (teleport chain?)
+- [00:10:19] (f15475) **text** [d2r]: Text (chat): Life ale.
+- [00:10:21] (f15528) **teleport** [d2r]: 4 view jumps in 2.0s (teleport chain?)
+- [00:10:27] (f15684) **teleport** [d2r]: View jump in one frame (motion 17, match 0.05): teleport?
+- [00:10:28] (f15704) **mana_refill** [d2r]: Mana refill +33% (22% -> 55%) in 0.04s (mana/rejuv potion?)
+- [00:10:31] (f15787) **teleport** [d2r]: View jump in one frame (motion 8, match 0.08): teleport?
+- [00:10:33] (f15843) **death** [d2r]: Death? life orb empty for >= 0.4s
+- [00:10:33] (f15843) **teleport** [d2r]: View jump in one frame (motion 10, match 0.02): teleport?
+- [00:10:40] (f16000) **text** [d2r]: Text (center): PRESS CONTINUE.
+- [00:10:40] (f16003) **mana_refill** [d2r]: Mana refill +35% (23% -> 58%) in 0.04s (mana/rejuv potion?)
+- [00:10:40] (f16013) **teleport** [d2r]: 2 view jumps in 0.7s (teleport chain?)
+- [00:10:41] (f16025) **text** [d2r]: Text (center): Save ano Exit
+- [00:10:41] (f16035) **area_change** [d2r]: Area change / loading: HUD gone 3.1s (dark+other)
+- [00:10:44] (f16112) **teleport** [d2r]: View jump in one frame (motion 29, match 0.05): teleport?
+- [00:10:46] (f16150) **text** [d2r]: Text (chat): ‘Gave] You
+- [00:10:48] (f16200) **loud_peak**: Loud peak -18 dBFS (+13 dB over typical): shout, impact or music hit?
+- [00:10:52] (f16318) **run_burst** [d2r]: Fast movement 0.9s, avg camera shift 2.5 px/frame (~251 px/s at 720p; run/whirlwind/charge?)
+- [00:10:54] (f16356) **run_burst** [d2r]: Fast movement 1.1s, avg camera shift 1.8 px/frame (~183 px/s at 720p; run/whirlwind/charge?)
+- [00:10:56] (f16414) **teleport** [d2r]: View jump in one frame (motion 8, match 0.02): teleport?
+- [00:10:57] (f16425) **text** [d2r]: Text (center): Lever 96
+- [00:11:00] (f16500) **text** [d2r]: Text (center): Super Mana / Surer MANA
+- [00:11:01] (f16543) **teleport** [d2r]: View jump in one frame (motion 8, match 0.01): teleport?
+- [00:11:03] (f16593) **mana_refill** [d2r]: Mana refill +19% (74% -> 93%) in 0.60s (mana/rejuv potion?)
+- [00:11:07] (f16699) **teleport** [d2r]: View jump in one frame (motion 8, match 0.11): teleport?
+- [00:11:09] (f16743) **teleport** [d2r]: View jump in one frame (motion 18, match 0.04): teleport?
+- [00:11:12] (f16808) **teleport** [d2r]: View jump in one frame (motion 9, match 0.16): teleport?
+- [00:11:17] (f16947) **teleport** [d2r]: View jump in one frame (motion 11, match 0.13): teleport?
+- [00:11:20] (f17001) **mana_refill** [d2r]: Mana refill +65% (9% -> 74%) in 0.72s (mana/rejuv potion?)
+- [00:11:21] (f17032) **teleport** [d2r]: View jump in one frame (motion 22, match 0.15): teleport?
+- [00:11:26] (f17158) **teleport** [d2r]: 2 view jumps in 1.2s (teleport chain?)
+- [00:11:34] (f17358) **teleport** [d2r]: 2 view jumps in 1.3s (teleport chain?)
+- [00:11:41] (f17532) **teleport** [d2r]: View jump in one frame (motion 7, match 0.19): teleport?
+- [00:11:43] (f17580) **life_drop** [d2r]: Life drop -27% (91% -> 65%) in 0.04s
+- [00:11:44] (f17604) **teleport** [d2r]: View jump in one frame (motion 17, match 0.05): teleport?
+- [00:11:49] (f17731) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 2.3 px/frame (~234 px/s at 720p; run/whirlwind/charge?)
+- [00:11:54] (f17873) **teleport** [d2r]: View jump in one frame (motion 19, match 0.18): teleport?
+- [00:11:55] (f17875) **text** [d2r]: Text (chat): Fire ue 4
+- [00:11:57] (f17945) **teleport** [d2r]: View jump in one frame (motion 16, match 0.01): teleport?
+- [00:11:59] (f17980) **mana_refill** [d2r]: Mana refill +41% (21% -> 62%) in 0.28s (mana/rejuv potion?)
+- [00:12:01] (f18031) **mana_refill** [d2r]: Mana refill +13% (46% -> 58%) in 0.12s (mana/rejuv potion?)
+- [00:12:01] (f18033) **teleport** [d2r]: View jump in one frame (motion 8, match 0.17): teleport?
+- [00:12:03] (f18083) **teleport** [d2r]: View jump in one frame (motion 8, match 0.14): teleport?
+- [00:12:06] (f18155) **mana_refill** [d2r]: Mana refill +14% (58% -> 72%) in 0.04s (mana/rejuv potion?)
+- [00:12:06] (f18173) **teleport** [d2r]: 2 view jumps in 1.5s (teleport chain?)
+- [00:12:07] (f18175) **text** [d2r]: Text (top_right): Skink TREE i |
+- [00:12:08] (f18200) **mana_refill** [d2r]: Mana refill +12% (84% -> 96%) in 0.52s (mana/rejuv potion?)
+- [00:12:10] (f18263) **teleport** [d2r]: 2 view jumps in 1.4s (teleport chain?)
+- [00:12:13] (f18347) **teleport** [d2r]: 2 view jumps in 1.2s (teleport chain?)
+- [00:12:18] (f18466) **teleport** [d2r]: View jump in one frame (motion 6, match 0.18): teleport?
+- [00:12:20] (f18514) **teleport** [d2r]: View jump in one frame (motion 10, match 0.17): teleport?
+- [00:12:23] (f18595) **teleport** [d2r]: View jump in one frame (motion 25, match 0.15): teleport?
+- [00:12:24] (f18600) **text** [d2r]: Text (chat): Fire 28
+- [00:12:26] (f18674) **teleport** [d2r]: 2 view jumps in 1.4s (teleport chain?)
+- [00:12:34] (f18872) **teleport** [d2r]: View jump in one frame (motion 10, match 0.19): teleport?
+- [00:12:40] (f19012) **teleport** [d2r]: View jump in one frame (motion 9, match 0.20): teleport?
+- [00:12:42] (f19061) **mana_refill** [d2r]: Mana refill +34% (15% -> 49%) in 0.16s (mana/rejuv potion?)
+- [00:12:43] (f19084) **mana_refill** [d2r]: Mana refill +20% (46% -> 66%) in 0.28s (mana/rejuv potion?)
+- [00:12:43] (f19090) **teleport** [d2r]: View jump in one frame (motion 8, match 0.18): teleport?
+- [00:12:46] (f19172) **mana_refill** [d2r]: Mana refill +19% (46% -> 65%) in 0.08s (mana/rejuv potion?)
+- [00:12:51] (f19288) **mana_refill** [d2r]: Mana refill +13% (23% -> 36%) in 0.12s (mana/rejuv potion?)
+- [00:12:52] (f19300) **teleport** [d2r]: View jump in one frame (motion 13, match 0.16): teleport?
+- [00:12:54] (f19359) **mana_refill** [d2r]: Mana refill +13% (52% -> 65%) in 0.04s (mana/rejuv potion?)
+- [00:13:02] (f19563) **life_refill** [d2r]: Life refill +66% (32% -> 99%) in 0.04s (rejuvenation potion?)
+- [00:13:04] (f19600) **loud_peak**: Loud peak -17 dBFS (+14 dB over typical): shout, impact or music hit?
+- [00:13:05] (f19641) **run_burst** [d2r]: Fast movement 2.8s, avg camera shift 2.4 px/frame (~245 px/s at 720p; run/whirlwind/charge?)
+- [00:13:16] (f19900) **text** [d2r]: Text (chat): Strona
+- [00:13:19] (f19975) **text** [d2r]: Text (chat): fe but
+- [00:13:20] (f20000) **text** [d2r]: Text (chat): stron«
+- [00:13:21] (f20025) **text** [d2r]: Text (chat): Se Stand
+- [00:13:22] (f20050) **text** [d2r]: Text (chat): makes me stil
+- [00:13:24] (f20100) **text** [d2r]: Text (chat): me stand
+- [00:13:26] (f20150) **text** [d2r]: Text (chat): bul stand
+- [00:13:27] (f20175) **text** [d2r]: Text (chat): stand
+- [00:13:30] (f20250) **text** [d2r]: Text (chat): stand stl
+- [00:13:30] (f20258) **teleport** [d2r]: View jump in one frame (motion 7, match 0.18): teleport?
+- [00:13:32] (f20303) **teleport** [d2r]: View jump in one frame (motion 6, match 0.10): teleport?
+- [00:13:33] (f20348) **run_burst** [d2r]: Fast movement 1.2s, avg camera shift 1.5 px/frame (~149 px/s at 720p; run/whirlwind/charge?)
+- [00:13:38] (f20466) **run_burst** [d2r]: Fast movement 1.2s, avg camera shift 2.4 px/frame (~241 px/s at 720p; run/whirlwind/charge?)
+- [00:13:41] (f20536) **mana_refill** [d2r]: Mana refill +16% (29% -> 46%) in 0.48s (mana/rejuv potion?)
+- [00:13:43] (f20581) **mana_refill** [d2r]: Mana refill +33% (46% -> 79%) in 0.96s (mana/rejuv potion?)
+- [00:13:45] (f20625) **text** [d2r]: Text (chat): to see mec using it tbh
+- [00:13:45] (f20633) **mana_refill** [d2r]: Mana refill +12% (84% -> 96%) in 0.48s (mana/rejuv potion?)
+- [00:13:48] (f20700) **text** [d2r]: Text (chat): bine 4
+- [00:13:48] (f20703) **teleport** [d2r]: View jump in one frame (motion 14, match 0.01): teleport?
+- [00:13:48] (f20710) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 3.1 px/frame (~306 px/s at 720p; run/whirlwind/charge?)
+- [00:13:52] (f20800) **text** [d2r]: Text (center): Super Mana PeTiaNn / POTION
+- [00:13:54] (f20850) **text** [d2r]: Text (chat): “anes me stand shill without / : gutta
+- [00:13:55] (f20875) **text** [d2r]: Text (chat): bul ME
+- [00:14:01] (f21033) **teleport** [d2r]: 2 view jumps in 0.6s (teleport chain?)
+- [00:14:06] (f21171) **mana_refill** [d2r]: Mana refill +42% (26% -> 69%) in 0.92s (mana/rejuv potion?)
+- [00:14:08] (f21205) **mana_refill** [d2r]: Mana refill +16% (72% -> 88%) in 0.72s (mana/rejuv potion?)
+- [00:14:13] (f21338) **teleport** [d2r]: 3 view jumps in 1.6s (teleport chain?)
+- [00:14:21] (f21528) **teleport** [d2r]: View jump in one frame (motion 6, match 0.18): teleport?
+- [00:14:31] (f21798) **teleport** [d2r]: View jump in one frame (motion 9, match 0.20): teleport?
+- [00:14:35] (f21898) **teleport** [d2r]: View jump in one frame (motion 7, match 0.04): teleport?
+- [00:14:42] (f22056) **life_refill** [d2r]: Life refill +14% (86% -> 100%) in 0.04s (rejuvenation potion?)
+- [00:14:43] (f22075) **text** [d2r]: Text (chat): PaINTs:
+- [00:14:43] (f22075) **text** [d2r]: Text (center): PaINTs:
+- [00:14:45] (f22125) **loud_peak**: Loud peak -18 dBFS (+13 dB over typical): shout, impact or music hit?
+- [00:14:45] (f22131) **run_burst** [d2r]: Fast movement 2.6s, avg camera shift 3.1 px/frame (~306 px/s at 720p; run/whirlwind/charge?)
+- [00:14:49] (f22225) **loud_peak**: Loud peak -14 dBFS (+17 dB over typical): shout, impact or music hit?
+- [00:15:04] (f22600) **loud_peak**: Loud peak -16 dBFS (+15 dB over typical): shout, impact or music hit?
+- [00:15:04] (f22600) **text** [d2r]: Text (chat): but me / Casting / bul worth / ume wen / . pare to see nec / seems mice
+- [00:15:07] (f22687) **teleport** [d2r]: View jump in one frame (motion 8, match 0.04): teleport?
+- [00:15:10] (f22753) **teleport** [d2r]: View jump in one frame (motion 7, match 0.06): teleport?
+- [00:15:16] (f22900) **area_change** [d2r]: Area name: TREE i
+- [00:15:20] (f23022) **teleport** [d2r]: 2 view jumps in 0.5s (teleport chain?)
+- [00:15:24] (f23104) **teleport** [d2r]: 3 view jumps in 0.8s (teleport chain?)
+- [00:15:28] (f23213) **teleport** [d2r]: View jump in one frame (motion 11, match 0.06): teleport?
+- [00:15:30] (f23250) **text** [d2r]: Text (top_right): Shick |
+- [00:15:31] (f23296) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 1.9 px/frame (~194 px/s at 720p; run/whirlwind/charge?)
+- [00:15:34] (f23351) **teleport** [d2r]: View jump in one frame (motion 11, match -0.04): teleport?
+- [00:15:38] (f23450) **mana_refill** [d2r]: Mana refill +15% (52% -> 67%) in 0.04s (mana/rejuv potion?)
+- [00:15:38] (f23470) **teleport** [d2r]: View jump in one frame (motion 11, match 0.07): teleport?
+- [00:15:41] (f23530) **mana_refill** [d2r]: Mana refill +12% (81% -> 93%) in 0.48s (mana/rejuv potion?)
+- [00:15:44] (f23615) **teleport** [d2r]: View jump in one frame (motion 11, match 0.20): teleport?
+- [00:15:45] (f23640) **run_burst** [d2r]: Fast movement 0.9s, avg camera shift 2.9 px/frame (~289 px/s at 720p; run/whirlwind/charge?)
+- [00:15:45] (f23647) **mana_refill** [d2r]: Mana refill +12% (79% -> 91%) in 0.52s (mana/rejuv potion?)
+- [00:15:49] (f23740) **run_burst** [d2r]: Fast movement 1.5s, avg camera shift 1.5 px/frame (~146 px/s at 720p; run/whirlwind/charge?)
+- [00:15:55] (f23888) **teleport** [d2r]: View jump in one frame (motion 14, match 0.15): teleport?
+- [00:15:57] (f23935) **life_drop** [d2r]: Life drop -45% (84% -> 39%) in 0.56s
+- [00:15:58] (f23957) **life_drop** [d2r]: Life drop -22% (39% -> 17%) in 0.72s
+- [00:16:03] (f24078) **teleport** [d2r]: View jump in one frame (motion 7, match 0.10): teleport?
+- [00:16:09] (f24236) **life_drop** [d2r]: Life drop -16% (16% -> 0%) in 0.08s
+- [00:16:09] (f24238) **death** [d2r]: Death? life orb empty for >= 0.4s
+- [00:16:10] (f24250) **text** [d2r]: Text (center): TD NUE
+- [00:16:10] (f24262) **loud_peak**: Loud peak -16 dBFS (+14 dB over typical): shout, impact or music hit?
+- [00:16:11] (f24275) **text** [d2r]: Text (center): Press ESO NUT.
+- [00:16:11] (f24282) **teleport** [d2r]: 2 view jumps in 0.8s (teleport chain?)
+- [00:16:12] (f24301) **life_drop** [d2r]: Life drop -96% (96% -> 0%) in 0.24s
+- [00:16:12] (f24302) **poisoned** [d2r]: Poisoned (green life orb) for 0.4s
+- [00:16:12] (f24313) **area_change** [d2r]: Area change / loading: HUD gone 3.0s (dark+other)
+- [00:16:15] (f24389) **teleport** [d2r]: View jump in one frame (motion 47, match 0.16): teleport?
+- [00:16:17] (f24441) **teleport** [d2r]: View jump in one frame (motion 13, match 0.16): teleport?
+- [00:16:18] (f24462) **loud_peak**: Loud peak -14 dBFS (+16 dB over typical): shout, impact or music hit?
+- [00:16:19] (f24491) **run_burst** [d2r]: Fast movement 1.1s, avg camera shift 2.3 px/frame (~234 px/s at 720p; run/whirlwind/charge?)
+- [00:16:21] (f24536) **run_burst** [d2r]: Fast movement 2.3s, avg camera shift 2.6 px/frame (~261 px/s at 720p; run/whirlwind/charge?)
+- [00:16:25] (f24625) **text** [d2r]: Text (center): Lever 99
+- [00:16:26] (f24650) **text** [d2r]: Text (center): SUPER Mana / Lever 96
+- [00:16:32] (f24804) **teleport** [d2r]: View jump in one frame (motion 8, match 0.04): teleport?
+- [00:16:33] (f24825) **text** [d2r]: Text (chat): Super |
+- [00:16:33] (f24825) **text** [d2r]: Text (center): Surer Mana / Super Mana / Super
+- [00:16:34] (f24871) **mana_refill** [d2r]: Mana refill +31% (36% -> 67%) in 0.92s (mana/rejuv potion?)
+- [00:16:36] (f24900) **text** [d2r]: Text (chat): ta nec using / But seems nice
+- [00:16:46] (f25162) **life_drop** [d2r]: Life drop -26% (100% -> 74%) in 0.04s
+- [00:16:47] (f25182) **life_drop** [d2r]: Life drop -25% (77% -> 52%) in 0.28s
+- [00:16:49] (f25226) **life_drop** [d2r]: Life drop -26% (54% -> 28%) in 0.04s
+- [00:16:49] (f25237) **life_drop** [d2r]: Life drop -21% (28% -> 7%) in 0.64s
+- [00:16:50] (f25265) **death** [d2r]: Death? life orb empty for >= 0.4s
+- [00:16:52] (f25306) **life_refill** [d2r]: Life refill +96% (2% -> 99%) in 0.20s (rejuvenation potion?)
+- [00:16:53] (f25325) **text** [d2r]: Text (center): per Mana ‘
+- [00:16:55] (f25388) **loud_peak**: Loud peak -15 dBFS (+15 dB over typical): shout, impact or music hit?
+- [00:16:57] (f25431) **run_burst** [d2r]: Fast movement 1.2s, avg camera shift 3.2 px/frame (~317 px/s at 720p; run/whirlwind/charge?)
+- [00:17:02] (f25557) **teleport** [d2r]: 3 view jumps in 1.8s (teleport chain?)
+- [00:17:09] (f25742) **life_drop** [d2r]: Life drop -17% (99% -> 82%) in 0.04s
+- [00:17:10] (f25755) **teleport** [d2r]: View jump in one frame (motion 7, match 0.08): teleport?
+- [00:17:11] (f25775) **text** [d2r]: Text (top_right): Stith T&ee |
+- [00:17:13] (f25825) **text** [d2r]: Text (chat): Fire ge
+- [00:17:16] (f25900) **text** [d2r]: Text (chat): Fine 4
+- [00:17:17] (f25939) **life_drop** [d2r]: Life drop -27% (72% -> 45%) in 0.04s
+- [00:17:18] (f25953) **life_drop** [d2r]: Life drop -15% (45% -> 30%) in 0.52s
+- [00:17:21] (f26049) **life_drop** [d2r]: Life drop -26% (26% -> 0%) in 0.28s
+- [00:17:22] (f26053) **death** [d2r]: Death? life orb empty for >= 0.4s
+- [00:17:24] (f26100) **text** [d2r]: Text (top_right): SKILL !
+- [00:17:26] (f26155) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 2.3 px/frame (~225 px/s at 720p; run/whirlwind/charge?)
+- [00:17:30] (f26273) **teleport** [d2r]: View jump in one frame (motion 11, match 0.09): teleport?
+- [00:17:34] (f26357) **teleport** [d2r]: View jump in one frame (motion 8, match 0.13): teleport?
+- [00:17:34] (f26360) **mana_refill** [d2r]: Mana refill +12% (84% -> 96%) in 0.56s (mana/rejuv potion?)
+- [00:17:38] (f26460) **teleport** [d2r]: View jump in one frame (motion 10, match -0.07): teleport?
+- [00:17:40] (f26502) **teleport** [d2r]: 2 view jumps in 1.4s (teleport chain?)
+- [00:17:42] (f26563) **poisoned** [d2r]: Poisoned (green life orb) for 1.2s
+- [00:17:43] (f26586) **teleport** [d2r]: View jump in one frame (motion 6, match 0.11): teleport?
+- [00:17:43] (f26595) **poisoned** [d2r]: Poisoned (green life orb) for 0.6s
+- [00:17:45] (f26631) **teleport** [d2r]: View jump in one frame (motion 11, match 0.17): teleport?
+- [00:17:45] (f26634) **run_burst** [d2r]: Fast movement 1.6s, avg camera shift 1.7 px/frame (~172 px/s at 720p; run/whirlwind/charge?)
+- [00:17:47] (f26688) **loud_peak**: Loud peak -16 dBFS (+15 dB over typical): shout, impact or music hit?
+- [00:17:47] (f26691) **run_burst** [d2r]: Fast movement 1.2s, avg camera shift 1.9 px/frame (~187 px/s at 720p; run/whirlwind/charge?)
+- [00:17:49] (f26736) **life_refill** [d2r]: Life refill +100% (0% -> 100%) in 0.08s (rejuvenation potion?)
+- [00:17:50] (f26773) **teleport** [d2r]: View jump in one frame (motion 7, match 0.18): teleport?
+- [00:17:51] (f26796) **run_burst** [d2r]: Fast movement 2.1s, avg camera shift 2.1 px/frame (~213 px/s at 720p; run/whirlwind/charge?)
+- [00:17:54] (f26853) **run_burst** [d2r]: Fast movement 1.5s, avg camera shift 2.7 px/frame (~275 px/s at 720p; run/whirlwind/charge?)
+- [00:17:55] (f26875) **text** [d2r]: Text (top_right): Super Perian / Sucer / Mania
+- [00:17:57] (f26938) **teleport** [d2r]: 2 view jumps in 0.4s (teleport chain?)
+- [00:18:15] (f27382) **teleport** [d2r]: View jump in one frame (motion 9, match 0.06): teleport?
+- [00:18:16] (f27411) **run_burst** [d2r]: Fast movement 1.1s, avg camera shift 2.0 px/frame (~197 px/s at 720p; run/whirlwind/charge?)
+- [00:18:22] (f27553) **life_drop** [d2r]: Life drop -40% (100% -> 60%) in 0.08s
+- [00:18:24] (f27611) **teleport** [d2r]: View jump in one frame (motion 9, match 0.20): teleport?
+- [00:18:26] (f27650) **teleport** [d2r]: View jump in one frame (motion 16, match 0.01): teleport?
+- [00:18:29] (f27733) **life_drop** [d2r]: Life drop -23% (62% -> 39%) in 0.16s
+- [00:18:30] (f27752) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 2.3 px/frame (~226 px/s at 720p; run/whirlwind/charge?)
+- [00:18:30] (f27757) **teleport** [d2r]: View jump in one frame (motion 9, match 0.05): teleport?
+- [00:18:33] (f27838) **teleport** [d2r]: View jump in one frame (motion 13, match 0.19): teleport?
+- [00:18:37] (f27943) **teleport** [d2r]: View jump in one frame (motion 12, match 0.07): teleport?
+- [00:18:39] (f27994) **teleport** [d2r]: View jump in one frame (motion 6, match 0.20): teleport?
+- [00:18:46] (f28160) **teleport** [d2r]: View jump in one frame (motion 6, match 0.08): teleport?
+- [00:18:46] (f28171) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 2.6 px/frame (~263 px/s at 720p; run/whirlwind/charge?)
+- [00:18:49] (f28237) **mana_refill** [d2r]: Mana refill +26% (33% -> 58%) in 0.68s (mana/rejuv potion?)
+- [00:18:50] (f28272) **mana_refill** [d2r]: Mana refill +20% (52% -> 72%) in 0.80s (mana/rejuv potion?)
+- [00:18:54] (f28373) **life_drop** [d2r]: Life drop -24% (24% -> 0%) in 0.20s
+- [00:18:55] (f28378) **death** [d2r]: Death? life orb empty for >= 0.4s
+- [00:18:55] (f28389) **teleport** [d2r]: View jump in one frame (motion 31, match 0.20): teleport?
+- [00:18:57] (f28435) **area_change** [d2r]: Area change / loading: HUD gone 0.5s (dark+other)
+- [00:18:57] (f28447) **teleport** [d2r]: 2 view jumps in 0.7s (teleport chain?)
+- [00:18:58] (f28463) **life_drop** [d2r]: Life drop -100% (100% -> 0%) in 0.36s
+- [00:18:58] (f28464) **poisoned** [d2r]: Poisoned (green life orb) for 0.6s
+- [00:18:59] (f28475) **text** [d2r]: Text (chat): Lives / [Lobby
+- [00:18:59] (f28478) **area_change** [d2r]: Area change / loading: HUD gone 3.0s (dark+other)
+- [00:19:02] (f28554) **teleport** [d2r]: View jump in one frame (motion 49, match 0.13): teleport?
+- [00:19:03] (f28575) **text** [d2r]: Text (center): stash
+- [00:19:07] (f28675) **text** [d2r]: Text (center): THE TRADE / CANCEL
+- [00:19:09] (f28731) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 1.9 px/frame (~190 px/s at 720p; run/whirlwind/charge?)
+- [00:19:10] (f28761) **run_burst** [d2r]: Fast movement 2.6s, avg camera shift 2.8 px/frame (~285 px/s at 720p; run/whirlwind/charge?)
+- [00:19:13] (f28830) **teleport** [d2r]: 2 view jumps in 0.5s (teleport chain?)
+- [00:19:20] (f29005) **mana_refill** [d2r]: Mana refill +16% (72% -> 88%) in 0.56s (mana/rejuv potion?)
+- [00:19:29] (f29233) **mana_refill** [d2r]: Mana refill +13% (52% -> 65%) in 0.08s (mana/rejuv potion?)
+- [00:19:32] (f29310) **teleport** [d2r]: View jump in one frame (motion 13, match 0.09): teleport?
+- [00:19:34] (f29367) **teleport** [d2r]: View jump in one frame (motion 11, match 0.00): teleport?
+- [00:19:37] (f29446) **teleport** [d2r]: View jump in one frame (motion 8, match 0.10): teleport?
+- [00:19:39] (f29476) **life_drop** [d2r]: Life drop -26% (94% -> 68%) in 0.04s
+- [00:19:43] (f29578) **mana_refill** [d2r]: Mana refill +19% (77% -> 96%) in 0.44s (mana/rejuv potion?)
+- [00:19:46] (f29663) **teleport** [d2r]: View jump in one frame (motion 12, match 0.02): teleport?
+- [00:19:53] (f29828) **teleport** [d2r]: 3 view jumps in 2.4s (teleport chain?)
+- [00:19:57] (f29947) **teleport** [d2r]: View jump in one frame (motion 9, match -0.02): teleport?
+- [00:19:58] (f29961) **run_burst** [d2r]: Fast movement 1.1s, avg camera shift 1.9 px/frame (~190 px/s at 720p; run/whirlwind/charge?)
+- [00:20:02] (f30066) **life_drop** [d2r]: Life drop -24% (67% -> 43%) in 0.08s
+- [00:20:05] (f30125) **text** [d2r]: Text (top_right): SKILL |
+- [00:20:06] (f30157) **run_burst** [d2r]: Fast movement 1.4s, avg camera shift 1.6 px/frame (~164 px/s at 720p; run/whirlwind/charge?)
+- [00:20:08] (f30204) **mana_refill** [d2r]: Mana refill +13% (26% -> 39%) in 0.56s (mana/rejuv potion?)
+- [00:20:08] (f30209) **teleport** [d2r]: View jump in one frame (motion 11, match 0.07): teleport?
+- [00:20:09] (f30235) **mana_refill** [d2r]: Mana refill +23% (52% -> 75%) in 0.52s (mana/rejuv potion?)
+- [00:20:10] (f30257) **teleport** [d2r]: View jump in one frame (motion 7, match -0.08): teleport?
+- [00:20:17] (f30428) **teleport** [d2r]: View jump in one frame (motion 5, match -0.13): teleport?
+- [00:20:20] (f30512) **mana_refill** [d2r]: Mana refill +13% (46% -> 58%) in 0.36s (mana/rejuv potion?)
+- [00:20:23] (f30592) **teleport** [d2r]: View jump in one frame (motion 7, match 0.14): teleport?
+- [00:20:25] (f30637) **teleport** [d2r]: View jump in one frame (motion 8, match -0.03): teleport?
+- [00:20:28] (f30700) **area_change** [d2r]: Area name: Shick TREE
+- [00:20:29] (f30743) **teleport** [d2r]: View jump in one frame (motion 12, match -0.01): teleport?
+- [00:20:30] (f30772) **mana_refill** [d2r]: Mana refill +13% (39% -> 52%) in 0.12s (mana/rejuv potion?)
+- [00:20:31] (f30786) **mana_refill** [d2r]: Mana refill +13% (52% -> 65%) in 0.60s (mana/rejuv potion?)
+- [00:20:32] (f30803) **teleport** [d2r]: View jump in one frame (motion 10, match 0.13): teleport?
+- [00:20:34] (f30871) **teleport** [d2r]: 4 view jumps in 3.2s (teleport chain?)
+- [00:20:42] (f31068) **teleport** [d2r]: 2 view jumps in 0.4s (teleport chain?)
+- [00:20:44] (f31119) **life_drop** [d2r]: Life drop -25% (32% -> 7%) in 0.20s
+- [00:20:47] (f31188) **teleport** [d2r]: View jump in one frame (motion 8, match 0.18): teleport?
+- [00:20:50] (f31273) **teleport** [d2r]: View jump in one frame (motion 7, match 0.02): teleport?
+- [00:20:52] (f31321) **life_refill** [d2r]: Life refill +88% (12% -> 100%) in 0.28s (rejuvenation potion?)
+- [00:20:52] (f31321) **mana_refill** [d2r]: Mana refill +68% (25% -> 93%) in 0.04s (mana/rejuv potion?)
+- [00:20:56] (f31401) **run_burst** [d2r]: Fast movement 1.2s, avg camera shift 2.3 px/frame (~225 px/s at 720p; run/whirlwind/charge?)
+- [00:20:57] (f31436) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 2.7 px/frame (~269 px/s at 720p; run/whirlwind/charge?)
+- [00:21:00] (f31500) **text** [d2r]: Text (center): FOTION / Surer MANA / Super Mana
+- [00:21:01] (f31525) **text** [d2r]: Text (center): SUPER
+- [00:21:08] (f31700) **loud_peak**: Loud peak -14 dBFS (+17 dB over typical): shout, impact or music hit?
+- [00:21:16] (f31900) **loud_peak**: Loud peak -17 dBFS (+14 dB over typical): shout, impact or music hit?
+- [00:21:27] (f32188) **teleport** [d2r]: View jump in one frame (motion 12, match 0.16): teleport?
+- [00:21:28] (f32200) **text** [d2r]: Text (chat): Poison 2
+- [00:21:32] (f32311) **mana_refill** [d2r]: Mana refill +30% (29% -> 58%) in 0.16s (mana/rejuv potion?)
+- [00:21:33] (f32326) **teleport** [d2r]: 2 view jumps in 0.4s (teleport chain?)
+- [00:21:33] (f32333) **mana_refill** [d2r]: Mana refill +13% (39% -> 52%) in 0.32s (mana/rejuv potion?)
+- [00:21:34] (f32352) **mana_refill** [d2r]: Mana refill +23% (46% -> 69%) in 0.64s (mana/rejuv potion?)
+- [00:21:35] (f32390) **teleport** [d2r]: View jump in one frame (motion 7, match 0.13): teleport?
+- [00:21:37] (f32443) **mana_refill** [d2r]: Mana refill +12% (81% -> 93%) in 0.56s (mana/rejuv potion?)
+- [00:21:38] (f32464) **run_burst** [d2r]: Fast movement 0.9s, avg camera shift 2.0 px/frame (~205 px/s at 720p; run/whirlwind/charge?)
+- [00:21:39] (f32498) **life_drop** [d2r]: Life drop -46% (100% -> 54%) in 0.16s
+- [00:21:40] (f32518) **run_burst** [d2r]: Fast movement 0.9s, avg camera shift 1.7 px/frame (~170 px/s at 720p; run/whirlwind/charge?)
+- [00:21:45] (f32626) **teleport** [d2r]: View jump in one frame (motion 6, match 0.16): teleport?
+- [00:21:48] (f32723) **teleport** [d2r]: 3 view jumps in 1.6s (teleport chain?)
+- [00:21:54] (f32856) **teleport** [d2r]: View jump in one frame (motion 9, match 0.05): teleport?
+- [00:21:54] (f32860) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 2.8 px/frame (~278 px/s at 720p; run/whirlwind/charge?)
+- [00:21:59] (f32994) **teleport** [d2r]: View jump in one frame (motion 5, match 0.11): teleport?
+- [00:22:01] (f33033) **teleport** [d2r]: View jump in one frame (motion 6, match 0.18): teleport?
+- [00:22:06] (f33173) **teleport** [d2r]: View jump in one frame (motion 5, match -0.03): teleport?
+- [00:22:11] (f33288) **life_refill** [d2r]: Life refill +56% (44% -> 100%) in 0.04s (rejuvenation potion?)
+- [00:22:11] (f33288) **mana_refill** [d2r]: Mana refill +70% (23% -> 93%) in 0.04s (mana/rejuv potion?)
+- [00:22:13] (f33346) **run_burst** [d2r]: Fast movement 0.9s, avg camera shift 1.7 px/frame (~168 px/s at 720p; run/whirlwind/charge?)
+- [00:22:19] (f33488) **teleport** [d2r]: 3 view jumps in 1.4s (teleport chain?)
+- [00:22:20] (f33523) **life_drop** [d2r]: Life drop -86% (99% -> 12%) in 0.04s
+- [00:22:21] (f33525) **text** [d2r]: Text (chat): Featured
+- [00:22:21] (f33525) **text** [d2r]: Text (center): Diablo
+- [00:22:22] (f33550) **text** [d2r]: Text (center): ANAHEIM, CA
+- [00:22:27] (f33675) **text** [d2r]: Text (chat): Featured
+- [00:22:27] (f33675) **text** [d2r]: Text (center): Crush darkness in Ladder Season 15, now \ ri
+- [00:22:28] (f33700) **text** [d2r]: Text (center): Leam More
+- [00:22:28] (f33702) **life_refill** [d2r]: Life refill +86% (12% -> 99%) in 0.16s (rejuvenation potion?)
+- [00:22:28] (f33702) **mana_refill** [d2r]: Mana refill +90% (3% -> 93%) in 0.08s (mana/rejuv potion?)
+- [00:22:28] (f33703) **teleport** [d2r]: 2 view jumps in 0.0s (teleport chain?)
+- [00:22:34] (f33871) **run_burst** [d2r]: Fast movement 1.4s, avg camera shift 2.6 px/frame (~259 px/s at 720p; run/whirlwind/charge?)
+- [00:22:42] (f34068) **teleport** [d2r]: View jump in one frame (motion 14, match 0.18): teleport?
+- [00:22:50] (f34251) **teleport** [d2r]: View jump in one frame (motion 13, match 0.01): teleport?
+- [00:22:54] (f34350) **teleport** [d2r]: View jump in one frame (motion 6, match 0.10): teleport?
+- [00:22:59] (f34487) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 2.7 px/frame (~270 px/s at 720p; run/whirlwind/charge?)
+- [00:23:02] (f34562) **life_drop** [d2r]: Life drop -29% (99% -> 70%) in 0.04s
+- [00:23:06] (f34663) **life_refill** [d2r]: Life refill +27% (72% -> 99%) in 0.04s (rejuvenation potion?)
+- [00:23:06] (f34663) **mana_refill** [d2r]: Mana refill +23% (72% -> 96%) in 0.04s (mana/rejuv potion?)
+- [00:23:08] (f34700) **area_change** [d2r]: Area name: INVENTORY
+- [00:23:08] (f34700) **text** [d2r]: Text (center): per Mana
+- [00:23:11] (f34799) **run_burst** [d2r]: Fast movement 0.9s, avg camera shift 2.6 px/frame (~258 px/s at 720p; run/whirlwind/charge?)
+- [00:23:25] (f35126) **run_burst** [d2r]: Fast movement 1.6s, avg camera shift 1.7 px/frame (~170 px/s at 720p; run/whirlwind/charge?)
+- [00:23:25] (f35138) **teleport** [d2r]: View jump in one frame (motion 11, match 0.20): teleport?
+- [00:23:30] (f35273) **mana_refill** [d2r]: Mana refill +17% (79% -> 96%) in 0.40s (mana/rejuv potion?)
+- [00:23:34] (f35350) **text** [d2r]: Text (center): TIANA / 7 Mana
+- [00:23:41] (f35525) **text** [d2r]: Text (chat): stamina / Fire 4
+- [00:23:41] (f35531) **teleport** [d2r]: View jump in one frame (motion 13, match -0.03): teleport?
+- [00:23:45] (f35628) **mana_refill** [d2r]: Mana refill +21% (31% -> 52%) in 0.48s (mana/rejuv potion?)
+- [00:23:47] (f35697) **run_burst** [d2r]: Fast movement 0.9s, avg camera shift 2.2 px/frame (~221 px/s at 720p; run/whirlwind/charge?)
+- [00:23:49] (f35744) **teleport** [d2r]: View jump in one frame (motion 10, match 0.14): teleport?
+- [00:23:51] (f35789) **life_drop** [d2r]: Life drop -23% (100% -> 77%) in 0.04s
+- [00:23:52] (f35803) **teleport** [d2r]: View jump in one frame (motion 6, match 0.02): teleport?
+- [00:23:53] (f35841) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 2.5 px/frame (~249 px/s at 720p; run/whirlwind/charge?)
+- [00:23:54] (f35850) **text** [d2r]: Text (top_right): Stick TREE |
+- [00:23:55] (f35878) **teleport** [d2r]: 2 view jumps in 0.3s (teleport chain?)
+- [00:23:59] (f35982) **mana_refill** [d2r]: Mana refill +13% (46% -> 58%) in 0.56s (mana/rejuv potion?)
+- [00:23:59] (f35993) **teleport** [d2r]: 2 view jumps in 0.2s (teleport chain?)
+- [00:24:02] (f36069) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 4.2 px/frame (~417 px/s at 720p; run/whirlwind/charge?)
+- [00:24:11] (f36294) **teleport** [d2r]: View jump in one frame (motion 8, match 0.16): teleport?
+- [00:24:17] (f36447) **life_drop** [d2r]: Life drop -25% (67% -> 42%) in 0.08s
+- [00:24:18] (f36460) **teleport** [d2r]: View jump in one frame (motion 7, match 0.11): teleport?
+- [00:24:22] (f36550) **area_change** [d2r]: Area name: SKILL TREE
+- [00:24:23] (f36593) **teleport** [d2r]: View jump in one frame (motion 10, match 0.07): teleport?
+- [00:24:24] (f36607) **mana_refill** [d2r]: Mana refill +12% (58% -> 70%) in 0.56s (mana/rejuv potion?)
+- [00:24:24] (f36618) **life_drop** [d2r]: Life drop -23% (40% -> 17%) in 0.12s
+- [00:24:25] (f36643) **teleport** [d2r]: View jump in one frame (motion 11, match 0.05): teleport?
+- [00:24:29] (f36737) **teleport** [d2r]: View jump in one frame (motion 10, match 0.16): teleport?
+- [00:24:31] (f36788) **teleport** [d2r]: 2 view jumps in 0.6s (teleport chain?)
+- [00:24:34] (f36865) **teleport** [d2r]: View jump in one frame (motion 10, match -0.10): teleport?
+- [00:24:37] (f36925) **teleport** [d2r]: View jump in one frame (motion 14, match 0.14): teleport?
+- [00:24:42] (f37063) **mana_refill** [d2r]: Mana refill +50% (11% -> 62%) in 0.68s (mana/rejuv potion?)
+- [00:24:45] (f37134) **teleport** [d2r]: View jump in one frame (motion 11, match 0.12): teleport?
+- [00:24:46] (f37167) **death** [d2r]: Death? life orb empty for >= 0.4s
+- [00:24:47] (f37184) **mana_refill** [d2r]: Mana refill +19% (39% -> 58%) in 0.12s (mana/rejuv potion?)
+- [00:24:48] (f37210) **mana_refill** [d2r]: Mana refill +18% (52% -> 70%) in 0.20s (mana/rejuv potion?)
+- [00:24:48] (f37213) **teleport** [d2r]: View jump in one frame (motion 11, match 0.03): teleport?
+- [00:24:49] (f37246) **mana_refill** [d2r]: Mana refill +22% (74% -> 96%) in 0.56s (mana/rejuv potion?)
+- [00:24:50] (f37255) **life_refill** [d2r]: Life refill +99% (0% -> 99%) in 0.12s (rejuvenation potion?)
+- [00:24:51] (f37275) **text** [d2r]: Text (chat): Paints: 500
+- [00:24:51] (f37275) **text** [d2r]: Text (center): perk Mana / Paints: 500
+- [00:24:52] (f37306) **run_burst** [d2r]: Fast movement 0.9s, avg camera shift 1.8 px/frame (~181 px/s at 720p; run/whirlwind/charge?)
+- [00:24:54] (f37373) **run_burst** [d2r]: Fast movement 1.3s, avg camera shift 2.8 px/frame (~276 px/s at 720p; run/whirlwind/charge?)
+- [00:24:58] (f37450) **loud_peak**: Loud peak -16 dBFS (+14 dB over typical): shout, impact or music hit?
+- [00:25:15] (f37898) **teleport** [d2r]: View jump in one frame (motion 6, match 0.20): teleport?
+- [00:25:21] (f38029) **teleport** [d2r]: 2 view jumps in 0.4s (teleport chain?)
+- [00:25:27] (f38178) **teleport** [d2r]: 2 view jumps in 1.4s (teleport chain?)
+- [00:25:30] (f38259) **teleport** [d2r]: View jump in one frame (motion 13, match 0.20): teleport?
+- [00:25:37] (f38436) **run_burst** [d2r]: Fast movement 1.5s, avg camera shift 2.7 px/frame (~273 px/s at 720p; run/whirlwind/charge?)
+- [00:25:38] (f38455) **teleport** [d2r]: View jump in one frame (motion 8, match 0.09): teleport?
+- [00:25:41] (f38548) **mana_refill** [d2r]: Mana refill +19% (39% -> 58%) in 0.20s (mana/rejuv potion?)
+- [00:25:49] (f38725) **text** [d2r]: Text (chat): Defense BaD
+- [00:25:49] (f38727) **teleport** [d2r]: 3 view jumps in 1.4s (teleport chain?)
+- [00:25:49] (f38747) **life_drop** [d2r]: Life drop -15% (86% -> 72%) in 0.04s
+- [00:25:55] (f38877) **teleport** [d2r]: 2 view jumps in 0.4s (teleport chain?)
+- [00:25:58] (f38962) **life_drop** [d2r]: Life drop -42% (70% -> 28%) in 0.36s
+- [00:26:01] (f39037) **mana_refill** [d2r]: Mana refill +14% (72% -> 86%) in 0.08s (mana/rejuv potion?)
+- [00:26:07] (f39177) **run_burst** [d2r]: Fast movement 1.2s, avg camera shift 2.7 px/frame (~273 px/s at 720p; run/whirlwind/charge?)
+- [00:26:11] (f39275) **text** [d2r]: Text (chat): Life Fale
+- [00:26:12] (f39307) **teleport** [d2r]: View jump in one frame (motion 6, match 0.13): teleport?
+- [00:26:14] (f39364) **teleport** [d2r]: View jump in one frame (motion 7, match -0.09): teleport?
+- [00:26:16] (f39418) **teleport** [d2r]: View jump in one frame (motion 8, match 0.13): teleport?
+- [00:26:18] (f39468) **mana_refill** [d2r]: Mana refill +12% (81% -> 93%) in 0.52s (mana/rejuv potion?)
+- [00:26:19] (f39488) **teleport** [d2r]: 2 view jumps in 1.0s (teleport chain?)
+- [00:26:27] (f39680) **teleport** [d2r]: View jump in one frame (motion 11, match 0.15): teleport?
+- [00:26:28] (f39717) **life_refill** [d2r]: Life refill +76% (22% -> 99%) in 0.04s (rejuvenation potion?)
+- [00:26:29] (f39725) **loud_peak**: Loud peak -14 dBFS (+17 dB over typical): shout, impact or music hit?
+- [00:26:33] (f39826) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 2.2 px/frame (~222 px/s at 720p; run/whirlwind/charge?)
+- [00:26:36] (f39900) **text** [d2r]: Text (chat): neacd
+- [00:26:40] (f40000) **text** [d2r]: Text (chat): old xdD / same thet
+- [00:26:41] (f40025) **text** [d2r]: Text (chat): fe same the
+- [00:26:43] (f40075) **text** [d2r]: Text (chat): The that
+- [00:26:46] (f40150) **text** [d2r]: Text (chat): same the / just pure eng
+- [00:26:47] (f40175) **text** [d2r]: Text (chat): or pure eng
+- [00:26:48] (f40200) **text** [d2r]: Text (chat): the tenor / just pure
+- [00:26:48] (f40212) **loud_peak**: Loud peak -16 dBFS (+15 dB over typical): shout, impact or music hit?
+- [00:26:49] (f40225) **text** [d2r]: Text (chat): same bubi wonder the tat
+- [00:26:50] (f40250) **text** [d2r]: Text (chat): helbed / (Gavel not sure
+- [00:26:52] (f40300) **text** [d2r]: Text (chat): just pare / Gavel
+- [00:26:53] (f40340) **teleport** [d2r]: View jump in one frame (motion 7, match -0.01): teleport?
+- [00:26:56] (f40400) **text** [d2r]: Text (chat): terra:
+- [00:26:57] (f40425) **text** [d2r]: Text (chat): Gave] sure
+- [00:27:00] (f40500) **text** [d2r]: Text (chat): SUPER
+- [00:27:00] (f40500) **text** [d2r]: Text (center): SUPER TIANA / Mana Petien / Sueer
+- [00:27:01] (f40525) **text** [d2r]: Text (center): DUPER / Super Mana / LeveL / Super
+- [00:27:02] (f40550) **text** [d2r]: Text (chat): helps
+- [00:27:02] (f40550) **text** [d2r]: Text (center): Supek / Druip
+- [00:27:04] (f40600) **text** [d2r]: Text (chat): but terror yeneral
+- [00:27:13] (f40825) **text** [d2r]: Text (chat): used correctly
+- [00:27:14] (f40857) **run_burst** [d2r]: Fast movement 1.4s, avg camera shift 1.8 px/frame (~176 px/s at 720p; run/whirlwind/charge?)
+- [00:27:15] (f40895) **teleport** [d2r]: View jump in one frame (motion 8, match 0.11): teleport?
+- [00:27:19] (f40975) **text** [d2r]: Text (center): 51S Mana / HEALING PeTian
+- [00:27:19] (f40999) **run_burst** [d2r]: Fast movement 0.9s, avg camera shift 4.1 px/frame (~411 px/s at 720p; run/whirlwind/charge?)
+- [00:27:20] (f41005) **teleport** [d2r]: 2 view jumps in 0.1s (teleport chain?)
+- [00:27:20] (f41007) **life_drop** [d2r]: Life drop -88% (100% -> 12%) in 0.16s
+- [00:27:21] (f41025) **text** [d2r]: Text (chat): Featured
+- [00:27:21] (f41025) **text** [d2r]: Text (center): ANAHEIM, CA .
+- [00:27:22] (f41050) **text** [d2r]: Text (center): ANAHEIM, GA
+- [00:27:23] (f41080) **life_refill** [d2r]: Life refill +86% (12% -> 99%) in 0.04s (rejuvenation potion?)
+- [00:27:23] (f41080) **mana_refill** [d2r]: Mana refill +92% (3% -> 96%) in 0.04s (mana/rejuv potion?)
+- [00:27:23] (f41081) **teleport** [d2r]: View jump in one frame (motion 25, match 0.07): teleport?
+- [00:27:24] (f41123) **teleport** [d2r]: View jump in one frame (motion 5, match 0.11): teleport?
+- [00:27:26] (f41153) **run_burst** [d2r]: Fast movement 1.3s, avg camera shift 2.1 px/frame (~212 px/s at 720p; run/whirlwind/charge?)
+- [00:27:34] (f41357) **life_drop** [d2r]: Life drop -11% (100% -> 89%) in 0.48s
+- [00:27:34] (f41374) **teleport** [d2r]: View jump in one frame (motion 7, match 0.12): teleport?
+- [00:27:36] (f41418) **teleport** [d2r]: View jump in one frame (motion 13, match -0.03): teleport?
+- [00:27:41] (f41527) **mana_refill** [d2r]: Mana refill +34% (31% -> 65%) in 0.24s (mana/rejuv potion?)
+- [00:27:41] (f41531) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 1.6 px/frame (~156 px/s at 720p; run/whirlwind/charge?)
+- [00:27:42] (f41567) **mana_refill** [d2r]: Mana refill +13% (52% -> 65%) in 0.04s (mana/rejuv potion?)
+- [00:27:45] (f41635) **teleport** [d2r]: View jump in one frame (motion 6, match 0.12): teleport?
+- [00:27:48] (f41722) **teleport** [d2r]: View jump in one frame (motion 12, match 0.12): teleport?
+- [00:27:53] (f41836) **life_drop** [d2r]: Life drop -25% (82% -> 56%) in 0.04s
+- [00:27:53] (f41844) **life_drop** [d2r]: Life drop -30% (56% -> 26%) in 0.76s
+- [00:27:55] (f41898) **teleport** [d2r]: View jump in one frame (motion 13, match 0.14): teleport?
+- [00:27:58] (f41954) **teleport** [d2r]: View jump in one frame (motion 10, match 0.18): teleport?
+- [00:28:00] (f42018) **teleport** [d2r]: View jump in one frame (motion 7, match 0.17): teleport?
+- [00:28:05] (f42142) **mana_refill** [d2r]: Mana refill +17% (79% -> 96%) in 0.12s (mana/rejuv potion?)
+- [00:28:05] (f42144) **life_refill** [d2r]: Life refill +76% (24% -> 100%) in 0.04s (rejuvenation potion?)
+- [00:28:15] (f42388) **loud_peak**: Loud peak -17 dBFS (+14 dB over typical): shout, impact or music hit?
+- [00:28:15] (f42390) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 2.5 px/frame (~247 px/s at 720p; run/whirlwind/charge?)
+- [00:28:23] (f42596) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 1.7 px/frame (~169 px/s at 720p; run/whirlwind/charge?)
+- [00:28:28] (f42703) **mana_refill** [d2r]: Mana refill +29% (39% -> 69%) in 0.04s (mana/rejuv potion?)
+- [00:28:28] (f42715) **mana_refill** [d2r]: Mana refill +17% (67% -> 84%) in 0.60s (mana/rejuv potion?)
+- [00:28:32] (f42807) **teleport** [d2r]: View jump in one frame (motion 8, match 0.16): teleport?
+- [00:28:33] (f42829) **run_burst** [d2r]: Fast movement 1.2s, avg camera shift 1.7 px/frame (~168 px/s at 720p; run/whirlwind/charge?)
+- [00:28:36] (f42900) **area_change** [d2r]: Area name: SKILL TREE
+- [00:28:36] (f42915) **life_drop** [d2r]: Life drop -30% (99% -> 68%) in 0.80s
+- [00:28:38] (f42964) **teleport** [d2r]: View jump in one frame (motion 6, match 0.18): teleport?
+- [00:28:41] (f43045) **teleport** [d2r]: View jump in one frame (motion 6, match 0.19): teleport?
+- [00:28:45] (f43127) **life_drop** [d2r]: Life drop -26% (70% -> 44%) in 0.44s
+- [00:28:45] (f43148) **teleport** [d2r]: 3 view jumps in 2.6s (teleport chain?)
+- [00:28:51] (f43275) **text** [d2r]: Text (chat): Fives us 4
+- [00:28:55] (f43379) **run_burst** [d2r]: Fast movement 1.1s, avg camera shift 2.4 px/frame (~244 px/s at 720p; run/whirlwind/charge?)
+- [00:28:59] (f43497) **teleport** [d2r]: View jump in one frame (motion 10, match 0.08): teleport?
+- [00:29:05] (f43628) **teleport** [d2r]: View jump in one frame (motion 9, match 0.15): teleport?
+- [00:29:11] (f43796) **teleport** [d2r]: View jump in one frame (motion 15, match 0.19): teleport?
+- [00:29:17] (f43949) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 1.5 px/frame (~151 px/s at 720p; run/whirlwind/charge?)
+- [00:29:21] (f44042) **mana_refill** [d2r]: Mana refill +48% (7% -> 55%) in 0.04s (mana/rejuv potion?)
+- [00:29:22] (f44062) **loud_peak**: Loud peak -18 dBFS (+12 dB over typical): shout, impact or music hit?
+- [00:29:22] (f44070) **mana_refill** [d2r]: Mana refill +71% (22% -> 93%) in 0.32s (mana/rejuv potion?)
+- [00:29:23] (f44077) **life_refill** [d2r]: Life refill +58% (40% -> 99%) in 0.20s (rejuvenation potion?)
+- [00:29:24] (f44100) **text** [d2r]: Text (top_right): INVER |
+- [00:29:26] (f44150) **loud_peak**: Loud peak -14 dBFS (+16 dB over typical): shout, impact or music hit?
+- [00:29:28] (f44204) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 2.3 px/frame (~231 px/s at 720p; run/whirlwind/charge?)
+- [00:29:41] (f44537) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 2.5 px/frame (~249 px/s at 720p; run/whirlwind/charge?)
+- [00:29:44] (f44611) **teleport** [d2r]: 2 view jumps in 0.4s (teleport chain?)
+- [00:29:50] (f44750) **text** [d2r]: Text (center): Super Mana / Mana Ma P / SuPer ANA POT
+- [00:29:58] (f44957) **mana_refill** [d2r]: Mana refill +13% (39% -> 52%) in 0.44s (mana/rejuv potion?)
+- [00:29:58] (f44963) **teleport** [d2r]: View jump in one frame (motion 7, match 0.17): teleport?
+- [00:29:59] (f44979) **mana_refill** [d2r]: Mana refill +15% (52% -> 67%) in 0.60s (mana/rejuv potion?)
+- [00:30:04] (f45100) **text** [d2r]: Text (top_right): TREE i |
+- [00:30:05] (f45142) **mana_refill** [d2r]: Mana refill +12% (81% -> 93%) in 0.40s (mana/rejuv potion?)
+- [00:30:07] (f45190) **life_drop** [d2r]: Life drop -54% (100% -> 46%) in 0.40s
+- [00:30:08] (f45200) **text** [d2r]: Text (top_right): SKILL TREE : |
+- [00:30:09] (f45236) **teleport** [d2r]: View jump in one frame (motion 14, match -0.03): teleport?
+- [00:30:11] (f45280) **teleport** [d2r]: View jump in one frame (motion 14, match 0.03): teleport?
+- [00:30:21] (f45528) **teleport** [d2r]: View jump in one frame (motion 16, match 0.00): teleport?
+- [00:30:23] (f45598) **mana_refill** [d2r]: Mana refill +12% (79% -> 91%) in 0.60s (mana/rejuv potion?)
+- [00:30:26] (f45673) **teleport** [d2r]: View jump in one frame (motion 9, match 0.11): teleport?
+- [00:30:31] (f45777) **teleport** [d2r]: View jump in one frame (motion 8, match 0.20): teleport?
+- [00:30:38] (f45950) **text** [d2r]: Text (top_right): THREE |
+- [00:30:39] (f45993) **life_drop** [d2r]: Life drop -37% (37% -> 0%) in 1.20s
+- [00:30:40] (f46023) **death** [d2r]: Death? life orb empty for >= 0.4s
+- [00:30:42] (f46065) **area_change** [d2r]: Area change / loading: HUD gone 0.5s (dark+other)
+- [00:30:43] (f46077) **teleport** [d2r]: 2 view jumps in 1.0s (teleport chain?)
+- [00:30:44] (f46100) **loud_peak**: Loud peak -14 dBFS (+17 dB over typical): shout, impact or music hit?
+- [00:30:44] (f46101) **life_drop** [d2r]: Life drop -80% (99% -> 19%) in 0.08s
+- [00:30:44] (f46102) **poisoned** [d2r]: Poisoned (green life orb) for 0.5s
+- [00:30:44] (f46114) **area_change** [d2r]: Area change / loading: HUD gone 3.1s (dark+other)
+- [00:30:47] (f46191) **teleport** [d2r]: View jump in one frame (motion 41, match 0.03): teleport?
+- [00:30:53] (f46325) **text** [d2r]: Text (center): TRADE
+- [00:30:54] (f46350) **text** [d2r]: Text (chat): PoINTs: 500
+- [00:30:54] (f46350) **text** [d2r]: Text (center): per Mana / PoINTs: 500
+- [00:30:55] (f46377) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 2.4 px/frame (~242 px/s at 720p; run/whirlwind/charge?)
+- [00:30:55] (f46392) **teleport** [d2r]: View jump in one frame (motion 14, match 0.20): teleport?
+- [00:31:01] (f46530) **teleport** [d2r]: View jump in one frame (motion 6, match 0.14): teleport?
+- [00:31:03] (f46575) **text** [d2r]: Text (center): Necromancer / Leven 96
+- [00:31:08] (f46700) **text** [d2r]: Text (top_right): Stith TREE ‘ |
+- [00:31:09] (f46731) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 3.1 px/frame (~308 px/s at 720p; run/whirlwind/charge?)
+- [00:31:26] (f47166) **life_drop** [d2r]: Life drop -32% (100% -> 68%) in 0.28s
+- [00:31:27] (f47182) **mana_refill** [d2r]: Mana refill +13% (52% -> 65%) in 0.12s (mana/rejuv potion?)
+- [00:31:27] (f47188) **teleport** [d2r]: 2 view jumps in 1.4s (teleport chain?)
+- [00:31:30] (f47250) **text** [d2r]: Text (chat): Five ot i4
+- [00:31:31] (f47277) **mana_refill** [d2r]: Mana refill +29% (23% -> 52%) in 0.04s (mana/rejuv potion?)
+- [00:31:33] (f47328) **teleport** [d2r]: View jump in one frame (motion 7, match 0.07): teleport?
+- [00:31:35] (f47376) **teleport** [d2r]: 2 view jumps in 1.4s (teleport chain?)
+- [00:31:38] (f47464) **teleport** [d2r]: View jump in one frame (motion 16, match -0.01): teleport?
+- [00:31:44] (f47615) **teleport** [d2r]: View jump in one frame (motion 13, match 0.12): teleport?
+- [00:31:46] (f47671) **life_drop** [d2r]: Life drop -21% (45% -> 24%) in 0.04s
+- [00:31:47] (f47679) **life_drop** [d2r]: Life drop -24% (24% -> 0%) in 0.76s
+- [00:31:47] (f47680) **death** [d2r]: Death? life orb empty for >= 0.4s
+- [00:31:49] (f47725) **text** [d2r]: Text (center): ELC Fo
+- [00:31:49] (f47728) **teleport** [d2r]: 2 view jumps in 0.8s (teleport chain?)
+- [00:31:49] (f47748) **life_drop** [d2r]: Life drop -99% (99% -> 0%) in 0.20s
+- [00:31:49] (f47749) **poisoned** [d2r]: Poisoned (green life orb) for 0.8s
+- [00:31:50] (f47750) **loud_peak**: Loud peak -17 dBFS (+13 dB over typical): shout, impact or music hit?
+- [00:31:50] (f47768) **area_change** [d2r]: Area change / loading: HUD gone 3.0s (dark+other)
+- [00:31:53] (f47842) **teleport** [d2r]: View jump in one frame (motion 35, match 0.10): teleport?
+- [00:31:57] (f47936) **teleport** [d2r]: 2 view jumps in 0.6s (teleport chain?)
+- [00:31:59] (f47988) **teleport** [d2r]: View jump in one frame (motion 5, match 0.13): teleport?
+- [00:32:00] (f48006) **run_burst** [d2r]: Fast movement 1.2s, avg camera shift 2.4 px/frame (~240 px/s at 720p; run/whirlwind/charge?)
+- [00:32:01] (f48041) **run_burst** [d2r]: Fast movement 1.1s, avg camera shift 2.2 px/frame (~224 px/s at 720p; run/whirlwind/charge?)
+- [00:32:03] (f48098) **teleport** [d2r]: 2 view jumps in 0.9s (teleport chain?)
+- [00:32:04] (f48100) **text** [d2r]: Text (center): Super Mana
+- [00:32:05] (f48125) **text** [d2r]: Text (chat): Ear Su / Level 99?
+- [00:32:05] (f48125) **text** [d2r]: Text (center): Lever 96
+- [00:32:06] (f48150) **text** [d2r]: Text (chat): Ras's Ear / Levert 99 / ANCIENT
+- [00:32:06] (f48150) **text** [d2r]: Text (center): Lever 99 / Super / Druio
+- [00:32:07] (f48175) **text** [d2r]: Text (center): Lever / Ear MANA
+- [00:32:08] (f48200) **text** [d2r]: Text (chat): Levet 99 / ANCIENT S
+- [00:32:08] (f48200) **text** [d2r]: Text (center): NECKSMANCER / Surex Mana
+- [00:32:09] (f48225) **text** [d2r]: Text (chat): Levei 99
+- [00:32:12] (f48303) **teleport** [d2r]: View jump in one frame (motion 8, match 0.14): teleport?
+- [00:32:13] (f48325) **text** [d2r]: Text (center): Super PaTiGNn / Surer Mana / Super Mana
+- [00:32:14] (f48370) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 1.7 px/frame (~173 px/s at 720p; run/whirlwind/charge?)
+- [00:32:19] (f48487) **mana_refill** [d2r]: Mana refill +37% (33% -> 70%) in 0.48s (mana/rejuv potion?)
+- [00:32:20] (f48524) **mana_refill** [d2r]: Mana refill +19% (72% -> 91%) in 0.68s (mana/rejuv potion?)
+- [00:32:23] (f48580) **teleport** [d2r]: View jump in one frame (motion 19, match 0.18): teleport?
+- [00:32:25] (f48635) **life_drop** [d2r]: Life drop -23% (100% -> 77%) in 0.04s
+- [00:32:28] (f48700) **text** [d2r]: Text (chat): Fire 28
+- [00:32:31] (f48793) **teleport** [d2r]: 2 view jumps in 0.3s (teleport chain?)
+- [00:32:36] (f48908) **teleport** [d2r]: View jump in one frame (motion 6, match 0.12): teleport?
+- [00:32:40] (f49009) **teleport** [d2r]: View jump in one frame (motion 17, match -0.10): teleport?
+- [00:32:47] (f49183) **life_drop** [d2r]: Life drop -15% (65% -> 50%) in 0.68s
+- [00:32:50] (f49258) **teleport** [d2r]: View jump in one frame (motion 20, match 0.08): teleport?
+- [00:32:51] (f49287) **mana_refill** [d2r]: Mana refill +12% (79% -> 91%) in 0.04s (mana/rejuv potion?)
+- [00:32:54] (f49368) **teleport** [d2r]: 3 view jumps in 1.4s (teleport chain?)
+- [00:32:56] (f49417) **mana_refill** [d2r]: Mana refill +39% (27% -> 67%) in 0.04s (mana/rejuv potion?)
+- [00:32:57] (f49432) **life_drop** [d2r]: Life drop -22% (43% -> 21%) in 0.76s
+- [00:32:58] (f49458) **life_drop** [d2r]: Life drop -21% (21% -> 0%) in 0.76s
+- [00:32:58] (f49459) **death** [d2r]: Death? life orb empty for >= 0.4s
+- [00:33:00] (f49510) **teleport** [d2r]: 2 view jumps in 0.7s (teleport chain?)
+- [00:33:01] (f49527) **life_drop** [d2r]: Life drop -100% (100% -> 0%) in 0.32s
+- [00:33:01] (f49528) **poisoned** [d2r]: Poisoned (green life orb) for 0.6s
+- [00:33:01] (f49542) **area_change** [d2r]: Area change / loading: HUD gone 3.2s (dark+other)
+- [00:33:04] (f49622) **teleport** [d2r]: 2 view jumps in 0.4s (teleport chain?)
+- [00:33:06] (f49671) **teleport** [d2r]: 2 view jumps in 0.6s (teleport chain?)
+- [00:33:10] (f49763) **teleport** [d2r]: View jump in one frame (motion 5, match 0.17): teleport?
+- [00:33:13] (f49848) **teleport** [d2r]: 3 view jumps in 1.3s (teleport chain?)
+- [00:33:14] (f49850) **text** [d2r]: Text (chat): Super Mana / Super / Mana Patian
+- [00:33:14] (f49850) **text** [d2r]: Text (center): Super Mana Mana
+- [00:33:15] (f49875) **area_change** [d2r]: Area name: Super Mana
+- [00:33:15] (f49875) **text** [d2r]: Text (center): Mana POTION
+- [00:33:16] (f49900) **area_change** [d2r]: Area name: LEVEL
+- [00:33:16] (f49900) **text** [d2r]: Text (center): Lever 96 ‘ Dr
+- [00:33:17] (f49925) **text** [d2r]: Text (center): Super Mana PoTiaNn / Surek MANA / Super / NECROMANCER Ras’ / Lever 96 ' De
+- [00:33:21] (f50025) **text** [d2r]: Text (center): Suver Mana
+- [00:33:21] (f50030) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 2.7 px/frame (~266 px/s at 720p; run/whirlwind/charge?)
+- [00:33:22] (f50058) **teleport** [d2r]: View jump in one frame (motion 6, match 0.20): teleport?
+- [00:33:24] (f50107) **mana_refill** [d2r]: Mana refill +13% (39% -> 52%) in 0.48s (mana/rejuv potion?)
+- [00:33:25] (f50139) **mana_refill** [d2r]: Mana refill +15% (52% -> 67%) in 0.24s (mana/rejuv potion?)
+- [00:33:34] (f50372) **teleport** [d2r]: View jump in one frame (motion 9, match 0.06): teleport?
+- [00:33:39] (f50477) **life_drop** [d2r]: Life drop -28% (100% -> 72%) in 0.04s
+- [00:33:39] (f50489) **teleport** [d2r]: 2 view jumps in 1.4s (teleport chain?)
+- [00:33:48] (f50723) **mana_refill** [d2r]: Mana refill +45% (22% -> 67%) in 0.20s (mana/rejuv potion?)
+- [00:33:50] (f50751) **mana_refill** [d2r]: Mana refill +17% (62% -> 79%) in 0.12s (mana/rejuv potion?)
+- [00:33:56] (f50901) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 1.4 px/frame (~144 px/s at 720p; run/whirlwind/charge?)
+- [00:34:00] (f51012) **teleport** [d2r]: View jump in one frame (motion 10, match 0.13): teleport?
+- [00:34:03] (f51098) **teleport** [d2r]: View jump in one frame (motion 8, match 0.06): teleport?
+- [00:34:05] (f51142) **mana_refill** [d2r]: Mana refill +27% (58% -> 86%) in 0.04s (mana/rejuv potion?)
+- [00:34:05] (f51148) **teleport** [d2r]: View jump in one frame (motion 8, match 0.17): teleport?
+- [00:34:06] (f51156) **mana_refill** [d2r]: Mana refill +14% (72% -> 86%) in 0.60s (mana/rejuv potion?)
+- [00:34:07] (f51195) **mana_refill** [d2r]: Mana refill +12% (79% -> 91%) in 0.44s (mana/rejuv potion?)
+- [00:34:09] (f51245) **life_drop** [d2r]: Life drop -22% (46% -> 24%) in 0.72s
+- [00:34:11] (f51283) **teleport** [d2r]: View jump in one frame (motion 16, match 0.18): teleport?
+- [00:34:15] (f51375) **teleport** [d2r]: View jump in one frame (motion 10, match 0.19): teleport?
+- [00:34:17] (f51438) **teleport** [d2r]: 2 view jumps in 1.0s (teleport chain?)
+- [00:34:22] (f51565) **teleport** [d2r]: View jump in one frame (motion 12, match 0.15): teleport?
+- [00:34:23] (f51588) **run_burst** [d2r]: Fast movement 1.3s, avg camera shift 1.7 px/frame (~168 px/s at 720p; run/whirlwind/charge?)
+- [00:34:27] (f51691) **teleport** [d2r]: 2 view jumps in 0.9s (teleport chain?)
+- [00:34:35] (f51892) **mana_refill** [d2r]: Mana refill +71% (22% -> 93%) in 0.52s (mana/rejuv potion?)
+- [00:34:36] (f51904) **life_refill** [d2r]: Life refill +83% (17% -> 100%) in 0.04s (rejuvenation potion?)
+- [00:34:37] (f51925) **area_change** [d2r]: Area name: INVENTSRY
+- [00:34:37] (f51925) **loud_peak**: Loud peak -18 dBFS (+13 dB over typical): shout, impact or music hit?
+- [00:34:37] (f51925) **text** [d2r]: Text (center): Cast: 9OO / per MANA
+- [00:34:44] (f52108) **teleport** [d2r]: View jump in one frame (motion 6, match 0.16): teleport?
+- [00:35:03] (f52575) **text** [d2r]: Text (chat): Fire 4
+- [00:35:04] (f52608) **teleport** [d2r]: 2 view jumps in 1.4s (teleport chain?)
+- [00:35:07] (f52693) **teleport** [d2r]: 2 view jumps in 0.2s (teleport chain?)
+- [00:35:10] (f52756) **teleport** [d2r]: View jump in one frame (motion 21, match 0.02): teleport?
+- [00:35:12] (f52803) **teleport** [d2r]: 2 view jumps in 0.5s (teleport chain?)
+- [00:35:13] (f52830) **life_drop** [d2r]: Life drop -33% (100% -> 67%) in 0.32s
+- [00:35:13] (f52848) **life_drop** [d2r]: Life drop -24% (67% -> 43%) in 0.64s
+- [00:35:17] (f52939) **teleport** [d2r]: 2 view jumps in 0.6s (teleport chain?)
+- [00:35:20] (f53007) **teleport** [d2r]: 3 view jumps in 1.6s (teleport chain?)
+- [00:35:25] (f53143) **teleport** [d2r]: View jump in one frame (motion 10, match 0.18): teleport?
+- [00:35:27] (f53190) **teleport** [d2r]: 2 view jumps in 1.4s (teleport chain?)
+- [00:35:31] (f53284) **teleport** [d2r]: View jump in one frame (motion 17, match 0.00): teleport?
+- [00:35:33] (f53333) **teleport** [d2r]: View jump in one frame (motion 12, match 0.14): teleport?
+- [00:35:34] (f53357) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 2.5 px/frame (~251 px/s at 720p; run/whirlwind/charge?)
+- [00:35:35] (f53390) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 1.8 px/frame (~184 px/s at 720p; run/whirlwind/charge?)
+- [00:35:37] (f53430) **life_drop** [d2r]: Life drop -32% (32% -> 0%) in 0.12s
+- [00:35:37] (f53433) **death** [d2r]: Death? life orb empty for >= 0.4s
+- [00:35:38] (f53450) **text** [d2r]: Text (center): PRESS
+- [00:35:38] (f53473) **area_change** [d2r]: Area change / loading: HUD gone 0.4s (dark+other)
+- [00:35:39] (f53484) **teleport** [d2r]: 2 view jumps in 0.8s (teleport chain?)
+- [00:35:40] (f53502) **life_drop** [d2r]: Life drop -100% (100% -> 0%) in 0.28s
+- [00:35:40] (f53503) **poisoned** [d2r]: Poisoned (green life orb) for 0.6s
+- [00:35:40] (f53518) **area_change** [d2r]: Area change / loading: HUD gone 3.0s (dark+other)
+- [00:35:43] (f53593) **teleport** [d2r]: View jump in one frame (motion 29, match 0.05): teleport?
+- [00:35:46] (f53667) **teleport** [d2r]: 2 view jumps in 0.6s (teleport chain?)
+- [00:35:49] (f53745) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 2.4 px/frame (~236 px/s at 720p; run/whirlwind/charge?)
+- [00:35:53] (f53825) **text** [d2r]: Text (chat): Druip / Lever 99
+- [00:35:53] (f53825) **text** [d2r]: Text (center): ever 99
+- [00:35:53] (f53838) **teleport** [d2r]: 2 view jumps in 1.2s (teleport chain?)
+- [00:35:55] (f53875) **text** [d2r]: Text (center): Super Mana / Mania
+- [00:35:56] (f53900) **text** [d2r]: Text (center): Druid / MANA PeTION / SUPER
+- [00:35:57] (f53934) **teleport** [d2r]: View jump in one frame (motion 7, match -0.02): teleport?
+- [00:35:58] (f53950) **text** [d2r]: Text (chat): Lever 9?
+- [00:35:58] (f53950) **text** [d2r]: Text (center): LeveL 96
+- [00:35:59] (f53975) **text** [d2r]: Text (chat): Lever 99
+- [00:36:03] (f54093) **teleport** [d2r]: View jump in one frame (motion 9, match 0.03): teleport?
+- [00:36:04] (f54100) **text** [d2r]: Text (center): Super HEALING P&TION / Super MANA PaTION
+- [00:36:05] (f54125) **text** [d2r]: Text (chat): Super
+- [00:36:05] (f54125) **text** [d2r]: Text (center): HEALING / Lever / Super Mana Potion / Super Mana Retion
+- [00:36:08] (f54200) **text** [d2r]: Text (chat): Lever 76 / Suver Mana Patian
+- [00:36:09] (f54242) **mana_refill** [d2r]: Mana refill +34% (31% -> 65%) in 0.04s (mana/rejuv potion?)
+- [00:36:11] (f54275) **text** [d2r]: Text (chat): NECROMANC / Lever 96 / Lever 99
+- [00:36:11] (f54275) **text** [d2r]: Text (center): Super Mana
+- [00:36:11] (f54284) **mana_refill** [d2r]: Mana refill +17% (79% -> 96%) in 0.56s (mana/rejuv potion?)
+- [00:36:14] (f54350) **teleport** [d2r]: View jump in one frame (motion 18, match 0.07): teleport?
+- [00:36:21] (f54530) **teleport** [d2r]: View jump in one frame (motion 10, match 0.11): teleport?
+- [00:36:25] (f54642) **teleport** [d2r]: 2 view jumps in 1.0s (teleport chain?)
+- [00:36:26] (f54671) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 1.9 px/frame (~191 px/s at 720p; run/whirlwind/charge?)
+- [00:36:28] (f54706) **teleport** [d2r]: 2 view jumps in 1.3s (teleport chain?)
+- [00:36:30] (f54770) **mana_refill** [d2r]: Mana refill +12% (84% -> 96%) in 0.04s (mana/rejuv potion?)
+- [00:36:32] (f54822) **teleport** [d2r]: 7 view jumps in 3.4s (teleport chain?)
+- [00:36:40] (f55000) **mana_refill** [d2r]: Mana refill +17% (79% -> 96%) in 0.72s (mana/rejuv potion?)
+- [00:36:40] (f55024) **teleport** [d2r]: View jump in one frame (motion 21, match 0.20): teleport?
+- [00:36:45] (f55136) **teleport** [d2r]: View jump in one frame (motion 12, match 0.20): teleport?
+- [00:36:48] (f55208) **life_drop** [d2r]: Life drop -27% (91% -> 65%) in 0.04s
+- [00:36:53] (f55347) **teleport** [d2r]: 2 view jumps in 1.4s (teleport chain?)
+- [00:37:03] (f55588) **life_refill** [d2r]: Life refill +42% (58% -> 100%) in 0.40s (rejuvenation potion?)
+- [00:37:03] (f55597) **mana_refill** [d2r]: Mana refill +12% (84% -> 96%) in 0.24s (mana/rejuv potion?)
+- [00:37:10] (f55766) **teleport** [d2r]: View jump in one frame (motion 7, match 0.13): teleport?
+- [00:37:12] (f55800) **text** [d2r]: Text (chat): Super
+- [00:37:12] (f55800) **text** [d2r]: Text (center): Super Mana
+- [00:37:28] (f56206) **teleport** [d2r]: View jump in one frame (motion 11, match 0.06): teleport?
+- [00:37:35] (f56393) **mana_refill** [d2r]: Mana refill +43% (22% -> 65%) in 0.04s (mana/rejuv potion?)
+- [00:37:39] (f56487) **mana_refill** [d2r]: Mana refill +15% (55% -> 70%) in 0.44s (mana/rejuv potion?)
+- [00:37:43] (f56591) **teleport** [d2r]: 2 view jumps in 0.6s (teleport chain?)
+- [00:37:43] (f56592) **mana_refill** [d2r]: Mana refill +14% (79% -> 93%) in 0.12s (mana/rejuv potion?)
+- [00:37:49] (f56745) **teleport** [d2r]: View jump in one frame (motion 8, match 0.14): teleport?
+- [00:37:52] (f56823) **teleport** [d2r]: 4 view jumps in 3.0s (teleport chain?)
+- [00:37:59] (f56975) **text** [d2r]: Text (top_right): SkiLL TREE |
+- [00:37:59] (f56976) **teleport** [d2r]: View jump in one frame (motion 9, match 0.10): teleport?
+- [00:38:01] (f57032) **teleport** [d2r]: View jump in one frame (motion 14, match 0.03): teleport?
+- [00:38:03] (f57075) **teleport** [d2r]: View jump in one frame (motion 13, match 0.14): teleport?
+- [00:38:07] (f57181) **teleport** [d2r]: 2 view jumps in 0.2s (teleport chain?)
+- [00:38:09] (f57247) **teleport** [d2r]: 2 view jumps in 0.2s (teleport chain?)
+- [00:38:12] (f57310) **teleport** [d2r]: View jump in one frame (motion 11, match 0.14): teleport?
+- [00:38:14] (f57374) **teleport** [d2r]: View jump in one frame (motion 17, match 0.13): teleport?
+- [00:38:18] (f57454) **mana_refill** [d2r]: Mana refill +83% (10% -> 93%) in 0.20s (mana/rejuv potion?)
+- [00:38:18] (f57458) **life_refill** [d2r]: Life refill +22% (77% -> 99%) in 0.04s (rejuvenation potion?)
+- [00:38:19] (f57475) **area_change** [d2r]: Area name: INVENTORY
+- [00:38:21] (f57540) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 2.4 px/frame (~241 px/s at 720p; run/whirlwind/charge?)
+- [00:38:23] (f57575) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 2.1 px/frame (~211 px/s at 720p; run/whirlwind/charge?)
+- [00:38:25] (f57642) **teleport** [d2r]: 2 view jumps in 0.5s (teleport chain?)
+- [00:38:26] (f57650) **text** [d2r]: Text (chat): HIANA P / Mana Pat
+- [00:38:26] (f57650) **text** [d2r]: Text (center): Super
+- [00:38:27] (f57675) **text** [d2r]: Text (center): MANA POTION Pat / MANA POTION EAR / Lever 96
+- [00:38:40] (f58013) **teleport** [d2r]: View jump in one frame (motion 10, match 0.19): teleport?
+- [00:38:45] (f58125) **text** [d2r]: Text (center): Cuesr
+- [00:38:45] (f58137) **teleport** [d2r]: 2 view jumps in 0.1s (teleport chain?)
+- [00:38:53] (f58325) **text** [d2r]: Text (chat): me nec
+- [00:38:58] (f58450) **text** [d2r]: Text (chat): was ag one
+- [00:39:00] (f58500) **text** [d2r]: Text (chat): qa one / stomped me like
+- [00:39:03] (f58575) **text** [d2r]: Text (chat): was ane / me like / tind some its
+- [00:39:04] (f58600) **text** [d2r]: Text (chat): qg one / stomped me line nec / find some its cool
+- [00:39:09] (f58725) **text** [d2r]: Text (chat): Ind Some COO!
+- [00:39:10] (f58750) **text** [d2r]: Text (chat): tind ts cool
+- [00:39:16] (f58914) **teleport** [d2r]: View jump in one frame (motion 10, match 0.06): teleport?
+- [00:39:17] (f58943) **life_drop** [d2r]: Life drop -18% (100% -> 82%) in 0.04s
+- [00:39:19] (f58998) **teleport** [d2r]: 2 view jumps in 1.1s (teleport chain?)
+- [00:39:20] (f59016) **mana_refill** [d2r]: Mana refill +36% (7% -> 42%) in 0.16s (mana/rejuv potion?)
+- [00:39:22] (f59055) **mana_refill** [d2r]: Mana refill +24% (42% -> 66%) in 0.08s (mana/rejuv potion?)
+- [00:39:23] (f59091) **mana_refill** [d2r]: Mana refill +15% (21% -> 36%) in 0.04s (mana/rejuv potion?)
+- [00:39:24] (f59119) **mana_refill** [d2r]: Mana refill +13% (33% -> 46%) in 0.12s (mana/rejuv potion?)
+- [00:39:25] (f59141) **mana_refill** [d2r]: Mana refill +19% (46% -> 65%) in 0.40s (mana/rejuv potion?)
+- [00:39:26] (f59152) **teleport** [d2r]: 3 view jumps in 1.6s (teleport chain?)
+- [00:39:31] (f59299) **life_drop** [d2r]: Life drop -26% (72% -> 46%) in 0.12s
+- [00:39:32] (f59308) **life_drop** [d2r]: Life drop -39% (46% -> 7%) in 0.80s
+- [00:39:34] (f59372) **mana_refill** [d2r]: Mana refill +12% (81% -> 93%) in 0.08s (mana/rejuv potion?)
+- [00:39:34] (f59372) **teleport** [d2r]: 2 view jumps in 1.1s (teleport chain?)
+- [00:39:35] (f59375) **text** [d2r]: Text (chat): Fire 4
+- [00:39:38] (f59473) **teleport** [d2r]: 3 view jumps in 1.3s (teleport chain?)
+- [00:39:39] (f59477) **death** [d2r]: Death? life orb empty for >= 0.4s
+- [00:39:46] (f59668) **teleport** [d2r]: 3 view jumps in 0.8s (teleport chain?)
+- [00:39:47] (f59688) **life_drop** [d2r]: Life drop -100% (100% -> 0%) in 0.20s
+- [00:39:47] (f59689) **poisoned** [d2r]: Poisoned (green life orb) for 0.5s
+- [00:39:48] (f59701) **area_change** [d2r]: Area change / loading: HUD gone 3.2s (dark+other)
+- [00:39:51] (f59780) **teleport** [d2r]: View jump in one frame (motion 42, match 0.04): teleport?
+- [00:39:53] (f59845) **teleport** [d2r]: 2 view jumps in 0.7s (teleport chain?)
+- [00:39:55] (f59884) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 2.1 px/frame (~212 px/s at 720p; run/whirlwind/charge?)
+- [00:39:56] (f59920) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 2.4 px/frame (~239 px/s at 720p; run/whirlwind/charge?)
+- [00:39:58] (f59955) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 2.4 px/frame (~245 px/s at 720p; run/whirlwind/charge?)
+- [00:39:59] (f59995) **teleport** [d2r]: 3 view jumps in 2.2s (teleport chain?)
+- [00:40:00] (f60000) **text** [d2r]: Text (chat): Lever 9? / Mana Patian / MANA PNB's Eak / Supek MANA / Super Mana Portia
+- [00:40:01] (f60025) **text** [d2r]: Text (chat): Ras’s Ear / 99 PNB's Ear / Lever 96
+- [00:40:01] (f60025) **text** [d2r]: Text (center): @N LeveL 96
+- [00:40:02] (f60050) **area_change** [d2r]: Area name: Super Mana
+- [00:40:02] (f60050) **text** [d2r]: Text (chat): Druio
+- [00:40:02] (f60050) **text** [d2r]: Text (center): Super / Surer Mana / wy MANA / MANA POTION
+- [00:40:03] (f60075) **text** [d2r]: Text (center): ina Potion
+- [00:40:07] (f60192) **run_burst** [d2r]: Fast movement 1.2s, avg camera shift 3.3 px/frame (~333 px/s at 720p; run/whirlwind/charge?)
+- [00:40:08] (f60200) **text** [d2r]: Text (center): CER 154 Garo LEVEL / Druip / ’ ANCIENT Swor
+- [00:40:09] (f60234) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 2.7 px/frame (~273 px/s at 720p; run/whirlwind/charge?)
+- [00:40:12] (f60300) **text** [d2r]: Text (chat): stomped me / find same opening
+- [00:40:14] (f60366) **mana_refill** [d2r]: Mana refill +18% (52% -> 70%) in 0.04s (mana/rejuv potion?)
+- [00:40:16] (f60405) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 2.2 px/frame (~219 px/s at 720p; run/whirlwind/charge?)
+- [00:40:16] (f60422) **mana_refill** [d2r]: Mana refill +17% (79% -> 96%) in 0.92s (mana/rejuv potion?)
+- [00:40:22] (f60562) **teleport** [d2r]: 2 view jumps in 0.6s (teleport chain?)
+- [00:40:29] (f60737) **teleport** [d2r]: View jump in one frame (motion 14, match 0.02): teleport?
+- [00:40:30] (f60755) **mana_refill** [d2r]: Mana refill +15% (74% -> 88%) in 0.60s (mana/rejuv potion?)
+- [00:40:30] (f60768) **life_drop** [d2r]: Life drop -28% (100% -> 72%) in 0.04s
+- [00:40:31] (f60781) **life_drop** [d2r]: Life drop -22% (72% -> 50%) in 0.56s
+- [00:40:32] (f60812) **loud_peak**: Loud peak -16 dBFS (+15 dB over typical): shout, impact or music hit?
+- [00:40:37] (f60927) **teleport** [d2r]: View jump in one frame (motion 12, match 0.14): teleport?
+- [00:40:38] (f60971) **life_drop** [d2r]: Life drop -38% (45% -> 7%) in 0.12s
+- [00:40:39] (f60987) **death** [d2r]: Death? life orb empty for >= 0.4s
+- [00:40:42] (f61055) **life_refill** [d2r]: Life refill +99% (0% -> 99%) in 0.20s (rejuvenation potion?)
+- [00:40:45] (f61137) **teleport** [d2r]: View jump in one frame (motion 7, match 0.15): teleport?
+- [00:40:46] (f61155) **run_burst** [d2r]: Fast movement 1.2s, avg camera shift 2.1 px/frame (~208 px/s at 720p; run/whirlwind/charge?)
+- [00:40:47] (f61190) **run_burst** [d2r]: Fast movement 1.6s, avg camera shift 2.0 px/frame (~196 px/s at 720p; run/whirlwind/charge?)
+- [00:40:49] (f61225) **text** [d2r]: Text (chat): bine 4
+- [00:40:50] (f61250) **text** [d2r]: Text (chat): had Sarre
+- [00:40:53] (f61332) **teleport** [d2r]: View jump in one frame (motion 5, match 0.16): teleport?
+- [00:40:55] (f61392) **teleport** [d2r]: View jump in one frame (motion 8, match 0.06): teleport?
+- [00:41:01] (f61542) **teleport** [d2r]: 2 view jumps in 0.4s (teleport chain?)
+- [00:41:03] (f61587) **life_drop** [d2r]: Life drop -26% (100% -> 74%) in 0.04s
+- [00:41:04] (f61600) **text** [d2r]: Text (top_right): Skick TREE |
+- [00:41:06] (f61670) **teleport** [d2r]: 2 view jumps in 0.3s (teleport chain?)
+- [00:41:14] (f61852) **teleport** [d2r]: View jump in one frame (motion 17, match 0.11): teleport?
+- [00:41:16] (f61901) **teleport** [d2r]: 2 view jumps in 0.4s (teleport chain?)
+- [00:41:17] (f61925) **text** [d2r]: Text (chat): COLD DAMAGE RECEIVED. 4
+- [00:41:20] (f62019) **life_drop** [d2r]: Life drop -25% (67% -> 42%) in 0.04s
+- [00:41:27] (f62180) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 1.9 px/frame (~194 px/s at 720p; run/whirlwind/charge?)
+- [00:41:29] (f62232) **teleport** [d2r]: 2 view jumps in 0.2s (teleport chain?)
+- [00:41:37] (f62432) **life_refill** [d2r]: Life refill +61% (39% -> 100%) in 0.20s (rejuvenation potion?)
+- [00:41:37] (f62432) **mana_refill** [d2r]: Mana refill +68% (27% -> 96%) in 0.04s (mana/rejuv potion?)
+- [00:41:38] (f62450) **text** [d2r]: Text (center): ben Mana ‘
+- [00:41:39] (f62480) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 2.1 px/frame (~215 px/s at 720p; run/whirlwind/charge?)
+- [00:41:40] (f62515) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 2.5 px/frame (~246 px/s at 720p; run/whirlwind/charge?)
+- [00:41:42] (f62550) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 2.4 px/frame (~244 px/s at 720p; run/whirlwind/charge?)
+- [00:42:31] (f63790) **teleport** [d2r]: 2 view jumps in 0.1s (teleport chain?)
+- [00:42:39] (f63989) **teleport** [d2r]: View jump in one frame (motion 13, match 0.20): teleport?
+- [00:42:43] (f64075) **text** [d2r]: Text (chat): Fire Lightning 4
+- [00:42:43] (f64088) **teleport** [d2r]: View jump in one frame (motion 9, match 0.13): teleport?
+- [00:42:47] (f64179) **teleport** [d2r]: 2 view jumps in 0.7s (teleport chain?)
+- [00:42:47] (f64192) **mana_refill** [d2r]: Mana refill +34% (31% -> 65%) in 0.60s (mana/rejuv potion?)
+- [00:42:49] (f64225) **mana_refill** [d2r]: Mana refill +26% (39% -> 65%) in 0.68s (mana/rejuv potion?)
+- [00:42:51] (f64275) **text** [d2r]: Text (chat): Fire ue
+- [00:42:51] (f64277) **teleport** [d2r]: 4 view jumps in 3.0s (teleport chain?)
+- [00:42:57] (f64444) **teleport** [d2r]: 3 view jumps in 1.4s (teleport chain?)
+- [00:43:00] (f64500) **area_change** [d2r]: Area name: SRILL TREE
+- [00:43:01] (f64531) **teleport** [d2r]: 2 view jumps in 0.8s (teleport chain?)
+- [00:43:10] (f64761) **teleport** [d2r]: 2 view jumps in 1.4s (teleport chain?)
+- [00:43:12] (f64802) **run_burst** [d2r]: Fast movement 1.1s, avg camera shift 1.5 px/frame (~146 px/s at 720p; run/whirlwind/charge?)
+- [00:43:15] (f64897) **teleport** [d2r]: View jump in one frame (motion 9, match 0.18): teleport?
+- [00:43:16] (f64900) **area_change** [d2r]: Area name: TREE i
+- [00:43:17] (f64942) **teleport** [d2r]: View jump in one frame (motion 7, match 0.07): teleport?
+- [00:43:22] (f65065) **teleport** [d2r]: View jump in one frame (motion 8, match 0.07): teleport?
+- [00:43:24] (f65100) **area_change** [d2r]: Area name: Shik The
+- [00:43:26] (f65166) **teleport** [d2r]: View jump in one frame (motion 9, match 0.11): teleport?
+- [00:43:28] (f65208) **life_drop** [d2r]: Life drop -22% (72% -> 50%) in 0.04s
+- [00:43:32] (f65307) **teleport** [d2r]: View jump in one frame (motion 14, match 0.17): teleport?
+- [00:43:33] (f65327) **mana_refill** [d2r]: Mana refill +27% (31% -> 58%) in 0.88s (mana/rejuv potion?)
+- [00:43:34] (f65365) **teleport** [d2r]: View jump in one frame (motion 6, match 0.20): teleport?
+- [00:43:38] (f65453) **life_drop** [d2r]: Life drop -54% (54% -> 0%) in 0.36s
+- [00:43:38] (f65462) **death** [d2r]: Death? life orb empty for >= 0.4s
+- [00:43:38] (f65462) **teleport** [d2r]: View jump in one frame (motion 33, match 0.09): teleport?
+- [00:43:40] (f65500) **loud_peak**: Loud peak -17 dBFS (+14 dB over typical): shout, impact or music hit?
+- [00:43:40] (f65507) **area_change** [d2r]: Area change / loading: HUD gone 0.5s (dark+other)
+- [00:43:40] (f65519) **teleport** [d2r]: 2 view jumps in 0.7s (teleport chain?)
+- [00:43:41] (f65525) **text** [d2r]: Text (center): Save ano
+- [00:43:41] (f65535) **life_drop** [d2r]: Life drop -98% (100% -> 2%) in 0.36s
+- [00:43:41] (f65536) **poisoned** [d2r]: Poisoned (green life orb) for 0.5s
+- [00:43:41] (f65548) **area_change** [d2r]: Area change / loading: HUD gone 3.0s (dark+other)
+- [00:43:44] (f65622) **teleport** [d2r]: View jump in one frame (motion 49, match 0.01): teleport?
+- [00:43:47] (f65675) **text** [d2r]: Text (center): stash
+- [00:43:48] (f65713) **teleport** [d2r]: 2 view jumps in 0.3s (teleport chain?)
+- [00:43:49] (f65733) **run_burst** [d2r]: Fast movement 1.3s, avg camera shift 2.1 px/frame (~207 px/s at 720p; run/whirlwind/charge?)
+- [00:43:50] (f65770) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 2.3 px/frame (~231 px/s at 720p; run/whirlwind/charge?)
+- [00:43:52] (f65805) **run_burst** [d2r]: Fast movement 1.1s, avg camera shift 2.8 px/frame (~276 px/s at 720p; run/whirlwind/charge?)
+- [00:43:53] (f65837) **teleport** [d2r]: View jump in one frame (motion 6, match 0.07): teleport?
+- [00:43:55] (f65875) **text** [d2r]: Text (center): Lever 99
+- [00:43:57] (f65925) **area_change** [d2r]: Area name: Surer Mana
+- [00:43:57] (f65925) **text** [d2r]: Text (center): Super Mana / PNB's Bar / Necromancer
+- [00:44:00] (f66000) **text** [d2r]: Text (center): Druip
+- [00:44:04] (f66100) **loud_peak**: Loud peak -17 dBFS (+14 dB over typical): shout, impact or music hit?
+- [00:44:04] (f66117) **teleport** [d2r]: View jump in one frame (motion 6, match 0.16): teleport?
+- [00:44:05] (f66130) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 2.3 px/frame (~228 px/s at 720p; run/whirlwind/charge?)
+- [00:44:15] (f66392) **teleport** [d2r]: View jump in one frame (motion 7, match 0.10): teleport?
+- [00:44:17] (f66437) **teleport** [d2r]: View jump in one frame (motion 6, match 0.20): teleport?
+- [00:44:24] (f66607) **life_drop** [d2r]: Life drop -23% (91% -> 68%) in 0.04s
+- [00:44:24] (f66620) **teleport** [d2r]: 2 view jumps in 0.4s (teleport chain?)
+- [00:44:27] (f66692) **teleport** [d2r]: View jump in one frame (motion 13, match 0.17): teleport?
+- [00:44:37] (f66934) **teleport** [d2r]: View jump in one frame (motion 8, match 0.08): teleport?
+- [00:44:40] (f67000) **text** [d2r]: Text (top_right): Skink Tree |
+- [00:44:43] (f67097) **teleport** [d2r]: View jump in one frame (motion 9, match 0.13): teleport?
+- [00:44:48] (f67206) **teleport** [d2r]: View jump in one frame (motion 6, match 0.06): teleport?
+- [00:44:50] (f67259) **teleport** [d2r]: View jump in one frame (motion 7, match 0.20): teleport?
+- [00:44:51] (f67293) **mana_refill** [d2r]: Mana refill +33% (29% -> 62%) in 0.44s (mana/rejuv potion?)
+- [00:44:53] (f67325) **mana_refill** [d2r]: Mana refill +19% (39% -> 58%) in 0.44s (mana/rejuv potion?)
+- [00:44:58] (f67450) **run_burst** [d2r]: Fast movement 0.9s, avg camera shift 3.7 px/frame (~369 px/s at 720p; run/whirlwind/charge?)
+- [00:44:59] (f67476) **teleport** [d2r]: View jump in one frame (motion 9, match 0.06): teleport?
+- [00:45:02] (f67570) **mana_refill** [d2r]: Mana refill +67% (26% -> 93%) in 0.16s (mana/rejuv potion?)
+- [00:45:02] (f67573) **life_refill** [d2r]: Life refill +38% (60% -> 99%) in 0.04s (rejuvenation potion?)
+- [00:45:07] (f67675) **loud_peak**: Loud peak -17 dBFS (+14 dB over typical): shout, impact or music hit?
+- [00:45:07] (f67690) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 2.9 px/frame (~288 px/s at 720p; run/whirlwind/charge?)
+- [00:45:10] (f67762) **loud_peak**: Loud peak -18 dBFS (+13 dB over typical): shout, impact or music hit?
+- [00:45:13] (f67827) **teleport** [d2r]: 2 view jumps in 0.4s (teleport chain?)
+- [00:45:26] (f68158) **run_burst** [d2r]: Fast movement 2.2s, avg camera shift 1.6 px/frame (~163 px/s at 720p; run/whirlwind/charge?)
+- [00:45:31] (f68276) **teleport** [d2r]: 2 view jumps in 0.5s (teleport chain?)
+- [00:45:35] (f68375) **teleport** [d2r]: 2 view jumps in 1.5s (teleport chain?)
+- [00:45:38] (f68469) **teleport** [d2r]: View jump in one frame (motion 13, match 0.18): teleport?
+- [00:45:52] (f68815) **teleport** [d2r]: View jump in one frame (motion 6, match -0.06): teleport?
+- [00:45:54] (f68862) **life_drop** [d2r]: Life drop -17% (89% -> 72%) in 0.28s
+- [00:45:54] (f68864) **mana_refill** [d2r]: Mana refill +19% (77% -> 96%) in 0.24s (mana/rejuv potion?)
+- [00:45:55] (f68889) **life_drop** [d2r]: Life drop -41% (72% -> 30%) in 0.28s
+- [00:45:56] (f68916) **teleport** [d2r]: View jump in one frame (motion 11, match -0.05): teleport?
+- [00:45:59] (f68978) **mana_refill** [d2r]: Mana refill +18% (77% -> 96%) in 0.60s (mana/rejuv potion?)
+- [00:46:05] (f69147) **teleport** [d2r]: View jump in one frame (motion 13, match -0.03): teleport?
+- [00:46:06] (f69171) **mana_refill** [d2r]: Mana refill +27% (69% -> 96%) in 0.80s (mana/rejuv potion?)
+- [00:46:07] (f69181) **life_drop** [d2r]: Life drop -26% (26% -> 0%) in 0.44s
+- [00:46:07] (f69192) **death** [d2r]: Death? life orb empty for >= 0.4s
+- [00:46:09] (f69237) **area_change** [d2r]: Area change / loading: HUD gone 0.4s (dark+other)
+- [00:46:09] (f69248) **teleport** [d2r]: 2 view jumps in 0.8s (teleport chain?)
+- [00:46:10] (f69266) **life_drop** [d2r]: Life drop -81% (99% -> 18%) in 0.28s
+- [00:46:10] (f69267) **poisoned** [d2r]: Poisoned (green life orb) for 0.4s
+- [00:46:11] (f69278) **area_change** [d2r]: Area change / loading: HUD gone 3.1s (dark+other)
+- [00:46:14] (f69356) **teleport** [d2r]: View jump in one frame (motion 51, match -0.00): teleport?
+- [00:46:17] (f69442) **run_burst** [d2r]: Fast movement 1.1s, avg camera shift 1.7 px/frame (~167 px/s at 720p; run/whirlwind/charge?)
+- [00:46:23] (f69588) **teleport** [d2r]: View jump in one frame (motion 15, match 0.14): teleport?
+- [00:46:24] (f69601) **run_burst** [d2r]: Fast movement 1.1s, avg camera shift 2.3 px/frame (~226 px/s at 720p; run/whirlwind/charge?)
+- [00:46:27] (f69675) **text** [d2r]: Text (chat): Gave! so
+- [00:46:28] (f69700) **text** [d2r]: Text (chat): SO Intense
+- [00:46:28] (f69718) **teleport** [d2r]: View jump in one frame (motion 10, match 0.20): teleport?
+- [00:46:29] (f69725) **text** [d2r]: Text (chat): SUPER
+- [00:46:29] (f69725) **text** [d2r]: Text (center): PNB's Ear / Lever 96 . / SUPER Mans PeTION
+- [00:46:29] (f69747) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 2.4 px/frame (~237 px/s at 720p; run/whirlwind/charge?)
+- [00:46:30] (f69750) **text** [d2r]: Text (top_right): CROMANCER / Lever 96
+- [00:46:30] (f69771) **mana_refill** [d2r]: Mana refill +15% (81% -> 96%) in 0.04s (mana/rejuv potion?)
+- [00:46:31] (f69775) **text** [d2r]: Text (chat): Gare} teve thing / ‘Gavel?
+- [00:46:35] (f69890) **teleport** [d2r]: View jump in one frame (motion 11, match 0.08): teleport?
+- [00:46:38] (f69952) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 2.6 px/frame (~261 px/s at 720p; run/whirlwind/charge?)
+- [00:46:40] (f70011) **teleport** [d2r]: View jump in one frame (motion 6, match 0.07): teleport?
+- [00:46:41] (f70041) **life_drop** [d2r]: Life drop -22% (99% -> 77%) in 0.04s
+- [00:46:41] (f70049) **life_drop** [d2r]: Life drop -23% (77% -> 54%) in 0.76s
+- [00:46:45] (f70139) **mana_refill** [d2r]: Mana refill +35% (30% -> 65%) in 0.44s (mana/rejuv potion?)
+- [00:46:46] (f70170) **mana_refill** [d2r]: Mana refill +15% (74% -> 88%) in 0.48s (mana/rejuv potion?)
+- [00:46:48] (f70205) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 1.8 px/frame (~182 px/s at 720p; run/whirlwind/charge?)
+- [00:46:51] (f70280) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 1.7 px/frame (~169 px/s at 720p; run/whirlwind/charge?)
+- [00:46:55] (f70390) **teleport** [d2r]: 3 view jumps in 1.9s (teleport chain?)
+- [00:47:01] (f70538) **teleport** [d2r]: View jump in one frame (motion 9, match -0.03): teleport?
+- [00:47:06] (f70651) **teleport** [d2r]: View jump in one frame (motion 9, match 0.17): teleport?
+- [00:47:08] (f70721) **mana_refill** [d2r]: Mana refill +12% (58% -> 70%) in 0.08s (mana/rejuv potion?)
+- [00:47:09] (f70734) **mana_refill** [d2r]: Mana refill +17% (69% -> 86%) in 0.60s (mana/rejuv potion?)
+- [00:47:18] (f70958) **mana_refill** [d2r]: Mana refill +19% (46% -> 65%) in 0.08s (mana/rejuv potion?)
+- [00:47:19] (f70993) **mana_refill** [d2r]: Mana refill +14% (79% -> 93%) in 0.76s (mana/rejuv potion?)
+- [00:47:22] (f71058) **teleport** [d2r]: 3 view jumps in 1.2s (teleport chain?)
+- [00:47:25] (f71142) **teleport** [d2r]: View jump in one frame (motion 6, match 0.10): teleport?
+- [00:47:28] (f71217) **mana_refill** [d2r]: Mana refill +14% (79% -> 93%) in 0.52s (mana/rejuv potion?)
+- [00:47:29] (f71225) **area_change** [d2r]: Area name: Skict TREE
+- [00:47:31] (f71297) **teleport** [d2r]: View jump in one frame (motion 9, match 0.16): teleport?
+- [00:47:37] (f71436) **teleport** [d2r]: View jump in one frame (motion 7, match 0.08): teleport?
+- [00:47:39] (f71489) **teleport** [d2r]: View jump in one frame (motion 11, match 0.12): teleport?
+- [00:47:40] (f71504) **run_burst** [d2r]: Fast movement 1.1s, avg camera shift 2.4 px/frame (~236 px/s at 720p; run/whirlwind/charge?)
+- [00:47:43] (f71582) **mana_refill** [d2r]: Mana refill +19% (33% -> 52%) in 0.48s (mana/rejuv potion?)
+- [00:47:44] (f71609) **mana_refill** [d2r]: Mana refill +19% (46% -> 65%) in 0.44s (mana/rejuv potion?)
+- [00:47:45] (f71637) **teleport** [d2r]: View jump in one frame (motion 8, match 0.16): teleport?
+- [00:47:45] (f71646) **mana_refill** [d2r]: Mana refill +19% (72% -> 91%) in 0.64s (mana/rejuv potion?)
+- [00:47:46] (f71660) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 2.4 px/frame (~235 px/s at 720p; run/whirlwind/charge?)
+- [00:47:47] (f71675) **area_change** [d2r]: Area name: Skint TREE
+- [00:47:52] (f71810) **teleport** [d2r]: View jump in one frame (motion 6, match 0.09): teleport?
+- [00:47:55] (f71882) **life_drop** [d2r]: Life drop -16% (16% -> 0%) in 0.16s
+- [00:47:55] (f71886) **death** [d2r]: Death? life orb empty for >= 0.4s
+- [00:47:56] (f71924) **mana_refill** [d2r]: Mana refill +20% (75% -> 96%) in 0.04s (mana/rejuv potion?)
+- [00:47:57] (f71925) **text** [d2r]: Text (center): ESC TR
+- [00:47:57] (f71930) **area_change** [d2r]: Area change / loading: HUD gone 0.5s (dark+other)
+- [00:47:57] (f71942) **teleport** [d2r]: 2 view jumps in 0.8s (teleport chain?)
+- [00:47:58] (f71950) **text** [d2r]: Text (center): 2 Save
+- [00:47:58] (f71961) **life_drop** [d2r]: Life drop -100% (100% -> 0%) in 0.24s
+- [00:47:58] (f71962) **poisoned** [d2r]: Poisoned (green life orb) for 0.6s
+- [00:47:59] (f71975) **text** [d2r]: Text (chat): te Seng
+- [00:47:59] (f71976) **area_change** [d2r]: Area change / loading: HUD gone 2.9s (dark+other)
+- [00:48:01] (f72048) **teleport** [d2r]: View jump in one frame (motion 52, match 0.06): teleport?
+- [00:48:04] (f72100) **text** [d2r]: Text (center): Stash
+- [00:48:05] (f72138) **run_burst** [d2r]: Fast movement 1.2s, avg camera shift 1.6 px/frame (~160 px/s at 720p; run/whirlwind/charge?)
+- [00:48:06] (f72172) **teleport** [d2r]: 2 view jumps in 0.8s (teleport chain?)
+- [00:48:08] (f72200) **text** [d2r]: Text (chat): Rab is busy
+- [00:48:09] (f72225) **text** [d2r]: Text (chat): Rac is busy
+- [00:48:09] (f72225) **text** [d2r]: Text (center): GE Phe TRAvE / CANCEL
+- [00:48:10] (f72250) **text** [d2r]: Text (top_right): INVENTORY :
+- [00:48:10] (f72259) **run_burst** [d2r]: Fast movement 1.2s, avg camera shift 1.8 px/frame (~182 px/s at 720p; run/whirlwind/charge?)
+- [00:48:12] (f72300) **run_burst** [d2r]: Fast movement 2.0s, avg camera shift 2.5 px/frame (~245 px/s at 720p; run/whirlwind/charge?)
+- [00:48:14] (f72355) **run_burst** [d2r]: Fast movement 2.0s, avg camera shift 2.8 px/frame (~278 px/s at 720p; run/whirlwind/charge?)
+- [00:48:26] (f72663) **teleport** [d2r]: View jump in one frame (motion 9, match 0.09): teleport?
+- [00:48:32] (f72811) **teleport** [d2r]: View jump in one frame (motion 5, match -0.05): teleport?
+- [00:48:36] (f72902) **teleport** [d2r]: View jump in one frame (motion 11, match 0.08): teleport?
+- [00:48:41] (f73042) **teleport** [d2r]: View jump in one frame (motion 6, match -0.06): teleport?
+- [00:48:42] (f73059) **mana_refill** [d2r]: Mana refill +13% (39% -> 52%) in 0.04s (mana/rejuv potion?)
+- [00:48:42] (f73071) **mana_refill** [d2r]: Mana refill +20% (58% -> 79%) in 0.60s (mana/rejuv potion?)
+- [00:48:50] (f73258) **life_drop** [d2r]: Life drop -27% (94% -> 67%) in 0.40s
+- [00:48:50] (f73273) **teleport** [d2r]: 2 view jumps in 0.4s (teleport chain?)
+- [00:48:55] (f73382) **teleport** [d2r]: 3 view jumps in 1.6s (teleport chain?)
+- [00:48:59] (f73481) **teleport** [d2r]: View jump in one frame (motion 10, match 0.18): teleport?
+- [00:49:05] (f73636) **teleport** [d2r]: 2 view jumps in 0.3s (teleport chain?)
+- [00:49:07] (f73679) **run_burst** [d2r]: Fast movement 1.3s, avg camera shift 1.9 px/frame (~194 px/s at 720p; run/whirlwind/charge?)
+- [00:49:08] (f73700) **text** [d2r]: Text (top_right): Shick ‘ |
+- [00:49:13] (f73842) **teleport** [d2r]: View jump in one frame (motion 9, match 0.18): teleport?
+- [00:49:14] (f73862) **run_burst** [d2r]: Fast movement 0.9s, avg camera shift 2.2 px/frame (~224 px/s at 720p; run/whirlwind/charge?)
+- [00:49:15] (f73875) **text** [d2r]: Text (chat): SUPER / Ear Bar
+- [00:49:15] (f73875) **text** [d2r]: Text (center): Supek Mana
+- [00:49:30] (f74262) **life_refill** [d2r]: Life refill +35% (65% -> 100%) in 0.12s (rejuvenation potion?)
+- [00:49:30] (f74263) **mana_refill** [d2r]: Mana refill +66% (27% -> 93%) in 0.08s (mana/rejuv potion?)
+- [00:49:31] (f74275) **area_change** [d2r]: Area name: INVENTORY
+- [00:49:33] (f74340) **run_burst** [d2r]: Fast movement 1.6s, avg camera shift 1.9 px/frame (~188 px/s at 720p; run/whirlwind/charge?)
+- [00:49:36] (f74400) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 2.0 px/frame (~195 px/s at 720p; run/whirlwind/charge?)
+- [00:49:37] (f74447) **teleport** [d2r]: 4 view jumps in 1.3s (teleport chain?)
+- [00:49:39] (f74475) **loud_peak**: Loud peak -17 dBFS (+13 dB over typical): shout, impact or music hit?
+- [00:49:45] (f74625) **text** [d2r]: Text (center): Ras's Ear / Lever 99 / Surer Mana / Super Mana
+- [00:49:47] (f74698) **mana_refill** [d2r]: Mana refill +12% (74% -> 86%) in 0.48s (mana/rejuv potion?)
+- [00:49:50] (f74762) **teleport** [d2r]: 2 view jumps in 0.2s (teleport chain?)
+- [00:49:53] (f74844) **teleport** [d2r]: View jump in one frame (motion 8, match 0.18): teleport?
+- [00:49:55] (f74882) **teleport** [d2r]: View jump in one frame (motion 6, match 0.07): teleport?
+- [00:49:57] (f74943) **teleport** [d2r]: View jump in one frame (motion 11, match -0.01): teleport?
+- [00:50:07] (f75183) **teleport** [d2r]: View jump in one frame (motion 17, match 0.05): teleport?
+- [00:50:12] (f75314) **mana_refill** [d2r]: Mana refill +35% (23% -> 58%) in 0.72s (mana/rejuv potion?)
+- [00:50:12] (f75324) **life_drop** [d2r]: Life drop -17% (96% -> 79%) in 0.32s
+- [00:50:13] (f75338) **life_drop** [d2r]: Life drop -25% (79% -> 54%) in 0.80s
+- [00:50:14] (f75365) **teleport** [d2r]: View jump in one frame (motion 7, match 0.07): teleport?
+- [00:50:17] (f75442) **teleport** [d2r]: View jump in one frame (motion 12, match 0.11): teleport?
+- [00:50:24] (f75607) **teleport** [d2r]: View jump in one frame (motion 15, match 0.06): teleport?
+- [00:50:32] (f75817) **life_refill** [d2r]: Life refill +56% (43% -> 99%) in 0.16s (rejuvenation potion?)
+- [00:50:52] (f76312) **teleport** [d2r]: View jump in one frame (motion 9, match 0.11): teleport?
+- [00:50:54] (f76355) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 1.6 px/frame (~163 px/s at 720p; run/whirlwind/charge?)
+- [00:51:00] (f76500) **text** [d2r]: Text (chat): Defense bao
+- [00:51:03] (f76593) **teleport** [d2r]: 3 view jumps in 1.2s (teleport chain?)
+- [00:51:05] (f76636) **mana_refill** [d2r]: Mana refill +21% (31% -> 52%) in 0.08s (mana/rejuv potion?)
+- [00:51:05] (f76649) **mana_refill** [d2r]: Mana refill +23% (46% -> 69%) in 0.76s (mana/rejuv potion?)
+- [00:51:09] (f76726) **teleport** [d2r]: View jump in one frame (motion 8, match 0.20): teleport?
+- [00:51:11] (f76775) **area_change** [d2r]: Area name: SkiLL TREE
+- [00:51:13] (f76831) **mana_refill** [d2r]: Mana refill +18% (77% -> 96%) in 0.56s (mana/rejuv potion?)
+- [00:51:13] (f76837) **teleport** [d2r]: View jump in one frame (motion 9, match 0.16): teleport?
+- [00:51:23] (f77084) **teleport** [d2r]: View jump in one frame (motion 5, match 0.15): teleport?
+- [00:51:25] (f77140) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 2.4 px/frame (~244 px/s at 720p; run/whirlwind/charge?)
+- [00:51:28] (f77203) **teleport** [d2r]: View jump in one frame (motion 7, match 0.09): teleport?
+- [00:51:30] (f77267) **teleport** [d2r]: 2 view jumps in 1.1s (teleport chain?)
+- [00:51:30] (f77271) **mana_refill** [d2r]: Mana refill +19% (74% -> 93%) in 0.60s (mana/rejuv potion?)
+- [00:51:38] (f77471) **teleport** [d2r]: 2 view jumps in 0.4s (teleport chain?)
+- [00:51:42] (f77552) **life_drop** [d2r]: Life drop -63% (84% -> 21%) in 0.88s
+- [00:51:45] (f77642) **teleport** [d2r]: 2 view jumps in 0.4s (teleport chain?)
+- [00:51:46] (f77650) **text** [d2r]: Text (chat): COLE 3°
+- [00:51:54] (f77853) **teleport** [d2r]: View jump in one frame (motion 13, match -0.03): teleport?
+- [00:52:01] (f78029) **teleport** [d2r]: View jump in one frame (motion 6, match 0.08): teleport?
+- [00:52:03] (f78088) **loud_peak**: Loud peak -17 dBFS (+14 dB over typical): shout, impact or music hit?
+- [00:52:05] (f78137) **life_refill** [d2r]: Life refill +84% (16% -> 100%) in 0.32s (rejuvenation potion?)
+- [00:52:05] (f78139) **mana_refill** [d2r]: Mana refill +35% (58% -> 93%) in 0.04s (mana/rejuv potion?)
+- [00:52:10] (f78260) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 2.2 px/frame (~217 px/s at 720p; run/whirlwind/charge?)
+- [00:52:23] (f78587) **run_burst** [d2r]: Fast movement 1.1s, avg camera shift 3.2 px/frame (~322 px/s at 720p; run/whirlwind/charge?)
+- [00:52:24] (f78600) **text** [d2r]: Text (center): CHEST
+- [00:52:24] (f78617) **teleport** [d2r]: View jump in one frame (motion 8, match 0.03): teleport?
+- [00:52:33] (f78834) **run_burst** [d2r]: Fast movement 0.8s, avg camera shift 1.9 px/frame (~189 px/s at 720p; run/whirlwind/charge?)
+- [00:52:33] (f78847) **teleport** [d2r]: View jump in one frame (motion 9, match 0.03): teleport?
+- [00:52:36] (f78912) **teleport** [d2r]: View jump in one frame (motion 13, match 0.04): teleport?
+- [00:52:38] (f78952) **teleport** [d2r]: View jump in one frame (motion 6, match 0.13): teleport?
+- [00:52:40] (f79005) **run_burst** [d2r]: Fast movement 0.9s, avg camera shift 2.5 px/frame (~253 px/s at 720p; run/whirlwind/charge?)
+- [00:52:44] (f79102) **teleport** [d2r]: View jump in one frame (motion 7, match 0.15): teleport?
+- [00:52:44] (f79106) **mana_refill** [d2r]: Mana refill +13% (52% -> 65%) in 0.08s (mana/rejuv potion?)
+- [00:52:47] (f79191) **mana_refill** [d2r]: Mana refill +12% (84% -> 96%) in 0.60s (mana/rejuv potion?)
+- [00:52:48] (f79217) **teleport** [d2r]: View jump in one frame (motion 11, match 0.16): teleport?
+- [00:52:51] (f79275) **area_change** [d2r]: Area name: Stith TREF
+- [00:52:53] (f79336) **life_drop** [d2r]: Life drop -26% (96% -> 70%) in 0.04s
+- [00:53:00] (f79501) **teleport** [d2r]: View jump in one frame (motion 11, match 0.03): teleport?
+- [00:53:02] (f79551) **teleport** [d2r]: View jump in one frame (motion 9, match -0.05): teleport?
+- [00:53:04] (f79622) **life_drop** [d2r]: Life drop -10% (68% -> 58%) in 0.04s
+- [00:53:06] (f79657) **teleport** [d2r]: 2 view jumps in 0.7s (teleport chain?)
+- [00:53:10] (f79751) **mana_refill** [d2r]: Mana refill +14% (52% -> 66%) in 0.16s (mana/rejuv potion?)
+- [00:53:12] (f79809) **teleport** [d2r]: 2 view jumps in 0.3s (teleport chain?)
+- [00:53:13] (f79834) **mana_refill** [d2r]: Mana refill +12% (81% -> 93%) in 0.44s (mana/rejuv potion?)
+- [00:53:17] (f79947) **teleport** [d2r]: View jump in one frame (motion 14, match 0.19): teleport?
+- [00:53:18] (f79950) **text** [d2r]: Text (chat): Fire 4
+- [00:53:21] (f80047) **mana_refill** [d2r]: Mana refill +12% (84% -> 96%) in 0.40s (mana/rejuv potion?)
+- [00:53:22] (f80057) **teleport** [d2r]: View jump in one frame (motion 6, match 0.09): teleport?
+- [00:53:24] (f80107) **teleport** [d2r]: View jump in one frame (motion 11, match 0.01): teleport?
+- [00:53:29] (f80242) **teleport** [d2r]: View jump in one frame (motion 7, match 0.15): teleport?
+- [00:53:31] (f80297) **teleport** [d2r]: View jump in one frame (motion 9, match 0.13): teleport?
+- [00:53:33] (f80348) **run_burst** [d2r]: Fast movement 0.9s, avg camera shift 1.6 px/frame (~156 px/s at 720p; run/whirlwind/charge?)
+- [00:53:37] (f80425) **text** [d2r]: Text (top_right): Shick |
+- [00:53:41] (f80538) **teleport** [d2r]: View jump in one frame (motion 7, match 0.10): teleport?
+- [00:53:47] (f80687) **life_refill** [d2r]: Life refill +58% (40% -> 99%) in 0.04s (rejuvenation potion?)
+- [00:53:47] (f80687) **mana_refill** [d2r]: Mana refill +12% (84% -> 96%) in 0.04s (mana/rejuv potion?)
+- [00:53:55] (f80875) **area_change** [d2r]: Area name: SEILL TREE
+- [00:53:58] (f80950) **text** [d2r]: Text (chat): aight
+- [00:53:59] (f80975) **text** [d2r]: Text (chat): an bro
+- [00:54:04] (f81104) **teleport** [d2r]: View jump in one frame (motion 6, match 0.05): teleport?
+- [00:54:08] (f81219) **run_burst** [d2r]: Fast movement 1.0s, avg camera shift 2.2 px/frame (~221 px/s at 720p; run/whirlwind/charge?)
+- [00:54:09] (f81225) **text** [d2r]: Text (center): Supek Mana / Surer / Mana Patian / Super MANA
+- [00:54:14] (f81353) **teleport** [d2r]: View jump in one frame (motion 6, match -0.03): teleport?
+- [00:54:16] (f81422) **teleport** [d2r]: View jump in one frame (motion 6, match 0.07): teleport?
+- [00:54:17] (f81426) **mana_refill** [d2r]: Mana refill +14% (58% -> 72%) in 0.16s (mana/rejuv potion?)
+- [00:54:17] (f81441) **mana_refill** [d2r]: Mana refill +20% (75% -> 96%) in 0.64s (mana/rejuv potion?)
+- [00:54:19] (f81478) **mana_refill** [d2r]: Mana refill +70% (26% -> 96%) in 0.20s (mana/rejuv potion?)
+- [00:54:25] (f81641) **life_drop** [d2r]: Life drop -18% (100% -> 82%) in 0.04s
+- [00:54:29] (f81731) **mana_refill** [d2r]: Mana refill +13% (46% -> 58%) in 0.12s (mana/rejuv potion?)
+- [00:54:31] (f81791) **mana_refill** [d2r]: Mana refill +17% (79% -> 96%) in 0.84s (mana/rejuv potion?)
+- [00:54:38] (f81974) **teleport** [d2r]: View jump in one frame (motion 11, match 0.01): teleport?
+- [00:54:46] (f82162) **teleport** [d2r]: 2 view jumps in 1.0s (teleport chain?)
+- [00:54:50] (f82272) **teleport** [d2r]: View jump in one frame (motion 6, match 0.13): teleport?
+- [00:55:02] (f82552) **teleport** [d2r]: 2 view jumps in 0.5s (teleport chain?)
+- [00:55:04] (f82611) **mana_refill** [d2r]: Mana refill +19% (23% -> 42%) in 0.04s (mana/rejuv potion?)
+- [00:55:05] (f82629) **mana_refill** [d2r]: Mana refill +36% (29% -> 65%) in 0.36s (mana/rejuv potion?)
+- [00:55:06] (f82669) **mana_refill** [d2r]: Mana refill +26% (39% -> 65%) in 0.04s (mana/rejuv potion?)
+- [00:55:07] (f82681) **mana_refill** [d2r]: Mana refill +15% (52% -> 67%) in 0.60s (mana/rejuv potion?)
+- [00:55:09] (f82732) **teleport** [d2r]: 2 view jumps in 0.3s (teleport chain?)
+- [00:55:11] (f82792) **teleport** [d2r]: View jump in one frame (motion 7, match 0.01): teleport?
+- [00:55:23] (f83075) **text** [d2r]: Text (chat): ga bro
+- [00:55:24] (f83100) **text** [d2r]: Text (chat): Se wen
+- [00:55:25] (f83125) **text** [d2r]: Text (chat): Se wer
+- [00:55:27] (f83175) **text** [d2r]: Text (chat): Gavel / ga pro
+- [00:55:28] (f83200) **text** [d2r]: Text (chat): ke bro / you back
+- [00:55:29] (f83225) **text** [d2r]: Text (chat): Ke bro so / gg bro
+- [00:55:30] (f83250) **text** [d2r]: Text (chat): ya bre
+- [00:55:31] (f83275) **text** [d2r]: Text (chat): arourd
+- [00:55:32] (f83300) **text** [d2r]: Text (chat): Se not su
+- [00:55:33] (f83325) **text** [d2r]: Text (chat): Se not
+- [00:55:36] (f83400) **text** [d2r]: Text (chat): tli be
+- [00:55:36] (f83416) **life_refill** [d2r]: Life refill +40% (60% -> 100%) in 0.04s (rejuvenation potion?)
+- [00:55:37] (f83425) **text** [d2r]: Text (chat): sane tno
+- [00:55:37] (f83425) **text** [d2r]: Text (center): CANCEL
+- [00:55:44] (f83611) **life_drop** [d2r]: Life drop -100% (100% -> 0%) in 0.92s
+- [00:55:44] (f83611) **teleport** [d2r]: 2 view jumps in 0.9s (teleport chain?)
+- [00:55:45] (f83625) **text** [d2r]: Text (center): EXIT e
+- [00:55:45] (f83634) **death** [d2r]: Death? life orb empty for >= 0.4s
+- [00:55:45] (f83634) **poisoned** [d2r]: Poisoned (green life orb) for 3.8s
+- [00:55:47] (f83675) **text** [d2r]: Text (chat): Levee
+- [00:55:48] (f83700) **text** [d2r]: Text (chat): Lever
+- [00:55:49] (f83746) **poisoned** [d2r]: Poisoned (green life orb) for 1.4s
+- [00:55:50] (f83750) **text** [d2r]: Text (chat): (Lobby Seno
+- [00:55:51] (f83775) **text** [d2r]: Text (chat): [Lobby
+- [00:55:52] (f83800) **text** [d2r]: Text (chat): Welcome to EUFC / AK to the Ov? / # Welcomer / Welcame @Pulse / Scr @ ime: the / to the ce yt
+- [00:55:52] (f83800) **text** [d2r]: Text (center): me to EUFC
+- [00:55:53] (f83825) **text** [d2r]: Text (chat): to the ty! / payers / ace and we you / to EUFC! / @ the arena / a to the
+- [00:55:53] (f83825) **text** [d2r]: Text (top_right): League of Legends 1
+- [00:55:54] (f83850) **area_change** [d2r]: Area name: League of
+- [00:55:54] (f83850) **text** [d2r]: Text (chat): to the / ten players / Geed we you athe / tournaments / to the PyP
+- [00:55:56] (f83900) **text** [d2r]: Text (chat): ry your / ve players / Welcome: / i to the
+- [00:55:57] (f83925) **text** [d2r]: Text (chat): be here pretty mach ail da: / what we / Pulse / iets try nes: / can nave / yap over gare ping
+- [00:55:57] (f83925) **text** [d2r]: Text (center): Du same / utim back in few tours / all day
+- [00:56:00] (f84000) **text** [d2r]: Text (chat): a Pulse / lets try druy nes / & can ya find if have high ping / yap over ad
+- [00:56:00] (f84000) **text** [d2r]: Text (center): Do some mus / ul in back in few hours again
+- [00:56:02] (f84050) **text** [d2r]: Text (chat): tets ner / fied a nave high
+- [00:56:03] (f84075) **text** [d2r]: Text (chat): Pulse / lets try ner / yep ad
+- [00:56:04] (f84100) **text** [d2r]: Text (chat): what we / lets try / can ya find pame? if have high ping / yap finnish ad
+- [00:56:05] (f84125) **text** [d2r]: Text (chat): playin
+- [00:56:06] (f84150) **text** [d2r]: Text (chat): iels try / a game? make / always yap over finn.sh ping ad
+- [00:56:08] (f84200) **text** [d2r]: Text (chat): ‘at try / find a u have high ping / a Pulse / ppl yap over pare ad / = u stream?
+- [00:56:09] (f84225) **text** [d2r]: Text (chat): Pulse
+- [00:56:12] (f84300) **text** [d2r]: Text (chat): lets try dru nes / ate unec / fied 4 u have pant / ppl always yap over ping ad / dic u strearn?
+- [00:56:12] (f84300) **text** [d2r]: Text (center): utim back in feve again / ich all day
+- [00:56:13] (f84325) **text** [d2r]: Text (chat): fied 4 u might pant
+- [00:56:14] (f84350) **text** [d2r]: Text (chat): lots try nec / ppl always yap over finnish pame ping ad
+- [00:56:15] (f84375) **text** [d2r]: Text (chat): Pulse
+- [00:56:16] (f84400) **text** [d2r]: Text (chat): lots try / fied 4 u pant / ppl always yap over pame ping ad
+- [00:56:18] (f84450) **text** [d2r]: Text (chat): fied a fame? u ave pant / dic u strearn?
+- [00:56:20] (f84500) **text** [d2r]: Text (chat): . lets try dru / can a ifi make mipht have high ping / a Pulse / ppl abvays yap over finn sh pane ad
+- [00:56:21] (f84525) **text** [d2r]: Text (chat): Pulse
+- [00:56:24] (f84600) **text** [d2r]: Text (chat): lets try / canya tind a game? if i make u have high ping / ppl always yap over ping ad / stream?
+- [00:56:26] (f84650) **text** [d2r]: Text (chat): i¢ Pulse / can ya find a u have high ping / ppl atways yap over finn.sh pame ping ad
+- [00:56:27] (f84675) **text** [d2r]: Text (chat): Pulse
+- [00:56:28] (f84700) **text** [d2r]: Text (chat): a Pulse / ppl always yap over pame ping ad / strearn?
+- [00:56:30] (f84750) **text** [d2r]: Text (chat): lets try dru v / canya tind a game? if i make u have high ping
+- [00:56:32] (f84800) **text** [d2r]: Text (chat): lots try / canya find 4 make u might have hiph ping / ppl always yap over xd / did u stream?
+- [00:56:33] (f84825) **text** [d2r]: Text (chat): Pulse
+- [00:56:36] (f84900) **text** [d2r]: Text (chat): can ya find 4 game? make u might have high ping / ppl yap over finnish ping xd
+- [00:56:38] (f84950) **text** [d2r]: Text (chat): lots try / did u stream?
+- [00:56:39] (f84975) **text** [d2r]: Text (chat): Pulse
+- [00:56:41] (f85043) **teleport** [d2r]: View jump in one frame (motion 21, match 0.01): teleport?
+- [00:56:42] (f85050) **poisoned** [d2r]: Poisoned (green life orb) for 3.9s
+- [00:56:50] (f85250) **text** [d2r]: Text (chat): Pulse / a Pulse / yan cver finn sh
+- [00:56:51] (f85275) **text** [d2r]: Text (chat): tots try / yan over
+- [00:56:52] (f85300) **text** [d2r]: Text (chat): 7, a Pulse / abvays yap over fina sh gare ad
+- [00:56:54] (f85350) **text** [d2r]: Text (chat): lets try
+- [00:56:55] (f85378) **poisoned** [d2r]: Poisoned (green life orb) for 4.2s
