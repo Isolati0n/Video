@@ -108,6 +108,8 @@ def test_text_keyframes_and_flags():
     assert [k["t"] for k in kf] == [0.0, 31.0], kf                          # one per slide, not per flicker
     mathy = ocr.classify_text([line("Pr[A V B] < Pr[A] + Pr[B].", 0, 0), line("f (E[X]) <E[f(X)] .", 0, 0, 60)])
     assert "math" in mathy["flags"], mathy
+    tags = ocr.classify_text([line("[A] | ARMADA", 0, 0), line("[A] | ARMADA IL]", 0, 0), line("FOX MVG | MEW2KING", 0, 0)])
+    assert "math" not in tags["flags"], tags                                  # player tags are not formulas
     plain = ocr.classify_text([line("Basic Inequalities", 0, 0), line("Hoeffding Inequality", 0, 0)])
     assert plain["flags"] == [], plain
     assert "dense" in ocr.classify_text([line(f"line {i} of many many words", 0, 0) for i in range(14)])["flags"]

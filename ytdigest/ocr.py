@@ -104,7 +104,8 @@ def ocr_frame(frame: np.ndarray, lang: str = "eng") -> list[dict]:
 
 # ------------------------------------------------------------------------ what a reader should look at
 LOW_CONF = 72          # a line with average word confidence below this is flagged
-MATH_CHARS = set("∑∫≤≥≈≠±√∞∈∂∇⊂⊆∪∩∀∃∧∨→←⇒λμσπθΔΣΩαβγδεφψω^_{}[]<>=~")
+# Operator-like characters only: brackets and pipes also appear in player tags ("[A] | ARMADA") and UI text
+MATH_CHARS = set("∑∫≤≥≈≠±√∞∈∂∇⊂⊆∪∩∀∃∧∨→←⇒λμσπθΔΣΩαβγδεφψω^_{}<>=~+*/")
 MATH_RE = re.compile(r"(Pr\s*\[|E\s*\[|Var\s*\[|\blog\b|\bexp\b|\\frac|\d\s*[=<>]\s*\w|\w\s*[=<>]{1,2}\s*\w+\s*[+\-*/]|[A-Za-z]\(\w+\)\s*[=<>+\-]|\|\s*\w+\s*\|)")
 
 
@@ -114,7 +115,7 @@ def looks_mathy(text: str) -> bool:
     t = text.strip()
     if MATH_RE.search(t):
         return True
-    sym = sum(1 for c in t if c in MATH_CHARS or c in "+-*/=|\\")
+    sym = sum(1 for c in t if c in MATH_CHARS)
     return len(t) >= 6 and sym >= 3 and sym / len(t) >= 0.15
 
 
