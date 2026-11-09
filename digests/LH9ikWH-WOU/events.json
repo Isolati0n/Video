@@ -137,7 +137,7 @@
     "t": 72.76,
     "f": 1819,
     "type": "life_drop",
-    "desc": "Life drop -13% (99% -> 86%) in 0.56s",
+    "desc": "Life drop -13% (95% -> 82%) in 0.56s",
     "end": 73.32,
     "amount": 12.7
   },
@@ -161,10 +161,8 @@
     "t": 78.68,
     "f": 1967,
     "type": "teleport",
-    "desc": "2 view jumps in 0.3s (teleport chain?)",
-    "end": 79.0,
-    "peak": 9.5,
-    "count": 2
+    "desc": "View jump in one frame (motion 10, match 0.15): teleport?",
+    "peak": 9.5
   },
   {
     "t": 79.0,
@@ -213,9 +211,9 @@
     "t": 111.12,
     "f": 2778,
     "type": "mana_refill",
-    "desc": "Mana refill +13% (50% -> 63%) in 0.04s (mana/rejuv potion?)",
+    "desc": "Mana refill +12% (47% -> 59%) in 0.04s (mana/rejuv potion?)",
     "end": 111.16,
-    "amount": 12.8
+    "amount": 12.2
   },
   {
     "t": 114.56,
@@ -236,20 +234,12 @@
     "count": 9
   },
   {
-    "t": 125.04,
-    "f": 3126,
+    "t": 127.08,
+    "f": 3177,
     "type": "life_drop",
-    "desc": "Life drop -11% (71% -> 61%) in 0.48s",
-    "end": 125.52,
-    "amount": 10.7
-  },
-  {
-    "t": 126.68,
-    "f": 3167,
-    "type": "life_drop",
-    "desc": "Life drop -11% (61% -> 50%) in 0.44s",
-    "end": 127.12,
-    "amount": 10.6
+    "desc": "Life drop -17% (54% -> 37%) in 0.88s",
+    "end": 127.96,
+    "amount": 16.9
   },
   {
     "t": 127.84,
@@ -259,14 +249,6 @@
     "end": 128.92,
     "peak": 7.7,
     "count": 3
-  },
-  {
-    "t": 127.88,
-    "f": 3197,
-    "type": "life_drop",
-    "desc": "Life drop -15% (50% -> 35%) in 0.28s",
-    "end": 128.16,
-    "amount": 14.9
   },
   {
     "t": 130.72,
@@ -290,9 +272,9 @@
     "t": 136.16,
     "f": 3404,
     "type": "mana_refill",
-    "desc": "Mana refill +14% (46% -> 60%) in 0.12s (mana/rejuv potion?)",
+    "desc": "Mana refill +13% (43% -> 56%) in 0.12s (mana/rejuv potion?)",
     "end": 136.28,
-    "amount": 13.9
+    "amount": 13.1
   },
   {
     "t": 138.32,
@@ -311,28 +293,20 @@
     "peak": 7.0
   },
   {
-    "t": 142.88,
-    "f": 3572,
-    "type": "life_refill",
-    "desc": "Life refill +13% (29% -> 42%) in 0.32s (rejuvenation potion?)",
-    "end": 143.2,
-    "amount": 12.8
-  },
-  {
     "t": 145.88,
     "f": 3647,
     "type": "mana_refill",
-    "desc": "Mana refill +13% (56% -> 69%) in 0.56s (mana/rejuv potion?)",
+    "desc": "Mana refill +12% (53% -> 66%) in 0.56s (mana/rejuv potion?)",
     "end": 146.44,
-    "amount": 12.7
+    "amount": 12.5
   },
   {
-    "t": 146.88,
-    "f": 3672,
+    "t": 147.28,
+    "f": 3682,
     "type": "mana_refill",
-    "desc": "Mana refill +13% (69% -> 82%) in 0.60s (mana/rejuv potion?)",
-    "end": 147.48,
-    "amount": 12.8
+    "desc": "Mana refill +14% (70% -> 84%) in 0.52s (mana/rejuv potion?)",
+    "end": 147.8,
+    "amount": 14.4
   },
   {
     "t": 147.72,
@@ -360,21 +334,11 @@
     "count": 2
   },
   {
-    "t": 165.52,
-    "f": 4138,
-    "type": "life_drop",
-    "desc": "Life drop -11% (37% -> 27%) in 0.04s",
-    "end": 165.56,
-    "amount": 10.6
-  },
-  {
     "t": 178.76,
     "f": 4469,
     "type": "teleport",
-    "desc": "6 view jumps in 2.7s (teleport chain?)",
-    "end": 181.48,
-    "peak": 12.3,
-    "count": 6
+    "desc": "View jump in one frame (motion 9, match 0.06): teleport?",
+    "peak": 9.4
   },
   {
     "t": 179.0,
@@ -399,6 +363,13 @@
     "f": 4525,
     "type": "text",
     "desc": "Text (center): Xo's EAR / Lever 99 / POTI@N"
+  },
+  {
+    "t": 181.48,
+    "f": 4537,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 12, match 0.13): teleport?",
+    "peak": 12.3
   },
   {
     "t": 182.0,
@@ -433,9 +404,9 @@
     "t": 197.6,
     "f": 4940,
     "type": "mana_refill",
-    "desc": "Mana refill +19% (71% -> 90%) in 0.84s (mana/rejuv potion?)",
+    "desc": "Mana refill +16% (68% -> 84%) in 0.84s (mana/rejuv potion?)",
     "end": 198.44,
-    "amount": 19.1
+    "amount": 16.5
   },
   {
     "t": 202.8,
@@ -445,14 +416,6 @@
     "end": 204.92,
     "peak": 8.2,
     "count": 4
-  },
-  {
-    "t": 204.68,
-    "f": 5117,
-    "type": "life_drop",
-    "desc": "Life drop -11% (37% -> 27%) in 0.08s",
-    "end": 204.76,
-    "amount": 10.6
   },
   {
     "t": 217.56,
@@ -478,14 +441,6 @@
     "count": 2
   },
   {
-    "t": 231.28,
-    "f": 5782,
-    "type": "mana_refill",
-    "desc": "Mana refill +16% (84% -> 100%) in 0.84s (mana/rejuv potion?)",
-    "end": 232.12,
-    "amount": 16.0
-  },
-  {
     "t": 232.92,
     "f": 5823,
     "type": "teleport",
@@ -496,9 +451,9 @@
     "t": 234.68,
     "f": 5867,
     "type": "life_drop",
-    "desc": "Life drop -15% (29% -> 14%) in 0.48s",
+    "desc": "Life drop -14% (32% -> 18%) in 0.48s",
     "end": 235.16,
-    "amount": 14.9
+    "amount": 13.9
   },
   {
     "t": 236.0,
@@ -533,9 +488,9 @@
     "t": 244.28,
     "f": 6107,
     "type": "mana_refill",
-    "desc": "Mana refill +22% (61% -> 83%) in 0.56s (mana/rejuv potion?)",
+    "desc": "Mana refill +21% (57% -> 78%) in 0.56s (mana/rejuv potion?)",
     "end": 244.84,
-    "amount": 22.4
+    "amount": 21.0
   },
   {
     "t": 250.24,
@@ -559,9 +514,17 @@
     "t": 253.52,
     "f": 6338,
     "type": "mana_refill",
-    "desc": "Mana refill +17% (69% -> 86%) in 0.68s (mana/rejuv potion?)",
+    "desc": "Mana refill +15% (66% -> 81%) in 0.68s (mana/rejuv potion?)",
     "end": 254.2,
-    "amount": 17.1
+    "amount": 15.2
+  },
+  {
+    "t": 257.36,
+    "f": 6434,
+    "type": "life_drop",
+    "desc": "Life drop -12% (21% -> 8%) in 0.04s",
+    "end": 257.4,
+    "amount": 12.1
   },
   {
     "t": 258.0,
@@ -580,9 +543,9 @@
     "t": 262.8,
     "f": 6570,
     "type": "mana_refill",
-    "desc": "Mana refill +15% (82% -> 97%) in 0.60s (mana/rejuv potion?)",
+    "desc": "Mana refill +12% (77% -> 89%) in 0.60s (mana/rejuv potion?)",
     "end": 263.4,
-    "amount": 14.9
+    "amount": 12.1
   },
   {
     "t": 263.16,
@@ -592,6 +555,14 @@
     "end": 269.72,
     "peak": 9.0,
     "count": 9
+  },
+  {
+    "t": 271.44,
+    "f": 6786,
+    "type": "life_drop",
+    "desc": "Life drop -10% (12% -> 1%) in 0.04s",
+    "end": 271.48,
+    "amount": 10.4
   },
   {
     "t": 271.48,
@@ -621,13 +592,6 @@
     "end": 279.08,
     "peak": 8.9,
     "count": 2
-  },
-  {
-    "t": 282.52,
-    "f": 7063,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 5, match 0.16): teleport?",
-    "peak": 5.2
   },
   {
     "t": 282.56,

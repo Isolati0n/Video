@@ -3,16 +3,15 @@
   "title": "D2R PvP - Warlock is balanced? Marvel 1v7",
   "duration_s": 294.6,
   "frames": 7365,
-  "events": 82,
+  "events": 78,
   "event_counts": {
     "text": 10,
     "teleport": 53,
-    "life_drop": 7,
-    "mana_refill": 9,
-    "life_refill": 1,
+    "life_drop": 5,
+    "mana_refill": 8,
     "death": 2
   },
-  "sheets": 65,
+  "sheets": 63,
   "tiles_skipped_static": 4,
   "max_sheet_bytes": 234550,
   "transcript_lines": 31,
@@ -22,11 +21,11 @@
     "shift_p99_px": 19.9,
     "frames": 7365,
     "game_frames": 7363,
-    "life_median": 35.1,
-    "mana_median": 86.2,
+    "life_median": 36.8,
+    "mana_median": 80.7,
     "life_min": 0.0,
     "poison_frames": 1,
     "ocr_samples_with_text": 24
   },
-  "runtime_s": 191
+  "runtime_s": 227
 }
