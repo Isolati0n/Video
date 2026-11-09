@@ -210,28 +210,28 @@
     "tile": 1
   },
   {
-    "t": 198.0,
-    "f": 11880,
+    "t": 194.0,
+    "f": 11640,
     "reason": "changed",
     "flags": [
       "dense"
     ],
-    "ocr_lines": 24,
-    "ocr_chars": 359,
-    "low_conf_share": 0.21,
+    "ocr_lines": 25,
+    "ocr_chars": 414,
+    "low_conf_share": 0.24,
     "sheet": "sheet_0005.jpg",
     "tile": 2
   },
   {
-    "t": 228.0,
-    "f": 13680,
+    "t": 224.0,
+    "f": 13440,
     "reason": "heartbeat",
     "flags": [
       "dense"
     ],
-    "ocr_lines": 24,
-    "ocr_chars": 376,
-    "low_conf_share": 0.29,
+    "ocr_lines": 22,
+    "ocr_chars": 358,
+    "low_conf_share": 0.14,
     "sheet": "sheet_0005.jpg",
     "tile": 3
   },
@@ -302,23 +302,23 @@
     "tile": 8
   },
   {
-    "t": 250.0,
-    "f": 15000,
+    "t": 252.0,
+    "f": 15120,
     "reason": "changed",
     "flags": [
       "math",
       "dense"
     ],
-    "ocr_lines": 33,
-    "ocr_chars": 695,
-    "low_conf_share": 0.24,
+    "ocr_lines": 31,
+    "ocr_chars": 674,
+    "low_conf_share": 0.26,
     "sheet": "sheet_0005.jpg",
     "tile": 9
   },
   {
     "t": 261.0,
     "f": 15660,
-    "reason": "changed",
+    "reason": "text",
     "flags": [
       "dense"
     ],
@@ -579,37 +579,59 @@
     "tile": 2
   },
   {
-    "t": 494.0,
-    "f": 29640,
-    "reason": "heartbeat",
+    "t": 468.0,
+    "f": 28080,
+    "reason": "text",
     "flags": [],
-    "ocr_lines": 10,
-    "ocr_chars": 184,
-    "low_conf_share": 0.2,
+    "ocr_lines": 9,
+    "ocr_chars": 180,
+    "low_conf_share": 0.22,
     "sheet": "sheet_0011.jpg",
     "tile": 3
   },
   {
-    "t": 524.0,
-    "f": 31440,
-    "reason": "heartbeat",
+    "t": 482.0,
+    "f": 28920,
+    "reason": "changed",
     "flags": [],
-    "ocr_lines": 7,
-    "ocr_chars": 181,
+    "ocr_lines": 6,
+    "ocr_chars": 166,
     "low_conf_share": 0.0,
     "sheet": "sheet_0011.jpg",
     "tile": 4
   },
   {
-    "t": 546.0,
-    "f": 32760,
+    "t": 491.0,
+    "f": 29460,
+    "reason": "text",
+    "flags": [],
+    "ocr_lines": 7,
+    "ocr_chars": 166,
+    "low_conf_share": 0.14,
+    "sheet": "sheet_0011.jpg",
+    "tile": 5
+  },
+  {
+    "t": 513.0,
+    "f": 30780,
+    "reason": "changed",
+    "flags": [],
+    "ocr_lines": 7,
+    "ocr_chars": 179,
+    "low_conf_share": 0.29,
+    "sheet": "sheet_0011.jpg",
+    "tile": 6
+  },
+  {
+    "t": 519.0,
+    "f": 31140,
     "reason": "changed",
     "flags": [],
     "ocr_lines": 8,
-    "ocr_chars": 177,
-    "low_conf_share": 0.12,
+    "ocr_chars": 178,
+    "low_conf_share": 0.25,
     "sheet": "sheet_0011.jpg",
-    "tile": 5
+    "tile": 7
   },
   {
     "t": 548.0,
@@ -620,7 +642,7 @@
     "ocr_chars": 189,
     "low_conf_share": 0.11,
     "sheet": "sheet_0011.jpg",
-    "tile": 6
+    "tile": 8
   },
   {
     "t": 552.0,
@@ -631,7 +653,7 @@
     "ocr_chars": 173,
     "low_conf_share": 0.12,
     "sheet": "sheet_0011.jpg",
-    "tile": 7
+    "tile": 9
   },
   {
     "t": 554.0,
@@ -641,8 +663,8 @@
     "ocr_lines": 8,
     "ocr_chars": 188,
     "low_conf_share": 0.25,
-    "sheet": "sheet_0011.jpg",
-    "tile": 8
+    "sheet": "sheet_0012.jpg",
+    "tile": 1
   },
   {
     "t": 557.0,
@@ -652,8 +674,8 @@
     "ocr_lines": 8,
     "ocr_chars": 181,
     "low_conf_share": 0.12,
-    "sheet": "sheet_0011.jpg",
-    "tile": 9
+    "sheet": "sheet_0012.jpg",
+    "tile": 2
   },
   {
     "t": 561.0,
@@ -664,7 +686,7 @@
     "ocr_chars": 175,
     "low_conf_share": 0.09,
     "sheet": "sheet_0012.jpg",
-    "tile": 1
+    "tile": 3
   },
   {
     "t": 567.0,
@@ -675,7 +697,7 @@
     "ocr_chars": 174,
     "low_conf_share": 0.0,
     "sheet": "sheet_0012.jpg",
-    "tile": 2
+    "tile": 4
   },
   {
     "t": 576.0,
@@ -686,7 +708,7 @@
     "ocr_chars": 168,
     "low_conf_share": 0.1,
     "sheet": "sheet_0012.jpg",
-    "tile": 3
+    "tile": 5
   },
   {
     "t": 593.0,
@@ -697,7 +719,7 @@
     "ocr_chars": 183,
     "low_conf_share": 0.0,
     "sheet": "sheet_0012.jpg",
-    "tile": 4
+    "tile": 6
   },
   {
     "t": 599.0,
@@ -710,7 +732,7 @@
     "ocr_chars": 173,
     "low_conf_share": 0.25,
     "sheet": "sheet_0012.jpg",
-    "tile": 5
+    "tile": 7
   },
   {
     "t": 629.0,
@@ -723,7 +745,7 @@
     "ocr_chars": 180,
     "low_conf_share": 0.15,
     "sheet": "sheet_0012.jpg",
-    "tile": 6
+    "tile": 8
   },
   {
     "t": 659.0,
@@ -734,7 +756,7 @@
     "ocr_chars": 165,
     "low_conf_share": 0.0,
     "sheet": "sheet_0012.jpg",
-    "tile": 7
+    "tile": 9
   },
   {
     "t": 661.0,
@@ -744,8 +766,8 @@
     "ocr_lines": 6,
     "ocr_chars": 179,
     "low_conf_share": 0.17,
-    "sheet": "sheet_0012.jpg",
-    "tile": 8
+    "sheet": "sheet_0013.jpg",
+    "tile": 1
   },
   {
     "t": 687.0,
@@ -756,7 +778,7 @@
     "ocr_chars": 174,
     "low_conf_share": 0.12,
     "sheet": "sheet_0013.jpg",
-    "tile": 4
+    "tile": 6
   },
   {
     "t": 717.0,
@@ -767,7 +789,7 @@
     "ocr_chars": 175,
     "low_conf_share": 0.12,
     "sheet": "sheet_0013.jpg",
-    "tile": 5
+    "tile": 7
   },
   {
     "t": 718.0,
@@ -778,7 +800,7 @@
     "ocr_chars": 188,
     "low_conf_share": 0.14,
     "sheet": "sheet_0013.jpg",
-    "tile": 6
+    "tile": 8
   },
   {
     "t": 726.0,
@@ -789,7 +811,7 @@
     "ocr_chars": 181,
     "low_conf_share": 0.09,
     "sheet": "sheet_0013.jpg",
-    "tile": 7
+    "tile": 9
   },
   {
     "t": 756.0,
@@ -801,8 +823,8 @@
     "ocr_lines": 12,
     "ocr_chars": 194,
     "low_conf_share": 0.08,
-    "sheet": "sheet_0013.jpg",
-    "tile": 8
+    "sheet": "sheet_0014.jpg",
+    "tile": 1
   },
   {
     "t": 762.0,
@@ -815,7 +837,7 @@
     "ocr_chars": 29,
     "low_conf_share": 0.33,
     "sheet": "sheet_0014.jpg",
-    "tile": 4
+    "tile": 6
   },
   {
     "t": 764.0,
@@ -828,7 +850,7 @@
     "ocr_chars": 153,
     "low_conf_share": 0.0,
     "sheet": "sheet_0014.jpg",
-    "tile": 5
+    "tile": 7
   },
   {
     "t": 765.0,
@@ -841,7 +863,7 @@
     "ocr_chars": 153,
     "low_conf_share": 0.0,
     "sheet": "sheet_0014.jpg",
-    "tile": 6
+    "tile": 8
   },
   {
     "t": 777.0,
@@ -852,7 +874,7 @@
     "ocr_chars": 253,
     "low_conf_share": 0.11,
     "sheet": "sheet_0014.jpg",
-    "tile": 7
+    "tile": 9
   },
   {
     "t": 783.0,
@@ -862,8 +884,8 @@
     "ocr_lines": 10,
     "ocr_chars": 227,
     "low_conf_share": 0.1,
-    "sheet": "sheet_0014.jpg",
-    "tile": 8
+    "sheet": "sheet_0015.jpg",
+    "tile": 1
   },
   {
     "t": 798.0,
@@ -873,8 +895,8 @@
     "ocr_lines": 8,
     "ocr_chars": 199,
     "low_conf_share": 0.0,
-    "sheet": "sheet_0014.jpg",
-    "tile": 9
+    "sheet": "sheet_0015.jpg",
+    "tile": 2
   },
   {
     "t": 804.0,
@@ -885,7 +907,7 @@
     "ocr_chars": 229,
     "low_conf_share": 0.12,
     "sheet": "sheet_0015.jpg",
-    "tile": 1
+    "tile": 3
   },
   {
     "t": 829.0,
@@ -896,7 +918,7 @@
     "ocr_chars": 182,
     "low_conf_share": 0.0,
     "sheet": "sheet_0015.jpg",
-    "tile": 2
+    "tile": 4
   },
   {
     "t": 832.0,
@@ -907,7 +929,7 @@
     "ocr_chars": 187,
     "low_conf_share": 0.0,
     "sheet": "sheet_0015.jpg",
-    "tile": 3
+    "tile": 5
   },
   {
     "t": 836.0,
@@ -918,7 +940,7 @@
     "ocr_chars": 129,
     "low_conf_share": 0.1,
     "sheet": "sheet_0015.jpg",
-    "tile": 4
+    "tile": 6
   },
   {
     "t": 840.0,
@@ -929,7 +951,7 @@
     "ocr_chars": 211,
     "low_conf_share": 0.11,
     "sheet": "sheet_0015.jpg",
-    "tile": 5
+    "tile": 7
   },
   {
     "t": 843.0,
@@ -940,7 +962,7 @@
     "ocr_chars": 199,
     "low_conf_share": 0.29,
     "sheet": "sheet_0016.jpg",
-    "tile": 1
+    "tile": 3
   },
   {
     "t": 846.0,
@@ -951,7 +973,7 @@
     "ocr_chars": 94,
     "low_conf_share": 0.25,
     "sheet": "sheet_0016.jpg",
-    "tile": 2
+    "tile": 4
   },
   {
     "t": 848.0,
@@ -962,7 +984,7 @@
     "ocr_chars": 205,
     "low_conf_share": 0.14,
     "sheet": "sheet_0016.jpg",
-    "tile": 3
+    "tile": 5
   },
   {
     "t": 850.0,
@@ -972,8 +994,8 @@
     "ocr_lines": 4,
     "ocr_chars": 98,
     "low_conf_share": 0.0,
-    "sheet": "sheet_0016.jpg",
-    "tile": 8
+    "sheet": "sheet_0017.jpg",
+    "tile": 1
   },
   {
     "t": 851.0,
@@ -983,8 +1005,8 @@
     "ocr_lines": 7,
     "ocr_chars": 167,
     "low_conf_share": 0.0,
-    "sheet": "sheet_0016.jpg",
-    "tile": 9
+    "sheet": "sheet_0017.jpg",
+    "tile": 2
   },
   {
     "t": 863.0,
@@ -997,6 +1019,6 @@
     "ocr_chars": 195,
     "low_conf_share": 0.17,
     "sheet": "sheet_0017.jpg",
-    "tile": 1
+    "tile": 3
   }
 ]

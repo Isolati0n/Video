@@ -16,10 +16,10 @@
   "events_by_source": {
     "generic": 132
   },
-  "keyframes": 85,
+  "keyframes": 87,
   "keyframe_candidates": 632,
   "dense_events": 15,
-  "text_keyframes": 56,
+  "text_keyframes": 59,
   "slide_like": true,
   "ocr_furniture_lines": 3,
   "ocr_low_conf_lines": 245,
@@ -31,9 +31,9 @@
     0.4444
   ],
   "sheets": 17,
-  "max_sheet_bytes": 276133,
-  "sheet_bytes_total": 3926493,
-  "git_bytes": 726148,
+  "max_sheet_bytes": 274324,
+  "sheet_bytes_total": 3982735,
+  "git_bytes": 730628,
   "transcript_lines": 59,
   "transcript_source": "YouTube auto-generated captions (en-orig)",
   "ocr_entries": 363,
@@ -52,5 +52,5 @@
     "silence_seconds": 0.0,
     "loud_peaks": 1
   },
-  "runtime_s": 270
+  "runtime_s": 284
 }
