@@ -3,9 +3,7 @@
     "t": 0.0,
     "f": 0,
     "reason": "first",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 43,
     "low_conf_share": 0.25,
@@ -16,9 +14,7 @@
     "t": 2.0,
     "f": 120,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 76,
     "low_conf_share": 0.2,
@@ -40,9 +36,7 @@
     "t": 6.0,
     "f": 360,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 74,
     "low_conf_share": 0.2,
@@ -121,9 +115,7 @@
     "t": 20.0,
     "f": 1200,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 50,
     "low_conf_share": 0.0,
@@ -158,9 +150,7 @@
     "t": 27.0,
     "f": 1620,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 49,
     "low_conf_share": 0.0,
@@ -182,9 +172,7 @@
     "t": 31.0,
     "f": 1860,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 49,
     "low_conf_share": 0.0,
@@ -195,9 +183,7 @@
     "t": 33.0,
     "f": 1980,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 42,
     "low_conf_share": 0.0,
@@ -208,9 +194,7 @@
     "t": 36.0,
     "f": 2160,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 49,
     "low_conf_share": 0.2,
@@ -254,9 +238,7 @@
     "t": 44.0,
     "f": 2640,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 80,
     "low_conf_share": 0.0,
@@ -344,9 +326,7 @@
     "t": 62.0,
     "f": 3720,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 62,
     "low_conf_share": 0.0,
@@ -368,9 +348,7 @@
     "t": 66.0,
     "f": 3960,
     "reason": "scene",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 37,
     "low_conf_share": 0.0,
@@ -381,9 +359,7 @@
     "t": 68.0,
     "f": 4080,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 35,
     "low_conf_share": 0.0,
@@ -394,9 +370,7 @@
     "t": 71.0,
     "f": 4260,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 53,
     "low_conf_share": 0.0,
@@ -418,9 +392,7 @@
     "t": 75.0,
     "f": 4500,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 49,
     "low_conf_share": 0.0,
@@ -453,9 +425,7 @@
     "t": 81.0,
     "f": 4860,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 51,
     "low_conf_share": 0.0,
@@ -477,9 +447,7 @@
     "t": 85.0,
     "f": 5100,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 48,
     "low_conf_share": 0.25,
@@ -490,9 +458,7 @@
     "t": 87.0,
     "f": 5220,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 49,
     "low_conf_share": 0.25,
@@ -558,9 +524,7 @@
     "t": 99.0,
     "f": 5940,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 80,
     "low_conf_share": 0.2,
@@ -780,9 +744,7 @@
     "t": 141.0,
     "f": 8460,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 47,
     "low_conf_share": 0.0,
@@ -804,9 +766,7 @@
     "t": 146.0,
     "f": 8760,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 54,
     "low_conf_share": 0.0,
@@ -850,9 +810,7 @@
     "t": 154.0,
     "f": 9240,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 79,
     "low_conf_share": 0.2,
@@ -887,9 +845,7 @@
     "t": 160.0,
     "f": 9600,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 58,
     "low_conf_share": 0.0,
@@ -955,9 +911,7 @@
     "t": 172.0,
     "f": 10320,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 64,
     "low_conf_share": 0.0,
@@ -1234,9 +1188,7 @@
     "t": 230.0,
     "f": 13800,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 44,
     "low_conf_share": 0.0,
@@ -1248,7 +1200,6 @@
     "f": 13920,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 3,
@@ -1283,9 +1234,7 @@
     "t": 238.0,
     "f": 14280,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 76,
     "low_conf_share": 0.2,
@@ -1309,9 +1258,7 @@
     "t": 242.0,
     "f": 14520,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 83,
     "low_conf_share": 0.0,
@@ -1357,9 +1304,7 @@
     "t": 250.0,
     "f": 15000,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 54,
     "low_conf_share": 0.0,
@@ -1443,7 +1388,6 @@
     "f": 15840,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 6,
@@ -1467,9 +1411,7 @@
     "t": 268.0,
     "f": 16080,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 57,
     "low_conf_share": 0.0,
@@ -1491,9 +1433,7 @@
     "t": 272.0,
     "f": 16320,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 52,
     "low_conf_share": 0.2,
@@ -1504,9 +1444,7 @@
     "t": 274.0,
     "f": 16440,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 43,
     "low_conf_share": 0.0,
@@ -1529,7 +1467,6 @@
     "f": 16680,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 5,
@@ -1605,9 +1542,7 @@
     "t": 290.0,
     "f": 17400,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 1,
     "ocr_chars": 12,
     "low_conf_share": 0.0,
@@ -1619,7 +1554,6 @@
     "f": 17520,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 5,
@@ -1761,7 +1695,6 @@
     "f": 18960,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 5,
@@ -1796,9 +1729,7 @@
     "t": 322.0,
     "f": 19320,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 57,
     "low_conf_share": 0.2,
@@ -1836,7 +1767,6 @@
     "f": 19680,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 4,
@@ -1860,9 +1790,7 @@
     "t": 332.0,
     "f": 19920,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 44,
     "low_conf_share": 0.0,
@@ -1974,9 +1902,7 @@
     "t": 352.0,
     "f": 21120,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 67,
     "low_conf_share": 0.0,
@@ -1999,7 +1925,6 @@
     "f": 21360,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 5,
@@ -2012,9 +1937,7 @@
     "t": 358.0,
     "f": 21480,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 57,
     "low_conf_share": 0.2,
@@ -2091,9 +2014,7 @@
     "t": 372.0,
     "f": 22320,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 41,
     "low_conf_share": 0.0,
@@ -2115,9 +2036,7 @@
     "t": 376.0,
     "f": 22560,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 47,
     "low_conf_share": 0.2,
@@ -2150,9 +2069,7 @@
     "t": 382.0,
     "f": 22920,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 24,
     "low_conf_share": 0.0,
@@ -2164,7 +2081,6 @@
     "f": 23040,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 3,
@@ -2354,9 +2270,7 @@
     "t": 416.0,
     "f": 24960,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 43,
     "low_conf_share": 0.25,
@@ -2400,9 +2314,7 @@
     "t": 425.0,
     "f": 25500,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 62,
     "low_conf_share": 0.0,
@@ -2413,9 +2325,7 @@
     "t": 427.0,
     "f": 25620,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 47,
     "low_conf_share": 0.2,
@@ -2474,9 +2384,7 @@
     "t": 437.0,
     "f": 26220,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 58,
     "low_conf_share": 0.0,
@@ -2487,9 +2395,7 @@
     "t": 439.0,
     "f": 26340,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 38,
     "low_conf_share": 0.0,
@@ -2533,9 +2439,7 @@
     "t": 447.0,
     "f": 26820,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 37,
     "low_conf_share": 0.0,
@@ -2583,9 +2487,7 @@
     "t": 455.0,
     "f": 27300,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 42,
     "low_conf_share": 0.25,
@@ -2739,9 +2641,7 @@
     "t": 483.0,
     "f": 28980,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 58,
     "low_conf_share": 0.0,
@@ -2752,9 +2652,7 @@
     "t": 485.0,
     "f": 29100,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 50,
     "low_conf_share": 0.2,
@@ -2787,9 +2685,7 @@
     "t": 491.0,
     "f": 29460,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 52,
     "low_conf_share": 0.0,
@@ -2814,7 +2710,6 @@
     "f": 29700,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 4,
@@ -2838,9 +2733,7 @@
     "t": 499.0,
     "f": 29940,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 34,
     "low_conf_share": 0.0,
@@ -2908,9 +2801,7 @@
     "t": 511.0,
     "f": 30660,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 2,
     "ocr_chars": 33,
     "low_conf_share": 0.0,
@@ -2922,7 +2813,6 @@
     "f": 30780,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 5,
@@ -2935,9 +2825,7 @@
     "t": 515.0,
     "f": 30900,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 77,
     "low_conf_share": 0.2,
@@ -2974,9 +2862,7 @@
     "t": 521.0,
     "f": 31260,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 74,
     "low_conf_share": 0.0,
@@ -3009,9 +2895,7 @@
     "t": 527.0,
     "f": 31620,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 51,
     "low_conf_share": 0.0,
@@ -3066,9 +2950,7 @@
     "t": 537.0,
     "f": 32220,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 61,
     "low_conf_share": 0.25,
@@ -3080,7 +2962,6 @@
     "f": 32340,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 5,
@@ -3104,9 +2985,7 @@
     "t": 543.0,
     "f": 32580,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 41,
     "low_conf_share": 0.2,
@@ -3118,7 +2997,6 @@
     "f": 32700,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 5,
@@ -3131,9 +3009,7 @@
     "t": 548.0,
     "f": 32880,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 34,
     "low_conf_share": 0.0,
@@ -3144,9 +3020,7 @@
     "t": 550.0,
     "f": 33000,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 39,
     "low_conf_share": 0.0,
@@ -3158,7 +3032,6 @@
     "f": 33120,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 3,
@@ -3220,7 +3093,6 @@
     "f": 33780,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 2,
@@ -3400,9 +3272,7 @@
     "t": 595.0,
     "f": 35700,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 46,
     "low_conf_share": 0.2,
@@ -3439,9 +3309,7 @@
     "t": 601.0,
     "f": 36060,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 39,
     "low_conf_share": 0.0,
@@ -3496,9 +3364,7 @@
     "t": 611.0,
     "f": 36660,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 45,
     "low_conf_share": 0.0,
@@ -3577,9 +3443,7 @@
     "t": 625.0,
     "f": 37500,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 50,
     "low_conf_share": 0.2,
@@ -3590,9 +3454,7 @@
     "t": 627.0,
     "f": 37620,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 53,
     "low_conf_share": 0.2,
@@ -3603,9 +3465,7 @@
     "t": 629.0,
     "f": 37740,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 49,
     "low_conf_share": 0.0,
@@ -3695,9 +3555,7 @@
     "t": 645.0,
     "f": 38700,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 2,
     "ocr_chars": 16,
     "low_conf_share": 0.0,
@@ -3730,9 +3588,7 @@
     "t": 651.0,
     "f": 39060,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 46,
     "low_conf_share": 0.0,
@@ -3754,9 +3610,7 @@
     "t": 655.0,
     "f": 39300,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 37,
     "low_conf_share": 0.0,
@@ -3778,9 +3632,7 @@
     "t": 659.0,
     "f": 39540,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 41,
     "low_conf_share": 0.0,
@@ -3824,9 +3676,7 @@
     "t": 667.0,
     "f": 40020,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 38,
     "low_conf_share": 0.25,
@@ -3905,9 +3755,7 @@
     "t": 681.0,
     "f": 40860,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 6,
     "ocr_chars": 59,
     "low_conf_share": 0.0,
@@ -3951,9 +3799,7 @@
     "t": 689.0,
     "f": 41340,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 74,
     "low_conf_share": 0.25,
@@ -4023,9 +3869,7 @@
     "t": 701.0,
     "f": 42060,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 47,
     "low_conf_share": 0.0,
@@ -4058,9 +3902,7 @@
     "t": 707.0,
     "f": 42420,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 39,
     "low_conf_share": 0.0,
@@ -4117,9 +3959,7 @@
     "t": 717.0,
     "f": 43020,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 46,
     "low_conf_share": 0.25,
@@ -4207,9 +4047,7 @@
     "t": 733.0,
     "f": 43980,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 50,
     "low_conf_share": 0.25,
@@ -4220,9 +4058,7 @@
     "t": 735.0,
     "f": 44100,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 53,
     "low_conf_share": 0.0,
@@ -4367,9 +4203,7 @@
     "t": 763.0,
     "f": 45780,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 48,
     "low_conf_share": 0.0,
@@ -4380,9 +4214,7 @@
     "t": 765.0,
     "f": 45900,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 44,
     "low_conf_share": 0.0,
@@ -4404,9 +4236,7 @@
     "t": 769.0,
     "f": 46140,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 50,
     "low_conf_share": 0.0,
@@ -4417,9 +4247,7 @@
     "t": 771.0,
     "f": 46260,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 45,
     "low_conf_share": 0.25,
@@ -4431,7 +4259,6 @@
     "f": 46440,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 3,
@@ -4580,9 +4407,7 @@
     "t": 800.0,
     "f": 48000,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 64,
     "low_conf_share": 0.2,
@@ -4615,9 +4440,7 @@
     "t": 806.0,
     "f": 48360,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 52,
     "low_conf_share": 0.0,
@@ -4661,9 +4484,7 @@
     "t": 814.0,
     "f": 48840,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 37,
     "low_conf_share": 0.2,
@@ -4685,9 +4506,7 @@
     "t": 818.0,
     "f": 49080,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 34,
     "low_conf_share": 0.0,
@@ -4953,9 +4772,7 @@
     "t": 866.0,
     "f": 51960,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 26,
     "low_conf_share": 0.0,
@@ -5001,9 +4818,7 @@
     "t": 874.0,
     "f": 52440,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 42,
     "low_conf_share": 0.0,
@@ -5036,9 +4851,7 @@
     "t": 880.0,
     "f": 52800,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 41,
     "low_conf_share": 0.0,
@@ -5131,7 +4944,6 @@
     "f": 53760,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 3,
@@ -5177,9 +4989,7 @@
     "t": 904.0,
     "f": 54240,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 66,
     "low_conf_share": 0.0,
@@ -5234,9 +5044,7 @@
     "t": 914.0,
     "f": 54840,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 50,
     "low_conf_share": 0.2,
@@ -5258,9 +5066,7 @@
     "t": 918.0,
     "f": 55080,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 45,
     "low_conf_share": 0.0,
@@ -5285,7 +5091,6 @@
     "f": 55320,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 4,
@@ -5298,9 +5103,7 @@
     "t": 924.0,
     "f": 55440,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 40,
     "low_conf_share": 0.0,
@@ -5324,9 +5127,7 @@
     "t": 928.0,
     "f": 55680,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 40,
     "low_conf_share": 0.0,
@@ -5338,7 +5139,6 @@
     "f": 55800,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 3,
@@ -5568,9 +5368,7 @@
     "t": 971.0,
     "f": 58260,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 46,
     "low_conf_share": 0.0,
@@ -5673,9 +5471,7 @@
     "t": 989.0,
     "f": 59340,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 45,
     "low_conf_share": 0.0,
@@ -5711,7 +5507,6 @@
     "f": 59700,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 4,
@@ -5803,9 +5598,7 @@
     "t": 1011.0,
     "f": 60660,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 47,
     "low_conf_share": 0.0,
@@ -5897,9 +5690,7 @@
     "t": 1027.0,
     "f": 61620,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 50,
     "low_conf_share": 0.2,
@@ -6024,9 +5815,7 @@
     "t": 1064.0,
     "f": 63840,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 44,
     "low_conf_share": 0.0,
@@ -6038,7 +5827,6 @@
     "f": 63960,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 3,
@@ -6064,9 +5852,7 @@
     "t": 1070.0,
     "f": 64200,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 52,
     "low_conf_share": 0.2,
@@ -6259,9 +6045,7 @@
     "t": 1104.0,
     "f": 66240,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 49,
     "low_conf_share": 0.0,
@@ -6294,9 +6078,7 @@
     "t": 1110.0,
     "f": 66600,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 47,
     "low_conf_share": 0.0,
@@ -6329,9 +6111,7 @@
     "t": 1116.0,
     "f": 66960,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 52,
     "low_conf_share": 0.2,
@@ -6342,9 +6122,7 @@
     "t": 1118.0,
     "f": 67080,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 45,
     "low_conf_share": 0.0,
@@ -6498,9 +6276,7 @@
     "t": 1146.0,
     "f": 68760,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 62,
     "low_conf_share": 0.2,
@@ -6533,9 +6309,7 @@
     "t": 1152.0,
     "f": 69120,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 56,
     "low_conf_share": 0.0,
@@ -6568,9 +6342,7 @@
     "t": 1159.0,
     "f": 69540,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 62,
     "low_conf_share": 0.2,
@@ -6582,7 +6354,6 @@
     "f": 69660,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 4,
@@ -6641,9 +6412,7 @@
     "t": 1171.0,
     "f": 70260,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 46,
     "low_conf_share": 0.0,
@@ -6654,9 +6423,7 @@
     "t": 1173.0,
     "f": 70380,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 42,
     "low_conf_share": 0.0,
@@ -6667,9 +6434,7 @@
     "t": 1175.0,
     "f": 70500,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 43,
     "low_conf_share": 0.0,
@@ -6693,9 +6458,7 @@
     "t": 1179.0,
     "f": 70740,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 42,
     "low_conf_share": 0.25,
@@ -6706,9 +6469,7 @@
     "t": 1181.0,
     "f": 70860,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 26,
     "low_conf_share": 0.0,
@@ -6719,9 +6480,7 @@
     "t": 1183.0,
     "f": 70980,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 47,
     "low_conf_share": 0.0,
@@ -6733,7 +6492,6 @@
     "f": 71100,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 3,
@@ -6746,9 +6504,7 @@
     "t": 1187.0,
     "f": 71220,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 33,
     "low_conf_share": 0.0,
@@ -6772,9 +6528,7 @@
     "t": 1193.0,
     "f": 71580,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 85,
     "low_conf_share": 0.0,
@@ -6796,9 +6550,7 @@
     "t": 1197.0,
     "f": 71820,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 47,
     "low_conf_share": 0.0,
@@ -6921,9 +6673,7 @@
     "t": 1219.0,
     "f": 73140,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 51,
     "low_conf_share": 0.0,
@@ -6958,9 +6708,7 @@
     "t": 1225.0,
     "f": 73500,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 44,
     "low_conf_share": 0.0,
@@ -6993,9 +6741,7 @@
     "t": 1231.0,
     "f": 73860,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 59,
     "low_conf_share": 0.2,
@@ -7032,9 +6778,7 @@
     "t": 1237.0,
     "f": 74220,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 39,
     "low_conf_share": 0.0,
@@ -7126,9 +6870,7 @@
     "t": 1253.0,
     "f": 75180,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 55,
     "low_conf_share": 0.0,
@@ -7207,9 +6949,7 @@
     "t": 1267.0,
     "f": 76020,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 57,
     "low_conf_share": 0.0,
@@ -7243,7 +6983,6 @@
     "f": 76380,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 5,
@@ -7656,9 +7395,7 @@
     "t": 1371.0,
     "f": 82260,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 2,
     "ocr_chars": 67,
     "low_conf_share": 0.0,
@@ -7713,9 +7450,7 @@
     "t": 1381.0,
     "f": 82860,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 72,
     "low_conf_share": 0.2,
@@ -7782,7 +7517,6 @@
     "f": 83580,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 5,
@@ -7806,9 +7540,7 @@
     "t": 1397.0,
     "f": 83820,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 51,
     "low_conf_share": 0.0,
@@ -7841,9 +7573,7 @@
     "t": 1403.0,
     "f": 84180,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 46,
     "low_conf_share": 0.25,
@@ -7854,9 +7584,7 @@
     "t": 1408.0,
     "f": 84480,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 70,
     "low_conf_share": 0.2,
@@ -7867,9 +7595,7 @@
     "t": 1410.0,
     "f": 84600,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 52,
     "low_conf_share": 0.0,
@@ -7924,9 +7650,7 @@
     "t": 1420.0,
     "f": 85200,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 52,
     "low_conf_share": 0.2,
@@ -7948,9 +7672,7 @@
     "t": 1424.0,
     "f": 85440,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 62,
     "low_conf_share": 0.0,
@@ -7961,9 +7683,7 @@
     "t": 1426.0,
     "f": 85560,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 59,
     "low_conf_share": 0.25,
@@ -8040,9 +7760,7 @@
     "t": 1440.0,
     "f": 86400,
     "reason": "scene",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 70,
     "low_conf_share": 0.2,
@@ -8053,9 +7771,7 @@
     "t": 1443.0,
     "f": 86580,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 65,
     "low_conf_share": 0.25,
@@ -8066,9 +7782,7 @@
     "t": 1445.0,
     "f": 86700,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 73,
     "low_conf_share": 0.0,
@@ -8090,9 +7804,7 @@
     "t": 1449.0,
     "f": 86940,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 28,
     "low_conf_share": 0.0,
@@ -8104,7 +7816,6 @@
     "f": 87060,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 5,
@@ -8117,9 +7828,7 @@
     "t": 1453.0,
     "f": 87180,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 48,
     "low_conf_share": 0.0,
@@ -8130,9 +7839,7 @@
     "t": 1455.0,
     "f": 87300,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 50,
     "low_conf_share": 0.0,
@@ -8189,9 +7896,7 @@
     "t": 1466.0,
     "f": 87960,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 63,
     "low_conf_share": 0.0,
@@ -8213,9 +7918,7 @@
     "t": 1470.0,
     "f": 88200,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 62,
     "low_conf_share": 0.25,
@@ -8237,9 +7940,7 @@
     "t": 1474.0,
     "f": 88440,
     "reason": "scene",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 37,
     "low_conf_share": 0.25,
@@ -8250,9 +7951,7 @@
     "t": 1476.0,
     "f": 88560,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 76,
     "low_conf_share": 0.0,
@@ -8274,9 +7973,7 @@
     "t": 1480.0,
     "f": 88800,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 84,
     "low_conf_share": 0.0,
@@ -8287,9 +7984,7 @@
     "t": 1482.0,
     "f": 88920,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 75,
     "low_conf_share": 0.0,
@@ -8300,9 +7995,7 @@
     "t": 1484.0,
     "f": 89040,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 87,
     "low_conf_share": 0.2,
@@ -8324,9 +8017,7 @@
     "t": 1489.0,
     "f": 89340,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 53,
     "low_conf_share": 0.0,
@@ -8359,9 +8050,7 @@
     "t": 1495.0,
     "f": 89700,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 74,
     "low_conf_share": 0.0,
@@ -8372,9 +8061,7 @@
     "t": 1497.0,
     "f": 89820,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 68,
     "low_conf_share": 0.0,
@@ -8407,9 +8094,7 @@
     "t": 1503.0,
     "f": 90180,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 46,
     "low_conf_share": 0.0,
@@ -8442,9 +8127,7 @@
     "t": 1509.0,
     "f": 90540,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 52,
     "low_conf_share": 0.0,
@@ -8466,9 +8149,7 @@
     "t": 1513.0,
     "f": 90780,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 56,
     "low_conf_share": 0.2,
@@ -8525,9 +8206,7 @@
     "t": 1523.0,
     "f": 91380,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 68,
     "low_conf_share": 0.0,
@@ -8667,9 +8346,7 @@
     "t": 1549.0,
     "f": 92940,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 52,
     "low_conf_share": 0.0,
@@ -8691,9 +8368,7 @@
     "t": 1553.0,
     "f": 93180,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 85,
     "low_conf_share": 0.2,
@@ -8704,9 +8379,7 @@
     "t": 1558.0,
     "f": 93480,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 46,
     "low_conf_share": 0.0,
@@ -8728,9 +8401,7 @@
     "t": 1563.0,
     "f": 93780,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 65,
     "low_conf_share": 0.2,
@@ -8774,9 +8445,7 @@
     "t": 1571.0,
     "f": 94260,
     "reason": "scene",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 51,
     "low_conf_share": 0.0,
@@ -8787,9 +8456,7 @@
     "t": 1573.0,
     "f": 94380,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 46,
     "low_conf_share": 0.0,
@@ -8800,9 +8467,7 @@
     "t": 1575.0,
     "f": 94500,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 59,
     "low_conf_share": 0.2,
@@ -8813,9 +8478,7 @@
     "t": 1577.0,
     "f": 94620,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 2,
     "ocr_chars": 35,
     "low_conf_share": 0.0,
@@ -8839,9 +8502,7 @@
     "t": 1582.0,
     "f": 94920,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 54,
     "low_conf_share": 0.2,
@@ -8852,9 +8513,7 @@
     "t": 1584.0,
     "f": 95040,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 45,
     "low_conf_share": 0.0,
@@ -8911,9 +8570,7 @@
     "t": 1594.0,
     "f": 95640,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 52,
     "low_conf_share": 0.0,
@@ -8993,7 +8650,6 @@
     "f": 96480,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 5,
@@ -9018,7 +8674,6 @@
     "f": 96720,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 5,
@@ -9042,9 +8697,7 @@
     "t": 1616.0,
     "f": 96960,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 57,
     "low_conf_share": 0.2,
@@ -9079,9 +8732,7 @@
     "t": 1623.0,
     "f": 97380,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 56,
     "low_conf_share": 0.25,
@@ -9169,9 +8820,7 @@
     "t": 1639.0,
     "f": 98340,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 52,
     "low_conf_share": 0.25,
@@ -9193,9 +8842,7 @@
     "t": 1643.0,
     "f": 98580,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 80,
     "low_conf_share": 0.0,
@@ -9206,9 +8853,7 @@
     "t": 1646.0,
     "f": 98760,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 70,
     "low_conf_share": 0.25,
@@ -9263,9 +8908,7 @@
     "t": 1658.0,
     "f": 99480,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 72,
     "low_conf_share": 0.0,
@@ -9588,9 +9231,7 @@
     "t": 1720.0,
     "f": 103200,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 55,
     "low_conf_share": 0.0,
@@ -9612,9 +9253,7 @@
     "t": 1724.0,
     "f": 103440,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 50,
     "low_conf_share": 0.0,
@@ -9625,9 +9264,7 @@
     "t": 1726.0,
     "f": 103560,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 39,
     "low_conf_share": 0.0,
@@ -9638,9 +9275,7 @@
     "t": 1728.0,
     "f": 103680,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 50,
     "low_conf_share": 0.0,
@@ -9675,9 +9310,7 @@
     "t": 1734.0,
     "f": 104040,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 52,
     "low_conf_share": 0.0,
@@ -9688,9 +9321,7 @@
     "t": 1736.0,
     "f": 104160,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 49,
     "low_conf_share": 0.0,
@@ -9701,9 +9332,7 @@
     "t": 1738.0,
     "f": 104280,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 49,
     "low_conf_share": 0.0,
@@ -9725,9 +9354,7 @@
     "t": 1742.0,
     "f": 104520,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 57,
     "low_conf_share": 0.0,
@@ -9771,9 +9398,7 @@
     "t": 1750.0,
     "f": 105000,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 46,
     "low_conf_share": 0.0,
@@ -9819,9 +9444,7 @@
     "t": 1758.0,
     "f": 105480,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 81,
     "low_conf_share": 0.2,
@@ -9867,9 +9490,7 @@
     "t": 1767.0,
     "f": 106020,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 45,
     "low_conf_share": 0.2,
@@ -9880,9 +9501,7 @@
     "t": 1769.0,
     "f": 106140,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 50,
     "low_conf_share": 0.0,
@@ -9904,9 +9523,7 @@
     "t": 1773.0,
     "f": 106380,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 54,
     "low_conf_share": 0.2,
@@ -9939,9 +9556,7 @@
     "t": 1779.0,
     "f": 106740,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 39,
     "low_conf_share": 0.0,
@@ -9953,7 +9568,6 @@
     "f": 106860,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 3,
@@ -9966,9 +9580,7 @@
     "t": 1783.0,
     "f": 106980,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 41,
     "low_conf_share": 0.0,
@@ -9979,9 +9591,7 @@
     "t": 1785.0,
     "f": 107100,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 51,
     "low_conf_share": 0.0,
@@ -10029,9 +9639,7 @@
     "t": 1793.0,
     "f": 107580,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 56,
     "low_conf_share": 0.25,
@@ -10068,9 +9676,7 @@
     "t": 1799.0,
     "f": 107940,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 59,
     "low_conf_share": 0.0,
@@ -10114,9 +9720,7 @@
     "t": 1807.0,
     "f": 108420,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 63,
     "low_conf_share": 0.2,
@@ -10182,9 +9786,7 @@
     "t": 1819.0,
     "f": 109140,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 43,
     "low_conf_share": 0.0,
@@ -10206,9 +9808,7 @@
     "t": 1823.0,
     "f": 109380,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 47,
     "low_conf_share": 0.0,
@@ -10281,9 +9881,7 @@
     "t": 1835.0,
     "f": 110100,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 50,
     "low_conf_share": 0.0,
@@ -10305,9 +9903,7 @@
     "t": 1839.0,
     "f": 110340,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 39,
     "low_conf_share": 0.0,
@@ -10318,9 +9914,7 @@
     "t": 1841.0,
     "f": 110460,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 52,
     "low_conf_share": 0.0,
@@ -10379,9 +9973,7 @@
     "t": 1851.0,
     "f": 111060,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 46,
     "low_conf_share": 0.25,
@@ -10392,9 +9984,7 @@
     "t": 1853.0,
     "f": 111180,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 92,
     "low_conf_share": 0.0,
@@ -10405,9 +9995,7 @@
     "t": 1855.0,
     "f": 111300,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 73,
     "low_conf_share": 0.0,
@@ -10429,9 +10017,7 @@
     "t": 1859.0,
     "f": 111540,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 80,
     "low_conf_share": 0.0,
@@ -10453,9 +10039,7 @@
     "t": 1863.0,
     "f": 111780,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 53,
     "low_conf_share": 0.0,
@@ -10466,9 +10050,7 @@
     "t": 1865.0,
     "f": 111900,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 56,
     "low_conf_share": 0.0,
@@ -10490,9 +10072,7 @@
     "t": 1869.0,
     "f": 112140,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 46,
     "low_conf_share": 0.0,
@@ -10514,9 +10094,7 @@
     "t": 1873.0,
     "f": 112380,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 68,
     "low_conf_share": 0.0,
@@ -10527,9 +10105,7 @@
     "t": 1875.0,
     "f": 112500,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 67,
     "low_conf_share": 0.0,
@@ -10575,9 +10151,7 @@
     "t": 1883.0,
     "f": 112980,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 38,
     "low_conf_share": 0.0,
@@ -10610,9 +10184,7 @@
     "t": 1889.0,
     "f": 113340,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 43,
     "low_conf_share": 0.0,
@@ -10623,9 +10195,7 @@
     "t": 1891.0,
     "f": 113460,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 49,
     "low_conf_share": 0.2,
@@ -10741,9 +10311,7 @@
     "t": 1911.0,
     "f": 114660,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 80,
     "low_conf_share": 0.2,
@@ -10866,9 +10434,7 @@
     "t": 1933.0,
     "f": 115980,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 49,
     "low_conf_share": 0.0,
@@ -10879,9 +10445,7 @@
     "t": 1935.0,
     "f": 116100,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 48,
     "low_conf_share": 0.0,
@@ -10914,9 +10478,7 @@
     "t": 1941.0,
     "f": 116460,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 55,
     "low_conf_share": 0.0,
@@ -10927,9 +10489,7 @@
     "t": 1943.0,
     "f": 116580,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 60,
     "low_conf_share": 0.0,
@@ -10964,9 +10524,7 @@
     "t": 1949.0,
     "f": 116940,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 46,
     "low_conf_share": 0.0,
@@ -10988,9 +10546,7 @@
     "t": 1953.0,
     "f": 117180,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 54,
     "low_conf_share": 0.0,
@@ -11001,9 +10557,7 @@
     "t": 1955.0,
     "f": 117300,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 34,
     "low_conf_share": 0.0,
@@ -11014,9 +10568,7 @@
     "t": 1957.0,
     "f": 117420,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 44,
     "low_conf_share": 0.0,
@@ -11027,9 +10579,7 @@
     "t": 1959.0,
     "f": 117540,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 55,
     "low_conf_share": 0.25,
@@ -11041,7 +10591,6 @@
     "f": 117660,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 3,
@@ -11153,9 +10702,7 @@
     "t": 1981.0,
     "f": 118860,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 77,
     "low_conf_share": 0.2,
@@ -11189,7 +10736,6 @@
     "f": 119220,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 4,
@@ -11203,7 +10749,6 @@
     "f": 119340,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 3,
@@ -11249,9 +10794,7 @@
     "t": 1997.0,
     "f": 119820,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 56,
     "low_conf_share": 0.0,
@@ -11262,9 +10805,7 @@
     "t": 1999.0,
     "f": 119940,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 43,
     "low_conf_share": 0.0,
@@ -11275,9 +10816,7 @@
     "t": 2001.0,
     "f": 120060,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 55,
     "low_conf_share": 0.25,
@@ -11336,9 +10875,7 @@
     "t": 2011.0,
     "f": 120660,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 1,
     "ocr_chars": 16,
     "low_conf_share": 0.0,
@@ -11364,7 +10901,6 @@
     "f": 120900,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 3,
@@ -11377,9 +10913,7 @@
     "t": 2017.0,
     "f": 121020,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 43,
     "low_conf_share": 0.0,
@@ -12134,9 +11668,7 @@
     "t": 2179.0,
     "f": 130740,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 53,
     "low_conf_share": 0.0,
@@ -12147,9 +11679,7 @@
     "t": 2181.0,
     "f": 130860,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 54,
     "low_conf_share": 0.25,
@@ -12160,9 +11690,7 @@
     "t": 2183.0,
     "f": 130980,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 41,
     "low_conf_share": 0.0,
@@ -12208,9 +11736,7 @@
     "t": 2191.0,
     "f": 131460,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 43,
     "low_conf_share": 0.0,
@@ -12221,9 +11747,7 @@
     "t": 2193.0,
     "f": 131580,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 51,
     "low_conf_share": 0.25,
@@ -12295,9 +11819,7 @@
     "t": 2205.0,
     "f": 132300,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 54,
     "low_conf_share": 0.2,
@@ -12342,7 +11864,6 @@
     "f": 132780,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 5,
@@ -12401,9 +11922,7 @@
     "t": 2223.0,
     "f": 133380,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 39,
     "low_conf_share": 0.25,
@@ -12534,9 +12053,7 @@
     "t": 2245.0,
     "f": 134700,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 39,
     "low_conf_share": 0.0,
@@ -12547,9 +12064,7 @@
     "t": 2247.0,
     "f": 134820,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 53,
     "low_conf_share": 0.0,
@@ -12606,9 +12121,7 @@
     "t": 2257.0,
     "f": 135420,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 81,
     "low_conf_share": 0.0,
@@ -12654,9 +12167,7 @@
     "t": 2265.0,
     "f": 135900,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 57,
     "low_conf_share": 0.0,
@@ -12715,9 +12226,7 @@
     "t": 2275.0,
     "f": 136500,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 58,
     "low_conf_share": 0.25,
@@ -12741,9 +12250,7 @@
     "t": 2279.0,
     "f": 136740,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 51,
     "low_conf_share": 0.2,
@@ -12754,9 +12261,7 @@
     "t": 2281.0,
     "f": 136860,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 43,
     "low_conf_share": 0.0,
@@ -12767,9 +12272,7 @@
     "t": 2283.0,
     "f": 136980,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 55,
     "low_conf_share": 0.2,
@@ -12793,9 +12296,7 @@
     "t": 2287.0,
     "f": 137220,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 51,
     "low_conf_share": 0.0,
@@ -12856,9 +12357,7 @@
     "t": 2297.0,
     "f": 137820,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 46,
     "low_conf_share": 0.0,
@@ -12869,9 +12368,7 @@
     "t": 2299.0,
     "f": 137940,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 2,
     "ocr_chars": 38,
     "low_conf_share": 0.0,
@@ -12894,7 +12391,6 @@
     "f": 138180,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 5,
@@ -12951,9 +12447,7 @@
     "t": 2313.0,
     "f": 138780,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 60,
     "low_conf_share": 0.2,
@@ -12964,9 +12458,7 @@
     "t": 2315.0,
     "f": 138900,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 59,
     "low_conf_share": 0.0,
@@ -13012,9 +12504,7 @@
     "t": 2323.0,
     "f": 139380,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 53,
     "low_conf_share": 0.0,
@@ -13025,9 +12515,7 @@
     "t": 2325.0,
     "f": 139500,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 69,
     "low_conf_share": 0.2,
@@ -13119,9 +12607,7 @@
     "t": 2341.0,
     "f": 140460,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 56,
     "low_conf_share": 0.0,
@@ -13168,7 +12654,6 @@
     "f": 140940,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 3,
@@ -13207,9 +12692,7 @@
     "t": 2355.0,
     "f": 141300,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 46,
     "low_conf_share": 0.2,
@@ -13220,9 +12703,7 @@
     "t": 2357.0,
     "f": 141420,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 58,
     "low_conf_share": 0.2,
@@ -13268,9 +12749,7 @@
     "t": 2365.0,
     "f": 141900,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 69,
     "low_conf_share": 0.0,
@@ -13303,9 +12782,7 @@
     "t": 2371.0,
     "f": 142260,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 52,
     "low_conf_share": 0.2,
@@ -13316,9 +12793,7 @@
     "t": 2373.0,
     "f": 142380,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 64,
     "low_conf_share": 0.25,
@@ -13375,9 +12850,7 @@
     "t": 2383.0,
     "f": 142980,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 64,
     "low_conf_share": 0.0,
@@ -13495,9 +12968,7 @@
     "t": 2403.0,
     "f": 144180,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 2,
     "ocr_chars": 38,
     "low_conf_share": 0.0,
@@ -13508,9 +12979,7 @@
     "t": 2405.0,
     "f": 144300,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 30,
     "low_conf_share": 0.25,
@@ -13602,9 +13071,7 @@
     "t": 2421.0,
     "f": 145260,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 61,
     "low_conf_share": 0.25,
@@ -13615,9 +13082,7 @@
     "t": 2423.0,
     "f": 145380,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 68,
     "low_conf_share": 0.2,
@@ -13661,9 +13126,7 @@
     "t": 2431.0,
     "f": 145860,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 50,
     "low_conf_share": 0.0,
@@ -13698,9 +13161,7 @@
     "t": 2437.0,
     "f": 146220,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 70,
     "low_conf_share": 0.0,
@@ -13864,9 +13325,7 @@
     "t": 2465.0,
     "f": 147900,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 1,
     "ocr_chars": 16,
     "low_conf_share": 0.0,
@@ -13877,9 +13336,7 @@
     "t": 2467.0,
     "f": 148020,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 51,
     "low_conf_share": 0.25,
@@ -14015,9 +13472,7 @@
     "t": 2491.0,
     "f": 149460,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 56,
     "low_conf_share": 0.0,
@@ -14039,9 +13494,7 @@
     "t": 2495.0,
     "f": 149700,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 57,
     "low_conf_share": 0.25,
@@ -14063,9 +13516,7 @@
     "t": 2499.0,
     "f": 149940,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 35,
     "low_conf_share": 0.25,
@@ -14076,9 +13527,7 @@
     "t": 2501.0,
     "f": 150060,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 9,
     "ocr_chars": 91,
     "low_conf_share": 0.22,
@@ -14375,9 +13824,7 @@
     "t": 2599.0,
     "f": 155940,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 45,
     "low_conf_share": 0.0,
@@ -14399,9 +13846,7 @@
     "t": 2603.0,
     "f": 156180,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 53,
     "low_conf_share": 0.2,
@@ -14412,9 +13857,7 @@
     "t": 2605.0,
     "f": 156300,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 48,
     "low_conf_share": 0.25,
@@ -14447,9 +13890,7 @@
     "t": 2611.0,
     "f": 156660,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 48,
     "low_conf_share": 0.0,
@@ -14471,9 +13912,7 @@
     "t": 2615.0,
     "f": 156900,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 54,
     "low_conf_share": 0.25,
@@ -14484,9 +13923,7 @@
     "t": 2617.0,
     "f": 157020,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 48,
     "low_conf_share": 0.0,
@@ -14574,9 +14011,7 @@
     "t": 2633.0,
     "f": 157980,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 51,
     "low_conf_share": 0.0,
@@ -14598,9 +14033,7 @@
     "t": 2637.0,
     "f": 158220,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 61,
     "low_conf_share": 0.2,
@@ -14646,9 +14079,7 @@
     "t": 2645.0,
     "f": 158700,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 51,
     "low_conf_share": 0.0,
@@ -14659,9 +14090,7 @@
     "t": 2647.0,
     "f": 158820,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 43,
     "low_conf_share": 0.0,
@@ -14683,9 +14112,7 @@
     "t": 2651.0,
     "f": 159060,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 48,
     "low_conf_share": 0.0,
@@ -14770,9 +14197,7 @@
     "t": 2665.0,
     "f": 159900,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 43,
     "low_conf_share": 0.0,
@@ -14875,9 +14300,7 @@
     "t": 2683.0,
     "f": 160980,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 58,
     "low_conf_share": 0.0,
@@ -14899,9 +14322,7 @@
     "t": 2687.0,
     "f": 161220,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 61,
     "low_conf_share": 0.0,
@@ -14924,7 +14345,6 @@
     "f": 161460,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 5,
@@ -14937,9 +14357,7 @@
     "t": 2693.0,
     "f": 161580,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 71,
     "low_conf_share": 0.0,
@@ -14976,9 +14394,7 @@
     "t": 2699.0,
     "f": 161940,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 71,
     "low_conf_share": 0.0,
@@ -15034,7 +14450,6 @@
     "f": 162600,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 3,
@@ -15093,9 +14508,7 @@
     "t": 2720.0,
     "f": 163200,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 50,
     "low_conf_share": 0.0,
@@ -15141,9 +14554,7 @@
     "t": 2728.0,
     "f": 163680,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 65,
     "low_conf_share": 0.0,
@@ -15189,9 +14600,7 @@
     "t": 2736.0,
     "f": 164160,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 69,
     "low_conf_share": 0.0,
@@ -15202,9 +14611,7 @@
     "t": 2738.0,
     "f": 164280,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 58,
     "low_conf_share": 0.2,
@@ -15228,9 +14635,7 @@
     "t": 2742.0,
     "f": 164520,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 50,
     "low_conf_share": 0.0,
@@ -15241,9 +14646,7 @@
     "t": 2744.0,
     "f": 164640,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 58,
     "low_conf_share": 0.0,
@@ -15267,9 +14670,7 @@
     "t": 2748.0,
     "f": 164880,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 59,
     "low_conf_share": 0.0,
@@ -15291,9 +14692,7 @@
     "t": 2752.0,
     "f": 165120,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 58,
     "low_conf_share": 0.0,
@@ -15372,9 +14771,7 @@
     "t": 2766.0,
     "f": 165960,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 45,
     "low_conf_share": 0.0,
@@ -15510,9 +14907,7 @@
     "t": 2790.0,
     "f": 167400,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 2,
     "ocr_chars": 51,
     "low_conf_share": 0.0,
@@ -15536,9 +14931,7 @@
     "t": 2794.0,
     "f": 167640,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 57,
     "low_conf_share": 0.0,
@@ -15582,9 +14975,7 @@
     "t": 2802.0,
     "f": 168120,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 64,
     "low_conf_share": 0.0,
@@ -15653,9 +15044,7 @@
     "t": 2814.0,
     "f": 168840,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 41,
     "low_conf_share": 0.0,
@@ -15712,9 +15101,7 @@
     "t": 2824.0,
     "f": 169440,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 43,
     "low_conf_share": 0.0,
@@ -15726,7 +15113,6 @@
     "f": 169560,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 3,
@@ -15739,9 +15125,7 @@
     "t": 2828.0,
     "f": 169680,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 25,
     "low_conf_share": 0.0,
@@ -15752,9 +15136,7 @@
     "t": 2830.0,
     "f": 169800,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 54,
     "low_conf_share": 0.0,
@@ -15790,7 +15172,6 @@
     "f": 170160,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 2,
@@ -15851,9 +15232,7 @@
     "t": 2846.0,
     "f": 170760,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 69,
     "low_conf_share": 0.0,
@@ -15886,9 +15265,7 @@
     "t": 2852.0,
     "f": 171120,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 66,
     "low_conf_share": 0.0,
@@ -16037,9 +15414,7 @@
     "t": 2878.0,
     "f": 172680,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 51,
     "low_conf_share": 0.2,
@@ -16186,9 +15561,7 @@
     "t": 2904.0,
     "f": 174240,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 45,
     "low_conf_share": 0.2,
@@ -16232,9 +15605,7 @@
     "t": 2912.0,
     "f": 174720,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 48,
     "low_conf_share": 0.0,
@@ -16246,7 +15617,6 @@
     "f": 174840,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 2,
@@ -16259,9 +15629,7 @@
     "t": 2916.0,
     "f": 174960,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 2,
     "ocr_chars": 38,
     "low_conf_share": 0.0,
@@ -16284,7 +15652,6 @@
     "f": 175200,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 4,
@@ -16309,7 +15676,6 @@
     "f": 175440,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 4,
@@ -16322,9 +15688,7 @@
     "t": 2926.0,
     "f": 175560,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 66,
     "low_conf_share": 0.25,
@@ -16335,9 +15699,7 @@
     "t": 2928.0,
     "f": 175680,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 55,
     "low_conf_share": 0.0,
@@ -16490,9 +15852,7 @@
     "t": 2954.0,
     "f": 177240,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 60,
     "low_conf_share": 0.0,
@@ -16550,7 +15910,6 @@
     "f": 177840,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 5,
@@ -16564,7 +15923,6 @@
     "f": 177960,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 5,
@@ -16577,9 +15935,7 @@
     "t": 2968.0,
     "f": 178080,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 43,
     "low_conf_share": 0.0,
@@ -16601,9 +15957,7 @@
     "t": 2972.0,
     "f": 178320,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 51,
     "low_conf_share": 0.25,
@@ -16614,9 +15968,7 @@
     "t": 2974.0,
     "f": 178440,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 43,
     "low_conf_share": 0.0,
@@ -16627,9 +15979,7 @@
     "t": 2976.0,
     "f": 178560,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 48,
     "low_conf_share": 0.0,
@@ -16640,9 +15990,7 @@
     "t": 2978.0,
     "f": 178680,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 2,
     "ocr_chars": 38,
     "low_conf_share": 0.0,
@@ -16653,9 +16001,7 @@
     "t": 2980.0,
     "f": 178800,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 43,
     "low_conf_share": 0.0,
@@ -16712,9 +16058,7 @@
     "t": 2990.0,
     "f": 179400,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 57,
     "low_conf_share": 0.25,
@@ -16736,9 +16080,7 @@
     "t": 2994.0,
     "f": 179640,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 6,
     "ocr_chars": 72,
     "low_conf_share": 0.17,
@@ -16749,9 +16091,7 @@
     "t": 2996.0,
     "f": 179760,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 58,
     "low_conf_share": 0.0,
@@ -16773,9 +16113,7 @@
     "t": 3000.0,
     "f": 180000,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 57,
     "low_conf_share": 0.0,
@@ -16811,7 +16149,6 @@
     "f": 180360,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 3,
@@ -16884,7 +16221,6 @@
     "f": 181080,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 3,
@@ -16921,9 +16257,7 @@
     "t": 3024.0,
     "f": 181440,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 2,
     "ocr_chars": 38,
     "low_conf_share": 0.0,
@@ -16945,9 +16279,7 @@
     "t": 3028.0,
     "f": 181680,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 43,
     "low_conf_share": 0.0,
@@ -16958,9 +16290,7 @@
     "t": 3030.0,
     "f": 181800,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 60,
     "low_conf_share": 0.2,
@@ -16993,9 +16323,7 @@
     "t": 3036.0,
     "f": 182160,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 50,
     "low_conf_share": 0.2,
@@ -17159,9 +16487,7 @@
     "t": 3064.0,
     "f": 183840,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 61,
     "low_conf_share": 0.2,
@@ -17194,9 +16520,7 @@
     "t": 3070.0,
     "f": 184200,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 37,
     "low_conf_share": 0.25,
@@ -17255,9 +16579,7 @@
     "t": 3080.0,
     "f": 184800,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 57,
     "low_conf_share": 0.0,
@@ -17304,7 +16626,6 @@
     "f": 185280,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 3,
@@ -17317,9 +16638,7 @@
     "t": 3090.0,
     "f": 185400,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 3,
     "ocr_chars": 46,
     "low_conf_share": 0.0,
@@ -17330,9 +16649,7 @@
     "t": 3092.0,
     "f": 185520,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 84,
     "low_conf_share": 0.0,
@@ -17380,9 +16697,7 @@
     "t": 3100.0,
     "f": 186000,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 78,
     "low_conf_share": 0.0,
@@ -17394,7 +16709,6 @@
     "f": 186120,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 4,
@@ -17418,9 +16732,7 @@
     "t": 3106.0,
     "f": 186360,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 5,
     "ocr_chars": 56,
     "low_conf_share": 0.2,
@@ -17454,7 +16766,6 @@
     "f": 186720,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 5,
@@ -17467,9 +16778,7 @@
     "t": 3114.0,
     "f": 186840,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 71,
     "low_conf_share": 0.0,
@@ -17516,7 +16825,6 @@
     "f": 187320,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 3,
@@ -17586,9 +16894,7 @@
     "t": 3134.0,
     "f": 188040,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 40,
     "low_conf_share": 0.0,
@@ -17661,7 +16967,6 @@
     "f": 188760,
     "reason": "changed",
     "flags": [
-      "math",
       "low_conf"
     ],
     "ocr_lines": 5,
@@ -17711,9 +17016,7 @@
     "t": 3154.0,
     "f": 189240,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 82,
     "low_conf_share": 0.0,
@@ -17735,9 +17038,7 @@
     "t": 3158.0,
     "f": 189480,
     "reason": "changed",
-    "flags": [
-      "math"
-    ],
+    "flags": [],
     "ocr_lines": 4,
     "ocr_chars": 49,
     "low_conf_share": 0.0,

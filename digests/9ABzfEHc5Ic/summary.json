@@ -23,12 +23,12 @@
   "slide_like": false,
   "ocr_furniture_lines": 5,
   "ocr_low_conf_lines": 969,
-  "flagged_keyframes": 595,
+  "flagged_keyframes": 271,
   "hash_mask": null,
   "sheets": 253,
   "max_sheet_bytes": 380585,
   "sheet_bytes_total": 80802687,
-  "git_bytes": 4606161,
+  "git_bytes": 4590969,
   "transcript_lines": 181,
   "transcript_source": "YouTube auto-generated captions (en-orig)",
   "ocr_entries": 2073,
@@ -47,5 +47,5 @@
     "silence_seconds": 0.0,
     "loud_peaks": 11
   },
-  "runtime_s": 499
+  "runtime_s": 480
 }
