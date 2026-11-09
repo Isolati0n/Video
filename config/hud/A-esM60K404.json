@@ -46,9 +46,91 @@
     "hud_ref_pixels": 2549,
     "samples": 40,
     "orb_vs_on_screen_numbers": {
-      "life": "on-screen numbers not found (0 readable samples); linear fill used",
-      "mana": "on-screen numbers not found (0 readable samples); linear fill used"
+      "life": {
+        "samples": 76,
+        "held_out_mae_pct": 2.79,
+        "held_out_median_abs_err_pct": 1.37,
+        "held_out_p90_err_pct": 4.31,
+        "linear_mae_pct": 3.91
+      },
+      "mana": {
+        "samples": 27,
+        "held_out_mae_pct": 9.7,
+        "held_out_median_abs_err_pct": 2.24,
+        "held_out_p90_err_pct": 14.21,
+        "linear_mae_pct": 12.81
+      }
     }
+  },
+  "curve": {
+    "life": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0556,
+        12.38
+      ],
+      [
+        0.1556,
+        19.75
+      ],
+      [
+        0.2333,
+        25.76
+      ],
+      [
+        0.3667,
+        39.24
+      ],
+      [
+        0.5,
+        46.02
+      ],
+      [
+        0.5444,
+        54.03
+      ],
+      [
+        0.6667,
+        65.73
+      ],
+      [
+        0.7444,
+        71.63
+      ],
+      [
+        1.0,
+        100.0
+      ]
+    ],
+    "mana": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.5444,
+        32.76
+      ],
+      [
+        0.6556,
+        64.98
+      ],
+      [
+        0.7333,
+        71.39
+      ],
+      [
+        0.8333,
+        78.67
+      ],
+      [
+        0.9889,
+        95.65
+      ]
+    ]
   },
   "video_id": "A-esM60K404",
   "frame_size": [
