@@ -1,0 +1,40 @@
+name: yt-digest setup
+description: Python, pinned pip requirements (cached) and system packages
+inputs:
+  apt:
+    description: Space-separated apt packages (e.g. "ffmpeg tesseract-ocr"); empty for none
+    default: ""
+  pip:
+    description: Requirement files to install
+    default: requirements.txt
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-python@v6
+      with:
+        python-version: "3.12"
+        cache: pip
+        cache-dependency-path: requirements*.txt
+    - name: System packages
+      if: inputs.apt != ''
+      shell: bash
+      env:
+        PKGS: ${{ inputs.apt }}
+      run: |
+        missing=()
+        for p in $PKGS; do dpkg -s "$p" >/dev/null 2>&1 || missing+=("$p"); done
+        if [ ${#missing[@]} -gt 0 ]; then
+          opts=(-o Acquire::Retries=3 -o Acquire::http::Timeout=30 -o DPkg::Lock::Timeout=120)
+          start=$(date +%s)
+          sudo apt-get "${opts[@]}" update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get "${opts[@]}" install -y -qq --no-install-recommends "${missing[@]}" > /dev/null
+          echo "apt install of ${missing[*]} took $(( $(date +%s) - start ))s"
+        fi
+    - name: pip install
+      shell: bash
+      env:
+        REQS: ${{ inputs.pip }}
+      run: |
+        args=()
+        for r in $REQS; do args+=(-r "$r"); done
+        pip install -q "${args[@]}"

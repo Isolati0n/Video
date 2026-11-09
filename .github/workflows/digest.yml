@@ -52,11 +52,7 @@ jobs:
       started: ${{ steps.req.outputs.started }}
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-python@v6
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
-          cache: pip
-      - run: pip install requests==2.32.5
+      - uses: ./.github/actions/setup
       - id: req
         run: |
           python -m ytdigest.request digest
@@ -81,13 +77,9 @@ jobs:
       - uses: actions/checkout@v5
         with:
           ref: ${{ env.DEFAULT_BRANCH }}
-      - uses: actions/setup-python@v6
+      - uses: ./.github/actions/setup
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
-          cache: pip
-      - name: System packages
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
-      - run: pip install -r requirements.txt
+          apt: ffmpeg
       - name: Download + archive to release
         id: prep
         env:
@@ -132,13 +124,9 @@ jobs:
       - uses: actions/checkout@v5
         with:
           ref: ${{ env.DEFAULT_BRANCH }}   # includes the calibration commit
-      - uses: actions/setup-python@v6
+      - uses: ./.github/actions/setup
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
-          cache: pip
-      - name: System packages
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg tesseract-ocr > /dev/null
-      - run: pip install -r requirements.txt
+          apt: ffmpeg tesseract-ocr
       - name: Analyse every frame at 25 fps (${{ matrix.chunk.start }}s - ${{ matrix.chunk.end }}s)
         run: python -m ytdigest.analyze "${{ needs.request.outputs.video_id }}" ${{ matrix.chunk.start }} ${{ matrix.chunk.end }} out --workdir work
       - uses: actions/upload-artifact@v4
@@ -154,21 +142,17 @@ jobs:
     timeout-minutes: 330
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-python@v6
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
-          cache: pip
-          cache-dependency-path: requirements*.txt
       - uses: actions/download-artifact@v4
         with:
           name: prep
           path: work
-      - name: System packages
-        if: needs.prepare.outputs.has_captions != 'true'
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
-      - run: pip install -r requirements.txt
+      - if: needs.prepare.outputs.has_captions == 'true'
+        uses: ./.github/actions/setup
       - if: needs.prepare.outputs.has_captions != 'true'
-        run: pip install -r requirements-whisper.txt
+        uses: ./.github/actions/setup
+        with:
+          apt: ffmpeg
+          pip: requirements.txt requirements-whisper.txt
       - name: Cache whisper model
         if: needs.prepare.outputs.has_captions != 'true'
         uses: actions/cache@v4
@@ -190,13 +174,9 @@ jobs:
       - uses: actions/checkout@v5
         with:
           ref: ${{ env.DEFAULT_BRANCH }}
-      - uses: actions/setup-python@v6
+      - uses: ./.github/actions/setup
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
-          cache: pip
-      - name: System packages
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
-      - run: pip install -r requirements.txt
+          apt: ffmpeg
       - uses: actions/download-artifact@v4
         with:
           pattern: chunk-*
@@ -225,9 +205,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-python@v6
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
-          cache: pip
-      - run: pip install requests==2.32.5 numpy==2.2.6 opencv-python-headless==4.12.0.88
+      - uses: ./.github/actions/setup
       - run: python -m ytdigest.notify failed "${{ needs.request.outputs.issue }}" "Digest of ${{ needs.request.outputs.video_id }}" "${{ needs.prepare.outputs.blocked }}"

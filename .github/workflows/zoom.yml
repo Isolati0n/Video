@@ -42,19 +42,15 @@ jobs:
       - uses: actions/checkout@v5
         with:
           ref: ${{ env.DEFAULT_BRANCH }}
-      - uses: actions/setup-python@v6
+      - uses: ./.github/actions/setup
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
-          cache: pip
-      - run: pip install -r requirements.txt
+          apt: ffmpeg
       - id: req
         run: python -m ytdigest.request zoom
       - if: steps.req.outputs.error != ''
         env:
           MSG: ${{ steps.req.outputs.error }}
         run: python -m ytdigest.notify error "${{ steps.req.outputs.issue }}" "$MSG"
-      - if: steps.req.outputs.run == 'true'
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
       - id: zoom
         if: steps.req.outputs.run == 'true'
         env:
