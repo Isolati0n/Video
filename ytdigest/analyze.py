@@ -16,6 +16,7 @@ Record keys (one JSON object per frame):
   motion mean absolute pixel change vs previous frame (0..255, game area only)
   shift  global camera translation vs previous frame, px at 320 wide (phase correlation, central game area)
   match  0..1 structural match with the previous frame (1 = same view; low = new view, e.g. teleport)
+  chg    share (0..1) of 8x8 blocks of the central game area that changed vs the previous frame
   cut    true when the colour histogram jumps (scene change)
   phash  64-bit DCT perceptual hash (hex)
   ocr    {region: text} once per second (chat / center / top_right), only when text found
@@ -104,7 +105,7 @@ def main():
             hsv = cv2.cvtColor(small, cv2.COLOR_BGR2HSV)
             hist = histo(hsv)
             if prev_gray is None:
-                motion, cut, shift, match = None, False, None, None
+                motion, cut, shift, match, chg = None, False, None, None, None
             else:
                 motion = float(cv2.absdiff(gray[:game_rows], prev_gray[:game_rows]).mean())
                 # Camera tracking by phase correlation on the central game area:
@@ -114,6 +115,11 @@ def main():
                 (dx, dy), match = cv2.phaseCorrelate(prev_gray[cy0:cy1, cx0:cx1].astype(np.float32),
                                                      gray[cy0:cy1, cx0:cx1].astype(np.float32), win)
                 shift = float(np.hypot(dx, dy))
+                # share of 8x8 blocks of the central game area that changed: a new view changes almost
+                # all of them, a UI panel or a spell effect only some
+                d = cv2.absdiff(gray[cy0:cy1, cx0:cx1], prev_gray[cy0:cy1, cx0:cx1])
+                bh, bw = d.shape[0] // 8 * 8, d.shape[1] // 8 * 8
+                chg = float((d[:bh, :bw].reshape(bh // 8, 8, bw // 8, 8).mean((1, 3)) > 4).mean())
                 cut = bool(cv2.compareHist(prev_hist, hist, cv2.HISTCMP_BHATTACHARYYA) > 0.45)
             prev_gray, prev_hist = gray, hist
             if t < a.start - 1e-6:
@@ -132,6 +138,7 @@ def main():
             rec["motion"] = None if motion is None else round(motion, 2)
             rec["shift"] = None if shift is None else round(shift, 1)
             rec["match"] = None if match is None else round(float(match), 2)
+            rec["chg"] = None if chg is None else round(chg, 2)
             if cut:
                 rec["cut"] = True
             rec["phash"] = phash(gray)

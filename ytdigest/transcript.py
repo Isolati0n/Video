@@ -73,11 +73,26 @@ def group(segs: list[dict], max_span=15.0, max_chars=220) -> list[dict]:
     return out
 
 
+def detect_language(model, audio: np.ndarray, windows: int = 6) -> str:
+    """Whisper's own detection only looks at the start, which is often silence or game audio and
+    misdetects (an English video came out as French). Instead vote over the loudest 30 s windows."""
+    sr, n = 16000, 30 * 16000
+    chunks = [audio[i:i + n] for i in range(0, max(1, len(audio) - n // 2), n)]
+    loud = sorted(chunks, key=lambda c: float(np.sqrt(np.mean(np.square(c)))) if len(c) else 0.0, reverse=True)
+    votes: dict[str, float] = {}
+    for c in loud[:windows]:
+        if len(c) < sr * 5:
+            continue
+        lg, prob, _ = model.detect_language(c, vad_filter=False)
+        votes[lg] = votes.get(lg, 0.0) + prob
+    return max(votes, key=votes.get) if votes else "en"
+
+
 def whisper(arc: Archive, workdir: Path) -> tuple[list[dict], str]:
     from faster_whisper import WhisperModel
 
     model = WhisperModel("small", device="cpu", compute_type="int8", cpu_threads=os.cpu_count() or 4)
-    segs, lang = [], None
+    segs, lang = [], os.environ.get("WHISPER_LANGUAGE", "").strip() or None  # optional override
     for path, ps, _, _ in arc.parts_for(0, arc.duration):
         # decode with ffmpeg (16 kHz mono float32) instead of PyAV
         raw = subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", str(path), "-vn",
@@ -85,10 +100,12 @@ def whisper(arc: Archive, workdir: Path) -> tuple[list[dict], str]:
                              capture_output=True).stdout
         audio = np.frombuffer(raw, np.float32)
         del raw
-        it, info = model.transcribe(audio, beam_size=5, vad_filter=True,
+        if lang is None:
+            lang = detect_language(model, audio)
+            log(f"whisper language: {lang}")
+        it, info = model.transcribe(audio, language=lang, beam_size=5, vad_filter=True,
                                     vad_parameters={"min_silence_duration_ms": 500},
                                     condition_on_previous_text=False)
-        lang = lang or info.language
         for s in it:
             segs.append({"start": ps + s.start, "end": ps + s.end, "text": s.text.strip()})
             if len(segs) % 200 == 0:

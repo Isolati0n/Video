@@ -18,7 +18,7 @@ P = {  # thresholds (life/mana in % points; shift in px at 320 wide)
     "drop_pts": 10, "drop_window": 1.0,        # tuned on real footage: biggest 1 s fall in a 5 min PvP clip was 19 pts
     "refill_pts": 12, "refill_window": 0.6,
     "death_life": 3, "death_hold": 0.4,
-    "teleport_motion": 5.0, "teleport_match": 0.2, "teleport_gap": 1.5,  # new view in one frame; chains merge within the gap
+    "teleport_motion": 5.0, "teleport_match": 0.2, "teleport_chg": 0.6, "teleport_gap": 1.5,  # new view in one frame; chains merge within the gap
     "run_px": 1.2, "run_min_dur": 0.8,         # sustained camera shift per frame (walking is ~0.2-0.5 here)
 }
 
@@ -161,13 +161,17 @@ def derive(recs: list[dict]) -> tuple[list[dict], dict]:
 
     # --- teleports and sustained fast movement (whirlwind / charge / run).
     # Verified on real footage: a teleport is a frame where the whole view changes (motion high, match
-    # LOW because the new view shares nothing with the old one); a spell flash changes `motion` but
-    # keeps match ~1; a UI panel opening/closing is a well-matched rigid shift (match 0.3-0.6).
+    # LOW because the new view shares nothing with the old one, and nearly ALL blocks of the game area
+    # change); a spell flash changes `motion` but keeps match ~1; a UI panel opening/closing is a
+    # well-matched rigid shift (match 0.3-0.6); a local spell effect changes only some blocks.
     shift = np.array([np.nan if r.get("shift") is None else r["shift"] for r in recs], float)
     match = np.array([np.nan if r.get("match") is None else r["match"] for r in recs], float)
     mot = np.array([np.nan if r.get("motion") is None else r["motion"] for r in recs], float)
     stats = {}
-    jumps = np.where(game & (np.nan_to_num(mot) >= P["teleport_motion"]) & (np.nan_to_num(match, nan=1.0) <= P["teleport_match"]))[0]
+    chg = np.array([np.nan if r.get("chg") is None else r["chg"] for r in recs], float)
+    jumps = np.where(game & (np.nan_to_num(mot) >= P["teleport_motion"])
+                     & (np.nan_to_num(match, nan=1.0) <= P["teleport_match"])
+                     & (np.nan_to_num(chg, nan=1.0) >= P["teleport_chg"]))[0]
     chains: list[list[int]] = []
     for k in jumps:
         if chains and t[k] - t[chains[-1][-1]] <= P["teleport_gap"]:
