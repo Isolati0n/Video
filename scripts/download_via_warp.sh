@@ -14,7 +14,10 @@ for n in $(seq 1 "$attempts"); do
   python -m ytdigest.prepare download "$vid" "$work"; rc=$?
   [ "${USE_WARP:-true}" != false ] && scripts/warp.sh down
   echo "::endgroup::"
-  [ $rc -eq 0 ] && exit 0
+  if [ $rc -eq 0 ]; then
+    echo "::notice title=WARP download::succeeded on attempt $n of $attempts"
+    exit 0
+  fi
   [ $rc -ne 75 ] && exit $rc
   echo "YouTube refused attempt $n; retrying with a fresh tunnel"
   sleep $((n * 5))
