@@ -91,10 +91,20 @@ def main():
         cfg = hud.load(vid) or {}
         img = blob(sha, f"digests/{vid}/calibration.png", raw=True)
         notes = cfg.get("notes", {})
+        chk = notes.get("orb_vs_on_screen_numbers") or {}
+        lines = []
+        for kind, v in chk.items():
+            if isinstance(v, dict):
+                lines.append(f"- {kind}: median error {v['held_out_median_abs_err_pct']}%, mean {v['held_out_mae_pct']}%, "
+                             f"90th pct {v['held_out_p90_err_pct']}% vs the game's own on-screen numbers "
+                             f"({v['samples']} held-out-tested samples; a plain linear map would be {v['linear_mae_pct']}% mean)")
+            else:
+                lines.append(f"- {kind}: {v}")
+        check_txt = ("\n\n**Orb readings vs the on-screen `Life: x / y` numbers:**\n" + "\n".join(lines)) if lines else ""
         body = (f"🎯 **HUD calibration for `{vid}`** ({status}; {notes.get('method', '')})\n\n"
                 f"![calibration]({img})\n\n"
                 f"Red ellipse = life orb, blue = mana orb, yellow = skill bar, other boxes = OCR text areas. "
-                f"The white line in each orb is the measured fill level.\n\n{hud.rect_summary(cfg)}\n\n"
+                f"The white line in each orb is the measured fill level.\n\n{hud.rect_summary(cfg)}{check_txt}\n\n"
                 f"Analysis continues with these regions. If they are wrong, reply with e.g.\n"
                 f"`/hud {vid} life=5,79,11,20 mana=84,79,11,20` (x,y,w,h in % of the frame) "
                 f"or `/recalibrate {vid}`; the analysis then re-runs from the archived video "

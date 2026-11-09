@@ -40,7 +40,8 @@ class Archive:
         if self.local and (self.local / part["name"]).exists():
             return self.local / part["name"]
         dest = self.work / part["name"]
-        log(f"fetching {part['name']} ({part['size'] / 1e6:.0f} MB) from release")
+        if not (dest.exists() and dest.stat().st_size == part["size"]):
+            log(f"fetching {part['name']} ({part['size'] / 1e6:.0f} MB) from release")
         return self.gh_download(part["name"], dest)
 
     def parts_for(self, start: float, end: float) -> list[tuple[Path, float, float, float]]:
