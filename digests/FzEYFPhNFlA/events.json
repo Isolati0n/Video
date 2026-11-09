@@ -1,0 +1,597 @@
+[
+  {
+    "t": 40.43,
+    "f": 1213,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 41.0,
+    "f": 1230,
+    "type": "loud_peak",
+    "desc": "Loud peak -10 dBFS (+18 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 41.0,
+    "f": 1230,
+    "type": "text_change",
+    "desc": "New on-screen text: HOME COOKING / VIDEOS EVERY WEEK!",
+    "source": "generic"
+  },
+  {
+    "t": 42.0,
+    "f": 1260,
+    "type": "text_change",
+    "desc": "New on-screen text: \\ YONGJUAN'S / d myskitche",
+    "source": "generic"
+  },
+  {
+    "t": 43.0,
+    "f": 1290,
+    "type": "text_change",
+    "desc": "New on-screen text: VERYDAY CHINES",
+    "source": "generic"
+  },
+  {
+    "t": 45.0,
+    "f": 1350,
+    "type": "text_change",
+    "desc": "New on-screen text: tinese Gis",
+    "source": "generic"
+  },
+  {
+    "t": 55.0,
+    "f": 1650,
+    "type": "text_change",
+    "desc": "New on-screen text: s Kitche",
+    "source": "generic"
+  },
+  {
+    "t": 55.17,
+    "f": 1655,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 41, 3 hot frames; threshold 25.2)",
+    "source": "generic",
+    "end": 55.23,
+    "peak": 41.1
+  },
+  {
+    "t": 64.0,
+    "f": 1920,
+    "type": "loud_peak",
+    "desc": "Loud peak -14 dBFS (+13 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 64.97,
+    "f": 1949,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 31, 3 hot frames; threshold 25.2)",
+    "source": "generic",
+    "end": 65.03,
+    "peak": 31.4
+  },
+  {
+    "t": 67.97,
+    "f": 2039,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 69.0,
+    "f": 2070,
+    "type": "loud_peak",
+    "desc": "Loud peak -12 dBFS (+15 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 78.37,
+    "f": 2351,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 84.4,
+    "f": 2532,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.0s (peak 74, 15 hot frames; threshold 25.2)",
+    "source": "generic",
+    "end": 85.33,
+    "peak": 74.5
+  },
+  {
+    "t": 89.93,
+    "f": 2698,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 70, 3 hot frames; threshold 25.2)",
+    "source": "generic",
+    "end": 90.0,
+    "peak": 70.1
+  },
+  {
+    "t": 90.5,
+    "f": 2715,
+    "type": "loud_peak",
+    "desc": "Loud peak -14 dBFS (+14 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 92.2,
+    "f": 2766,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.5s (peak 28, 6 hot frames; threshold 25.2)",
+    "source": "generic",
+    "end": 92.63,
+    "peak": 28.5
+  },
+  {
+    "t": 95.0,
+    "f": 2850,
+    "type": "loud_peak",
+    "desc": "Loud peak -12 dBFS (+16 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 101.5,
+    "f": 3045,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.4s (peak 64, 9 hot frames; threshold 25.2)",
+    "source": "generic",
+    "end": 101.87,
+    "peak": 64.0
+  },
+  {
+    "t": 104.57,
+    "f": 3137,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 108.37,
+    "f": 3251,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 112.0,
+    "f": 3360,
+    "type": "text_change",
+    "desc": "New on-screen text: Let's go!",
+    "source": "generic"
+  },
+  {
+    "t": 119.5,
+    "f": 3585,
+    "type": "loud_peak",
+    "desc": "Loud peak -14 dBFS (+14 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 134.0,
+    "f": 4020,
+    "type": "text_change",
+    "desc": "New on-screen text: This is\u2018how youre!",
+    "source": "generic"
+  },
+  {
+    "t": 135.0,
+    "f": 4050,
+    "type": "text_change",
+    "desc": "New on-screen text: how you work",
+    "source": "generic"
+  },
+  {
+    "t": 157.5,
+    "f": 4725,
+    "type": "loud_peak",
+    "desc": "Loud peak -14 dBFS (+13 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 184.0,
+    "f": 5520,
+    "type": "text_change",
+    "desc": "New on-screen text: these two colors are not",
+    "source": "generic"
+  },
+  {
+    "t": 185.0,
+    "f": 5550,
+    "type": "text_change",
+    "desc": "New on-screen text: these tworcolo",
+    "source": "generic"
+  },
+  {
+    "t": 185.6,
+    "f": 5568,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 189.93,
+    "f": 5698,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 198.4,
+    "f": 5952,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.7s (peak 46, 7 hot frames; threshold 25.2)",
+    "source": "generic",
+    "end": 199.07,
+    "peak": 45.7
+  },
+  {
+    "t": 203.0,
+    "f": 6090,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 207.47,
+    "f": 6224,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.3s (peak 42, 4 hot frames; threshold 25.2)",
+    "source": "generic",
+    "end": 207.77,
+    "peak": 41.6
+  },
+  {
+    "t": 207.9,
+    "f": 6237,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 217.0,
+    "f": 6510,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 222.3,
+    "f": 6669,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 223.47,
+    "f": 6704,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 123, 5 hot frames; threshold 25.2)",
+    "source": "generic",
+    "end": 223.6,
+    "peak": 123.1
+  },
+  {
+    "t": 250.9,
+    "f": 7527,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 250.97,
+    "f": 7529,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.5s (peak 30, 5 hot frames; threshold 25.2)",
+    "source": "generic",
+    "end": 251.47,
+    "peak": 30.2
+  },
+  {
+    "t": 252.6,
+    "f": 7578,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 31, 4 hot frames; threshold 25.2)",
+    "source": "generic",
+    "end": 252.7,
+    "peak": 30.5
+  },
+  {
+    "t": 253.97,
+    "f": 7619,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 85, 7 hot frames; threshold 25.2)",
+    "source": "generic",
+    "end": 254.17,
+    "peak": 85.1
+  },
+  {
+    "t": 270.73,
+    "f": 8122,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 276.73,
+    "f": 8302,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 279.7,
+    "f": 8391,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 296.67,
+    "f": 8900,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 316.0,
+    "f": 9480,
+    "type": "loud_peak",
+    "desc": "Loud peak -15 dBFS (+13 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 326.37,
+    "f": 9791,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.2s (peak 48, 30 hot frames; threshold 25.2)",
+    "source": "generic",
+    "end": 327.53,
+    "peak": 47.7
+  },
+  {
+    "t": 333.0,
+    "f": 9990,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.3s (peak 54, 25 hot frames; threshold 25.2)",
+    "source": "generic",
+    "end": 334.27,
+    "peak": 54.1
+  },
+  {
+    "t": 337.67,
+    "f": 10130,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.4s (peak 49, 12 hot frames; threshold 25.2)",
+    "source": "generic",
+    "end": 338.07,
+    "peak": 49.3
+  },
+  {
+    "t": 338.0,
+    "f": 10140,
+    "type": "loud_peak",
+    "desc": "Loud peak -15 dBFS (+12 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 338.2,
+    "f": 10146,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 343.0,
+    "f": 10290,
+    "type": "text_change",
+    "desc": "New on-screen text: AA little mon",
+    "source": "generic"
+  },
+  {
+    "t": 349.13,
+    "f": 10474,
+    "type": "motion_burst",
+    "desc": "Large motion for 4.9s (peak 103, 85 hot frames; threshold 25.2)",
+    "source": "generic",
+    "end": 354.03,
+    "peak": 103.3
+  },
+  {
+    "t": 350.5,
+    "f": 10515,
+    "type": "loud_peak",
+    "desc": "Loud peak -15 dBFS (+12 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 352.0,
+    "f": 10560,
+    "type": "text_change",
+    "desc": "New on-screen text: Brush brush",
+    "source": "generic"
+  },
+  {
+    "t": 356.9,
+    "f": 10707,
+    "type": "motion_burst",
+    "desc": "Large motion for 3.1s (peak 42, 53 hot frames; threshold 25.2)",
+    "source": "generic",
+    "end": 360.0,
+    "peak": 41.6
+  },
+  {
+    "t": 363.3,
+    "f": 10899,
+    "type": "motion_burst",
+    "desc": "Large motion for 2.0s (peak 43, 33 hot frames; threshold 25.2)",
+    "source": "generic",
+    "end": 365.27,
+    "peak": 43.0
+  },
+  {
+    "t": 365.33,
+    "f": 10960,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 375.77,
+    "f": 11273,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 86, 4 hot frames; threshold 25.2)",
+    "source": "generic",
+    "end": 375.97,
+    "peak": 86.0
+  },
+  {
+    "t": 377.0,
+    "f": 11310,
+    "type": "loud_peak",
+    "desc": "Loud peak -15 dBFS (+13 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 387.7,
+    "f": 11631,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 29, 5 hot frames; threshold 25.2)",
+    "source": "generic",
+    "end": 387.9,
+    "peak": 29.0
+  },
+  {
+    "t": 411.53,
+    "f": 12346,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.0s (peak 99, 3 hot frames; threshold 25.2)",
+    "source": "generic",
+    "end": 412.53,
+    "peak": 99.1
+  },
+  {
+    "t": 422.5,
+    "f": 12675,
+    "type": "loud_peak",
+    "desc": "Loud peak -13 dBFS (+14 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 437.0,
+    "f": 13110,
+    "type": "text_change",
+    "desc": "New on-screen text: delicious\u2019",
+    "source": "generic"
+  },
+  {
+    "t": 475.5,
+    "f": 14265,
+    "type": "loud_peak",
+    "desc": "Loud peak -10 dBFS (+18 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 503.0,
+    "f": 15090,
+    "type": "loud_peak",
+    "desc": "Loud peak -15 dBFS (+12 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 507.5,
+    "f": 15225,
+    "type": "loud_peak",
+    "desc": "Loud peak -11 dBFS (+17 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 508.0,
+    "f": 15240,
+    "type": "text_change",
+    "desc": "New on-screen text: Sottryzan",
+    "source": "generic"
+  },
+  {
+    "t": 512.0,
+    "f": 15360,
+    "type": "loud_peak",
+    "desc": "Loud peak -11 dBFS (+16 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 576.0,
+    "f": 17280,
+    "type": "loud_peak",
+    "desc": "Loud peak -9 dBFS (+18 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 629.0,
+    "f": 18870,
+    "type": "text_change",
+    "desc": "New on-screen text: Very-much",
+    "source": "generic"
+  },
+  {
+    "t": 635.33,
+    "f": 19060,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 636.0,
+    "f": 19080,
+    "type": "text_change",
+    "desc": "New on-screen text: 4 EVERYDAY CHINESE / HOME COOKING / VIDEOS EVERY WEEK!",
+    "source": "generic"
+  },
+  {
+    "t": 637.0,
+    "f": 19110,
+    "type": "loud_peak",
+    "desc": "Loud peak -10 dBFS (+17 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 637.0,
+    "f": 19110,
+    "type": "text_change",
+    "desc": "New on-screen text: a EVERY WEEK! / delicious",
+    "source": "generic"
+  },
+  {
+    "t": 638.0,
+    "f": 19140,
+    "type": "text_change",
+    "desc": "New on-screen text: ONGJUAN'S",
+    "source": "generic"
+  },
+  {
+    "t": 641.0,
+    "f": 19230,
+    "type": "text_change",
+    "desc": "New on-screen text: ap hereto, / to,subscribevan",
+    "source": "generic"
+  },
+  {
+    "t": 642.0,
+    "f": 19260,
+    "type": "text_change",
+    "desc": "New on-screen text: nd watch",
+    "source": "generic"
+  },
+  {
+    "t": 644.0,
+    "f": 19320,
+    "type": "text_change",
+    "desc": "New on-screen text: See yournext",
+    "source": "generic"
+  }
+]

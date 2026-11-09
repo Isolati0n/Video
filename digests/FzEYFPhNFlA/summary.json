@@ -1,0 +1,51 @@
+{
+  "video_id": "FzEYFPhNFlA",
+  "title": "How to Cook Authentic Chinese Clams Dishes at Home | Sun Jie - India Kodalu Kitchen\ud83c\uddee\ud83c\uddf3\ud83c\udde8\ud83c\uddf3",
+  "profile": "generic",
+  "fps": 30.0,
+  "native_fps": 30.0,
+  "duration_s": 645.4,
+  "frames": 19361,
+  "events": 79,
+  "event_counts": {
+    "scene_change": 19,
+    "loud_peak": 18,
+    "text_change": 21,
+    "motion_burst": 21
+  },
+  "events_by_source": {
+    "generic": 79
+  },
+  "keyframes": 277,
+  "keyframe_candidates": 656,
+  "dense_events": 58,
+  "text_keyframes": 0,
+  "slide_like": false,
+  "ocr_furniture_lines": 0,
+  "ocr_low_conf_lines": 23,
+  "flagged_keyframes": 9,
+  "hash_mask": null,
+  "sheets": 57,
+  "max_sheet_bytes": 343399,
+  "sheet_bytes_total": 13737481,
+  "git_bytes": 1011431,
+  "transcript_lines": 3,
+  "transcript_source": "YouTube auto-generated captions (en-orig)",
+  "ocr_entries": 68,
+  "stats": {
+    "motion_median": 2.73,
+    "motion_threshold": 25.21,
+    "static_seconds": 0.0,
+    "ocr_runs_with_text": 78,
+    "ocr_new_text_entries": 68,
+    "ocr_lines_unique": 90,
+    "frames": 19361,
+    "cuts": 19,
+    "black_frames": 0,
+    "audio_median_db": -27.9,
+    "audio_max_db": -8.4,
+    "silence_seconds": 0.0,
+    "loud_peaks": 18
+  },
+  "runtime_s": 421
+}
