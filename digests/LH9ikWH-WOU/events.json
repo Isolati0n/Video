@@ -2,608 +2,595 @@
   {
     "t": 0.0,
     "f": 0,
-    "type": "text",
-    "desc": "Text (chat): INVITE / Leave"
+    "type": "loud_peak",
+    "desc": "Loud peak -16 dBFS (+13 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 0.0,
+    "f": 0,
+    "type": "text_change",
+    "desc": "New on-screen text: Game: ave2 / Beep Meer / Fine ERCHANTED / Level 94 Bakeamian / Beso Moor / Level 99 / 99 Amazen / Level 97 Amazen / Laver 92 / Mana: 842 / 852",
+    "source": "generic"
+  },
+  {
+    "t": 1.0,
+    "f": 30,
+    "type": "text_change",
+    "desc": "New on-screen text: Level 94 Ban / Lever 97 / Lever 99 Necraman",
+    "source": "generic"
+  },
+  {
+    "t": 3.0,
+    "f": 90,
+    "type": "text_change",
+    "desc": "New on-screen text: THe Ancients\u2019 Way",
+    "source": "generic"
   },
   {
     "t": 6.0,
-    "f": 150,
-    "type": "text",
-    "desc": "Text (chat): \u2018 . INVITE / Leave"
+    "f": 180,
+    "type": "text_change",
+    "desc": "New on-screen text: 852 / 85:",
+    "source": "generic"
   },
   {
-    "t": 9.92,
-    "f": 248,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 7, match 0.16): teleport?",
-    "peak": 6.5
+    "t": 8.0,
+    "f": 240,
+    "type": "text_change",
+    "desc": "New on-screen text: Leven 92",
+    "source": "generic"
   },
   {
-    "t": 12.52,
-    "f": 313,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 11, match 0.05): teleport?",
-    "peak": 11.1
+    "t": 9.0,
+    "f": 270,
+    "type": "text_change",
+    "desc": "New on-screen text: 52 / 852",
+    "source": "generic"
   },
   {
-    "t": 18.36,
-    "f": 459,
-    "type": "teleport",
-    "desc": "2 view jumps in 0.4s (teleport chain?)",
-    "end": 18.72,
-    "peak": 11.9,
-    "count": 2
+    "t": 11.0,
+    "f": 330,
+    "type": "text_change",
+    "desc": "New on-screen text: [Game] 9 / Lire: 7912",
+    "source": "generic"
   },
   {
-    "t": 21.84,
-    "f": 546,
-    "type": "teleport",
-    "desc": "2 view jumps in 1.1s (teleport chain?)",
-    "end": 22.92,
-    "peak": 8.7,
-    "count": 2
+    "t": 12.0,
+    "f": 360,
+    "type": "text_change",
+    "desc": "New on-screen text: Lire: 7798",
+    "source": "generic"
   },
   {
-    "t": 27.96,
-    "f": 699,
-    "type": "teleport",
-    "desc": "7 view jumps in 4.0s (teleport chain?)",
-    "end": 31.92,
-    "peak": 11.6,
-    "count": 7
+    "t": 14.3,
+    "f": 429,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.4s (peak 9, 2 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 14.67,
+    "peak": 9.3
   },
   {
-    "t": 33.72,
-    "f": 843,
-    "type": "teleport",
-    "desc": "2 view jumps in 0.4s (teleport chain?)",
-    "end": 34.12,
-    "peak": 5.5,
-    "count": 2
+    "t": 15.77,
+    "f": 473,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.7s (peak 13, 2 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 16.47,
+    "peak": 13.1
   },
   {
-    "t": 38.52,
-    "f": 963,
-    "type": "teleport",
-    "desc": "2 view jumps in 0.4s (teleport chain?)",
-    "end": 38.88,
-    "peak": 7.7,
-    "count": 2
+    "t": 18.37,
+    "f": 551,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.7s (peak 12, 3 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 19.07,
+    "peak": 11.5
   },
   {
-    "t": 42.84,
-    "f": 1071,
-    "type": "teleport",
-    "desc": "2 view jumps in 0.4s (teleport chain?)",
-    "end": 43.2,
-    "peak": 11.1,
-    "count": 2
-  },
-  {
-    "t": 45.0,
-    "f": 1125,
-    "type": "teleport",
-    "desc": "2 view jumps in 1.1s (teleport chain?)",
-    "end": 46.08,
-    "peak": 7.9,
-    "count": 2
-  },
-  {
-    "t": 47.88,
-    "f": 1197,
-    "type": "teleport",
-    "desc": "2 view jumps in 0.7s (teleport chain?)",
-    "end": 48.56,
-    "peak": 10.2,
-    "count": 2
-  },
-  {
-    "t": 51.12,
-    "f": 1278,
-    "type": "teleport",
-    "desc": "6 view jumps in 5.2s (teleport chain?)",
-    "end": 56.36,
-    "peak": 10.0,
-    "count": 6
-  },
-  {
-    "t": 59.32,
-    "f": 1483,
-    "type": "teleport",
-    "desc": "2 view jumps in 0.8s (teleport chain?)",
-    "end": 60.12,
-    "peak": 13.2,
-    "count": 2
-  },
-  {
-    "t": 66.32,
-    "f": 1658,
-    "type": "teleport",
-    "desc": "4 view jumps in 2.2s (teleport chain?)",
-    "end": 68.48,
-    "peak": 11.5,
-    "count": 4
-  },
-  {
-    "t": 70.32,
-    "f": 1758,
-    "type": "teleport",
-    "desc": "3 view jumps in 1.8s (teleport chain?)",
-    "end": 72.12,
-    "peak": 8.3,
-    "count": 3
-  },
-  {
-    "t": 72.76,
-    "f": 1819,
-    "type": "life_drop",
-    "desc": "Life drop -13% (95% -> 82%) in 0.56s",
-    "end": 73.32,
-    "amount": 12.7
-  },
-  {
-    "t": 73.64,
-    "f": 1841,
-    "type": "teleport",
-    "desc": "2 view jumps in 1.1s (teleport chain?)",
-    "end": 74.72,
-    "peak": 10.2,
-    "count": 2
-  },
-  {
-    "t": 76.52,
-    "f": 1913,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 7, match 0.06): teleport?",
-    "peak": 7.3
-  },
-  {
-    "t": 78.68,
-    "f": 1967,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 10, match 0.15): teleport?",
-    "peak": 9.5
-  },
-  {
-    "t": 79.0,
-    "f": 1975,
-    "type": "text",
-    "desc": "Text (chat): Stamina"
-  },
-  {
-    "t": 85.12,
-    "f": 2128,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 7, match 0.06): teleport?",
-    "peak": 6.7
-  },
-  {
-    "t": 91.76,
-    "f": 2294,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 7, match 0.08): teleport?",
-    "peak": 6.8
-  },
-  {
-    "t": 93.92,
-    "f": 2348,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 9, match 0.01): teleport?",
-    "peak": 8.9
-  },
-  {
-    "t": 108.84,
-    "f": 2721,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 11, match 0.13): teleport?",
-    "peak": 10.7
-  },
-  {
-    "t": 111.0,
-    "f": 2775,
-    "type": "teleport",
-    "desc": "2 view jumps in 1.4s (teleport chain?)",
-    "end": 112.44,
-    "peak": 8.9,
-    "count": 2
-  },
-  {
-    "t": 111.12,
-    "f": 2778,
-    "type": "mana_refill",
-    "desc": "Mana refill +12% (47% -> 59%) in 0.04s (mana/rejuv potion?)",
-    "end": 111.16,
-    "amount": 12.2
-  },
-  {
-    "t": 114.56,
-    "f": 2864,
-    "type": "teleport",
-    "desc": "3 view jumps in 1.8s (teleport chain?)",
-    "end": 116.4,
-    "peak": 10.2,
-    "count": 3
-  },
-  {
-    "t": 118.28,
-    "f": 2957,
-    "type": "teleport",
-    "desc": "9 view jumps in 7.8s (teleport chain?)",
-    "end": 126.04,
-    "peak": 9.5,
-    "count": 9
-  },
-  {
-    "t": 127.08,
-    "f": 3177,
-    "type": "life_drop",
-    "desc": "Life drop -17% (54% -> 37%) in 0.88s",
-    "end": 127.96,
-    "amount": 16.9
-  },
-  {
-    "t": 127.84,
-    "f": 3196,
-    "type": "teleport",
-    "desc": "3 view jumps in 1.1s (teleport chain?)",
-    "end": 128.92,
-    "peak": 7.7,
-    "count": 3
-  },
-  {
-    "t": 130.72,
-    "f": 3268,
-    "type": "teleport",
-    "desc": "2 view jumps in 1.4s (teleport chain?)",
-    "end": 132.12,
-    "peak": 8.2,
-    "count": 2
-  },
-  {
-    "t": 134.68,
-    "f": 3367,
-    "type": "teleport",
-    "desc": "3 view jumps in 1.8s (teleport chain?)",
-    "end": 136.52,
-    "peak": 7.4,
-    "count": 3
-  },
-  {
-    "t": 136.16,
-    "f": 3404,
-    "type": "mana_refill",
-    "desc": "Mana refill +13% (43% -> 56%) in 0.12s (mana/rejuv potion?)",
-    "end": 136.28,
-    "amount": 13.1
-  },
-  {
-    "t": 138.32,
-    "f": 3458,
-    "type": "teleport",
-    "desc": "2 view jumps in 0.4s (teleport chain?)",
-    "end": 138.68,
-    "peak": 8.1,
-    "count": 2
-  },
-  {
-    "t": 142.28,
-    "f": 3557,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 7, match 0.11): teleport?",
-    "peak": 7.0
-  },
-  {
-    "t": 145.88,
-    "f": 3647,
-    "type": "mana_refill",
-    "desc": "Mana refill +12% (53% -> 66%) in 0.56s (mana/rejuv potion?)",
-    "end": 146.44,
-    "amount": 12.5
-  },
-  {
-    "t": 147.28,
-    "f": 3682,
-    "type": "mana_refill",
-    "desc": "Mana refill +14% (70% -> 84%) in 0.52s (mana/rejuv potion?)",
-    "end": 147.8,
-    "amount": 14.4
-  },
-  {
-    "t": 147.72,
-    "f": 3693,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 7, match 0.13): teleport?",
-    "peak": 6.8
-  },
-  {
-    "t": 156.36,
-    "f": 3909,
-    "type": "teleport",
-    "desc": "3 view jumps in 1.4s (teleport chain?)",
-    "end": 157.8,
-    "peak": 13.8,
-    "count": 3
-  },
-  {
-    "t": 160.12,
-    "f": 4003,
-    "type": "teleport",
-    "desc": "2 view jumps in 1.0s (teleport chain?)",
-    "end": 161.16,
-    "peak": 9.4,
-    "count": 2
-  },
-  {
-    "t": 178.76,
-    "f": 4469,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 9, match 0.06): teleport?",
-    "peak": 9.4
-  },
-  {
-    "t": 179.0,
-    "f": 4475,
-    "type": "text",
-    "desc": "Text (center): POTION / A P@TI@N / MaNA P&TIGN / A POTION ("
-  },
-  {
-    "t": 180.0,
-    "f": 4500,
-    "type": "text",
-    "desc": "Text (center): MANA PaTIaN / MANA POTIGN / Super MANA"
-  },
-  {
-    "t": 181.0,
-    "f": 4525,
-    "type": "text",
-    "desc": "Text (chat): Super MANA / - DEGEN'S EAR / NECRGMANCER"
-  },
-  {
-    "t": 181.0,
-    "f": 4525,
-    "type": "text",
-    "desc": "Text (center): Xo's EAR / Lever 99 / POTI@N"
-  },
-  {
-    "t": 181.48,
-    "f": 4537,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 12, match 0.13): teleport?",
-    "peak": 12.3
-  },
-  {
-    "t": 182.0,
-    "f": 4550,
-    "type": "text",
-    "desc": "Text (center): NECROMANCER"
-  },
-  {
-    "t": 183.2,
-    "f": 4580,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 6, match 0.16): teleport?",
-    "peak": 6.2
-  },
-  {
-    "t": 188.96,
-    "f": 4724,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 6, match 0.02): teleport?",
-    "peak": 5.7
-  },
-  {
-    "t": 194.84,
-    "f": 4871,
-    "type": "teleport",
-    "desc": "6 view jumps in 4.0s (teleport chain?)",
-    "end": 198.84,
-    "peak": 9.7,
-    "count": 6
-  },
-  {
-    "t": 197.6,
-    "f": 4940,
-    "type": "mana_refill",
-    "desc": "Mana refill +16% (68% -> 84%) in 0.84s (mana/rejuv potion?)",
-    "end": 198.44,
-    "amount": 16.5
-  },
-  {
-    "t": 202.8,
-    "f": 5070,
-    "type": "teleport",
-    "desc": "4 view jumps in 2.1s (teleport chain?)",
-    "end": 204.92,
-    "peak": 8.2,
-    "count": 4
-  },
-  {
-    "t": 217.56,
-    "f": 5439,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 8, match 0.13): teleport?",
+    "t": 21.83,
+    "f": 655,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.7s (peak 8, 2 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 22.53,
     "peak": 7.7
   },
   {
-    "t": 221.92,
-    "f": 5548,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 11, match 0.01): teleport?",
-    "peak": 11.1
+    "t": 26.17,
+    "f": 785,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.8s (peak 8, 3 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 26.9,
+    "peak": 8.4
   },
   {
-    "t": 226.68,
-    "f": 5667,
-    "type": "teleport",
-    "desc": "2 view jumps in 0.4s (teleport chain?)",
-    "end": 227.04,
-    "peak": 9.3,
-    "count": 2
-  },
-  {
-    "t": 232.92,
-    "f": 5823,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 10, match 0.08): teleport?",
-    "peak": 10.4
-  },
-  {
-    "t": 234.68,
-    "f": 5867,
-    "type": "life_drop",
-    "desc": "Life drop -14% (32% -> 18%) in 0.48s",
-    "end": 235.16,
-    "amount": 13.9
-  },
-  {
-    "t": 236.0,
-    "f": 5900,
-    "type": "text",
-    "desc": "Text (chat): sGame"
-  },
-  {
-    "t": 236.48,
-    "f": 5912,
-    "type": "teleport",
-    "desc": "2 view jumps in 0.7s (teleport chain?)",
-    "end": 237.2,
-    "peak": 8.7,
-    "count": 2
-  },
-  {
-    "t": 239.52,
-    "f": 5988,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 14, match 0.05): teleport?",
-    "peak": 13.6
-  },
-  {
-    "t": 242.68,
-    "f": 6067,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 8, match 0.16): teleport?",
-    "peak": 8.0
-  },
-  {
-    "t": 244.28,
-    "f": 6107,
-    "type": "mana_refill",
-    "desc": "Mana refill +21% (57% -> 78%) in 0.56s (mana/rejuv potion?)",
-    "end": 244.84,
-    "amount": 21.0
-  },
-  {
-    "t": 250.24,
-    "f": 6256,
-    "type": "teleport",
-    "desc": "2 view jumps in 0.7s (teleport chain?)",
-    "end": 250.92,
-    "peak": 8.1,
-    "count": 2
-  },
-  {
-    "t": 252.72,
-    "f": 6318,
-    "type": "teleport",
-    "desc": "6 view jumps in 3.2s (teleport chain?)",
-    "end": 255.96,
-    "peak": 16.3,
-    "count": 6
-  },
-  {
-    "t": 253.52,
-    "f": 6338,
-    "type": "mana_refill",
-    "desc": "Mana refill +15% (66% -> 81%) in 0.68s (mana/rejuv potion?)",
-    "end": 254.2,
-    "amount": 15.2
-  },
-  {
-    "t": 257.36,
-    "f": 6434,
-    "type": "life_drop",
-    "desc": "Life drop -12% (21% -> 8%) in 0.04s",
-    "end": 257.4,
-    "amount": 12.1
-  },
-  {
-    "t": 258.0,
-    "f": 6450,
-    "type": "text",
-    "desc": "Text (chat): Stamina"
-  },
-  {
-    "t": 258.12,
-    "f": 6453,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 8, match 0.07): teleport?",
-    "peak": 8.0
-  },
-  {
-    "t": 262.8,
-    "f": 6570,
-    "type": "mana_refill",
-    "desc": "Mana refill +12% (77% -> 89%) in 0.60s (mana/rejuv potion?)",
-    "end": 263.4,
-    "amount": 12.1
-  },
-  {
-    "t": 263.16,
-    "f": 6579,
-    "type": "teleport",
-    "desc": "9 view jumps in 6.6s (teleport chain?)",
-    "end": 269.72,
-    "peak": 9.0,
-    "count": 9
-  },
-  {
-    "t": 271.44,
-    "f": 6786,
-    "type": "life_drop",
-    "desc": "Life drop -10% (12% -> 1%) in 0.04s",
-    "end": 271.48,
-    "amount": 10.4
-  },
-  {
-    "t": 271.48,
-    "f": 6787,
-    "type": "death",
-    "desc": "Death? life orb empty for >= 0.4s"
-  },
-  {
-    "t": 271.48,
-    "f": 6787,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 10, match 0.11): teleport?",
+    "t": 29.43,
+    "f": 883,
+    "type": "motion_burst",
+    "desc": "Large motion for 3.3s (peak 10, 9 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 32.67,
     "peak": 9.9
   },
   {
-    "t": 274.04,
-    "f": 6851,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 8, match 0.11): teleport?",
-    "peak": 7.9
+    "t": 41.03,
+    "f": 1231,
+    "type": "motion_burst",
+    "desc": "Large motion for 2.9s (peak 10, 8 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 43.93,
+    "peak": 10.3
   },
   {
-    "t": 278.72,
-    "f": 6968,
-    "type": "teleport",
-    "desc": "2 view jumps in 0.4s (teleport chain?)",
-    "end": 279.08,
-    "peak": 8.9,
-    "count": 2
+    "t": 47.87,
+    "f": 1436,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.1s (peak 9, 3 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 48.93,
+    "peak": 9.2
   },
   {
-    "t": 282.56,
-    "f": 7064,
-    "type": "death",
-    "desc": "Death? life orb empty for >= 0.4s"
+    "t": 56.37,
+    "f": 1691,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.6s (peak 10, 3 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 57.9,
+    "peak": 9.6
   },
   {
-    "t": 284.92,
-    "f": 7123,
-    "type": "teleport",
-    "desc": "View jump in one frame (motion 40, match 0.04): teleport?",
-    "peak": 40.0
+    "t": 59.33,
+    "f": 1780,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.9s (peak 11, 4 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 61.23,
+    "peak": 11.4
+  },
+  {
+    "t": 60.0,
+    "f": 1800,
+    "type": "text_change",
+    "desc": "New on-screen text: Lire: 7068 / 7795",
+    "source": "generic"
+  },
+  {
+    "t": 62.0,
+    "f": 1860,
+    "type": "text_change",
+    "desc": "New on-screen text: FIRE ENCHANTE:",
+    "source": "generic"
+  },
+  {
+    "t": 62.6,
+    "f": 1878,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.6s (peak 12, 5 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 64.13,
+    "peak": 11.5
+  },
+  {
+    "t": 64.0,
+    "f": 1920,
+    "type": "text_change",
+    "desc": "New on-screen text: Lire: 697,",
+    "source": "generic"
+  },
+  {
+    "t": 65.0,
+    "f": 1950,
+    "type": "text_change",
+    "desc": "New on-screen text: Ping: 78",
+    "source": "generic"
+  },
+  {
+    "t": 66.0,
+    "f": 1980,
+    "type": "text_change",
+    "desc": "New on-screen text: icy CELLAR",
+    "source": "generic"
+  },
+  {
+    "t": 66.3,
+    "f": 1989,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.8s (peak 8, 2 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 67.03,
+    "peak": 8.1
+  },
+  {
+    "t": 68.0,
+    "f": 2040,
+    "type": "text_change",
+    "desc": "New on-screen text: Game: ave? / Bieep Moor",
+    "source": "generic"
+  },
+  {
+    "t": 70.0,
+    "f": 2100,
+    "type": "text_change",
+    "desc": "New on-screen text: ANCIENTS\u2019 Way / JANA: 538 / 85%",
+    "source": "generic"
+  },
+  {
+    "t": 73.0,
+    "f": 2190,
+    "type": "text_change",
+    "desc": "New on-screen text: Ping: 63",
+    "source": "generic"
+  },
+  {
+    "t": 73.63,
+    "f": 2209,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.5s (peak 9, 4 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 75.07,
+    "peak": 8.9
+  },
+  {
+    "t": 77.2,
+    "f": 2316,
+    "type": "motion_burst",
+    "desc": "Large motion for 2.2s (peak 13, 6 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 79.33,
+    "peak": 12.8
+  },
+  {
+    "t": 116.03,
+    "f": 3481,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.8s (peak 9, 3 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 116.77,
+    "peak": 9.0
+  },
+  {
+    "t": 124.0,
+    "f": 3720,
+    "type": "text_change",
+    "desc": "New on-screen text: Ping: 9\u00a2 / Beep Meer",
+    "source": "generic"
+  },
+  {
+    "t": 125.0,
+    "f": 3750,
+    "type": "text_change",
+    "desc": "New on-screen text: 4273 / 6632",
+    "source": "generic"
+  },
+  {
+    "t": 126.0,
+    "f": 3780,
+    "type": "text_change",
+    "desc": "New on-screen text: Ping: 96 / Game: ave2",
+    "source": "generic"
+  },
+  {
+    "t": 127.0,
+    "f": 3810,
+    "type": "text_change",
+    "desc": "New on-screen text: \u2018Lire: 36",
+    "source": "generic"
+  },
+  {
+    "t": 133.0,
+    "f": 3990,
+    "type": "text_change",
+    "desc": "New on-screen text: Fine ENCHANTED / Mana: 498 / 85:",
+    "source": "generic"
+  },
+  {
+    "t": 136.0,
+    "f": 4080,
+    "type": "text_change",
+    "desc": "New on-screen text: THe Ancients\u2019 Way",
+    "source": "generic"
+  },
+  {
+    "t": 137.0,
+    "f": 4110,
+    "type": "text_change",
+    "desc": "New on-screen text: Beep Moor",
+    "source": "generic"
+  },
+  {
+    "t": 139.0,
+    "f": 4170,
+    "type": "text_change",
+    "desc": "New on-screen text: Ping: 78",
+    "source": "generic"
+  },
+  {
+    "t": 157.47,
+    "f": 4724,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.8s (peak 10, 3 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 158.27,
+    "peak": 9.7
+  },
+  {
+    "t": 180.0,
+    "f": 5400,
+    "type": "text_change",
+    "desc": "New on-screen text: Ping: 78 / THe Ancients\u2019 Way / SuPER MANA POTION",
+    "source": "generic"
+  },
+  {
+    "t": 181.0,
+    "f": 5430,
+    "type": "text_change",
+    "desc": "New on-screen text: ley CeLtaR / Necromancer / MANA PeTION / 2633 / 7679",
+    "source": "generic"
+  },
+  {
+    "t": 182.0,
+    "f": 5460,
+    "type": "text_change",
+    "desc": "New on-screen text: Mana Povien / Suren Ma",
+    "source": "generic"
+  },
+  {
+    "t": 184.0,
+    "f": 5520,
+    "type": "text_change",
+    "desc": "New on-screen text: Ping: 62",
+    "source": "generic"
+  },
+  {
+    "t": 185.0,
+    "f": 5550,
+    "type": "text_change",
+    "desc": "New on-screen text: et Mana:",
+    "source": "generic"
+  },
+  {
+    "t": 191.0,
+    "f": 5730,
+    "type": "text_change",
+    "desc": "New on-screen text: Fine ENCHANTED",
+    "source": "generic"
+  },
+  {
+    "t": 194.0,
+    "f": 5820,
+    "type": "text_change",
+    "desc": "New on-screen text: Beep Moor / HE Ancients\u2019 Way",
+    "source": "generic"
+  },
+  {
+    "t": 195.0,
+    "f": 5850,
+    "type": "text_change",
+    "desc": "New on-screen text: Ping: 78",
+    "source": "generic"
+  },
+  {
+    "t": 196.03,
+    "f": 5881,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.7s (peak 13, 4 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 197.73,
+    "peak": 13.0
+  },
+  {
+    "t": 197.5,
+    "f": 5925,
+    "type": "silence",
+    "desc": "Silence for 8s (below -50 dBFS)",
+    "source": "generic",
+    "end": 206.0
+  },
+  {
+    "t": 213.5,
+    "f": 6405,
+    "type": "silence",
+    "desc": "Silence for 10s (below -50 dBFS)",
+    "source": "generic",
+    "end": 223.5
+  },
+  {
+    "t": 221.9,
+    "f": 6657,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.4s (peak 10, 2 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 222.27,
+    "peak": 9.7
+  },
+  {
+    "t": 225.87,
+    "f": 6776,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.2s (peak 9, 3 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 227.03,
+    "peak": 8.6
+  },
+  {
+    "t": 228.1,
+    "f": 6843,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.8s (peak 10, 2 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 228.9,
+    "peak": 9.6
+  },
+  {
+    "t": 232.9,
+    "f": 6987,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.4s (peak 9, 2 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 233.27,
+    "peak": 9.3
+  },
+  {
+    "t": 235.37,
+    "f": 7061,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.1s (peak 10, 3 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 236.47,
+    "peak": 9.9
+  },
+  {
+    "t": 240.0,
+    "f": 7200,
+    "type": "text_change",
+    "desc": "New on-screen text: Ping: 94 / Mana: 624 / 85:",
+    "source": "generic"
+  },
+  {
+    "t": 244.0,
+    "f": 7320,
+    "type": "text_change",
+    "desc": "New on-screen text: Bieep Moor / FIRE ENCHANTED",
+    "source": "generic"
+  },
+  {
+    "t": 244.1,
+    "f": 7323,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.5s (peak 9, 4 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 245.53,
+    "peak": 8.8
+  },
+  {
+    "t": 246.0,
+    "f": 7380,
+    "type": "text_change",
+    "desc": "New on-screen text: Game: rve2",
+    "source": "generic"
+  },
+  {
+    "t": 247.0,
+    "f": 7410,
+    "type": "text_change",
+    "desc": "New on-screen text: Degen Sh",
+    "source": "generic"
+  },
+  {
+    "t": 248.0,
+    "f": 7440,
+    "type": "text_change",
+    "desc": "New on-screen text: Mana: 6 ong",
+    "source": "generic"
+  },
+  {
+    "t": 248.5,
+    "f": 7455,
+    "type": "silence",
+    "desc": "Silence for 23s (below -50 dBFS)",
+    "source": "generic",
+    "end": 271.5
+  },
+  {
+    "t": 250.0,
+    "f": 7500,
+    "type": "text_change",
+    "desc": "New on-screen text: THE ANCIENTS\u2019 Way",
+    "source": "generic"
+  },
+  {
+    "t": 251.0,
+    "f": 7530,
+    "type": "text_change",
+    "desc": "New on-screen text: Ping: 62",
+    "source": "generic"
+  },
+  {
+    "t": 252.73,
+    "f": 7582,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.8s (peak 15, 5 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 253.47,
+    "peak": 14.8
+  },
+  {
+    "t": 253.0,
+    "f": 7590,
+    "type": "text_change",
+    "desc": "New on-screen text: Manas $90 / 952",
+    "source": "generic"
+  },
+  {
+    "t": 255.2,
+    "f": 7656,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.8s (peak 13, 3 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 255.97,
+    "peak": 13.0
+  },
+  {
+    "t": 257.13,
+    "f": 7714,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.8s (peak 12, 4 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 258.87,
+    "peak": 12.3
+  },
+  {
+    "t": 262.17,
+    "f": 7865,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.6s (peak 13, 2 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 262.7,
+    "peak": 13.1
+  },
+  {
+    "t": 266.37,
+    "f": 7991,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.8s (peak 13, 3 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 267.17,
+    "peak": 13.2
+  },
+  {
+    "t": 271.47,
+    "f": 8144,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.4s (peak 9, 2 hot frames; threshold 7.4)",
+    "source": "generic",
+    "end": 271.87,
+    "peak": 8.6
+  },
+  {
+    "t": 272.5,
+    "f": 8175,
+    "type": "silence",
+    "desc": "Silence for 8s (below -50 dBFS)",
+    "source": "generic",
+    "end": 280.5
+  },
+  {
+    "t": 284.9,
+    "f": 8547,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 292.5,
+    "f": 8775,
+    "type": "loud_peak",
+    "desc": "Loud peak -17 dBFS (+12 dB over typical): shout, impact or music hit?",
+    "source": "generic"
   }
 ]
