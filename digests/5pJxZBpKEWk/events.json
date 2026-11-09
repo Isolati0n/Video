@@ -10,28 +10,14 @@
     "t": 0.0,
     "f": 0,
     "type": "text_change",
-    "desc": "New on-screen text: Wed May 28 / & Preview File Edit View Go Tools Window Help / This Lecture / Basic definitions and concepts. / Introduction to the problem of learning / Probability tools. / Foundations of Machine Learning",
+    "desc": "New on-screen text: Wed May 28 / This Lecture / Basic definitions and concepts. / Introduction to the problem of learning / Probability tools.",
     "source": "generic"
   },
   {
     "t": 8.0,
     "f": 480,
     "type": "text_change",
-    "desc": "New on-screen text: Union bound: Pr[A Vv B] < Pr[A] + Pr[B]. / Inversion: if > f(e), then, for any6>0, with / probability at least 1-5, X / Jensen's inequality: if f is convex, f (E[X]) <E[f(X)] . / Expectation: if [Paix",
-    "source": "generic"
-  },
-  {
-    "t": 13.0,
-    "f": 780,
-    "type": "text_change",
-    "desc": "New on-screen text: Foundations of Machine Learning",
-    "source": "generic"
-  },
-  {
-    "t": 14.0,
-    "f": 840,
-    "type": "text_change",
-    "desc": "New on-screen text: Basic Properties",
+    "desc": "New on-screen text: Basic Properties / Union bound: Pr[A Vv B] < Pr[A] + Pr[B]. / Inversion: if > f(e), then, for any6>0, with / probability at least 1-5, X / Jensen's inequality: if f is convex, f (E[X]) <E[f(X)] . / Expectation: if [Paix",
     "source": "generic"
   },
   {
@@ -45,42 +31,49 @@
     "t": 18.0,
     "f": 1080,
     "type": "text_change",
-    "desc": "New on-screen text: Preview File",
-    "source": "generic"
-  },
-  {
-    "t": 19.0,
-    "f": 1140,
-    "type": "text_change",
-    "desc": "New on-screen text: Tools Window Help / Wed May 28 2:02PM",
+    "desc": "New on-screen text: Wed May 28 2:02PM",
     "source": "generic"
   },
   {
     "t": 21.0,
     "f": 1260,
     "type": "text_change",
-    "desc": "New on-screen text: Union bound: Pr[A V B} < Pr[A] + Pr[B]. / Inversion: if > f(e), then, for with / probability at least 1-5, X / Jensen's inequality: if f is convex, f (E[X]) <E[f(X)] . / Expectation: if X>0 , = >",
+    "desc": "New on-screen text: Basic Properties / Union bound: Pr[A V B} < Pr[A] + Pr[B]. / Inversion: if > f(e), then, for with / probability at least 1-5, X / Jensen's inequality: if f is convex, f (E[X]) <E[f(X)] . / Expectation: if X>0 , = >",
     "source": "generic"
   },
   {
-    "t": 60.0,
-    "f": 3600,
+    "t": 24.0,
+    "f": 1440,
     "type": "text_change",
-    "desc": "New on-screen text: Union bound: Pr[A Vv B] < Pr[A] + Pr[B]. / Inversion: if PrL\u00a5 > f(e), then, for any\u00e9>0, with / probability at least 1-5, X / Jensen's inequality: if f is convex, f (E[X]) <E[f(X)] . / Expectation: if X>0 , = >",
+    "desc": "New on-screen text: ofM#: ne",
     "source": "generic"
   },
   {
-    "t": 65.0,
-    "f": 3900,
+    "t": 29.0,
+    "f": 1740,
     "type": "text_change",
-    "desc": "New on-screen text: & Preview File Edit View / Foundations of Machine Learning",
+    "desc": "New on-screen text: Union Vv B] < Pr[A] + Pr[B].",
     "source": "generic"
   },
   {
-    "t": 66.0,
-    "f": 3960,
+    "t": 31.0,
+    "f": 1860,
     "type": "text_change",
-    "desc": "New on-screen text: Basic Properties",
+    "desc": "New on-screen text: Wed May 28 2:02PM",
+    "source": "generic"
+  },
+  {
+    "t": 62.0,
+    "f": 3720,
+    "type": "text_change",
+    "desc": "New on-screen text: Basic Properties / Union bound: Pr[A Vv B] < Pr[A] + Pr[B]. / probability at least 1-5, X / Jensen's inequality: if f is convex, f (E[X]) <E[f(X)] . / Expectation: if X>0 , = >",
+    "source": "generic"
+  },
+  {
+    "t": 63.0,
+    "f": 3780,
+    "type": "text_change",
+    "desc": "New on-screen text: Inversion: if Pr[X > f(e), then, for with",
     "source": "generic"
   },
   {
@@ -98,82 +91,61 @@
     "source": "generic"
   },
   {
-    "t": 71.0,
-    "f": 4260,
-    "type": "text_change",
-    "desc": "New on-screen text: Tools Window Help",
-    "source": "generic"
-  },
-  {
-    "t": 73.0,
-    "f": 4380,
-    "type": "text_change",
-    "desc": "New on-screen text: Union bound: Pr[A Vv B] < Pr[A] + Pr[B]. / Inversion: if > f(e), then, for any\u00e9>0, with / probability at least 1-5, X / Jensen's inequality: if f f (E[X]) <E[f(X)] . / Expectation: if X>0 , = >",
-    "source": "generic"
-  },
-  {
     "t": 75.0,
     "f": 4500,
     "type": "text_change",
-    "desc": "New on-screen text: inequality: convex, f (E[X]) <E[f(X)] .",
+    "desc": "New on-screen text: Basic Properties / Union bound: Pr[A Vv B] < Pr[A] + Pr[B]. / probability at least 1-5, X / inequality: convex, f (E[X]) <E[f(X)] . / Expectation: if X>0 , = >",
+    "source": "generic"
+  },
+  {
+    "t": 76.0,
+    "f": 4560,
+    "type": "text_change",
+    "desc": "New on-screen text: Inversion: if > f(e), then, for with / Jensen's inequality: if f is convex, f (E[X]) <E[f(X)] .",
     "source": "generic"
   },
   {
     "t": 84.12,
     "f": 5047,
     "type": "motion_burst",
-    "desc": "Large motion for 1.4s (peak 8, 13 hot frames; threshold 3.0)",
+    "desc": "Large motion for 1.4s (peak 7, 13 hot frames; threshold 3.0)",
     "source": "generic",
     "end": 85.55,
-    "peak": 7.5
+    "peak": 7.4
   },
   {
-    "t": 121.0,
-    "f": 7260,
+    "t": 85.0,
+    "f": 5100,
     "type": "text_change",
-    "desc": "New on-screen text: & Preview File Edit View Go / Tools Window Help",
+    "desc": "New on-screen text: Chebyshev\u2019s Inequality / @ Theorem: let X be a random variable with Var[X] <oo, then, / Proof: Observe that / The result follows Markov's inequality.",
     "source": "generic"
   },
   {
-    "t": 124.0,
-    "f": 7440,
+    "t": 86.0,
+    "f": 5160,
     "type": "text_change",
-    "desc": "New on-screen text: Foundations of Machine Learning",
+    "desc": "New on-screen text: @ Theorem: let X be a random variable and f a measurable / convex function. Then, / @ Proof: definition of convexity, continuity of convex / functions, and density of finite distributions.",
     "source": "generic"
   },
   {
     "t": 125.0,
     "f": 7500,
     "type": "text_change",
-    "desc": "New on-screen text: Jensen\u2019s Inequality / @ Theorem: let X be a random variable and f a measurable / convex function. Then, / @ Proof: definition of convexity, continuity of convex / functions, and density of finite distributions.",
+    "desc": "New on-screen text: @ Theorem: let X be a random variable and f a measurable / convex function. Then, / @ Proof: definition of convexity, continuity of convex / functions, and density of finite distributions.",
     "source": "generic"
   },
   {
-    "t": 127.0,
-    "f": 7620,
+    "t": 128.0,
+    "f": 7680,
     "type": "text_change",
-    "desc": "New on-screen text: rand Log:",
-    "source": "generic"
-  },
-  {
-    "t": 134.0,
-    "f": 8040,
-    "type": "text_change",
-    "desc": "New on-screen text: Preview File Edit View Go Tools Window Help",
-    "source": "generic"
-  },
-  {
-    "t": 137.0,
-    "f": 8220,
-    "type": "text_change",
-    "desc": "New on-screen text: Foundations of Machine Learning",
+    "desc": "New on-screen text: Jensen\u2019s Inequality / rand Log:",
     "source": "generic"
   },
   {
     "t": 138.0,
     "f": 8280,
     "type": "text_change",
-    "desc": "New on-screen text: Jensen\u2019s Inequality / @ Theorem: let X be a random variable and f a measurable / convex function. Then, / | Proof: definition oF convexity, continuity of convex / functions, and density of finite distributions.",
+    "desc": "New on-screen text: @ Theorem: let X be a random variable and f a measurable / convex function. Then, / | Proof: definition oF convexity, continuity of convex / functions, and density of finite distributions.",
     "source": "generic"
   },
   {
@@ -193,6 +165,13 @@
     "source": "generic"
   },
   {
+    "t": 141.0,
+    "f": 8460,
+    "type": "text_change",
+    "desc": "New on-screen text: Jensen\u2019s Inequality",
+    "source": "generic"
+  },
+  {
     "t": 148.18,
     "f": 8891,
     "type": "motion_burst",
@@ -202,54 +181,47 @@
     "peak": 7.4
   },
   {
+    "t": 149.0,
+    "f": 8940,
+    "type": "text_change",
+    "desc": "New on-screen text: Concentration Inequalities / Some general tools for error analysis and bounds: / \u00a9 Hoeffding's inequality (additive). / \u00a9 Chernoff bounds (multiplicative). / e McDiarmid's inequality (more general). / of Machini",
+    "source": "generic"
+  },
+  {
+    "t": 150.0,
+    "f": 9000,
+    "type": "text_change",
+    "desc": "New on-screen text: Go Tools / Markov's Inequality / @ Theorem: let X be a non-negative random variable / @ Proof:",
+    "source": "generic"
+  },
+  {
+    "t": 151.0,
+    "f": 9060,
+    "type": "text_change",
+    "desc": "New on-screen text: same expectation p and X; \u20ac [a,b], (a<b). Then, for anye>0, / the following inequalities hold: / Machine Learniny",
+    "source": "generic"
+  },
+  {
     "t": 164.02,
     "f": 9841,
     "type": "motion_burst",
-    "desc": "Large motion for 1.6s (peak 119, 8 hot frames; threshold 3.0)",
+    "desc": "Large motion for 1.6s (peak 117, 8 hot frames; threshold 3.0)",
     "source": "generic",
     "end": 165.62,
-    "peak": 118.7
-  },
-  {
-    "t": 180.0,
-    "f": 10800,
-    "type": "text_change",
-    "desc": "New on-screen text: Notice that for > 0,",
-    "source": "generic"
-  },
-  {
-    "t": 181.0,
-    "f": 10860,
-    "type": "text_change",
-    "desc": "New on-screen text: Safari File",
-    "source": "generic"
-  },
-  {
-    "t": 182.0,
-    "f": 10920,
-    "type": "text_change",
-    "desc": "New on-screen text: \u00a9 nara Forms",
-    "source": "generic"
-  },
-  {
-    "t": 184.0,
-    "f": 11040,
-    "type": "text_change",
-    "desc": "New on-screen text: \u00a9 Brand Logo Identifier",
-    "source": "generic"
+    "peak": 117.0
   },
   {
     "t": 186.0,
     "f": 11160,
     "type": "text_change",
-    "desc": "New on-screen text: snd more",
+    "desc": "New on-screen text: Safari File / \u00a9 Brand Logo Identifier / Notice that for any x > 0, / snd more",
     "source": "generic"
   },
   {
     "t": 189.0,
     "f": 11340,
     "type": "text_change",
-    "desc": "New on-screen text: B Schoo!",
+    "desc": "New on-screen text: B Schoo! / \u20183. Swap the order of integration (Fubini\u2019s theorem) / We can interchange the t~ and",
     "source": "generic"
   },
   {
@@ -267,10 +239,38 @@
     "source": "generic"
   },
   {
+    "t": 192.0,
+    "f": 11520,
+    "type": "text_change",
+    "desc": "New on-screen text: View History Bookmarks Develop Window Help.",
+    "source": "generic"
+  },
+  {
+    "t": 194.0,
+    "f": 11640,
+    "type": "text_change",
+    "desc": "New on-screen text: cchatgpt.com",
+    "source": "generic"
+  },
+  {
+    "t": 198.0,
+    "f": 11880,
+    "type": "text_change",
+    "desc": "New on-screen text: for every",
+    "source": "generic"
+  },
+  {
+    "t": 199.0,
+    "f": 11940,
+    "type": "text_change",
+    "desc": "New on-screen text: \u00a9 Brand Logo Identifier 6",
+    "source": "generic"
+  },
+  {
     "t": 240.0,
     "f": 14400,
     "type": "text_change",
-    "desc": "New on-screen text: probabity why / @ New chat / E[X] > that",
+    "desc": "New on-screen text: @ New chat / E[X] > that",
     "source": "generic"
   },
   {
@@ -284,14 +284,14 @@
     "t": 243.0,
     "f": 14580,
     "type": "text_change",
-    "desc": "New on-screen text: ChatGPT 04-mini-high / Q Search chats / @ Library / New project. / \u00a9 hangman / Yesterday / Search Struggles / = f Pr{x > dat / Ask anything / View plans / CChatGPT can make mistakes. Check important nf,",
+    "desc": "New on-screen text: = f Pr{x > dat",
     "source": "generic"
   },
   {
     "t": 244.0,
     "f": 14640,
     "type": "text_change",
-    "desc": "New on-screen text: View History Bookmarks Develop Window Help. / can make mistakos. Check inf,",
+    "desc": "New on-screen text: View History Bookmarks Develop Window Help. / ChatGPT 04-mini-high / Q Search chats / @ Library / New project. / \u00a9 hangman / Yesterday / Search Struggles / Ask anything / View plans / can make mistakos. Check inf,",
     "source": "generic"
   },
   {
@@ -316,15 +316,6 @@
     "source": "generic"
   },
   {
-    "t": 249.68,
-    "f": 14981,
-    "type": "motion_burst",
-    "desc": "Large motion for 0.1s (peak 3, 3 hot frames; threshold 3.0)",
-    "source": "generic",
-    "end": 249.72,
-    "peak": 3.2
-  },
-  {
     "t": 250.0,
     "f": 15000,
     "type": "text_change",
@@ -338,20 +329,13 @@
     "desc": "Large motion for 1.0s (peak 6, 4 hot frames; threshold 3.0)",
     "source": "generic",
     "end": 288.28,
-    "peak": 5.9
+    "peak": 5.8
   },
   {
     "t": 302.0,
     "f": 18120,
     "type": "text_change",
     "desc": "New on-screen text: Markov's Inequality / @ Theorem: let X be a non-negative random variable / with <oo, then, for all \u00a2>0, / @ Proof:",
-    "source": "generic"
-  },
-  {
-    "t": 304.0,
-    "f": 18240,
-    "type": "text_change",
-    "desc": "New on-screen text: Preview File Edit / Tools Window Help",
     "source": "generic"
   },
   {
@@ -367,7 +351,7 @@
     "t": 305.0,
     "f": 18300,
     "type": "text_change",
-    "desc": "New on-screen text: McDiarmid\u2019s Inequality / (McDiarmid, 1989) / @ Theorem: let independent random variables / taking values in Uandf:U\u2122\u2014 Ra function verifying for / f Machine Learning",
+    "desc": "New on-screen text: McDiarmid\u2019s Inequality / (McDiarmid, 1989) / @ Theorem: let independent random variables / taking values in Uandf:U\u2122\u2014 Ra function verifying for",
     "source": "generic"
   },
   {
@@ -394,13 +378,6 @@
     "source": "generic"
   },
   {
-    "t": 314.0,
-    "f": 18840,
-    "type": "text_change",
-    "desc": "New on-screen text: Foundations of Machine Lear",
-    "source": "generic"
-  },
-  {
     "t": 315.0,
     "f": 18900,
     "type": "text_change",
@@ -408,10 +385,24 @@
     "source": "generic"
   },
   {
-    "t": 318.0,
-    "f": 19080,
+    "t": 330.0,
+    "f": 19800,
     "type": "text_change",
-    "desc": "New on-screen text: Tools Window Help",
+    "desc": "New on-screen text: Markov's Inequality / @ Theorem: let X be a non-negative random variable / with <oo, then, for all \u00a2>0, / @ Proof:",
+    "source": "generic"
+  },
+  {
+    "t": 332.0,
+    "f": 19920,
+    "type": "text_change",
+    "desc": "New on-screen text: Go Tools",
+    "source": "generic"
+  },
+  {
+    "t": 333.0,
+    "f": 19980,
+    "type": "text_change",
+    "desc": "New on-screen text: Prix =a]",
     "source": "generic"
   },
   {
@@ -422,24 +413,10 @@
     "source": "generic"
   },
   {
-    "t": 366.0,
-    "f": 21960,
+    "t": 372.0,
+    "f": 22320,
     "type": "text_change",
-    "desc": "New on-screen text: Foundations of Machine Learning",
-    "source": "generic"
-  },
-  {
-    "t": 367.0,
-    "f": 22020,
-    "type": "text_change",
-    "desc": "New on-screen text: Markov's Inequality / @ Theorem: let X be a non-negative random variable / with E[X]<oo, then, for all \u00a2>0, / @ Proof:",
-    "source": "generic"
-  },
-  {
-    "t": 371.0,
-    "f": 22260,
-    "type": "text_change",
-    "desc": "New on-screen text: Tools Window Help",
+    "desc": "New on-screen text: Markov's Inequality / @ Theorem: let X be a non-negative random variable / with then, for all \u00a2>0, / @ Proof:",
     "source": "generic"
   },
   {
@@ -450,24 +427,38 @@
     "source": "generic"
   },
   {
-    "t": 378.0,
-    "f": 22680,
+    "t": 379.0,
+    "f": 22740,
     "type": "text_change",
     "desc": "New on-screen text: ofM#: ne",
     "source": "generic"
   },
   {
-    "t": 379.0,
-    "f": 22740,
+    "t": 385.0,
+    "f": 23100,
     "type": "text_change",
-    "desc": "New on-screen text: Foundations of Machine Lear",
+    "desc": "New on-screen text: Markov's Inequality / @ Theorem: let X be a non-negative random variable / with E[X] <oo, then, for all \u00a2>0 / @ Proof:",
     "source": "generic"
   },
   {
-    "t": 380.0,
-    "f": 22800,
+    "t": 388.0,
+    "f": 23280,
     "type": "text_change",
-    "desc": "New on-screen text: Markov's Inequality / @ Theorem: let X be a non-negative random variable / with E[X] <oo, then, for all \u00a2>0 / @ Proof:",
+    "desc": "New on-screen text: Prix =a]",
+    "source": "generic"
+  },
+  {
+    "t": 398.0,
+    "f": 23880,
+    "type": "text_change",
+    "desc": "New on-screen text: Markov's Inequality / @ Theorem: let X be a non-negative random variable / with E[X] <oo, then, for all \u00a2>0, / @ Proof:",
+    "source": "generic"
+  },
+  {
+    "t": 401.0,
+    "f": 24060,
+    "type": "text_change",
+    "desc": "New on-screen text: Prix =a]",
     "source": "generic"
   },
   {
@@ -480,45 +471,38 @@
     "peak": 5.9
   },
   {
+    "t": 425.0,
+    "f": 25500,
+    "type": "text_change",
+    "desc": "New on-screen text: @ Markov's inequality: if X >0 and then",
+    "source": "generic"
+  },
+  {
     "t": 430.0,
     "f": 25800,
     "type": "text_change",
-    "desc": "New on-screen text: & Preview File Edit / Basic Inequalities / \u2122 Chebyshev\u2019s inequality: for any \u00ab>0,",
+    "desc": "New on-screen text: Basic Inequalities / \u2122 Chebyshev\u2019s inequality: for any \u00ab>0,",
     "source": "generic"
   },
   {
-    "t": 431.0,
-    "f": 25860,
+    "t": 438.0,
+    "f": 26280,
     "type": "text_change",
-    "desc": "New on-screen text: Foundations of Machine Learning",
-    "source": "generic"
-  },
-  {
-    "t": 432.0,
-    "f": 25920,
-    "type": "text_change",
-    "desc": "New on-screen text: Tools Window Help / @ Markov's inequality: if X >0 and then",
+    "desc": "New on-screen text: @ Markov's inequality: if X >0 and then",
     "source": "generic"
   },
   {
     "t": 443.0,
     "f": 26580,
     "type": "text_change",
-    "desc": "New on-screen text: & Preview File Edit / Basic Inequalities / \u00ae Chebyshev's inequality: for any \u00ab>0",
+    "desc": "New on-screen text: Basic Inequalities / \u00ae Chebyshev's inequality: for any \u00ab>0",
     "source": "generic"
   },
   {
     "t": 444.0,
     "f": 26640,
     "type": "text_change",
-    "desc": "New on-screen text: Hoeffding\u2019s Inequality / Theorem: Let Xi,...,Xm be indep. rand. variables with the / same expectation p and X; \u20ac (a<b). Then, for anye>0, / the following inequalities hold: / Foundations of Machine Learning",
-    "source": "generic"
-  },
-  {
-    "t": 445.0,
-    "f": 26700,
-    "type": "text_change",
-    "desc": "New on-screen text: w Go Tools Window Help",
+    "desc": "New on-screen text: Hoeffding\u2019s Inequality / Theorem: Let Xi,...,Xm be indep. rand. variables with the / same expectation p and X; \u20ac (a<b). Then, for anye>0, / the following inequalities hold:",
     "source": "generic"
   },
   {
@@ -531,17 +515,24 @@
     "peak": 7.4
   },
   {
-    "t": 449.0,
-    "f": 26940,
-    "type": "text_change",
-    "desc": "New on-screen text: \u00ae Markov's inequality: if X >0 and e>0, then",
-    "source": "generic"
-  },
-  {
     "t": 450.0,
     "f": 27000,
     "type": "text_change",
     "desc": "New on-screen text: Appendix",
+    "source": "generic"
+  },
+  {
+    "t": 451.0,
+    "f": 27060,
+    "type": "text_change",
+    "desc": "New on-screen text: Weak Law of Large Numbers / Theorem: let (Xn)nen be a sequence of independent / random variables with the same mean / and variance / and let X;, then, for any / Proof: Since the variables are independent, / Thus, by Cheb",
+    "source": "generic"
+  },
+  {
+    "t": 452.0,
+    "f": 27120,
+    "type": "text_change",
+    "desc": "New on-screen text: Concentration Inequalities / \u00a9 Chernoff bounds (multiplicative). / e McDiarmid\u2019s inequality (more general).",
     "source": "generic"
   },
   {
@@ -564,28 +555,14 @@
     "t": 485.0,
     "f": 29100,
     "type": "text_change",
-    "desc": "New on-screen text: Hoeffding\u2019s Inequality / @ Theorem: Let X1,...,Xm be indep. rand. variables with the / same expectation p and X; \u20ac (a<b). Then, for anye>0, / Pr < exp ( / Foundations of Machine Learning",
+    "desc": "New on-screen text: Pr < exp (",
     "source": "generic"
   },
   {
     "t": 487.0,
     "f": 29220,
     "type": "text_change",
-    "desc": "New on-screen text: the following inequalities hold:",
-    "source": "generic"
-  },
-  {
-    "t": 488.0,
-    "f": 29280,
-    "type": "text_change",
-    "desc": "New on-screen text: Preview File Edit",
-    "source": "generic"
-  },
-  {
-    "t": 489.0,
-    "f": 29340,
-    "type": "text_change",
-    "desc": "New on-screen text: Tools Window Help",
+    "desc": "New on-screen text: Hoeffding\u2019s Inequality / @ Theorem: Let X1,...,Xm be indep. rand. variables with the / same expectation p and X; \u20ac (a<b). Then, for anye>0, / the following inequalities hold:",
     "source": "generic"
   },
   {
@@ -610,10 +587,31 @@
     "source": "generic"
   },
   {
+    "t": 500.0,
+    "f": 30000,
+    "type": "text_change",
+    "desc": "New on-screen text: Hoeffding\u2019s Inequality / @ Theorem: Let X1,...,Xm be indep. rand. variables with the / same expectation p and X; \u20ac (a<b). Then, for anye>0, / the following inequalities hold:",
+    "source": "generic"
+  },
+  {
+    "t": 507.0,
+    "f": 30420,
+    "type": "text_change",
+    "desc": "New on-screen text: Go Tools",
+    "source": "generic"
+  },
+  {
+    "t": 543.0,
+    "f": 32580,
+    "type": "text_change",
+    "desc": "New on-screen text: Hoeffding\u2019s Inequality / @ Theorem: Let X1,...,Xm be indep. rand. variables with the / same expectation p and X; \u20ac (a<b). Then, for anye>0, / the following inequalities hold:",
+    "source": "generic"
+  },
+  {
     "t": 544.0,
     "f": 32640,
     "type": "text_change",
-    "desc": "New on-screen text: Window Help",
+    "desc": "New on-screen text: Go Tools",
     "source": "generic"
   },
   {
@@ -624,24 +622,10 @@
     "source": "generic"
   },
   {
-    "t": 550.0,
-    "f": 33000,
+    "t": 556.0,
+    "f": 33360,
     "type": "text_change",
-    "desc": "New on-screen text: Tools Window / Hoeffding\u2019s Inequality / Xm be indep. rand. variables with the / same expectation X; \u20ac (a, b], (a<b). Then, for anye>0 / Foundations of Machine",
-    "source": "generic"
-  },
-  {
-    "t": 552.0,
-    "f": 33120,
-    "type": "text_change",
-    "desc": "New on-screen text: the following inequalities hold",
-    "source": "generic"
-  },
-  {
-    "t": 554.0,
-    "f": 33240,
-    "type": "text_change",
-    "desc": "New on-screen text: Go Tools",
+    "desc": "New on-screen text: Hoeffding\u2019s Inequality / @ Theorem: Let X1,...,Xm be indep. rand. variables with the / same expectation p and X; \u20ac (a<b). Then, for anye>0, / the following inequalities hold:",
     "source": "generic"
   },
   {
@@ -659,73 +643,59 @@
     "source": "generic"
   },
   {
-    "t": 562.0,
-    "f": 33720,
+    "t": 576.0,
+    "f": 34560,
     "type": "text_change",
-    "desc": "New on-screen text: & Preview File Edit View Go",
+    "desc": "New on-screen text: McDiarmid\u2019s Inequality / (McDiarmid, 1989) / @ Theorem: let be,independent random variables / taking values in Vand Ra function verifying for / Then, for all e>0,",
     "source": "generic"
   },
   {
-    "t": 600.0,
-    "f": 36000,
+    "t": 592.0,
+    "f": 35520,
+    "type": "text_change",
+    "desc": "New on-screen text: McDiarmid\u2019s Inequality / (McDiarmid, 1989) / @ Theorem: let be independent random variables / taking values in Vand f Gy \u2014 Ra function verifying for / Then, for all e>0,",
+    "source": "generic"
+  },
+  {
+    "t": 605.0,
+    "f": 36300,
     "type": "text_change",
     "desc": "New on-screen text: McDiarmid\u2019s Inequality / (McDiarmid, 1989) / @ Theorem: let be independent random variables / taking values in Vand f:U\u2122\u2014 Ra function verifying for / Then, for all",
     "source": "generic"
   },
   {
-    "t": 602.0,
-    "f": 36120,
+    "t": 618.0,
+    "f": 37080,
     "type": "text_change",
-    "desc": "New on-screen text: Foundations of Machine Learning",
+    "desc": "New on-screen text: McDiarmid\u2019s Inequality / (McDiarmid, 1989) / @ Theorem: let X1,...,X,, be independent random variables / taking values in Vand f :U\u2122 \u2014 Ra function verifying for / Then, for all e>0,",
     "source": "generic"
   },
   {
-    "t": 606.0,
-    "f": 36360,
+    "t": 631.0,
+    "f": 37860,
     "type": "text_change",
-    "desc": "New on-screen text: & Preview File Edit",
+    "desc": "New on-screen text: McDiarmid\u2019s Inequality / (McDiarmid, 1989) / @ Theorem: let X1,...,X,, be independent random variables / taking values in Vand f Ra function verifying for / Then, for all e>0,",
     "source": "generic"
   },
   {
-    "t": 613.0,
-    "f": 36780,
+    "t": 644.0,
+    "f": 38640,
+    "type": "text_change",
+    "desc": "New on-screen text: McDiarmid\u2019s Inequality / (McDiarmid, 1989) / @ Theorem: let X1,...,X,, be independent random variables / taking values in Vand Ra function verifying for / Then, for all e>0,",
+    "source": "generic"
+  },
+  {
+    "t": 657.0,
+    "f": 39420,
     "type": "text_change",
     "desc": "New on-screen text: McDiarmid\u2019s Inequality / (McDiarmid, 1989) / Theorem: let be independent random variables / taking values in Vand f Ra function verifying for / Then, for all e>0,",
-    "source": "generic"
-  },
-  {
-    "t": 615.0,
-    "f": 36900,
-    "type": "text_change",
-    "desc": "New on-screen text: Foundations of Machine Learning",
-    "source": "generic"
-  },
-  {
-    "t": 616.0,
-    "f": 36960,
-    "type": "text_change",
-    "desc": "New on-screen text: Go Tools Window",
-    "source": "generic"
-  },
-  {
-    "t": 623.0,
-    "f": 37380,
-    "type": "text_change",
-    "desc": "New on-screen text: Tools Window Help",
-    "source": "generic"
-  },
-  {
-    "t": 626.0,
-    "f": 37560,
-    "type": "text_change",
-    "desc": "New on-screen text: McDiarmid\u2019s Inequality / (McDiarmid, 1989) / Theorem: let be independent random variables / taking values in Vand Ra function verifying for / Then, for all e>0,",
     "source": "generic"
   },
   {
     "t": 661.0,
     "f": 39660,
     "type": "text_change",
-    "desc": "New on-screen text: Hoeffding\u2019s Inequality / same expectation X; \u20ac[a, b], (a<b). Then, for anye>0, / the following inequalities hold:",
+    "desc": "New on-screen text: Hoeffding\u2019s Inequality / \u2122 Theorem: Let X1,...,Xm be indep. rand. variables with the / same expectation X; \u20ac[a, b], (a<b). Then, for anye>0, / the following inequalities hold:",
     "source": "generic"
   },
   {
@@ -735,111 +705,77 @@
     "desc": "Large motion for 0.8s (peak 6, 2 hot frames; threshold 3.0)",
     "source": "generic",
     "end": 663.72,
-    "peak": 5.9
+    "peak": 5.8
   },
   {
-    "t": 664.0,
-    "f": 39840,
+    "t": 663.5,
+    "f": 39810,
+    "type": "static",
+    "desc": "Picture static for 20s (slide, paused video, idle screen)",
+    "source": "generic",
+    "end": 683.98
+  },
+  {
+    "t": 684.0,
+    "f": 41040,
     "type": "text_change",
-    "desc": "New on-screen text: Go Tools Window Help",
+    "desc": "New on-screen text: Hoeffding\u2019s Inequality / @ Theorem: Let X1,...,Xm be indep. rand. variables with the / same expectation p and X; \u20ac [a,b], (a<b). Then, for anye>0, / the following inequalities hold:",
     "source": "generic"
   },
   {
-    "t": 665.0,
-    "f": 39900,
+    "t": 686.0,
+    "f": 41160,
     "type": "text_change",
-    "desc": "New on-screen text: @ Theorem: Let be indep. rand. variables with the",
+    "desc": "New on-screen text: Pr < exp (",
     "source": "generic"
   },
   {
-    "t": 667.0,
-    "f": 40020,
+    "t": 687.0,
+    "f": 41220,
     "type": "text_change",
-    "desc": "New on-screen text: Foundations of Machine Learning",
+    "desc": "New on-screen text: McDiarmid\u2019s Inequality / (McDiarmid, 1989) / @ Theorem: let be independent random variables / taking values in Uand f :U\u2122 \u2014 Ra function verifying for / Then, for all \u00ab>0,",
     "source": "generic"
   },
   {
-    "t": 674.0,
-    "f": 40440,
+    "t": 701.0,
+    "f": 42060,
     "type": "text_change",
-    "desc": "New on-screen text: Go Tools / Hoeffding\u2019s Inequality / same expectation p and X; \u20ac (a<b). Then, for anye>0, / the following inequalities hold:",
+    "desc": "New on-screen text: McDiarmid\u2019s Inequality / (McDiarmid, 1989) / @ Theorem: let X1,...,X,, be independent random variables / taking values in Vand function verifying for / Then, for all e>0,",
     "source": "generic"
   },
   {
-    "t": 677.0,
-    "f": 40620,
+    "t": 717.0,
+    "f": 43020,
     "type": "text_change",
-    "desc": "New on-screen text: Window Help",
+    "desc": "New on-screen text: McDiarmid\u2019s Inequality / (McDiarmid, 1989) / @ Theorem: let X1,...,X,, be independent random variables / taking values in Vand f Ra function verifying for / Then, for all e>0,",
     "source": "generic"
   },
   {
-    "t": 678.0,
-    "f": 40680,
+    "t": 718.0,
+    "f": 43080,
     "type": "text_change",
-    "desc": "New on-screen text: Tools Window / @ Theorem: Let X1,...,Xm be indep. rand. variables with the",
-    "source": "generic"
-  },
-  {
-    "t": 680.0,
-    "f": 40800,
-    "type": "text_change",
-    "desc": "New on-screen text: Foundations of Machine Learning",
-    "source": "generic"
-  },
-  {
-    "t": 726.0,
-    "f": 43560,
-    "type": "text_change",
-    "desc": "New on-screen text: McDiarmid\u2019s Inequality / (McDiarmid, 1989) / @ Theorem: let X1,...,X,, be independent random variables / taking values in Uand f Ra function verifying for / Then, for all",
+    "desc": "New on-screen text: Go Tools / Hoeffding\u2019s Inequality / same expectation and X; \u20ac[a, b], (a<b). Then, for anye>0, / the following inequalities hold:",
     "source": "generic"
   },
   {
     "t": 731.0,
     "f": 43860,
     "type": "text_change",
-    "desc": "New on-screen text: Preview File Edit View Go",
-    "source": "generic"
-  },
-  {
-    "t": 732.0,
-    "f": 43920,
-    "type": "text_change",
-    "desc": "New on-screen text: Foundations of Machine Learning",
-    "source": "generic"
-  },
-  {
-    "t": 733.0,
-    "f": 43980,
-    "type": "text_change",
-    "desc": "New on-screen text: Tools Window Help",
-    "source": "generic"
-  },
-  {
-    "t": 739.0,
-    "f": 44340,
-    "type": "text_change",
-    "desc": "New on-screen text: McDiarmid\u2019s Inequality / (McDiarmid, 1989) / Theorem: let be independent random variables / taking values in Vand Ra function verifying for / Then, for all e>0,",
+    "desc": "New on-screen text: McDiarmid\u2019s Inequality / (McDiarmid, 1989) / @ Theorem: let be independent random variables / taking values in Vand \u2014 Ra function verifying for / Then, for all",
     "source": "generic"
   },
   {
     "t": 745.0,
     "f": 44700,
     "type": "text_change",
-    "desc": "New on-screen text: Foundations of Machine Learning",
+    "desc": "New on-screen text: McDiarmid\u2019s Inequality / (McDiarmid, 1989) / @ Theorem: let X1,...,X,, be independent random variables / taking values in Vand Ra function verifying for / Then, for all",
     "source": "generic"
   },
   {
-    "t": 746.0,
-    "f": 44760,
+    "t": 758.0,
+    "f": 45480,
     "type": "text_change",
-    "desc": "New on-screen text: & Preview File Edit View Go Tools Window Help",
-    "source": "generic"
-  },
-  {
-    "t": 752.0,
-    "f": 45120,
-    "type": "text_change",
-    "desc": "New on-screen text: McDiarmid\u2019s Inequality / (McDiarmid, 1989) / @ Theorem: let X1,...,X,, be independent random variables / taking values in Vand Ra function verifying for / Then, for all e>0,",
+    "desc": "New on-screen text: McDiarmid\u2019s Inequality / (McDiarmid, 1989) / @ Theorem: let X1,...,X,, be independent random variables / taking values in Vand \u2014 Ra function verifying for / Then, for all e>0,",
     "source": "generic"
   },
   {
@@ -849,20 +785,41 @@
     "desc": "Large motion for 1.7s (peak 5, 3 hot frames; threshold 3.0)",
     "source": "generic",
     "end": 763.47,
-    "peak": 5.4
+    "peak": 5.3
   },
   {
-    "t": 782.0,
-    "f": 46920,
+    "t": 762.0,
+    "f": 45720,
     "type": "text_change",
-    "desc": "New on-screen text: w Go Tools",
+    "desc": "New on-screen text: Appendix",
     "source": "generic"
   },
   {
-    "t": 784.0,
-    "f": 47040,
+    "t": 763.0,
+    "f": 45780,
     "type": "text_change",
-    "desc": "New on-screen text: Foundations of Machine Learning",
+    "desc": "New on-screen text: Markov's Inequality / @ Theorem: let X be a non-negative random variable / with E[X]<oo, then, for all / @ Proof:",
+    "source": "generic"
+  },
+  {
+    "t": 764.0,
+    "f": 45840,
+    "type": "text_change",
+    "desc": "New on-screen text: Chebyshev\u2019s Inequality / @ Theorem: let X be a random variable with Var[X] <oo, then, / for allt>0,",
+    "source": "generic"
+  },
+  {
+    "t": 770.0,
+    "f": 46200,
+    "type": "text_change",
+    "desc": "New on-screen text: ofM#: ne",
+    "source": "generic"
+  },
+  {
+    "t": 771.0,
+    "f": 46260,
+    "type": "text_change",
+    "desc": "New on-screen text: ~ 2 tox] = \u2014 2 tok",
     "source": "generic"
   },
   {
@@ -883,42 +840,49 @@
     "t": 792.0,
     "f": 47520,
     "type": "text_change",
-    "desc": "New on-screen text: & Preview File Edit / Wed May 28 / Xi, then, for any \u00ab>0",
-    "source": "generic"
-  },
-  {
-    "t": 793.0,
-    "f": 47580,
-    "type": "text_change",
-    "desc": "New on-screen text: Proof: Since the independent,",
-    "source": "generic"
-  },
-  {
-    "t": 797.0,
-    "f": 47820,
-    "type": "text_change",
-    "desc": "New on-screen text: Foundations of Machine Learning",
+    "desc": "New on-screen text: Wed May 28 / Xi, then, for any \u00ab>0",
     "source": "generic"
   },
   {
     "t": 798.0,
     "f": 47880,
     "type": "text_change",
-    "desc": "New on-screen text: Concentration Inequalities / \u00a9 Hoeffding's inequality (additive). / e Chernoff bounds (multiplicative). / e inequality (more general).",
+    "desc": "New on-screen text: Concentration Inequalities / Some general tools for error analysis and bounds: / \u00a9 Hoeffding's inequality (additive). / e Chernoff bounds (multiplicative). / e inequality (more general).",
+    "source": "generic"
+  },
+  {
+    "t": 800.0,
+    "f": 48000,
+    "type": "text_change",
+    "desc": "New on-screen text: Logo Ide / e McDiarmid\u2019s inequality (more general).",
+    "source": "generic"
+  },
+  {
+    "t": 802.0,
+    "f": 48120,
+    "type": "text_change",
+    "desc": "New on-screen text: een a ee",
+    "source": "generic"
+  },
+  {
+    "t": 804.0,
+    "f": 48240,
+    "type": "text_change",
+    "desc": "New on-screen text: Corollary: for any any distribution D and any / hypothesis h: X + {0, 1}, the following inequalities hold / Proof: follows directly Hoeffding's theorem. / Combining these one-sided inequalities yields",
+    "source": "generic"
+  },
+  {
+    "t": 812.0,
+    "f": 48720,
+    "type": "text_change",
+    "desc": "New on-screen text: Hoeffding\u2019s Inequality",
     "source": "generic"
   },
   {
     "t": 840.0,
     "f": 50400,
     "type": "text_change",
-    "desc": "New on-screen text: convex function. Then, / @ Proof: definition of convexity, continuity of convex",
-    "source": "generic"
-  },
-  {
-    "t": 841.0,
-    "f": 50460,
-    "type": "text_change",
-    "desc": "New on-screen text: View Go Tools Window Help",
+    "desc": "New on-screen text: Jensen\u2019s Inequality / Theorem: let_X be a random Variable and f a measurable / convex function. Then, / @ Proof: definition of convexity, continuity of convex / functions, and density of finite distributions.",
     "source": "generic"
   },
   {
@@ -934,21 +898,21 @@
     "t": 843.0,
     "f": 50580,
     "type": "text_change",
-    "desc": "New on-screen text: Edit View Go / hypothesis h: X \u2014 {0, 1}, the following inequalities hold:",
+    "desc": "New on-screen text: Proof: proof based on Chernoff's bounding technique.",
     "source": "generic"
   },
   {
     "t": 844.0,
     "f": 50640,
     "type": "text_change",
-    "desc": "New on-screen text: Chebyshev\u2019s Inequality / for all t>0,",
+    "desc": "New on-screen text: Chebyshev\u2019s Inequality / for all t>0, / The result follows Markov's inequality.",
     "source": "generic"
   },
   {
     "t": 845.0,
     "f": 50700,
     "type": "text_change",
-    "desc": "New on-screen text: @ Theorem: Let Xj,",
+    "desc": "New on-screen text: Hoeffding\u2019s Inequality / @ Theorem: Let Xj, / same expectation and X; \u20ac[a, b], (a<b). Then, for anye>0, / the following inequalities hold:",
     "source": "generic"
   },
   {
@@ -969,7 +933,7 @@
     "t": 848.0,
     "f": 50880,
     "type": "text_change",
-    "desc": "New on-screen text: Jensen's inequality: if f is convex, | / Expectation: B[X] = [pax Saat.",
+    "desc": "New on-screen text: Expectation: B[X] = [pax Saat.",
     "source": "generic"
   },
   {
@@ -980,5 +944,12 @@
     "source": "generic",
     "end": 849.0,
     "peak": 4.8
+  },
+  {
+    "t": 849.0,
+    "f": 50940,
+    "type": "text_change",
+    "desc": "New on-screen text: @ inequality: if X >0 and e>0, then",
+    "source": "generic"
   }
 ]

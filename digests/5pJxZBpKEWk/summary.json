@@ -6,32 +6,44 @@
   "native_fps": 60.0,
   "duration_s": 869.0,
   "frames": 52143,
-  "events": 136,
+  "events": 132,
   "event_counts": {
     "loud_peak": 1,
-    "text_change": 120,
-    "motion_burst": 15
+    "text_change": 116,
+    "motion_burst": 14,
+    "static": 1
   },
   "events_by_source": {
-    "generic": 136
+    "generic": 132
   },
-  "keyframes": 104,
-  "keyframe_candidates": 291,
-  "dense_events": 16,
-  "sheets": 19,
-  "max_sheet_bytes": 273252,
-  "sheet_bytes_total": 4527998,
-  "git_bytes": 859125,
+  "keyframes": 85,
+  "keyframe_candidates": 632,
+  "dense_events": 15,
+  "text_keyframes": 56,
+  "slide_like": true,
+  "ocr_furniture_lines": 3,
+  "ocr_low_conf_lines": 245,
+  "flagged_keyframes": 31,
+  "hash_mask": [
+    0.0,
+    0.5556,
+    0.3125,
+    0.4444
+  ],
+  "sheets": 17,
+  "max_sheet_bytes": 276133,
+  "sheet_bytes_total": 3926493,
+  "git_bytes": 726148,
   "transcript_lines": 59,
   "transcript_source": "YouTube auto-generated captions (en-orig)",
-  "ocr_entries": 527,
+  "ocr_entries": 363,
   "stats": {
-    "motion_median": 0.03,
+    "motion_median": 0.0,
     "motion_threshold": 3.0,
-    "static_seconds": 0.0,
-    "ocr_runs_with_text": 870,
-    "ocr_new_text_entries": 527,
-    "ocr_lines_unique": 395,
+    "static_seconds": 20.5,
+    "ocr_runs_with_text": 615,
+    "ocr_new_text_entries": 363,
+    "ocr_lines_unique": 346,
     "frames": 52143,
     "cuts": 0,
     "black_frames": 0,
@@ -40,5 +52,5 @@
     "silence_seconds": 0.0,
     "loud_peaks": 1
   },
-  "runtime_s": 484
+  "runtime_s": 270
 }
