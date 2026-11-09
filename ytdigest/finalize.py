@@ -14,6 +14,7 @@ import argparse
 import json
 import os
 import shutil
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -45,7 +46,7 @@ def upload_sheets(vid: str, files: list[Path], workers: int = 6) -> None:
     rels = [gh.ensure_release(sheet_tag(vid, i), f"Contact sheets for {vid}" + (f" ({i + 1})" if i else ""),
                               f"Contact sheets of `{vid}`. Listed with time ranges in digests/{vid}/index.md.")
             for i in range(n_rel)]
-    local = {}
+    local = threading.local()
 
     def one(job):
         idx, path = job
