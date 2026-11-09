@@ -2,22 +2,8 @@
   {
     "t": 0.0,
     "f": 0,
-    "type": "death",
-    "desc": "Death? life orb empty for >= 0.4s"
-  },
-  {
-    "t": 0.0,
-    "f": 0,
     "type": "text",
     "desc": "Text (chat): INVITE / Leave"
-  },
-  {
-    "t": 5.28,
-    "f": 132,
-    "type": "mana_refill",
-    "desc": "Mana refill +100% (0% -> 100%) in 0.04s (mana/rejuv potion?)",
-    "end": 5.32,
-    "amount": 100.0
   },
   {
     "t": 6.0,
@@ -26,196 +12,159 @@
     "desc": "Text (chat): \u2018 . INVITE / Leave"
   },
   {
-    "t": 14.32,
-    "f": 358,
-    "type": "motion_burst",
-    "desc": "Motion burst 2.2s, peak 15, 4 hot frames (jumpy, teleport-like)",
-    "end": 16.48,
-    "peak": 14.9
+    "t": 9.92,
+    "f": 248,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 7, match 0.16): teleport?",
+    "peak": 6.5
   },
   {
-    "t": 15.96,
-    "f": 399,
-    "type": "life_refill",
-    "desc": "Life refill +100% (0% -> 100%) in 0.04s (rejuvenation potion?)",
-    "end": 16.0,
-    "amount": 100.0
-  },
-  {
-    "t": 16.44,
-    "f": 411,
-    "type": "life_drop",
-    "desc": "Life drop -100% (100% -> 0%) in 0.08s",
-    "end": 16.52,
-    "amount": 100.0
-  },
-  {
-    "t": 16.48,
-    "f": 412,
-    "type": "death",
-    "desc": "Death? life orb empty for >= 0.4s"
+    "t": 12.52,
+    "f": 313,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 11, match 0.05): teleport?",
+    "peak": 11.1
   },
   {
     "t": 18.36,
     "f": 459,
-    "type": "motion_burst",
-    "desc": "Motion burst 0.8s, peak 13, 3 hot frames (jumpy, teleport-like)",
-    "end": 19.08,
-    "peak": 13.0
+    "type": "teleport",
+    "desc": "2 view jumps in 0.4s (teleport chain?)",
+    "end": 18.72,
+    "peak": 11.9,
+    "count": 2
   },
   {
     "t": 21.84,
     "f": 546,
-    "type": "motion_burst",
-    "desc": "Motion burst 10.9s, peak 11, 22 hot frames (jumpy, teleport-like)",
-    "end": 32.68,
-    "peak": 11.4
+    "type": "teleport",
+    "desc": "2 view jumps in 1.1s (teleport chain?)",
+    "end": 22.92,
+    "peak": 8.7,
+    "count": 2
   },
   {
-    "t": 25.48,
-    "f": 637,
-    "type": "life_refill",
-    "desc": "Life refill +100% (0% -> 100%) in 0.04s (rejuvenation potion?)",
-    "end": 25.52,
-    "amount": 100.0
+    "t": 27.96,
+    "f": 699,
+    "type": "teleport",
+    "desc": "7 view jumps in 4.0s (teleport chain?)",
+    "end": 31.92,
+    "peak": 11.6,
+    "count": 7
   },
   {
-    "t": 26.16,
-    "f": 654,
-    "type": "life_drop",
-    "desc": "Life drop -100% (100% -> 0%) in 0.04s",
-    "end": 26.2,
-    "amount": 100.0
+    "t": 33.72,
+    "f": 843,
+    "type": "teleport",
+    "desc": "2 view jumps in 0.4s (teleport chain?)",
+    "end": 34.12,
+    "peak": 5.5,
+    "count": 2
   },
   {
-    "t": 26.2,
-    "f": 655,
-    "type": "death",
-    "desc": "Death? life orb empty for >= 0.4s"
+    "t": 38.52,
+    "f": 963,
+    "type": "teleport",
+    "desc": "2 view jumps in 0.4s (teleport chain?)",
+    "end": 38.88,
+    "peak": 7.7,
+    "count": 2
   },
   {
-    "t": 31.96,
-    "f": 799,
-    "type": "mana_refill",
-    "desc": "Mana refill +100% (0% -> 100%) in 0.04s (mana/rejuv potion?)",
-    "end": 32.0,
-    "amount": 100.0
+    "t": 42.84,
+    "f": 1071,
+    "type": "teleport",
+    "desc": "2 view jumps in 0.4s (teleport chain?)",
+    "end": 43.2,
+    "peak": 11.1,
+    "count": 2
   },
   {
-    "t": 34.8,
-    "f": 870,
-    "type": "motion_burst",
-    "desc": "Motion burst 3.0s, peak 9, 4 hot frames (jumpy, teleport-like)",
-    "end": 37.8,
-    "peak": 9.1
+    "t": 45.0,
+    "f": 1125,
+    "type": "teleport",
+    "desc": "2 view jumps in 1.1s (teleport chain?)",
+    "end": 46.08,
+    "peak": 7.9,
+    "count": 2
   },
   {
-    "t": 36.32,
-    "f": 908,
-    "type": "life_refill",
-    "desc": "Life refill +100% (0% -> 100%) in 0.04s (rejuvenation potion?)",
-    "end": 36.36,
-    "amount": 100.0
+    "t": 47.88,
+    "f": 1197,
+    "type": "teleport",
+    "desc": "2 view jumps in 0.7s (teleport chain?)",
+    "end": 48.56,
+    "peak": 10.2,
+    "count": 2
   },
   {
-    "t": 38.12,
-    "f": 953,
-    "type": "life_drop",
-    "desc": "Life drop -100% (100% -> 0%) in 0.04s",
-    "end": 38.16,
-    "amount": 100.0
+    "t": 51.12,
+    "f": 1278,
+    "type": "teleport",
+    "desc": "6 view jumps in 5.2s (teleport chain?)",
+    "end": 56.36,
+    "peak": 10.0,
+    "count": 6
   },
   {
-    "t": 38.16,
-    "f": 954,
-    "type": "death",
-    "desc": "Death? life orb empty for >= 0.4s"
-  },
-  {
-    "t": 41.04,
-    "f": 1026,
-    "type": "motion_burst",
-    "desc": "Motion burst 11.9s, peak 11, 20 hot frames (jumpy, teleport-like)",
-    "end": 52.92,
-    "peak": 11.2
-  },
-  {
-    "t": 45.92,
-    "f": 1148,
-    "type": "life_refill",
-    "desc": "Life refill +100% (0% -> 100%) in 0.04s (rejuvenation potion?)",
-    "end": 45.96,
-    "amount": 100.0
-  },
-  {
-    "t": 46.04,
-    "f": 1151,
-    "type": "life_drop",
-    "desc": "Life drop -100% (100% -> 0%) in 0.44s",
-    "end": 46.48,
-    "amount": 100.0
-  },
-  {
-    "t": 56.36,
-    "f": 1409,
-    "type": "motion_burst",
-    "desc": "Motion burst 7.8s, peak 13, 13 hot frames (jumpy, teleport-like)",
-    "end": 64.12,
-    "peak": 13.1
-  },
-  {
-    "t": 59.96,
-    "f": 1499,
-    "type": "mana_refill",
-    "desc": "Mana refill +100% (0% -> 100%) in 0.04s (mana/rejuv potion?)",
-    "end": 60.0,
-    "amount": 100.0
+    "t": 59.32,
+    "f": 1483,
+    "type": "teleport",
+    "desc": "2 view jumps in 0.8s (teleport chain?)",
+    "end": 60.12,
+    "peak": 13.2,
+    "count": 2
   },
   {
     "t": 66.32,
     "f": 1658,
-    "type": "motion_burst",
-    "desc": "Motion burst 4.4s, peak 11, 8 hot frames (jumpy, teleport-like)",
-    "end": 70.68,
-    "peak": 11.4
+    "type": "teleport",
+    "desc": "4 view jumps in 2.2s (teleport chain?)",
+    "end": 68.48,
+    "peak": 11.5,
+    "count": 4
   },
   {
-    "t": 67.68,
-    "f": 1692,
-    "type": "life_refill",
-    "desc": "Life refill +100% (0% -> 100%) in 0.04s (rejuvenation potion?)",
-    "end": 67.72,
-    "amount": 100.0
+    "t": 70.32,
+    "f": 1758,
+    "type": "teleport",
+    "desc": "3 view jumps in 1.8s (teleport chain?)",
+    "end": 72.12,
+    "peak": 8.3,
+    "count": 3
   },
   {
-    "t": 71.96,
-    "f": 1799,
+    "t": 72.76,
+    "f": 1819,
     "type": "life_drop",
-    "desc": "Life drop -100% (100% -> 0%) in 0.04s",
-    "end": 72.0,
-    "amount": 100.0
+    "desc": "Life drop -13% (99% -> 86%) in 0.56s",
+    "end": 73.32,
+    "amount": 12.7
   },
   {
-    "t": 72.0,
-    "f": 1800,
-    "type": "death",
-    "desc": "Death? life orb empty for >= 0.4s"
+    "t": 73.64,
+    "f": 1841,
+    "type": "teleport",
+    "desc": "2 view jumps in 1.1s (teleport chain?)",
+    "end": 74.72,
+    "peak": 10.2,
+    "count": 2
   },
   {
-    "t": 72.48,
-    "f": 1812,
-    "type": "motion_burst",
-    "desc": "Motion burst 2.6s, peak 10, 5 hot frames (jumpy, teleport-like)",
-    "end": 75.08,
-    "peak": 10.2
+    "t": 76.52,
+    "f": 1913,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 7, match 0.06): teleport?",
+    "peak": 7.3
   },
   {
-    "t": 77.2,
-    "f": 1930,
-    "type": "motion_burst",
-    "desc": "Motion burst 4.8s, peak 14, 10 hot frames (jumpy, teleport-like)",
-    "end": 81.92,
-    "peak": 14.4
+    "t": 78.68,
+    "f": 1967,
+    "type": "teleport",
+    "desc": "2 view jumps in 0.3s (teleport chain?)",
+    "end": 79.0,
+    "peak": 9.5,
+    "count": 2
   },
   {
     "t": 79.0,
@@ -224,252 +173,208 @@
     "desc": "Text (chat): Stamina"
   },
   {
-    "t": 98.84,
-    "f": 2471,
-    "type": "life_refill",
-    "desc": "Life refill +94% (0% -> 94%) in 0.04s (rejuvenation potion?)",
-    "end": 98.88,
-    "amount": 94.2
+    "t": 85.12,
+    "f": 2128,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 7, match 0.06): teleport?",
+    "peak": 6.7
   },
   {
-    "t": 99.68,
-    "f": 2492,
-    "type": "life_drop",
-    "desc": "Life drop -94% (94% -> 0%) in 0.04s",
-    "end": 99.72,
-    "amount": 94.2
+    "t": 91.76,
+    "f": 2294,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 7, match 0.08): teleport?",
+    "peak": 6.8
   },
   {
-    "t": 99.72,
-    "f": 2493,
-    "type": "death",
-    "desc": "Death? life orb empty for >= 0.4s"
+    "t": 93.92,
+    "f": 2348,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 9, match 0.01): teleport?",
+    "peak": 8.9
   },
   {
-    "t": 106.32,
-    "f": 2658,
-    "type": "motion_burst",
-    "desc": "Motion burst 2.6s, peak 12, 3 hot frames (jumpy, teleport-like)",
-    "end": 108.84,
-    "peak": 12.2
+    "t": 108.84,
+    "f": 2721,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 11, match 0.13): teleport?",
+    "peak": 10.7
   },
   {
     "t": 111.0,
     "f": 2775,
-    "type": "motion_burst",
-    "desc": "Motion burst 1.5s, peak 9, 3 hot frames (jumpy, teleport-like)",
+    "type": "teleport",
+    "desc": "2 view jumps in 1.4s (teleport chain?)",
     "end": 112.44,
-    "peak": 9.0
+    "peak": 8.9,
+    "count": 2
+  },
+  {
+    "t": 111.12,
+    "f": 2778,
+    "type": "mana_refill",
+    "desc": "Mana refill +13% (50% -> 63%) in 0.04s (mana/rejuv potion?)",
+    "end": 111.16,
+    "amount": 12.8
   },
   {
     "t": 114.56,
     "f": 2864,
-    "type": "motion_burst",
-    "desc": "Motion burst 2.2s, peak 10, 4 hot frames (jumpy, teleport-like)",
-    "end": 116.76,
-    "peak": 10.1
+    "type": "teleport",
+    "desc": "3 view jumps in 1.8s (teleport chain?)",
+    "end": 116.4,
+    "peak": 10.2,
+    "count": 3
   },
   {
-    "t": 119.64,
-    "f": 2991,
-    "type": "life_refill",
-    "desc": "Life refill +83% (0% -> 83%) in 0.24s (rejuvenation potion?)",
-    "end": 119.88,
-    "amount": 83.1
+    "t": 118.28,
+    "f": 2957,
+    "type": "teleport",
+    "desc": "9 view jumps in 7.8s (teleport chain?)",
+    "end": 126.04,
+    "peak": 9.5,
+    "count": 9
   },
   {
-    "t": 120.32,
-    "f": 3008,
-    "type": "motion_burst",
-    "desc": "Motion burst 0.4s, peak 9, 2 hot frames (jumpy, teleport-like)",
-    "end": 120.72,
-    "peak": 9.3
-  },
-  {
-    "t": 123.56,
-    "f": 3089,
-    "type": "motion_burst",
-    "desc": "Motion burst 2.2s, peak 9, 5 hot frames (jumpy, teleport-like)",
-    "end": 125.68,
-    "peak": 9.5
-  },
-  {
-    "t": 123.96,
-    "f": 3099,
+    "t": 125.04,
+    "f": 3126,
     "type": "life_drop",
-    "desc": "Life drop -83% (83% -> 0%) in 0.04s",
-    "end": 124.0,
-    "amount": 83.1
+    "desc": "Life drop -11% (71% -> 61%) in 0.48s",
+    "end": 125.52,
+    "amount": 10.7
   },
   {
-    "t": 124.0,
-    "f": 3100,
-    "type": "death",
-    "desc": "Death? life orb empty for >= 0.4s"
-  },
-  {
-    "t": 130.12,
-    "f": 3253,
-    "type": "motion_burst",
-    "desc": "Motion burst 3.2s, peak 13, 7 hot frames (jumpy, teleport-like)",
-    "end": 133.24,
-    "peak": 13.0
-  },
-  {
-    "t": 135.96,
-    "f": 3399,
-    "type": "life_refill",
-    "desc": "Life refill +33% (0% -> 33%) in 0.04s (rejuvenation potion?)",
-    "end": 136.0,
-    "amount": 33.2
-  },
-  {
-    "t": 136.08,
-    "f": 3402,
+    "t": 126.68,
+    "f": 3167,
     "type": "life_drop",
-    "desc": "Life drop -33% (33% -> 0%) in 0.44s",
+    "desc": "Life drop -11% (61% -> 50%) in 0.44s",
+    "end": 127.12,
+    "amount": 10.6
+  },
+  {
+    "t": 127.84,
+    "f": 3196,
+    "type": "teleport",
+    "desc": "3 view jumps in 1.1s (teleport chain?)",
+    "end": 128.92,
+    "peak": 7.7,
+    "count": 3
+  },
+  {
+    "t": 127.88,
+    "f": 3197,
+    "type": "life_drop",
+    "desc": "Life drop -15% (50% -> 35%) in 0.28s",
+    "end": 128.16,
+    "amount": 14.9
+  },
+  {
+    "t": 130.72,
+    "f": 3268,
+    "type": "teleport",
+    "desc": "2 view jumps in 1.4s (teleport chain?)",
+    "end": 132.12,
+    "peak": 8.2,
+    "count": 2
+  },
+  {
+    "t": 134.68,
+    "f": 3367,
+    "type": "teleport",
+    "desc": "3 view jumps in 1.8s (teleport chain?)",
     "end": 136.52,
-    "amount": 33.2
+    "peak": 7.4,
+    "count": 3
   },
   {
-    "t": 136.12,
-    "f": 3403,
-    "type": "death",
-    "desc": "Death? life orb empty for >= 0.4s"
+    "t": 136.16,
+    "f": 3404,
+    "type": "mana_refill",
+    "desc": "Mana refill +14% (46% -> 60%) in 0.12s (mana/rejuv potion?)",
+    "end": 136.28,
+    "amount": 13.9
   },
   {
-    "t": 137.56,
-    "f": 3439,
-    "type": "motion_burst",
-    "desc": "Motion burst 1.5s, peak 9, 3 hot frames (jumpy, teleport-like)",
-    "end": 139.04,
-    "peak": 9.1
+    "t": 138.32,
+    "f": 3458,
+    "type": "teleport",
+    "desc": "2 view jumps in 0.4s (teleport chain?)",
+    "end": 138.68,
+    "peak": 8.1,
+    "count": 2
   },
   {
-    "t": 142.52,
-    "f": 3563,
+    "t": 142.28,
+    "f": 3557,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 7, match 0.11): teleport?",
+    "peak": 7.0
+  },
+  {
+    "t": 142.88,
+    "f": 3572,
     "type": "life_refill",
-    "desc": "Life refill +33% (0% -> 33%) in 0.04s (rejuvenation potion?)",
-    "end": 142.56,
-    "amount": 33.2
+    "desc": "Life refill +13% (29% -> 42%) in 0.32s (rejuvenation potion?)",
+    "end": 143.2,
+    "amount": 12.8
   },
   {
-    "t": 142.72,
-    "f": 3568,
-    "type": "life_drop",
-    "desc": "Life drop -33% (33% -> 0%) in 0.36s",
-    "end": 143.08,
-    "amount": 33.2
+    "t": 145.88,
+    "f": 3647,
+    "type": "mana_refill",
+    "desc": "Mana refill +13% (56% -> 69%) in 0.56s (mana/rejuv potion?)",
+    "end": 146.44,
+    "amount": 12.7
   },
   {
-    "t": 152.44,
-    "f": 3811,
-    "type": "motion_burst",
-    "desc": "Motion burst 0.7s, peak 9, 3 hot frames (jumpy, teleport-like)",
-    "end": 153.12,
-    "peak": 9.2
+    "t": 146.88,
+    "f": 3672,
+    "type": "mana_refill",
+    "desc": "Mana refill +13% (69% -> 82%) in 0.60s (mana/rejuv potion?)",
+    "end": 147.48,
+    "amount": 12.8
   },
   {
-    "t": 155.32,
-    "f": 3883,
-    "type": "motion_burst",
-    "desc": "Motion burst 3.0s, peak 16, 6 hot frames (jumpy, teleport-like)",
-    "end": 158.28,
-    "peak": 16.3
+    "t": 147.72,
+    "f": 3693,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 7, match 0.13): teleport?",
+    "peak": 6.8
+  },
+  {
+    "t": 156.36,
+    "f": 3909,
+    "type": "teleport",
+    "desc": "3 view jumps in 1.4s (teleport chain?)",
+    "end": 157.8,
+    "peak": 13.8,
+    "count": 3
   },
   {
     "t": 160.12,
     "f": 4003,
-    "type": "motion_burst",
-    "desc": "Motion burst 1.1s, peak 9, 2 hot frames (jumpy, teleport-like)",
+    "type": "teleport",
+    "desc": "2 view jumps in 1.0s (teleport chain?)",
     "end": 161.16,
-    "peak": 9.4
+    "peak": 9.4,
+    "count": 2
   },
   {
-    "t": 163.96,
-    "f": 4099,
-    "type": "life_refill",
-    "desc": "Life refill +29% (0% -> 29%) in 0.04s (rejuvenation potion?)",
-    "end": 164.0,
-    "amount": 29.1
-  },
-  {
-    "t": 164.48,
-    "f": 4112,
+    "t": 165.52,
+    "f": 4138,
     "type": "life_drop",
-    "desc": "Life drop -29% (29% -> 0%) in 0.04s",
-    "end": 164.52,
-    "amount": 29.1
+    "desc": "Life drop -11% (37% -> 27%) in 0.04s",
+    "end": 165.56,
+    "amount": 10.6
   },
   {
-    "t": 164.52,
-    "f": 4113,
-    "type": "death",
-    "desc": "Death? life orb empty for >= 0.4s"
-  },
-  {
-    "t": 166.2,
-    "f": 4155,
-    "type": "motion_burst",
-    "desc": "Motion burst 0.4s, peak 9, 2 hot frames (jumpy, teleport-like)",
-    "end": 166.56,
-    "peak": 9.1
-  },
-  {
-    "t": 168.0,
-    "f": 4200,
-    "type": "life_refill",
-    "desc": "Life refill +30% (0% -> 30%) in 0.04s (rejuvenation potion?)",
-    "end": 168.04,
-    "amount": 30.5
-  },
-  {
-    "t": 168.68,
-    "f": 4217,
-    "type": "life_drop",
-    "desc": "Life drop -30% (30% -> 0%) in 0.04s",
-    "end": 168.72,
-    "amount": 30.5
-  },
-  {
-    "t": 170.88,
-    "f": 4272,
-    "type": "life_refill",
-    "desc": "Life refill +30% (0% -> 30%) in 0.04s (rejuvenation potion?)",
-    "end": 170.92,
-    "amount": 30.5
-  },
-  {
-    "t": 171.44,
-    "f": 4286,
-    "type": "life_drop",
-    "desc": "Life drop -30% (30% -> 0%) in 0.08s",
-    "end": 171.52,
-    "amount": 30.5
-  },
-  {
-    "t": 171.96,
-    "f": 4299,
-    "type": "life_refill",
-    "desc": "Life refill +30% (0% -> 30%) in 0.08s (rejuvenation potion?)",
-    "end": 172.04,
-    "amount": 30.5
-  },
-  {
-    "t": 173.16,
-    "f": 4329,
-    "type": "life_drop",
-    "desc": "Life drop -30% (30% -> 0%) in 0.04s",
-    "end": 173.2,
-    "amount": 30.5
-  },
-  {
-    "t": 178.72,
-    "f": 4468,
-    "type": "life_refill",
-    "desc": "Life refill +30% (0% -> 30%) in 0.04s (rejuvenation potion?)",
-    "end": 178.76,
-    "amount": 30.5
+    "t": 178.76,
+    "f": 4469,
+    "type": "teleport",
+    "desc": "6 view jumps in 2.7s (teleport chain?)",
+    "end": 181.48,
+    "peak": 12.3,
+    "count": 6
   },
   {
     "t": 179.0,
@@ -478,32 +383,10 @@
     "desc": "Text (center): POTION / A P@TI@N / MaNA P&TIGN / A POTION ("
   },
   {
-    "t": 179.28,
-    "f": 4482,
-    "type": "life_drop",
-    "desc": "Life drop -30% (30% -> 0%) in 0.04s",
-    "end": 179.32,
-    "amount": 30.5
-  },
-  {
-    "t": 179.32,
-    "f": 4483,
-    "type": "death",
-    "desc": "Death? life orb empty for >= 0.4s"
-  },
-  {
     "t": 180.0,
     "f": 4500,
     "type": "text",
     "desc": "Text (center): MANA PaTIaN / MANA POTIGN / Super MANA"
-  },
-  {
-    "t": 180.32,
-    "f": 4508,
-    "type": "motion_burst",
-    "desc": "Motion burst 1.2s, peak 12, 2 hot frames (jumpy, teleport-like)",
-    "end": 181.48,
-    "peak": 12.2
   },
   {
     "t": 181.0,
@@ -524,244 +407,98 @@
     "desc": "Text (center): NECROMANCER"
   },
   {
-    "t": 183.96,
-    "f": 4599,
+    "t": 183.2,
+    "f": 4580,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 6, match 0.16): teleport?",
+    "peak": 6.2
+  },
+  {
+    "t": 188.96,
+    "f": 4724,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 6, match 0.02): teleport?",
+    "peak": 5.7
+  },
+  {
+    "t": 194.84,
+    "f": 4871,
+    "type": "teleport",
+    "desc": "6 view jumps in 4.0s (teleport chain?)",
+    "end": 198.84,
+    "peak": 9.7,
+    "count": 6
+  },
+  {
+    "t": 197.6,
+    "f": 4940,
     "type": "mana_refill",
-    "desc": "Mana refill +83% (0% -> 83%) in 0.04s (mana/rejuv potion?)",
-    "end": 184.0,
-    "amount": 83.1
+    "desc": "Mana refill +19% (71% -> 90%) in 0.84s (mana/rejuv potion?)",
+    "end": 198.44,
+    "amount": 19.1
   },
   {
-    "t": 188.48,
-    "f": 4712,
-    "type": "life_refill",
-    "desc": "Life refill +30% (0% -> 30%) in 0.04s (rejuvenation potion?)",
-    "end": 188.52,
-    "amount": 30.5
+    "t": 202.8,
+    "f": 5070,
+    "type": "teleport",
+    "desc": "4 view jumps in 2.1s (teleport chain?)",
+    "end": 204.92,
+    "peak": 8.2,
+    "count": 4
   },
   {
-    "t": 188.92,
-    "f": 4723,
+    "t": 204.68,
+    "f": 5117,
     "type": "life_drop",
-    "desc": "Life drop -42% (42% -> 0%) in 0.12s",
-    "end": 189.04,
-    "amount": 41.6
+    "desc": "Life drop -11% (37% -> 27%) in 0.08s",
+    "end": 204.76,
+    "amount": 10.6
   },
   {
-    "t": 190.08,
-    "f": 4752,
-    "type": "life_refill",
-    "desc": "Life refill +30% (0% -> 30%) in 0.04s (rejuvenation potion?)",
-    "end": 190.12,
-    "amount": 30.5
-  },
-  {
-    "t": 191.08,
-    "f": 4777,
-    "type": "life_drop",
-    "desc": "Life drop -30% (30% -> 0%) in 0.04s",
-    "end": 191.12,
-    "amount": 30.5
-  },
-  {
-    "t": 191.12,
-    "f": 4778,
-    "type": "death",
-    "desc": "Death? life orb empty for >= 0.4s"
-  },
-  {
-    "t": 191.84,
-    "f": 4796,
-    "type": "life_refill",
-    "desc": "Life refill +30% (0% -> 30%) in 0.04s (rejuvenation potion?)",
-    "end": 191.88,
-    "amount": 30.5
-  },
-  {
-    "t": 191.96,
-    "f": 4799,
-    "type": "life_drop",
-    "desc": "Life drop -30% (30% -> 0%) in 0.44s",
-    "end": 192.4,
-    "amount": 30.5
-  },
-  {
-    "t": 193.52,
-    "f": 4838,
-    "type": "mana_refill",
-    "desc": "Mana refill +91% (0% -> 91%) in 0.04s (mana/rejuv potion?)",
-    "end": 193.56,
-    "amount": 91.4
-  },
-  {
-    "t": 196.04,
-    "f": 4901,
-    "type": "motion_burst",
-    "desc": "Motion burst 3.2s, peak 15, 7 hot frames (jumpy, teleport-like)",
-    "end": 199.16,
-    "peak": 14.6
-  },
-  {
-    "t": 199.96,
-    "f": 4999,
-    "type": "life_refill",
-    "desc": "Life refill +30% (0% -> 30%) in 0.04s (rejuvenation potion?)",
-    "end": 200.0,
-    "amount": 30.5
-  },
-  {
-    "t": 200.44,
-    "f": 5011,
-    "type": "life_drop",
-    "desc": "Life drop -30% (30% -> 0%) in 0.08s",
-    "end": 200.52,
-    "amount": 30.5
-  },
-  {
-    "t": 201.12,
-    "f": 5028,
-    "type": "life_refill",
-    "desc": "Life refill +33% (0% -> 33%) in 0.04s (rejuvenation potion?)",
-    "end": 201.16,
-    "amount": 33.2
-  },
-  {
-    "t": 202.08,
-    "f": 5052,
-    "type": "motion_burst",
-    "desc": "Motion burst 2.6s, peak 8, 5 hot frames (jumpy, teleport-like)",
-    "end": 204.6,
-    "peak": 8.3
-  },
-  {
-    "t": 204.04,
-    "f": 5101,
-    "type": "life_drop",
-    "desc": "Life drop -33% (33% -> 0%) in 0.04s",
-    "end": 204.08,
-    "amount": 33.2
-  },
-  {
-    "t": 204.08,
-    "f": 5102,
-    "type": "death",
-    "desc": "Death? life orb empty for >= 0.4s"
-  },
-  {
-    "t": 210.08,
-    "f": 5252,
-    "type": "life_refill",
-    "desc": "Life refill +33% (0% -> 33%) in 0.04s (rejuvenation potion?)",
-    "end": 210.12,
-    "amount": 33.2
-  },
-  {
-    "t": 210.2,
-    "f": 5255,
-    "type": "life_drop",
-    "desc": "Life drop -33% (33% -> 0%) in 0.44s",
-    "end": 210.64,
-    "amount": 33.2
-  },
-  {
-    "t": 210.32,
-    "f": 5258,
-    "type": "motion_burst",
-    "desc": "Motion burst 1.8s, peak 9, 3 hot frames (jumpy, teleport-like)",
-    "end": 212.12,
-    "peak": 8.9
-  },
-  {
-    "t": 211.96,
-    "f": 5299,
-    "type": "life_refill",
-    "desc": "Life refill +33% (0% -> 33%) in 0.04s (rejuvenation potion?)",
-    "end": 212.0,
-    "amount": 33.2
-  },
-  {
-    "t": 213.8,
-    "f": 5345,
-    "type": "life_drop",
-    "desc": "Life drop -33% (33% -> 0%) in 0.04s",
-    "end": 213.84,
-    "amount": 33.2
-  },
-  {
-    "t": 213.84,
-    "f": 5346,
-    "type": "death",
-    "desc": "Death? life orb empty for >= 0.4s"
-  },
-  {
-    "t": 221.48,
-    "f": 5537,
-    "type": "life_refill",
-    "desc": "Life refill +19% (0% -> 19%) in 0.04s (rejuvenation potion?)",
-    "end": 221.52,
-    "amount": 19.4
+    "t": 217.56,
+    "f": 5439,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 8, match 0.13): teleport?",
+    "peak": 7.7
   },
   {
     "t": 221.92,
     "f": 5548,
-    "type": "motion_burst",
-    "desc": "Motion burst 0.4s, peak 11, 2 hot frames (jumpy, teleport-like)",
-    "end": 222.28,
-    "peak": 11.0
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 11, match 0.01): teleport?",
+    "peak": 11.1
   },
   {
-    "t": 223.96,
-    "f": 5599,
-    "type": "life_drop",
-    "desc": "Life drop -19% (19% -> 0%) in 0.04s",
-    "end": 224.0,
-    "amount": 19.4
+    "t": 226.68,
+    "f": 5667,
+    "type": "teleport",
+    "desc": "2 view jumps in 0.4s (teleport chain?)",
+    "end": 227.04,
+    "peak": 9.3,
+    "count": 2
   },
   {
-    "t": 224.0,
-    "f": 5600,
-    "type": "death",
-    "desc": "Death? life orb empty for >= 0.4s"
-  },
-  {
-    "t": 225.0,
-    "f": 5625,
-    "type": "life_refill",
-    "desc": "Life refill +19% (0% -> 19%) in 0.04s (rejuvenation potion?)",
-    "end": 225.04,
-    "amount": 19.4
-  },
-  {
-    "t": 225.44,
-    "f": 5636,
-    "type": "life_drop",
-    "desc": "Life drop -19% (19% -> 0%) in 0.12s",
-    "end": 225.56,
-    "amount": 19.4
-  },
-  {
-    "t": 225.88,
-    "f": 5647,
-    "type": "motion_burst",
-    "desc": "Motion burst 3.1s, peak 10, 5 hot frames (jumpy, teleport-like)",
-    "end": 228.92,
-    "peak": 10.4
+    "t": 231.28,
+    "f": 5782,
+    "type": "mana_refill",
+    "desc": "Mana refill +16% (84% -> 100%) in 0.84s (mana/rejuv potion?)",
+    "end": 232.12,
+    "amount": 16.0
   },
   {
     "t": 232.92,
     "f": 5823,
-    "type": "motion_burst",
-    "desc": "Motion burst 0.4s, peak 10, 2 hot frames (jumpy, teleport-like)",
-    "end": 233.28,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 10, match 0.08): teleport?",
     "peak": 10.4
   },
   {
-    "t": 235.36,
-    "f": 5884,
-    "type": "motion_burst",
-    "desc": "Motion burst 1.2s, peak 11, 3 hot frames (jumpy, teleport-like)",
-    "end": 236.48,
-    "peak": 10.8
+    "t": 234.68,
+    "f": 5867,
+    "type": "life_drop",
+    "desc": "Life drop -15% (29% -> 14%) in 0.48s",
+    "end": 235.16,
+    "amount": 14.9
   },
   {
     "t": 236.0,
@@ -770,34 +507,61 @@
     "desc": "Text (chat): sGame"
   },
   {
+    "t": 236.48,
+    "f": 5912,
+    "type": "teleport",
+    "desc": "2 view jumps in 0.7s (teleport chain?)",
+    "end": 237.2,
+    "peak": 8.7,
+    "count": 2
+  },
+  {
+    "t": 239.52,
+    "f": 5988,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 14, match 0.05): teleport?",
+    "peak": 13.6
+  },
+  {
     "t": 242.68,
     "f": 6067,
-    "type": "motion_burst",
-    "desc": "Motion burst 2.9s, peak 10, 7 hot frames (jumpy, teleport-like)",
-    "end": 245.52,
-    "peak": 9.6
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 8, match 0.16): teleport?",
+    "peak": 8.0
   },
   {
-    "t": 250.92,
-    "f": 6273,
-    "type": "motion_burst",
-    "desc": "Motion burst 2.6s, peak 16, 7 hot frames (jumpy, teleport-like)",
-    "end": 253.48,
-    "peak": 16.2
+    "t": 244.28,
+    "f": 6107,
+    "type": "mana_refill",
+    "desc": "Mana refill +22% (61% -> 83%) in 0.56s (mana/rejuv potion?)",
+    "end": 244.84,
+    "amount": 22.4
   },
   {
-    "t": 255.2,
-    "f": 6380,
-    "type": "motion_burst",
-    "desc": "Motion burst 3.7s, peak 15, 8 hot frames (jumpy, teleport-like)",
-    "end": 258.88,
-    "peak": 14.8
+    "t": 250.24,
+    "f": 6256,
+    "type": "teleport",
+    "desc": "2 view jumps in 0.7s (teleport chain?)",
+    "end": 250.92,
+    "peak": 8.1,
+    "count": 2
   },
   {
-    "t": 257.4,
-    "f": 6435,
-    "type": "death",
-    "desc": "Death? life orb empty for >= 0.4s"
+    "t": 252.72,
+    "f": 6318,
+    "type": "teleport",
+    "desc": "6 view jumps in 3.2s (teleport chain?)",
+    "end": 255.96,
+    "peak": 16.3,
+    "count": 6
+  },
+  {
+    "t": 253.52,
+    "f": 6338,
+    "type": "mana_refill",
+    "desc": "Mana refill +17% (69% -> 86%) in 0.68s (mana/rejuv potion?)",
+    "end": 254.2,
+    "amount": 17.1
   },
   {
     "t": 258.0,
@@ -806,65 +570,76 @@
     "desc": "Text (chat): Stamina"
   },
   {
-    "t": 262.16,
-    "f": 6554,
-    "type": "motion_burst",
-    "desc": "Motion burst 0.7s, peak 15, 3 hot frames (jumpy, teleport-like)",
-    "end": 262.84,
-    "peak": 14.7
+    "t": 258.12,
+    "f": 6453,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 8, match 0.07): teleport?",
+    "peak": 8.0
   },
   {
-    "t": 266.36,
-    "f": 6659,
-    "type": "motion_burst",
-    "desc": "Motion burst 1.9s, peak 15, 4 hot frames (jumpy, teleport-like)",
-    "end": 268.24,
-    "peak": 15.0
+    "t": 262.8,
+    "f": 6570,
+    "type": "mana_refill",
+    "desc": "Mana refill +15% (82% -> 97%) in 0.60s (mana/rejuv potion?)",
+    "end": 263.4,
+    "amount": 14.9
+  },
+  {
+    "t": 263.16,
+    "f": 6579,
+    "type": "teleport",
+    "desc": "9 view jumps in 6.6s (teleport chain?)",
+    "end": 269.72,
+    "peak": 9.0,
+    "count": 9
   },
   {
     "t": 271.48,
     "f": 6787,
-    "type": "motion_burst",
-    "desc": "Motion burst 0.4s, peak 10, 2 hot frames (jumpy, teleport-like)",
-    "end": 271.88,
-    "peak": 9.8
-  },
-  {
-    "t": 274.24,
-    "f": 6856,
-    "type": "mana_refill",
-    "desc": "Mana refill +100% (0% -> 100%) in 0.04s (mana/rejuv potion?)",
-    "end": 274.28,
-    "amount": 100.0
-  },
-  {
-    "t": 276.52,
-    "f": 6913,
-    "type": "motion_burst",
-    "desc": "Motion burst 0.4s, peak 8, 2 hot frames (jumpy, teleport-like)",
-    "end": 276.92,
-    "peak": 8.3
-  },
-  {
-    "t": 284.92,
-    "f": 7123,
     "type": "death",
     "desc": "Death? life orb empty for >= 0.4s"
   },
   {
-    "t": 290.28,
-    "f": 7257,
-    "type": "life_refill",
-    "desc": "Life refill +100% (0% -> 100%) in 0.04s (rejuvenation potion?)",
-    "end": 290.32,
-    "amount": 100.0
+    "t": 271.48,
+    "f": 6787,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 10, match 0.11): teleport?",
+    "peak": 9.9
   },
   {
-    "t": 291.48,
-    "f": 7287,
-    "type": "life_drop",
-    "desc": "Life drop -100% (100% -> 0%) in 0.04s",
-    "end": 291.52,
-    "amount": 100.0
+    "t": 274.04,
+    "f": 6851,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 8, match 0.11): teleport?",
+    "peak": 7.9
+  },
+  {
+    "t": 278.72,
+    "f": 6968,
+    "type": "teleport",
+    "desc": "2 view jumps in 0.4s (teleport chain?)",
+    "end": 279.08,
+    "peak": 8.9,
+    "count": 2
+  },
+  {
+    "t": 282.52,
+    "f": 7063,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 5, match 0.16): teleport?",
+    "peak": 5.2
+  },
+  {
+    "t": 282.56,
+    "f": 7064,
+    "type": "death",
+    "desc": "Death? life orb empty for >= 0.4s"
+  },
+  {
+    "t": 284.92,
+    "f": 7123,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 40, match 0.04): teleport?",
+    "peak": 40.0
   }
 ]
