@@ -177,6 +177,7 @@ def test_captions_adequate_and_caption_strip():
     ents = []
     for t in range(60):
         ents.append({"t": float(t), "f": t, "lines": [line("Interview with the author", 100, 120),
+                                                         line("Lower third: Dr. Jane Smith", 100, 300),
                                                          line(f"This caption changes every second number {t}", 300, 880)]})
     assert len(keyframes.text_keyframes(ents, set(range(60)), 60)) == 1
 
