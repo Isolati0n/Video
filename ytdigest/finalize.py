@@ -201,6 +201,7 @@ def main():
         sheet_url = lambda name: f"sheets/{name}"  # noqa: E731
         sheets_where = "`sheets/` next to this file (local run)"
     else:
+        shutil.rmtree(out / "sheets", ignore_errors=True)   # sheets from an older run must not linger in git
         upload_sheets(vid, files)
         sheet_url = lambda name: f"https://github.com/{slug}/releases/download/{sheet_tag(vid, (int(name[6:10]) - 1) // SHEETS_PER_RELEASE)}/{name}"  # noqa: E731
         sheets_where = f"Release `sheets-{vid}`: `https://github.com/{slug}/releases/download/sheets-{vid}/sheet_NNNN.jpg`"

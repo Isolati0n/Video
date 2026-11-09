@@ -69,6 +69,8 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     if image is not None:
         cv2.imwrite(str(out / "calibration.png"), image)
+    elif status == "none":
+        (out / "calibration.png").unlink(missing_ok=True)   # left over from a run with another profile
     (a.workdir / "calibration_status.txt").write_text(status)
     (a.workdir / "calibration_comment.md").write_text(comment)
 
