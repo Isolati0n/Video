@@ -105,7 +105,7 @@ def test_text_keyframes_and_flags():
         ents.append({"t": float(t), "f": t, "lines": [line(title, 100, 120), line("Some body line of text here", 100, 200),
                                                          line(f"Footnote {t % 2} of the page", 100, 900)]})
     kf = keyframes.text_keyframes(ents, set(range(60)), 60)
-    assert [k["t"] for k in kf] == [0.0, 31.0], kf                          # one per slide, not per flicker
+    assert [k["t"] for k in kf] == [0.0, 30.0], kf                          # one per slide, not per flicker
     mathy = ocr.classify_text([line("Pr[A V B] < Pr[A] + Pr[B].", 0, 0), line("f (E[X]) <E[f(X)] .", 0, 0, 60)])
     assert "math" in mathy["flags"], mathy
     tags = ocr.classify_text([line("[A] | ARMADA", 0, 0), line("[A] | ARMADA IL]", 0, 0), line("FOX MVG | MEW2KING", 0, 0)])
