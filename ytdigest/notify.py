@@ -37,7 +37,10 @@ def log_tail(gh: GH, lines=60) -> str:
     lr = gh._req("GET", f"{gh.api}/repos/{gh.repo}/actions/jobs/{j['id']}/logs")
     if not lr.ok:
         return f"(could not fetch log of job {j['name']}: HTTP {lr.status_code})"
-    tail = lr.text.strip().splitlines()[-lines:]
+    lr.encoding = "utf-8"
+    all_lines = lr.text.strip().splitlines()
+    cut = next((i for i, l in enumerate(all_lines) if "Post job cleanup." in l), len(all_lines))
+    tail = all_lines[:cut][-lines:]
     # drop the ISO timestamp prefix GitHub adds to every line
     tail = [l.split(" ", 1)[1] if l[:4].isdigit() and " " in l else l for l in tail]
     return f"Job **{j['name']}** failed. Last {len(tail)} log lines:\n\n```\n" + "\n".join(tail)[-6000:] + "\n```"

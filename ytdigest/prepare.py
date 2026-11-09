@@ -15,12 +15,16 @@ import subprocess
 import sys
 from pathlib import Path
 
+from .video import video_start
 from .common import GH, gh_output, log, parse_video_id, save_json
 
 MAX_PART = int(1.9 * 1024**3)
 SEG_TARGET = int(1.75 * 1024**3)  # aim below the limit; keyframe cuts overshoot a little
 BOT_MARKERS = ("confirm you're not a bot", "confirm you’re not a bot", "Sign in to confirm",
                "HTTP Error 403", "HTTP Error 429", "This content isn't available, try again later")
+
+
+SELFTEST_ID = "SYNTHETIC01"
 
 
 class Blocked(RuntimeError):
@@ -92,12 +96,26 @@ def encode_archive(src: Path, dst: Path):
     subprocess.run(cmd, check=True)
 
 
+def frame_rate(path: Path) -> float:
+    v = next(s for s in ffprobe(path)["streams"] if s["codec_type"] == "video")
+    num, den = (int(x) for x in v["r_frame_rate"].split("/"))
+    return num / den
+
+
+def count_frames(path: Path) -> int:
+    out = subprocess.check_output(["ffprobe", "-v", "error", "-select_streams", "v:0", "-count_packets",
+                                   "-show_entries", "stream=nb_read_packets", "-of", "csv=p=0", str(path)],
+                                  text=True)
+    return int(out.strip().split()[0])
+
+
 def split_archive(full: Path, vid: str, outdir: Path, duration: float) -> list[dict]:
     size = full.stat().st_size
     if size <= MAX_PART:
         dst = outdir / f"{vid}.part000.mp4"
         full.rename(dst)
-        return [{"name": dst.name, "start": 0.0, "end": duration, "size": dst.stat().st_size}]
+        return [{"name": dst.name, "start": 0.0, "end": duration, "size": dst.stat().st_size,
+                 "vstart": video_start(dst)}]
     seg = max(60, int(duration * SEG_TARGET / size))
     lst = outdir / "segments.csv"
     subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(full),
@@ -105,11 +123,17 @@ def split_archive(full: Path, vid: str, outdir: Path, duration: float) -> list[d
                     "-reset_timestamps", "1", "-segment_list", str(lst),
                     "-segment_list_type", "csv", "-segment_format_options", "movflags=+faststart",
                     str(outdir / f"{vid}.part%03d.mp4")], check=True)
-    parts = []
+    # Part start = number of video frames before it / frame rate. Exact for constant frame rate
+    # and independent of container start offsets (B-frame delay, audio priming).
+    fps = frame_rate(full)
+    parts, nframes = [], 0
     for line in lst.read_text().splitlines():
-        name, start, end = line.rsplit(",", 2)
+        name = line.rsplit(",", 2)[0]
         p = outdir / name
-        parts.append({"name": name, "start": float(start), "end": float(end), "size": p.stat().st_size})
+        n = count_frames(p)
+        parts.append({"name": name, "start": round(nframes / fps, 6), "end": round((nframes + n) / fps, 6),
+                      "frames": n, "size": p.stat().st_size, "vstart": video_start(p)})
+        nframes += n
         if p.stat().st_size > MAX_PART:
             raise RuntimeError(f"{name} is {p.stat().st_size} bytes > 1.9 GB")
     full.unlink()
@@ -149,6 +173,22 @@ def main():
     url = f"https://www.youtube.com/watch?v={vid}"
     dl = work / "dl"
     dl.mkdir(exist_ok=True)
+    cap = None
+    if vid == SELFTEST_ID:  # offline self-test: synthetic clip with known orb values, no YouTube
+        secs = os.environ.get("SELFTEST_SECONDS", "90")
+        chunk_len = 30.0  # several matrix jobs
+        global MAX_PART, SEG_TARGET
+        MAX_PART, SEG_TARGET = 3 * 1024**2, 2 * 1024**2  # several release parts
+        subprocess.run([sys.executable, "tests/synthetic.py", str(dl / "syn"), secs], check=True)
+        (dl / "syn" / f"{SELFTEST_ID}.part000.mp4").rename(dl / "src.mp4")
+        info = json.loads((dl / "syn" / "info.json").read_text())
+        info.update(channel="yt-digest self-test", duration=float(secs), webpage_url="(synthetic)")
+    else:
+        info, cap = download(url, dl, work)
+    finish(vid, url, info, cap, dl, work, gh, chunk_len)
+
+
+def download(url: str, dl: Path, work: Path):
     try:
         run_ytdlp(["--skip-download", "--write-info-json", "-o", "src.%(ext)s", url], dl)
         info = json.loads((dl / "src.info.json").read_text())
@@ -164,6 +204,10 @@ def main():
         gh_output(blocked="true")
         (work / "blocked.txt").write_text(str(e))
         raise SystemExit("YouTube blocked the runner (see blocked.txt)")
+    return info, cap
+
+
+def finish(vid, url, info, cap, dl, work, gh, chunk_len):
     src = next(p for p in dl.iterdir() if p.name.startswith("src.") and p.suffix in (".mkv", ".mp4", ".webm"))
     subs = [p for p in dl.iterdir() if p.suffix == ".vtt"]
     if subs:

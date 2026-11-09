@@ -43,12 +43,16 @@ class Archive:
         log(f"fetching {part['name']} ({part['size'] / 1e6:.0f} MB) from release")
         return self.gh_download(part["name"], dest)
 
-    def parts_for(self, start: float, end: float) -> list[tuple[Path, float, float]]:
-        """[(path, part_start, part_end)] covering [start, end)."""
+    def parts_for(self, start: float, end: float) -> list[tuple[Path, float, float, float]]:
+        """[(path, part_start, part_end, video_start_pts)] covering [start, end)."""
         out = []
         for p in self.manifest["parts"]:
             if p["end"] > start and p["start"] < end:
-                out.append((self.part_path(p), p["start"], p["end"]))
+                path = self.part_path(p)
+                vs = p.get("vstart")
+                if vs is None:
+                    vs = video_start(path)
+                out.append((path, p["start"], p["end"], vs))
         return out
 
     def frames(self, start: float, end: float, fps: float = FPS, size: tuple[int, int] | None = None):
@@ -57,14 +61,15 @@ class Archive:
         k0 = int(np.ceil(start * fps - 1e-6))
         k_end = int(np.ceil(end * fps - 1e-6))
         k = k0
-        for path, ps, pe in self.parts_for(start, end):
+        for path, ps, pe, vstart in self.parts_for(start, end):
             if k >= k_end:
                 break
             seg_end = min(end, pe)
-            t_local = max(0.0, k / fps - ps)
             n = int(np.ceil(seg_end * fps - 1e-6)) - k
             if n <= 0:
                 continue
+            # local pts of frame k: the first video frame of each part is at its listed start
+            t_local = k / fps - ps + vstart
             for i, frame in enumerate(read_frames(path, t_local, n, fps, w, h, scale=size is not None)):
                 yield (k + i) / fps, frame
             k += n
@@ -78,13 +83,13 @@ class Archive:
 
 def read_frames(path: Path, t_start: float, count: int, fps: float, w: int, h: int, scale: bool = False):
     """Decode `count` frames starting at t_start (seconds, local to the file) resampled to fps."""
-    vf = f"fps={fps}:start_time=0:round=near"
+    # -copyts keeps the file's own timestamps, so the fps grid is anchored exactly at t_start
+    vf = f"fps={fps}:start_time={t_start:.6f}:round=near"
     if scale:
         vf += f",scale={w}:{h}:flags=area"
-    seek_pad = min(t_start, 3.0)  # fast seek to just before, then exact trim with -ss after -i
     cmd = ["ffmpeg", "-hide_banner", "-loglevel", "error", "-nostdin",
-           "-ss", f"{t_start - seek_pad:.4f}", "-i", str(path), "-ss", f"{seek_pad:.4f}",
-           "-an", "-sn", "-vf", vf, "-frames:v", str(count),
+           "-ss", f"{max(0.0, t_start - 3.0):.4f}", "-copyts", "-i", str(path),
+           "-an", "-sn", "-vf", vf, "-frames:v", str(count), "-fps_mode", "passthrough",
            "-f", "rawvideo", "-pix_fmt", "bgr24", "-"]
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, bufsize=w * h * 3 * 4)
     fsz = w * h * 3
@@ -105,3 +110,12 @@ def read_frames(path: Path, t_start: float, count: int, fps: float, w: int, h: i
     while last is not None and got < count:
         got += 1
         yield last
+
+
+def video_start(path: Path) -> float:
+    out = subprocess.check_output(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries",
+                                   "stream=start_time", "-of", "csv=p=0", str(path)], text=True).strip()
+    try:
+        return float(out.split()[0])
+    except (ValueError, IndexError):
+        return 0.0

@@ -51,21 +51,24 @@ def main():
     world = cv2.addWeighted(world, 1.0, rng.integers(0, 30, world.shape, dtype=np.uint8), 0.5, 0)
     path = out / "SYNTHETIC01.part000.mp4"
     p = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "bgr24",
-                          "-s", f"{W}x{H}", "-r", "50", "-i", "-", "-c:v", "libx264", "-crf", "26",
+                          "-s", f"{W}x{H}", "-r", "50", "-i", "-",
+                          "-f", "lavfi", "-i", "sine=frequency=440:sample_rate=44100", "-shortest",
+                          "-c:a", "aac", "-c:v", "libx264", "-crf", "26",
                           "-preset", "veryfast", "-pix_fmt", "yuv420p", str(path)], stdin=subprocess.PIPE)
     truth = []
     cam = np.array([W, H], float)
     for i in range(int(secs * 50)):
         t = i / 50
-        if 14 <= t < 15:  # teleport chain
+        if 14 <= t % 24 < 15:  # teleport chain
             if i % 10 == 0: cam += rng.integers(-300, 300, 2)
         else:
             cam += [1.5, 0.7]
         cam = np.clip(cam, 0, [2 * W - 1, 2 * H - 1])
         x, y = int(cam[0]), int(cam[1])
         img = world[y:y + H, x:x + W].copy()
-        life, mana, poison = life_mana(t)
-        if 16.5 <= t < 18.5:  # loading screen
+        life, mana, poison = life_mana(t % 24)
+        tl = t % 24
+        if 16.5 <= tl < 18.5:  # loading screen
             img[:] = 5
             cv2.putText(img, "Loading", (560, 360), cv2.FONT_HERSHEY_SIMPLEX, 1, (60, 60, 60), 2)
         else:
@@ -75,15 +78,16 @@ def main():
                 cv2.rectangle(img, (430 + k * 54, 650), (478 + k * 54, 698), (200, 200, 200), 2)
             draw_orb(img, 140, 640, 70, life, (20, 160, 40) if poison else (20, 20, 190))
             draw_orb(img, W - 140, 640, 70, mana, (190, 60, 20))
-            if t >= 20.5:
+            if tl >= 20.5:
                 cv2.putText(img, "You have died", (470, 280), cv2.FONT_HERSHEY_TRIPLEX, 1.6, (40, 40, 220), 2)
-            if 11 <= t < 13:
+            if 11 <= tl < 13:
                 cv2.putText(img, "Player1 joined our world. Diablo's minions grow stronger.",
                             (20, 450), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (60, 220, 230), 1)
         p.stdin.write(img.tobytes())
         if i % 2 == 0:
-            truth.append({"f": i // 2, "life": None if 16.5 <= t < 18.5 else round(life, 1),
-                          "mana": None if 16.5 <= t < 18.5 else round(mana, 1)})
+            off = 16.5 <= t % 24 < 18.5
+            truth.append({"f": i // 2, "life": None if off else round(life, 1),
+                          "mana": None if off else round(mana, 1)})
     p.stdin.close(); p.wait()
     (out / "parts.json").write_text(json.dumps({"video_id": "SYNTHETIC01", "duration": secs, "width": W,
                                                 "height": H, "fps": 50, "parts": [

@@ -14,6 +14,8 @@ import json
 import os
 import re
 import subprocess
+
+import numpy as np
 from pathlib import Path
 
 from .common import hms, load_json, log
@@ -75,11 +77,14 @@ def whisper(arc: Archive, workdir: Path) -> tuple[list[dict], str]:
 
     model = WhisperModel("small", device="cpu", compute_type="int8", cpu_threads=os.cpu_count() or 4)
     segs, lang = [], None
-    for path, ps, _ in arc.parts_for(0, arc.duration):
-        wav = workdir / (path.stem + ".wav")
-        subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(path),
-                        "-vn", "-ac", "1", "-ar", "16000", str(wav)], check=True)
-        it, info = model.transcribe(str(wav), beam_size=5, vad_filter=True,
+    for path, ps, _, _ in arc.parts_for(0, arc.duration):
+        # decode with ffmpeg (16 kHz mono float32) instead of PyAV
+        raw = subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", str(path), "-vn",
+                              "-ac", "1", "-ar", "16000", "-f", "f32le", "-"], check=True,
+                             capture_output=True).stdout
+        audio = np.frombuffer(raw, np.float32)
+        del raw
+        it, info = model.transcribe(audio, beam_size=5, vad_filter=True,
                                     vad_parameters={"min_silence_duration_ms": 500},
                                     condition_on_previous_text=False)
         lang = lang or info.language
@@ -87,7 +92,7 @@ def whisper(arc: Archive, workdir: Path) -> tuple[list[dict], str]:
             segs.append({"start": ps + s.start, "end": ps + s.end, "text": s.text.strip()})
             if len(segs) % 200 == 0:
                 log(f"whisper: {hms(ps + s.end)} transcribed")
-        wav.unlink()
+        del audio
     return segs, f"faster-whisper small int8 (language: {lang})"
 
 
