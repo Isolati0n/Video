@@ -5,7 +5,7 @@ Relative links below resolve against `https://raw.githubusercontent.com/Isolati0
 - Video: https://www.youtube.com/watch?v=9ABzfEHc5Ic (00:54:10), channel: VGBootCamp
 - Profile: `generic` (Generic video); analysed at 60 fps (video is 60 fps)
 - Archive: GitHub Release `9ABzfEHc5Ic` (720p H.264 parts + parts.json)
-- Files: [transcript.md](transcript.md), [ocr.md](ocr.md) (on-screen text), [events.md](events.md), `events.json`, `frames.jsonl.gz` (one JSON per frame), `thumbs/overview_*.jpg` (tiny thumbnails of every keyframe)
+- Files: [transcript.md](transcript.md), [ocr.md](ocr.md) (on-screen text), [events.md](events.md), `events.json`, `frames.jsonl.gz` (one JSON per frame), `thumbs/overview_*.jpg` (tiny thumbnails, at most 360 per hour of video)
 - Sheets: 251 contact sheets (3x3 tiles of 640x360; white label = keyframe chosen by scene change / picture change, coloured border + yellow label = dense frames around an event with HH:MM:SS.ff and frame number f). Stored in Release `sheets-9ABzfEHc5Ic`: `https://github.com/Isolati0n/Video/releases/download/sheets-9ABzfEHc5Ic/sheet_NNNN.jpg`
 - Events: loud_peak=11, motion_burst=145, scene_change=25, text_change=424
 - Zoom: comment `/zoom 9ABzfEHc5Ic H:MM:SS-H:MM:SS [fps]` on the issue for every frame of a range (native rate by default).

@@ -22,7 +22,7 @@
   "sheets": 251,
   "max_sheet_bytes": 369021,
   "sheet_bytes_total": 80284703,
-  "git_bytes": 9244288,
+  "git_bytes": 4122600,
   "transcript_lines": 181,
   "transcript_source": "YouTube auto-generated captions (en-orig)",
   "ocr_entries": 2245,
@@ -41,5 +41,5 @@
     "silence_seconds": 0.0,
     "loud_peaks": 11
   },
-  "runtime_s": 1598
+  "runtime_s": 446
 }
