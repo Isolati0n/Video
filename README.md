@@ -124,6 +124,30 @@ Limits to know about: WARP IPs are shared with other users, so success varies by
 fully blocked day means re-running with `/digest` later. Set the repository variable
 `USE_WARP=false` to download without the tunnel.
 
+## Measured on real footage
+
+Two public videos, full pipeline on GitHub-hosted runners (4 vCPU), no login:
+
+| | 4:55 clip (30 fps source) | 57:00 video |
+|---|---|---|
+| fresh run, download → comment | 4 min 51 s | 18 min 43 s (re-run on the existing archive: 13 min 8 s) |
+| per stage | prepare 2:10 · analysis 1:35 · transcript 0:19 · finalize 1:05 | prepare 9:49 (download 1:00, encode ~8 min) · analysis 3 parallel jobs of 3–4 min · transcript 2:37 · finalize 5:19 |
+| frames analysed (25 fps) | 7,365 | 85,482 |
+| events | 78 | 1,244 |
+| orb vs the game's on-screen numbers (held-out) | life median 0.4 %, mana median 1.0 % | life median 1.4 %, mana median 2.2 % |
+| git size of the digest | 13 MB | 136 MB (about 140 MB per hour) |
+
+Orb accuracy is measured by `ytdigest/calibrate.py` against the `Life: x / y` and `Mana: x / y` text
+D2R prints above the orbs (read with Tesseract, half the samples to fit, the other half to test).
+Means are higher than medians because a few of those reference numbers are OCR digit slips. When a
+video does not show the numbers, calibration says so and uses a linear fill map instead.
+
+Teleport detection (`teleport` events) is a heuristic: a frame where the whole game area changes and
+the new view does not match the old one. Eyeballing before/after frames of 22 sampled events, most
+were real view changes; false positives were UI panels opening and same-view spell effects (mostly
+filtered by the `chg` and `match` conditions). Treat the counts as "view jumps", not proof of the
+Teleport skill.
+
 ## Storage
 
 In git: `index.md`, `events.md/json`, `transcript.md/json`, `frames.jsonl.gz`, `calibration.png`,
