@@ -1,0 +1,44 @@
+{
+  "video_id": "5pJxZBpKEWk",
+  "title": "Foundations of Machine Learning \u2022 Part 1.3: Probability Tools (Slides by Prof. Mohri, NYU)",
+  "profile": "generic",
+  "fps": 60.0,
+  "native_fps": 60.0,
+  "duration_s": 869.0,
+  "frames": 52143,
+  "events": 136,
+  "event_counts": {
+    "loud_peak": 1,
+    "text_change": 120,
+    "motion_burst": 15
+  },
+  "events_by_source": {
+    "generic": 136
+  },
+  "keyframes": 104,
+  "keyframe_candidates": 291,
+  "dense_events": 16,
+  "sheets": 19,
+  "max_sheet_bytes": 273252,
+  "sheet_bytes_total": 4527998,
+  "git_bytes": 859125,
+  "transcript_lines": 59,
+  "transcript_source": "YouTube auto-generated captions (en-orig)",
+  "ocr_entries": 527,
+  "stats": {
+    "motion_median": 0.03,
+    "motion_threshold": 3.0,
+    "static_seconds": 0.0,
+    "ocr_runs_with_text": 870,
+    "ocr_new_text_entries": 527,
+    "ocr_lines_unique": 395,
+    "frames": 52143,
+    "cuts": 0,
+    "black_frames": 0,
+    "audio_median_db": -34.1,
+    "audio_max_db": -22.6,
+    "silence_seconds": 0.0,
+    "loud_peaks": 1
+  },
+  "runtime_s": 484
+}
