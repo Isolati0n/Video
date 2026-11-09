@@ -70,9 +70,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 330
     outputs:
-      chunks: ${{ steps.prep.outputs.chunks }}
-      has_captions: ${{ steps.prep.outputs.has_captions }}
-      blocked: ${{ steps.prep.outputs.blocked }}
+      chunks: ${{ steps.arch.outputs.chunks || steps.plan.outputs.chunks }}
+      has_captions: ${{ steps.arch.outputs.has_captions || steps.plan.outputs.has_captions }}
+      blocked: ${{ steps.dl.outputs.blocked }}
     steps:
       - uses: actions/checkout@v5
         with:
@@ -80,11 +80,29 @@ jobs:
       - uses: ./.github/actions/setup
         with:
           apt: ffmpeg
-      - name: Download + archive to release
-        id: prep
+      - name: Already archived in the Release?
+        id: plan
+        run: python -m ytdigest.prepare plan "${{ needs.request.outputs.video_id }}" work
+      # YouTube flags GitHub's datacenter IPs. The download (and only the download) goes through a
+      # free Cloudflare WARP tunnel. Set repository variable USE_WARP=false to turn this off.
+      - name: WARP up
+        if: steps.plan.outputs.reused != 'true' && vars.USE_WARP != 'false' && needs.request.outputs.video_id != 'SYNTHETIC01'
+        uses: ./.github/actions/warp
+      - name: Download from YouTube
+        id: dl
+        if: steps.plan.outputs.reused != 'true'
         env:
-          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
-        run: python -m ytdigest.prepare "${{ needs.request.outputs.video_id }}" work
+          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}   # optional, unused unless the secret exists
+        run: python -m ytdigest.prepare download "${{ needs.request.outputs.video_id }}" work
+      - name: WARP down
+        if: always() && steps.plan.outputs.reused != 'true' && vars.USE_WARP != 'false' && needs.request.outputs.video_id != 'SYNTHETIC01'
+        uses: ./.github/actions/warp
+        with:
+          mode: down
+      - name: Archive to the Release (720p H.264)
+        id: arch
+        if: steps.plan.outputs.reused != 'true'
+        run: python -m ytdigest.prepare archive "${{ needs.request.outputs.video_id }}" work
       - name: HUD calibration
         id: cal
         env:

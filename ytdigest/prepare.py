@@ -148,16 +148,18 @@ def chunk_plan(duration: float, chunk_len: float) -> list[dict]:
             for i in range(n)]
 
 
-def main():
-    target, work = sys.argv[1], Path(sys.argv[2])
-    chunk_len = float(os.environ.get("CHUNK_SECONDS", "1200"))
+def setup(argv):
+    mode, target, work = argv[1], argv[2], Path(argv[3])
     vid = parse_video_id(target)
     if not vid:
         raise SystemExit(f"no YouTube video id found in {target!r}")
     work.mkdir(parents=True, exist_ok=True)
-    gh = GH()
-    gh_output(video_id=vid)
+    return mode, vid, work
 
+
+def plan(vid: str, work: Path, gh: GH, chunk_len: float):
+    """Step 1: is the video already archived in its Release? Then skip download + encode."""
+    gh_output(video_id=vid)
     rel = gh.release(vid)
     if rel and any(a["name"] == "parts.json" for a in rel["assets"]):
         log(f"release {vid} already archived; skipping download")
@@ -168,24 +170,28 @@ def main():
         manifest = json.loads((work / "parts.json").read_text())
         gh_output(chunks=chunk_plan(manifest["duration"], chunk_len), duration=str(manifest["duration"]),
                   has_captions="true" if (work / "captions.vtt").exists() else "false", reused="true")
-        return
+    else:
+        gh_output(reused="false")
 
+
+def fetch(vid: str, work: Path):
+    """Step 2: get the source video + metadata + captions into work/dl (the only step that
+    talks to YouTube, so it is the only one run through the WARP tunnel)."""
     url = f"https://www.youtube.com/watch?v={vid}"
     dl = work / "dl"
     dl.mkdir(exist_ok=True)
     cap = None
     if vid == SELFTEST_ID:  # offline self-test: synthetic clip with known orb values, no YouTube
         secs = os.environ.get("SELFTEST_SECONDS", "90")
-        chunk_len = 30.0  # several matrix jobs
-        global MAX_PART, SEG_TARGET
-        MAX_PART, SEG_TARGET = 3 * 1024**2, 2 * 1024**2  # several release parts
         subprocess.run([sys.executable, "tests/synthetic.py", str(dl / "syn"), secs], check=True)
         (dl / "syn" / f"{SELFTEST_ID}.part000.mp4").rename(dl / "src.mp4")
         info = json.loads((dl / "syn" / "info.json").read_text())
         info.update(channel="yt-digest self-test", duration=float(secs), webpage_url="(synthetic)")
     else:
         info, cap = download(url, dl, work)
-    finish(vid, url, info, cap, dl, work, gh, chunk_len)
+    slim = {k: info.get(k) for k in ("id", "title", "channel", "uploader", "upload_date", "duration",
+                                     "description", "webpage_url", "chapters", "language", "view_count")}
+    save_json(dl / "meta.json", {"info": slim, "cap": cap})
 
 
 def download(url: str, dl: Path, work: Path):
@@ -207,14 +213,20 @@ def download(url: str, dl: Path, work: Path):
     return info, cap
 
 
-def finish(vid, url, info, cap, dl, work, gh, chunk_len):
+def archive(vid: str, work: Path, gh: GH, chunk_len: float):
+    """Step 3: re-encode to 720p H.264, split <1.9 GB, upload to the Release."""
+    url = f"https://www.youtube.com/watch?v={vid}"
+    dl = work / "dl"
+    meta = json.loads((dl / "meta.json").read_text())
+    slim, cap = meta["info"], meta["cap"]
+    if vid == SELFTEST_ID:
+        chunk_len = 30.0  # several matrix jobs
+        global MAX_PART, SEG_TARGET
+        MAX_PART, SEG_TARGET = 3 * 1024**2, 2 * 1024**2  # several release parts
     src = next(p for p in dl.iterdir() if p.name.startswith("src.") and p.suffix in (".mkv", ".mp4", ".webm"))
     subs = [p for p in dl.iterdir() if p.suffix == ".vtt"]
     if subs:
         shutil.copy(subs[0], work / "captions.vtt")
-
-    slim = {k: info.get(k) for k in ("id", "title", "channel", "uploader", "upload_date", "duration",
-                                     "description", "webpage_url", "chapters", "language", "view_count")}
     slim["caption_track"] = {"lang": cap[0], "auto": cap[1]} if cap else None
     save_json(work / "info.json", slim)
 
@@ -244,6 +256,19 @@ def finish(vid, url, info, cap, dl, work, gh, chunk_len):
             gh.upload_asset(gh.release(vid), work / name)
     gh_output(chunks=chunk_plan(duration, chunk_len), duration=str(duration),
               has_captions="true" if cap else "false", reused="false")
+
+
+def main():
+    mode, vid, work = setup(sys.argv)
+    chunk_len = float(os.environ.get("CHUNK_SECONDS", "1200"))
+    if mode == "plan":
+        plan(vid, work, GH(), chunk_len)
+    elif mode == "download":
+        fetch(vid, work)
+    elif mode == "archive":
+        archive(vid, work, GH(), chunk_len)
+    else:
+        raise SystemExit(f"unknown mode {mode!r}; use plan | download | archive")
 
 
 if __name__ == "__main__":

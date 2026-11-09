@@ -96,9 +96,9 @@ def main():
         tail = log_tail(gh)
         blocked = (len(a) > 1 and a[1] == "true") or "YouTube blocked the runner" in tail
         if blocked:
-            body = ("🚫 **YouTube blocked the GitHub runner** (bot check / HTTP 403). Fix: add a repository "
-                    "secret named `YOUTUBE_COOKIES` holding cookies.txt (Netscape format) exported from a "
-                    "logged-in browser, then comment `/digest` here. See README → *If YouTube blocks the runner*.\n\n")
+            body = ("🚫 **YouTube blocked the download** (bot check / HTTP 403), even through the WARP tunnel. "
+                    "Re-run with `/digest`; blocks are often temporary. If it keeps failing, see README → "
+                    "*YouTube access*.\n\n")
         else:
             body = f"❌ **{desc} failed.** [Workflow run]({run_url()})\n\n"
         body += tail

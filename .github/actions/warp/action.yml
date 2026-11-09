@@ -1,0 +1,37 @@
+name: Cloudflare WARP tunnel
+description: >-
+  Routes the job's traffic through Cloudflare WARP (free anonymous account created by wgcf,
+  no Google/YouTube login) so YouTube does not see a flagged datacenter IP. Use mode "down"
+  to switch it off again before large uploads.
+inputs:
+  mode:
+    description: up or down
+    default: up
+runs:
+  using: composite
+  steps:
+    - name: WARP ${{ inputs.mode }}
+      shell: bash
+      env:
+        MODE: ${{ inputs.mode }}
+        WGCF_VERSION: "2.3.1"   # MIT, github.com/ViRb3/wgcf
+      run: |
+        if [ "$MODE" = "down" ]; then
+          sudo wg-quick down wgcf || true
+          echo "WARP down; egress ip: $(curl -s --max-time 15 https://api.ipify.org)"
+          exit 0
+        fi
+        echo "egress ip before: $(curl -s --max-time 15 https://api.ipify.org)"
+        sudo apt-get -o Acquire::Retries=3 install -y -qq --no-install-recommends wireguard-tools resolvconf > /dev/null
+        mkdir -p "$RUNNER_TEMP/wgcf" && cd "$RUNNER_TEMP/wgcf"
+        curl -sfL --retry 3 -o wgcf "https://github.com/ViRb3/wgcf/releases/download/v${WGCF_VERSION}/wgcf_${WGCF_VERSION}_linux_amd64"
+        chmod +x wgcf
+        for i in 1 2 3 4; do
+          if ./wgcf register --accept-tos && ./wgcf generate; then break; fi
+          [ "$i" = 4 ] && { echo "::error::wgcf could not register a WARP account"; exit 1; }
+          sleep $((i * 10))
+        done
+        sed -i 's/^DNS = .*/DNS = 1.1.1.1/' wgcf-profile.conf
+        sudo cp wgcf-profile.conf /etc/wireguard/wgcf.conf
+        sudo wg-quick up wgcf
+        echo "egress ip via WARP: $(curl -s --max-time 15 https://api.ipify.org)"
