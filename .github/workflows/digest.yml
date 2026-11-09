@@ -8,13 +8,19 @@ on:
   workflow_dispatch:
     inputs:
       url:
-        description: YouTube URL or video id
-        required: true
+        description: YouTube URL or video id (leave empty when using "ingest")
+        required: false
+      ingest:
+        description: Release tag or direct file URL of a video you uploaded (instead of a YouTube URL)
+        required: false
+      profile:
+        description: "Profile (default: generic). Example: d2r"
+        required: false
       issue:
         description: Issue number to comment on (optional)
         required: false
       recalibrate:
-        description: Re-detect the HUD even if config/hud/<id>.json exists
+        description: Redo the profile's calibration even if config/videos/<id>.json exists
         type: boolean
         default: false
 
@@ -39,7 +45,8 @@ jobs:
       github.event_name != 'issue_comment' ||
       startsWith(github.event.comment.body, '/digest') ||
       startsWith(github.event.comment.body, '/hud') ||
-      startsWith(github.event.comment.body, '/recalibrate')
+      startsWith(github.event.comment.body, '/recalibrate') ||
+      startsWith(github.event.comment.body, '/ingest')
     runs-on: ubuntu-latest
     outputs:
       run: ${{ steps.req.outputs.run }}
@@ -49,6 +56,8 @@ jobs:
       mode: ${{ steps.req.outputs.mode }}
       sets: ${{ steps.req.outputs.sets }}
       force: ${{ steps.req.outputs.force }}
+      profile: ${{ steps.req.outputs.profile }}
+      source: ${{ steps.req.outputs.source }}
       started: ${{ steps.req.outputs.started }}
     steps:
       - uses: actions/checkout@v5
@@ -88,32 +97,43 @@ jobs:
       # Set repository variable USE_WARP=false to turn the tunnel off.
       - name: Download from YouTube
         id: dl
-        if: steps.plan.outputs.reused != 'true'
+        if: steps.plan.outputs.reused != 'true' && needs.request.outputs.mode != 'ingest'
         env:
           USE_WARP: ${{ needs.request.outputs.video_id != 'SYNTHETIC01' && vars.USE_WARP != 'false' }}
           YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}   # optional, unused unless the secret exists
         run: scripts/download_via_warp.sh "${{ needs.request.outputs.video_id }}" work
+      # /ingest: a file you uploaded to a Release (e.g. from your phone) or a direct file URL
+      - name: Ingest uploaded file
+        id: ingest
+        if: steps.plan.outputs.reused != 'true' && needs.request.outputs.mode == 'ingest'
+        env:
+          INGEST_SOURCE: ${{ needs.request.outputs.source }}
+        run: python -m ytdigest.prepare ingest "${{ needs.request.outputs.video_id }}" work
       - name: Archive to the Release (720p H.264)
         id: arch
         if: steps.plan.outputs.reused != 'true'
         run: python -m ytdigest.prepare archive "${{ needs.request.outputs.video_id }}" work
-      - name: HUD calibration
+      - name: Profile and calibration
         id: cal
         env:
           SETS: ${{ needs.request.outputs.sets }}
+          PROFILE: ${{ needs.request.outputs.profile }}
+          VID: ${{ needs.request.outputs.video_id }}
         run: |
           args=()
           for s in $SETS; do args+=(--set "$s"); done
           [ "${{ needs.request.outputs.force }}" = "true" ] && args+=(--force)
-          python -m ytdigest.calibrate "${{ needs.request.outputs.video_id }}" work --archive-dir work/archive "${args[@]}"
+          [ -n "$PROFILE" ] && args+=(--profile "$PROFILE")
+          python -m ytdigest.calibrate "$VID" work --archive-dir work/archive "${args[@]}"
           status=$(cat work/calibration_status.txt)
-          sha=$(scripts/commit.sh "HUD calibration for ${{ needs.request.outputs.video_id }} ($status)" \
-                config/hud digests/${{ needs.request.outputs.video_id }}/calibration.png)
+          sha=$(scripts/commit.sh "Profile/calibration for $VID ($status)" config/videos "digests/$VID/calibration.png")
           echo "sha=$sha" >> "$GITHUB_OUTPUT"
           echo "status=$status" >> "$GITHUB_OUTPUT"
       - name: Post calibration image
-        if: steps.cal.outputs.status != 'existing'
-        run: python -m ytdigest.notify calibration "${{ needs.request.outputs.issue }}" "${{ needs.request.outputs.video_id }}" "${{ steps.cal.outputs.sha }}" "${{ steps.cal.outputs.status }}"
+        if: steps.cal.outputs.status != 'existing' && steps.cal.outputs.status != 'none'
+        run: python -m ytdigest.notify calibration "${{ needs.request.outputs.issue }}" "${{ needs.request.outputs.video_id }}" "${{ steps.cal.outputs.sha }}" "${{ steps.cal.outputs.status }}" work
+      - name: Suggest a profile (never switches silently)
+        run: python -m ytdigest.notify suggestion "${{ needs.request.outputs.issue }}" work
       - uses: actions/upload-artifact@v4
         with:
           name: prep
@@ -139,7 +159,7 @@ jobs:
       - uses: ./.github/actions/setup
         with:
           apt: ffmpeg tesseract-ocr
-      - name: Analyse every frame at 25 fps (${{ matrix.chunk.start }}s - ${{ matrix.chunk.end }}s)
+      - name: Analyse every frame (${{ matrix.chunk.start }}s - ${{ matrix.chunk.end }}s)
         run: python -m ytdigest.analyze "${{ needs.request.outputs.video_id }}" ${{ matrix.chunk.start }} ${{ matrix.chunk.end }} out --workdir work
       - uses: actions/upload-artifact@v4
         with:

@@ -10,6 +10,7 @@ from __future__ import annotations
 import json
 import math
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -82,16 +83,38 @@ def ffprobe(path: Path) -> dict:
     return json.loads(out)
 
 
+STD_FPS = (24000 / 1001, 24.0, 25.0, 30000 / 1001, 30.0, 50.0, 60000 / 1001, 60.0)
+
+
+def snap_fps(avg: float) -> float:
+    """Common frame rates snap to their exact value (29.97 -> 30000/1001); anything else rounds; max 60."""
+    best = min(STD_FPS, key=lambda r: abs(avg - r) / r)
+    if abs(avg - best) / best < 0.005:
+        return best
+    return float(min(60, max(1, round(avg))))
+
+
 def encode_archive(src: Path, dst: Path):
-    """720p H.264 CRF 26, AAC 96k, keyframe every 2 s so zoom seeks are cheap."""
+    """720p H.264 CRF 26, AAC 96k, constant frame rate at the source's rate (capped at 60), keyframe
+    every 2 s so zoom seeks are cheap. Portrait video is limited to 720 px wide instead of 720 tall.
+    Phone screen recordings are variable frame rate; the fps filter makes them constant."""
+    pr = ffprobe(src)
+    v = next(s for s in pr["streams"] if s["codec_type"] == "video")
+    num, den = (int(x) for x in v.get("avg_frame_rate", "0/1").split("/"))
+    avg = num / den if den and num else 30.0
+    fps_out = snap_fps(avg)
+    portrait = int(v["height"]) > int(v["width"])
+    scale = "scale='min(720,iw)':-2" if portrait else "scale=-2:'min(720,ih)'"
+    gop = max(25, int(round(fps_out * 2)))
     cmd = ["ffmpeg", "-hide_banner", "-loglevel", "error", "-stats_period", "60", "-stats", "-y",
            "-i", str(src),
            "-map", "0:v:0", "-map", "0:a:0?",
-           "-vf", "scale=-2:'min(720,ih)':flags=bicubic",
+           "-vf", f"fps={fps_out:.6f},{scale}:flags=bicubic",
            "-c:v", "libx264", "-preset", "veryfast", "-crf", "26", "-pix_fmt", "yuv420p",
-           "-g", "120", "-keyint_min", "25", "-sc_threshold", "0",
+           "-g", str(gop), "-keyint_min", "25", "-sc_threshold", "0",
            "-c:a", "aac", "-b:a", "96k", "-ac", "2",
            "-movflags", "+faststart", str(dst)]
+    log(f"source {v['width']}x{v['height']} avg {avg:.2f} fps -> archive {fps_out:.3f} fps")
     log("+ " + " ".join(cmd))
     subprocess.run(cmd, check=True)
 
@@ -141,18 +164,24 @@ def split_archive(full: Path, vid: str, outdir: Path, duration: float) -> list[d
     return parts
 
 
-def chunk_plan(duration: float, chunk_len: float) -> list[dict]:
+def chunk_plan(duration: float, chunk_len: float, native_fps: float = 30.0) -> list[dict]:
+    """Equal chunks, one parallel analysis job each. Chunks hold at most ~36k frames: 20 min at 30 fps,
+    10 min at 60 fps."""
+    chunk_len = max(300.0, chunk_len * 30.0 / max(1.0, min(native_fps, 60.0)))
     n = max(1, math.ceil(duration / chunk_len))
     step = duration / n
     return [{"idx": i, "start": round(i * step, 3), "end": round(min(duration, (i + 1) * step), 3)}
             for i in range(n)]
 
 
+SAFE_ID = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,79}")
+
+
 def setup(argv):
     mode, target, work = argv[1], argv[2], Path(argv[3])
-    vid = parse_video_id(target)
+    vid = parse_video_id(target) or (target if SAFE_ID.fullmatch(target or "") else None)
     if not vid:
-        raise SystemExit(f"no YouTube video id found in {target!r}")
+        raise SystemExit(f"no usable video id in {target!r}")
     work.mkdir(parents=True, exist_ok=True)
     return mode, vid, work
 
@@ -168,7 +197,7 @@ def plan(vid: str, work: Path, gh: GH, chunk_len: float):
             if any(a["name"] == name for a in rel["assets"]):
                 gh.download_asset(rel, name, work / name)
         manifest = json.loads((work / "parts.json").read_text())
-        gh_output(chunks=chunk_plan(manifest["duration"], chunk_len), duration=str(manifest["duration"]),
+        gh_output(chunks=chunk_plan(manifest["duration"], chunk_len, float(manifest.get("fps") or 30)), duration=str(manifest["duration"]),
                   has_captions="true" if (work / "captions.vtt").exists() else "false", reused="true")
     else:
         gh_output(reused="false")
@@ -255,7 +284,7 @@ def archive(vid: str, work: Path, gh: GH, chunk_len: float):
     for name in ("info.json", "captions.vtt", "parts.json"):  # parts.json last = archive complete
         if (work / name).exists():
             gh.upload_asset(gh.release(vid), work / name)
-    gh_output(chunks=chunk_plan(duration, chunk_len), duration=str(duration),
+    gh_output(chunks=chunk_plan(duration, chunk_len, num / den), duration=str(duration),
               has_captions="true" if cap else "false", reused="false")
 
 
@@ -266,6 +295,9 @@ def main():
         plan(vid, work, GH(), chunk_len)
     elif mode == "download":
         fetch(vid, work)
+    elif mode == "ingest":
+        from . import ingest
+        ingest.run(vid, os.environ["INGEST_SOURCE"], work)
     elif mode == "archive":
         archive(vid, work, GH(), chunk_len)
     else:

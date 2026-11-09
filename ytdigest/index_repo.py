@@ -33,20 +33,26 @@ def build() -> str:
         base = f"{raw}/digests/{vid}"
         counts = ", ".join(f"{k} {v}" for k, v in sorted((s.get("event_counts") or {}).items()))
         links = " · ".join([
-            f"[index]({base}/index.md)", f"[transcript]({base}/transcript.md)", f"[events]({base}/events.md)",
-            f"[frames]({base}/frames.jsonl.gz)", f"[calibration]({base}/calibration.png)",
-            f"[video]({web}/releases/tag/{vid})"])
+            f"[index]({base}/index.md)", f"[transcript]({base}/transcript.md)", f"[on-screen text]({base}/ocr.md)",
+            f"[events]({base}/events.md)", f"[frames]({base}/frames.jsonl.gz)",
+            f"[thumbs]({base}/thumbs/overview_001.jpg)", f"[video]({web}/releases/tag/{vid})"]
+            + ([f"[calibration]({base}/calibration.png)"] if (d.parent / "calibration.png").exists() else []))
+        n = int(s.get("sheets") or 0)
+        sheets = (f"{n} sheets: [Release]({web}/releases/tag/sheets-{vid}), files "
+                  f"`{web}/releases/download/sheets-{vid}/sheet_NNNN.jpg` for NNNN = 0001-{n:04d}"
+                  + (" (900 per release; further ones in `sheets-" + vid + "-2`, ...)" if n > 900 else "")) if n else "-"
         zooms = sorted((ROOT / "zooms" / vid).glob("*/index.md")) if (ROOT / "zooms" / vid).exists() else []
         zl = " · ".join(f"[{z.parent.name}]({raw}/zooms/{vid}/{z.parent.name}/index.md)" for z in zooms) or "-"
-        rows.append(f"| `{vid}` | {s.get('title', '')} | {hms(s.get('duration_s', 0))} | {s.get('events', '')} "
-                    f"({counts}) | {links} | {zl} |")
+        rows.append(f"| `{vid}` | {str(s.get('title', '')).replace('|', '/')} | {s.get('profile', '?')} | {hms(s.get('duration_s', 0))} | "
+                    f"{s.get('fps', '?')} | {s.get('events', '')} ({counts}) | {links} | {sheets} | {zl} |")
     head = ["# yt-digest index", "",
-            "Every digested video. All links are raw URLs, so they can be fetched directly. "
-            f"Videos live in [Releases]({web}/releases) (tag = video id).", "",
-            "Ask for a zoom by commenting `/zoom <video_id> H:MM:SS-H:MM:SS [fps]` on the video's issue; "
-            "`/delete <video_id>` removes a digest and its Release.", "",
-            "| video | title | length | events | files | zooms |", "|---|---|---|---|---|---|"]
-    return "\n".join(head + (rows or ["| _none yet_ | | | | | |"])) + "\n"
+            "Every digested video. All links are raw or Release URLs, so they can be fetched directly. "
+            f"Videos live in [Releases]({web}/releases) (tag = video id); contact sheets in the `sheets-<id>` Releases "
+            "and listed with time ranges in each `index.md`.", "",
+            "Commands (comment on an issue): `/digest [url] [profile: x]`, `/ingest <release-tag | file-url>`, "
+            "`/zoom <video_id> H:MM:SS-H:MM:SS [fps]`, `/delete <video_id>`.", "",
+            "| video | title | profile | length | fps | events | files | sheets | zooms |", "|---|---|---|---|---|---|---|---|---|"]
+    return "\n".join(head + (rows or ["| _none yet_ | | | | | | | | |"])) + "\n"
 
 
 def main():

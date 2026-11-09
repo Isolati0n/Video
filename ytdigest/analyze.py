@@ -1,25 +1,23 @@
-"""Stage 5: per-frame analysis of EVERY frame at 25 fps for one time chunk.
+"""Stage 5: per-frame analysis of EVERY frame at the analysis rate, for one time chunk.
 
   python -m ytdigest.analyze <video_id> <start> <end> <outdir> [--archive-dir DIR] [--workdir DIR]
+         [--profile NAME]
 
-Writes <outdir>/frames-<start>.jsonl.gz and 1 fps thumbnails <outdir>/thumbs/<sec>.jpg
-(used for contact sheets).
+The rate is the video's native fps (capped at 60), or the profile's own if it sets one (D2R: 25).
 
-Record keys (one JSON object per frame):
-  f      frame number at 25 fps (t = f / 25)
-  t      seconds
-  scene  "game" (HUD visible) | "dark" (black/fade/loading) | "other" (menu, loading art, overlay)
-  hud    0..1 similarity of the HUD to the calibrated reference
-  life   life % from orb fill (null unless scene == game)
-  mana   mana % from orb fill (null unless scene == game)
-  poison true when the life orb is green
-  motion mean absolute pixel change vs previous frame (0..255, game area only)
-  shift  global camera translation vs previous frame, px at 320 wide (phase correlation, central game area)
-  match  0..1 structural match with the previous frame (1 = same view; low = new view, e.g. teleport)
-  chg    share (0..1) of 8x8 blocks of the central game area that changed vs the previous frame
-  cut    true when the colour histogram jumps (scene change)
-  phash  64-bit DCT perceptual hash (hex)
-  ocr    {region: text} once per second (chat / center / top_right), only when text found
+Writes into <outdir>:
+  frames-<k0>.jsonl.gz   one JSON record per frame (generic fields below, plus the profile's extras)
+  text-<k0>.jsonl.gz     whole-frame OCR: {"t", "f", "lines": [{"text", "conf"}]}
+  thumbs/<frame>.jpg     640x360 candidates for the contact sheets (changed picture, or every 10 s)
+
+Generic record keys:
+  f       frame number at the analysis rate (t = f / fps)
+  t       seconds
+  motion  mean absolute pixel change vs the previous frame (0..255, whole frame, 320x180 gray)
+  cut     true when the colour histogram jumps (a scene change)
+  phash   64-bit DCT perceptual hash (hex)
+  bright  mean brightness 0..255
+  sig     coarse scene signature: 2x2 grid of (hue bin 0-7, saturation 0/1, value bin 0-3), 6 hex chars
 """
 from __future__ import annotations
 
@@ -34,12 +32,16 @@ from pathlib import Path
 import cv2
 import numpy as np
 
-from . import hud
-from .common import FPS, log
-from .ocr import ocr_regions
+from . import profiles, videoconfig
+from .common import log
+from .ocr import ocr_frame
 from .video import Archive
 
 SW, SH = 320, 180
+THUMB_MIN_BITS = 3     # a thumbnail candidate is kept when the picture changed by >= this many hash bits ...
+THUMB_MAX_GAP = 10     # ... or when this many seconds passed since the last one
+OCR_MIN_GAP = 0.5      # seconds between OCR runs (scene changes may OCR sooner than the 1 s rhythm)
+OCR_BLOCK_DIFF = 3.0   # a block (8x8 at 320x180) counts as changed above this mean difference
 
 
 def phash(gray_small: np.ndarray) -> str:
@@ -54,6 +56,20 @@ def histo(hsv_small):
     return cv2.normalize(h, h).flatten()
 
 
+def signature(small_bgr: np.ndarray) -> str:
+    tiny = cv2.cvtColor(cv2.resize(small_bgr, (2, 2), interpolation=cv2.INTER_AREA), cv2.COLOR_BGR2HSV).reshape(-1, 3)
+    v = 0
+    for h, s, val in tiny:
+        v = (v << 6) | ((int(h) * 8 // 180) << 3) | ((1 if s >= 64 else 0) << 2) | (int(val) // 64)
+    return f"{v:06x}"
+
+
+def changed_blocks(a: np.ndarray, b: np.ndarray) -> int:
+    d = cv2.absdiff(a, b)
+    bh, bw = d.shape[0] // 8 * 8, d.shape[1] // 8 * 8
+    return int((d[:bh, :bw].reshape(bh // 8, 8, bw // 8, 8).mean((1, 3)) > OCR_BLOCK_DIFF).sum())
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("video_id")
@@ -62,33 +78,37 @@ def main():
     ap.add_argument("outdir", type=Path)
     ap.add_argument("--archive-dir", type=Path)
     ap.add_argument("--workdir", type=Path, default=Path("work"))
+    ap.add_argument("--profile", default="")
     a = ap.parse_args()
 
-    cfg = hud.load(a.video_id)
-    if not cfg:
-        raise SystemExit("no HUD config; run calibrate first")
+    saved = videoconfig.load(a.video_id) or {}
+    prof = profiles.get(a.profile or saved.get("profile") or "generic")
+    cfg = saved.get("config") or {}
     arc = Archive(a.video_id, a.workdir, a.archive_dir)
-    W, H = arc.width, arc.height
-    reader = hud.HudReader(cfg, W, H)
-    ocr_rects = {k: hud.px(cfg.get(k, hud.DEFAULT[k]), W, H) for k in hud.OCR_REGIONS}
-    game_rows = int(SH * min(cfg["life"][1], cfg["mana"][1], cfg["skills"][1]))
-    game_rows = max(int(SH * 0.5), game_rows)
+    fps = profiles.analysis_fps(arc.native_fps, prof)
+    fps_i = max(1, int(round(fps)))
+    if type(prof).analyzer is not profiles.Profile.analyzer and not cfg:
+        raise SystemExit(f"profile {prof.name} has no calibration for this video; run calibrate first")
+    an = prof.analyzer(cfg, arc.width, arc.height, fps)
+    log(f"profile={prof.name} fps={fps:g} (native {arc.native_fps:g}) frames {a.start:.0f}s-{a.end:.0f}s")
 
     a.outdir.mkdir(parents=True, exist_ok=True)
     thumbs = a.outdir / "thumbs"
     thumbs.mkdir(exist_ok=True)
-    out_path = a.outdir / f"frames-{int(a.start * FPS):08d}.jsonl.gz"
+    k0 = int(round(a.start * fps))
+    out_path = a.outdir / f"frames-{k0:09d}.jsonl.gz"
+    text_path = a.outdir / f"text-{k0:09d}.jsonl.gz"
     pool = ThreadPoolExecutor(max_workers=3)
-    pending: deque = deque()
+    pending: deque = deque()   # (rec, profile-ocr future | None)
+    text_pending: deque = deque()   # (t, k, future)
     prev_gray = prev_hist = None
-    # central game area for camera tracking: excludes the party list, FPS/ping text and top-right game info
-    cx0, cx1, cy0, cy1 = int(0.10 * SW), int(0.72 * SW), int(0.12 * SH), game_rows
-    win = cv2.createHanningWindow((cx1 - cx0, cy1 - cy0), cv2.CV_32F)
+    last_sec = -1
+    last_thumb_hash, last_thumb_sec, cut_since_thumb = None, -10**9, False
+    last_ocr_gray, last_ocr_t = None, -10**9
     n = 0
     t0 = time.time()
-    # start one frame early so the first frame of the chunk has a motion value
-    pre = 1.0 / FPS if a.start > 0 else 0.0
-    with gzip.open(out_path, "wt", compresslevel=6) as out:
+    pre = 1.0 / fps if a.start > 0 else 0.0   # one lead-in frame so the first frame has a motion value
+    with gzip.open(out_path, "wt", compresslevel=6) as out, gzip.open(text_path, "wt", compresslevel=6) as tout:
         def flush(block=False):
             while pending and (block or pending[0][1] is None or pending[0][1].done()):
                 rec, fut = pending.popleft()
@@ -97,67 +117,67 @@ def main():
                     if txt:
                         rec["ocr"] = txt
                 out.write(json.dumps(rec, separators=(",", ":")) + "\n")
+            while text_pending and (block or text_pending[0][2].done()):
+                tt, kk, fut = text_pending.popleft()
+                lines = fut.result()
+                if lines:
+                    tout.write(json.dumps({"t": round(tt, 3), "f": kk,
+                                           "lines": [{"text": x["text"], "conf": x["conf"]} for x in lines]},
+                                          separators=(",", ":")) + "\n")
 
-        for t, frame in arc.frames(a.start - pre, a.end):
-            k = int(round(t * FPS))
+        for t, frame in arc.frames(a.start - pre, a.end, fps):
+            k = int(round(t * fps))
             small = cv2.resize(frame, (SW, SH), interpolation=cv2.INTER_AREA)
             gray = cv2.cvtColor(small, cv2.COLOR_BGR2GRAY)
             hsv = cv2.cvtColor(small, cv2.COLOR_BGR2HSV)
             hist = histo(hsv)
             if prev_gray is None:
-                motion, cut, shift, match, chg = None, False, None, None, None
+                motion, cut = None, False
             else:
-                motion = float(cv2.absdiff(gray[:game_rows], prev_gray[:game_rows]).mean())
-                # Camera tracking by phase correlation on the central game area:
-                #   shift = global translation in px at 320 wide (~0 standing, 1-3 running)
-                #   match = how well the two frames correlate (0..1). A spell flash changes `motion`
-                #           but keeps match ~1; a teleport shows a new view: motion high, match low.
-                (dx, dy), match = cv2.phaseCorrelate(prev_gray[cy0:cy1, cx0:cx1].astype(np.float32),
-                                                     gray[cy0:cy1, cx0:cx1].astype(np.float32), win)
-                shift = float(np.hypot(dx, dy))
-                # share of 8x8 blocks of the central game area that changed: a new view changes almost
-                # all of them, a UI panel or a spell effect only some
-                d = cv2.absdiff(gray[cy0:cy1, cx0:cx1], prev_gray[cy0:cy1, cx0:cx1])
-                bh, bw = d.shape[0] // 8 * 8, d.shape[1] // 8 * 8
-                chg = float((d[:bh, :bw].reshape(bh // 8, 8, bw // 8, 8).mean((1, 3)) > 4).mean())
+                motion = float(cv2.absdiff(gray, prev_gray).mean())
                 cut = bool(cv2.compareHist(prev_hist, hist, cv2.HISTCMP_BHATTACHARYYA) > 0.45)
             prev_gray, prev_hist = gray, hist
+            rec = {"f": k, "t": round(k / fps, 3)}
+            if an is not None:
+                an.process(frame, gray, k, t, rec)   # profile extras (also on the lead-in frame, to keep its state)
             if t < a.start - 1e-6:
-                continue  # the extra lead-in frame
-            score = reader.hud_score(gray)
-            dark = gray.mean() < 14
-            scene = "dark" if dark else ("game" if score >= 0.45 else "other")
-            rec = {"f": k, "t": round(k / FPS, 2), "scene": scene, "hud": round(score, 2)}
-            if scene == "game":
-                life, mana, poison, _, _ = reader.read(frame)
-                rec["life"], rec["mana"] = round(life, 1), round(mana, 1)
-                if poison:
-                    rec["poison"] = True
-            else:
-                rec["life"] = rec["mana"] = None
+                continue
+            bright = float(gray.mean())
             rec["motion"] = None if motion is None else round(motion, 2)
-            rec["shift"] = None if shift is None else round(shift, 1)
-            rec["match"] = None if match is None else round(float(match), 2)
-            rec["chg"] = None if chg is None else round(chg, 2)
             if cut:
                 rec["cut"] = True
-            rec["phash"] = phash(gray)
+                cut_since_thumb = True
+            ph = phash(gray)
+            rec["phash"] = ph
+            rec["bright"] = round(bright, 1)
+            rec["sig"] = signature(small)
+
             fut = None
-            if k % FPS == 0:
-                sec = k // FPS
-                cv2.imwrite(str(thumbs / f"{sec:06d}.jpg"),
-                            cv2.resize(frame, (640, 360), interpolation=cv2.INTER_AREA),
-                            [cv2.IMWRITE_JPEG_QUALITY, 88])
-                if not dark:
-                    crops = {r: frame[y0:y1, x0:x1].copy() for r, (x0, y0, x1, y1) in ocr_rects.items()}
-                    fut = pool.submit(ocr_regions, crops)
+            crops = rec.pop("_ocr_crops", None)
+            if crops is not None and an is not None and an.ocr_fn is not None:
+                fut = pool.submit(an.ocr_fn, crops)
+
+            sec = int(t + 1e-6)
+            new_sec = sec != last_sec
+            if new_sec:
+                last_sec = sec
+                h = int(ph, 16)
+                dist = 64 if last_thumb_hash is None else bin(h ^ last_thumb_hash).count("1")
+                if dist >= THUMB_MIN_BITS or cut_since_thumb or sec - last_thumb_sec >= THUMB_MAX_GAP:
+                    cv2.imwrite(str(thumbs / f"{k:09d}.jpg"), cv2.resize(frame, (640, 360), interpolation=cv2.INTER_AREA),
+                                [cv2.IMWRITE_JPEG_QUALITY, 88])
+                    last_thumb_hash, last_thumb_sec, cut_since_thumb = h, sec, False
+            if prof.generic_ocr and bright >= 14 and (new_sec or cut) and t - last_ocr_t >= OCR_MIN_GAP:
+                if last_ocr_gray is None or changed_blocks(gray, last_ocr_gray) >= 1:
+                    text_pending.append((t, k, pool.submit(ocr_frame, frame.copy())))
+                    last_ocr_gray, last_ocr_t = gray, t
             pending.append((rec, fut))
             if len(pending) > 400:
                 flush(block=len(pending) > 2000)
             else:
                 flush()
             n += 1
-            if n % (FPS * 300) == 0:
+            if n % (fps_i * 300) == 0:
                 el = time.time() - t0
                 log(f"{t:.0f}s analysed, {n} frames, {n / el:.0f} fps")
         flush(block=True)

@@ -11,7 +11,7 @@ from pathlib import Path
 import requests
 
 ROOT = Path(__file__).resolve().parent.parent
-FPS = 25  # D2R game tick rate; analysis runs on every frame at this rate
+MAX_FPS = 60  # analysis never goes above this; the rate itself is native fps or the profile's own
 VIDEO_ID_RE = re.compile(r"(?:v=|youtu\.be/|/shorts/|/live/|/embed/)([A-Za-z0-9_-]{11})")
 
 
@@ -27,13 +27,13 @@ def parse_video_id(text: str) -> str | None:
     return m.group(1) if m else None
 
 
-def hms(t: float, frac: bool = False) -> str:
+def hms(t: float, frac: bool = False, fps: float = 25) -> str:
     t = max(0.0, t)
     h, rem = divmod(int(t), 3600)
     m, s = divmod(rem, 60)
     out = f"{h:02d}:{m:02d}:{s:02d}"
     if frac:
-        out += f".{int(round((t - int(t)) * FPS)):02d}f"  # frame within second
+        out += f".{int(round((t - int(t)) * fps)):02d}f"  # frame within second
     return out
 
 
@@ -52,8 +52,14 @@ def digest_dir(video_id: str) -> Path:
     return ROOT / "digests" / video_id
 
 
-def hud_config_path(video_id: str) -> Path:
-    return ROOT / "config" / "hud" / f"{video_id}.json"
+def video_config_path(video_id: str) -> Path:
+    """Per-video config: {"profile": name, "config": {profile-specific calibration}, ...}."""
+    return ROOT / "config" / "videos" / f"{video_id}.json"
+
+
+def profile_defaults_path(name: str) -> Path:
+    """Optional per-profile defaults (regions, thresholds) shared by all videos of that profile."""
+    return ROOT / "config" / "profiles" / f"{name}.json"
 
 
 def load_json(p: Path, default=None):
@@ -108,6 +114,13 @@ class GH:
                       json={"tag_name": tag, "name": name, "body": body[:100000]})
         r.raise_for_status()
         return r.json()
+
+    def delete_release(self, tag: str):
+        """Delete a release and its tag if present (no error when absent)."""
+        rel = self.release(tag)
+        if rel:
+            self._req("DELETE", f"{self.api}/repos/{self.repo}/releases/{rel['id']}")
+        self._req("DELETE", f"{self.api}/repos/{self.repo}/git/refs/tags/{tag}")
 
     def upload_asset(self, rel: dict, path: Path, content_type="application/octet-stream"):
         path = Path(path)

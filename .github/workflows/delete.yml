@@ -49,7 +49,7 @@ jobs:
         if: steps.req.outputs.run == 'true'
         run: |
           vid="${{ steps.req.outputs.video_id }}"
-          git rm -r -q --ignore-unmatch "digests/$vid" "zooms/$vid" "config/hud/$vid.json"
+          git rm -r -q --ignore-unmatch "digests/$vid" "zooms/$vid" "config/videos/$vid.json"
           if git diff --cached --quiet; then echo "removed=none" >> "$GITHUB_OUTPUT"; exit 0; fi
           git config user.name "yt-digest[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

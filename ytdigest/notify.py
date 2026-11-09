@@ -10,7 +10,9 @@
 from __future__ import annotations
 
 import os
+import re
 import sys
+from pathlib import Path
 
 from .common import GH, digest_dir, hms, load_json, log
 
@@ -66,8 +68,13 @@ REASONS = [
 ]
 
 
+UPLOAD_HINT = ("📱 **Download failed - upload the file from your phone and comment `/ingest <tag>`.** "
+               "Download the video with Seal or NewPipe (720p MP4), then in this repo open *Releases → Draft a new release*, "
+               "type a tag (for example `my-video-1`), attach the file (up to 2 GB per file; split longer videos), "
+               "*Publish release*, and comment `/ingest my-video-1`. Step by step in the README.")
+
+
 def explain(tail: str) -> str:
-    import re
     low = tail.lower()
     for pat, msg in REASONS:
         if re.search(pat, low):
@@ -86,44 +93,35 @@ def main():
         vid, desc = a[0], a[1]
         gh.comment(issue, f"⏳ {desc} for `{vid}` started. [Workflow run]({run_url()})")
     elif what == "calibration":
-        from . import hud
-        vid, sha, status = a[0], a[1], a[2]
-        cfg = hud.load(vid) or {}
+        # args: vid sha status workdir   -- the profile wrote <workdir>/calibration_comment.md
+        vid, sha, status, work = a[0], a[1], a[2], Path(a[3])
+        from . import videoconfig
+        prof = (videoconfig.load(vid) or {}).get("profile", "generic")
         img = blob(sha, f"digests/{vid}/calibration.png", raw=True)
-        notes = cfg.get("notes", {})
-        chk = notes.get("orb_vs_on_screen_numbers") or {}
-        lines = []
-        for kind, v in chk.items():
-            if isinstance(v, dict):
-                lines.append(f"- {kind}: median error {v['held_out_median_abs_err_pct']}%, mean {v['held_out_mae_pct']}%, "
-                             f"90th pct {v['held_out_p90_err_pct']}% vs the game's own on-screen numbers "
-                             f"({v['samples']} held-out-tested samples; a plain linear map would be {v['linear_mae_pct']}% mean)")
-            else:
-                lines.append(f"- {kind}: {v}")
-        check_txt = ("\n\n**Orb readings vs the on-screen `Life: x / y` numbers:**\n" + "\n".join(lines)) if lines else ""
-        body = (f"🎯 **HUD calibration for `{vid}`** ({status}; {notes.get('method', '')})\n\n"
-                f"![calibration]({img})\n\n"
-                f"Red ellipse = life orb, blue = mana orb, yellow = skill bar, other boxes = OCR text areas. "
-                f"The white line in each orb is the measured fill level.\n\n{hud.rect_summary(cfg)}{check_txt}\n\n"
-                f"Analysis continues with these regions. If they are wrong, reply with e.g.\n"
-                f"`/hud {vid} life=5,79,11,20 mana=84,79,11,20` (x,y,w,h in % of the frame) "
-                f"or `/recalibrate {vid}`; the analysis then re-runs from the archived video "
-                f"(no re-download). Config file: `config/hud/{vid}.json`.")
-        gh.comment(issue, body)
+        txt = (work / "calibration_comment.md").read_text() if (work / "calibration_comment.md").exists() else ""
+        gh.comment(issue, f"🎯 **Calibration for `{vid}`** (profile `{prof}`, {status})\n\n![calibration]({img})\n\n{txt}\n\n"
+                          f"Config file: `config/videos/{vid}.json`.")
+    elif what == "suggestion":
+        work = Path(a[0])
+        txt = (work / "suggestion.md").read_text().strip() if (work / "suggestion.md").exists() else ""
+        if txt:
+            gh.comment(issue, txt)
     elif what == "done":
         vid, sha = a[0], a[1]
         s = load_json(digest_dir(vid) / "summary.json", {})
         counts = ", ".join(f"{k} {v}" for k, v in sorted(s.get("event_counts", {}).items())) or "none"
-        st = s.get("stats", {})
         rt = s.get("runtime_s", 0)
+        slug = os.environ["GITHUB_REPOSITORY"]
+        base = os.environ.get("GITHUB_SERVER_URL", "https://github.com")
         body = (f"✅ **Digest ready**: [`digests/{vid}/`]({blob(sha, f'digests/{vid}')})\n\n"
-                f"- Video: {s.get('title')} ({hms(s.get('duration_s', 0))})\n"
-                f"- Frames analysed at 25 fps: {s.get('frames')} ({st.get('game_frames')} with HUD visible)\n"
+                f"- Video: {s.get('title')} ({hms(s.get('duration_s', 0))}), profile `{s.get('profile')}`\n"
+                f"- Frames analysed at {s.get('fps'):g} fps (video is {s.get('native_fps'):g} fps): {s.get('frames')}\n"
                 f"- Events: **{s.get('events')}** ({counts})\n"
-                f"- Contact sheets: {s.get('sheets')} · transcript lines: {s.get('transcript_lines')} "
-                f"({s.get('transcript_source')})\n"
+                f"- Contact sheets: {s.get('sheets')} in [Release `sheets-{vid}`]({base}/{slug}/releases/tag/sheets-{vid}) "
+                f"({(s.get('sheet_bytes_total') or 0) / 1e6:.0f} MB, not in git) · digest in git: {(s.get('git_bytes') or 0) / 1e6:.1f} MB\n"
+                f"- Transcript: {s.get('transcript_lines')} lines ({s.get('transcript_source')}) · on-screen text entries: {s.get('ocr_entries')}\n"
                 f"- Runtime: {rt // 60} min {rt % 60} s\n\n"
-                f"Start with [index.md]({blob(sha, f'digests/{vid}/index.md')}). "
+                f"Start with [index.md]({blob(sha, f'digests/{vid}/index.md')}) (also listed in [INDEX.md]({blob(sha, 'INDEX.md')})). "
                 f"Zoom: `/zoom {vid} H:MM:SS-H:MM:SS [fps]`. [Run log]({run_url()})")
         gh.comment(issue, body)
     elif what == "zoom":
@@ -138,11 +136,12 @@ def main():
         blocked = (len(a) > 1 and a[1] == "true") or "YouTube blocked the runner" in tail
         if blocked:
             body = ("🚫 **YouTube blocked the download** (bot check / HTTP 403), even through the WARP tunnel. "
-                    "Re-run with `/digest`; blocks are often temporary. If it keeps failing, see README → "
-                    "*YouTube access*.\n\n")
+                    "Re-run with `/digest`; blocks are often temporary.\n\n" + UPLOAD_HINT + "\n\n")
         else:
             why = explain(tail)
             body = f"❌ **{desc} failed.** [Workflow run]({run_url()})\n\n" + (f"**Reason:** {why}\n\n" if why else "")
+            if re.search(r"download|youtube|yt-dlp|403|sign in to confirm", (desc + " " + tail).lower()) and "ingest" not in desc.lower():
+                body += UPLOAD_HINT + "\n\n"
         body += tail
         gh.comment(issue, body)
     elif what == "error":

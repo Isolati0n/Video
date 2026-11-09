@@ -7,7 +7,7 @@ from pathlib import Path
 
 import numpy as np
 
-from .common import GH, FPS, log
+from .common import GH, MAX_FPS, log
 
 
 class Archive:
@@ -27,6 +27,7 @@ class Archive:
         self.duration = self.manifest["duration"]
         self.width = self.manifest["width"]
         self.height = self.manifest["height"]
+        self.native_fps = float(self.manifest.get("fps") or 30.0)
 
     def gh_download(self, name: str, dest: Path):
         if self._gh is None:
@@ -56,8 +57,10 @@ class Archive:
                 out.append((path, p["start"], p["end"], vs))
         return out
 
-    def frames(self, start: float, end: float, fps: float = FPS, size: tuple[int, int] | None = None):
-        """Yield (t, frame_bgr) on a fixed fps grid t = k/fps for start <= t < end."""
+    def frames(self, start: float, end: float, fps: float | None = None, size: tuple[int, int] | None = None):
+        """Yield (t, frame_bgr) on a fixed fps grid t = k/fps for start <= t < end.
+        fps defaults to the video's native rate (capped at MAX_FPS)."""
+        fps = fps or min(self.native_fps, MAX_FPS)
         w, h = size or (self.width, self.height)
         k0 = int(np.ceil(start * fps - 1e-6))
         k_end = int(np.ceil(end * fps - 1e-6))
@@ -75,9 +78,10 @@ class Archive:
                 yield (k + i) / fps, frame
             k += n
 
-    def frame_at(self, t: float, size=None) -> np.ndarray | None:
-        k = int(round(t * FPS))
-        for _, f in self.frames(k / FPS, (k + 1) / FPS, FPS, size):
+    def frame_at(self, t: float, size=None, fps: float | None = None) -> np.ndarray | None:
+        fps = fps or min(self.native_fps, MAX_FPS)
+        k = int(round(t * fps))
+        for _, f in self.frames(k / fps, (k + 1) / fps, fps, size):
             return f
         return None
 
