@@ -1,0 +1,91 @@
+name: access-test
+
+# Diagnostic only: which no-login ways of reaching YouTube work from a GitHub runner?
+# Run from Actions -> access-test -> Run workflow. Evidence = the "PROBE ..." lines in the job logs.
+on:
+  workflow_dispatch:
+    inputs:
+      set:
+        description: "opt2 = clients + PO-token provider, opt3 = Cloudflare WARP, opt5 = Invidious/Piped"
+        required: true
+        default: opt2
+      video_id:
+        description: Video id to probe
+        required: true
+        default: LH9ikWH-WOU
+
+permissions:
+  contents: read
+
+jobs:
+  opt2:
+    if: inputs.set == 'opt2'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { label: baseline,        args: "" }
+          - { label: client-tv,       args: "--extractor-args youtube:player_client=tv" }
+          - { label: client-mweb,     args: "--extractor-args youtube:player_client=mweb" }
+          - { label: client-ios,      args: "--extractor-args youtube:player_client=ios" }
+          - { label: client-web_safari, args: "--extractor-args youtube:player_client=web_safari" }
+          - { label: bgutil-default,  args: "", bgutil: true }
+          - { label: bgutil-mweb-tv-web_safari, args: "--extractor-args youtube:player_client=mweb,tv,web_safari", bgutil: true }
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/setup
+      - uses: actions/setup-node@v5
+        if: matrix.bgutil
+        with:
+          node-version: "22"
+      - name: bgutil PO-token provider (GPL-3.0, installed at runtime, not vendored)
+        if: matrix.bgutil
+        run: |
+          pip install -q bgutil-ytdlp-pot-provider==2.0.2
+          git clone -q --single-branch --branch 2.0.2 https://github.com/Brainicism/bgutil-ytdlp-pot-provider.git /tmp/bgutil
+          cd /tmp/bgutil/server && npm ci --silent && npx tsc
+          nohup node build/main.js > /tmp/bgutil.log 2>&1 &
+          for i in $(seq 1 30); do curl -sf http://127.0.0.1:4416/ping && break; sleep 1; done
+          echo; python -m yt_dlp -v --simulate "https://www.youtube.com/watch?v=${{ inputs.video_id }}" 2>&1 | grep -i "PO Token Providers" || true
+      - name: Probe
+        run: python scripts/access_probe.py "${{ matrix.label }}" "${{ inputs.video_id }}" ${{ matrix.args }}
+      - if: always() && matrix.bgutil
+        run: tail -20 /tmp/bgutil.log || true
+
+  opt3:
+    if: inputs.set == 'opt3'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/setup
+      - name: Egress IP before
+        run: curl -s https://api.ipify.org; echo
+      - name: Cloudflare WARP via wgcf (free anonymous WARP account, no Google/YouTube login)
+        run: |
+          sudo apt-get -o Acquire::Retries=3 install -y -qq wireguard-tools resolvconf > /dev/null
+          ver=$(curl -s https://api.github.com/repos/ViRb3/wgcf/releases/latest | python3 -c "import json,sys;print(json.load(sys.stdin)['tag_name'].lstrip('v'))")
+          curl -sL -o wgcf "https://github.com/ViRb3/wgcf/releases/download/v${ver}/wgcf_${ver}_linux_amd64"
+          chmod +x wgcf
+          ./wgcf register --accept-tos
+          ./wgcf generate
+          sed -i 's/^DNS = .*/DNS = 1.1.1.1/' wgcf-profile.conf
+          sudo cp wgcf-profile.conf /etc/wireguard/wgcf.conf
+          sudo wg-quick up wgcf
+          sudo wg show | head -5
+      - name: Egress IP after
+        run: curl -s https://api.ipify.org; echo; curl -s https://www.cloudflare.com/cdn-cgi/trace | grep -E "^(ip|warp|colo)="
+      - name: Probe
+        run: python scripts/access_probe.py warp "${{ inputs.video_id }}"
+
+  opt5:
+    if: inputs.set == 'opt5'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/setup
+      - name: Public Invidious / Piped instances
+        run: python scripts/mirror_probe.py "${{ inputs.video_id }}"
