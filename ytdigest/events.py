@@ -174,21 +174,30 @@ def derive_generic(recs: list[dict], fps: float, text: list[dict], audio_events:
         stats["motion_median"] = round(base, 2)
         stats["motion_threshold"] = round(thr, 2)
 
+    deduped = dedupe_text(text)
     # --- long static stretches
     if ok.sum() > fpsi * 5:
         k = fpsi
         sm = np.convolve(np.nan_to_num(motion, nan=0.0), np.ones(k) / k, mode="same")
         static = (sm < GP["static_motion"]) & ~black & ok
         static_s = 0.0
+        # A slide swap or a few changed lines barely move the mean pixel difference, so a stretch is
+        # also broken wherever new on-screen text appears or the scene cuts.
+        breaks = np.array(sorted([d["t"] for d in deduped if any(len(x) >= GP["text_min_len"] for x in d["new"])]
+                                 + [float(t[i]) for i in cut_idx]))
         for a, b in _runs(static):
-            dur = t[b] - t[a] + 1 / fps
-            if dur >= GP["static_min_s"]:
-                add(a, "static", f"Picture static for {dur:.0f}s (slide, paused video, idle screen)", end=round(float(t[b]), 2))
-                static_s += dur
+            cuts_in = breaks[(breaks > t[a] + 1e-6) & (breaks < t[b])] if len(breaks) else breaks
+            edges = [a] + [int(np.searchsorted(t, x)) for x in cuts_in] + [b + 1]
+            for lo, hi in zip(edges, edges[1:]):
+                if hi - 1 <= lo:
+                    continue
+                dur = t[hi - 1] - t[lo] + 1 / fps
+                if dur >= GP["static_min_s"]:
+                    add(lo, "static", f"Picture static for {dur:.0f}s (slide, paused video, idle screen)", end=round(float(t[hi - 1]), 2))
+                    static_s += dur
         stats["static_seconds"] = round(static_s, 1)
 
     # --- text changes from whole-frame OCR
-    deduped = dedupe_text(text)
     per_min: dict[int, int] = {}
     shown = 0
     for d in deduped:
