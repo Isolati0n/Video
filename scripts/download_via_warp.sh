@@ -19,8 +19,10 @@ for n in $(seq 1 "$attempts"); do
     exit 0
   fi
   [ $rc -ne 75 ] && exit $rc
-  echo "YouTube refused attempt $n; retrying with a fresh tunnel"
-  sleep $((n * 5))
+  # Observed: refusals come in streaks (5 refused within a minute, then a success a few minutes later),
+  # so the pause grows quickly: 5, 20, 45, 80 s
+  echo "YouTube refused attempt $n; retrying with a fresh tunnel after $((n * n * 5)) s"
+  sleep $((n * n * 5))
 done
 echo "::error::YouTube blocked every attempt"
 exit 75
