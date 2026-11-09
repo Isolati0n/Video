@@ -1,0 +1,40 @@
+{
+  "video_id": "ingest-test-rec",
+  "title": "Phone upload test (ingest-test-rec)",
+  "profile": "generic",
+  "fps": 30.0,
+  "native_fps": 30.0,
+  "duration_s": 23.1,
+  "frames": 693,
+  "events": 7,
+  "event_counts": {
+    "text_change": 6,
+    "static": 1
+  },
+  "events_by_source": {
+    "generic": 7
+  },
+  "keyframes": 6,
+  "keyframe_candidates": 6,
+  "dense_events": 0,
+  "sheets": 1,
+  "max_sheet_bytes": 46128,
+  "sheet_bytes_total": 46128,
+  "git_bytes": 27861,
+  "transcript_lines": 0,
+  "transcript_source": "no audio track (nothing to transcribe)",
+  "ocr_entries": 6,
+  "stats": {
+    "motion_median": 0.0,
+    "motion_threshold": 3.0,
+    "static_seconds": 23.1,
+    "ocr_runs_with_text": 6,
+    "ocr_new_text_entries": 6,
+    "ocr_lines_unique": 19,
+    "frames": 693,
+    "cuts": 0,
+    "black_frames": 0,
+    "audio": "none"
+  },
+  "runtime_s": 150
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "t": 0.0,
+    "f": 0,
+    "new": [
+      "Settings",
+      "Wi-Fi: HomeNetwork\u20145G",
+      "Battery 87%",
+      "Storage 42 GB of 128 GB"
+    ]
+  },
+  {
+    "t": 4.0,
+    "f": 120,
+    "new": [
+      "Step 1: open the Releases page",
+      "Tap Draft a new release",
+      "Choose a tag: my\u2014video\u20141"
+    ]
+  },
+  {
+    "t": 8.0,
+    "f": 240,
+    "new": [
+      "Step 2: attach the video file",
+      "Maximum 2 GB per file",
+      "Upload progress 64%"
+    ]
+  },
+  {
+    "t": 12.0,
+    "f": 360,
+    "new": [
+      "Step 3: publish the release",
+      "Comment /ingest my\u2014video\u20141",
+      "Digest ready in 5 minutes"
+    ]
+  },
+  {
+    "t": 16.0,
+    "f": 480,
+    "new": [
+      "Meeting notes 14:30",
+      "Action item: update the roadmap",
+      "Owner: Alex Johnson, due Friday"
+    ]
+  },
+  {
+    "t": 20.0,
+    "f": 600,
+    "new": [
+      "Total: $1,248.50",
+      "Tax 8.25%",
+      "Thank you for your order"
+    ]
+  }
+]
