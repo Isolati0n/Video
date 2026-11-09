@@ -29,6 +29,7 @@ from .sheets import grid, label, save_jpeg, tile_text
 from .video import Archive
 
 SHEETS_PER_RELEASE = 900
+OVERVIEW_PER_HOUR = int(os.environ.get("OVERVIEW_PER_HOUR", "360"))   # tiny thumbnails kept in git
 COLORS = {"scene_change": (0, 220, 255), "motion_burst": (255, 0, 255), "black": (128, 128, 128),
           "loud_peak": (0, 165, 255), "text_change": (255, 255, 255), "static": (200, 200, 0), "silence": (90, 90, 90)}
 
@@ -181,15 +182,19 @@ def main():
     if tdir.exists():
         shutil.rmtree(tdir)
     tdir.mkdir()
+    # Browsable index only: at most OVERVIEW_PER_HOUR evenly spaced keyframes, 160x90 each, 96 per image.
+    # (Every keyframe is on the contact sheets in the Release; git must stay small.)
     n_overview = 0
     small = []
-    for c in keys:
+    cap = max(48, int(OVERVIEW_PER_HOUR * max(1.0, arc.duration / 3600)))
+    pick = keys if len(keys) <= cap else [keys[int(i * len(keys) / cap)] for i in range(cap)]
+    for c in pick:
         img = cv2.imread(str(c["path"]))
         if img is not None:
-            small.append(label(cv2.resize(img, (192, 108), interpolation=cv2.INTER_AREA), hms(c["t"])[3:], min_scale=0.4))
-    for i in range(0, len(small), 80):
+            small.append(label(cv2.resize(img, (160, 90), interpolation=cv2.INTER_AREA), hms(c["t"])[3:], min_scale=0.38))
+    for i in range(0, len(small), 96):
         n_overview += 1
-        save_jpeg(grid(small[i:i + 80], 10, 8), tdir / f"overview_{n_overview:03d}.jpg", qualities=(45, 38))
+        save_jpeg(grid(small[i:i + 96], 12, 8), tdir / f"overview_{n_overview:03d}.jpg", qualities=(40, 34))
 
     # --- upload sheets (or keep them local)
     slug, _, raw = repo_base()
@@ -223,7 +228,7 @@ def main():
            f"- Profile: `{prof.name}` ({prof.title}); analysed at {fps:g} fps (video is {arc.native_fps:g} fps)",
            f"- Archive: GitHub Release `{vid}` (720p H.264 parts + parts.json)",
            "- Files: [transcript.md](transcript.md), [ocr.md](ocr.md) (on-screen text), [events.md](events.md), `events.json`, "
-           "`frames.jsonl.gz` (one JSON per frame), `thumbs/overview_*.jpg` (tiny thumbnails of every keyframe)"
+           "`frames.jsonl.gz` (one JSON per frame), `thumbs/overview_*.jpg` (tiny thumbnails, at most 360 per hour of video)"
            + (", [calibration.png](calibration.png)" if (out / "calibration.png").exists() else ""),
            f"- Sheets: {len(sheet_rows)} contact sheets (3x3 tiles of 640x360; white label = keyframe chosen by scene "
            "change / picture change, coloured border + yellow label = dense frames around an event with HH:MM:SS.ff and frame "

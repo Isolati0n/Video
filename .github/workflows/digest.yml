@@ -38,6 +38,7 @@ env:
   PYTHON_VERSION: "3.12"
   DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  FPS_CAP: ${{ vars.FPS_CAP }}   # optional repository variable: lower the 60 fps analysis cap (e.g. 30)
 
 jobs:
   request:

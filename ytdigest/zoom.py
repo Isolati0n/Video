@@ -54,7 +54,7 @@ def main():
     saved = videoconfig.load(a.video_id) or {}
     afps = float(meta.get("fps") or profiles.analysis_fps(arc.native_fps, profiles.get(saved.get("profile"))))
     explicit = bool(str(a.fps).strip())
-    fps = max(0.1, min(float(MAX_FPS), float(a.fps))) if explicit else min(arc.native_fps, float(MAX_FPS))
+    fps = max(0.1, min(float(MAX_FPS), float(a.fps))) if explicit else min(arc.native_fps, float(MAX_FPS))   # zoom ignores FPS_CAP: it is for looking closely
     if (tb - ta) * fps > MAX_FRAMES:
         raise SystemExit(f"{(tb - ta) * fps:.0f} frames requested; limit is {MAX_FRAMES} "
                          f"({MAX_FRAMES / fps:.0f} s at {fps:g} fps). Use a shorter range or a lower fps.")

@@ -18,7 +18,7 @@ from dataclasses import dataclass
 
 import numpy as np
 
-from ..common import MAX_FPS
+from ..common import fps_cap
 
 
 @dataclass
@@ -76,7 +76,7 @@ class Profile:
 
 def analysis_fps(native_fps: float, profile: Profile) -> float:
     """The rate frames are analysed at: the profile's own if it sets one, else native, capped."""
-    return float(profile.fps) if profile.fps else min(float(native_fps), float(MAX_FPS))
+    return float(profile.fps) if profile.fps else min(float(native_fps), fps_cap())
 
 
 _REGISTRY: dict[str, Profile] = {}

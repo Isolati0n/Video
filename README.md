@@ -64,7 +64,7 @@ tested on a phone; the `/ingest` mechanics below them were tested, see *Measured
 | `ocr.md` / `ocr.json` | On-screen text with timestamps: whole-frame OCR about once a second and on every scene change; each line is listed once, when it first appears. Slides, code, menus, chat, damage numbers. |
 | `events.md` / `events.json` | Timestamped events (generic + the profile's). |
 | `frames.jsonl.gz` | One JSON record per analysed frame (keys below). |
-| `thumbs/overview_NNN.jpg` | Tiny thumbnails of every keyframe, 80 per image, small enough to browse in git. |
+| `thumbs/overview_NNN.jpg` | Tiny thumbnails (160x90, 96 per image, at most 360 per hour of video, evenly spaced keyframes): a browsable index that is small enough for git. Every keyframe is on the contact sheets. |
 | `calibration.png` | Only for profiles that calibrate: the annotated frame. |
 | `summary.json`, `meta.json` | Counts, runtime, fps, profile, sizes. |
 

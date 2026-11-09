@@ -7,7 +7,7 @@ from pathlib import Path
 
 import numpy as np
 
-from .common import GH, MAX_FPS, log
+from .common import GH, fps_cap, log
 
 
 class Archive:
@@ -60,7 +60,7 @@ class Archive:
     def frames(self, start: float, end: float, fps: float | None = None, size: tuple[int, int] | None = None):
         """Yield (t, frame_bgr) on a fixed fps grid t = k/fps for start <= t < end.
         fps defaults to the video's native rate (capped at MAX_FPS)."""
-        fps = fps or min(self.native_fps, MAX_FPS)
+        fps = fps or min(self.native_fps, fps_cap())
         w, h = size or (self.width, self.height)
         k0 = int(np.ceil(start * fps - 1e-6))
         k_end = int(np.ceil(end * fps - 1e-6))
@@ -79,7 +79,7 @@ class Archive:
             k += n
 
     def frame_at(self, t: float, size=None, fps: float | None = None) -> np.ndarray | None:
-        fps = fps or min(self.native_fps, MAX_FPS)
+        fps = fps or min(self.native_fps, fps_cap())
         k = int(round(t * fps))
         for _, f in self.frames(k / fps, (k + 1) / fps, fps, size):
             return f

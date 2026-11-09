@@ -12,6 +12,15 @@ import requests
 
 ROOT = Path(__file__).resolve().parent.parent
 MAX_FPS = 60  # analysis never goes above this; the rate itself is native fps or the profile's own
+
+
+def fps_cap() -> float:
+    """Upper limit for the analysis rate: 60, or lower when the environment variable FPS_CAP says so
+    (repository variable FPS_CAP in the workflows). Lowering it cuts analysis time and frames.jsonl.gz size."""
+    try:
+        return max(1.0, min(float(MAX_FPS), float(os.environ.get("FPS_CAP") or MAX_FPS)))
+    except ValueError:
+        return float(MAX_FPS)
 VIDEO_ID_RE = re.compile(r"(?:v=|youtu\.be/|/shorts/|/live/|/embed/)([A-Za-z0-9_-]{11})")
 
 
