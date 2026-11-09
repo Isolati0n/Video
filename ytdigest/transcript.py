@@ -73,6 +73,19 @@ def group(segs: list[dict], max_span=15.0, max_chars=220) -> list[dict]:
     return out
 
 
+MIN_WORDS_PER_MIN = 15   # fewer than this over a video of >= 2 min = the captions are a token gesture
+
+
+def captions_adequate(segs: list[dict], duration: float) -> tuple[bool, float, float]:
+    """(adequate, words per minute, share of the video the captions span). Auto-captions that only caught
+    an intro and an outro ('Heat.') span the video but say almost nothing."""
+    words = sum(len(x["text"].split()) for x in segs)
+    wpm = words / max(duration / 60.0, 1e-6)
+    span = max((x["end"] for x in segs), default=0.0) / max(duration, 1e-6)
+    ok = bool(segs) and span >= MIN_CAPTION_SPAN and (duration < 120 or wpm >= MIN_WORDS_PER_MIN)
+    return ok, round(wpm, 1), round(span, 2)
+
+
 def has_audio(path: Path) -> bool:
     out = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a:0", "-show_entries", "stream=codec_type",
                           "-of", "csv=p=0", str(path)], capture_output=True, text=True).stdout
@@ -140,6 +153,7 @@ def main():
     vtt = a.workdir / "captions.vtt"
     segs = []
     arc = None
+    sparse, sparse_source = [], ""
     if vtt.exists():
         segs = parse_vtt(vtt.read_text(errors="replace"))
         ct = info.get("caption_track") or {}
@@ -147,16 +161,17 @@ def main():
         # Coverage check (idea from claude-video-vision): captions that stop early or are sparse
         # must not pass as the whole commentary, so fall back to Whisper.
         arc = Archive(a.video_id, a.workdir, a.archive_dir)
-        covered = sum(max(0.0, min(s["end"], arc.duration) - s["start"]) for s in segs)
-        span = max((s["end"] for s in segs), default=0.0)
-        if span < MIN_CAPTION_SPAN * arc.duration:
-            log(f"captions end at {hms(span)} of {hms(arc.duration)}; falling back to Whisper")
-            segs = []
+        ok, wpm, span = captions_adequate(segs, arc.duration)
+        if not ok:
+            log(f"captions are not adequate ({wpm} words/min, span {span:.0%} of the video); trying Whisper")
+            sparse, sparse_source, segs = segs, source, []
         else:
-            log(f"captions cover {covered / arc.duration:.0%} of the video by time, span {hms(span)}")
+            log(f"captions are adequate: {wpm} words/min, span {span:.0%}")
     if not segs:
         arc = arc or Archive(a.video_id, a.workdir, a.archive_dir)
         segs, source = whisper(arc, a.workdir)
+        if not segs and sparse:   # Whisper heard nothing (music, silence): the sparse captions are still better than none
+            segs, source = sparse, sparse_source + " (sparse)"
     grouped = group(segs)
     lines = [f"# Transcript: {info.get('title', a.video_id)}", "",
              f"Source: {source}. Timestamps are [HH:MM:SS] from the start of the video.", ""]

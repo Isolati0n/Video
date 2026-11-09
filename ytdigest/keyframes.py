@@ -47,8 +47,14 @@ def _match(a: str, b: str) -> bool:
     return m.real_quick_ratio() >= 0.78 and m.ratio() >= 0.78
 
 
-def text_keys(lines: list[dict]) -> list[str]:
-    return [k for k in (_key(x["text"]) for x in lines) if len(k) >= 4]
+CAPTION_MIN_Y = 750        # permille of the frame height: the bottom strip where subtitles / captions are burned in
+
+
+def text_keys(lines: list[dict], skip_captions: bool = False) -> list[str]:
+    """Normalised line keys. skip_captions drops the bottom strip: burned-in subtitles change every few seconds
+    without the picture changing, so they must not drive keyframes (they stay in ocr.md)."""
+    return [k for k in (_key(x["text"]) for x in lines if not (skip_captions and x.get("y", 0) >= CAPTION_MIN_Y))
+            if len(k) >= 4]
 
 
 def overlap(a: list[str], b: list[str]) -> float:
@@ -80,14 +86,14 @@ def text_keyframes(entries: list[dict], thumb_frames: set[int], duration_s: floa
     out, last, last_top, last_t = [], None, None, -1e9
     pending_top = None          # a new title must be seen in two consecutive readings before it counts
     for e in sorted(entries, key=lambda e: e["t"]):
-        keys = text_keys(e["lines"])
+        keys = text_keys(e["lines"], skip_captions=True)
         if len(keys) < 2:
             continue
         # The title = the top-most CONFIDENT line below the very top strip (menu bars, window chrome and
         # status bars live there and flicker). A different title is a different slide even when other
         # lines happen to match.
         tops = [(x.get("y", 0), _key(x["text"])) for x in e["lines"]
-                if x.get("y", 0) >= TITLE_MIN_Y and x.get("conf", 100) >= 75 and len(_key(x["text"])) >= 6]
+                if TITLE_MIN_Y <= x.get("y", 0) < CAPTION_MIN_Y and x.get("conf", 100) >= 75 and len(_key(x["text"])) >= 6]
         top = min(tops)[1] if tops else None
         title_changed = False
         if top is not None and last_top is not None and not _match(top, last_top):
@@ -139,13 +145,13 @@ def select(cands: list[dict], phash_by_f: dict[int, str], cut_times: list[float]
                     reason = "changed"
                     if slide_like and text_index is not None and dist < BIG_PICTURE_CHANGE and last_keys:
                         e = text_index.at(c["t"])
-                        if e is not None and len(text_keys(e["lines"])) >= 2 and overlap(text_keys(e["lines"]), last_keys) >= SAME_TEXT:
+                        if e is not None and len(text_keys(e["lines"], True)) >= 2 and overlap(text_keys(e["lines"], True), last_keys) >= SAME_TEXT:
                             reason = None   # same text, small picture change: the same slide
         if reason:
             kept.append({**c, "reason": reason})
             last_t, last_h = c["t"], h
             e = text_index.at(c["t"]) if text_index else None
-            last_keys = text_keys(e["lines"]) if e else None
+            last_keys = text_keys(e["lines"], True) if e else None
     return kept
 
 

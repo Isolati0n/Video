@@ -188,6 +188,17 @@ def setup(argv):
     return mode, vid, work
 
 
+def adequate_captions(vtt: Path, duration: float) -> bool:
+    """True when the captions really say something (see transcript.captions_adequate); otherwise the transcript
+    job runs Whisper (and installs it, which is what has_captions=false triggers in the workflow)."""
+    if not vtt.exists():
+        return False
+    from .transcript import captions_adequate, parse_vtt
+    ok, wpm, span = captions_adequate(parse_vtt(vtt.read_text(errors="replace")), duration)
+    log(f"captions: {wpm} words/min, span {span:.0%} -> {'used' if ok else 'not adequate, Whisper will run'}")
+    return ok
+
+
 def plan(vid: str, work: Path, gh: GH, chunk_len: float):
     """Step 1: is the video already archived in its Release? Then skip download + encode."""
     gh_output(video_id=vid)
@@ -200,7 +211,7 @@ def plan(vid: str, work: Path, gh: GH, chunk_len: float):
                 gh.download_asset(rel, name, work / name)
         manifest = json.loads((work / "parts.json").read_text())
         gh_output(chunks=chunk_plan(manifest["duration"], chunk_len, float(manifest.get("fps") or 30)), duration=str(manifest["duration"]),
-                  has_captions="true" if (work / "captions.vtt").exists() else "false", reused="true")
+                  has_captions="true" if adequate_captions(work / "captions.vtt", manifest["duration"]) else "false", reused="true")
     else:
         gh_output(reused="false")
 
@@ -287,7 +298,7 @@ def archive(vid: str, work: Path, gh: GH, chunk_len: float):
         if (work / name).exists():
             gh.upload_asset(gh.release(vid), work / name)
     gh_output(chunks=chunk_plan(duration, chunk_len, num / den), duration=str(duration),
-              has_captions="true" if cap else "false", reused="false")
+              has_captions="true" if adequate_captions(work / "captions.vtt", duration) else "false", reused="false")
 
 
 def main():

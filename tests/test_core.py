@@ -166,6 +166,21 @@ def test_profile_line_parsing():
     assert find_profile("/digest\n`profile`: Melee") == "melee"
 
 
+def test_captions_adequate_and_caption_strip():
+    from ytdigest.transcript import captions_adequate
+    talk = [{"start": i * 4.0, "end": i * 4.0 + 3.5, "text": "we are talking about many different things here"} for i in range(150)]
+    assert captions_adequate(talk, 600)[0]
+    sparse = [{"start": 43, "end": 50, "text": "Hi everyone welcome to my kitchen"}, {"start": 123, "end": 124, "text": "Heat."},
+              {"start": 637, "end": 645, "text": "Thanks for watching see you next week"}]
+    assert not captions_adequate(sparse, 645)[0]                       # spans the video but says almost nothing
+    # burned-in subtitles (bottom strip) must not drive text keyframes; a changing title above them still does
+    ents = []
+    for t in range(60):
+        ents.append({"t": float(t), "f": t, "lines": [line("Interview with the author", 100, 120),
+                                                         line(f"This caption changes every second number {t}", 300, 880)]})
+    assert len(keyframes.text_keyframes(ents, set(range(60)), 60)) == 1
+
+
 def test_d2r_profile_needs_calibration():
     p = profiles.get("d2r")
     assert p.fps == 25.0 and p.generic_ocr is False and "teleport" in p.dense_types
