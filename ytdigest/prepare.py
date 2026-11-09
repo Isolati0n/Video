@@ -209,7 +209,8 @@ def download(url: str, dl: Path, work: Path):
     except Blocked as e:
         gh_output(blocked="true")
         (work / "blocked.txt").write_text(str(e))
-        raise SystemExit("YouTube blocked the runner (see blocked.txt)")
+        log("YouTube blocked this attempt (bot check / HTTP 403 / 429)")
+        raise SystemExit(75)  # EX_TEMPFAIL: the caller may retry from a fresh network path
     return info, cap
 
 
