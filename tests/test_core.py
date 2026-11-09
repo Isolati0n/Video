@@ -155,6 +155,15 @@ def test_detectors_are_extensible():
         del profiles._REGISTRY["fake"]
 
 
+def test_profile_line_parsing():
+    from ytdigest.request import find_profile
+    assert find_profile("https://youtu.be/x\n\nGeneric profile: what does the output capture?") == ""   # prose
+    assert find_profile("https://youtu.be/x\nprofile: d2r") == "d2r"
+    assert find_profile("/digest profile: generic") == "generic"
+    assert find_profile("/ingest my-rec as x profile: d2r") == "d2r"
+    assert find_profile("/digest\n`profile`: Melee") == "melee"
+
+
 def test_d2r_profile_needs_calibration():
     p = profiles.get("d2r")
     assert p.fps == 25.0 and p.generic_ocr is False and "teleport" in p.dense_types

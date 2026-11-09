@@ -28,7 +28,10 @@ from .common import gh_output, parse_video_id
 
 TRUSTED = {"OWNER", "MEMBER", "COLLABORATOR"}
 URL_RE = re.compile(r"https?://\S+")
-PROFILE_RE = re.compile(r"(?i)(?:^|\s)[`*_]*profile[`*_]*\s*[:=]\s*[`*_]*([A-Za-z0-9_-]+)", re.M)
+# `profile: name` must be a line of its own (issue body) or end a /command line (comment); a sentence that
+# merely contains the words "profile: ..." is not a selection.
+PROFILE_LINE_RE = re.compile(r"(?im)^[ \t>*_`-]*profile[`*_]*[ \t]*[:=][ \t]*[`*_]*([A-Za-z0-9_-]+)[`*_]*[ \t]*$")
+PROFILE_CMD_RE = re.compile(r"(?im)^/\w+\b.*?[ \t]profile[ \t]*[:=][ \t]*([A-Za-z0-9_-]+)[ \t]*$")
 SAFE_ID = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,79}")
 RESERVED = ("sheets-", "zoom-")
 
@@ -46,9 +49,10 @@ def find_target(*texts: str) -> str | None:
 
 def find_profile(*texts: str) -> str:
     for t in texts:
-        m = PROFILE_RE.search(t or "")
-        if m:
-            return m.group(1).lower()
+        for rx in (PROFILE_LINE_RE, PROFILE_CMD_RE):
+            m = rx.search(t or "")
+            if m:
+                return m.group(1).lower()
     return ""
 
 

@@ -1,10 +1,10 @@
-# yt-digest
+# yt-digest: a general-purpose video-watching tool for AI
 
-Turns **any** video (a YouTube link, or a file you upload) into files an AI can read: a timestamped
-transcript, the text that appears on screen, a list of events, frame-by-frame data, and contact
-sheets of the footage. Games, tutorials, lectures, talking heads, screen recordings, slide decks,
-interviews, vlogs: all go through the same generic core. Game-specific knowledge lives in optional
-**profiles** (Diablo II: Resurrected is the first one).
+Give it any video (a YouTube link, or a file you upload) and it produces what an AI needs to *watch* it: a
+timestamped transcript, the text that appears on screen, a list of events, frame-by-frame data, and contact sheets
+of the footage with an index that says where to look. It works the same way on lectures, tutorials, interviews and
+talking heads, screen recordings, slide decks, vlogs and games. Anything specific to one kind of content (a game's
+health bars, say) lives in an optional **profile**; Diablo II: Resurrected PvP is just the first example.
 
 Everything runs in GitHub Actions. You only need the GitHub app or a phone browser.
 
@@ -12,7 +12,7 @@ Everything runs in GitHub Actions. You only need the GitHub app or a phone brows
 
 1. **One-time setup**: in the repo open *Issues → Labels* and create a label called `digest`.
 2. **Digest a YouTube video**: open a new issue, put the link in the body, add the label `digest`, submit.
-   Optionally add a line `profile: d2r` (see *Profiles*); with no line the generic profile is used.
+   Optionally add a line `profile: <name>` (see *Profiles*); with no line the generic profile is used.
 3. The bot comments when the run starts and again when it is done, with the folder, counts and runtime.
    If something fails it comments the last log lines instead.
 4. **Zoom into a moment**: comment `/zoom <video_id> 1:23:10-1:23:14`. You get every frame of that range
@@ -24,7 +24,7 @@ Everything runs in GitHub Actions. You only need the GitHub app or a phone brows
    | `/digest [url] [profile: x]` | run again (reuses the archived video); `profile: x` switches profile |
    | `/ingest <release-tag \| file-url> [as <name>] [profile: x]` | digest a file you uploaded (below) |
    | `/recalibrate <id>` | redo the profile's calibration and re-run the analysis |
-   | `/hud <id> life=x,y,w,h …` | set a profile's calibration values (d2r: HUD regions in % of the frame) |
+   | `/set <id> key=value …` | set a profile's calibration values (the keys belong to the profile; `/hud` is an alias) |
    | `/zoom <id> H:MM:SS-H:MM:SS [fps]` | every frame of a range |
    | `/delete <id>` | remove a digest everywhere (files, sheets, zoom sheets, generated Release files) |
 
@@ -44,7 +44,7 @@ from GitHub at all, and it is also how you digest **your own recordings** (a scr
    - One file can be at most **2 GB**. For longer videos cut the video in two or more parts with any video
      splitter app and attach all of them to the same Release; they are joined in file-name order
      (`part1.mp4`, `part2.mp4`, …).
-3. **Comment `/ingest my-video-1`** on any issue (add `profile: d2r` on the same line if you want a profile).
+3. **Comment `/ingest my-video-1`** on any issue (add `profile: <name>` on the same line if you want a profile).
    It runs the same pipeline from there: archive, transcript, analysis, sheets, index.
 4. **A direct file link works too**: `/ingest https://example.com/video.mp4 as lecture1`. Only public
    `http(s)` links are fetched (not private addresses), up to 12 GB.
@@ -61,7 +61,8 @@ tested on a phone; the `/ingest` mechanics below them were tested, see *Measured
 |---|---|
 | `index.md` | **Start here.** Maps every contact sheet to its time range, the events in it, the on-screen text and the transcript excerpt. Sheet links are Release URLs. |
 | `transcript.md` | `[HH:MM:SS] text`. YouTube captions when they cover the video, otherwise faster-whisper (small, int8; language detected from the loudest windows). |
-| `ocr.md` / `ocr.json` | On-screen text with timestamps: whole-frame OCR about once a second and on every scene change; each line is listed once, when it first appears. Slides, code, menus, chat, damage numbers. |
+| `ocr.md` / `ocr.json` | On-screen text with timestamps: whole-frame OCR about once a second and on every scene change; each line is listed once, when it first appears. Slides, code, menus, chat, score counters. Low-confidence lines are marked `[?]`; text that sits at the same place through the whole video (menu bars, watermarks, overlays) is left out and listed in `ocr.json` under `furniture_suppressed`. |
+| `keyframes.json` | Every keyframe: time, why it was chosen (`first`, `scene`, `changed`, `text`, `heartbeat`), and flags for the reader (below). |
 | `events.md` / `events.json` | Timestamped events (generic + the profile's). |
 | `frames.jsonl.gz` | One JSON record per analysed frame (keys below). |
 | `thumbs/overview_NNN.jpg` | Tiny thumbnails (160x90, 96 per image, at most 360 per hour of video, evenly spaced keyframes): a browsable index that is small enough for git. Every keyframe is on the contact sheets. |
@@ -69,11 +70,33 @@ tested on a phone; the `/ingest` mechanics below them were tested, see *Measured
 | `summary.json`, `meta.json` | Counts, runtime, fps, profile, sizes. |
 
 **Contact sheets** are Release assets (`sheets-<video_id>`, `sheet_NNNN.jpg`, 900 per Release): 3x3 tiles of
-640x360 with burned-in timestamps. A tile is a *keyframe* chosen by scene detection plus perceptual-hash
-dedupe (a slide that stays up for ten minutes is one tile; busy footage is limited to one tile every 2 s;
-at least one every 30 s), or a *dense* frame: four consecutive frames around an event (coloured border,
-`HH:MM:SS.ff fN`). The video itself (720p H.264, in parts under 1.9 GB) is in the Release tagged with the id.
-Videos are never committed to git.
+640x360 with burned-in timestamps. A tile is a *keyframe* or a *dense* frame (four consecutive frames around an event:
+coloured border, `HH:MM:SS.ff fN`). The video itself (720p H.264, in parts under 1.9 GB) is in the Release tagged with
+the id. Videos are never committed to git.
+
+**How keyframes are chosen** (`ytdigest/keyframes.py`): the picture is hashed (perceptual hash) once per second and a
+keyframe is kept when a scene change happened, the picture changed, or 30 s passed with nothing kept; never closer
+than 2 s. Near-identical frames are skipped, so a slide that stays up for ten minutes is one tile. Three things make
+that work on real footage:
+
+- **Slide-like videos** (little motion, readable text) also get a keyframe whenever the on-screen text changes
+  substantially (at least half the lines are new, or the slide title changes and stays changed), because slides on a
+  white background do not change the colour histogram. In such a video a small picture change with the *same* text
+  (a pointer, an animation, the presenter moving) does not make a new keyframe.
+- **A moving corner region** (a webcam or picture-in-picture) is detected once per video (`ytdigest/pip.py`: a
+  group of cells touching a frame corner that moves on its own while the rest is quiet) and ignored by the
+  picture-change measures, so a presenter's face does not split one slide into several keyframes. The pixels stay in
+  every frame and sheet. A *static* overlay (logo, watermark) cannot make two identical frames look different, so it is
+  not masked. Full-frame motion (gameplay, camera pans) has no such region and is left alone.
+- **Screen furniture** in the OCR (menu bars, taskbars, watermarks, persistent overlays) is removed: a line that
+  appears at about the same position in at least half of the OCR'd frames *and* in at least 4 of 5 equal time slices is
+  furniture. Text that keeps changing at one position (a clock, a score, subtitles) is kept, and lines that differ in a
+  digit count as different text.
+
+**Look at the image.** Each keyframe is flagged when its OCR should not be trusted as the content: `math` (formulas
+come out as bracket and operator soup), `dense` (12+ lines or 400+ characters) or `low_conf` (30 %+ of the lines below
+confidence 72). `index.md` has a *look at the image* column listing the flagged tiles per sheet, and `keyframes.json`
+has the same flags: open that tile instead of reading `ocr.md`.
 
 ### `frames.jsonl.gz` (generic fields)
 
@@ -86,8 +109,7 @@ Videos are never committed to git.
 | `bright` | mean brightness 0–255 |
 | `sig` | coarse scene signature: 2x2 grid of (hue bin, saturation, value) as 6 hex chars; groups similar scenes |
 
-A profile adds its own keys next to these (d2r: `scene`, `hud`, `life`, `mana`, `poison`, `shift`, `match`,
-`chg`, `motion_game`, `ocr`). Nothing profile-specific appears for the generic profile.
+A profile adds its own keys next to these (the generic profile adds none).
 
 ### Generic events
 
@@ -99,20 +121,20 @@ minute, the strongest kept) · `static` (the picture hardly changes for ≥ 20 s
 ## Profiles
 
 A profile = optional calibration + extra per-frame fields + extra event rules, in its own module under
-`ytdigest/profiles/`. Pick one with a line `profile: d2r` in the issue; no line = `generic`. The tool may
-suggest a profile ("this looks like D2R") but never switches by itself. See
-[`ytdigest/profiles/README.md`](ytdigest/profiles/README.md) for how to add one (a module and a config file; a
-Melee template is included, not implemented).
+`ytdigest/profiles/`. Pick one with a line `profile: <name>` in the issue; no line = `generic`.
 
-**`d2r`** (Diablo II: Resurrected PvP): calibrates the HUD (life and mana orbs, skill bar, text regions) and checks the
-orb readings against the `Life: x / y` numbers the game prints; per frame life %, mana %, poison and camera
-tracking; events `life_drop`, `life_refill`, `mana_refill`, `poisoned`, `death`, `area_change`, `off_hud`,
-`teleport` (a frame where the whole view changes and the new view does not match the old one), `run_burst`,
-`text`. It analyses at 25 fps, D2R's tick rate.
+- **Detection is extensible.** Every profile has a detector (`detect(frames)`). On a generic run all registered
+  detectors look at a few sample frames and any that recognise the content are *suggested* in the issue ("this looks like
+  X, comment `/digest profile: x`"). A profile is never selected silently.
+- **Adding one** needs a module and a config file: see [`ytdigest/profiles/README.md`](ytdigest/profiles/README.md)
+  (a Melee template is included, not implemented; `python -m ytdigest.profiles check <name> clip.mp4` tries a profile on a
+  local file).
+- **Installed:** `generic` (the default) and `d2r`, a worked example for a game with an on-screen HUD
+  ([`ytdigest/profiles/d2r.md`](ytdigest/profiles/d2r.md)).
 
 ## Frame rate and cost
 
-Frames are analysed at the video's **native fps, capped at 60**, or at the profile's own rate (D2R: 25).
+Frames are analysed at the video's **native fps, capped at 60**, or at the profile's own rate if it sets one.
 The archive keeps a constant frame rate (variable-rate phone recordings are normalised; averages below 20 fps
 become 30). To cap lower, set the repository variable `FPS_CAP` (for example `30`).
 
@@ -174,12 +196,12 @@ sheets Release; git history still keeps old versions of the small files. Per-hou
 Read this before trusting the output.
 
 - **Frames are sampled, not watched.** The tool looks at one frame every 1/fps seconds (native fps, max 60; 25
-  for d2r) after scaling to 320x180 for the numbers and 640x360 for the sheet tiles. Anything shorter than a frame
+  for a profile that sets one) after scaling to 320x180 for the numbers and 640x360 for the sheet tiles. Anything shorter than a frame
   interval, or smaller than a few pixels at that scale, is invisible. The contact sheets show roughly one frame
   every 2–30 s plus a few frames around events, not the whole video; use `/zoom` for a range.
 - **There is no real motion or action understanding.** `motion`, `cut`, `phash`, and `sig` measure how much and
   how fast the picture changes, not what happens in it. "Large motion" can be a fight, a camera pan or a flash;
-  profile rules (like d2r's teleport) are heuristics tuned on a few clips and can misfire (see Measured).
+  profile rules are heuristics tuned on a few clips and can misfire (a profile's doc says how it was checked).
 - **OCR makes mistakes.** Tesseract reads clean slides and UI text well, and game text, small fonts, stylised
   fonts, low contrast, motion blur and text over busy scenery poorly: expect misspellings ("Beep Moor" for
   "Blood Moor"), missing lines and some invented noise. Lines are fuzzy-deduplicated, so a real change in
@@ -261,7 +283,7 @@ back-off between attempts now grows (5, 20, 45, 80 s). `/ingest` is the dependab
 ## Developing and testing locally
 
 - `python -m ytdigest.profiles` lists profiles; `python -m ytdigest.profiles check <name> clip.mp4` tries one.
-- `tests/regression_d2r.py` compares the d2r profile with a baseline (per-frame fields and events).
+- `tests/regression_d2r.py` compares the d2r profile with a baseline (per-frame fields and events); `python tests/test_core.py` runs the offline checks.
 - `tests/synthetic.py` and `tests/make_screen_recording.py` generate clips with known content.
 - Each module's docstring says how to run it on a local archive (`--archive-dir`), no GitHub needed.
 
