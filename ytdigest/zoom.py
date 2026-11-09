@@ -90,7 +90,7 @@ def main():
             flush()
     flush()
     (out / "index.md").write_text(
-        f"# Zoom {a.video_id} {hms(ta)}-{hms(tb)} at {fps:g} fps\n\n"
+        f"# Zoom {a.video_id} {a_s.strip()}-{b_s.strip()} at {fps:g} fps\n\n"
         f"{n} frames at full {arc.width}x{arc.height}, 2x2 per sheet, reading order left-right, top-bottom. "
         f"Labels: HH:MM:SS.ff (frame within second at 25 fps), f = frame number at 25 fps, "
         f"L/M = life/mana % from frames.jsonl.gz when available. Sheets are Release assets: "
@@ -99,7 +99,7 @@ def main():
 
     # bulky part -> its own Release (one per zoom); only the small index.md is committed to git
     gh = GH()
-    rel = gh.ensure_release(tag, f"Zoom {a.video_id} {hms(ta)}-{hms(tb)}",
+    rel = gh.ensure_release(tag, f"Zoom {a.video_id} {a_s.strip()}-{b_s.strip()}",
                             f"{n} frames at {fps:g} fps from `{a.video_id}`, {sheets} sheets.")
     files = sorted(out.glob("sheet_*.jpg")) + [out / "index.md"]
     for i, f in enumerate(files, 1):

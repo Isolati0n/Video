@@ -79,7 +79,7 @@ jobs:
           ref: ${{ env.DEFAULT_BRANCH }}
       - uses: ./.github/actions/setup
         with:
-          apt: ffmpeg
+          apt: ffmpeg tesseract-ocr   # tesseract: calibration reads the on-screen life/mana numbers
       - name: Already archived in the Release?
         id: plan
         run: python -m ytdigest.prepare plan "${{ needs.request.outputs.video_id }}" work

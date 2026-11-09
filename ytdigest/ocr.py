@@ -60,18 +60,22 @@ NUM_RE = re.compile(r"(\d{1,5})\s*/\s*(\d{1,5})")
 
 def read_orb_numbers(crop: np.ndarray) -> tuple[int, int] | None:
     """'Life: 1551 / 7679' / 'Mana: 582 / 852' printed above the orbs (when the game shows them)
-    -> (current, maximum), or None. Used to calibrate and verify the orb readings."""
+    -> (current, maximum), or None. Used to calibrate and verify the orb readings.
+    Two thresholds are tried (fixed, then Otsu) because the text colour differs between setups."""
     if crop.size == 0:
         return None
     g = cv2.resize(crop.max(axis=2), None, fx=4, fy=4, interpolation=cv2.INTER_CUBIC)
-    _, bw = cv2.threshold(g, 150, 255, cv2.THRESH_BINARY)
-    try:
-        txt = pytesseract.image_to_string(
-            255 - bw, config="--oem 1 --psm 7 -c tessedit_char_whitelist=0123456789/:LifeMana ", timeout=3)
-    except Exception:
-        return None
-    m = NUM_RE.search(txt)
-    if not m:
-        return None
-    cur, mx = int(m.group(1)), int(m.group(2))
-    return (cur, mx) if 0 <= cur <= mx and mx > 0 else None
+    candidates = [cv2.threshold(g, 150, 255, cv2.THRESH_BINARY)[1],
+                  cv2.threshold(g, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]]
+    for bw in candidates:
+        try:
+            txt = pytesseract.image_to_string(
+                255 - bw, config="--oem 1 --psm 7 -c tessedit_char_whitelist=0123456789/:LifeMana ", timeout=3)
+        except Exception:
+            return None
+        m = NUM_RE.search(txt)
+        if m:
+            cur, mx = int(m.group(1)), int(m.group(2))
+            if 0 <= cur <= mx and mx > 0:
+                return cur, mx
+    return None
