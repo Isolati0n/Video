@@ -114,9 +114,14 @@ tracking; events `life_drop`, `life_refill`, `mana_refill`, `poisoned`, `death`,
 
 Frames are analysed at the video's **native fps, capped at 60**, or at the profile's own rate (D2R: 25).
 The archive keeps a constant frame rate (variable-rate phone recordings are normalised; averages below 20 fps
-become 30). Cost of 60 fps against 30 fps is measured in *Measured*; the short version is: analysis time and the
-size of `frames.jsonl.gz` roughly double, the contact sheets do not (they are chosen by content, not by rate).
-Long videos are split into parallel jobs of about 36,000 frames (20 min at 30 fps, 10 min at 60 fps).
+become 30). To cap lower, set the repository variable `FPS_CAP` (for example `30`).
+
+Measured on a 54-minute 60 fps Melee set against the same footage at 30 fps (see *Measured*): the 60 fps archive is
+about twice the size (922 MB per hour against ~470 MB) and takes about twice as long to encode (~16 min for 54 min);
+`frames.jsonl.gz` is about 1.8x larger (2.5 MB for the set); analysis time grows only ~10 % because whole-frame OCR,
+not the per-frame numbers, is the expensive part; the contact sheets do not change (they are chosen by content, not by
+rate); `/zoom` at 60 fps gives 60 frames per second of video (15 sheets). Long videos are split into parallel jobs of
+about 36,000 frames (20 min at 30 fps, 10 min at 60 fps).
 
 ## How it runs
 
@@ -190,7 +195,68 @@ Read this before trusting the output.
 
 ## Measured
 
-⟦MEASURED⟧
+Real runs on GitHub-hosted runners (4 vCPU), no login. "Fresh" = download or ingest, archive and analysis.
+Numbers are from this repo's Actions runs; the test videos were my picks (the owner did not supply any).
+
+**(a) D2R, 4:55, `d2r` profile: regression against the pre-profile code.** Same results as before the restructure:
+the profile's 78 events (text 10, teleport 53, life_drop 5, mana_refill 8, death 2) and the orb accuracy (life median
+0.43 % / mean 4.4 %, mana median 1.03 % / mean 6.52 % against the game's on-screen numbers) are identical.
+Checked two ways: on the same machine and archive the old and new code agree on **all 7,365 frames, every per-frame
+field** (0 mismatches) and the event list; the calibration (orb geometry, fitted curves) is identical
+(`tests/regression_d2r.py`). Run time 3 min 56 s. The profile now also adds 6 generic audio events (silence, loud peaks);
+D2R keeps its own text regions instead of whole-frame OCR.
+
+**(b) The same video, `generic` profile (30 fps).** 3 min 24 s, 8,838 frames, 76 events: text_change 40, motion_burst 29
+(both at their per-minute caps), silence 4, loud_peak 2, scene_change 1. 146 keyframes of 288 candidates, 31 sheets (5.9 MB,
+in a Release), 0.44 MB in git. The generic OCR reads the clean parts ("Level 94", "Ping:", "Game:", names, the area name
+"Beep Moor" for "Blood Moor", "Fine ENCHANTED") with many misreads and near-duplicates; it also suggested the d2r profile
+(90 %) without switching to it. What it cannot do: life/mana %, deaths, teleports (those are the profile's).
+
+**(c) Non-game: a 14:29 machine-learning lecture (slides + webcam, itself a 60 fps screen recording).** 8 min of run
+time (download 4 min incl. WARP, analysis 2 parallel jobs of 2–3 min, captions used, finalize 45 s). 52,143 frames, 136 events:
+text_change 120 (cap), motion_burst 15 (mostly slide changes and a window switch, with dense frames at 60 fps), loud_peak 1;
+`scene_change` found 0 cuts (slides share a white background, so the colour histogram does not jump; the slide changes show
+up as `text_change`, `motion_burst` and new keyframes). 104 keyframes of 291, 19 sheets. OCR: titles and statements are
+captured ("Basic Properties", "Chebyshev's Inequality", "Jensen's Inequality", "Hoeffding's Inequality", "Union bound:
+Pr[A ∨ B] ≤ Pr[A] + Pr[B]", "Theorem: Let X1,…,Xm be indep. rand. variables with the same expectation …"); formulas are
+often garbled, and a large part of the 1,400 lines is the macOS menu bar and window chrome ("Tools Window Help", "Preview File"),
+which the fuzzy de-duplication only partly folds. The same presenter slide appears in 3 keyframes because the webcam
+corner changes the picture hash.
+A synthetic phone screen recording (portrait, variable frame rate, 6 screens of known text) was read **19/19 lines exactly**.
+
+**(d) 60 fps fighting game: a 54:10 Melee set (SSC 2018, generic profile).** Fresh run 26 min 38 s (prepare 19 min 30 s:
+download 1 min, encode ~16 min, upload; six parallel analysis jobs 2.4–4.4 min each; captions; finalize 2 min 40 s);
+7 min 26 s when the archive already exists. About 41 runner-minutes. 195,047 frames, 605 events (text_change 424,
+motion_burst 145, scene_change 25, loud_peak 11); 1,530 keyframes, 251 sheets (80 MB). The OCR picks up the broadcast
+overlay (event name, player tags, the match clock) and the damage counters ("71% 134%") but cannot say which belongs to which
+player: that is what a Melee profile would add.
+
+**Storage per hour of video** (digest in git; videos and sheets are in Releases):
+
+| video | in git | archive in Release | sheets in Release |
+|---|---|---|---|
+| Melee 54 min, 60 fps, generic | 4.1 MB (4.6 MB/h): frames 2.5 MB, thumbnails 1.0 MB, text 0.6 MB | 830 MB | 80 MB |
+| D2R 57 min, 25 fps, d2r | 3.6 MB (3.8 MB/h) | 444 MB | 48 MB |
+| lecture 14.5 min, 60 fps | 0.86 MB (3.6 MB/h) | 35 MB | 4.5 MB |
+
+Before this change the D2R digest kept its sheets in git: 136 MB for the 57-minute video. Git history still holds those old
+versions (the repo's pack is ~260 MB); new digests add only the numbers above. A 3-hour 60 fps video is extrapolated, not
+tested: ~14 MB in git, ~2.8 GB of archive in 2 parts, ~250 MB of sheets, one encode job of about 50 minutes.
+
+**`/ingest`.** Tested on Actions: (1) a Release with two uploaded files made through the normal release mechanism
+(a synthetic phone screen recording, portrait 1080x2400, variable frame rate, no audio, split in two): joined, normalised to
+720x1600 at 30 fps, transcript step reports "no audio track", digest in 2 min 30 s; (2) a direct file URL
+(the 4:55 clip, no captions so Whisper ran): 4 min 15 s; (3) private, loopback and cloud-metadata URLs are refused;
+(4) `/delete` on an ingested tag removes everything generated and keeps the uploaded files; (5) the failure comment
+carries the upload hint (seen when WARP was refused on all 5 attempts for the lecture; a retry minutes later succeeded on
+the first attempt). Not tested: the actual phone steps (Seal, NewPipe, the mobile browser's release form), files near 2 GB.
+
+**YouTube access since the last report.** WARP succeeded on attempt 1 for the Melee set, the lecture (second try) and the
+D2R re-runs; the lecture's first try was refused on all 5 attempts within a minute. Refusals come in streaks, so the
+back-off between attempts now grows (5, 20, 45, 80 s). `/ingest` is the dependable fallback.
+
+**Unit tests**: `python tests/test_core.py` (7 offline checks), `tests/regression_d2r.py`.
+
 
 ## Developing and testing locally
 
