@@ -1,41 +1,57 @@
 # yt-digest
 
-Turns long Diablo II: Resurrected PvP videos (1–3 h) into files an AI can analyse:
-a timestamped transcript, per-frame HUD data at 25 fps, a list of detected events, and
-contact sheets of the footage. Everything runs in GitHub Actions. You only need the
-GitHub app or a phone browser.
+Turns **any** video (a YouTube link, or a file you upload) into files an AI can read: a timestamped
+transcript, the text that appears on screen, a list of events, frame-by-frame data, and contact
+sheets of the footage. Games, tutorials, lectures, talking heads, screen recordings, slide decks,
+interviews, vlogs: all go through the same generic core. Game-specific knowledge lives in optional
+**profiles** (Diablo II: Resurrected is the first one).
+
+Everything runs in GitHub Actions. You only need the GitHub app or a phone browser.
 
 ## Phone-only quick start
 
-1. **One-time setup**
-   - In the GitHub app, open the repo → **Issues** → **Labels** and create a label called `digest`.
-     (In the mobile browser it is under *Issues → Labels → New label*.)
-   - Nothing else. No Google or YouTube login is ever needed (see *YouTube access* below).
-2. **Digest a video**: open a new issue. Put the YouTube link in the body, add the label
-   `digest`, and submit.
-3. The bot comments when the run starts. Then it posts a **HUD calibration image** showing
-   where it found the life orb, mana orb, skill bar and text areas. Check that it looks right.
-   The analysis continues with those regions anyway. If they are wrong, reply:
-   - `/hud <video_id> life=x,y,w,h mana=x,y,w,h` uses percentages of the frame,
-     e.g. `/hud LH9ikWH-WOU life=5,79,11,20 mana=84,79,11,20`.
-     Other regions you can set: `skills=`, `chat=`, `center=`, `top_right=`. Add `full_life=0.9`
-     if the orb never reads 100 %.
-   - `/recalibrate <video_id>` re-runs automatic detection.
+1. **One-time setup**: in the repo open *Issues → Labels* and create a label called `digest`.
+2. **Digest a YouTube video**: open a new issue, put the link in the body, add the label `digest`, submit.
+   Optionally add a line `profile: d2r` (see *Profiles*); with no line the generic profile is used.
+3. The bot comments when the run starts and again when it is done, with the folder, counts and runtime.
+   If something fails it comments the last log lines instead.
+4. **Zoom into a moment**: comment `/zoom <video_id> 1:23:10-1:23:14`. You get every frame of that range
+   at the video's native frame rate (`/zoom <id> 1:23:10-1:23:14 15` for fewer), as 2x2 sheets in a Release.
+5. Other commands (comment on the issue):
 
-   Both commands re-run the analysis from the archived video. Nothing is downloaded again.
-4. When the run finishes, the bot comments with the folder path, counts and runtime.
-   If something fails, it comments the last log lines instead.
-5. **Zoom into a moment**: comment `/zoom <video_id> 1:23:10-1:23:14` (optionally add an fps,
-   default 25). Full-resolution frames are made as 2x2 sheets and attached to a Release called
-   `zoom-<video_id>-<range>` (they are bulky, so they stay out of git). The bot replies with the
-   Release link; `zooms/<video_id>/<range>/index.md` in git holds the direct sheet links.
-6. To re-run a digest, comment `/digest` on the issue.
-7. To remove a video completely (digest files, zoom sheets, Release archive), comment
-   `/delete <video_id>`.
-8. [`INDEX.md`](INDEX.md) lists every digest with raw links, so results can be read by URL.
+   | command | does |
+   |---|---|
+   | `/digest [url] [profile: x]` | run again (reuses the archived video); `profile: x` switches profile |
+   | `/ingest <release-tag \| file-url> [as <name>] [profile: x]` | digest a file you uploaded (below) |
+   | `/recalibrate <id>` | redo the profile's calibration and re-run the analysis |
+   | `/hud <id> life=x,y,w,h …` | set a profile's calibration values (d2r: HUD regions in % of the frame) |
+   | `/zoom <id> H:MM:SS-H:MM:SS [fps]` | every frame of a range |
+   | `/delete <id>` | remove a digest everywhere (files, sheets, zoom sheets, generated Release files) |
 
-Commands are only accepted from the repo owner, members and collaborators.
-You can also start runs from **Actions → digest / zoom → Run workflow** (fields: URL, issue number).
+   Commands are only accepted from the repo owner, members and collaborators.
+6. [`INDEX.md`](INDEX.md) lists every digest with raw links, so results can be read by URL.
+
+## If the download fails: upload the file from your phone (Android)
+
+YouTube sometimes refuses the runner (see *YouTube access*). The reliable fallback needs no YouTube access
+from GitHub at all, and it is also how you digest **your own recordings** (a screen recording, a game capture).
+
+1. **Get the video as a file.** Use **Seal** or **NewPipe** to download the video (choose a 720p MP4 / H.264
+   format; smaller files upload faster). For your own recordings use the file as it is.
+2. **Upload it to a Release** with the mobile browser (desktop-site mode works best on a phone): in this repo
+   open *Releases → Draft a new release*, type a **tag** that you will remember (letters, digits, `-`, `_`, `.`,
+   for example `my-video-1`), attach the file by tapping *Attach binaries*, then *Publish release*.
+   - One file can be at most **2 GB**. For longer videos cut the video in two or more parts with any video
+     splitter app and attach all of them to the same Release; they are joined in file-name order
+     (`part1.mp4`, `part2.mp4`, …).
+3. **Comment `/ingest my-video-1`** on any issue (add `profile: d2r` on the same line if you want a profile).
+   It runs the same pipeline from there: archive, transcript, analysis, sheets, index.
+4. **A direct file link works too**: `/ingest https://example.com/video.mp4 as lecture1`. Only public
+   `http(s)` links are fetched (not private addresses), up to 12 GB.
+
+Your uploaded files are never deleted by the tool. `/delete <tag>` removes only what the tool generated.
+(The Seal / NewPipe / mobile-browser steps are written from how those apps are documented to work and were not
+tested on a phone; the `/ingest` mechanics below them were tested, see *Measured*.)
 
 ## What you get
 
@@ -43,75 +59,91 @@ You can also start runs from **Actions → digest / zoom → Run workflow** (fie
 
 | file | content |
 |---|---|
-| `index.md` | Start here. Maps every contact sheet to its time range, the events in it and a transcript excerpt. |
-| `transcript.md` | `[HH:MM:SS] text` lines. Uses YouTube captions when available, otherwise faster-whisper (small, int8). |
-| `events.md` / `events.json` | Detected events with timestamp, frame number and a short description. |
-| `frames.jsonl.gz` | One JSON object for **every frame at 25 fps** (D2R's tick rate). |
-| `sheets/sheet_NNNN.jpg` | 3x3 contact sheets with 640x360 tiles, each under 1.5 MB. Tiles are one frame per second, plus 4 frames at 25 fps around each event (yellow label, coloured border). |
-| `calibration.png` | The annotated calibration frame. |
-| `summary.json` | Counts, stats and runtime. |
+| `index.md` | **Start here.** Maps every contact sheet to its time range, the events in it, the on-screen text and the transcript excerpt. Sheet links are Release URLs. |
+| `transcript.md` | `[HH:MM:SS] text`. YouTube captions when they cover the video, otherwise faster-whisper (small, int8; language detected from the loudest windows). |
+| `ocr.md` / `ocr.json` | On-screen text with timestamps: whole-frame OCR about once a second and on every scene change; each line is listed once, when it first appears. Slides, code, menus, chat, damage numbers. |
+| `events.md` / `events.json` | Timestamped events (generic + the profile's). |
+| `frames.jsonl.gz` | One JSON record per analysed frame (keys below). |
+| `thumbs/overview_NNN.jpg` | Tiny thumbnails of every keyframe, 80 per image, small enough to browse in git. |
+| `calibration.png` | Only for profiles that calibrate: the annotated frame. |
+| `summary.json`, `meta.json` | Counts, runtime, fps, profile, sizes. |
 
-The archived video (720p H.264 CRF 26, in parts under 1.9 GB, with `parts.json` listing the
-start time of each part) is attached to the **Release** tagged with the video id.
-Videos are never committed to the repo.
+**Contact sheets** are Release assets (`sheets-<video_id>`, `sheet_NNNN.jpg`, 900 per Release): 3x3 tiles of
+640x360 with burned-in timestamps. A tile is a *keyframe* chosen by scene detection plus perceptual-hash
+dedupe (a slide that stays up for ten minutes is one tile; busy footage is limited to one tile every 2 s;
+at least one every 30 s), or a *dense* frame: four consecutive frames around an event (coloured border,
+`HH:MM:SS.ff fN`). The video itself (720p H.264, in parts under 1.9 GB) is in the Release tagged with the id.
+Videos are never committed to git.
 
-### `frames.jsonl.gz` keys
+### `frames.jsonl.gz` (generic fields)
 
 | key | meaning |
 |---|---|
-| `f`, `t` | frame number at 25 fps, seconds (`t = f / 25`) |
-| `scene` | `game` (HUD visible), `dark` (black/fade/loading), `other` (menu, loading art, overlay, non-game footage) |
-| `hud` | 0–1 match of the HUD against the calibration reference |
-| `life`, `mana` | % read from the orb fill level (null when the HUD is not visible) |
-| `poison` | true when the life orb is green |
-| `motion` | mean absolute pixel change vs the previous frame (0–255, game area only) |
-| `shift` | global camera translation vs the previous frame in px at 320 wide (phase correlation): ~0 standing, 1–3 running, ≥10 in one frame = camera jump |
-| `cut` | true on a colour-histogram jump (scene change) |
-| `phash` | 64-bit DCT perceptual hash (hex), handy for finding repeated or near-identical frames |
-| `ocr` | `{region: text}` once per second for the chat, center and top-right areas, only when text was found |
+| `f`, `t` | frame number at the analysis rate, seconds (`t = f / fps`) |
+| `motion` | mean absolute pixel change vs the previous frame (0–255, whole frame, 320x180 gray) |
+| `cut` | true when the colour histogram jumps (scene change) |
+| `phash` | 64-bit DCT perceptual hash (hex): equal or close = same picture |
+| `bright` | mean brightness 0–255 |
+| `sig` | coarse scene signature: 2x2 grid of (hue bin, saturation, value) as 6 hex chars; groups similar scenes |
 
-### Event types
+A profile adds its own keys next to these (d2r: `scene`, `hud`, `life`, `mana`, `poison`, `shift`, `match`,
+`chg`, `motion_game`, `ocr`). Nothing profile-specific appears for the generic profile.
 
-`life_drop` (≥10 points within 1 s) · `life_refill` / `mana_refill` (sudden refill ≥12 points within
-0.6 s, likely a rejuvenation or full potion) · `poisoned` · `death` (empty life orb with the HUD
-visible, or death text) · `area_change` (HUD gone 0.3–30 s around a cut or black screen, or a
-new area name read by OCR) · `off_hud` (more than 30 s without the HUD) · `teleport` (one-frame camera jump
-of >= 10 px at 320 wide; chains of them are merged) · `run_burst` (sustained fast camera movement:
-run, whirlwind, charge) · `text` (new chat or message text). Spell flashes change `motion` but not
-the camera `shift`, so they are not reported as teleports.
-Thresholds are at the top of `ytdigest/events.py`.
+### Generic events
+
+`scene_change` (cuts; runs of rapid cuts merge) · `motion_burst` (large change that is not a cut; at most 6 per
+minute, the strongest kept) · `static` (the picture hardly changes for ≥ 20 s: a slide, a paused video) ·
+`black` (fade, loading) · `text_change` (new on-screen text) · `silence` (≥ 8 s below −50 dBFS) ·
+`loud_peak` (≥ 12 dB over the typical level). Thresholds are at the top of `ytdigest/events.py` and `audio.py`.
+
+## Profiles
+
+A profile = optional calibration + extra per-frame fields + extra event rules, in its own module under
+`ytdigest/profiles/`. Pick one with a line `profile: d2r` in the issue; no line = `generic`. The tool may
+suggest a profile ("this looks like D2R") but never switches by itself. See
+[`ytdigest/profiles/README.md`](ytdigest/profiles/README.md) for how to add one (a module and a config file; a
+Melee template is included, not implemented).
+
+**`d2r`** (Diablo II: Resurrected PvP): calibrates the HUD (life and mana orbs, skill bar, text regions) and checks the
+orb readings against the `Life: x / y` numbers the game prints; per frame life %, mana %, poison and camera
+tracking; events `life_drop`, `life_refill`, `mana_refill`, `poisoned`, `death`, `area_change`, `off_hud`,
+`teleport` (a frame where the whole view changes and the new view does not match the old one), `run_burst`,
+`text`. It analyses at 25 fps, D2R's tick rate.
+
+## Frame rate and cost
+
+Frames are analysed at the video's **native fps, capped at 60**, or at the profile's own rate (D2R: 25).
+The archive keeps a constant frame rate (variable-rate phone recordings are normalised; averages below 20 fps
+become 30). Cost of 60 fps against 30 fps is measured in *Measured*; the short version is: analysis time and the
+size of `frames.jsonl.gz` roughly double, the contact sheets do not (they are chosen by content, not by rate).
+Long videos are split into parallel jobs of about 36,000 frames (20 min at 30 fps, 10 min at 60 fps).
 
 ## How it runs
 
 ```
-issue labeled "digest"
-  └─ request      parse the URL, comment "started"
-  └─ prepare      yt-dlp (720p + metadata + captions) → re-encode → Release <video_id>
-                  → HUD calibration → commit config/hud/<id>.json + calibration.png → comment image
-       ├─ analyze[matrix]  one job per 20 min of video, every frame at 25 fps, OCR at 1/s
-       └─ transcript       captions, or faster-whisper (model cached)
-  └─ finalize     merge → events → contact sheets → index.md → commit digests/<id>/ → comment
-  └─ report-failure  comments the failing job's log tail
+issue labeled "digest"  |  /ingest <tag | url>
+  └─ request     parse command, profile; comment "started"
+  └─ prepare     YouTube download through WARP (or ingest) → 720p H.264 archive in Release <id>
+                 → profile + calibration → commit config/videos/<id>.json → comment calibration/suggestion
+       ├─ analyze[matrix]  parallel chunks: every frame, whole-frame OCR, keyframe candidates
+       └─ transcript       captions (if they cover the video) or faster-whisper
+  └─ finalize    merge → events (generic + profile + audio) → keyframes → sheets → Release sheets-<id>
+                 → index.md, ocr.md, thumbs → commit digests/<id>/ → INDEX.md → comment
+  └─ report-failure  comments the failing step's log lines (+ the phone-upload hint for download failures)
 ```
 
-A 3-hour video becomes 9 parallel analysis jobs, so each one stays far below the 6-hour job
-limit. If the Release already exists, the download and encode are skipped. Dependencies are
-pinned in `requirements*.txt`. pip downloads are cached by `actions/setup-python`, and the
-whisper model by `actions/cache`.
-
-HUD regions are stored per video as fractions of the frame in `config/hud/<video_id>.json`.
-You can also edit that file in the GitHub web editor and comment `/digest` to re-run.
+Dependencies are pinned in `requirements*.txt`; pip downloads are cached by `actions/setup-python`, the Whisper
+model by `actions/cache`.
 
 ## YouTube access (no login, no cookies)
 
-GitHub's runners sit on datacenter IPs that YouTube often answers with "Sign in to confirm you're
-not a bot". This repo never uses an account. The download step (and only that step) runs through a
-free **Cloudflare WARP** tunnel set up with [wgcf](https://github.com/ViRb3/wgcf) (anonymous WARP
-account, created per attempt), so YouTube sees a Cloudflare IP instead. If YouTube still refuses
-an attempt, the job tears the tunnel down, registers a fresh one (usually a different IP) and
-tries again, up to 5 times (`scripts/download_via_warp.sh`, `scripts/warp.sh`).
+GitHub's runners sit on datacenter IPs that YouTube often answers with "Sign in to confirm you're not a bot".
+This repo never uses an account. The download step (and only that step) runs through a free **Cloudflare WARP**
+tunnel set up with [wgcf](https://github.com/ViRb3/wgcf) (an anonymous WARP account, created per attempt), so
+YouTube sees a Cloudflare IP. If YouTube still refuses an attempt, the job registers a fresh tunnel (usually a
+different IP) and tries again, up to 5 times (`scripts/download_via_warp.sh`, `scripts/warp.sh`).
 
-What was tested without any login (details in the issue/PR history):
+What was tested without any login:
 
 | option | result |
 |---|---|
@@ -120,56 +152,60 @@ What was tested without any login (details in the issue/PR history):
 | runner + bgutil PO-token provider | refused at the bot check before any token is requested (a token does not fix an IP-level flag) |
 | runner + Cloudflare WARP | works on most fresh tunnels; some tunnels or IPs get refused, hence the retry loop |
 
-Limits to know about: WARP IPs are shared with other users, so success varies by attempt; a
-fully blocked day means re-running with `/digest` later. Set the repository variable
-`USE_WARP=false` to download without the tunnel.
-
-## Measured on real footage
-
-Two public videos, full pipeline on GitHub-hosted runners (4 vCPU), no login:
-
-| | 4:55 clip (30 fps source) | 57:00 video |
-|---|---|---|
-| fresh run, download → comment | 4 min 51 s | 18 min 43 s (re-run on the existing archive: 13 min 8 s) |
-| per stage | prepare 2:10 · analysis 1:35 · transcript 0:19 · finalize 1:05 | prepare 9:49 (download 1:00, encode ~8 min) · analysis 3 parallel jobs of 3–4 min · transcript 2:37 · finalize 5:19 |
-| frames analysed (25 fps) | 7,365 | 85,482 |
-| events | 78 | 1,244 |
-| orb vs the game's on-screen numbers (held-out) | life median 0.4 %, mana median 1.0 % | life median 1.4 %, mana median 2.2 % |
-| git size of the digest | 13 MB | 136 MB (about 140 MB per hour) |
-
-Orb accuracy is measured by `ytdigest/calibrate.py` against the `Life: x / y` and `Mana: x / y` text
-D2R prints above the orbs (read with Tesseract, half the samples to fit, the other half to test).
-Means are higher than medians because a few of those reference numbers are OCR digit slips. When a
-video does not show the numbers, calibration says so and uses a linear fill map instead.
-
-Teleport detection (`teleport` events) is a heuristic: a frame where the whole game area changes and
-the new view does not match the old one. Eyeballing before/after frames of about 15 sampled events, most
-were real view changes; false positives were UI panels opening and same-view spell effects (mostly
-filtered by the `chg` and `match` conditions). Treat the counts as "view jumps", not proof of the
-Teleport skill.
+WARP IPs are shared with other users, so success varies by attempt. **When it fails, use `/ingest`** (above): it
+does not depend on YouTube at all. Set the repository variable `USE_WARP=false` to download without the tunnel.
 
 ## Storage
 
-In git: `index.md`, `events.md/json`, `transcript.md/json`, `frames.jsonl.gz`, `calibration.png`,
-the overview sheets, `summary.json` and the small `zooms/<id>/<range>/index.md` files.
-In Releases (not git): the archived video parts, `parts.json`, and every zoom's sheets.
-Near-identical consecutive 1 fps tiles (menus, standing still) are skipped using the perceptual
-hash (`SHEET_DEDUP_BITS`, default 3, 0 = keep all) and at least one tile every 10 s is kept.
-`/delete <video_id>` removes a digest everywhere.
+In git (`digests/<id>/`): `index.md`, `events.*`, `transcript.*`, `ocr.*`, `frames.jsonl.gz`,
+`thumbs/overview_*.jpg`, `summary.json`, `meta.json`, plus the small `zooms/<id>/<range>/index.md` files.
+In Releases (not git, so git history stays small): the archived video parts, `parts.json`, the contact sheets
+(`sheets-<id>`), and every zoom's sheets (`zoom-<id>-<range>`). Re-running a digest deletes and recreates its
+sheets Release; git history still keeps old versions of the small files. Per-hour git cost: see *Measured*.
+`/delete <id>` removes a digest everywhere (not from git history).
 
-## Local / offline test (optional, for developers)
+## What this can and cannot see
 
-`python tests/synthetic.py /tmp/syn` writes a synthetic D2R-like clip with known life and mana
-values. Run `calibrate`, `analyze`, `finalize` and `zoom` with `--archive-dir /tmp/syn` against
-it. See the docstrings in `ytdigest/*.py`.
+Read this before trusting the output.
+
+- **Frames are sampled, not watched.** The tool looks at one frame every 1/fps seconds (native fps, max 60; 25
+  for d2r) after scaling to 320x180 for the numbers and 640x360 for the sheet tiles. Anything shorter than a frame
+  interval, or smaller than a few pixels at that scale, is invisible. The contact sheets show roughly one frame
+  every 2–30 s plus a few frames around events, not the whole video; use `/zoom` for a range.
+- **There is no real motion or action understanding.** `motion`, `cut`, `phash`, and `sig` measure how much and
+  how fast the picture changes, not what happens in it. "Large motion" can be a fight, a camera pan or a flash;
+  profile rules (like d2r's teleport) are heuristics tuned on a few clips and can misfire (see Measured).
+- **OCR makes mistakes.** Tesseract reads clean slides and UI text well, and game text, small fonts, stylised
+  fonts, low contrast, motion blur and text over busy scenery poorly: expect misspellings ("Beep Moor" for
+  "Blood Moor"), missing lines and some invented noise. Lines are fuzzy-deduplicated, so a real change in
+  a few characters can be missed. Only English is read by default; text sizes under ~10 px at 720p are mostly lost.
+  The archive is 720p, so text that needed 1080p may be unreadable.
+- **Audio events are only loudness.** `silence` and `loud_peak` cannot tell speech from music or a cheer from
+  an explosion. Whisper (small, int8) is good on clear speech, weaker on crosstalk, accents, music and game noise;
+  captions from YouTube (often auto-generated) are used when they span ≥ 60 % of the video.
+- **Event counts are not ground truth.** Thresholds are fixed numbers; a different video style may need
+  different ones (they are at the top of `ytdigest/events.py`, `audio.py`, and the profile).
+- **The sheet selection can hide things.** Perceptual-hash dedupe skips near-identical frames; a small change
+  (a number ticking over in a corner) may not make a new tile. It is still in `frames.jsonl.gz` and `ocr.md`.
+
+## Measured
+
+⟦MEASURED⟧
+
+## Developing and testing locally
+
+- `python -m ytdigest.profiles` lists profiles; `python -m ytdigest.profiles check <name> clip.mp4` tries one.
+- `tests/regression_d2r.py` compares the d2r profile with a baseline (per-frame fields and events).
+- `tests/synthetic.py` and `tests/make_screen_recording.py` generate clips with known content.
+- Each module's docstring says how to run it on a local archive (`--archive-dir`), no GitHub needed.
 
 ## Credits
 
 Ideas adopted from two MIT-licensed projects (thank you):
 
 - [usedeepmark/watch-for-me](https://github.com/usedeepmark/watch-for-me): yt-dlp failure
-  classification and retrying only transient 403/blocked errors, and grouping near-identical frames
-  by perceptual hash instead of keeping every sample.
+  classification and retrying only transient 403/blocked errors, and choosing frames by grouping near-identical
+  ones by perceptual hash instead of sampling at fixed intervals.
 - [jordanrendric/claude-video-vision](https://github.com/jordanrendric/claude-video-vision): the
   caption coverage check (captions that stop early or are sparse fall back to local Whisper) and the
   caption-track selection order.

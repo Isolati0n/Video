@@ -68,6 +68,11 @@ class Profile:
     def events_note(self) -> str:
         return ""
 
+    def defaults(self) -> dict:
+        """Optional per-profile defaults from config/profiles/<name>.json (regions, thresholds, ...)."""
+        from ..common import load_json, profile_defaults_path
+        return load_json(profile_defaults_path(self.name), {}) or {}
+
 
 def analysis_fps(native_fps: float, profile: Profile) -> float:
     """The rate frames are analysed at: the profile's own if it sets one, else native, capped."""

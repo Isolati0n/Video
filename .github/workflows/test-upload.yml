@@ -1,0 +1,39 @@
+name: test-upload
+
+# Test helper for /ingest: creates a Release with video files attached, the way a phone upload
+# through the Releases page would look. Not needed in normal use.
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to create
+        required: true
+        default: ingest-test-rec
+      kind:
+        description: "synthetic-screen-recording (2 assets, portrait, variable fps)"
+        required: true
+        default: synthetic-screen-recording
+
+permissions:
+  contents: write
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/setup
+        with:
+          apt: ffmpeg
+      - run: pip install -q opencv-python-headless==4.12.0.88 numpy==2.2.6
+      - name: Make the files
+        run: python tests/make_screen_recording.py rec 4
+      - name: Create the Release with the files attached
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ls -la rec
+          gh release delete "${{ inputs.tag }}" --yes --cleanup-tag 2>/dev/null || true
+          gh release create "${{ inputs.tag }}" rec/rec-part1.mp4 rec/rec-part2.mp4 \
+            --title "Phone upload test (${{ inputs.tag }})" --notes "Synthetic phone screen recording, two parts."

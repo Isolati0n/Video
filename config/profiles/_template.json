@@ -1,0 +1,7 @@
+{
+  "_comment": "Optional defaults for a profile, loaded by Profile.defaults(). Copy to config/profiles/<name>.json. Rectangles are [x, y, w, h] as fractions of the frame (0..1), so they work at any resolution.",
+  "p1_percent": [0.18, 0.80, 0.10, 0.07],
+  "p2_percent": [0.42, 0.80, 0.10, 0.07],
+  "p1_stocks": [0.16, 0.74, 0.12, 0.04],
+  "p2_stocks": [0.40, 0.74, 0.12, 0.04]
+}

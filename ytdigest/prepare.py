@@ -102,7 +102,9 @@ def encode_archive(src: Path, dst: Path):
     v = next(s for s in pr["streams"] if s["codec_type"] == "video")
     num, den = (int(x) for x in v.get("avg_frame_rate", "0/1").split("/"))
     avg = num / den if den and num else 30.0
-    fps_out = snap_fps(avg)
+    # Screen recorders drop frames while nothing changes, so a phone recording can average 2 fps.
+    # Below 20 fps the constant rate is set to 30 (duplicated frames cost almost nothing).
+    fps_out = snap_fps(avg) if avg >= 20 else 30.0
     portrait = int(v["height"]) > int(v["width"])
     scale = "scale='min(720,iw)':-2" if portrait else "scale=-2:'min(720,ih)'"
     gop = max(25, int(round(fps_out * 2)))
