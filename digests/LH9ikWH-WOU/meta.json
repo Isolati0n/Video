@@ -1,12 +1,12 @@
 {
   "video_id": "LH9ikWH-WOU",
-  "profile": "generic",
-  "fps": 30.0,
+  "profile": "d2r",
+  "fps": 25.0,
   "native_fps": 30.0,
   "width": 1280,
   "height": 720,
   "duration_s": 294.577,
-  "sheets": 31,
+  "sheets": 47,
   "sheet_tags": [
     "sheets-LH9ikWH-WOU"
   ]
