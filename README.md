@@ -237,7 +237,7 @@ player: that is what a Melee profile would add.
 |---|---|---|---|
 | Melee 54 min, 60 fps, generic | 4.1 MB (4.6 MB/h): frames 2.5 MB, thumbnails 1.0 MB, text 0.6 MB | 830 MB | 80 MB |
 | D2R 57 min, 25 fps, d2r | 3.6 MB (3.8 MB/h) | 444 MB | 48 MB |
-| lecture 14.5 min, 60 fps | 0.86 MB (3.6 MB/h) | 35 MB | 4.5 MB |
+| lecture 14.5 min, 60 fps | 0.86 MB (3.6 MB/h) | 41 MB | 4.5 MB |
 
 Before this change the D2R digest kept its sheets in git: 136 MB for the 57-minute video. Git history still holds those old
 versions (the repo's pack is ~260 MB); new digests add only the numbers above. A 3-hour 60 fps video is extrapolated, not
@@ -251,8 +251,8 @@ tested: ~14 MB in git, ~2.8 GB of archive in 2 parts, ~250 MB of sheets, one enc
 carries the upload hint (seen when WARP was refused on all 5 attempts for the lecture; a retry minutes later succeeded on
 the first attempt). Not tested: the actual phone steps (Seal, NewPipe, the mobile browser's release form), files near 2 GB.
 
-**YouTube access since the last report.** WARP succeeded on attempt 1 for the Melee set, the lecture (second try) and the
-D2R re-runs; the lecture's first try was refused on all 5 attempts within a minute. Refusals come in streaks, so the
+**YouTube access since the last report.** WARP succeeded on attempt 1 for the Melee set and for the lecture's second try (the D2R
+re-runs reused their archives and downloaded nothing); the lecture's first try was refused on all 5 attempts within a minute. Refusals come in streaks, so the
 back-off between attempts now grows (5, 20, 45, 80 s). `/ingest` is the dependable fallback.
 
 **Unit tests**: `python tests/test_core.py` (7 offline checks), `tests/regression_d2r.py`.
