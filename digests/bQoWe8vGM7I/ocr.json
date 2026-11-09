@@ -1,0 +1,2949 @@
+{
+  "furniture_suppressed": [],
+  "entries": [
+    {
+      "t": 1.0,
+      "f": 30,
+      "new": [
+        "Learning",
+        "English",
+        "Podcast"
+      ],
+      "conf": [
+        96,
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 8.0,
+      "f": 240,
+      "new": [
+        "and welcome back to"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 12.0,
+      "f": 360,
+      "new": [
+        "I'm Emily."
+      ],
+      "conf": [
+        86
+      ],
+      "low": []
+    },
+    {
+      "t": 13.0,
+      "f": 390,
+      "new": [
+        "And I'm Mike! We're really",
+        "here with us today."
+      ],
+      "conf": [
+        80,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 16.0,
+      "f": 480,
+      "new": [
+        "And Mike! really"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 17.0,
+      "f": 510,
+      "new": [
+        "In this podcast, we talk about hy",
+        "everyday English."
+      ],
+      "conf": [
+        88,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 22.0,
+      "f": 660,
+      "new": [
+        "We help you learn useful",
+        "and phrases for daily life."
+      ],
+      "conf": [
+        96,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 26.0,
+      "f": 780,
+      "new": [
+        "right!",
+        "And today\u2019s topic is very special"
+      ],
+      "conf": [
+        96,
+        94
+      ],
+      "low": []
+    },
+    {
+      "t": 30.0,
+      "f": 900,
+      "new": [
+        "It\u2019s called",
+        "\u201cThe Power of Positive Thinking:"
+      ],
+      "conf": [
+        96,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 33.0,
+      "f": 990,
+      "new": [
+        "Change Your Mindset",
+        "Change Your Life.\u201d"
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 36.0,
+      "f": 1080,
+      "new": [
+        "going to talk about how having a",
+        "positive attitude can help you learn better,"
+      ],
+      "conf": [
+        95,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 41.0,
+      "f": 1230,
+      "new": [
+        "| atl",
+        "feel better, and do better in life."
+      ],
+      "conf": [
+        60,
+        96
+      ],
+      "low": [
+        "| atl"
+      ]
+    },
+    {
+      "t": 45.0,
+      "f": 1350,
+      "new": [
+        "So if sometimes feel tired,",
+        "or worried about learning English"
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 50.0,
+      "f": 1500,
+      "new": [
+        "don\u2019t worry!"
+      ],
+      "conf": [
+        76
+      ],
+      "low": []
+    },
+    {
+      "t": 51.0,
+      "f": 1530,
+      "new": [
+        "We're here to help you",
+        "stay strong and motivated."
+      ],
+      "conf": [
+        92,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 55.0,
+      "f": 1650,
+      "new": [
+        "episode will help \u00a5",
+        "in two big ways."
+      ],
+      "conf": [
+        82,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 59.0,
+      "f": 1770,
+      "new": [
+        "First, it will help you practice",
+        "listening and speaking in English."
+      ],
+      "conf": [
+        96,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 63.0,
+      "f": 1890,
+      "new": [
+        "And second,"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 65.0,
+      "f": 1950,
+      "new": [
+        "We hope it gives you",
+        "motivation to stay positive"
+      ],
+      "conf": [
+        91,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 68.0,
+      "f": 2040,
+      "new": [
+        "and never give up!"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 70.0,
+      "f": 2100,
+      "new": [
+        "So get ready!"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 71.0,
+      "f": 2130,
+      "new": [
+        "We'll start with a short conversation",
+        "that\u2019s full of helpful English."
+      ],
+      "conf": [
+        94,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 76.0,
+      "f": 2280,
+      "new": [
+        "Then, we'll learn new vocabulary,"
+      ],
+      "conf": [
+        93
+      ],
+      "low": []
+    },
+    {
+      "t": 79.0,
+      "f": 2370,
+      "new": [
+        "you some easy questions,",
+        "and do shadowing practice together."
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 83.0,
+      "f": 2490,
+      "new": [
+        "Let\u2019s have fun,",
+        "and let\u2019s learn together!"
+      ],
+      "conf": [
+        94,
+        93
+      ],
+      "low": []
+    },
+    {
+      "t": 95.0,
+      "f": 2850,
+      "new": [
+        "EnglishEasyPractice.com"
+      ],
+      "conf": [
+        91
+      ],
+      "low": []
+    },
+    {
+      "t": 104.0,
+      "f": 3120,
+      "new": [
+        "wil",
+        "Hi, Mark!",
+        "Why are you always so happy and motivated?"
+      ],
+      "conf": [
+        68,
+        96,
+        96
+      ],
+      "low": [
+        "wil"
+      ]
+    },
+    {
+      "t": 109.0,
+      "f": 3270,
+      "new": [
+        "Because | believe in positive thinking!"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 113.0,
+      "f": 3390,
+      "new": [
+        "When I think good thoughts,",
+        "| feel stronger and learn better."
+      ],
+      "conf": [
+        91,
+        94
+      ],
+      "low": []
+    },
+    {
+      "t": 118.0,
+      "f": 3540,
+      "new": [
+        "wil",
+        "Really? Does it help with studying?"
+      ],
+      "conf": [
+        82,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 121.0,
+      "f": 3630,
+      "new": [
+        "wif"
+      ],
+      "conf": [
+        67
+      ],
+      "low": [
+        "wif"
+      ]
+    },
+    {
+      "t": 123.0,
+      "f": 3690,
+      "new": [
+        "Yes! If I say, \"I can do this,\"",
+        "instead of \"This is too hard,\" my brain works better."
+      ],
+      "conf": [
+        91,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 132.0,
+      "f": 3960,
+      "new": [
+        "Positive thoughts make learning easier."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 135.0,
+      "f": 4050,
+      "new": [
+        "wil",
+        "But what if | fail?"
+      ],
+      "conf": [
+        63,
+        95
+      ],
+      "low": [
+        "wil"
+      ]
+    },
+    {
+      "t": 136.0,
+      "f": 4080,
+      "new": [
+        "Ald"
+      ],
+      "conf": [
+        64
+      ],
+      "low": [
+        "Ald"
+      ]
+    },
+    {
+      "t": 138.0,
+      "f": 4140,
+      "new": [
+        "Failure is just a step to success!"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 142.0,
+      "f": 4260,
+      "new": [
+        "Positive people see mistakes as lessons."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 146.0,
+      "f": 4380,
+      "new": [
+        "They try again and improve"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 150.0,
+      "f": 4500,
+      "new": [
+        "That sounds nice."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 152.0,
+      "f": 4560,
+      "new": [
+        "How can | start?"
+      ],
+      "conf": [
+        64
+      ],
+      "low": [
+        "How can | start?"
+      ]
+    },
+    {
+      "t": 155.0,
+      "f": 4650,
+      "new": [
+        "First, smile more!"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 158.0,
+      "f": 4740,
+      "new": [
+        "Then, replace negative thoughts with positive ones"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 164.0,
+      "f": 4920,
+      "new": [
+        "Say, \"I will try my best\" every day."
+      ],
+      "conf": [
+        92
+      ],
+      "low": []
+    },
+    {
+      "t": 169.0,
+      "f": 5070,
+      "new": [
+        "Vay)",
+        "Okey, lil try!"
+      ],
+      "conf": [
+        68,
+        64
+      ],
+      "low": [
+        "Vay)",
+        "Okey, lil try!"
+      ]
+    },
+    {
+      "t": 171.0,
+      "f": 5130,
+      "new": [
+        "Maybe my grades will improve too."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 173.0,
+      "f": 5190,
+      "new": [
+        "Aid"
+      ],
+      "conf": [
+        61
+      ],
+      "low": [
+        "Aid"
+      ]
+    },
+    {
+      "t": 177.0,
+      "f": 5310,
+      "new": [
+        "A positive mindset changes everything."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 181.0,
+      "f": 5430,
+      "new": [
+        "You'll see success soon!"
+      ],
+      "conf": [
+        88
+      ],
+      "low": []
+    },
+    {
+      "t": 184.0,
+      "f": 5520,
+      "new": [
+        "Vag)",
+        "Thanks, Mark!",
+        "| feel more hopeful already."
+      ],
+      "conf": [
+        65,
+        96,
+        94
+      ],
+      "low": [
+        "Vag)"
+      ]
+    },
+    {
+      "t": 185.0,
+      "f": 5550,
+      "new": [
+        "\u2014 Ore"
+      ],
+      "conf": [
+        62
+      ],
+      "low": [
+        "\u2014 Ore"
+      ]
+    },
+    {
+      "t": 186.0,
+      "f": 5580,
+      "new": [
+        "NS Ame |"
+      ],
+      "conf": [
+        62
+      ],
+      "low": [
+        "NS Ame |"
+      ]
+    },
+    {
+      "t": 198.0,
+      "f": 5940,
+      "new": [
+        "let\u2019s talk more about today\u2019s topic"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 199.0,
+      "f": 5970,
+      "new": [
+        "positive thinking."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 201.0,
+      "f": 6030,
+      "new": [
+        "Mike, do you believe that inate",
+        "your mindset can change your life?"
+      ],
+      "conf": [
+        87,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 207.0,
+      "f": 6210,
+      "new": [
+        "Yes, I really do."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 209.0,
+      "f": 6270,
+      "new": [
+        "Whth we think ina positive wae",
+        "we feel better."
+      ],
+      "conf": [
+        76,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 211.0,
+      "f": 6330,
+      "new": [
+        "lit"
+      ],
+      "conf": [
+        81
+      ],
+      "low": []
+    },
+    {
+      "t": 213.0,
+      "f": 6390,
+      "new": [
+        "We're more confident,",
+        "more open to learning,"
+      ],
+      "conf": [
+        90,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 215.0,
+      "f": 6450,
+      "new": [
+        "and we don\u2019t give up so easily"
+      ],
+      "conf": [
+        94
+      ],
+      "low": []
+    },
+    {
+      "t": 218.0,
+      "f": 6540,
+      "new": [
+        "That\u2019s so true."
+      ],
+      "conf": [
+        93
+      ],
+      "low": []
+    },
+    {
+      "t": 220.0,
+      "f": 6600,
+      "new": [
+        "I\u2019ve seen many students who Say,"
+      ],
+      "conf": [
+        93
+      ],
+      "low": []
+    },
+    {
+      "t": 222.0,
+      "f": 6660,
+      "new": [
+        "\u201cI can't do this,\u201d",
+        "or \u201cMy English is bad.\u201d"
+      ],
+      "conf": [
+        90,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 227.0,
+      "f": 6810,
+      "new": [
+        "But when they change their",
+        "mindset and say,"
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 228.0,
+      "f": 6840,
+      "new": [
+        "LIN \\ |"
+      ],
+      "conf": [
+        65
+      ],
+      "low": [
+        "LIN \\ |"
+      ]
+    },
+    {
+      "t": 230.0,
+      "f": 6900,
+      "new": [
+        "will try my best,\u201d"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 231.0,
+      "f": 6930,
+      "new": [
+        "or \u201cI\u2019m improving every day,\u201d"
+      ],
+      "conf": [
+        93
+      ],
+      "low": []
+    },
+    {
+      "t": 234.0,
+      "f": 7020,
+      "new": [
+        "their English gets much better!"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 237.0,
+      "f": 7110,
+      "new": [
+        "Exactly!"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 238.0,
+      "f": 7140,
+      "new": [
+        "thinking helps",
+        "your brain stay calm."
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 241.0,
+      "f": 7230,
+      "new": [
+        "Wha you feel good,",
+        "you remember more,"
+      ],
+      "conf": [
+        84,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 244.0,
+      "f": 7320,
+      "new": [
+        "speak more clearly,",
+        "and learn faster"
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 247.0,
+      "f": 7410,
+      "new": [
+        "It\u2019s not magic"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 248.0,
+      "f": 7440,
+      "new": [
+        "\u2018it's a real change in",
+        "how your mind works"
+      ],
+      "conf": [
+        90,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 251.0,
+      "f": 7530,
+      "new": [
+        "And it\u2019s okay to make mistakes"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 254.0,
+      "f": 7620,
+      "new": [
+        "Positive people don't feel bad",
+        "when they make a mistake."
+      ],
+      "conf": [
+        87,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 257.0,
+      "f": 7710,
+      "new": [
+        "They just say,",
+        "\u201cThat's okay. I'll try again.\u201d"
+      ],
+      "conf": [
+        96,
+        80
+      ],
+      "low": []
+    },
+    {
+      "t": 261.0,
+      "f": 7830,
+      "new": [
+        "Right. So if you\u2019re listening right now",
+        "and you sometimes feel shy or scared"
+      ],
+      "conf": [
+        94,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 266.0,
+      "f": 7980,
+      "new": [
+        "remember this:"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 267.0,
+      "f": 8010,
+      "new": [
+        "You can change your life",
+        "by changing how you think."
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 272.0,
+      "f": 8160,
+      "new": [
+        "Say good things to yourself."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 274.0,
+      "f": 8220,
+      "new": [
+        "Be kind to yourself."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 276.0,
+      "f": 8280,
+      "new": [
+        "And every day,",
+        "take one small step forward."
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 280.0,
+      "f": 8400,
+      "new": [
+        "Alright me now let\u2019s learn some great",
+        "words from today\u2019s conversation!"
+      ],
+      "conf": [
+        86,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 286.0,
+      "f": 8580,
+      "new": [
+        "Let\u2019s start our vocabulary section."
+      ],
+      "conf": [
+        94
+      ],
+      "low": []
+    },
+    {
+      "t": 290.0,
+      "f": 8700,
+      "new": [
+        "Yeah! These words will help you understand",
+        "and use English better in real life."
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 301.0,
+      "f": 9030,
+      "new": [
+        "EnglishEasyPractice.com"
+      ],
+      "conf": [
+        90
+      ],
+      "low": []
+    },
+    {
+      "t": 306.0,
+      "f": 9180,
+      "new": [
+        "Thoughts",
+        "A thought is something you think in your mind.",
+        "It can be a good idea or a feeling."
+      ],
+      "conf": [
+        96,
+        96,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 314.0,
+      "f": 9420,
+      "new": [
+        "Example:"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 320.0,
+      "f": 9600,
+      "new": [
+        "Replace:",
+        "and put something new in its place."
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 329.0,
+      "f": 9870,
+      "new": [
+        "Example:"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 336.0,
+      "f": 10080,
+      "new": [
+        "Grades:",
+        "you school or on a test."
+      ],
+      "conf": [
+        96,
+        88
+      ],
+      "low": []
+    },
+    {
+      "t": 344.0,
+      "f": 10320,
+      "new": [
+        "Example:"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 350.0,
+      "f": 10500,
+      "new": [
+        "Mindset",
+        "things \u2014 your attitude."
+      ],
+      "conf": [
+        96,
+        92
+      ],
+      "low": []
+    },
+    {
+      "t": 358.0,
+      "f": 10740,
+      "new": [
+        "Example:"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 365.0,
+      "f": 10950,
+      "new": [
+        "Mindset",
+        "things \u2014 your attitude."
+      ],
+      "conf": [
+        96,
+        94
+      ],
+      "low": []
+    },
+    {
+      "t": 368.0,
+      "f": 11040,
+      "new": [
+        "Now that you know these words,",
+        "it\u2019s time to practice speaking!"
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 376.0,
+      "f": 11280,
+      "new": [
+        "speaking practice with",
+        "the listen-and-answer method!"
+      ],
+      "conf": [
+        96,
+        93
+      ],
+      "low": []
+    },
+    {
+      "t": 386.0,
+      "f": 11580,
+      "new": [
+        "Now it's time to practice speaking!"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 389.0,
+      "f": 11670,
+      "new": [
+        "We'll ask you some easy questions about",
+        "the conversation between Anna and Mark."
+      ],
+      "conf": [
+        92,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 394.0,
+      "f": 11820,
+      "new": [
+        "After question, pause the video",
+        "and say your answer out loud."
+      ],
+      "conf": [
+        96,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 399.0,
+      "f": 11970,
+      "new": [
+        "Speaking out loud is very important"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 403.0,
+      "f": 12090,
+      "new": [
+        "It helps you train your mouth",
+        "brain to speak English more easily."
+      ],
+      "conf": [
+        95,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 408.0,
+      "f": 12240,
+      "new": [
+        "If you don\u2019t know the answer,",
+        "no problem! Just listen and repeat"
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 414.0,
+      "f": 12420,
+      "new": [
+        "You can watch this part many times."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 416.0,
+      "f": 12480,
+      "new": [
+        "The you repeat this practice,",
+        "the faster your English will improve."
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 421.0,
+      "f": 12630,
+      "new": [
+        "So don't be shy \u2014 say your answers",
+        "with a smile and keep going!"
+      ],
+      "conf": [
+        94,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 432.0,
+      "f": 12960,
+      "new": [
+        "EnglishEasyPractice.com"
+      ],
+      "conf": [
+        91
+      ],
+      "low": []
+    },
+    {
+      "t": 435.0,
+      "f": 13050,
+      "new": [
+        "wil",
+        "Hi, Mark!",
+        "Why are you always so happy and motivated?"
+      ],
+      "conf": [
+        87,
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 442.0,
+      "f": 13260,
+      "new": [
+        "Was Anna happy and motivated?"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 446.0,
+      "f": 13380,
+      "new": [
+        "No, she wasn't."
+      ],
+      "conf": [
+        84
+      ],
+      "low": []
+    },
+    {
+      "t": 448.0,
+      "f": 13440,
+      "new": [
+        "No, she"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 457.0,
+      "f": 13710,
+      "new": [
+        "Who was happy and motivated?"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 458.0,
+      "f": 13740,
+      "new": [
+        "Mark."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 463.467,
+      "f": 13904,
+      "new": [
+        "Hi, Mark!",
+        "Why are you always so happy and motivated?"
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 464.0,
+      "f": 13920,
+      "new": [
+        "Because | believe in positive thinking!"
+      ],
+      "conf": [
+        94
+      ],
+      "low": []
+    },
+    {
+      "t": 468.0,
+      "f": 14040,
+      "new": [
+        "When | think good thoughts,",
+        "| feel stronger and learn better."
+      ],
+      "conf": [
+        93,
+        94
+      ],
+      "low": []
+    },
+    {
+      "t": 475.0,
+      "f": 14250,
+      "new": [
+        "Why was Mark happy and motivated?"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 480.0,
+      "f": 14400,
+      "new": [
+        "Because he believes in positive thinking."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 485.0,
+      "f": 14550,
+      "new": [
+        "What does Mark believe in?"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 497.0,
+      "f": 14910,
+      "new": [
+        "Does Mark think good thoughts",
+        "or bad thoughts?"
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 509.0,
+      "f": 15270,
+      "new": [
+        "How does Mark feel when he thinks"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 510.0,
+      "f": 15300,
+      "new": [
+        "good thoughts?"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 514.0,
+      "f": 15420,
+      "new": [
+        "Stronger."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 521.0,
+      "f": 15630,
+      "new": [
+        "Really? Does it help with studying?"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 522.0,
+      "f": 15660,
+      "new": [
+        "Any"
+      ],
+      "conf": [
+        63
+      ],
+      "low": [
+        "Any"
+      ]
+    },
+    {
+      "t": 525.0,
+      "f": 15750,
+      "new": [
+        "Yes! If I say, \"I can do this,\"",
+        "instead of \"This is too hard,\" my brain works better."
+      ],
+      "conf": [
+        90,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 535.0,
+      "f": 16050,
+      "new": [
+        "Does positive thinking help",
+        "with studying?"
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 540.0,
+      "f": 16200,
+      "new": [
+        "Yes, it does."
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 546.0,
+      "f": 16380,
+      "new": [
+        "What happens when Mark says,",
+        "\u201c| can do this\"?"
+      ],
+      "conf": [
+        95,
+        89
+      ],
+      "low": []
+    },
+    {
+      "t": 553.0,
+      "f": 16590,
+      "new": [
+        "His brain works better."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 556.0,
+      "f": 16680,
+      "new": [
+        "Positive words help his brain."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 561.0,
+      "f": 16830,
+      "new": [
+        "What does Mark Say instead of",
+        "\u201cThis is too hard\u201d?"
+      ],
+      "conf": [
+        95,
+        94
+      ],
+      "low": []
+    },
+    {
+      "t": 567.0,
+      "f": 17010,
+      "new": [
+        "\"| can do this.\""
+      ],
+      "conf": [
+        78
+      ],
+      "low": []
+    },
+    {
+      "t": 573.667,
+      "f": 17210,
+      "new": [
+        "instead of \"This is too hard,\u201d my brain works better."
+      ],
+      "conf": [
+        93
+      ],
+      "low": []
+    },
+    {
+      "t": 575.0,
+      "f": 17250,
+      "new": [
+        "Positive thoughts make learning easier."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 580.0,
+      "f": 17400,
+      "new": [
+        "What makes learning easier?"
+      ],
+      "conf": [
+        94
+      ],
+      "low": []
+    },
+    {
+      "t": 588.0,
+      "f": 17640,
+      "new": [
+        "Positive thoughts."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 593.0,
+      "f": 17790,
+      "new": [
+        "But what if I fail?"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 594.0,
+      "f": 17820,
+      "new": [
+        "Vay"
+      ],
+      "conf": [
+        77
+      ],
+      "low": []
+    },
+    {
+      "t": 596.0,
+      "f": 17880,
+      "new": [
+        "Failure is just a to success!"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 601.0,
+      "f": 18030,
+      "new": [
+        "Is failure bad, according to Mark?"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 606.0,
+      "f": 18180,
+      "new": [
+        "No, it isn't."
+      ],
+      "conf": [
+        91
+      ],
+      "low": []
+    },
+    {
+      "t": 608.0,
+      "f": 18240,
+      "new": [
+        "Failure is not bad."
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 618.0,
+      "f": 18540,
+      "new": [
+        "What is failure, according to Mark?",
+        "to success."
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 626.0,
+      "f": 18780,
+      "new": [
+        "Positive people see mistakes as lessons"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 630.0,
+      "f": 18900,
+      "new": [
+        "They try again and improve."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 635.0,
+      "f": 19050,
+      "new": [
+        "What do positive people see"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 641.0,
+      "f": 19230,
+      "new": [
+        "mistakes as?",
+        "Lessons."
+      ],
+      "conf": [
+        96,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 648.0,
+      "f": 19440,
+      "new": [
+        "What do positive people do",
+        "after a mistake?"
+      ],
+      "conf": [
+        94,
+        93
+      ],
+      "low": []
+    },
+    {
+      "t": 654.0,
+      "f": 19620,
+      "new": [
+        "They try again and improve."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 659.0,
+      "f": 19770,
+      "new": [
+        "\\ ype",
+        "That sounds nice"
+      ],
+      "conf": [
+        62,
+        96
+      ],
+      "low": [
+        "\\ ype"
+      ]
+    },
+    {
+      "t": 661.0,
+      "f": 19830,
+      "new": [
+        "How can | start?"
+      ],
+      "conf": [
+        77
+      ],
+      "low": []
+    },
+    {
+      "t": 664.0,
+      "f": 19920,
+      "new": [
+        "First, smile more!"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 668.0,
+      "f": 20040,
+      "new": [
+        "Then, replace negative thoughts with positive ones."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 673.0,
+      "f": 20190,
+      "new": [
+        "Say, \"I will try my best\" every day."
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 679.0,
+      "f": 20370,
+      "new": [
+        "How can Anna start thinking positively?"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 684.0,
+      "f": 20520,
+      "new": [
+        "She can smile more and replace",
+        "negative thoughts."
+      ],
+      "conf": [
+        96,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 690.0,
+      "f": 20700,
+      "new": [
+        "What should Anna say every day?"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 696.0,
+      "f": 20880,
+      "new": [
+        "\u201c| will try my best.\""
+      ],
+      "conf": [
+        89
+      ],
+      "low": []
+    },
+    {
+      "t": 705.0,
+      "f": 21150,
+      "new": [
+        "Okay, try!"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 706.0,
+      "f": 21180,
+      "new": [
+        "INGE",
+        "Maybe my grades will improve too"
+      ],
+      "conf": [
+        66,
+        96
+      ],
+      "low": [
+        "INGE"
+      ]
+    },
+    {
+      "t": 711.0,
+      "f": 21330,
+      "new": [
+        "Exactly:"
+      ],
+      "conf": [
+        88
+      ],
+      "low": []
+    },
+    {
+      "t": 712.0,
+      "f": 21360,
+      "new": [
+        "A positive mindset changes everything."
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 716.0,
+      "f": 21480,
+      "new": [
+        "see success soon!"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 720.0,
+      "f": 21600,
+      "new": [
+        "Will Anna's grades improve",
+        "if she thinks positively?"
+      ],
+      "conf": [
+        90,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 726.0,
+      "f": 21780,
+      "new": [
+        "Yes, her grades will improve."
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 730.133,
+      "f": 21904,
+      "new": [
+        "You'll see success soon!"
+      ],
+      "conf": [
+        90
+      ],
+      "low": []
+    },
+    {
+      "t": 731.0,
+      "f": 21930,
+      "new": [
+        "Thanks, Mark!",
+        "| feel more hopeful already."
+      ],
+      "conf": [
+        96,
+        90
+      ],
+      "low": []
+    },
+    {
+      "t": 737.0,
+      "f": 22110,
+      "new": [
+        "How does Anna feel at the",
+        "end of the conversation?"
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 743.0,
+      "f": 22290,
+      "new": [
+        "Hopeful."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 749.0,
+      "f": 22470,
+      "new": [
+        "Now let\u2019s practice shadowing!"
+      ],
+      "conf": [
+        92
+      ],
+      "low": []
+    },
+    {
+      "t": 752.0,
+      "f": 22560,
+      "new": [
+        "You'll hear one speaker\u2019s line\u2014",
+        "listen carefully, then say it out loud."
+      ],
+      "conf": [
+        90,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 753.0,
+      "f": 22590,
+      "new": [
+        "You'll hear one line\u2014"
+      ],
+      "conf": [
+        92
+      ],
+      "low": []
+    },
+    {
+      "t": 758.0,
+      "f": 22740,
+      "new": [
+        "After that, read the",
+        "other line yourself."
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 762.0,
+      "f": 22860,
+      "new": [
+        "You'll take turns speaking both",
+        "parts of the conversation."
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 766.0,
+      "f": 22980,
+      "new": [
+        "If it's too fast, just pause",
+        "or slow down the video."
+      ],
+      "conf": [
+        92,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 770.0,
+      "f": 23100,
+      "new": [
+        "Repeat this practice often."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 773.0,
+      "f": 23190,
+      "new": [
+        "Shadowing helps you speak more clearly,",
+        "naturally, and with confidence!"
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 783.0,
+      "f": 23490,
+      "new": [
+        "Duet with Ann@"
+      ],
+      "conf": [
+        89
+      ],
+      "low": []
+    },
+    {
+      "t": 785.0,
+      "f": 23550,
+      "new": [
+        "Hi, Mark!",
+        "Why are you always so happy and motivated?"
+      ],
+      "conf": [
+        95,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 790.0,
+      "f": 23700,
+      "new": [
+        "Because | believe in positive thinking!"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 794.0,
+      "f": 23820,
+      "new": [
+        "When | think pend thoughts,",
+        "| feel stronger and learn better"
+      ],
+      "conf": [
+        86,
+        94
+      ],
+      "low": []
+    },
+    {
+      "t": 800.0,
+      "f": 24000,
+      "new": [
+        "Duet with Anna",
+        "Really? Does it help with studying?"
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 804.0,
+      "f": 24120,
+      "new": [
+        "Yes! If | say, \"I can do this,\" instead of",
+        "\"This is too hard,\" my brain works better."
+      ],
+      "conf": [
+        91,
+        94
+      ],
+      "low": []
+    },
+    {
+      "t": 812.0,
+      "f": 24360,
+      "new": [
+        "Positive thoughts make",
+        "learning easier."
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 817.0,
+      "f": 24510,
+      "new": [
+        "Duet with Anna",
+        "\\ garth",
+        "wit",
+        "But what if | fail?"
+      ],
+      "conf": [
+        96,
+        66,
+        71,
+        92
+      ],
+      "low": [
+        "\\ garth",
+        "wit"
+      ]
+    },
+    {
+      "t": 818.0,
+      "f": 24540,
+      "new": [
+        "\\ gat"
+      ],
+      "conf": [
+        68
+      ],
+      "low": [
+        "\\ gat"
+      ]
+    },
+    {
+      "t": 820.0,
+      "f": 24600,
+      "new": [
+        "Failure is just a step to success!"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 824.0,
+      "f": 24720,
+      "new": [
+        "Positive people see",
+        "mistakes as lessons."
+      ],
+      "conf": [
+        95,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 828.0,
+      "f": 24840,
+      "new": [
+        "They try again and improve."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 832.0,
+      "f": 24960,
+      "new": [
+        "Duet with Anna",
+        "That sounds nice."
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 835.0,
+      "f": 25050,
+      "new": [
+        "How can | start?"
+      ],
+      "conf": [
+        87
+      ],
+      "low": []
+    },
+    {
+      "t": 837.0,
+      "f": 25110,
+      "new": [
+        "First, smile more!"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 840.0,
+      "f": 25200,
+      "new": [
+        "Then, replace negative thoughts",
+        "with positive ones."
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 845.0,
+      "f": 25350,
+      "new": [
+        "Duet with Anna",
+        "Say, \"I will try my best\" every day."
+      ],
+      "conf": [
+        96,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 850.0,
+      "f": 25500,
+      "new": [
+        "Okay, I'll try!"
+      ],
+      "conf": [
+        80
+      ],
+      "low": []
+    },
+    {
+      "t": 853.0,
+      "f": 25590,
+      "new": [
+        "Maybe my grades will improve too."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 856.0,
+      "f": 25680,
+      "new": [
+        "its"
+      ],
+      "conf": [
+        69
+      ],
+      "low": [
+        "its"
+      ]
+    },
+    {
+      "t": 857.0,
+      "f": 25710,
+      "new": [
+        "Exactly!",
+        "A positive mindset changes everything"
+      ],
+      "conf": [
+        92,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 862.0,
+      "f": 25860,
+      "new": [
+        "Duet with Anna",
+        "see success soon!"
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 866.0,
+      "f": 25980,
+      "new": [
+        "Thanks, Mark!",
+        "| feel more hopeful already."
+      ],
+      "conf": [
+        96,
+        90
+      ],
+      "low": []
+    },
+    {
+      "t": 872.0,
+      "f": 26160,
+      "new": [
+        "Duet with Mark"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 873.0,
+      "f": 26190,
+      "new": [
+        "Hi, Mark! Why are you always",
+        "so happy and motivated?"
+      ],
+      "conf": [
+        96,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 879.0,
+      "f": 26370,
+      "new": [
+        "Because | believe in positive thinking!"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 883.0,
+      "f": 26490,
+      "new": [
+        "When | think good thoughts,",
+        "| feel stronger and learn better."
+      ],
+      "conf": [
+        86,
+        93
+      ],
+      "low": []
+    },
+    {
+      "t": 885.0,
+      "f": 26550,
+      "new": [
+        "Duet with Mark"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 888.0,
+      "f": 26640,
+      "new": [
+        "Really?",
+        "Does it help with studying?"
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 892.0,
+      "f": 26760,
+      "new": [
+        "Yes! If I say, > this,\"",
+        "instead of \"This is too hard,\" my brain works better."
+      ],
+      "conf": [
+        74,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 893.0,
+      "f": 26790,
+      "new": [
+        "Yes! If | say, \"I can do this,\""
+      ],
+      "conf": [
+        86
+      ],
+      "low": []
+    },
+    {
+      "t": 898.0,
+      "f": 26940,
+      "new": [
+        "Duet with Mark"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 901.0,
+      "f": 27030,
+      "new": [
+        "Positive make learning easier."
+      ],
+      "conf": [
+        94
+      ],
+      "low": []
+    },
+    {
+      "t": 904.0,
+      "f": 27120,
+      "new": [
+        "wil",
+        "But what if | fail?"
+      ],
+      "conf": [
+        83,
+        89
+      ],
+      "low": []
+    },
+    {
+      "t": 908.0,
+      "f": 27240,
+      "new": [
+        "Failure is just a step to success!"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 911.0,
+      "f": 27330,
+      "new": [
+        "Duet with Mark"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 912.0,
+      "f": 27360,
+      "new": [
+        "Positive people see mistakes as lessons."
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 916.0,
+      "f": 27480,
+      "new": [
+        "They try again and improve."
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 920.0,
+      "f": 27600,
+      "new": [
+        "wel",
+        "That sounds nice."
+      ],
+      "conf": [
+        81,
+        94
+      ],
+      "low": []
+    },
+    {
+      "t": 922.0,
+      "f": 27660,
+      "new": [
+        "How can | start?"
+      ],
+      "conf": [
+        92
+      ],
+      "low": []
+    },
+    {
+      "t": 925.0,
+      "f": 27750,
+      "new": [
+        "Duet with Mark",
+        "First, smile more!"
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 929.0,
+      "f": 27870,
+      "new": [
+        "Then, replace negative thoughts with positive ones"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 934.0,
+      "f": 28020,
+      "new": [
+        "Say, \"I will try my best\" every day."
+      ],
+      "conf": [
+        94
+      ],
+      "low": []
+    },
+    {
+      "t": 938.0,
+      "f": 28140,
+      "new": [
+        "Duet with Mark"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 939.0,
+      "f": 28170,
+      "new": [
+        "Okay, Ill try!"
+      ],
+      "conf": [
+        83
+      ],
+      "low": []
+    },
+    {
+      "t": 942.0,
+      "f": 28260,
+      "new": [
+        "wil"
+      ],
+      "conf": [
+        79
+      ],
+      "low": []
+    },
+    {
+      "t": 946.0,
+      "f": 28380,
+      "new": [
+        "> Exactly!"
+      ],
+      "conf": [
+        82
+      ],
+      "low": []
+    },
+    {
+      "t": 948.0,
+      "f": 28440,
+      "new": [
+        "A positive mindset changes everything."
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 951.0,
+      "f": 28530,
+      "new": [
+        "Duet with Mark"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 952.0,
+      "f": 28560,
+      "new": [
+        "see success soon!"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 955.0,
+      "f": 28650,
+      "new": [
+        "Thanks, Mark!",
+        "| feel more hopeful already."
+      ],
+      "conf": [
+        96,
+        94
+      ],
+      "low": []
+    },
+    {
+      "t": 963.0,
+      "f": 28890,
+      "new": [
+        "Great job today!"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 965.0,
+      "f": 28950,
+      "new": [
+        "the best way to",
+        "improve your English speaking skills"
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 969.0,
+      "f": 29070,
+      "new": [
+        "is to watch this video many times."
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 972.0,
+      "f": 29160,
+      "new": [
+        "The more you repeat,",
+        "the better you will speak!"
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 976.0,
+      "f": 29280,
+      "new": [
+        "And don\u2019t forget to check out our other videos",
+        "on our English Easy Practice YouTube channel."
+      ],
+      "conf": [
+        95,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 982.0,
+      "f": 29460,
+      "new": [
+        "We Rive more lessons to help you",
+        "speak English with confidence."
+      ],
+      "conf": [
+        90,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 986.0,
+      "f": 29580,
+      "new": [
+        "You can also visit our website",
+        "englisheasypractice.com"
+      ],
+      "conf": [
+        96,
+        90
+      ],
+      "low": []
+    },
+    {
+      "t": 990.0,
+      "f": 29700,
+      "new": [
+        "for free downloads, more practice,",
+        "and helpful resources."
+      ],
+      "conf": [
+        96,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 995.0,
+      "f": 29850,
+      "new": [
+        "And we\u2019d love to hear from you!"
+      ],
+      "conf": [
+        94
+      ],
+      "low": []
+    },
+    {
+      "t": 998.0,
+      "f": 29940,
+      "new": [
+        "Leave a comment or ask us a question"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 1000.0,
+      "f": 30000,
+      "new": [
+        "Emily and I are always happy to help."
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 1003.0,
+      "f": 30090,
+      "new": [
+        "ill |",
+        "Thanks for learning with us today!"
+      ],
+      "conf": [
+        71,
+        96
+      ],
+      "low": [
+        "ill |"
+      ]
+    },
+    {
+      "t": 1006.0,
+      "f": 30180,
+      "new": [
+        "See you in the next lesson"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 1007.0,
+      "f": 30210,
+      "new": [
+        "and remember to stay positive!"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 1011.0,
+      "f": 30330,
+      "new": [
+        "englisheasypractice.com"
+      ],
+      "conf": [
+        90
+      ],
+      "low": []
+    }
+  ]
+}

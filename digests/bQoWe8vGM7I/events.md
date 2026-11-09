@@ -1,0 +1,246 @@
+# Events: English Podcast for Learning Conversation 💬 | English Speaking Practice 🎤
+
+Derived by code from `frames.jsonl.gz` (30 fps, profile `generic`), the whole-frame OCR and the audio track. '?' marks guesses about the cause. 
+
+| type | count |
+|---|---|
+| motion_burst | 53 |
+| scene_change | 35 |
+| silence | 7 |
+| text_change | 136 |
+
+Stats: motion_median=0.0, motion_threshold=3.0, static_seconds=0.0, ocr_runs_with_text=694, ocr_new_text_entries=244, ocr_lines_unique=265, frames=30595, cuts=50, black_frames=5, audio_median_db=-29.4, audio_max_db=-16.2, silence_seconds=80.0, loud_peaks=0
+
+## Timeline
+
+- [00:00:01] (f30) **text_change**: New on-screen text: Learning
+- [00:00:08] (f240) **text_change**: New on-screen text: and welcome back to
+- [00:00:12] (f360) **text_change**: New on-screen text: I'm Emily.
+- [00:00:13] (f390) **text_change**: New on-screen text: And I'm Mike! We're really / here with us today.
+- [00:00:16] (f480) **text_change**: New on-screen text: And Mike! really
+- [00:00:17] (f510) **text_change**: New on-screen text: In this podcast, we talk about hy / everyday English.
+- [00:00:22] (f660) **text_change**: New on-screen text: We help you learn useful / and phrases for daily life.
+- [00:00:26] (f780) **text_change**: New on-screen text: And today’s topic is very special
+- [00:01:03] (f1890) **text_change**: New on-screen text: And second,
+- [00:01:05] (f1950) **text_change**: New on-screen text: We hope it gives you / motivation to stay positive
+- [00:01:08] (f2040) **text_change**: New on-screen text: and never give up!
+- [00:01:10] (f2100) **text_change**: New on-screen text: So get ready!
+- [00:01:11] (f2130) **text_change**: New on-screen text: We'll start with a short conversation / that’s full of helpful English.
+- [00:01:16] (f2280) **text_change**: New on-screen text: Then, we'll learn new vocabulary,
+- [00:01:19] (f2370) **text_change**: New on-screen text: you some easy questions, / and do shadowing practice together.
+- [00:01:23] (f2490) **text_change**: New on-screen text: Let’s have fun, / and let’s learn together!
+- [00:01:31] (f2732) **scene_change**: Scene change (picture jumps to different content)
+- [00:01:31] (f2745) **motion_burst**: Large motion for 0.1s (peak 4, 3 hot frames; threshold 3.0)
+- [00:01:39] (f2979) **motion_burst**: Large motion for 4.0s (peak 33, 69 hot frames; threshold 3.0)
+- [00:01:39] (f2990) **scene_change**: Scene change (picture jumps to different content)
+- [00:01:42] (f3086) **scene_change**: Scene change (picture jumps to different content)
+- [00:01:48] (f3262) **motion_burst**: Large motion for 0.2s (peak 67, 3 hot frames; threshold 3.0)
+- [00:01:52] (f3377) **motion_burst**: Large motion for 0.3s (peak 10, 3 hot frames; threshold 3.0)
+- [00:02:02] (f3665) **motion_burst**: Large motion for 0.2s (peak 63, 3 hot frames; threshold 3.0)
+- [00:02:03] (f3690) **text_change**: New on-screen text: Yes! If I say, "I can do this," / instead of "This is too hard," my brain works better.
+- [00:02:12] (f3960) **text_change**: New on-screen text: Positive thoughts make learning easier.
+- [00:02:14] (f4037) **motion_burst**: Large motion for 0.2s (peak 64, 3 hot frames; threshold 3.0)
+- [00:02:15] (f4050) **text_change**: New on-screen text: But what if | fail?
+- [00:02:17] (f4135) **motion_burst**: Large motion for 0.7s (peak 62, 5 hot frames; threshold 3.0)
+- [00:02:18] (f4140) **text_change**: New on-screen text: Failure is just a step to success!
+- [00:02:21] (f4249) **motion_burst**: Large motion for 0.1s (peak 9, 3 hot frames; threshold 3.0)
+- [00:02:22] (f4260) **text_change**: New on-screen text: Positive people see mistakes as lessons.
+- [00:02:26] (f4380) **text_change**: New on-screen text: They try again and improve
+- [00:02:29] (f4471) **motion_burst**: Large motion for 0.4s (peak 65, 3 hot frames; threshold 3.0)
+- [00:02:30] (f4500) **text_change**: New on-screen text: That sounds nice.
+- [00:02:31] (f4537) **motion_burst**: Large motion for 1.5s (peak 6, 5 hot frames; threshold 3.0)
+- [00:02:32] (f4560) **text_change**: New on-screen text: How can | start?
+- [00:02:34] (f4629) **motion_burst**: Large motion for 0.3s (peak 66, 3 hot frames; threshold 3.0)
+- [00:02:42] (f4889) **motion_burst**: Large motion for 0.3s (peak 10, 3 hot frames; threshold 3.0)
+- [00:02:48] (f5040) **motion_burst**: Large motion for 0.2s (peak 65, 3 hot frames; threshold 3.0)
+- [00:03:00] (f5414) **motion_burst**: Large motion for 1.1s (peak 9, 4 hot frames; threshold 3.0)
+- [00:03:01] (f5430) **text_change**: New on-screen text: You'll see success soon!
+- [00:03:03] (f5507) **motion_burst**: Large motion for 0.2s (peak 67, 3 hot frames; threshold 3.0)
+- [00:03:04] (f5520) **text_change**: New on-screen text: Thanks, Mark! / | feel more hopeful already.
+- [00:03:06] (f5580) **text_change**: New on-screen text: NS Ame |
+- [00:03:08] (f5652) **motion_burst**: Large motion for 1.3s (peak 14, 14 hot frames; threshold 3.0)
+- [00:03:08] (f5662) **scene_change**: Scene change (picture jumps to different content)
+- [00:03:12] (f5777) **scene_change**: Scene change (picture jumps to different content)
+- [00:03:18] (f5940) **text_change**: New on-screen text: let’s talk more about today’s topic
+- [00:03:19] (f5970) **text_change**: New on-screen text: positive thinking.
+- [00:03:21] (f6030) **text_change**: New on-screen text: Mike, do you believe that inate / your mindset can change your life?
+- [00:03:27] (f6210) **text_change**: New on-screen text: Yes, I really do.
+- [00:03:29] (f6270) **text_change**: New on-screen text: Whth we think ina positive wae / we feel better.
+- [00:04:01] (f7230) **text_change**: New on-screen text: Wha you feel good, / you remember more,
+- [00:04:04] (f7320) **text_change**: New on-screen text: speak more clearly, / and learn faster
+- [00:04:07] (f7410) **text_change**: New on-screen text: It’s not magic
+- [00:04:08] (f7440) **text_change**: New on-screen text: ‘it's a real change in / how your mind works
+- [00:04:11] (f7530) **text_change**: New on-screen text: And it’s okay to make mistakes
+- [00:04:14] (f7620) **text_change**: New on-screen text: Positive people don't feel bad / when they make a mistake.
+- [00:04:17] (f7710) **text_change**: New on-screen text: They just say, / “That's okay. I'll try again.”
+- [00:04:21] (f7830) **text_change**: New on-screen text: Right. So if you’re listening right now / and you sometimes feel shy or scared
+- [00:04:58] (f8954) **scene_change**: Scene change (picture jumps to different content)
+- [00:04:58] (f8959) **motion_burst**: Large motion for 0.3s (peak 5, 6 hot frames; threshold 3.0)
+- [00:05:00] (f9019) **motion_burst**: Large motion for 0.4s (peak 4, 9 hot frames; threshold 3.0)
+- [00:05:01] (f9030) **text_change**: New on-screen text: EnglishEasyPractice.com
+- [00:05:03] (f9107) **motion_burst**: Large motion for 0.3s (peak 19, 7 hot frames; threshold 3.0)
+- [00:05:04] (f9134) **scene_change**: Scene change (picture jumps to different content)
+- [00:05:06] (f9180) **text_change**: New on-screen text: Thoughts / A thought is something you think in your mind. / It can be a good idea or a feeling.
+- [00:05:14] (f9420) **text_change**: New on-screen text: Example:
+- [00:05:20] (f9600) **text_change**: New on-screen text: Replace: / and put something new in its place.
+- [00:05:29] (f9870) **text_change**: New on-screen text: Example:
+- [00:05:36] (f10080) **text_change**: New on-screen text: you school or on a test.
+- [00:05:44] (f10320) **text_change**: New on-screen text: Example:
+- [00:05:50] (f10500) **text_change**: New on-screen text: things — your attitude.
+- [00:06:05] (f10950) **text_change**: New on-screen text: things — your attitude.
+- [00:06:08] (f11040) **text_change**: New on-screen text: Now that you know these words, / it’s time to practice speaking!
+- [00:06:16] (f11280) **text_change**: New on-screen text: speaking practice with / the listen-and-answer method!
+- [00:06:21] (f11433) **scene_change**: Scene change (picture jumps to different content)
+- [00:06:26] (f11580) **text_change**: New on-screen text: Now it's time to practice speaking!
+- [00:06:29] (f11670) **text_change**: New on-screen text: We'll ask you some easy questions about / the conversation between Anna and Mark.
+- [00:06:34] (f11820) **text_change**: New on-screen text: After question, pause the video / and say your answer out loud.
+- [00:06:39] (f11970) **text_change**: New on-screen text: Speaking out loud is very important
+- [00:06:43] (f12090) **text_change**: New on-screen text: It helps you train your mouth / brain to speak English more easily.
+- [00:07:01] (f12630) **text_change**: New on-screen text: So don't be shy — say your answers / with a smile and keep going!
+- [00:07:08] (f12868) **scene_change**: Scene change (picture jumps to different content)
+- [00:07:09] (f12877) **motion_burst**: Large motion for 0.2s (peak 5, 6 hot frames; threshold 3.0)
+- [00:07:11] (f12957) **motion_burst**: Large motion for 0.1s (peak 3, 3 hot frames; threshold 3.0)
+- [00:07:12] (f12960) **text_change**: New on-screen text: EnglishEasyPractice.com
+- [00:07:14] (f13033) **scene_change**: Scene change (picture jumps to different content)
+- [00:07:15] (f13050) **text_change**: New on-screen text: Hi, Mark! / Why are you always so happy and motivated?
+- [00:07:20] (f13227) **scene_change**: Scene change (picture jumps to different content)
+- [00:07:21] (f13247) **motion_burst**: Large motion for 0.3s (peak 3, 5 hot frames; threshold 3.0)
+- [00:07:22] (f13260) **text_change**: New on-screen text: Was Anna happy and motivated?
+- [00:07:26] (f13380) **text_change**: New on-screen text: No, she wasn't.
+- [00:07:32] (f13571) **motion_burst**: Large motion for 0.9s (peak 8, 6 hot frames; threshold 3.0)
+- [00:07:37] (f13710) **text_change**: New on-screen text: Who was happy and motivated?
+- [00:07:43] (f13904) **scene_change**: Scene change (picture jumps to different content)
+- [00:07:43] (f13904) **text_change**: New on-screen text: Hi, Mark! / Why are you always so happy and motivated?
+- [00:07:43] (f13906) **motion_burst**: Large motion for 0.2s (peak 56, 3 hot frames; threshold 3.0)
+- [00:07:44] (f13920) **text_change**: New on-screen text: Because | believe in positive thinking!
+- [00:07:53] (f14207) **scene_change**: Scene change (picture jumps to different content)
+- [00:07:54] (f14224) **motion_burst**: Large motion for 0.3s (peak 4, 5 hot frames; threshold 3.0)
+- [00:08:00] (f14400) **text_change**: New on-screen text: Because he believes in positive thinking.
+- [00:08:05] (f14550) **text_change**: New on-screen text: What does Mark believe in?
+- [00:08:16] (f14885) **motion_burst**: Large motion for 0.8s (peak 9, 7 hot frames; threshold 3.0)
+- [00:08:17] (f14910) **text_change**: New on-screen text: Does Mark think good thoughts / or bad thoughts?
+- [00:08:28] (f15245) **motion_burst**: Large motion for 0.9s (peak 12, 8 hot frames; threshold 3.0)
+- [00:08:29] (f15270) **text_change**: New on-screen text: How does Mark feel when he thinks
+- [00:08:30] (f15300) **text_change**: New on-screen text: good thoughts?
+- [00:08:34] (f15420) **text_change**: New on-screen text: Stronger.
+- [00:08:40] (f15604) **scene_change**: Scene change (picture jumps to different content)
+- [00:08:41] (f15630) **text_change**: New on-screen text: Really? Does it help with studying?
+- [00:08:44] (f15736) **motion_burst**: Large motion for 0.2s (peak 52, 3 hot frames; threshold 3.0)
+- [00:08:45] (f15750) **text_change**: New on-screen text: Yes! If I say, "I can do this," / instead of "This is too hard," my brain works better.
+- [00:08:54] (f16021) **scene_change**: Scene change (picture jumps to different content)
+- [00:08:54] (f16034) **motion_burst**: Large motion for 0.4s (peak 5, 6 hot frames; threshold 3.0)
+- [00:09:00] (f16200) **text_change**: New on-screen text: Yes, it does.
+- [00:09:05] (f16365) **motion_burst**: Large motion for 0.9s (peak 9, 7 hot frames; threshold 3.0)
+- [00:09:06] (f16380) **text_change**: New on-screen text: What happens when Mark says, / “| can do this"?
+- [00:09:13] (f16590) **text_change**: New on-screen text: His brain works better.
+- [00:09:16] (f16680) **text_change**: New on-screen text: Positive words help his brain.
+- [00:09:19] (f16799) **motion_burst**: Large motion for 0.9s (peak 9, 7 hot frames; threshold 3.0)
+- [00:09:21] (f16830) **text_change**: New on-screen text: What does Mark Say instead of / “This is too hard”?
+- [00:09:27] (f17010) **text_change**: New on-screen text: "| can do this."
+- [00:09:33] (f17210) **scene_change**: Scene change (picture jumps to different content)
+- [00:09:33] (f17210) **text_change**: New on-screen text: instead of "This is too hard,” my brain works better.
+- [00:09:35] (f17250) **text_change**: New on-screen text: Positive thoughts make learning easier.
+- [00:09:39] (f17380) **scene_change**: Scene change (picture jumps to different content)
+- [00:09:51] (f17754) **scene_change**: Scene change (picture jumps to different content)
+- [00:09:52] (f17761) **motion_burst**: Large motion for 0.2s (peak 53, 3 hot frames; threshold 3.0)
+- [00:09:55] (f17859) **motion_burst**: Large motion for 0.7s (peak 51, 4 hot frames; threshold 3.0)
+- [00:10:00] (f18001) **scene_change**: Scene change (picture jumps to different content)
+- [00:10:00] (f18014) **motion_burst**: Large motion for 0.3s (peak 4, 5 hot frames; threshold 3.0)
+- [00:10:01] (f18030) **text_change**: New on-screen text: Is failure bad, according to Mark?
+- [00:10:06] (f18180) **text_change**: New on-screen text: No, it isn't.
+- [00:10:08] (f18240) **text_change**: New on-screen text: Failure is not bad.
+- [00:10:11] (f18359) **motion_burst**: Large motion for 0.8s (peak 10, 6 hot frames; threshold 3.0)
+- [00:10:18] (f18540) **text_change**: New on-screen text: What is failure, according to Mark? / to success.
+- [00:10:25] (f18764) **scene_change**: Scene change (picture jumps to different content)
+- [00:10:25] (f18766) **motion_burst**: Large motion for 0.1s (peak 7, 3 hot frames; threshold 3.0)
+- [00:10:26] (f18780) **text_change**: New on-screen text: Positive people see mistakes as lessons
+- [00:10:30] (f18900) **text_change**: New on-screen text: They try again and improve.
+- [00:10:34] (f19031) **scene_change**: Scene change (picture jumps to different content)
+- [00:10:34] (f19044) **motion_burst**: Large motion for 0.4s (peak 4, 6 hot frames; threshold 3.0)
+- [00:10:35] (f19050) **text_change**: New on-screen text: What do positive people see
+- [00:10:41] (f19230) **text_change**: New on-screen text: mistakes as? / Lessons.
+- [00:10:47] (f19430) **motion_burst**: Large motion for 0.8s (peak 9, 7 hot frames; threshold 3.0)
+- [00:10:58] (f19741) **scene_change**: Scene change (picture jumps to different content)
+- [00:10:58] (f19743) **motion_burst**: Large motion for 0.4s (peak 55, 3 hot frames; threshold 3.0)
+- [00:11:00] (f19825) **motion_burst**: Large motion for 1.0s (peak 5, 4 hot frames; threshold 3.0)
+- [00:11:01] (f19830) **text_change**: New on-screen text: How can | start?
+- [00:11:03] (f19901) **motion_burst**: Large motion for 0.3s (peak 55, 3 hot frames; threshold 3.0)
+- [00:11:04] (f19920) **text_change**: New on-screen text: First, smile more!
+- [00:11:08] (f20040) **text_change**: New on-screen text: Then, replace negative thoughts with positive ones.
+- [00:11:12] (f20161) **motion_burst**: Large motion for 0.3s (peak 8, 3 hot frames; threshold 3.0)
+- [00:11:13] (f20190) **text_change**: New on-screen text: Say, "I will try my best" every day.
+- [00:11:18] (f20340) **scene_change**: Scene change (picture jumps to different content)
+- [00:11:18] (f20354) **motion_burst**: Large motion for 0.3s (peak 3, 5 hot frames; threshold 3.0)
+- [00:11:19] (f20370) **text_change**: New on-screen text: How can Anna start thinking positively?
+- [00:11:24] (f20520) **text_change**: New on-screen text: She can smile more and replace / negative thoughts.
+- [00:11:29] (f20689) **motion_burst**: Large motion for 0.6s (peak 9, 3 hot frames; threshold 3.0)
+- [00:11:30] (f20700) **text_change**: New on-screen text: What should Anna say every day?
+- [00:11:36] (f20880) **text_change**: New on-screen text: “| will try my best."
+- [00:11:42] (f21088) **scene_change**: Scene change (picture jumps to different content)
+- [00:11:43] (f21090) **motion_burst**: Large motion for 0.2s (peak 54, 3 hot frames; threshold 3.0)
+- [00:11:55] (f21464) **motion_burst**: Large motion for 1.1s (peak 7, 4 hot frames; threshold 3.0)
+- [00:11:59] (f21585) **scene_change**: Scene change (picture jumps to different content)
+- [00:12:00] (f21600) **text_change**: New on-screen text: Will Anna's grades improve / if she thinks positively?
+- [00:12:00] (f21601) **motion_burst**: Large motion for 0.4s (peak 5, 7 hot frames; threshold 3.0)
+- [00:12:06] (f21780) **text_change**: New on-screen text: Yes, her grades will improve.
+- [00:12:10] (f21904) **scene_change**: Scene change (picture jumps to different content)
+- [00:12:10] (f21904) **text_change**: New on-screen text: You'll see success soon!
+- [00:12:10] (f21906) **motion_burst**: Large motion for 0.2s (peak 56, 3 hot frames; threshold 3.0)
+- [00:12:11] (f21930) **text_change**: New on-screen text: Thanks, Mark! / | feel more hopeful already.
+- [00:12:16] (f22081) **scene_change**: Scene change (picture jumps to different content)
+- [00:12:16] (f22097) **motion_burst**: Large motion for 0.4s (peak 5, 7 hot frames; threshold 3.0)
+- [00:12:17] (f22110) **text_change**: New on-screen text: How does Anna feel at the / end of the conversation?
+- [00:12:23] (f22290) **text_change**: New on-screen text: Hopeful.
+- [00:12:28] (f22444) **scene_change**: Scene change (picture jumps to different content)
+- [00:12:29] (f22470) **text_change**: New on-screen text: Now let’s practice shadowing!
+- [00:12:32] (f22560) **text_change**: New on-screen text: You'll hear one speaker’s line— / listen carefully, then say it out loud.
+- [00:13:01] (f23440) **scene_change**: Scene change (picture jumps to different content)
+- [00:13:03] (f23490) **text_change**: New on-screen text: Duet with Ann@
+- [00:13:04] (f23521) **scene_change**: Scene change (picture jumps to different content)
+- [00:13:05] (f23550) **text_change**: New on-screen text: Hi, Mark! / Why are you always so happy and motivated?
+- [00:13:08] (f23655) **silence**: Silence for 12s (below -50 dBFS)
+- [00:13:10] (f23700) **text_change**: New on-screen text: Because | believe in positive thinking!
+- [00:13:14] (f23820) **text_change**: New on-screen text: When | think pend thoughts, / | feel stronger and learn better
+- [00:13:20] (f24000) **text_change**: New on-screen text: Duet with Anna / Really? Does it help with studying?
+- [00:13:23] (f24090) **silence**: Silence for 14s (below -50 dBFS)
+- [00:13:24] (f24120) **text_change**: New on-screen text: Yes! If | say, "I can do this," instead of / "This is too hard," my brain works better.
+- [00:13:32] (f24360) **text_change**: New on-screen text: Positive thoughts make / learning easier.
+- [00:13:37] (f24510) **text_change**: New on-screen text: Duet with Anna / But what if | fail?
+- [00:13:39] (f24585) **silence**: Silence for 12s (below -50 dBFS)
+- [00:13:56] (f25080) **silence**: Silence for 14s (below -50 dBFS)
+- [00:14:00] (f25200) **text_change**: New on-screen text: Then, replace negative thoughts / with positive ones.
+- [00:14:05] (f25350) **text_change**: New on-screen text: Duet with Anna / Say, "I will try my best" every day.
+- [00:14:10] (f25500) **text_change**: New on-screen text: Okay, I'll try!
+- [00:14:13] (f25590) **text_change**: New on-screen text: Maybe my grades will improve too.
+- [00:14:15] (f25665) **silence**: Silence for 10s (below -50 dBFS)
+- [00:14:17] (f25710) **text_change**: New on-screen text: Exactly! / A positive mindset changes everything
+- [00:14:22] (f25860) **text_change**: New on-screen text: Duet with Anna / see success soon!
+- [00:14:26] (f25980) **text_change**: New on-screen text: Thanks, Mark! / | feel more hopeful already.
+- [00:14:29] (f26070) **silence**: Silence for 10s (below -50 dBFS)
+- [00:14:29] (f26093) **scene_change**: Scene change (picture jumps to different content)
+- [00:14:32] (f26160) **text_change**: New on-screen text: Duet with Mark
+- [00:14:32] (f26167) **scene_change**: Scene change (picture jumps to different content)
+- [00:15:01] (f27030) **text_change**: New on-screen text: Positive make learning easier.
+- [00:15:04] (f27120) **text_change**: New on-screen text: But what if | fail?
+- [00:15:07] (f27239) **motion_burst**: Large motion for 0.6s (peak 49, 3 hot frames; threshold 3.0)
+- [00:15:08] (f27240) **text_change**: New on-screen text: Failure is just a step to success!
+- [00:15:11] (f27330) **text_change**: New on-screen text: Duet with Mark
+- [00:15:11] (f27349) **motion_burst**: Large motion for 0.1s (peak 5, 3 hot frames; threshold 3.0)
+- [00:15:12] (f27360) **text_change**: New on-screen text: Positive people see mistakes as lessons.
+- [00:15:16] (f27480) **text_change**: New on-screen text: They try again and improve.
+- [00:15:20] (f27600) **text_change**: New on-screen text: That sounds nice.
+- [00:15:22] (f27660) **text_change**: New on-screen text: How can | start?
+- [00:15:33] (f27991) **motion_burst**: Large motion for 0.3s (peak 6, 3 hot frames; threshold 3.0)
+- [00:15:37] (f28110) **silence**: Silence for 8s (below -50 dBFS)
+- [00:15:51] (f28536) **motion_burst**: Large motion for 1.1s (peak 5, 3 hot frames; threshold 3.0)
+- [00:15:58] (f28754) **scene_change**: Scene change (picture jumps to different content)
+- [00:16:02] (f28860) **scene_change**: Scene change (picture jumps to different content)
+- [00:16:03] (f28890) **text_change**: New on-screen text: Great job today!
+- [00:16:05] (f28950) **text_change**: New on-screen text: the best way to / improve your English speaking skills
+- [00:16:09] (f29070) **text_change**: New on-screen text: is to watch this video many times.
+- [00:16:12] (f29160) **text_change**: New on-screen text: The more you repeat, / the better you will speak!
+- [00:16:16] (f29280) **text_change**: New on-screen text: And don’t forget to check out our other videos / on our English Easy Practice YouTube channel.
+- [00:16:22] (f29460) **text_change**: New on-screen text: We Rive more lessons to help you / speak English with confidence.
+- [00:16:26] (f29580) **text_change**: New on-screen text: You can also visit our website / englisheasypractice.com
+- [00:16:30] (f29700) **text_change**: New on-screen text: for free downloads, more practice, / and helpful resources.
+- [00:16:49] (f30289) **scene_change**: Scene change (picture jumps to different content)

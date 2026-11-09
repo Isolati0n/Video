@@ -1,0 +1,51 @@
+{
+  "video_id": "bQoWe8vGM7I",
+  "title": "English Podcast for Learning Conversation \ud83d\udcac | English Speaking Practice \ud83c\udfa4",
+  "profile": "generic",
+  "fps": 30.0,
+  "native_fps": 30.0,
+  "duration_s": 1019.8,
+  "frames": 30595,
+  "events": 231,
+  "event_counts": {
+    "text_change": 136,
+    "scene_change": 35,
+    "motion_burst": 53,
+    "silence": 7
+  },
+  "events_by_source": {
+    "generic": 231
+  },
+  "keyframes": 279,
+  "keyframe_candidates": 793,
+  "dense_events": 88,
+  "text_keyframes": 136,
+  "slide_like": true,
+  "ocr_furniture_lines": 0,
+  "ocr_low_conf_lines": 21,
+  "flagged_keyframes": 8,
+  "hash_mask": null,
+  "sheets": 71,
+  "max_sheet_bytes": 204030,
+  "sheet_bytes_total": 9866820,
+  "git_bytes": 912389,
+  "transcript_lines": 68,
+  "transcript_source": "YouTube auto-generated captions (en-orig)",
+  "ocr_entries": 244,
+  "stats": {
+    "motion_median": 0.0,
+    "motion_threshold": 3.0,
+    "static_seconds": 0.0,
+    "ocr_runs_with_text": 694,
+    "ocr_new_text_entries": 244,
+    "ocr_lines_unique": 265,
+    "frames": 30595,
+    "cuts": 50,
+    "black_frames": 5,
+    "audio_median_db": -29.4,
+    "audio_max_db": -16.2,
+    "silence_seconds": 80.0,
+    "loud_peaks": 0
+  },
+  "runtime_s": 363
+}
