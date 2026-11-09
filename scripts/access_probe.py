@@ -51,8 +51,10 @@ def main():
         size = sum(os.path.getsize(f) for f in glob.glob(f"{d}/v.*"))
     err = re.sub(r"\s+", " ", err)[:220].replace('"', "'")
     ok = int(stage == "ok" and size > 100_000)
-    print(f'PROBE label={label} stage={stage} ok={ok} secs={time.time() - t0:.0f} bytes={size} '
-          f'ip={egress_ip()} err="{err}"')
+    line = (f'PROBE label={label} stage={stage} ok={ok} secs={time.time() - t0:.0f} bytes={size} '
+            f'ip={egress_ip()} err="{err}"')
+    print(line)
+    print(f"::notice title=PROBE {label}::{line}")  # readable later via the check-run annotations API
 
 
 if __name__ == "__main__":

@@ -48,6 +48,7 @@ def main():
         if tried >= 20:
             break
     print(f"SUMMARY instances_tried={tried} streams_ok={ok}")
+    print(f"::notice title=PROBE mirrors::instances_tried={tried} streams_ok={ok}")
 
 
 if __name__ == "__main__":
