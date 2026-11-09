@@ -1,0 +1,45 @@
+{
+  "video_id": "9ABzfEHc5Ic",
+  "title": "SSC 2018 SSBM - [A] | Armada (Peach) Vs. FOX MVG | Mew2King (Marth) - Smash Melee Grand Finals",
+  "profile": "generic",
+  "fps": 60.0,
+  "native_fps": 60.0,
+  "duration_s": 3250.8,
+  "frames": 195047,
+  "events": 605,
+  "event_counts": {
+    "loud_peak": 11,
+    "text_change": 424,
+    "scene_change": 25,
+    "motion_burst": 145
+  },
+  "events_by_source": {
+    "generic": 605
+  },
+  "keyframes": 1530,
+  "keyframe_candidates": 3094,
+  "dense_events": 181,
+  "sheets": 251,
+  "max_sheet_bytes": 369021,
+  "sheet_bytes_total": 80284703,
+  "git_bytes": 9244288,
+  "transcript_lines": 181,
+  "transcript_source": "YouTube auto-generated captions (en-orig)",
+  "ocr_entries": 2245,
+  "stats": {
+    "motion_median": 2.93,
+    "motion_threshold": 11.72,
+    "static_seconds": 0.0,
+    "ocr_runs_with_text": 3056,
+    "ocr_new_text_entries": 2245,
+    "ocr_lines_unique": 1435,
+    "frames": 195047,
+    "cuts": 26,
+    "black_frames": 0,
+    "audio_median_db": -24.4,
+    "audio_max_db": -8.3,
+    "silence_seconds": 0.0,
+    "loud_peaks": 11
+  },
+  "runtime_s": 1598
+}

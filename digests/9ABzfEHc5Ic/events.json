@@ -1,0 +1,4527 @@
+[
+  {
+    "t": 0.0,
+    "f": 0,
+    "type": "loud_peak",
+    "desc": "Loud peak -9 dBFS (+16 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 0.0,
+    "f": 0,
+    "type": "text_change",
+    "desc": "New on-screen text: SUPER SMASH CON 2018 / GRAND FINALS / FOLLOW @SUPERSMASHCON / 08:00 00 / VGBOOTCAMP / PARTNERS / [A] | ARMADA / FOX MVG | MEW2KING",
+    "source": "generic"
+  },
+  {
+    "t": 1.0,
+    "f": 60,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS / MIGAMES AT LAUREL PARK.",
+    "source": "generic"
+  },
+  {
+    "t": 3.0,
+    "f": 180,
+    "type": "text_change",
+    "desc": "New on-screen text: 07:57 94",
+    "source": "generic"
+  },
+  {
+    "t": 11.0,
+    "f": 660,
+    "type": "text_change",
+    "desc": "New on-screen text: 07:49 94",
+    "source": "generic"
+  },
+  {
+    "t": 13.0,
+    "f": 780,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / VGBOOTCAMP / PARTNERS / Fox | MEW2KING",
+    "source": "generic"
+  },
+  {
+    "t": 14.0,
+    "f": 840,
+    "type": "text_change",
+    "desc": "New on-screen text: TA] | ARMADA / FOX MVG | MEW2KING IL] O",
+    "source": "generic"
+  },
+  {
+    "t": 18.0,
+    "f": 1080,
+    "type": "text_change",
+    "desc": "New on-screen text: xX \\ FOX MVG | MEW2KING IL] [Al | ARMADA |",
+    "source": "generic"
+  },
+  {
+    "t": 20.0,
+    "f": 1200,
+    "type": "text_change",
+    "desc": "New on-screen text: 07:40 96",
+    "source": "generic"
+  },
+  {
+    "t": 60.0,
+    "f": 3600,
+    "type": "text_change",
+    "desc": "New on-screen text: THANKS TO.",
+    "source": "generic"
+  },
+  {
+    "t": 61.0,
+    "f": 3660,
+    "type": "text_change",
+    "desc": "New on-screen text: 06:59 98 / \u2014 FOX MVG | MEWAKING IL] OF ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 63.0,
+    "f": 3780,
+    "type": "text_change",
+    "desc": "New on-screen text: 06:57 96",
+    "source": "generic"
+  },
+  {
+    "t": 65.0,
+    "f": 3900,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP / PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 65.18,
+    "f": 3911,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 66.0,
+    "f": 3960,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 66.13,
+    "f": 3968,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 18, 5 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 66.23,
+    "peak": 17.6
+  },
+  {
+    "t": 67.0,
+    "f": 4020,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / IAL THANKS / [A] u ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 71.0,
+    "f": 4260,
+    "type": "text_change",
+    "desc": "New on-screen text: 06:49 96",
+    "source": "generic"
+  },
+  {
+    "t": 74.0,
+    "f": 4440,
+    "type": "text_change",
+    "desc": "New on-screen text: 06:46 98",
+    "source": "generic"
+  },
+  {
+    "t": 86.08,
+    "f": 5165,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.3s (peak 31, 19 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 86.4,
+    "peak": 31.1
+  },
+  {
+    "t": 111.87,
+    "f": 6712,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 14, 5 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 112.0,
+    "peak": 13.8
+  },
+  {
+    "t": 121.0,
+    "f": 7260,
+    "type": "text_change",
+    "desc": "New on-screen text: 05:59 96",
+    "source": "generic"
+  },
+  {
+    "t": 122.0,
+    "f": 7320,
+    "type": "text_change",
+    "desc": "New on-screen text: ia ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 130.0,
+    "f": 7800,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 131.0,
+    "f": 7860,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 132.0,
+    "f": 7920,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 133.0,
+    "f": 7980,
+    "type": "text_change",
+    "desc": "New on-screen text: 05:47 96",
+    "source": "generic"
+  },
+  {
+    "t": 135.0,
+    "f": 8100,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 139.0,
+    "f": 8340,
+    "type": "text_change",
+    "desc": "New on-screen text: FOLLOW @SUPERSMASHCON",
+    "source": "generic"
+  },
+  {
+    "t": 167.78,
+    "f": 10067,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.3s (peak 28, 18 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 168.1,
+    "peak": 27.8
+  },
+  {
+    "t": 180.0,
+    "f": 10800,
+    "type": "text_change",
+    "desc": "New on-screen text: 05:00 94",
+    "source": "generic"
+  },
+  {
+    "t": 181.0,
+    "f": 10860,
+    "type": "text_change",
+    "desc": "New on-screen text: 04:59 94",
+    "source": "generic"
+  },
+  {
+    "t": 181.27,
+    "f": 10876,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.8s (peak 28, 4 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 182.02,
+    "peak": 28.1
+  },
+  {
+    "t": 183.0,
+    "f": 10980,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 184.0,
+    "f": 11040,
+    "type": "text_change",
+    "desc": "New on-screen text: SUPER SMASH CON 2018 / GRAND FINALS / FOLLOW @SUPERSMASHCON / VGBOOTCAMP / PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 196.0,
+    "f": 11760,
+    "type": "text_change",
+    "desc": "New on-screen text: #SSC2018",
+    "source": "generic"
+  },
+  {
+    "t": 197.0,
+    "f": 11820,
+    "type": "text_change",
+    "desc": "New on-screen text: \u2018eM MELEE SINGLES GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 198.0,
+    "f": 11880,
+    "type": "text_change",
+    "desc": "New on-screen text: SUPER SMASH BROS. \u2018MELEE / SUPER SMASH Ct",
+    "source": "generic"
+  },
+  {
+    "t": 199.0,
+    "f": 11940,
+    "type": "text_change",
+    "desc": "New on-screen text: urvival test! / HEADY TO",
+    "source": "generic"
+  },
+  {
+    "t": 225.2,
+    "f": 13512,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.7s (peak 39, 4 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 225.85,
+    "peak": 39.0
+  },
+  {
+    "t": 241.0,
+    "f": 14460,
+    "type": "text_change",
+    "desc": "New on-screen text: = SMASH CON 21",
+    "source": "generic"
+  },
+  {
+    "t": 242.5,
+    "f": 14550,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 13, 4 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 242.55,
+    "peak": 12.6
+  },
+  {
+    "t": 246.0,
+    "f": 14760,
+    "type": "text_change",
+    "desc": "New on-screen text: MVG MEW2KING tu",
+    "source": "generic"
+  },
+  {
+    "t": 248.0,
+    "f": 14880,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP / {CIAL THAN)",
+    "source": "generic"
+  },
+  {
+    "t": 251.0,
+    "f": 15060,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS / TA] | ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 252.0,
+    "f": 15120,
+    "type": "text_change",
+    "desc": "New on-screen text: THANKS TO OUR / FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 252.4,
+    "f": 15144,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 16, 10 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 252.58,
+    "peak": 15.7
+  },
+  {
+    "t": 254.0,
+    "f": 15240,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL. THANKS TO Ot / AT LAUREL PARK,",
+    "source": "generic"
+  },
+  {
+    "t": 257.0,
+    "f": 15420,
+    "type": "text_change",
+    "desc": "New on-screen text: SMASH CON 2018",
+    "source": "generic"
+  },
+  {
+    "t": 258.0,
+    "f": 15480,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 261.33,
+    "f": 15680,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.3s (peak 15, 14 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 261.62,
+    "peak": 15.0
+  },
+  {
+    "t": 267.12,
+    "f": 16027,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 14, 8 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 267.28,
+    "peak": 13.9
+  },
+  {
+    "t": 276.78,
+    "f": 16607,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 13, 4 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 276.85,
+    "peak": 12.8
+  },
+  {
+    "t": 297.37,
+    "f": 17842,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 12, 5 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 297.45,
+    "peak": 12.5
+  },
+  {
+    "t": 301.0,
+    "f": 18060,
+    "type": "text_change",
+    "desc": "New on-screen text: Ge BRICKS",
+    "source": "generic"
+  },
+  {
+    "t": 302.0,
+    "f": 18120,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 303.0,
+    "f": 18180,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 304.0,
+    "f": 18240,
+    "type": "text_change",
+    "desc": "New on-screen text: FOLLOW @SUPERSMASHCON \u2014",
+    "source": "generic"
+  },
+  {
+    "t": 305.0,
+    "f": 18300,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 306.0,
+    "f": 18360,
+    "type": "text_change",
+    "desc": "New on-screen text: wa, FINALS / THANKS TO OUR",
+    "source": "generic"
+  },
+  {
+    "t": 307.0,
+    "f": 18420,
+    "type": "text_change",
+    "desc": "New on-screen text: SMASH CON 2018 / GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 308.0,
+    "f": 18480,
+    "type": "text_change",
+    "desc": "New on-screen text: to BRICKS",
+    "source": "generic"
+  },
+  {
+    "t": 326.8,
+    "f": 19608,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 15, 7 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 326.92,
+    "peak": 14.6
+  },
+  {
+    "t": 333.13,
+    "f": 19988,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 15, 12 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 333.32,
+    "peak": 15.4
+  },
+  {
+    "t": 348.0,
+    "f": 20880,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 14, 8 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 348.22,
+    "peak": 14.2
+  },
+  {
+    "t": 349.3,
+    "f": 20958,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 14, 6 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 349.45,
+    "peak": 13.8
+  },
+  {
+    "t": 356.17,
+    "f": 21370,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.0s (peak 14, 13 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 357.15,
+    "peak": 14.5
+  },
+  {
+    "t": 361.0,
+    "f": 21660,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS / PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 365.0,
+    "f": 21900,
+    "type": "text_change",
+    "desc": "New on-screen text: 05:40 ss",
+    "source": "generic"
+  },
+  {
+    "t": 366.0,
+    "f": 21960,
+    "type": "text_change",
+    "desc": "New on-screen text: AT LAUREL PARK,",
+    "source": "generic"
+  },
+  {
+    "t": 366.47,
+    "f": 21988,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 13, 4 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 366.52,
+    "peak": 12.5
+  },
+  {
+    "t": 367.0,
+    "f": 22020,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA / FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 374.0,
+    "f": 22440,
+    "type": "text_change",
+    "desc": "New on-screen text: 05:31 88",
+    "source": "generic"
+  },
+  {
+    "t": 375.0,
+    "f": 22500,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / pxtsenreo ay / | & GEICO",
+    "source": "generic"
+  },
+  {
+    "t": 380.0,
+    "f": 22800,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP / PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 380.88,
+    "f": 22853,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.6s (peak 13, 7 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 381.43,
+    "peak": 12.8
+  },
+  {
+    "t": 381.0,
+    "f": 22860,
+    "type": "text_change",
+    "desc": "New on-screen text: | FOX MVG | MEW2KING / [A] | ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 389.13,
+    "f": 23348,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.0s (peak 14, 11 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 390.1,
+    "peak": 13.9
+  },
+  {
+    "t": 409.52,
+    "f": 24571,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 12, 5 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 409.65,
+    "peak": 12.4
+  },
+  {
+    "t": 410.67,
+    "f": 24640,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 13, 7 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 410.77,
+    "peak": 12.6
+  },
+  {
+    "t": 420.0,
+    "f": 25200,
+    "type": "text_change",
+    "desc": "New on-screen text: THANKS T / MIGAMES AT LAUREL PARK.",
+    "source": "generic"
+  },
+  {
+    "t": 421.0,
+    "f": 25260,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 423.0,
+    "f": 25380,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / VGBOOTCAMP / FOX MVG | MEW2KING tu",
+    "source": "generic"
+  },
+  {
+    "t": 426.67,
+    "f": 25600,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 13, 6 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 426.82,
+    "peak": 12.9
+  },
+  {
+    "t": 427.0,
+    "f": 25620,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA / FOX MVG |",
+    "source": "generic"
+  },
+  {
+    "t": 428.0,
+    "f": 25680,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS 1",
+    "source": "generic"
+  },
+  {
+    "t": 429.0,
+    "f": 25740,
+    "type": "text_change",
+    "desc": "New on-screen text: PREEENTED BY",
+    "source": "generic"
+  },
+  {
+    "t": 430.0,
+    "f": 25800,
+    "type": "text_change",
+    "desc": "New on-screen text: MVG | MEW2KING IL",
+    "source": "generic"
+  },
+  {
+    "t": 432.0,
+    "f": 25920,
+    "type": "text_change",
+    "desc": "New on-screen text: pxtsenreo ay",
+    "source": "generic"
+  },
+  {
+    "t": 434.68,
+    "f": 26081,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 12, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 434.73,
+    "peak": 12.4
+  },
+  {
+    "t": 454.83,
+    "f": 27290,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 13, 4 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 454.92,
+    "peak": 13.2
+  },
+  {
+    "t": 464.45,
+    "f": 27867,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 14, 10 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 464.6,
+    "peak": 14.1
+  },
+  {
+    "t": 470.33,
+    "f": 28220,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 19, 9 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 470.55,
+    "peak": 19.5
+  },
+  {
+    "t": 480.0,
+    "f": 28800,
+    "type": "text_change",
+    "desc": "New on-screen text: 018 = - sae FINALS - FOLLOW",
+    "source": "generic"
+  },
+  {
+    "t": 486.0,
+    "f": 29160,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS TO",
+    "source": "generic"
+  },
+  {
+    "t": 487.0,
+    "f": 29220,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS / = FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 491.0,
+    "f": 29460,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 494.0,
+    "f": 29640,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / TA] | ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 499.0,
+    "f": 29940,
+    "type": "text_change",
+    "desc": "New on-screen text: ECIAL THANKS",
+    "source": "generic"
+  },
+  {
+    "t": 500.0,
+    "f": 30000,
+    "type": "text_change",
+    "desc": "New on-screen text: THANKS T / PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 501.0,
+    "f": 30060,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 502.0,
+    "f": 30120,
+    "type": "loud_peak",
+    "desc": "Loud peak -12 dBFS (+12 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 516.75,
+    "f": 31005,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.0s (peak 12, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 516.78,
+    "peak": 12.3
+  },
+  {
+    "t": 524.3,
+    "f": 31458,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 12, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 524.37,
+    "peak": 12.4
+  },
+  {
+    "t": 540.68,
+    "f": 32441,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 12, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 540.72,
+    "peak": 12.4
+  },
+  {
+    "t": 541.0,
+    "f": 32460,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 544.0,
+    "f": 32640,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS / PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 547.0,
+    "f": 32820,
+    "type": "text_change",
+    "desc": "New on-screen text: Tall ARMADA a",
+    "source": "generic"
+  },
+  {
+    "t": 548.0,
+    "f": 32880,
+    "type": "text_change",
+    "desc": "New on-screen text: THANKS TO OUR / [A] | ARMADA f",
+    "source": "generic"
+  },
+  {
+    "t": 551.9,
+    "f": 33114,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 14, 7 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 552.08,
+    "peak": 14.2
+  },
+  {
+    "t": 552.0,
+    "f": 33120,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP / | _ Fox | Mew2KING",
+    "source": "generic"
+  },
+  {
+    "t": 553.0,
+    "f": 33180,
+    "type": "text_change",
+    "desc": "New on-screen text: 02:32 88",
+    "source": "generic"
+  },
+  {
+    "t": 554.0,
+    "f": 33240,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 557.0,
+    "f": 33420,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 557.95,
+    "f": 33477,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 13, 4 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 558.08,
+    "peak": 13.5
+  },
+  {
+    "t": 566.02,
+    "f": 33961,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 15, 10 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 566.25,
+    "peak": 14.9
+  },
+  {
+    "t": 568.4,
+    "f": 34104,
+    "type": "motion_burst",
+    "desc": "Large motion for 7.2s (peak 24, 189 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 575.57,
+    "peak": 24.1
+  },
+  {
+    "t": 575.6,
+    "f": 34536,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 587.03,
+    "f": 35222,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.7s (peak 39, 4 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 587.68,
+    "peak": 39.1
+  },
+  {
+    "t": 600.0,
+    "f": 36000,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS",
+    "source": "generic"
+  },
+  {
+    "t": 601.0,
+    "f": 36060,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 604.0,
+    "f": 36240,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.9s (peak 13, 7 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 604.93,
+    "peak": 12.6
+  },
+  {
+    "t": 604.0,
+    "f": 36240,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 605.0,
+    "f": 36300,
+    "type": "text_change",
+    "desc": "New on-screen text: THANKS TO OUR. / COMBAT ARENA",
+    "source": "generic"
+  },
+  {
+    "t": 606.0,
+    "f": 36360,
+    "type": "text_change",
+    "desc": "New on-screen text: a FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 607.0,
+    "f": 36420,
+    "type": "text_change",
+    "desc": "New on-screen text: 07:40 71",
+    "source": "generic"
+  },
+  {
+    "t": 608.0,
+    "f": 36480,
+    "type": "text_change",
+    "desc": "New on-screen text: TA] | ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 610.0,
+    "f": 36600,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 632.8,
+    "f": 37968,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 13, 7 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 632.9,
+    "peak": 13.3
+  },
+  {
+    "t": 639.43,
+    "f": 38366,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 20, 8 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 639.63,
+    "peak": 20.0
+  },
+  {
+    "t": 655.93,
+    "f": 39356,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.3s (peak 14, 8 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 656.17,
+    "peak": 13.7
+  },
+  {
+    "t": 660.0,
+    "f": 39600,
+    "type": "text_change",
+    "desc": "New on-screen text: COMBAT ARENA",
+    "source": "generic"
+  },
+  {
+    "t": 661.0,
+    "f": 39660,
+    "type": "text_change",
+    "desc": "New on-screen text: KS TO OUR",
+    "source": "generic"
+  },
+  {
+    "t": 662.33,
+    "f": 39740,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 13, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 662.37,
+    "peak": 12.8
+  },
+  {
+    "t": 663.0,
+    "f": 39780,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / 06:44 71",
+    "source": "generic"
+  },
+  {
+    "t": 664.0,
+    "f": 39840,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 665.92,
+    "f": 39955,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 15, 7 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 666.12,
+    "peak": 14.7
+  },
+  {
+    "t": 666.0,
+    "f": 39960,
+    "type": "text_change",
+    "desc": "New on-screen text: SMASH CON 2018 / IAL THANKS",
+    "source": "generic"
+  },
+  {
+    "t": 667.0,
+    "f": 40020,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS / Fox | MEW2KING",
+    "source": "generic"
+  },
+  {
+    "t": 669.0,
+    "f": 40140,
+    "type": "text_change",
+    "desc": "New on-screen text: GAMES, REPAIR, TOYS, & MORE.",
+    "source": "generic"
+  },
+  {
+    "t": 670.0,
+    "f": 40200,
+    "type": "text_change",
+    "desc": "New on-screen text: ENERATIONS / [A] | ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 676.0,
+    "f": 40560,
+    "type": "loud_peak",
+    "desc": "Loud peak -11 dBFS (+14 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 697.25,
+    "f": 41835,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 14, 9 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 697.4,
+    "peak": 14.2
+  },
+  {
+    "t": 708.88,
+    "f": 42533,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.1s (peak 20, 11 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 709.98,
+    "peak": 19.9
+  },
+  {
+    "t": 718.37,
+    "f": 43102,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 14, 9 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 718.58,
+    "peak": 14.4
+  },
+  {
+    "t": 721.0,
+    "f": 43260,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / VGBOOTCAMP / PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 723.0,
+    "f": 43380,
+    "type": "text_change",
+    "desc": "New on-screen text: 018 sae FINALS FOLLOW",
+    "source": "generic"
+  },
+  {
+    "t": 724.0,
+    "f": 43440,
+    "type": "text_change",
+    "desc": "New on-screen text: rox | Mi",
+    "source": "generic"
+  },
+  {
+    "t": 725.0,
+    "f": 43500,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS / ENERATIONS / GAMES, REPAIR, TOYS, & MORE",
+    "source": "generic"
+  },
+  {
+    "t": 726.0,
+    "f": 43560,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 729.0,
+    "f": 43740,
+    "type": "text_change",
+    "desc": "New on-screen text: THANKS TO OUR / FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 732.75,
+    "f": 43965,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 38, 7 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 732.85,
+    "peak": 38.2
+  },
+  {
+    "t": 734.0,
+    "f": 44040,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / PARTNERS / to BRICKS",
+    "source": "generic"
+  },
+  {
+    "t": 735.52,
+    "f": 44131,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 737.0,
+    "f": 44220,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 738.77,
+    "f": 44326,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 765.95,
+    "f": 45957,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.7s (peak 34, 4 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 766.6,
+    "peak": 34.1
+  },
+  {
+    "t": 780.0,
+    "f": 46800,
+    "type": "text_change",
+    "desc": "New on-screen text: ECIAL THANKS",
+    "source": "generic"
+  },
+  {
+    "t": 785.0,
+    "f": 47100,
+    "type": "text_change",
+    "desc": "New on-screen text: 2) Fox A",
+    "source": "generic"
+  },
+  {
+    "t": 786.0,
+    "f": 47160,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / eo BRICKS",
+    "source": "generic"
+  },
+  {
+    "t": 790.0,
+    "f": 47400,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 791.0,
+    "f": 47460,
+    "type": "text_change",
+    "desc": "New on-screen text: SUPER SMASH CON 2018 / PARTNERS / tw BRICKS / 2 FOX MVG | MEW2KING IL] (iu)",
+    "source": "generic"
+  },
+  {
+    "t": 792.0,
+    "f": 47520,
+    "type": "text_change",
+    "desc": "New on-screen text: TA] |ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 795.0,
+    "f": 47700,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS TO Ot / MIGAMES AT LAUREL PARK.",
+    "source": "generic"
+  },
+  {
+    "t": 797.0,
+    "f": 47820,
+    "type": "text_change",
+    "desc": "New on-screen text: 07:29 61",
+    "source": "generic"
+  },
+  {
+    "t": 819.5,
+    "f": 49170,
+    "type": "loud_peak",
+    "desc": "Loud peak -12 dBFS (+12 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 819.65,
+    "f": 49179,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.3s (peak 26, 16 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 819.92,
+    "peak": 25.9
+  },
+  {
+    "t": 842.0,
+    "f": 50520,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 843.0,
+    "f": 50580,
+    "type": "text_change",
+    "desc": "New on-screen text: 2 FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 844.0,
+    "f": 50640,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS / TA] | ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 846.0,
+    "f": 50760,
+    "type": "text_change",
+    "desc": "New on-screen text: THANKS TO OUR",
+    "source": "generic"
+  },
+  {
+    "t": 847.0,
+    "f": 50820,
+    "type": "text_change",
+    "desc": "New on-screen text: [ y AN [A] | ARMADA ! 2 Fox \u2014\u2014 {ul",
+    "source": "generic"
+  },
+  {
+    "t": 849.0,
+    "f": 50940,
+    "type": "text_change",
+    "desc": "New on-screen text: 06:37 61 / IAL THANKS TO",
+    "source": "generic"
+  },
+  {
+    "t": 850.0,
+    "f": 51000,
+    "type": "text_change",
+    "desc": "New on-screen text: XANNOU AT LAUREL PARK,",
+    "source": "generic"
+  },
+  {
+    "t": 851.0,
+    "f": 51060,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / MIGAMES AT LAUREL PARK.",
+    "source": "generic"
+  },
+  {
+    "t": 853.17,
+    "f": 51190,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 897.98,
+    "f": 53879,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.3s (peak 27, 18 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 898.27,
+    "peak": 27.2
+  },
+  {
+    "t": 900.0,
+    "f": 54000,
+    "type": "text_change",
+    "desc": "New on-screen text: 05:46 61 / TAL \"ARM",
+    "source": "generic"
+  },
+  {
+    "t": 903.0,
+    "f": 54180,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / TA] ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 904.0,
+    "f": 54240,
+    "type": "text_change",
+    "desc": "New on-screen text: Yer BRICKS",
+    "source": "generic"
+  },
+  {
+    "t": 905.0,
+    "f": 54300,
+    "type": "text_change",
+    "desc": "New on-screen text: 2 rox. =< | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 906.0,
+    "f": 54360,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS / AT LAUREL PARK.",
+    "source": "generic"
+  },
+  {
+    "t": 907.0,
+    "f": 54420,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP / PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 909.0,
+    "f": 54540,
+    "type": "text_change",
+    "desc": "New on-screen text: 05:37 63",
+    "source": "generic"
+  },
+  {
+    "t": 914.0,
+    "f": 54840,
+    "type": "text_change",
+    "desc": "New on-screen text: MVG | MEW2KING",
+    "source": "generic"
+  },
+  {
+    "t": 948.42,
+    "f": 56905,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.0s (peak 13, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 948.45,
+    "peak": 13.1
+  },
+  {
+    "t": 960.0,
+    "f": 57600,
+    "type": "text_change",
+    "desc": "New on-screen text: THANKS T / AT LAUREL PARK. / Dip FOX MVG | IL] / [A] |ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 960.52,
+    "f": 57631,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.3s (peak 25, 16 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 960.78,
+    "peak": 24.6
+  },
+  {
+    "t": 962.0,
+    "f": 57720,
+    "type": "text_change",
+    "desc": "New on-screen text: MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 963.0,
+    "f": 57780,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 967.0,
+    "f": 58020,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 969.0,
+    "f": 58140,
+    "type": "text_change",
+    "desc": "New on-screen text: 04:37 61",
+    "source": "generic"
+  },
+  {
+    "t": 970.0,
+    "f": 58200,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 973.0,
+    "f": 58380,
+    "type": "text_change",
+    "desc": "New on-screen text: SUPER SMASH CON 2018",
+    "source": "generic"
+  },
+  {
+    "t": 975.0,
+    "f": 58500,
+    "type": "text_change",
+    "desc": "New on-screen text: 2 FOX MVG | MEW2KING /",
+    "source": "generic"
+  },
+  {
+    "t": 995.85,
+    "f": 59751,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 1021.0,
+    "f": 61260,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP / PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 1022.0,
+    "f": 61320,
+    "type": "text_change",
+    "desc": "New on-screen text: PRESENTED BY",
+    "source": "generic"
+  },
+  {
+    "t": 1024.07,
+    "f": 61444,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 36, 7 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 1024.17,
+    "peak": 36.1
+  },
+  {
+    "t": 1025.0,
+    "f": 61500,
+    "type": "text_change",
+    "desc": "New on-screen text: 03:42 56",
+    "source": "generic"
+  },
+  {
+    "t": 1027.92,
+    "f": 61675,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 1028.1,
+    "f": 61686,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 15, 7 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 1028.3,
+    "peak": 14.6
+  },
+  {
+    "t": 1032.45,
+    "f": 61947,
+    "type": "motion_burst",
+    "desc": "Large motion for 2.4s (peak 21, 73 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 1034.87,
+    "peak": 21.0
+  },
+  {
+    "t": 1034.92,
+    "f": 62095,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 1039.0,
+    "f": 62340,
+    "type": "text_change",
+    "desc": "New on-screen text: ival test! 9 <@ack",
+    "source": "generic"
+  },
+  {
+    "t": 1040.0,
+    "f": 62400,
+    "type": "text_change",
+    "desc": "New on-screen text: survival test! / READY TO FIGH i",
+    "source": "generic"
+  },
+  {
+    "t": 1041.0,
+    "f": 62460,
+    "type": "text_change",
+    "desc": "New on-screen text: READ Y T",
+    "source": "generic"
+  },
+  {
+    "t": 1043.0,
+    "f": 62580,
+    "type": "text_change",
+    "desc": "New on-screen text: VS. Mode / Trophies / Solo Smash!",
+    "source": "generic"
+  },
+  {
+    "t": 1044.0,
+    "f": 62640,
+    "type": "text_change",
+    "desc": "New on-screen text: name entry must",
+    "source": "generic"
+  },
+  {
+    "t": 1062.9,
+    "f": 63774,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.7s (peak 34, 4 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 1063.55,
+    "peak": 34.5
+  },
+  {
+    "t": 1080.0,
+    "f": 64800,
+    "type": "text_change",
+    "desc": "New on-screen text: THANKS TO OUR / FOX MVG | tu",
+    "source": "generic"
+  },
+  {
+    "t": 1081.0,
+    "f": 64860,
+    "type": "loud_peak",
+    "desc": "Loud peak -12 dBFS (+13 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 1081.42,
+    "f": 64885,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.4s (peak 29, 23 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 1081.83,
+    "peak": 29.4
+  },
+  {
+    "t": 1083.6,
+    "f": 65016,
+    "type": "text_change",
+    "desc": "New on-screen text: 07:39 96",
+    "source": "generic"
+  },
+  {
+    "t": 1086.0,
+    "f": 65160,
+    "type": "text_change",
+    "desc": "New on-screen text: 07:37 56",
+    "source": "generic"
+  },
+  {
+    "t": 1087.0,
+    "f": 65220,
+    "type": "text_change",
+    "desc": "New on-screen text: 4 BRICKS",
+    "source": "generic"
+  },
+  {
+    "t": 1089.0,
+    "f": 65340,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / VGBOOTCAMP / PARTNERS / [Al | ARMADA / FOX MVG | MEW2KING [L]",
+    "source": "generic"
+  },
+  {
+    "t": 1090.0,
+    "f": 65400,
+    "type": "text_change",
+    "desc": "New on-screen text: SUPER SMASH CON 2018",
+    "source": "generic"
+  },
+  {
+    "t": 1093.0,
+    "f": 65580,
+    "type": "text_change",
+    "desc": "New on-screen text: 07:30 58",
+    "source": "generic"
+  },
+  {
+    "t": 1094.0,
+    "f": 65640,
+    "type": "text_change",
+    "desc": "New on-screen text: 07:29 58",
+    "source": "generic"
+  },
+  {
+    "t": 1141.0,
+    "f": 68460,
+    "type": "text_change",
+    "desc": "New on-screen text: 06:42 58 / VGBOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 1143.0,
+    "f": 68580,
+    "type": "text_change",
+    "desc": "New on-screen text: tw BRICKS / [Al | ARMADA / FOX MVG | MEW2KING",
+    "source": "generic"
+  },
+  {
+    "t": 1144.0,
+    "f": 68640,
+    "type": "text_change",
+    "desc": "New on-screen text: 06:39 58 / 135% 474%",
+    "source": "generic"
+  },
+  {
+    "t": 1145.0,
+    "f": 68700,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 1146.0,
+    "f": 68760,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS / eo BRICKS",
+    "source": "generic"
+  },
+  {
+    "t": 1147.0,
+    "f": 68820,
+    "type": "text_change",
+    "desc": "New on-screen text: 06:36 59",
+    "source": "generic"
+  },
+  {
+    "t": 1149.0,
+    "f": 68940,
+    "type": "text_change",
+    "desc": "New on-screen text: |e PAS) MVG | MEW2KING",
+    "source": "generic"
+  },
+  {
+    "t": 1150.0,
+    "f": 69000,
+    "type": "text_change",
+    "desc": "New on-screen text: SUPER SMASH CON 2018 / FOLLOW @SUPERSMASHCON",
+    "source": "generic"
+  },
+  {
+    "t": 1169.98,
+    "f": 70199,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.3s (peak 25, 17 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 1170.27,
+    "peak": 25.5
+  },
+  {
+    "t": 1200.0,
+    "f": 72000,
+    "type": "text_change",
+    "desc": "New on-screen text: 05:43 59",
+    "source": "generic"
+  },
+  {
+    "t": 1201.0,
+    "f": 72060,
+    "type": "text_change",
+    "desc": "New on-screen text: \u2018SPECIAL THANKS 1\u00a2 / PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 1204.0,
+    "f": 72240,
+    "type": "text_change",
+    "desc": "New on-screen text: 05:39 58",
+    "source": "generic"
+  },
+  {
+    "t": 1206.0,
+    "f": 72360,
+    "type": "text_change",
+    "desc": "New on-screen text: [ SMASH CON 2018 / VGBOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 1207.0,
+    "f": 72420,
+    "type": "text_change",
+    "desc": "New on-screen text: MIGAMES AT LAUREL PARK.",
+    "source": "generic"
+  },
+  {
+    "t": 1209.0,
+    "f": 72540,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL. THANKS TO OUR / | WARES FOX MVG | MEW2KING [L] / 2 IALLARMADA__f y",
+    "source": "generic"
+  },
+  {
+    "t": 1210.0,
+    "f": 72600,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / [Al] ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 1212.0,
+    "f": 72720,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | iia)",
+    "source": "generic"
+  },
+  {
+    "t": 1218.5,
+    "f": 73110,
+    "type": "loud_peak",
+    "desc": "Loud peak -10 dBFS (+15 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 1219.25,
+    "f": 73155,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.0s (peak 15, 17 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 1220.27,
+    "peak": 15.5
+  },
+  {
+    "t": 1243.58,
+    "f": 74615,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.0s (peak 17, 15 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 1244.57,
+    "peak": 16.7
+  },
+  {
+    "t": 1258.68,
+    "f": 75521,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 14, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 1258.73,
+    "peak": 13.9
+  },
+  {
+    "t": 1262.0,
+    "f": 75720,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / AT LAUREL PARK. / | MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 1263.0,
+    "f": 75780,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS",
+    "source": "generic"
+  },
+  {
+    "t": 1264.0,
+    "f": 75840,
+    "type": "text_change",
+    "desc": "New on-screen text: 04:39 58 / ci 2 ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 1267.0,
+    "f": 76020,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 1268.0,
+    "f": 76080,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 1269.0,
+    "f": 76140,
+    "type": "text_change",
+    "desc": "New on-screen text: rox | (11",
+    "source": "generic"
+  },
+  {
+    "t": 1270.0,
+    "f": 76200,
+    "type": "text_change",
+    "desc": "New on-screen text: 04:33 56",
+    "source": "generic"
+  },
+  {
+    "t": 1271.0,
+    "f": 76260,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG rT =",
+    "source": "generic"
+  },
+  {
+    "t": 1273.22,
+    "f": 76393,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.0s (peak 32, 6 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 1274.25,
+    "peak": 31.5
+  },
+  {
+    "t": 1274.0,
+    "f": 76440,
+    "type": "loud_peak",
+    "desc": "Loud peak -12 dBFS (+13 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 1281.9,
+    "f": 76914,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 1290.78,
+    "f": 77447,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 1323.0,
+    "f": 79380,
+    "type": "text_change",
+    "desc": "New on-screen text: ie = Poach",
+    "source": "generic"
+  },
+  {
+    "t": 1324.0,
+    "f": 79440,
+    "type": "text_change",
+    "desc": "New on-screen text: READY TO",
+    "source": "generic"
+  },
+  {
+    "t": 1327.0,
+    "f": 79620,
+    "type": "text_change",
+    "desc": "New on-screen text: SUPER SI / (4 at test! / 10 FIGHT",
+    "source": "generic"
+  },
+  {
+    "t": 1329.0,
+    "f": 79740,
+    "type": "text_change",
+    "desc": "New on-screen text: LO FIGHT",
+    "source": "generic"
+  },
+  {
+    "t": 1330.0,
+    "f": 79800,
+    "type": "text_change",
+    "desc": "New on-screen text: survival test!",
+    "source": "generic"
+  },
+  {
+    "t": 1334.0,
+    "f": 80040,
+    "type": "text_change",
+    "desc": "New on-screen text: FOLLOW @SUI / val test!) <",
+    "source": "generic"
+  },
+  {
+    "t": 1337.0,
+    "f": 80220,
+    "type": "text_change",
+    "desc": "New on-screen text: READY 70 FIGHT",
+    "source": "generic"
+  },
+  {
+    "t": 1344.0,
+    "f": 80640,
+    "type": "text_change",
+    "desc": "New on-screen text: | [Peach",
+    "source": "generic"
+  },
+  {
+    "t": 1368.17,
+    "f": 82090,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.0s (peak 34, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 1368.2,
+    "peak": 34.0
+  },
+  {
+    "t": 1381.0,
+    "f": 82860,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / VGBOOTCAMP / PARTNERS / 15% ee BRICKS / [A] | ARMADA IL] / Q FOX MVG | MEW2KING ILI",
+    "source": "generic"
+  },
+  {
+    "t": 1382.0,
+    "f": 82920,
+    "type": "text_change",
+    "desc": "New on-screen text: SUPER SMASH CON 2018 / 07:46 84",
+    "source": "generic"
+  },
+  {
+    "t": 1383.0,
+    "f": 82980,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS / AN ARMADA iu FOX BEET |",
+    "source": "generic"
+  },
+  {
+    "t": 1384.0,
+    "f": 83040,
+    "type": "text_change",
+    "desc": "New on-screen text: MIGAMES AT LAUREL PARK, / my AN ARMADA [L]_ Q MVG | MEW2KING IL] AZT |",
+    "source": "generic"
+  },
+  {
+    "t": 1387.0,
+    "f": 83220,
+    "type": "text_change",
+    "desc": "New on-screen text: 07:41 83",
+    "source": "generic"
+  },
+  {
+    "t": 1389.0,
+    "f": 83340,
+    "type": "text_change",
+    "desc": "New on-screen text: 07:39 83 / The YA0%'\\ 36%",
+    "source": "generic"
+  },
+  {
+    "t": 1394.0,
+    "f": 83640,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / VGBOOTCAMP / PARTNERS / \u00a9 7 Fox MVG | MEW2KING / [A] | ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 1398.0,
+    "f": 83880,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL. THANKS TO",
+    "source": "generic"
+  },
+  {
+    "t": 1430.48,
+    "f": 85829,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 1439.35,
+    "f": 86361,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 1440.0,
+    "f": 86400,
+    "type": "text_change",
+    "desc": "New on-screen text: Q Fox MvG | |",
+    "source": "generic"
+  },
+  {
+    "t": 1440.65,
+    "f": 86439,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 17, 7 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 1440.83,
+    "peak": 17.5
+  },
+  {
+    "t": 1441.0,
+    "f": 86460,
+    "type": "text_change",
+    "desc": "New on-screen text: FOLLOW \u2018@SUPERSMASHCON / 06:47 83",
+    "source": "generic"
+  },
+  {
+    "t": 1442.0,
+    "f": 86520,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 1443.0,
+    "f": 86580,
+    "type": "text_change",
+    "desc": "New on-screen text: THANKS TO.",
+    "source": "generic"
+  },
+  {
+    "t": 1444.0,
+    "f": 86640,
+    "type": "text_change",
+    "desc": "New on-screen text: mY AN [A] | ARMADA Oy) FOX MVG | MEW2KING ILI EET | |",
+    "source": "generic"
+  },
+  {
+    "t": 1446.0,
+    "f": 86760,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 1447.0,
+    "f": 86820,
+    "type": "text_change",
+    "desc": "New on-screen text: {CIAL THANKS",
+    "source": "generic"
+  },
+  {
+    "t": 1450.0,
+    "f": 87000,
+    "type": "text_change",
+    "desc": "New on-screen text: \u00a9 7 Fox MVG | MEW2KING / [A] | ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 1473.5,
+    "f": 88410,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 1500.0,
+    "f": 90000,
+    "type": "text_change",
+    "desc": "New on-screen text: ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 1502.0,
+    "f": 90120,
+    "type": "text_change",
+    "desc": "New on-screen text: \u00a9 Fox MVG | MEW2KING IL] |",
+    "source": "generic"
+  },
+  {
+    "t": 1507.0,
+    "f": 90420,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 1510.0,
+    "f": 90600,
+    "type": "text_change",
+    "desc": "New on-screen text: 05:38 64",
+    "source": "generic"
+  },
+  {
+    "t": 1511.0,
+    "f": 90660,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS TO / PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 1513.0,
+    "f": 90780,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 1514.0,
+    "f": 90840,
+    "type": "text_change",
+    "desc": "New on-screen text: 05:34 84",
+    "source": "generic"
+  },
+  {
+    "t": 1515.0,
+    "f": 90900,
+    "type": "text_change",
+    "desc": "New on-screen text: 54 % 112% / Q_ FOX MVG | MEW2KING ILI (tim",
+    "source": "generic"
+  },
+  {
+    "t": 1560.0,
+    "f": 93600,
+    "type": "text_change",
+    "desc": "New on-screen text: 04:48 83",
+    "source": "generic"
+  },
+  {
+    "t": 1562.0,
+    "f": 93720,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 1562.55,
+    "f": 93753,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 20, 6 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 1562.77,
+    "peak": 20.2
+  },
+  {
+    "t": 1563.0,
+    "f": 93780,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 1564.0,
+    "f": 93840,
+    "type": "text_change",
+    "desc": "New on-screen text: 04:44 84",
+    "source": "generic"
+  },
+  {
+    "t": 1565.0,
+    "f": 93900,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 1569.78,
+    "f": 94187,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 1569.78,
+    "f": 94187,
+    "type": "text_change",
+    "desc": "New on-screen text: 04:39 04",
+    "source": "generic"
+  },
+  {
+    "t": 1571.0,
+    "f": 94260,
+    "type": "text_change",
+    "desc": "New on-screen text: \u00a9 MVG | MEW2KING / |",
+    "source": "generic"
+  },
+  {
+    "t": 1572.0,
+    "f": 94320,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND ule / 04:36 83 / VGBOOTCAMP / {CIAL THANKS TO / IADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 1578.73,
+    "f": 94724,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.9s (peak 21, 9 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 1579.65,
+    "peak": 20.5
+  },
+  {
+    "t": 1620.0,
+    "f": 97200,
+    "type": "text_change",
+    "desc": "New on-screen text: 03:48 84",
+    "source": "generic"
+  },
+  {
+    "t": 1624.0,
+    "f": 97440,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 1625.4,
+    "f": 97524,
+    "type": "text_change",
+    "desc": "New on-screen text: 03:43 44",
+    "source": "generic"
+  },
+  {
+    "t": 1626.0,
+    "f": 97560,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 1627.0,
+    "f": 97620,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 1628.0,
+    "f": 97680,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS / MVG | MEW2KING IL] ls] |",
+    "source": "generic"
+  },
+  {
+    "t": 1631.0,
+    "f": 97860,
+    "type": "text_change",
+    "desc": "New on-screen text: 03:37 84 / THANKS TO OUR",
+    "source": "generic"
+  },
+  {
+    "t": 1633.0,
+    "f": 97980,
+    "type": "text_change",
+    "desc": "New on-screen text: mY AN ARMADA (\u00b0) O__ FOX MVG | MEW2KING u |",
+    "source": "generic"
+  },
+  {
+    "t": 1679.67,
+    "f": 100780,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.0s (peak 26, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 1679.7,
+    "peak": 26.3
+  },
+  {
+    "t": 1680.0,
+    "f": 100800,
+    "type": "text_change",
+    "desc": "New on-screen text: 02:49 19 / [A] | ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 1681.0,
+    "f": 100860,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS",
+    "source": "generic"
+  },
+  {
+    "t": 1682.0,
+    "f": 100920,
+    "type": "text_change",
+    "desc": "New on-screen text: SPECIAL 10 0 / Q Fox | MEW2KING | |",
+    "source": "generic"
+  },
+  {
+    "t": 1682.22,
+    "f": 100933,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 12, 4 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 1682.32,
+    "peak": 12.4
+  },
+  {
+    "t": 1683.72,
+    "f": 101023,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.6s (peak 13, 16 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 1684.35,
+    "peak": 12.8
+  },
+  {
+    "t": 1695.0,
+    "f": 101700,
+    "type": "text_change",
+    "desc": "New on-screen text: 4-man survival test! / PRESS\u2122 TART",
+    "source": "generic"
+  },
+  {
+    "t": 1697.0,
+    "f": 101820,
+    "type": "text_change",
+    "desc": "New on-screen text: \u2018SUPER SI / mental to | / READY TO FIGHT",
+    "source": "generic"
+  },
+  {
+    "t": 1703.0,
+    "f": 102180,
+    "type": "text_change",
+    "desc": "New on-screen text: STAGE SEL",
+    "source": "generic"
+  },
+  {
+    "t": 1706.0,
+    "f": 102360,
+    "type": "text_change",
+    "desc": "New on-screen text: 4=man si test! / 10 FIGHT / th [Poach",
+    "source": "generic"
+  },
+  {
+    "t": 1709.0,
+    "f": 102540,
+    "type": "text_change",
+    "desc": "New on-screen text: NOW LOAOING",
+    "source": "generic"
+  },
+  {
+    "t": 1712.12,
+    "f": 102727,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.0s (peak 34, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 1712.15,
+    "peak": 34.4
+  },
+  {
+    "t": 1740.0,
+    "f": 104400,
+    "type": "text_change",
+    "desc": "New on-screen text: ENERATIONS / GAMES, REPAIR, TOYS, & MORE.",
+    "source": "generic"
+  },
+  {
+    "t": 1741.0,
+    "f": 104460,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 1744.0,
+    "f": 104640,
+    "type": "text_change",
+    "desc": "New on-screen text: \u2018SPECIAL THANKS TO Ot",
+    "source": "generic"
+  },
+  {
+    "t": 1745.0,
+    "f": 104700,
+    "type": "text_change",
+    "desc": "New on-screen text: 07:27 79",
+    "source": "generic"
+  },
+  {
+    "t": 1747.0,
+    "f": 104820,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | MEW2KING",
+    "source": "generic"
+  },
+  {
+    "t": 1749.0,
+    "f": 104940,
+    "type": "text_change",
+    "desc": "New on-screen text: Re BRICKS",
+    "source": "generic"
+  },
+  {
+    "t": 1750.0,
+    "f": 105000,
+    "type": "text_change",
+    "desc": "New on-screen text: THANKS TO OUR",
+    "source": "generic"
+  },
+  {
+    "t": 1751.0,
+    "f": 105060,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP / PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 1788.97,
+    "f": 107338,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 1789.47,
+    "f": 107368,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.3s (peak 24, 15 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 1789.75,
+    "peak": 24.5
+  },
+  {
+    "t": 1800.0,
+    "f": 108000,
+    "type": "text_change",
+    "desc": "New on-screen text: 06:32 81 / IAL THANKS",
+    "source": "generic"
+  },
+  {
+    "t": 1803.0,
+    "f": 108180,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP / THANKS TO OUR / PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 1805.0,
+    "f": 108300,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / \u00a9 BRICKS",
+    "source": "generic"
+  },
+  {
+    "t": 1806.0,
+    "f": 108360,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 1810.0,
+    "f": 108600,
+    "type": "text_change",
+    "desc": "New on-screen text: 06122 79",
+    "source": "generic"
+  },
+  {
+    "t": 1810.4,
+    "f": 108624,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.3s (peak 26, 17 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 1810.68,
+    "peak": 26.0
+  },
+  {
+    "t": 1811.0,
+    "f": 108660,
+    "type": "text_change",
+    "desc": "New on-screen text: A. MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 1812.0,
+    "f": 108720,
+    "type": "text_change",
+    "desc": "New on-screen text: [ALLARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 1814.0,
+    "f": 108840,
+    "type": "text_change",
+    "desc": "New on-screen text: MIGAMES AT LAUREL PARK. / FOX MVG | MEW2KING | ARMADA ILI ZY 4",
+    "source": "generic"
+  },
+  {
+    "t": 1861.0,
+    "f": 111660,
+    "type": "text_change",
+    "desc": "New on-screen text: tw BRICKS",
+    "source": "generic"
+  },
+  {
+    "t": 1861.83,
+    "f": 111710,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 14, 7 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 1862.0,
+    "peak": 14.4
+  },
+  {
+    "t": 1862.0,
+    "f": 111720,
+    "type": "text_change",
+    "desc": "New on-screen text: MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 1866.0,
+    "f": 111960,
+    "type": "text_change",
+    "desc": "New on-screen text: THANKS TO OUR / eo BRICKS",
+    "source": "generic"
+  },
+  {
+    "t": 1867.0,
+    "f": 112020,
+    "type": "text_change",
+    "desc": "New on-screen text: SUPER SMASH CON 2018 / FOLLOW @SUPERSMASHCON",
+    "source": "generic"
+  },
+  {
+    "t": 1868.0,
+    "f": 112080,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP / PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 1870.0,
+    "f": 112200,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / \u201c96% 144 / MIGAMES AT LAUREL PARK",
+    "source": "generic"
+  },
+  {
+    "t": 1873.0,
+    "f": 112380,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS",
+    "source": "generic"
+  },
+  {
+    "t": 1875.0,
+    "f": 112500,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | MEW2KING [LI / [A] | ARMADA IL!",
+    "source": "generic"
+  },
+  {
+    "t": 1876.45,
+    "f": 112587,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.0s (peak 13, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 1876.48,
+    "peak": 12.7
+  },
+  {
+    "t": 1921.0,
+    "f": 115260,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP / [Al | ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 1922.0,
+    "f": 115320,
+    "type": "text_change",
+    "desc": "New on-screen text: FOLLOW @SUPERSMASHCON | / SUPER SMASH CON 2018 / GRAND FINALS / PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 1925.0,
+    "f": 115500,
+    "type": "text_change",
+    "desc": "New on-screen text: 04:27 7a / MIGAMES AT LAUREL PARK. / RR rox FOX 1) ARMADA ZW y",
+    "source": "generic"
+  },
+  {
+    "t": 1926.0,
+    "f": 115560,
+    "type": "text_change",
+    "desc": "New on-screen text: 04:26 79",
+    "source": "generic"
+  },
+  {
+    "t": 1927.62,
+    "f": 115657,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 1930.0,
+    "f": 115800,
+    "type": "text_change",
+    "desc": "New on-screen text: 04:22 81",
+    "source": "generic"
+  },
+  {
+    "t": 1932.0,
+    "f": 115920,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 1934.0,
+    "f": 116040,
+    "type": "text_change",
+    "desc": "New on-screen text: =A Fox | MEw2KinG / [A] | ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 1935.0,
+    "f": 116100,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 1980.0,
+    "f": 118800,
+    "type": "text_change",
+    "desc": "New on-screen text: 03:32 a1 / MIGAMES AT LAUREL PARK,",
+    "source": "generic"
+  },
+  {
+    "t": 1981.0,
+    "f": 118860,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS 1 / XANNOU AT LAUREL PARK.",
+    "source": "generic"
+  },
+  {
+    "t": 1982.0,
+    "f": 118920,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / 03:30 81 / THANKS T",
+    "source": "generic"
+  },
+  {
+    "t": 1984.0,
+    "f": 119040,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 1985.0,
+    "f": 119100,
+    "type": "text_change",
+    "desc": "New on-screen text: 03:27 81",
+    "source": "generic"
+  },
+  {
+    "t": 1986.0,
+    "f": 119160,
+    "type": "text_change",
+    "desc": "New on-screen text: | Fox | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 1987.0,
+    "f": 119220,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 1989.0,
+    "f": 119340,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 2018.93,
+    "f": 121136,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 2027.42,
+    "f": 121645,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 2029.02,
+    "f": 121741,
+    "type": "motion_burst",
+    "desc": "Large motion for 2.2s (peak 30, 27 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2031.17,
+    "peak": 29.7
+  },
+  {
+    "t": 2032.98,
+    "f": 121979,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 2033.03,
+    "f": 121982,
+    "type": "motion_burst",
+    "desc": "Large motion for 5.1s (peak 26, 152 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2038.08,
+    "peak": 25.7
+  },
+  {
+    "t": 2038.13,
+    "f": 122288,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 2049.0,
+    "f": 122940,
+    "type": "text_change",
+    "desc": "New on-screen text: #SSC2018 / MELEE SINGLES GRAND FINALS / SUPER SMASH CON 2018",
+    "source": "generic"
+  },
+  {
+    "t": 2062.0,
+    "f": 123720,
+    "type": "text_change",
+    "desc": "New on-screen text: #SSC2018",
+    "source": "generic"
+  },
+  {
+    "t": 2063.0,
+    "f": 123780,
+    "type": "text_change",
+    "desc": "New on-screen text: MELEE SINGLES GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 2073.47,
+    "f": 124408,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 2076.0,
+    "f": 124560,
+    "type": "text_change",
+    "desc": "New on-screen text: #SSC2018 / MELEE SINGLES GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 2080.0,
+    "f": 124800,
+    "type": "text_change",
+    "desc": "New on-screen text: Stock Battle",
+    "source": "generic"
+  },
+  {
+    "t": 2084.0,
+    "f": 125040,
+    "type": "text_change",
+    "desc": "New on-screen text: WINNER) 7",
+    "source": "generic"
+  },
+  {
+    "t": 2090.0,
+    "f": 125400,
+    "type": "text_change",
+    "desc": "New on-screen text: survival test! / READ Y bis Toi T",
+    "source": "generic"
+  },
+  {
+    "t": 2091.0,
+    "f": 125460,
+    "type": "text_change",
+    "desc": "New on-screen text: READY FIGHT",
+    "source": "generic"
+  },
+  {
+    "t": 2101.0,
+    "f": 126060,
+    "type": "text_change",
+    "desc": "New on-screen text: SUPER SM.",
+    "source": "generic"
+  },
+  {
+    "t": 2103.0,
+    "f": 126180,
+    "type": "text_change",
+    "desc": "New on-screen text: (4 4-man survival test!",
+    "source": "generic"
+  },
+  {
+    "t": 2105.0,
+    "f": 126300,
+    "type": "text_change",
+    "desc": "New on-screen text: iy FIGHT",
+    "source": "generic"
+  },
+  {
+    "t": 2106.0,
+    "f": 126360,
+    "type": "text_change",
+    "desc": "New on-screen text: (a 4=man su / READY 70 FIGHT",
+    "source": "generic"
+  },
+  {
+    "t": 2108.0,
+    "f": 126480,
+    "type": "text_change",
+    "desc": "New on-screen text: [Poach |",
+    "source": "generic"
+  },
+  {
+    "t": 2114.0,
+    "f": 126840,
+    "type": "text_change",
+    "desc": "New on-screen text: \u201870 FIGHT",
+    "source": "generic"
+  },
+  {
+    "t": 2118.0,
+    "f": 127080,
+    "type": "text_change",
+    "desc": "New on-screen text: survival test!",
+    "source": "generic"
+  },
+  {
+    "t": 2119.0,
+    "f": 127140,
+    "type": "text_change",
+    "desc": "New on-screen text: READY TO FIGHT",
+    "source": "generic"
+  },
+  {
+    "t": 2160.0,
+    "f": 129600,
+    "type": "text_change",
+    "desc": "New on-screen text: NOW LOADING",
+    "source": "generic"
+  },
+  {
+    "t": 2162.0,
+    "f": 129720,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / VGBOOTCAMP / \u2018SPECIAL THANKS TO OUR / PARTNERS / MIGAMES AT LAUREL PARK. / A FOX MVG | MEW2KING IL] / [A] | ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 2162.92,
+    "f": 129775,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.7s (peak 39, 4 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2163.57,
+    "peak": 39.2
+  },
+  {
+    "t": 2164.0,
+    "f": 129840,
+    "type": "text_change",
+    "desc": "New on-screen text: TAL| ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 2165.0,
+    "f": 129900,
+    "type": "text_change",
+    "desc": "New on-screen text: pxesenreo ay",
+    "source": "generic"
+  },
+  {
+    "t": 2167.52,
+    "f": 130051,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.7s (peak 15, 12 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2168.2,
+    "peak": 14.8
+  },
+  {
+    "t": 2169.0,
+    "f": 130140,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS 1\u00a2",
+    "source": "generic"
+  },
+  {
+    "t": 2170.0,
+    "f": 130200,
+    "type": "text_change",
+    "desc": "New on-screen text: \u2018OLLOW @SUI",
+    "source": "generic"
+  },
+  {
+    "t": 2171.0,
+    "f": 130260,
+    "type": "text_change",
+    "desc": "New on-screen text: CON 2018",
+    "source": "generic"
+  },
+  {
+    "t": 2172.78,
+    "f": 130367,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 12, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2172.82,
+    "peak": 11.9
+  },
+  {
+    "t": 2174.62,
+    "f": 130477,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.0s (peak 12, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2174.65,
+    "peak": 12.1
+  },
+  {
+    "t": 2176.0,
+    "f": 130560,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / PRESENTEO BY",
+    "source": "generic"
+  },
+  {
+    "t": 2197.52,
+    "f": 131851,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 13, 4 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2197.58,
+    "peak": 12.7
+  },
+  {
+    "t": 2217.38,
+    "f": 133043,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.9s (peak 13, 6 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2218.3,
+    "peak": 12.8
+  },
+  {
+    "t": 2222.0,
+    "f": 133320,
+    "type": "text_change",
+    "desc": "New on-screen text: PRESENTED BY",
+    "source": "generic"
+  },
+  {
+    "t": 2223.0,
+    "f": 133380,
+    "type": "text_change",
+    "desc": "New on-screen text: ann. Ui 00 58)",
+    "source": "generic"
+  },
+  {
+    "t": 2225.0,
+    "f": 133500,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP / FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 2226.0,
+    "f": 133560,
+    "type": "text_change",
+    "desc": "New on-screen text: SUPER SMASH CON 2018 / FOLLOW @SUPERSMASHCON",
+    "source": "generic"
+  },
+  {
+    "t": 2229.0,
+    "f": 133740,
+    "type": "text_change",
+    "desc": "New on-screen text: WES ECO |",
+    "source": "generic"
+  },
+  {
+    "t": 2231.0,
+    "f": 133860,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 2234.0,
+    "f": 134040,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 2235.0,
+    "f": 134100,
+    "type": "text_change",
+    "desc": "New on-screen text: All ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 2253.58,
+    "f": 135215,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 14, 10 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2253.77,
+    "peak": 13.8
+  },
+  {
+    "t": 2266.4,
+    "f": 135984,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 13, 4 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2266.48,
+    "peak": 13.2
+  },
+  {
+    "t": 2285.0,
+    "f": 137100,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / VGBOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 2286.0,
+    "f": 137160,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | = / [A] | ARMADA 7",
+    "source": "generic"
+  },
+  {
+    "t": 2288.77,
+    "f": 137326,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 16, 14 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2289.0,
+    "peak": 16.2
+  },
+  {
+    "t": 2291.0,
+    "f": 137460,
+    "type": "text_change",
+    "desc": "New on-screen text: SMASH CON 208",
+    "source": "generic"
+  },
+  {
+    "t": 2297.0,
+    "f": 137820,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 2298.0,
+    "f": 137880,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 2299.0,
+    "f": 137940,
+    "type": "text_change",
+    "desc": "New on-screen text: [Al] ARMADA [L]_ / FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 2303.0,
+    "f": 138180,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS 1",
+    "source": "generic"
+  },
+  {
+    "t": 2305.0,
+    "f": 138300,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP / ENERATIONS / GAMES, REPAIR, TOYS, & MORE,",
+    "source": "generic"
+  },
+  {
+    "t": 2334.42,
+    "f": 140065,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 14, 11 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2334.6,
+    "peak": 14.3
+  },
+  {
+    "t": 2340.68,
+    "f": 140441,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.6s (peak 15, 11 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2341.25,
+    "peak": 14.6
+  },
+  {
+    "t": 2341.0,
+    "f": 140460,
+    "type": "text_change",
+    "desc": "New on-screen text: THANKS T / [A] | ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 2342.0,
+    "f": 140520,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 2343.0,
+    "f": 140580,
+    "type": "text_change",
+    "desc": "New on-screen text: CON 2018 / VGBOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 2344.0,
+    "f": 140640,
+    "type": "text_change",
+    "desc": "New on-screen text: [A]| ARMADA V4",
+    "source": "generic"
+  },
+  {
+    "t": 2346.0,
+    "f": 140760,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | MEW2KING",
+    "source": "generic"
+  },
+  {
+    "t": 2347.0,
+    "f": 140820,
+    "type": "text_change",
+    "desc": "New on-screen text: All ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 2351.0,
+    "f": 141060,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 2353.0,
+    "f": 141180,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG ow 1",
+    "source": "generic"
+  },
+  {
+    "t": 2362.83,
+    "f": 141770,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 14, 7 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2362.95,
+    "peak": 13.7
+  },
+  {
+    "t": 2379.15,
+    "f": 142749,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 14, 5 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2379.28,
+    "peak": 14.0
+  },
+  {
+    "t": 2381.72,
+    "f": 142903,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.0s (peak 12, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2381.75,
+    "peak": 11.9
+  },
+  {
+    "t": 2393.27,
+    "f": 143596,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 15, 9 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2393.45,
+    "peak": 14.8
+  },
+  {
+    "t": 2400.0,
+    "f": 144000,
+    "type": "text_change",
+    "desc": "New on-screen text: PRESENTED BY",
+    "source": "generic"
+  },
+  {
+    "t": 2402.0,
+    "f": 144120,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / VGBOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 2403.0,
+    "f": 144180,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 2405.0,
+    "f": 144300,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 2410.0,
+    "f": 144600,
+    "type": "text_change",
+    "desc": "New on-screen text: | ARMADA |",
+    "source": "generic"
+  },
+  {
+    "t": 2413.0,
+    "f": 144780,
+    "type": "text_change",
+    "desc": "New on-screen text: SUPER CON 2018 / PRESENTED BY",
+    "source": "generic"
+  },
+  {
+    "t": 2414.0,
+    "f": 144840,
+    "type": "text_change",
+    "desc": "New on-screen text: ENERATIONS / GAMES, REPAIR, TOYS, & MORE.",
+    "source": "generic"
+  },
+  {
+    "t": 2416.0,
+    "f": 144960,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 2418.83,
+    "f": 145130,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 13, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2418.87,
+    "peak": 13.2
+  },
+  {
+    "t": 2420.98,
+    "f": 145259,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 16, 6 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2421.13,
+    "peak": 15.9
+  },
+  {
+    "t": 2429.5,
+    "f": 145770,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.7s (peak 15, 24 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2430.23,
+    "peak": 15.1
+  },
+  {
+    "t": 2435.37,
+    "f": 146122,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 20, 14 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2435.58,
+    "peak": 20.0
+  },
+  {
+    "t": 2454.0,
+    "f": 147240,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 16, 6 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2454.08,
+    "peak": 15.6
+  },
+  {
+    "t": 2460.27,
+    "f": 147616,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 13, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2460.32,
+    "peak": 13.2
+  },
+  {
+    "t": 2466.78,
+    "f": 148007,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.9s (peak 15, 10 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2467.62,
+    "peak": 15.3
+  },
+  {
+    "t": 2467.0,
+    "f": 148020,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | MEW2KING / [A] | ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 2468.0,
+    "f": 148080,
+    "type": "text_change",
+    "desc": "New on-screen text: 5'5 59 aie / ENERATIONS / GAMES, REPAIR, TOYS, & MORE,",
+    "source": "generic"
+  },
+  {
+    "t": 2469.0,
+    "f": 148140,
+    "type": "text_change",
+    "desc": "New on-screen text: THANKS TO OUR",
+    "source": "generic"
+  },
+  {
+    "t": 2470.0,
+    "f": 148200,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP / IAL THANKS",
+    "source": "generic"
+  },
+  {
+    "t": 2472.0,
+    "f": 148320,
+    "type": "text_change",
+    "desc": "New on-screen text: OX | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 2473.0,
+    "f": 148380,
+    "type": "text_change",
+    "desc": "New on-screen text: ! ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 2477.0,
+    "f": 148620,
+    "type": "text_change",
+    "desc": "New on-screen text: PREEENTED BY",
+    "source": "generic"
+  },
+  {
+    "t": 2478.42,
+    "f": 148705,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 15, 10 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2478.6,
+    "peak": 14.7
+  },
+  {
+    "t": 2482.0,
+    "f": 148920,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / RES FOX MVG | MEW2KING [LI",
+    "source": "generic"
+  },
+  {
+    "t": 2502.13,
+    "f": 150128,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 12, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2502.17,
+    "peak": 12.0
+  },
+  {
+    "t": 2508.48,
+    "f": 150509,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 38, 6 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2508.57,
+    "peak": 38.2
+  },
+  {
+    "t": 2525.0,
+    "f": 151500,
+    "type": "text_change",
+    "desc": "New on-screen text: SUPER SMASH CON 2018 / SUPER SMASH BROS. MEL! / FOLLOW @SUPERSMASHCON / ival test!",
+    "source": "generic"
+  },
+  {
+    "t": 2547.0,
+    "f": 152820,
+    "type": "text_change",
+    "desc": "New on-screen text: survival <",
+    "source": "generic"
+  },
+  {
+    "t": 2549.0,
+    "f": 152940,
+    "type": "text_change",
+    "desc": "New on-screen text: al test!",
+    "source": "generic"
+  },
+  {
+    "t": 2552.0,
+    "f": 153120,
+    "type": "text_change",
+    "desc": "New on-screen text: SUPER SMASH CON 20/8 / SUPER SMASH BROS. / FOLLOW @SUPERSMASHCON",
+    "source": "generic"
+  },
+  {
+    "t": 2562.0,
+    "f": 153720,
+    "type": "text_change",
+    "desc": "New on-screen text: survival test! )",
+    "source": "generic"
+  },
+  {
+    "t": 2570.0,
+    "f": 154200,
+    "type": "text_change",
+    "desc": "New on-screen text: SUPER SMASH BROS. oo / SUPER SMASH CON 2018",
+    "source": "generic"
+  },
+  {
+    "t": 2573.0,
+    "f": 154380,
+    "type": "text_change",
+    "desc": "New on-screen text: val test!) <",
+    "source": "generic"
+  },
+  {
+    "t": 2575.0,
+    "f": 154500,
+    "type": "text_change",
+    "desc": "New on-screen text: READY FIGHT",
+    "source": "generic"
+  },
+  {
+    "t": 2584.0,
+    "f": 155040,
+    "type": "text_change",
+    "desc": "New on-screen text: urn the Rumble feature on or off.",
+    "source": "generic"
+  },
+  {
+    "t": 2585.0,
+    "f": 155100,
+    "type": "text_change",
+    "desc": "New on-screen text: ah battle for",
+    "source": "generic"
+  },
+  {
+    "t": 2587.0,
+    "f": 155220,
+    "type": "text_change",
+    "desc": "New on-screen text: survival test! J",
+    "source": "generic"
+  },
+  {
+    "t": 2588.0,
+    "f": 155280,
+    "type": "text_change",
+    "desc": "New on-screen text: READY 75 FIGHT",
+    "source": "generic"
+  },
+  {
+    "t": 2591.0,
+    "f": 155460,
+    "type": "text_change",
+    "desc": "New on-screen text: NOW LOADING",
+    "source": "generic"
+  },
+  {
+    "t": 2593.0,
+    "f": 155580,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / GEOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 2593.83,
+    "f": 155630,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.7s (peak 40, 4 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2594.48,
+    "peak": 39.5
+  },
+  {
+    "t": 2594.0,
+    "f": 155640,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS / MVG | MEW2KING IL] / [Al | ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 2596.0,
+    "f": 155760,
+    "type": "text_change",
+    "desc": "New on-screen text: \u2018SPECIAL THANKS TO OUR / XESS Fox MVG | MEW2KING [LI",
+    "source": "generic"
+  },
+  {
+    "t": 2598.5,
+    "f": 155910,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.6s (peak 19, 19 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2600.07,
+    "peak": 18.8
+  },
+  {
+    "t": 2603.7,
+    "f": 156222,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 14, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2603.83,
+    "peak": 13.8
+  },
+  {
+    "t": 2606.2,
+    "f": 156372,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 13, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2606.25,
+    "peak": 13.1
+  },
+  {
+    "t": 2611.83,
+    "f": 156710,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 14, 6 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2611.92,
+    "peak": 14.0
+  },
+  {
+    "t": 2614.45,
+    "f": 156867,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 15, 9 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2614.6,
+    "peak": 15.0
+  },
+  {
+    "t": 2625.07,
+    "f": 157504,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.1s (peak 23, 18 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2626.13,
+    "peak": 23.1
+  },
+  {
+    "t": 2639.92,
+    "f": 158395,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 14, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2640.0,
+    "peak": 14.2
+  },
+  {
+    "t": 2640.0,
+    "f": 158400,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA IL] / FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 2645.0,
+    "f": 158700,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / 07:09 51",
+    "source": "generic"
+  },
+  {
+    "t": 2647.0,
+    "f": 158820,
+    "type": "text_change",
+    "desc": "New on-screen text: V@BOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 2647.35,
+    "f": 158841,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.7s (peak 15, 16 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2648.0,
+    "peak": 15.3
+  },
+  {
+    "t": 2649.0,
+    "f": 158940,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS",
+    "source": "generic"
+  },
+  {
+    "t": 2650.67,
+    "f": 159040,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.9s (peak 16, 5 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2651.52,
+    "peak": 16.1
+  },
+  {
+    "t": 2653.0,
+    "f": 159180,
+    "type": "text_change",
+    "desc": "New on-screen text: LA) ARMADA 4",
+    "source": "generic"
+  },
+  {
+    "t": 2656.0,
+    "f": 159360,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA IL] / MV | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 2657.0,
+    "f": 159420,
+    "type": "text_change",
+    "desc": "New on-screen text: SUPER SMASH CON 2018",
+    "source": "generic"
+  },
+  {
+    "t": 2658.0,
+    "f": 159480,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 2664.65,
+    "f": 159879,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 12, 4 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2664.72,
+    "peak": 12.3
+  },
+  {
+    "t": 2669.65,
+    "f": 160179,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.0s (peak 14, 9 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2670.67,
+    "peak": 13.7
+  },
+  {
+    "t": 2678.53,
+    "f": 160712,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 14, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2678.57,
+    "peak": 14.2
+  },
+  {
+    "t": 2681.03,
+    "f": 160862,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 14, 4 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2681.12,
+    "peak": 13.8
+  },
+  {
+    "t": 2685.53,
+    "f": 161132,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 13, 4 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2685.6,
+    "peak": 13.3
+  },
+  {
+    "t": 2700.87,
+    "f": 162052,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 13, 4 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2700.92,
+    "peak": 12.6
+  },
+  {
+    "t": 2701.0,
+    "f": 162060,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS / LA) | ARMADA [ul",
+    "source": "generic"
+  },
+  {
+    "t": 2702.0,
+    "f": 162120,
+    "type": "text_change",
+    "desc": "New on-screen text: | mew2xine",
+    "source": "generic"
+  },
+  {
+    "t": 2704.0,
+    "f": 162240,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP / rox | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 2704.33,
+    "f": 162260,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 15, 7 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2704.45,
+    "peak": 15.4
+  },
+  {
+    "t": 2705.0,
+    "f": 162300,
+    "type": "text_change",
+    "desc": "New on-screen text: PRESENTED",
+    "source": "generic"
+  },
+  {
+    "t": 2706.0,
+    "f": 162360,
+    "type": "text_change",
+    "desc": "New on-screen text: W2KING f 2",
+    "source": "generic"
+  },
+  {
+    "t": 2707.0,
+    "f": 162420,
+    "type": "text_change",
+    "desc": "New on-screen text: 06307 51",
+    "source": "generic"
+  },
+  {
+    "t": 2708.0,
+    "f": 162480,
+    "type": "text_change",
+    "desc": "New on-screen text: 06:06 s1",
+    "source": "generic"
+  },
+  {
+    "t": 2710.0,
+    "f": 162600,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 2715.8,
+    "f": 162948,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 15, 12 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2715.98,
+    "peak": 15.4
+  },
+  {
+    "t": 2745.08,
+    "f": 164705,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.8s (peak 26, 39 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2746.83,
+    "peak": 25.6
+  },
+  {
+    "t": 2750.73,
+    "f": 165044,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 13, 5 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2750.83,
+    "peak": 12.6
+  },
+  {
+    "t": 2751.85,
+    "f": 165111,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.3s (peak 22, 16 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2752.1,
+    "peak": 21.8
+  },
+  {
+    "t": 2760.0,
+    "f": 165600,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 2763.0,
+    "f": 165780,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 2764.0,
+    "f": 165840,
+    "type": "text_change",
+    "desc": "New on-screen text: SUPER CON 2018 / FOLLOW @SUPERSMASHCON | |",
+    "source": "generic"
+  },
+  {
+    "t": 2765.0,
+    "f": 165900,
+    "type": "text_change",
+    "desc": "New on-screen text: PREEENTED BY",
+    "source": "generic"
+  },
+  {
+    "t": 2767.0,
+    "f": 166020,
+    "type": "text_change",
+    "desc": "New on-screen text: 05:07 saa",
+    "source": "generic"
+  },
+  {
+    "t": 2769.0,
+    "f": 166140,
+    "type": "text_change",
+    "desc": "New on-screen text: CON 2018 / PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 2771.0,
+    "f": 166260,
+    "type": "text_change",
+    "desc": "New on-screen text: Bis O 53",
+    "source": "generic"
+  },
+  {
+    "t": 2773.0,
+    "f": 166380,
+    "type": "text_change",
+    "desc": "New on-screen text: 2 ARMADA [ul",
+    "source": "generic"
+  },
+  {
+    "t": 2788.08,
+    "f": 167285,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 13, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2788.22,
+    "peak": 12.8
+  },
+  {
+    "t": 2794.72,
+    "f": 167683,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.7s (peak 13, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2795.42,
+    "peak": 12.7
+  },
+  {
+    "t": 2807.73,
+    "f": 168464,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 16, 9 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2807.88,
+    "peak": 15.6
+  },
+  {
+    "t": 2809.28,
+    "f": 168557,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 14, 5 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2809.42,
+    "peak": 13.7
+  },
+  {
+    "t": 2821.0,
+    "f": 169260,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 2822.0,
+    "f": 169320,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 2823.0,
+    "f": 169380,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 2824.0,
+    "f": 169440,
+    "type": "text_change",
+    "desc": "New on-screen text: MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 2826.0,
+    "f": 169560,
+    "type": "text_change",
+    "desc": "New on-screen text: con 2018 / hy uM ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 2827.0,
+    "f": 169620,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 2830.0,
+    "f": 169800,
+    "type": "text_change",
+    "desc": "New on-screen text: OMBAT ARENA",
+    "source": "generic"
+  },
+  {
+    "t": 2831.17,
+    "f": 169870,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 15, 5 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2831.25,
+    "peak": 14.7
+  },
+  {
+    "t": 2834.0,
+    "f": 170040,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 2837.18,
+    "f": 170231,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 13, 4 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2837.23,
+    "peak": 12.8
+  },
+  {
+    "t": 2840.48,
+    "f": 170429,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.2s (peak 25, 23 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2841.65,
+    "peak": 25.3
+  },
+  {
+    "t": 2848.38,
+    "f": 170903,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.3s (peak 16, 14 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2849.65,
+    "peak": 16.4
+  },
+  {
+    "t": 2854.43,
+    "f": 171266,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.3s (peak 16, 14 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2854.68,
+    "peak": 15.9
+  },
+  {
+    "t": 2862.2,
+    "f": 171732,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.3s (peak 26, 18 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2862.48,
+    "peak": 26.4
+  },
+  {
+    "t": 2875.85,
+    "f": 172551,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.2s (peak 13, 5 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2876.0,
+    "peak": 13.5
+  },
+  {
+    "t": 2877.5,
+    "f": 172650,
+    "type": "loud_peak",
+    "desc": "Loud peak -12 dBFS (+12 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 2887.98,
+    "f": 173279,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 2895.08,
+    "f": 173705,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 19, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2895.12,
+    "peak": 19.4
+  },
+  {
+    "t": 2897.0,
+    "f": 173820,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 2899.0,
+    "f": 173940,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / [Al | ARMADA / MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 2900.0,
+    "f": 174000,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL. THANKS 1",
+    "source": "generic"
+  },
+  {
+    "t": 2902.0,
+    "f": 174120,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | MEW2KING [LI 2 I u",
+    "source": "generic"
+  },
+  {
+    "t": 2905.0,
+    "f": 174300,
+    "type": "text_change",
+    "desc": "New on-screen text: = MVG | Mi / IL] 2) ARMADA [L] _ A",
+    "source": "generic"
+  },
+  {
+    "t": 2909.0,
+    "f": 174540,
+    "type": "text_change",
+    "desc": "New on-screen text: SUPER SMASH CON 2018 / FOLLOW @SUPERSMASHCON",
+    "source": "generic"
+  },
+  {
+    "t": 2912.0,
+    "f": 174720,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / [A] | ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 2914.0,
+    "f": 174840,
+    "type": "text_change",
+    "desc": "New on-screen text: \\_FOX MVG |",
+    "source": "generic"
+  },
+  {
+    "t": 2940.0,
+    "f": 176400,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 2943.0,
+    "f": 176580,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 2944.0,
+    "f": 176640,
+    "type": "text_change",
+    "desc": "New on-screen text: MIGAMES AT LAUREL PARK,",
+    "source": "generic"
+  },
+  {
+    "t": 2945.0,
+    "f": 176700,
+    "type": "text_change",
+    "desc": "New on-screen text: \u2018SPECIAL THANKS TO Ot",
+    "source": "generic"
+  },
+  {
+    "t": 2953.0,
+    "f": 177180,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 2954.0,
+    "f": 177240,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA IL] / FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 2955.0,
+    "f": 177300,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG |",
+    "source": "generic"
+  },
+  {
+    "t": 2956.0,
+    "f": 177360,
+    "type": "text_change",
+    "desc": "New on-screen text: THANKS T",
+    "source": "generic"
+  },
+  {
+    "t": 2970.15,
+    "f": 178209,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 13, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2970.22,
+    "peak": 13.0
+  },
+  {
+    "t": 2974.85,
+    "f": 178491,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 14, 4 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 2974.92,
+    "peak": 14.2
+  },
+  {
+    "t": 2986.0,
+    "f": 179160,
+    "type": "loud_peak",
+    "desc": "Loud peak -11 dBFS (+13 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 3004.0,
+    "f": 180240,
+    "type": "text_change",
+    "desc": "New on-screen text: [A] | ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 3005.0,
+    "f": 180300,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 3005.63,
+    "f": 180338,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 13, 6 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 3005.75,
+    "peak": 12.6
+  },
+  {
+    "t": 3006.0,
+    "f": 180360,
+    "type": "text_change",
+    "desc": "New on-screen text: XESS Fox | MEW2KING",
+    "source": "generic"
+  },
+  {
+    "t": 3007.0,
+    "f": 180420,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL THANKS",
+    "source": "generic"
+  },
+  {
+    "t": 3009.0,
+    "f": 180540,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | MEW2KING",
+    "source": "generic"
+  },
+  {
+    "t": 3014.0,
+    "f": 180840,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 3018.0,
+    "f": 181080,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / [A] | ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 3024.0,
+    "f": 181440,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 3051.65,
+    "f": 183099,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.9s (peak 14, 7 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 3052.58,
+    "peak": 14.3
+  },
+  {
+    "t": 3052.0,
+    "f": 183120,
+    "type": "loud_peak",
+    "desc": "Loud peak -12 dBFS (+13 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 3060.0,
+    "f": 183600,
+    "type": "text_change",
+    "desc": "New on-screen text: THANKS TO OUR",
+    "source": "generic"
+  },
+  {
+    "t": 3064.0,
+    "f": 183840,
+    "type": "text_change",
+    "desc": "New on-screen text: FOX MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 3066.63,
+    "f": 183998,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 13, 6 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 3066.72,
+    "peak": 13.4
+  },
+  {
+    "t": 3070.0,
+    "f": 184200,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS / FOX = | MEW2KING / [A] | ARMADA",
+    "source": "generic"
+  },
+  {
+    "t": 3079.0,
+    "f": 184740,
+    "type": "text_change",
+    "desc": "New on-screen text: m | ARMADA IL]",
+    "source": "generic"
+  },
+  {
+    "t": 3081.0,
+    "f": 184860,
+    "type": "text_change",
+    "desc": "New on-screen text: 2 [Al | ARMAI",
+    "source": "generic"
+  },
+  {
+    "t": 3084.0,
+    "f": 185040,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 3085.0,
+    "f": 185100,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 3087.0,
+    "f": 185220,
+    "type": "text_change",
+    "desc": "New on-screen text: Fox | MEW2KING [L]",
+    "source": "generic"
+  },
+  {
+    "t": 3124.0,
+    "f": 187440,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 3125.98,
+    "f": 187559,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 14, 7 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 3126.08,
+    "peak": 13.6
+  },
+  {
+    "t": 3127.0,
+    "f": 187620,
+    "type": "text_change",
+    "desc": "New on-screen text: A MVG | MEW2KING IL]",
+    "source": "generic"
+  },
+  {
+    "t": 3129.07,
+    "f": 187744,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 13, 3 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 3129.15,
+    "peak": 13.4
+  },
+  {
+    "t": 3130.0,
+    "f": 187800,
+    "type": "text_change",
+    "desc": "New on-screen text: IAL. THANKS TO / PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 3134.0,
+    "f": 188040,
+    "type": "text_change",
+    "desc": "New on-screen text: SUPER SMASH CON 2018 / FOLLOW @SUPERSMASHCON / OX MVG | tu",
+    "source": "generic"
+  },
+  {
+    "t": 3137.0,
+    "f": 188220,
+    "type": "text_change",
+    "desc": "New on-screen text: GRAND FINALS",
+    "source": "generic"
+  },
+  {
+    "t": 3138.0,
+    "f": 188280,
+    "type": "text_change",
+    "desc": "New on-screen text: COMBAT AREN",
+    "source": "generic"
+  },
+  {
+    "t": 3142.0,
+    "f": 188520,
+    "type": "text_change",
+    "desc": "New on-screen text: VGBOOTCAMP",
+    "source": "generic"
+  },
+  {
+    "t": 3143.0,
+    "f": 188580,
+    "type": "text_change",
+    "desc": "New on-screen text: PARTNERS",
+    "source": "generic"
+  },
+  {
+    "t": 3158.2,
+    "f": 189492,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 41, 5 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 3158.28,
+    "peak": 41.2
+  },
+  {
+    "t": 3158.78,
+    "f": 189527,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 3159.0,
+    "f": 189540,
+    "type": "loud_peak",
+    "desc": "Loud peak -12 dBFS (+13 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 3159.62,
+    "f": 189577,
+    "type": "motion_burst",
+    "desc": "Large motion for 2.6s (peak 17, 33 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 3162.18,
+    "peak": 17.2
+  },
+  {
+    "t": 3162.57,
+    "f": 189754,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 3170.0,
+    "f": 190200,
+    "type": "motion_burst",
+    "desc": "Large motion for 32.3s (peak 98, 881 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 3202.32,
+    "peak": 97.7
+  },
+  {
+    "t": 3198.42,
+    "f": 191905,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 3205.02,
+    "f": 192301,
+    "type": "motion_burst",
+    "desc": "Large motion for 13.5s (peak 22, 319 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 3218.5,
+    "peak": 22.4
+  },
+  {
+    "t": 3220.95,
+    "f": 193257,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.0s (peak 16, 27 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 3221.92,
+    "peak": 16.0
+  },
+  {
+    "t": 3223.25,
+    "f": 193395,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.1s (peak 13, 4 hot frames; threshold 11.7)",
+    "source": "generic",
+    "end": 3223.35,
+    "peak": 13.2
+  }
+]

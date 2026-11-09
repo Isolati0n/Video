@@ -1,0 +1,620 @@
+# Events: SSC 2018 SSBM - [A] | Armada (Peach) Vs. FOX MVG | Mew2King (Marth) - Smash Melee Grand Finals
+
+Derived by code from `frames.jsonl.gz` (60 fps, profile `generic`), the whole-frame OCR and the audio track. '?' marks guesses about the cause. 
+
+| type | count |
+|---|---|
+| loud_peak | 11 |
+| motion_burst | 145 |
+| scene_change | 25 |
+| text_change | 424 |
+
+Stats: motion_median=2.93, motion_threshold=11.72, static_seconds=0.0, ocr_runs_with_text=3056, ocr_new_text_entries=2245, ocr_lines_unique=1435, frames=195047, cuts=26, black_frames=0, audio_median_db=-24.4, audio_max_db=-8.3, silence_seconds=0.0, loud_peaks=11
+
+## Timeline
+
+- [00:00:00] (f0) **loud_peak**: Loud peak -9 dBFS (+16 dB over typical): shout, impact or music hit?
+- [00:00:00] (f0) **text_change**: New on-screen text: SUPER SMASH CON 2018 / GRAND FINALS / FOLLOW @SUPERSMASHCON / 08:00 00 / VGBOOTCAMP / PARTNERS / [A] | ARMADA / FOX MVG | MEW2KING
+- [00:00:01] (f60) **text_change**: New on-screen text: IAL THANKS / MIGAMES AT LAUREL PARK.
+- [00:00:03] (f180) **text_change**: New on-screen text: 07:57 94
+- [00:00:11] (f660) **text_change**: New on-screen text: 07:49 94
+- [00:00:13] (f780) **text_change**: New on-screen text: GRAND FINALS / VGBOOTCAMP / PARTNERS / Fox | MEW2KING
+- [00:00:14] (f840) **text_change**: New on-screen text: TA] | ARMADA / FOX MVG | MEW2KING IL] O
+- [00:00:18] (f1080) **text_change**: New on-screen text: xX \ FOX MVG | MEW2KING IL] [Al | ARMADA |
+- [00:00:20] (f1200) **text_change**: New on-screen text: 07:40 96
+- [00:01:00] (f3600) **text_change**: New on-screen text: THANKS TO.
+- [00:01:01] (f3660) **text_change**: New on-screen text: 06:59 98 / — FOX MVG | MEWAKING IL] OF ARMADA
+- [00:01:03] (f3780) **text_change**: New on-screen text: 06:57 96
+- [00:01:05] (f3900) **text_change**: New on-screen text: VGBOOTCAMP / PARTNERS
+- [00:01:05] (f3911) **scene_change**: Scene change (picture jumps to different content)
+- [00:01:06] (f3960) **text_change**: New on-screen text: FOX MVG | MEW2KING IL]
+- [00:01:06] (f3968) **motion_burst**: Large motion for 0.1s (peak 18, 5 hot frames; threshold 11.7)
+- [00:01:07] (f4020) **text_change**: New on-screen text: GRAND FINALS / IAL THANKS / [A] u ARMADA
+- [00:01:11] (f4260) **text_change**: New on-screen text: 06:49 96
+- [00:01:14] (f4440) **text_change**: New on-screen text: 06:46 98
+- [00:01:26] (f5165) **motion_burst**: Large motion for 0.3s (peak 31, 19 hot frames; threshold 11.7)
+- [00:01:51] (f6712) **motion_burst**: Large motion for 0.1s (peak 14, 5 hot frames; threshold 11.7)
+- [00:02:01] (f7260) **text_change**: New on-screen text: 05:59 96
+- [00:02:02] (f7320) **text_change**: New on-screen text: ia ARMADA
+- [00:02:10] (f7800) **text_change**: New on-screen text: VGBOOTCAMP
+- [00:02:11] (f7860) **text_change**: New on-screen text: FOX MVG | MEW2KING IL]
+- [00:02:12] (f7920) **text_change**: New on-screen text: GRAND FINALS / PARTNERS
+- [00:02:13] (f7980) **text_change**: New on-screen text: 05:47 96
+- [00:02:15] (f8100) **text_change**: New on-screen text: [A] | ARMADA
+- [00:02:19] (f8340) **text_change**: New on-screen text: FOLLOW @SUPERSMASHCON
+- [00:02:47] (f10067) **motion_burst**: Large motion for 0.3s (peak 28, 18 hot frames; threshold 11.7)
+- [00:03:00] (f10800) **text_change**: New on-screen text: 05:00 94
+- [00:03:01] (f10860) **text_change**: New on-screen text: 04:59 94
+- [00:03:01] (f10876) **motion_burst**: Large motion for 0.8s (peak 28, 4 hot frames; threshold 11.7)
+- [00:03:03] (f10980) **text_change**: New on-screen text: FOX MVG | MEW2KING IL]
+- [00:03:04] (f11040) **text_change**: New on-screen text: SUPER SMASH CON 2018 / GRAND FINALS / FOLLOW @SUPERSMASHCON / VGBOOTCAMP / PARTNERS
+- [00:03:16] (f11760) **text_change**: New on-screen text: #SSC2018
+- [00:03:17] (f11820) **text_change**: New on-screen text: ‘eM MELEE SINGLES GRAND FINALS
+- [00:03:18] (f11880) **text_change**: New on-screen text: SUPER SMASH BROS. ‘MELEE / SUPER SMASH Ct
+- [00:03:19] (f11940) **text_change**: New on-screen text: urvival test! / HEADY TO
+- [00:03:45] (f13512) **motion_burst**: Large motion for 0.7s (peak 39, 4 hot frames; threshold 11.7)
+- [00:04:01] (f14460) **text_change**: New on-screen text: = SMASH CON 21
+- [00:04:02] (f14550) **motion_burst**: Large motion for 0.1s (peak 13, 4 hot frames; threshold 11.7)
+- [00:04:06] (f14760) **text_change**: New on-screen text: MVG MEW2KING tu
+- [00:04:08] (f14880) **text_change**: New on-screen text: VGBOOTCAMP / {CIAL THAN)
+- [00:04:11] (f15060) **text_change**: New on-screen text: PARTNERS / TA] | ARMADA
+- [00:04:12] (f15120) **text_change**: New on-screen text: THANKS TO OUR / FOX MVG | MEW2KING IL]
+- [00:04:12] (f15144) **motion_burst**: Large motion for 0.2s (peak 16, 10 hot frames; threshold 11.7)
+- [00:04:14] (f15240) **text_change**: New on-screen text: IAL. THANKS TO Ot / AT LAUREL PARK,
+- [00:04:17] (f15420) **text_change**: New on-screen text: SMASH CON 2018
+- [00:04:18] (f15480) **text_change**: New on-screen text: GRAND FINALS
+- [00:04:21] (f15680) **motion_burst**: Large motion for 0.3s (peak 15, 14 hot frames; threshold 11.7)
+- [00:04:27] (f16027) **motion_burst**: Large motion for 0.2s (peak 14, 8 hot frames; threshold 11.7)
+- [00:04:36] (f16607) **motion_burst**: Large motion for 0.1s (peak 13, 4 hot frames; threshold 11.7)
+- [00:04:57] (f17842) **motion_burst**: Large motion for 0.1s (peak 12, 5 hot frames; threshold 11.7)
+- [00:05:01] (f18060) **text_change**: New on-screen text: Ge BRICKS
+- [00:05:02] (f18120) **text_change**: New on-screen text: VGBOOTCAMP
+- [00:05:03] (f18180) **text_change**: New on-screen text: PARTNERS
+- [00:05:04] (f18240) **text_change**: New on-screen text: FOLLOW @SUPERSMASHCON —
+- [00:05:05] (f18300) **text_change**: New on-screen text: [A] | ARMADA
+- [00:05:06] (f18360) **text_change**: New on-screen text: wa, FINALS / THANKS TO OUR
+- [00:05:07] (f18420) **text_change**: New on-screen text: SMASH CON 2018 / GRAND FINALS
+- [00:05:08] (f18480) **text_change**: New on-screen text: to BRICKS
+- [00:05:26] (f19608) **motion_burst**: Large motion for 0.1s (peak 15, 7 hot frames; threshold 11.7)
+- [00:05:33] (f19988) **motion_burst**: Large motion for 0.2s (peak 15, 12 hot frames; threshold 11.7)
+- [00:05:48] (f20880) **motion_burst**: Large motion for 0.2s (peak 14, 8 hot frames; threshold 11.7)
+- [00:05:49] (f20958) **motion_burst**: Large motion for 0.2s (peak 14, 6 hot frames; threshold 11.7)
+- [00:05:56] (f21370) **motion_burst**: Large motion for 1.0s (peak 14, 13 hot frames; threshold 11.7)
+- [00:06:01] (f21660) **text_change**: New on-screen text: IAL THANKS / PARTNERS
+- [00:06:05] (f21900) **text_change**: New on-screen text: 05:40 ss
+- [00:06:06] (f21960) **text_change**: New on-screen text: AT LAUREL PARK,
+- [00:06:06] (f21988) **motion_burst**: Large motion for 0.1s (peak 13, 4 hot frames; threshold 11.7)
+- [00:06:07] (f22020) **text_change**: New on-screen text: [A] | ARMADA / FOX MVG | MEW2KING IL]
+- [00:06:14] (f22440) **text_change**: New on-screen text: 05:31 88
+- [00:06:15] (f22500) **text_change**: New on-screen text: GRAND FINALS / pxtsenreo ay / | & GEICO
+- [00:06:20] (f22800) **text_change**: New on-screen text: VGBOOTCAMP / PARTNERS
+- [00:06:20] (f22853) **motion_burst**: Large motion for 0.6s (peak 13, 7 hot frames; threshold 11.7)
+- [00:06:21] (f22860) **text_change**: New on-screen text: | FOX MVG | MEW2KING / [A] | ARMADA
+- [00:06:29] (f23348) **motion_burst**: Large motion for 1.0s (peak 14, 11 hot frames; threshold 11.7)
+- [00:06:49] (f24571) **motion_burst**: Large motion for 0.1s (peak 12, 5 hot frames; threshold 11.7)
+- [00:06:50] (f24640) **motion_burst**: Large motion for 0.1s (peak 13, 7 hot frames; threshold 11.7)
+- [00:07:00] (f25200) **text_change**: New on-screen text: THANKS T / MIGAMES AT LAUREL PARK.
+- [00:07:01] (f25260) **text_change**: New on-screen text: PARTNERS
+- [00:07:03] (f25380) **text_change**: New on-screen text: GRAND FINALS / VGBOOTCAMP / FOX MVG | MEW2KING tu
+- [00:07:06] (f25600) **motion_burst**: Large motion for 0.2s (peak 13, 6 hot frames; threshold 11.7)
+- [00:07:07] (f25620) **text_change**: New on-screen text: [A] | ARMADA / FOX MVG |
+- [00:07:08] (f25680) **text_change**: New on-screen text: IAL THANKS 1
+- [00:07:09] (f25740) **text_change**: New on-screen text: PREEENTED BY
+- [00:07:10] (f25800) **text_change**: New on-screen text: MVG | MEW2KING IL
+- [00:07:12] (f25920) **text_change**: New on-screen text: pxtsenreo ay
+- [00:07:14] (f26081) **motion_burst**: Large motion for 0.1s (peak 12, 3 hot frames; threshold 11.7)
+- [00:07:34] (f27290) **motion_burst**: Large motion for 0.1s (peak 13, 4 hot frames; threshold 11.7)
+- [00:07:44] (f27867) **motion_burst**: Large motion for 0.2s (peak 14, 10 hot frames; threshold 11.7)
+- [00:07:50] (f28220) **motion_burst**: Large motion for 0.2s (peak 19, 9 hot frames; threshold 11.7)
+- [00:08:00] (f28800) **text_change**: New on-screen text: 018 = - sae FINALS - FOLLOW
+- [00:08:06] (f29160) **text_change**: New on-screen text: IAL THANKS TO
+- [00:08:07] (f29220) **text_change**: New on-screen text: PARTNERS / = FOX MVG | MEW2KING IL]
+- [00:08:11] (f29460) **text_change**: New on-screen text: VGBOOTCAMP
+- [00:08:14] (f29640) **text_change**: New on-screen text: GRAND FINALS / TA] | ARMADA
+- [00:08:19] (f29940) **text_change**: New on-screen text: ECIAL THANKS
+- [00:08:20] (f30000) **text_change**: New on-screen text: THANKS T / PARTNERS
+- [00:08:21] (f30060) **text_change**: New on-screen text: FOX MEW2KING IL]
+- [00:08:22] (f30120) **loud_peak**: Loud peak -12 dBFS (+12 dB over typical): shout, impact or music hit?
+- [00:08:36] (f31005) **motion_burst**: Large motion for 0.0s (peak 12, 3 hot frames; threshold 11.7)
+- [00:08:44] (f31458) **motion_burst**: Large motion for 0.1s (peak 12, 3 hot frames; threshold 11.7)
+- [00:09:00] (f32441) **motion_burst**: Large motion for 0.1s (peak 12, 3 hot frames; threshold 11.7)
+- [00:09:01] (f32460) **text_change**: New on-screen text: GRAND FINALS
+- [00:09:04] (f32640) **text_change**: New on-screen text: IAL THANKS / PARTNERS
+- [00:09:07] (f32820) **text_change**: New on-screen text: Tall ARMADA a
+- [00:09:08] (f32880) **text_change**: New on-screen text: THANKS TO OUR / [A] | ARMADA f
+- [00:09:11] (f33114) **motion_burst**: Large motion for 0.2s (peak 14, 7 hot frames; threshold 11.7)
+- [00:09:12] (f33120) **text_change**: New on-screen text: VGBOOTCAMP / | _ Fox | Mew2KING
+- [00:09:13] (f33180) **text_change**: New on-screen text: 02:32 88
+- [00:09:14] (f33240) **text_change**: New on-screen text: FOX MVG | MEW2KING IL]
+- [00:09:17] (f33420) **text_change**: New on-screen text: PARTNERS
+- [00:09:17] (f33477) **motion_burst**: Large motion for 0.1s (peak 13, 4 hot frames; threshold 11.7)
+- [00:09:26] (f33961) **motion_burst**: Large motion for 0.2s (peak 15, 10 hot frames; threshold 11.7)
+- [00:09:28] (f34104) **motion_burst**: Large motion for 7.2s (peak 24, 189 hot frames; threshold 11.7)
+- [00:09:35] (f34536) **scene_change**: Scene change (picture jumps to different content)
+- [00:09:47] (f35222) **motion_burst**: Large motion for 0.7s (peak 39, 4 hot frames; threshold 11.7)
+- [00:10:00] (f36000) **text_change**: New on-screen text: IAL THANKS
+- [00:10:01] (f36060) **text_change**: New on-screen text: VGBOOTCAMP
+- [00:10:04] (f36240) **motion_burst**: Large motion for 0.9s (peak 13, 7 hot frames; threshold 11.7)
+- [00:10:04] (f36240) **text_change**: New on-screen text: FOX MVG | MEW2KING IL]
+- [00:10:05] (f36300) **text_change**: New on-screen text: THANKS TO OUR. / COMBAT ARENA
+- [00:10:06] (f36360) **text_change**: New on-screen text: a FINALS
+- [00:10:07] (f36420) **text_change**: New on-screen text: 07:40 71
+- [00:10:08] (f36480) **text_change**: New on-screen text: TA] | ARMADA
+- [00:10:10] (f36600) **text_change**: New on-screen text: GRAND FINALS
+- [00:10:32] (f37968) **motion_burst**: Large motion for 0.1s (peak 13, 7 hot frames; threshold 11.7)
+- [00:10:39] (f38366) **motion_burst**: Large motion for 0.2s (peak 20, 8 hot frames; threshold 11.7)
+- [00:10:55] (f39356) **motion_burst**: Large motion for 0.3s (peak 14, 8 hot frames; threshold 11.7)
+- [00:11:00] (f39600) **text_change**: New on-screen text: COMBAT ARENA
+- [00:11:01] (f39660) **text_change**: New on-screen text: KS TO OUR
+- [00:11:02] (f39740) **motion_burst**: Large motion for 0.1s (peak 13, 3 hot frames; threshold 11.7)
+- [00:11:03] (f39780) **text_change**: New on-screen text: GRAND FINALS / 06:44 71
+- [00:11:04] (f39840) **text_change**: New on-screen text: FOX MVG | MEW2KING IL]
+- [00:11:05] (f39955) **motion_burst**: Large motion for 0.2s (peak 15, 7 hot frames; threshold 11.7)
+- [00:11:06] (f39960) **text_change**: New on-screen text: SMASH CON 2018 / IAL THANKS
+- [00:11:07] (f40020) **text_change**: New on-screen text: PARTNERS / Fox | MEW2KING
+- [00:11:09] (f40140) **text_change**: New on-screen text: GAMES, REPAIR, TOYS, & MORE.
+- [00:11:10] (f40200) **text_change**: New on-screen text: ENERATIONS / [A] | ARMADA
+- [00:11:16] (f40560) **loud_peak**: Loud peak -11 dBFS (+14 dB over typical): shout, impact or music hit?
+- [00:11:37] (f41835) **motion_burst**: Large motion for 0.2s (peak 14, 9 hot frames; threshold 11.7)
+- [00:11:48] (f42533) **motion_burst**: Large motion for 1.1s (peak 20, 11 hot frames; threshold 11.7)
+- [00:11:58] (f43102) **motion_burst**: Large motion for 0.2s (peak 14, 9 hot frames; threshold 11.7)
+- [00:12:01] (f43260) **text_change**: New on-screen text: GRAND FINALS / VGBOOTCAMP / PARTNERS
+- [00:12:03] (f43380) **text_change**: New on-screen text: 018 sae FINALS FOLLOW
+- [00:12:04] (f43440) **text_change**: New on-screen text: rox | Mi
+- [00:12:05] (f43500) **text_change**: New on-screen text: IAL THANKS / ENERATIONS / GAMES, REPAIR, TOYS, & MORE
+- [00:12:06] (f43560) **text_change**: New on-screen text: [A] | ARMADA
+- [00:12:09] (f43740) **text_change**: New on-screen text: THANKS TO OUR / FOX MVG | MEW2KING IL]
+- [00:12:12] (f43965) **motion_burst**: Large motion for 0.1s (peak 38, 7 hot frames; threshold 11.7)
+- [00:12:14] (f44040) **text_change**: New on-screen text: GRAND FINALS / PARTNERS / to BRICKS
+- [00:12:15] (f44131) **scene_change**: Scene change (picture jumps to different content)
+- [00:12:17] (f44220) **text_change**: New on-screen text: VGBOOTCAMP
+- [00:12:18] (f44326) **scene_change**: Scene change (picture jumps to different content)
+- [00:12:45] (f45957) **motion_burst**: Large motion for 0.7s (peak 34, 4 hot frames; threshold 11.7)
+- [00:13:00] (f46800) **text_change**: New on-screen text: ECIAL THANKS
+- [00:13:05] (f47100) **text_change**: New on-screen text: 2) Fox A
+- [00:13:06] (f47160) **text_change**: New on-screen text: GRAND FINALS / eo BRICKS
+- [00:13:10] (f47400) **text_change**: New on-screen text: VGBOOTCAMP
+- [00:13:11] (f47460) **text_change**: New on-screen text: SUPER SMASH CON 2018 / PARTNERS / tw BRICKS / 2 FOX MVG | MEW2KING IL] (iu)
+- [00:13:12] (f47520) **text_change**: New on-screen text: TA] |ARMADA
+- [00:13:15] (f47700) **text_change**: New on-screen text: IAL THANKS TO Ot / MIGAMES AT LAUREL PARK.
+- [00:13:17] (f47820) **text_change**: New on-screen text: 07:29 61
+- [00:13:39] (f49170) **loud_peak**: Loud peak -12 dBFS (+12 dB over typical): shout, impact or music hit?
+- [00:13:39] (f49179) **motion_burst**: Large motion for 0.3s (peak 26, 16 hot frames; threshold 11.7)
+- [00:14:02] (f50520) **text_change**: New on-screen text: VGBOOTCAMP
+- [00:14:03] (f50580) **text_change**: New on-screen text: 2 FOX MVG | MEW2KING IL]
+- [00:14:04] (f50640) **text_change**: New on-screen text: PARTNERS / TA] | ARMADA
+- [00:14:06] (f50760) **text_change**: New on-screen text: THANKS TO OUR
+- [00:14:07] (f50820) **text_change**: New on-screen text: [ y AN [A] | ARMADA ! 2 Fox —— {ul
+- [00:14:09] (f50940) **text_change**: New on-screen text: 06:37 61 / IAL THANKS TO
+- [00:14:10] (f51000) **text_change**: New on-screen text: XANNOU AT LAUREL PARK,
+- [00:14:11] (f51060) **text_change**: New on-screen text: GRAND FINALS / MIGAMES AT LAUREL PARK.
+- [00:14:13] (f51190) **scene_change**: Scene change (picture jumps to different content)
+- [00:14:57] (f53879) **motion_burst**: Large motion for 0.3s (peak 27, 18 hot frames; threshold 11.7)
+- [00:15:00] (f54000) **text_change**: New on-screen text: 05:46 61 / TAL "ARM
+- [00:15:03] (f54180) **text_change**: New on-screen text: GRAND FINALS / TA] ARMADA
+- [00:15:04] (f54240) **text_change**: New on-screen text: Yer BRICKS
+- [00:15:05] (f54300) **text_change**: New on-screen text: 2 rox. =< | MEW2KING IL]
+- [00:15:06] (f54360) **text_change**: New on-screen text: IAL THANKS / AT LAUREL PARK.
+- [00:15:07] (f54420) **text_change**: New on-screen text: VGBOOTCAMP / PARTNERS
+- [00:15:09] (f54540) **text_change**: New on-screen text: 05:37 63
+- [00:15:14] (f54840) **text_change**: New on-screen text: MVG | MEW2KING
+- [00:15:48] (f56905) **motion_burst**: Large motion for 0.0s (peak 13, 3 hot frames; threshold 11.7)
+- [00:16:00] (f57600) **text_change**: New on-screen text: THANKS T / AT LAUREL PARK. / Dip FOX MVG | IL] / [A] |ARMADA
+- [00:16:00] (f57631) **motion_burst**: Large motion for 0.3s (peak 25, 16 hot frames; threshold 11.7)
+- [00:16:02] (f57720) **text_change**: New on-screen text: MVG | MEW2KING IL]
+- [00:16:03] (f57780) **text_change**: New on-screen text: PARTNERS
+- [00:16:07] (f58020) **text_change**: New on-screen text: GRAND FINALS
+- [00:16:09] (f58140) **text_change**: New on-screen text: 04:37 61
+- [00:16:10] (f58200) **text_change**: New on-screen text: VGBOOTCAMP
+- [00:16:13] (f58380) **text_change**: New on-screen text: SUPER SMASH CON 2018
+- [00:16:15] (f58500) **text_change**: New on-screen text: 2 FOX MVG | MEW2KING /
+- [00:16:35] (f59751) **scene_change**: Scene change (picture jumps to different content)
+- [00:17:01] (f61260) **text_change**: New on-screen text: VGBOOTCAMP / PARTNERS
+- [00:17:02] (f61320) **text_change**: New on-screen text: PRESENTED BY
+- [00:17:04] (f61444) **motion_burst**: Large motion for 0.1s (peak 36, 7 hot frames; threshold 11.7)
+- [00:17:05] (f61500) **text_change**: New on-screen text: 03:42 56
+- [00:17:07] (f61675) **scene_change**: Scene change (picture jumps to different content)
+- [00:17:08] (f61686) **motion_burst**: Large motion for 0.2s (peak 15, 7 hot frames; threshold 11.7)
+- [00:17:12] (f61947) **motion_burst**: Large motion for 2.4s (peak 21, 73 hot frames; threshold 11.7)
+- [00:17:14] (f62095) **scene_change**: Scene change (picture jumps to different content)
+- [00:17:19] (f62340) **text_change**: New on-screen text: ival test! 9 <@ack
+- [00:17:20] (f62400) **text_change**: New on-screen text: survival test! / READY TO FIGH i
+- [00:17:21] (f62460) **text_change**: New on-screen text: READ Y T
+- [00:17:23] (f62580) **text_change**: New on-screen text: VS. Mode / Trophies / Solo Smash!
+- [00:17:24] (f62640) **text_change**: New on-screen text: name entry must
+- [00:17:42] (f63774) **motion_burst**: Large motion for 0.7s (peak 34, 4 hot frames; threshold 11.7)
+- [00:18:00] (f64800) **text_change**: New on-screen text: THANKS TO OUR / FOX MVG | tu
+- [00:18:01] (f64860) **loud_peak**: Loud peak -12 dBFS (+13 dB over typical): shout, impact or music hit?
+- [00:18:01] (f64885) **motion_burst**: Large motion for 0.4s (peak 29, 23 hot frames; threshold 11.7)
+- [00:18:03] (f65016) **text_change**: New on-screen text: 07:39 96
+- [00:18:06] (f65160) **text_change**: New on-screen text: 07:37 56
+- [00:18:07] (f65220) **text_change**: New on-screen text: 4 BRICKS
+- [00:18:09] (f65340) **text_change**: New on-screen text: GRAND FINALS / VGBOOTCAMP / PARTNERS / [Al | ARMADA / FOX MVG | MEW2KING [L]
+- [00:18:10] (f65400) **text_change**: New on-screen text: SUPER SMASH CON 2018
+- [00:18:13] (f65580) **text_change**: New on-screen text: 07:30 58
+- [00:18:14] (f65640) **text_change**: New on-screen text: 07:29 58
+- [00:19:01] (f68460) **text_change**: New on-screen text: 06:42 58 / VGBOOTCAMP
+- [00:19:03] (f68580) **text_change**: New on-screen text: tw BRICKS / [Al | ARMADA / FOX MVG | MEW2KING
+- [00:19:04] (f68640) **text_change**: New on-screen text: 06:39 58 / 135% 474%
+- [00:19:05] (f68700) **text_change**: New on-screen text: GRAND FINALS
+- [00:19:06] (f68760) **text_change**: New on-screen text: PARTNERS / eo BRICKS
+- [00:19:07] (f68820) **text_change**: New on-screen text: 06:36 59
+- [00:19:09] (f68940) **text_change**: New on-screen text: |e PAS) MVG | MEW2KING
+- [00:19:10] (f69000) **text_change**: New on-screen text: SUPER SMASH CON 2018 / FOLLOW @SUPERSMASHCON
+- [00:19:29] (f70199) **motion_burst**: Large motion for 0.3s (peak 25, 17 hot frames; threshold 11.7)
+- [00:20:00] (f72000) **text_change**: New on-screen text: 05:43 59
+- [00:20:01] (f72060) **text_change**: New on-screen text: ‘SPECIAL THANKS 1¢ / PARTNERS
+- [00:20:04] (f72240) **text_change**: New on-screen text: 05:39 58
+- [00:20:06] (f72360) **text_change**: New on-screen text: [ SMASH CON 2018 / VGBOOTCAMP
+- [00:20:07] (f72420) **text_change**: New on-screen text: MIGAMES AT LAUREL PARK.
+- [00:20:09] (f72540) **text_change**: New on-screen text: IAL. THANKS TO OUR / | WARES FOX MVG | MEW2KING [L] / 2 IALLARMADA__f y
+- [00:20:10] (f72600) **text_change**: New on-screen text: GRAND FINALS / [Al] ARMADA
+- [00:20:12] (f72720) **text_change**: New on-screen text: FOX MVG | iia)
+- [00:20:18] (f73110) **loud_peak**: Loud peak -10 dBFS (+15 dB over typical): shout, impact or music hit?
+- [00:20:19] (f73155) **motion_burst**: Large motion for 1.0s (peak 15, 17 hot frames; threshold 11.7)
+- [00:20:43] (f74615) **motion_burst**: Large motion for 1.0s (peak 17, 15 hot frames; threshold 11.7)
+- [00:20:58] (f75521) **motion_burst**: Large motion for 0.1s (peak 14, 3 hot frames; threshold 11.7)
+- [00:21:02] (f75720) **text_change**: New on-screen text: GRAND FINALS / AT LAUREL PARK. / | MVG | MEW2KING IL]
+- [00:21:03] (f75780) **text_change**: New on-screen text: IAL THANKS
+- [00:21:04] (f75840) **text_change**: New on-screen text: 04:39 58 / ci 2 ARMADA
+- [00:21:07] (f76020) **text_change**: New on-screen text: [A] | ARMADA
+- [00:21:08] (f76080) **text_change**: New on-screen text: VGBOOTCAMP
+- [00:21:09] (f76140) **text_change**: New on-screen text: rox | (11
+- [00:21:10] (f76200) **text_change**: New on-screen text: 04:33 56
+- [00:21:11] (f76260) **text_change**: New on-screen text: FOX MVG rT =
+- [00:21:13] (f76393) **motion_burst**: Large motion for 1.0s (peak 32, 6 hot frames; threshold 11.7)
+- [00:21:14] (f76440) **loud_peak**: Loud peak -12 dBFS (+13 dB over typical): shout, impact or music hit?
+- [00:21:21] (f76914) **scene_change**: Scene change (picture jumps to different content)
+- [00:21:30] (f77447) **scene_change**: Scene change (picture jumps to different content)
+- [00:22:03] (f79380) **text_change**: New on-screen text: ie = Poach
+- [00:22:04] (f79440) **text_change**: New on-screen text: READY TO
+- [00:22:07] (f79620) **text_change**: New on-screen text: SUPER SI / (4 at test! / 10 FIGHT
+- [00:22:09] (f79740) **text_change**: New on-screen text: LO FIGHT
+- [00:22:10] (f79800) **text_change**: New on-screen text: survival test!
+- [00:22:14] (f80040) **text_change**: New on-screen text: FOLLOW @SUI / val test!) <
+- [00:22:17] (f80220) **text_change**: New on-screen text: READY 70 FIGHT
+- [00:22:24] (f80640) **text_change**: New on-screen text: | [Peach
+- [00:22:48] (f82090) **motion_burst**: Large motion for 0.0s (peak 34, 3 hot frames; threshold 11.7)
+- [00:23:01] (f82860) **text_change**: New on-screen text: GRAND FINALS / VGBOOTCAMP / PARTNERS / 15% ee BRICKS / [A] | ARMADA IL] / Q FOX MVG | MEW2KING ILI
+- [00:23:02] (f82920) **text_change**: New on-screen text: SUPER SMASH CON 2018 / 07:46 84
+- [00:23:03] (f82980) **text_change**: New on-screen text: IAL THANKS / AN ARMADA iu FOX BEET |
+- [00:23:04] (f83040) **text_change**: New on-screen text: MIGAMES AT LAUREL PARK, / my AN ARMADA [L]_ Q MVG | MEW2KING IL] AZT |
+- [00:23:07] (f83220) **text_change**: New on-screen text: 07:41 83
+- [00:23:09] (f83340) **text_change**: New on-screen text: 07:39 83 / The YA0%'\ 36%
+- [00:23:14] (f83640) **text_change**: New on-screen text: GRAND FINALS / VGBOOTCAMP / PARTNERS / © 7 Fox MVG | MEW2KING / [A] | ARMADA IL]
+- [00:23:18] (f83880) **text_change**: New on-screen text: IAL. THANKS TO
+- [00:23:50] (f85829) **scene_change**: Scene change (picture jumps to different content)
+- [00:23:59] (f86361) **scene_change**: Scene change (picture jumps to different content)
+- [00:24:00] (f86400) **text_change**: New on-screen text: Q Fox MvG | |
+- [00:24:00] (f86439) **motion_burst**: Large motion for 0.2s (peak 17, 7 hot frames; threshold 11.7)
+- [00:24:01] (f86460) **text_change**: New on-screen text: FOLLOW ‘@SUPERSMASHCON / 06:47 83
+- [00:24:02] (f86520) **text_change**: New on-screen text: VGBOOTCAMP
+- [00:24:03] (f86580) **text_change**: New on-screen text: THANKS TO.
+- [00:24:04] (f86640) **text_change**: New on-screen text: mY AN [A] | ARMADA Oy) FOX MVG | MEW2KING ILI EET | |
+- [00:24:06] (f86760) **text_change**: New on-screen text: GRAND FINALS / PARTNERS
+- [00:24:07] (f86820) **text_change**: New on-screen text: {CIAL THANKS
+- [00:24:10] (f87000) **text_change**: New on-screen text: © 7 Fox MVG | MEW2KING / [A] | ARMADA IL]
+- [00:24:33] (f88410) **scene_change**: Scene change (picture jumps to different content)
+- [00:25:00] (f90000) **text_change**: New on-screen text: ARMADA IL]
+- [00:25:02] (f90120) **text_change**: New on-screen text: © Fox MVG | MEW2KING IL] |
+- [00:25:07] (f90420) **text_change**: New on-screen text: VGBOOTCAMP
+- [00:25:10] (f90600) **text_change**: New on-screen text: 05:38 64
+- [00:25:11] (f90660) **text_change**: New on-screen text: IAL THANKS TO / PARTNERS
+- [00:25:13] (f90780) **text_change**: New on-screen text: [A] | ARMADA IL]
+- [00:25:14] (f90840) **text_change**: New on-screen text: 05:34 84
+- [00:25:15] (f90900) **text_change**: New on-screen text: 54 % 112% / Q_ FOX MVG | MEW2KING ILI (tim
+- [00:26:00] (f93600) **text_change**: New on-screen text: 04:48 83
+- [00:26:02] (f93720) **text_change**: New on-screen text: GRAND FINALS
+- [00:26:02] (f93753) **motion_burst**: Large motion for 0.2s (peak 20, 6 hot frames; threshold 11.7)
+- [00:26:03] (f93780) **text_change**: New on-screen text: PARTNERS
+- [00:26:04] (f93840) **text_change**: New on-screen text: 04:44 84
+- [00:26:05] (f93900) **text_change**: New on-screen text: [A] | ARMADA IL]
+- [00:26:09] (f94187) **scene_change**: Scene change (picture jumps to different content)
+- [00:26:09] (f94187) **text_change**: New on-screen text: 04:39 04
+- [00:26:11] (f94260) **text_change**: New on-screen text: © MVG | MEW2KING / |
+- [00:26:12] (f94320) **text_change**: New on-screen text: GRAND ule / 04:36 83 / VGBOOTCAMP / {CIAL THANKS TO / IADA IL]
+- [00:26:18] (f94724) **motion_burst**: Large motion for 0.9s (peak 21, 9 hot frames; threshold 11.7)
+- [00:27:00] (f97200) **text_change**: New on-screen text: 03:48 84
+- [00:27:04] (f97440) **text_change**: New on-screen text: VGBOOTCAMP
+- [00:27:05] (f97524) **text_change**: New on-screen text: 03:43 44
+- [00:27:06] (f97560) **text_change**: New on-screen text: [A] | ARMADA IL]
+- [00:27:07] (f97620) **text_change**: New on-screen text: GRAND FINALS
+- [00:27:08] (f97680) **text_change**: New on-screen text: PARTNERS / MVG | MEW2KING IL] ls] |
+- [00:27:11] (f97860) **text_change**: New on-screen text: 03:37 84 / THANKS TO OUR
+- [00:27:13] (f97980) **text_change**: New on-screen text: mY AN ARMADA (°) O__ FOX MVG | MEW2KING u |
+- [00:27:59] (f100780) **motion_burst**: Large motion for 0.0s (peak 26, 3 hot frames; threshold 11.7)
+- [00:28:00] (f100800) **text_change**: New on-screen text: 02:49 19 / [A] | ARMADA IL]
+- [00:28:01] (f100860) **text_change**: New on-screen text: IAL THANKS
+- [00:28:02] (f100920) **text_change**: New on-screen text: SPECIAL 10 0 / Q Fox | MEW2KING | |
+- [00:28:02] (f100933) **motion_burst**: Large motion for 0.1s (peak 12, 4 hot frames; threshold 11.7)
+- [00:28:03] (f101023) **motion_burst**: Large motion for 0.6s (peak 13, 16 hot frames; threshold 11.7)
+- [00:28:15] (f101700) **text_change**: New on-screen text: 4-man survival test! / PRESS™ TART
+- [00:28:17] (f101820) **text_change**: New on-screen text: ‘SUPER SI / mental to | / READY TO FIGHT
+- [00:28:23] (f102180) **text_change**: New on-screen text: STAGE SEL
+- [00:28:26] (f102360) **text_change**: New on-screen text: 4=man si test! / 10 FIGHT / th [Poach
+- [00:28:29] (f102540) **text_change**: New on-screen text: NOW LOAOING
+- [00:28:32] (f102727) **motion_burst**: Large motion for 0.0s (peak 34, 3 hot frames; threshold 11.7)
+- [00:29:00] (f104400) **text_change**: New on-screen text: ENERATIONS / GAMES, REPAIR, TOYS, & MORE.
+- [00:29:01] (f104460) **text_change**: New on-screen text: [A] | ARMADA IL]
+- [00:29:04] (f104640) **text_change**: New on-screen text: ‘SPECIAL THANKS TO Ot
+- [00:29:05] (f104700) **text_change**: New on-screen text: 07:27 79
+- [00:29:07] (f104820) **text_change**: New on-screen text: FOX MVG | MEW2KING
+- [00:29:09] (f104940) **text_change**: New on-screen text: Re BRICKS
+- [00:29:10] (f105000) **text_change**: New on-screen text: THANKS TO OUR
+- [00:29:11] (f105060) **text_change**: New on-screen text: VGBOOTCAMP / PARTNERS
+- [00:29:48] (f107338) **scene_change**: Scene change (picture jumps to different content)
+- [00:29:49] (f107368) **motion_burst**: Large motion for 0.3s (peak 24, 15 hot frames; threshold 11.7)
+- [00:30:00] (f108000) **text_change**: New on-screen text: 06:32 81 / IAL THANKS
+- [00:30:03] (f108180) **text_change**: New on-screen text: VGBOOTCAMP / THANKS TO OUR / PARTNERS
+- [00:30:05] (f108300) **text_change**: New on-screen text: GRAND FINALS / © BRICKS
+- [00:30:06] (f108360) **text_change**: New on-screen text: [A] | ARMADA IL]
+- [00:30:10] (f108600) **text_change**: New on-screen text: 06122 79
+- [00:30:10] (f108624) **motion_burst**: Large motion for 0.3s (peak 26, 17 hot frames; threshold 11.7)
+- [00:30:11] (f108660) **text_change**: New on-screen text: A. MVG | MEW2KING IL]
+- [00:30:12] (f108720) **text_change**: New on-screen text: [ALLARMADA
+- [00:30:14] (f108840) **text_change**: New on-screen text: MIGAMES AT LAUREL PARK. / FOX MVG | MEW2KING | ARMADA ILI ZY 4
+- [00:31:01] (f111660) **text_change**: New on-screen text: tw BRICKS
+- [00:31:01] (f111710) **motion_burst**: Large motion for 0.2s (peak 14, 7 hot frames; threshold 11.7)
+- [00:31:02] (f111720) **text_change**: New on-screen text: MVG | MEW2KING IL]
+- [00:31:06] (f111960) **text_change**: New on-screen text: THANKS TO OUR / eo BRICKS
+- [00:31:07] (f112020) **text_change**: New on-screen text: SUPER SMASH CON 2018 / FOLLOW @SUPERSMASHCON
+- [00:31:08] (f112080) **text_change**: New on-screen text: VGBOOTCAMP / PARTNERS
+- [00:31:10] (f112200) **text_change**: New on-screen text: GRAND FINALS / “96% 144 / MIGAMES AT LAUREL PARK
+- [00:31:13] (f112380) **text_change**: New on-screen text: IAL THANKS
+- [00:31:15] (f112500) **text_change**: New on-screen text: FOX MVG | MEW2KING [LI / [A] | ARMADA IL!
+- [00:31:16] (f112587) **motion_burst**: Large motion for 0.0s (peak 13, 3 hot frames; threshold 11.7)
+- [00:32:01] (f115260) **text_change**: New on-screen text: VGBOOTCAMP / [Al | ARMADA
+- [00:32:02] (f115320) **text_change**: New on-screen text: FOLLOW @SUPERSMASHCON | / SUPER SMASH CON 2018 / GRAND FINALS / PARTNERS
+- [00:32:05] (f115500) **text_change**: New on-screen text: 04:27 7a / MIGAMES AT LAUREL PARK. / RR rox FOX 1) ARMADA ZW y
+- [00:32:06] (f115560) **text_change**: New on-screen text: 04:26 79
+- [00:32:07] (f115657) **scene_change**: Scene change (picture jumps to different content)
+- [00:32:10] (f115800) **text_change**: New on-screen text: 04:22 81
+- [00:32:12] (f115920) **text_change**: New on-screen text: FOX MVG | MEW2KING IL]
+- [00:32:14] (f116040) **text_change**: New on-screen text: =A Fox | MEw2KinG / [A] | ARMADA IL]
+- [00:32:15] (f116100) **text_change**: New on-screen text: GRAND FINALS
+- [00:33:00] (f118800) **text_change**: New on-screen text: 03:32 a1 / MIGAMES AT LAUREL PARK,
+- [00:33:01] (f118860) **text_change**: New on-screen text: IAL THANKS 1 / XANNOU AT LAUREL PARK.
+- [00:33:02] (f118920) **text_change**: New on-screen text: GRAND FINALS / 03:30 81 / THANKS T
+- [00:33:04] (f119040) **text_change**: New on-screen text: VGBOOTCAMP
+- [00:33:05] (f119100) **text_change**: New on-screen text: 03:27 81
+- [00:33:06] (f119160) **text_change**: New on-screen text: | Fox | MEW2KING IL]
+- [00:33:07] (f119220) **text_change**: New on-screen text: [A] | ARMADA IL]
+- [00:33:09] (f119340) **text_change**: New on-screen text: PARTNERS
+- [00:33:38] (f121136) **scene_change**: Scene change (picture jumps to different content)
+- [00:33:47] (f121645) **scene_change**: Scene change (picture jumps to different content)
+- [00:33:49] (f121741) **motion_burst**: Large motion for 2.2s (peak 30, 27 hot frames; threshold 11.7)
+- [00:33:52] (f121979) **scene_change**: Scene change (picture jumps to different content)
+- [00:33:53] (f121982) **motion_burst**: Large motion for 5.1s (peak 26, 152 hot frames; threshold 11.7)
+- [00:33:58] (f122288) **scene_change**: Scene change (picture jumps to different content)
+- [00:34:09] (f122940) **text_change**: New on-screen text: #SSC2018 / MELEE SINGLES GRAND FINALS / SUPER SMASH CON 2018
+- [00:34:22] (f123720) **text_change**: New on-screen text: #SSC2018
+- [00:34:23] (f123780) **text_change**: New on-screen text: MELEE SINGLES GRAND FINALS
+- [00:34:33] (f124408) **scene_change**: Scene change (picture jumps to different content)
+- [00:34:36] (f124560) **text_change**: New on-screen text: #SSC2018 / MELEE SINGLES GRAND FINALS
+- [00:34:40] (f124800) **text_change**: New on-screen text: Stock Battle
+- [00:34:44] (f125040) **text_change**: New on-screen text: WINNER) 7
+- [00:34:50] (f125400) **text_change**: New on-screen text: survival test! / READ Y bis Toi T
+- [00:34:51] (f125460) **text_change**: New on-screen text: READY FIGHT
+- [00:35:01] (f126060) **text_change**: New on-screen text: SUPER SM.
+- [00:35:03] (f126180) **text_change**: New on-screen text: (4 4-man survival test!
+- [00:35:05] (f126300) **text_change**: New on-screen text: iy FIGHT
+- [00:35:06] (f126360) **text_change**: New on-screen text: (a 4=man su / READY 70 FIGHT
+- [00:35:08] (f126480) **text_change**: New on-screen text: [Poach |
+- [00:35:14] (f126840) **text_change**: New on-screen text: ‘70 FIGHT
+- [00:35:18] (f127080) **text_change**: New on-screen text: survival test!
+- [00:35:19] (f127140) **text_change**: New on-screen text: READY TO FIGHT
+- [00:36:00] (f129600) **text_change**: New on-screen text: NOW LOADING
+- [00:36:02] (f129720) **text_change**: New on-screen text: GRAND FINALS / VGBOOTCAMP / ‘SPECIAL THANKS TO OUR / PARTNERS / MIGAMES AT LAUREL PARK. / A FOX MVG | MEW2KING IL] / [A] | ARMADA IL]
+- [00:36:02] (f129775) **motion_burst**: Large motion for 0.7s (peak 39, 4 hot frames; threshold 11.7)
+- [00:36:04] (f129840) **text_change**: New on-screen text: TAL| ARMADA
+- [00:36:05] (f129900) **text_change**: New on-screen text: pxesenreo ay
+- [00:36:07] (f130051) **motion_burst**: Large motion for 0.7s (peak 15, 12 hot frames; threshold 11.7)
+- [00:36:09] (f130140) **text_change**: New on-screen text: IAL THANKS 1¢
+- [00:36:10] (f130200) **text_change**: New on-screen text: ‘OLLOW @SUI
+- [00:36:11] (f130260) **text_change**: New on-screen text: CON 2018
+- [00:36:12] (f130367) **motion_burst**: Large motion for 0.1s (peak 12, 3 hot frames; threshold 11.7)
+- [00:36:14] (f130477) **motion_burst**: Large motion for 0.0s (peak 12, 3 hot frames; threshold 11.7)
+- [00:36:16] (f130560) **text_change**: New on-screen text: GRAND FINALS / PRESENTEO BY
+- [00:36:37] (f131851) **motion_burst**: Large motion for 0.1s (peak 13, 4 hot frames; threshold 11.7)
+- [00:36:57] (f133043) **motion_burst**: Large motion for 0.9s (peak 13, 6 hot frames; threshold 11.7)
+- [00:37:02] (f133320) **text_change**: New on-screen text: PRESENTED BY
+- [00:37:03] (f133380) **text_change**: New on-screen text: ann. Ui 00 58)
+- [00:37:05] (f133500) **text_change**: New on-screen text: VGBOOTCAMP / FOX MVG | MEW2KING IL]
+- [00:37:06] (f133560) **text_change**: New on-screen text: SUPER SMASH CON 2018 / FOLLOW @SUPERSMASHCON
+- [00:37:09] (f133740) **text_change**: New on-screen text: WES ECO |
+- [00:37:11] (f133860) **text_change**: New on-screen text: GRAND FINALS
+- [00:37:14] (f134040) **text_change**: New on-screen text: PARTNERS
+- [00:37:15] (f134100) **text_change**: New on-screen text: All ARMADA
+- [00:37:33] (f135215) **motion_burst**: Large motion for 0.2s (peak 14, 10 hot frames; threshold 11.7)
+- [00:37:46] (f135984) **motion_burst**: Large motion for 0.1s (peak 13, 4 hot frames; threshold 11.7)
+- [00:38:05] (f137100) **text_change**: New on-screen text: GRAND FINALS / VGBOOTCAMP
+- [00:38:06] (f137160) **text_change**: New on-screen text: FOX MVG | = / [A] | ARMADA 7
+- [00:38:08] (f137326) **motion_burst**: Large motion for 0.2s (peak 16, 14 hot frames; threshold 11.7)
+- [00:38:11] (f137460) **text_change**: New on-screen text: SMASH CON 208
+- [00:38:17] (f137820) **text_change**: New on-screen text: PARTNERS
+- [00:38:18] (f137880) **text_change**: New on-screen text: GRAND FINALS
+- [00:38:19] (f137940) **text_change**: New on-screen text: [Al] ARMADA [L]_ / FOX MVG | MEW2KING IL]
+- [00:38:23] (f138180) **text_change**: New on-screen text: IAL THANKS 1
+- [00:38:25] (f138300) **text_change**: New on-screen text: VGBOOTCAMP / ENERATIONS / GAMES, REPAIR, TOYS, & MORE,
+- [00:38:54] (f140065) **motion_burst**: Large motion for 0.2s (peak 14, 11 hot frames; threshold 11.7)
+- [00:39:00] (f140441) **motion_burst**: Large motion for 0.6s (peak 15, 11 hot frames; threshold 11.7)
+- [00:39:01] (f140460) **text_change**: New on-screen text: THANKS T / [A] | ARMADA IL]
+- [00:39:02] (f140520) **text_change**: New on-screen text: PARTNERS
+- [00:39:03] (f140580) **text_change**: New on-screen text: CON 2018 / VGBOOTCAMP
+- [00:39:04] (f140640) **text_change**: New on-screen text: [A]| ARMADA V4
+- [00:39:06] (f140760) **text_change**: New on-screen text: FOX MVG | MEW2KING
+- [00:39:07] (f140820) **text_change**: New on-screen text: All ARMADA
+- [00:39:11] (f141060) **text_change**: New on-screen text: GRAND FINALS
+- [00:39:13] (f141180) **text_change**: New on-screen text: FOX MVG ow 1
+- [00:39:22] (f141770) **motion_burst**: Large motion for 0.1s (peak 14, 7 hot frames; threshold 11.7)
+- [00:39:39] (f142749) **motion_burst**: Large motion for 0.1s (peak 14, 5 hot frames; threshold 11.7)
+- [00:39:41] (f142903) **motion_burst**: Large motion for 0.0s (peak 12, 3 hot frames; threshold 11.7)
+- [00:39:53] (f143596) **motion_burst**: Large motion for 0.2s (peak 15, 9 hot frames; threshold 11.7)
+- [00:40:00] (f144000) **text_change**: New on-screen text: PRESENTED BY
+- [00:40:02] (f144120) **text_change**: New on-screen text: GRAND FINALS / VGBOOTCAMP
+- [00:40:03] (f144180) **text_change**: New on-screen text: FOX MVG | MEW2KING IL]
+- [00:40:05] (f144300) **text_change**: New on-screen text: PARTNERS
+- [00:40:10] (f144600) **text_change**: New on-screen text: | ARMADA |
+- [00:40:13] (f144780) **text_change**: New on-screen text: SUPER CON 2018 / PRESENTED BY
+- [00:40:14] (f144840) **text_change**: New on-screen text: ENERATIONS / GAMES, REPAIR, TOYS, & MORE.
+- [00:40:16] (f144960) **text_change**: New on-screen text: FOX MVG | MEW2KING IL]
+- [00:40:18] (f145130) **motion_burst**: Large motion for 0.1s (peak 13, 3 hot frames; threshold 11.7)
+- [00:40:20] (f145259) **motion_burst**: Large motion for 0.2s (peak 16, 6 hot frames; threshold 11.7)
+- [00:40:29] (f145770) **motion_burst**: Large motion for 0.7s (peak 15, 24 hot frames; threshold 11.7)
+- [00:40:35] (f146122) **motion_burst**: Large motion for 0.2s (peak 20, 14 hot frames; threshold 11.7)
+- [00:40:54] (f147240) **motion_burst**: Large motion for 0.1s (peak 16, 6 hot frames; threshold 11.7)
+- [00:41:00] (f147616) **motion_burst**: Large motion for 0.1s (peak 13, 3 hot frames; threshold 11.7)
+- [00:41:06] (f148007) **motion_burst**: Large motion for 0.9s (peak 15, 10 hot frames; threshold 11.7)
+- [00:41:07] (f148020) **text_change**: New on-screen text: FOX MVG | MEW2KING / [A] | ARMADA IL]
+- [00:41:08] (f148080) **text_change**: New on-screen text: 5'5 59 aie / ENERATIONS / GAMES, REPAIR, TOYS, & MORE,
+- [00:41:09] (f148140) **text_change**: New on-screen text: THANKS TO OUR
+- [00:41:10] (f148200) **text_change**: New on-screen text: VGBOOTCAMP / IAL THANKS
+- [00:41:12] (f148320) **text_change**: New on-screen text: OX | MEW2KING IL]
+- [00:41:13] (f148380) **text_change**: New on-screen text: ! ARMADA
+- [00:41:17] (f148620) **text_change**: New on-screen text: PREEENTED BY
+- [00:41:18] (f148705) **motion_burst**: Large motion for 0.2s (peak 15, 10 hot frames; threshold 11.7)
+- [00:41:22] (f148920) **text_change**: New on-screen text: GRAND FINALS / RES FOX MVG | MEW2KING [LI
+- [00:41:42] (f150128) **motion_burst**: Large motion for 0.1s (peak 12, 3 hot frames; threshold 11.7)
+- [00:41:48] (f150509) **motion_burst**: Large motion for 0.1s (peak 38, 6 hot frames; threshold 11.7)
+- [00:42:05] (f151500) **text_change**: New on-screen text: SUPER SMASH CON 2018 / SUPER SMASH BROS. MEL! / FOLLOW @SUPERSMASHCON / ival test!
+- [00:42:27] (f152820) **text_change**: New on-screen text: survival <
+- [00:42:29] (f152940) **text_change**: New on-screen text: al test!
+- [00:42:32] (f153120) **text_change**: New on-screen text: SUPER SMASH CON 20/8 / SUPER SMASH BROS. / FOLLOW @SUPERSMASHCON
+- [00:42:42] (f153720) **text_change**: New on-screen text: survival test! )
+- [00:42:50] (f154200) **text_change**: New on-screen text: SUPER SMASH BROS. oo / SUPER SMASH CON 2018
+- [00:42:53] (f154380) **text_change**: New on-screen text: val test!) <
+- [00:42:55] (f154500) **text_change**: New on-screen text: READY FIGHT
+- [00:43:04] (f155040) **text_change**: New on-screen text: urn the Rumble feature on or off.
+- [00:43:05] (f155100) **text_change**: New on-screen text: ah battle for
+- [00:43:07] (f155220) **text_change**: New on-screen text: survival test! J
+- [00:43:08] (f155280) **text_change**: New on-screen text: READY 75 FIGHT
+- [00:43:11] (f155460) **text_change**: New on-screen text: NOW LOADING
+- [00:43:13] (f155580) **text_change**: New on-screen text: GRAND FINALS / GEOOTCAMP
+- [00:43:13] (f155630) **motion_burst**: Large motion for 0.7s (peak 40, 4 hot frames; threshold 11.7)
+- [00:43:14] (f155640) **text_change**: New on-screen text: PARTNERS / MVG | MEW2KING IL] / [Al | ARMADA IL]
+- [00:43:16] (f155760) **text_change**: New on-screen text: ‘SPECIAL THANKS TO OUR / XESS Fox MVG | MEW2KING [LI
+- [00:43:18] (f155910) **motion_burst**: Large motion for 1.6s (peak 19, 19 hot frames; threshold 11.7)
+- [00:43:23] (f156222) **motion_burst**: Large motion for 0.1s (peak 14, 3 hot frames; threshold 11.7)
+- [00:43:26] (f156372) **motion_burst**: Large motion for 0.1s (peak 13, 3 hot frames; threshold 11.7)
+- [00:43:31] (f156710) **motion_burst**: Large motion for 0.1s (peak 14, 6 hot frames; threshold 11.7)
+- [00:43:34] (f156867) **motion_burst**: Large motion for 0.2s (peak 15, 9 hot frames; threshold 11.7)
+- [00:43:45] (f157504) **motion_burst**: Large motion for 1.1s (peak 23, 18 hot frames; threshold 11.7)
+- [00:43:59] (f158395) **motion_burst**: Large motion for 0.1s (peak 14, 3 hot frames; threshold 11.7)
+- [00:44:00] (f158400) **text_change**: New on-screen text: [A] | ARMADA IL] / FOX MVG | MEW2KING IL]
+- [00:44:05] (f158700) **text_change**: New on-screen text: GRAND FINALS / 07:09 51
+- [00:44:07] (f158820) **text_change**: New on-screen text: V@BOOTCAMP
+- [00:44:07] (f158841) **motion_burst**: Large motion for 0.7s (peak 15, 16 hot frames; threshold 11.7)
+- [00:44:09] (f158940) **text_change**: New on-screen text: IAL THANKS
+- [00:44:10] (f159040) **motion_burst**: Large motion for 0.9s (peak 16, 5 hot frames; threshold 11.7)
+- [00:44:13] (f159180) **text_change**: New on-screen text: LA) ARMADA 4
+- [00:44:16] (f159360) **text_change**: New on-screen text: [A] | ARMADA IL] / MV | MEW2KING IL]
+- [00:44:17] (f159420) **text_change**: New on-screen text: SUPER SMASH CON 2018
+- [00:44:18] (f159480) **text_change**: New on-screen text: GRAND FINALS
+- [00:44:24] (f159879) **motion_burst**: Large motion for 0.1s (peak 12, 4 hot frames; threshold 11.7)
+- [00:44:29] (f160179) **motion_burst**: Large motion for 1.0s (peak 14, 9 hot frames; threshold 11.7)
+- [00:44:38] (f160712) **motion_burst**: Large motion for 0.1s (peak 14, 3 hot frames; threshold 11.7)
+- [00:44:41] (f160862) **motion_burst**: Large motion for 0.1s (peak 14, 4 hot frames; threshold 11.7)
+- [00:44:45] (f161132) **motion_burst**: Large motion for 0.1s (peak 13, 4 hot frames; threshold 11.7)
+- [00:45:00] (f162052) **motion_burst**: Large motion for 0.1s (peak 13, 4 hot frames; threshold 11.7)
+- [00:45:01] (f162060) **text_change**: New on-screen text: PARTNERS / LA) | ARMADA [ul
+- [00:45:02] (f162120) **text_change**: New on-screen text: | mew2xine
+- [00:45:04] (f162240) **text_change**: New on-screen text: VGBOOTCAMP / rox | MEW2KING IL]
+- [00:45:04] (f162260) **motion_burst**: Large motion for 0.1s (peak 15, 7 hot frames; threshold 11.7)
+- [00:45:05] (f162300) **text_change**: New on-screen text: PRESENTED
+- [00:45:06] (f162360) **text_change**: New on-screen text: W2KING f 2
+- [00:45:07] (f162420) **text_change**: New on-screen text: 06307 51
+- [00:45:08] (f162480) **text_change**: New on-screen text: 06:06 s1
+- [00:45:10] (f162600) **text_change**: New on-screen text: GRAND FINALS
+- [00:45:15] (f162948) **motion_burst**: Large motion for 0.2s (peak 15, 12 hot frames; threshold 11.7)
+- [00:45:45] (f164705) **motion_burst**: Large motion for 1.8s (peak 26, 39 hot frames; threshold 11.7)
+- [00:45:50] (f165044) **motion_burst**: Large motion for 0.1s (peak 13, 5 hot frames; threshold 11.7)
+- [00:45:51] (f165111) **motion_burst**: Large motion for 0.3s (peak 22, 16 hot frames; threshold 11.7)
+- [00:46:00] (f165600) **text_change**: New on-screen text: GRAND FINALS
+- [00:46:03] (f165780) **text_change**: New on-screen text: FOX MVG | MEW2KING IL]
+- [00:46:04] (f165840) **text_change**: New on-screen text: SUPER CON 2018 / FOLLOW @SUPERSMASHCON | |
+- [00:46:05] (f165900) **text_change**: New on-screen text: PREEENTED BY
+- [00:46:07] (f166020) **text_change**: New on-screen text: 05:07 saa
+- [00:46:09] (f166140) **text_change**: New on-screen text: CON 2018 / PARTNERS
+- [00:46:11] (f166260) **text_change**: New on-screen text: Bis O 53
+- [00:46:13] (f166380) **text_change**: New on-screen text: 2 ARMADA [ul
+- [00:46:28] (f167285) **motion_burst**: Large motion for 0.2s (peak 13, 3 hot frames; threshold 11.7)
+- [00:46:34] (f167683) **motion_burst**: Large motion for 0.7s (peak 13, 3 hot frames; threshold 11.7)
+- [00:46:47] (f168464) **motion_burst**: Large motion for 0.2s (peak 16, 9 hot frames; threshold 11.7)
+- [00:46:49] (f168557) **motion_burst**: Large motion for 0.2s (peak 14, 5 hot frames; threshold 11.7)
+- [00:47:01] (f169260) **text_change**: New on-screen text: PARTNERS
+- [00:47:02] (f169320) **text_change**: New on-screen text: GRAND FINALS
+- [00:47:03] (f169380) **text_change**: New on-screen text: VGBOOTCAMP
+- [00:47:04] (f169440) **text_change**: New on-screen text: MVG | MEW2KING IL]
+- [00:47:06] (f169560) **text_change**: New on-screen text: con 2018 / hy uM ARMADA IL]
+- [00:47:07] (f169620) **text_change**: New on-screen text: [A] | ARMADA IL]
+- [00:47:10] (f169800) **text_change**: New on-screen text: OMBAT ARENA
+- [00:47:11] (f169870) **motion_burst**: Large motion for 0.1s (peak 15, 5 hot frames; threshold 11.7)
+- [00:47:14] (f170040) **text_change**: New on-screen text: PARTNERS
+- [00:47:17] (f170231) **motion_burst**: Large motion for 0.1s (peak 13, 4 hot frames; threshold 11.7)
+- [00:47:20] (f170429) **motion_burst**: Large motion for 1.2s (peak 25, 23 hot frames; threshold 11.7)
+- [00:47:28] (f170903) **motion_burst**: Large motion for 1.3s (peak 16, 14 hot frames; threshold 11.7)
+- [00:47:34] (f171266) **motion_burst**: Large motion for 0.3s (peak 16, 14 hot frames; threshold 11.7)
+- [00:47:42] (f171732) **motion_burst**: Large motion for 0.3s (peak 26, 18 hot frames; threshold 11.7)
+- [00:47:55] (f172551) **motion_burst**: Large motion for 0.2s (peak 13, 5 hot frames; threshold 11.7)
+- [00:47:57] (f172650) **loud_peak**: Loud peak -12 dBFS (+12 dB over typical): shout, impact or music hit?
+- [00:48:07] (f173279) **scene_change**: Scene change (picture jumps to different content)
+- [00:48:15] (f173705) **motion_burst**: Large motion for 0.1s (peak 19, 3 hot frames; threshold 11.7)
+- [00:48:17] (f173820) **text_change**: New on-screen text: PARTNERS
+- [00:48:19] (f173940) **text_change**: New on-screen text: GRAND FINALS / [Al | ARMADA / MVG | MEW2KING IL]
+- [00:48:20] (f174000) **text_change**: New on-screen text: IAL. THANKS 1
+- [00:48:22] (f174120) **text_change**: New on-screen text: FOX MVG | MEW2KING [LI 2 I u
+- [00:48:25] (f174300) **text_change**: New on-screen text: = MVG | Mi / IL] 2) ARMADA [L] _ A
+- [00:48:29] (f174540) **text_change**: New on-screen text: SUPER SMASH CON 2018 / FOLLOW @SUPERSMASHCON
+- [00:48:32] (f174720) **text_change**: New on-screen text: GRAND FINALS / [A] | ARMADA IL]
+- [00:48:34] (f174840) **text_change**: New on-screen text: \_FOX MVG |
+- [00:49:00] (f176400) **text_change**: New on-screen text: GRAND FINALS
+- [00:49:03] (f176580) **text_change**: New on-screen text: PARTNERS
+- [00:49:04] (f176640) **text_change**: New on-screen text: MIGAMES AT LAUREL PARK,
+- [00:49:05] (f176700) **text_change**: New on-screen text: ‘SPECIAL THANKS TO Ot
+- [00:49:13] (f177180) **text_change**: New on-screen text: GRAND FINALS
+- [00:49:14] (f177240) **text_change**: New on-screen text: [A] | ARMADA IL] / FOX MVG | MEW2KING IL]
+- [00:49:15] (f177300) **text_change**: New on-screen text: FOX MVG |
+- [00:49:16] (f177360) **text_change**: New on-screen text: THANKS T
+- [00:49:30] (f178209) **motion_burst**: Large motion for 0.1s (peak 13, 3 hot frames; threshold 11.7)
+- [00:49:34] (f178491) **motion_burst**: Large motion for 0.1s (peak 14, 4 hot frames; threshold 11.7)
+- [00:49:46] (f179160) **loud_peak**: Loud peak -11 dBFS (+13 dB over typical): shout, impact or music hit?
+- [00:50:04] (f180240) **text_change**: New on-screen text: [A] | ARMADA IL]
+- [00:50:05] (f180300) **text_change**: New on-screen text: GRAND FINALS
+- [00:50:05] (f180338) **motion_burst**: Large motion for 0.1s (peak 13, 6 hot frames; threshold 11.7)
+- [00:50:06] (f180360) **text_change**: New on-screen text: XESS Fox | MEW2KING
+- [00:50:07] (f180420) **text_change**: New on-screen text: IAL THANKS
+- [00:50:09] (f180540) **text_change**: New on-screen text: FOX MVG | MEW2KING
+- [00:50:14] (f180840) **text_change**: New on-screen text: PARTNERS
+- [00:50:18] (f181080) **text_change**: New on-screen text: GRAND FINALS / [A] | ARMADA IL]
+- [00:50:24] (f181440) **text_change**: New on-screen text: FOX MVG | MEW2KING IL]
+- [00:50:51] (f183099) **motion_burst**: Large motion for 0.9s (peak 14, 7 hot frames; threshold 11.7)
+- [00:50:52] (f183120) **loud_peak**: Loud peak -12 dBFS (+13 dB over typical): shout, impact or music hit?
+- [00:51:00] (f183600) **text_change**: New on-screen text: THANKS TO OUR
+- [00:51:04] (f183840) **text_change**: New on-screen text: FOX MVG | MEW2KING IL]
+- [00:51:06] (f183998) **motion_burst**: Large motion for 0.1s (peak 13, 6 hot frames; threshold 11.7)
+- [00:51:10] (f184200) **text_change**: New on-screen text: GRAND FINALS / FOX = | MEW2KING / [A] | ARMADA
+- [00:51:19] (f184740) **text_change**: New on-screen text: m | ARMADA IL]
+- [00:51:21] (f184860) **text_change**: New on-screen text: 2 [Al | ARMAI
+- [00:51:24] (f185040) **text_change**: New on-screen text: GRAND FINALS
+- [00:51:25] (f185100) **text_change**: New on-screen text: VGBOOTCAMP
+- [00:51:27] (f185220) **text_change**: New on-screen text: Fox | MEW2KING [L]
+- [00:52:04] (f187440) **text_change**: New on-screen text: GRAND FINALS
+- [00:52:05] (f187559) **motion_burst**: Large motion for 0.1s (peak 14, 7 hot frames; threshold 11.7)
+- [00:52:07] (f187620) **text_change**: New on-screen text: A MVG | MEW2KING IL]
+- [00:52:09] (f187744) **motion_burst**: Large motion for 0.1s (peak 13, 3 hot frames; threshold 11.7)
+- [00:52:10] (f187800) **text_change**: New on-screen text: IAL. THANKS TO / PARTNERS
+- [00:52:14] (f188040) **text_change**: New on-screen text: SUPER SMASH CON 2018 / FOLLOW @SUPERSMASHCON / OX MVG | tu
+- [00:52:17] (f188220) **text_change**: New on-screen text: GRAND FINALS
+- [00:52:18] (f188280) **text_change**: New on-screen text: COMBAT AREN
+- [00:52:22] (f188520) **text_change**: New on-screen text: VGBOOTCAMP
+- [00:52:23] (f188580) **text_change**: New on-screen text: PARTNERS
+- [00:52:38] (f189492) **motion_burst**: Large motion for 0.1s (peak 41, 5 hot frames; threshold 11.7)
+- [00:52:38] (f189527) **scene_change**: Scene change (picture jumps to different content)
+- [00:52:39] (f189540) **loud_peak**: Loud peak -12 dBFS (+13 dB over typical): shout, impact or music hit?
+- [00:52:39] (f189577) **motion_burst**: Large motion for 2.6s (peak 17, 33 hot frames; threshold 11.7)
+- [00:52:42] (f189754) **scene_change**: Scene change (picture jumps to different content)
+- [00:52:50] (f190200) **motion_burst**: Large motion for 32.3s (peak 98, 881 hot frames; threshold 11.7)
+- [00:53:18] (f191905) **scene_change**: Scene change (picture jumps to different content)
+- [00:53:25] (f192301) **motion_burst**: Large motion for 13.5s (peak 22, 319 hot frames; threshold 11.7)
+- [00:53:40] (f193257) **motion_burst**: Large motion for 1.0s (peak 16, 27 hot frames; threshold 11.7)
+- [00:53:43] (f193395) **motion_burst**: Large motion for 0.1s (peak 13, 4 hot frames; threshold 11.7)
