@@ -46,9 +46,79 @@
     "hud_ref_pixels": 3280,
     "samples": 40,
     "orb_vs_on_screen_numbers": {
-      "life": "on-screen numbers not found (0 readable samples); linear fill used",
-      "mana": "on-screen numbers not found (0 readable samples); linear fill used"
+      "life": {
+        "samples": 63,
+        "held_out_mae_pct": 4.4,
+        "held_out_median_abs_err_pct": 0.43,
+        "held_out_p90_err_pct": 5.06,
+        "linear_mae_pct": 6.83
+      },
+      "mana": {
+        "samples": 72,
+        "held_out_mae_pct": 6.52,
+        "held_out_median_abs_err_pct": 1.03,
+        "held_out_p90_err_pct": 4.46,
+        "linear_mae_pct": 12.84
+      }
     }
+  },
+  "curve": {
+    "life": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0745,
+        8.54
+      ],
+      [
+        0.1596,
+        20.61
+      ],
+      [
+        0.2447,
+        28.08
+      ],
+      [
+        0.3298,
+        34.98
+      ],
+      [
+        0.7979,
+        76.1
+      ],
+      [
+        1.0,
+        96.13
+      ]
+    ],
+    "mana": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.5691,
+        53.46
+      ],
+      [
+        0.6489,
+        61.27
+      ],
+      [
+        0.7766,
+        74.06
+      ],
+      [
+        0.8404,
+        78.93
+      ],
+      [
+        0.9894,
+        91.2
+      ]
+    ]
   },
   "video_id": "LH9ikWH-WOU",
   "frame_size": [
