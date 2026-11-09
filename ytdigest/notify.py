@@ -41,9 +41,9 @@ def log_tail(gh: GH, lines=60) -> str:
         return f"(could not fetch log of job {j['name']}: HTTP {lr.status_code})"
     lr.encoding = "utf-8"
     all_lines = lr.text.strip().splitlines()
-    # show the lines leading up to the first ##[error]; steps that run afterwards (cleanup,
+    # show the lines leading up to the last ##[error]; steps that run afterwards (cleanup,
     # tunnel shutdown) would otherwise fill the tail with noise
-    err = next((i for i, l in enumerate(all_lines) if "##[error]" in l), None)
+    err = max((i for i, l in enumerate(all_lines) if "##[error]" in l), default=None)   # last: a retry loop errors per attempt
     if err is None:
         err = next((i for i, l in enumerate(all_lines) if "Post job cleanup." in l), len(all_lines) - 1)
     tail = all_lines[max(0, err + 1 - lines):err + 1]

@@ -73,6 +73,12 @@ def group(segs: list[dict], max_span=15.0, max_chars=220) -> list[dict]:
     return out
 
 
+def has_audio(path: Path) -> bool:
+    out = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a:0", "-show_entries", "stream=codec_type",
+                          "-of", "csv=p=0", str(path)], capture_output=True, text=True).stdout
+    return "audio" in out
+
+
 def detect_language(model, audio: np.ndarray, windows: int = 6) -> str:
     """Whisper's own detection only looks at the start, which is often silence or game audio and
     misdetects (an English video came out as French). Instead vote over the loudest 30 s windows."""
@@ -93,13 +99,19 @@ def whisper(arc: Archive, workdir: Path) -> tuple[list[dict], str]:
 
     model = WhisperModel("small", device="cpu", compute_type="int8", cpu_threads=os.cpu_count() or 4)
     segs, lang = [], os.environ.get("WHISPER_LANGUAGE", "").strip() or None  # optional override
+    heard = False
     for path, ps, _, _ in arc.parts_for(0, arc.duration):
+        if not has_audio(path):  # screen recordings often have no audio track
+            continue
         # decode with ffmpeg (16 kHz mono float32) instead of PyAV
         raw = subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", str(path), "-vn",
                               "-ac", "1", "-ar", "16000", "-f", "f32le", "-"], check=True,
                              capture_output=True).stdout
         audio = np.frombuffer(raw, np.float32)
         del raw
+        if len(audio) < 16000:
+            continue
+        heard = True
         if lang is None:
             lang = detect_language(model, audio)
             log(f"whisper language: {lang}")
@@ -111,6 +123,8 @@ def whisper(arc: Archive, workdir: Path) -> tuple[list[dict], str]:
             if len(segs) % 200 == 0:
                 log(f"whisper: {hms(ps + s.end)} transcribed")
         del audio
+    if not heard:
+        return [], "no audio track (nothing to transcribe)"
     return segs, f"faster-whisper small int8 (language: {lang})"
 
 
