@@ -207,6 +207,14 @@ Read this before trusting the output.
   "Blood Moor"), missing lines and some invented noise. Lines are fuzzy-deduplicated, so a real change in
   a few characters can be missed. Only English is read by default; text sizes under ~10 px at 720p are mostly lost.
   The archive is 720p, so text that needed 1080p may be unreadable.
+- **A talking head is mostly invisible to it.** It sees the words (captions, subtitles, Whisper), cuts, loudness and
+  keyframes; it does not know who speaks or what the speaker is doing. Moving hosts still make picture-driven keyframes.
+- **Silent or music-only videos have a thin transcript** (the tool says so); what is said in the pictures (recipe steps,
+  stylised overlay text) comes through OCR only in fragments.
+- **Picture-in-picture detection needs a quiet background.** A webcam is found when it moves while the rest of the picture
+  is calm (slides, screen recordings); in full-motion footage there is nothing to compare against and none is reported.
+- **Furniture suppression needs repetition.** Text that appears in half the OCR'd frames and across the whole video is
+  dropped; a header that is on screen for only some sections, or one that changes slightly each time, stays.
 - **Audio events are only loudness.** `silence` and `loud_peak` cannot tell speech from music or a cheer from
   an explosion. Whisper (small, int8) is good on clear speech, weaker on crosstalk, accents, music and game noise;
   captions from YouTube (often auto-generated) are used when they span ≥ 60 % of the video.
@@ -217,68 +225,79 @@ Read this before trusting the output.
 
 ## Measured
 
-Real runs on GitHub-hosted runners (4 vCPU), no login. "Fresh" = download or ingest, archive and analysis.
-Numbers are from this repo's Actions runs; the test videos were my picks (the owner did not supply any).
+Real runs on GitHub-hosted runners (4 vCPU), no login, generic profile unless stated. The test videos were my picks.
+Profile-specific results are in the profile's own doc ([`d2r.md`](ytdigest/profiles/d2r.md)).
 
-**(a) D2R, 4:55, `d2r` profile: regression against the pre-profile code.** Same results as before the restructure:
-the profile's 78 events (text 10, teleport 53, life_drop 5, mana_refill 8, death 2) and the orb accuracy (life median
-0.43 % / mean 4.4 %, mana median 1.03 % / mean 6.52 % against the game's on-screen numbers) are identical.
-Checked two ways: on the same machine and archive the old and new code agree on **all 7,365 frames, every per-frame
-field** (0 mismatches) and the event list; the calibration (orb geometry, fitted curves) is identical
-(`tests/regression_d2r.py`). Run time 3 min 56 s. The profile now also adds 6 generic audio events (silence, loud peaks);
-D2R keeps its own text regions instead of whole-frame OCR.
+### Generic quality fixes: before / after
 
-**(b) The same video, `generic` profile (30 fps).** 3 min 24 s, 8,838 frames, 76 events: text_change 40, motion_burst 29
-(both at their per-minute caps), silence 4, loud_peak 2, scene_change 1. 146 keyframes of 288 candidates, 31 sheets (5.9 MB,
-in a Release), 0.44 MB in git. The generic OCR reads the clean parts ("Level 94", "Ping:", "Game:", names, the area name
-"Beep Moor" for "Blood Moor", "Fine ENCHANTED") with many misreads and near-duplicates; it also suggested the d2r profile
-(90 %) without switching to it. What it cannot do: life/mana %, deaths, teleports (those are the profile's).
-
-**(c) Non-game: a 14:29 machine-learning lecture (slides + webcam, itself a 60 fps screen recording).** 8 min of run
-time (download 4 min incl. WARP, analysis 2 parallel jobs of 2–3 min, captions used, finalize 45 s). 52,143 frames, 136 events:
-text_change 120 (cap), motion_burst 15 (mostly slide changes and a window switch, with dense frames at 60 fps), loud_peak 1;
-`scene_change` found 0 cuts (slides share a white background, so the colour histogram does not jump; the slide changes show
-up as `text_change`, `motion_burst` and new keyframes). 104 keyframes of 291, 19 sheets. OCR: titles and statements are
-captured ("Basic Properties", "Chebyshev's Inequality", "Jensen's Inequality", "Hoeffding's Inequality", "Union bound:
-Pr[A ∨ B] ≤ Pr[A] + Pr[B]", "Theorem: Let X1,…,Xm be indep. rand. variables with the same expectation …"); formulas are
-often garbled, and a large part of the 1,400 lines is the macOS menu bar and window chrome ("Tools Window Help", "Preview File"),
-which the fuzzy de-duplication only partly folds. The same presenter slide appears in 3 keyframes because the webcam
-corner changes the picture hash.
-A synthetic phone screen recording (portrait, variable frame rate, 6 screens of known text) was read **19/19 lines exactly**.
-
-**(d) 60 fps fighting game: a 54:10 Melee set (SSC 2018, generic profile).** Fresh run 26 min 38 s (prepare 19 min 30 s:
-download 1 min, encode ~16 min, upload; six parallel analysis jobs 2.4–4.4 min each; captions; finalize 2 min 40 s);
-7 min 26 s when the archive already exists. About 41 runner-minutes. 195,047 frames, 605 events (text_change 424,
-motion_burst 145, scene_change 25, loud_peak 11); 1,530 keyframes, 251 sheets (80 MB). The OCR picks up the broadcast
-overlay (event name, player tags, the match clock) and the damage counters ("71% 134%") but cannot say which belongs to which
-player: that is what a Melee profile would add.
-
-**Storage per hour of video** (digest in git; videos and sheets are in Releases):
-
-| video | in git | archive in Release | sheets in Release |
+| | lecture (14:29, 60 fps, slides + webcam) | 54-min 60 fps Melee set | 17-min talking-head podcast (30 fps) |
 |---|---|---|---|
-| Melee 54 min, 60 fps, generic | 4.1 MB (4.6 MB/h): frames 2.5 MB, thumbnails 1.0 MB, text 0.6 MB | 830 MB | 80 MB |
-| D2R 57 min, 25 fps, d2r | 3.6 MB (3.8 MB/h) | 444 MB | 48 MB |
-| lecture 14.5 min, 60 fps | 0.86 MB (3.6 MB/h) | 41 MB | 4.5 MB |
+| OCR lines (after de-duplication) | 1,400 → **1,159** | 4,385 → **3,736** | n/a (new) |
+| menu-bar / window-chrome lines | 132 (9 %) → **32 (3 %)** | 0 → 0 | 0 |
+| persistent lines suppressed (listed in `ocr.json`) | 3 | 5 (the broadcast overlay: GRAND FINALS, SUPER SMASH CON 2018, PARTNERS, …) | 0 |
+| keyframes | 104 → **87** | 1,530 → 1,546 (unchanged by design) | 279 → **164** |
+| keyframes per slide view* | mean 3.7 → **3.0**; views with more than one: 20/25 → **15/25** | n/a | n/a |
+| flagged for the reader | 31 of 87 (math 10, dense 19, low_conf 5); 245 low-confidence OCR lines marked `[?]` | 271 of 1,546 (low_conf 254, math 17, dense 4) | 8 of 164 |
+| webcam / picture-in-picture | found (bottom-left, 31 % x 44 %), masked | none found | none found |
+| run time from an existing archive | analysis jobs 127 s + 197 s → 171 s + 159 s, finalize 45 s → 58 s; same-machine old / new code: 248 s / 253 s (the 484 s of the first run included a 4-minute download) | 446 s → **480 s** (+8 %: extra thumbnails and flag work) | 363 s → **265 s** |
 
-Before this change the D2R digest kept its sheets in git: 136 MB for the 57-minute video. Git history still holds those old
-versions (the repo's pack is ~260 MB); new digests add only the numbers above. A 3-hour 60 fps video is extrapolated, not
-tested: ~14 MB in git, ~2.8 GB of archive in 2 parts, ~250 MB of sheets, one encode job of about 50 minutes.
+\* "slide views" = 25 segments of the lecture that stay visually stable for at least 5 s, found independently by
+hashing only the slide pane once a second (the lecture has no slide numbers the OCR can read reliably). One stretch around
+7:30 shows five different slides in ten seconds, which is why a few views still have many keyframes (max 14 → 16).
 
-**`/ingest`.** Tested on Actions: (1) a Release with two uploaded files made through the normal release mechanism
-(a synthetic phone screen recording, portrait 1080x2400, variable frame rate, no audio, split in two): joined, normalised to
-720x1600 at 30 fps, transcript step reports "no audio track", digest in 2 min 30 s; (2) a direct file URL
-(the 4:55 clip, no captions so Whisper ran): 4 min 15 s; (3) private, loopback and cloud-metadata URLs are refused;
-(4) `/delete` on an ingested tag removes everything generated and keeps the uploaded files; (5) the failure comment
-carries the upload hint (seen when WARP was refused on all 5 attempts for the lecture; a retry minutes later succeeded on
-the first attempt). Not tested: the actual phone steps (Seal, NewPipe, the mobile browser's release form), files near 2 GB.
+What each fix contributed, on the lecture (same machine and archive, only the named fix toggled): the webcam mask is
+the biggest one. Without it the other fixes give 118 keyframes (worse than before: the moving webcam also triggered extra
+OCR runs); with it, 85. Furniture suppression removes most of the menu-bar noise; the text-driven keyframe rule is what
+keeps one keyframe per slide even though slides share a white background (the colour histogram found 0 cuts).
+Two flaws that testing exposed and fixed: lines differing only by a digit (a clock, a page number) were being folded into
+"furniture" (digits must now match exactly), and player tags like `[A] | ARMADA` were flagged as formulas (595 → 271 flagged
+keyframes on Melee).
 
-**YouTube access since the last report.** WARP succeeded on attempt 1 for the Melee set and for the lecture's second try (the D2R
-re-runs reused their archives and downloaded nothing); the lecture's first try was refused on all 5 attempts within a minute. Refusals come in streaks, so the
-back-off between attempts now grows (5, 20, 45, 80 s). `/ingest` is the dependable fallback.
+### What the generic output captured and missed, by kind of video
 
-**Unit tests**: `python tests/test_core.py` (7 offline checks), `tests/regression_d2r.py`.
+- **Lecture with slides and a webcam.** Captured: slide titles and statements ("Chebyshev's Inequality", "Union bound:
+  Pr[A ∨ B] ≤ Pr[A] + Pr[B]", the theorem for Hoeffding's inequality), a keyframe per slide change, the transcript (YouTube
+  captions), formulas flagged so the reader opens the image. Missed: formulas as text (garbled), the presenter's pointer, and
+  which of five quickly flicked slides mattered.
+- **Talking-head podcast with burned-in subtitles (17 min).** Captured: the subtitles read well, almost word for word as the
+  transcript ("The Power of Positive Thinking: Change Your Mindset, Change Your Life"), 35 scene changes (cuts between hosts and
+  graphics), 7 silences (80 s in all), 68 transcript lines. Subtitles changing every few seconds used to drive 136
+  text keyframes; the bottom caption strip is now ignored for keyframes (47 remain, from title cards and lower thirds).
+  Missed: who is speaking (no speaker identification), gestures and expressions, anything that is not text or loudness.
+  The hosts moving still produce picture-driven keyframes (75 `changed`).
+- **Cooking tutorial (10:46).** Captured: 19 scene cuts, 18 loud peaks, the channel branding and an
+  "Let's go!"-style overlay, the intro and outro captions. The auto-captions held 3 lines for 10 minutes ("Heat."), so the tool
+  now treats captions under 15 words a minute as inadequate and runs Whisper; it heard no narration, so the transcript stays
+  sparse and says so. Missed: the recipe. Steps, ingredients and quantities are stylised on-screen text that OCR reads in
+  fragments, and the actions (rinsing clams, stirring) are only visible in the images: no data field says "washing clams".
+- **Fighting game, 54 min at 60 fps.** Captured: broadcast overlay, the match clock and the damage counters ("71% 134%"), 605
+  events, dense frames at 60 fps around motion bursts. Missed: which counter belongs to which player, stocks, who won
+  (what a Melee profile would add).
+- **Synthetic phone screen recording** (portrait, variable frame rate, no audio): 19 of 19 known lines read exactly.
 
+### Cost and storage
+
+60 fps against 30 fps, same footage: the archive is about twice the size (830 MB for the 54-minute set, 922 MB per hour,
+against ~470 MB) and takes about twice as long to encode (~16 min); `frames.jsonl.gz` is 1.8x larger (2.5 MB for the set);
+analysis time is only ~10 % longer (OCR dominates); the contact sheets do not change. The Melee set took 26 min 38 s fresh
+(about 41 runner-minutes), 7 min 26 s from an existing archive; `/zoom` at 60 fps gives 60 frames per second of video.
+
+Per hour of video in git (videos and sheets are in Releases): Melee at 60 fps 4.6 MB (frames 2.5 MB, thumbnails 1.0 MB,
+text 0.6 MB); the lecture 3.6 MB per hour; the podcast and cooking video about 3.1 and 5.6 MB per hour. Releases hold
+the archive (922 MB per hour at 60 fps, 470 MB at 30) and the sheets (80 MB for the Melee set). Before sheets moved to
+Releases a digest cost ~140 MB per hour in git; history still holds the old versions (the repo's pack is ~260 MB).
+
+### `/ingest`, access and tests
+
+- `/ingest` on a Release with two uploaded files (synthetic phone recording, portrait 1080x2400, variable frame rate, no
+  audio): joined, normalised to 720x1600 at 30 fps, transcript step reports "no audio track", digest in 2 min 30 s. A direct
+  file URL (a public 4:55 clip, no captions so Whisper ran): 4 min 15 s. Private, loopback and cloud-metadata URLs are refused;
+  `/delete` on an ingested tag removes everything generated and keeps the uploaded files. Not tested: the phone apps
+  (Seal, NewPipe, the mobile release form) and files near 2 GB.
+- YouTube access: WARP succeeded on attempt 1 for every download in these tests except one video that was refused 5 times in a
+  minute (the same video succeeded on attempt 1 a few minutes later), so the back-off between attempts grows (5, 20, 45, 80 s);
+  `/ingest` is the dependable fallback.
+- Tests: `python tests/test_core.py` (14 offline checks), `tests/regression_d2r.py` (profile regression).
 
 ## Developing and testing locally
 
