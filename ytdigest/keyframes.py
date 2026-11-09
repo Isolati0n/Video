@@ -118,8 +118,8 @@ def text_keyframes(entries: list[dict], thumb_frames: set[int], duration_s: floa
 def select(cands: list[dict], phash_by_f: dict[int, str], cut_times: list[float],
            text_index: "TextIndex | None" = None, text_kf: list[dict] | None = None, slide_like: bool = False) -> list[dict]:
     """cands: [{'t', 'f', 'path'}] sorted by t. Returns the kept ones with a 'reason'.
-    In a slide-like video a picture change with the SAME on-screen text (a pointer, an animation, a presenter
-    moving) does not make a keyframe unless the picture changed a lot (BIG_PICTURE_CHANGE bits)."""
+    In a slide-like video a small picture change (a pointer, an animation, a presenter or host moving) does not
+    make a keyframe unless the on-screen text differs; a big one (BIG_PICTURE_CHANGE bits) always does."""
     kept: list[dict] = []
     last_t, last_h, last_keys = -1e9, None, None
     tf = {t["f"] for t in (text_kf or [])}
@@ -143,10 +143,14 @@ def select(cands: list[dict], phash_by_f: dict[int, str], cut_times: list[float]
                 dist = bin(h ^ last_h).count("1")
                 if dist >= DEDUPE_BITS:
                     reason = "changed"
-                    if slide_like and text_index is not None and dist < BIG_PICTURE_CHANGE and last_keys:
-                        e = text_index.at(c["t"])
-                        if e is not None and len(text_keys(e["lines"], True)) >= 2 and overlap(text_keys(e["lines"], True), last_keys) >= SAME_TEXT:
-                            reason = None   # same text, small picture change: the same slide
+                    if slide_like and dist < BIG_PICTURE_CHANGE:
+                        # a small picture change (a pointer, an animation, a presenter or host moving) is only a
+                        # new keyframe when the text proves the content changed
+                        e = text_index.at(c["t"]) if text_index is not None else None
+                        keys = text_keys(e["lines"], True) if e is not None else []
+                        text_differs = len(keys) >= 2 and bool(last_keys) and overlap(keys, last_keys) < SAME_TEXT
+                        if not text_differs:
+                            reason = None
         if reason:
             kept.append({**c, "reason": reason})
             last_t, last_h = c["t"], h

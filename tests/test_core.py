@@ -182,6 +182,15 @@ def test_captions_adequate_and_caption_strip():
     assert len(keyframes.text_keyframes(ents, set(range(60)), 60)) == 1
 
 
+def test_talking_head_does_not_flood_keyframes():
+    cands = [{"t": float(t), "f": t, "path": None} for t in range(0, 120)]
+    ph = {t: ("0" * 16 if t % 2 == 0 else "00000000000000ff") for t in range(120)}   # the head moves: an 8-bit change each step
+    ti = keyframes.TextIndex([])
+    plain = keyframes.select(cands, ph, [])                                    # not slide-like: every change counts
+    slide = keyframes.select(cands, ph, [], ti, [], slide_like=True)
+    assert len(plain) > 20 and len(slide) <= 6, (len(plain), len(slide))
+
+
 def test_d2r_profile_needs_calibration():
     p = profiles.get("d2r")
     assert p.fps == 25.0 and p.generic_ocr is False and "teleport" in p.dense_types
