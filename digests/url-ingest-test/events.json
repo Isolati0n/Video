@@ -1,0 +1,596 @@
+[
+  {
+    "t": 0.0,
+    "f": 0,
+    "type": "loud_peak",
+    "desc": "Loud peak -16 dBFS (+13 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  },
+  {
+    "t": 0.0,
+    "f": 0,
+    "type": "text_change",
+    "desc": "New on-screen text: Game: ave2 / Beep Meer / Fine ERCHANTED / The ANCIENTS / Level 94 / Leven 99 / Laver 92",
+    "source": "generic"
+  },
+  {
+    "t": 2.0,
+    "f": 60,
+    "type": "text_change",
+    "desc": "New on-screen text: Level 97 Amaren",
+    "source": "generic"
+  },
+  {
+    "t": 3.0,
+    "f": 90,
+    "type": "text_change",
+    "desc": "New on-screen text: Diericuuty:",
+    "source": "generic"
+  },
+  {
+    "t": 4.0,
+    "f": 120,
+    "type": "text_change",
+    "desc": "New on-screen text: 97 Amazen / 852 / 85:",
+    "source": "generic"
+  },
+  {
+    "t": 8.0,
+    "f": 240,
+    "type": "text_change",
+    "desc": "New on-screen text: Lever 97 Amazon",
+    "source": "generic"
+  },
+  {
+    "t": 10.0,
+    "f": 300,
+    "type": "text_change",
+    "desc": "New on-screen text: [Game] 9 / was 852 / 8",
+    "source": "generic"
+  },
+  {
+    "t": 13.0,
+    "f": 390,
+    "type": "text_change",
+    "desc": "New on-screen text: ley CELLAR",
+    "source": "generic"
+  },
+  {
+    "t": 14.0,
+    "f": 420,
+    "type": "text_change",
+    "desc": "New on-screen text: Ping: 63 / [Game] Co! / Mana: 708 / 852",
+    "source": "generic"
+  },
+  {
+    "t": 14.3,
+    "f": 429,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.4s (peak 9, 2 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 14.67,
+    "peak": 9.2
+  },
+  {
+    "t": 15.77,
+    "f": 473,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.7s (peak 13, 2 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 16.47,
+    "peak": 12.9
+  },
+  {
+    "t": 18.37,
+    "f": 551,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.7s (peak 11, 3 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 19.07,
+    "peak": 11.3
+  },
+  {
+    "t": 21.83,
+    "f": 655,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.7s (peak 8, 2 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 22.53,
+    "peak": 7.6
+  },
+  {
+    "t": 26.17,
+    "f": 785,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.8s (peak 8, 3 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 26.9,
+    "peak": 8.3
+  },
+  {
+    "t": 29.07,
+    "f": 872,
+    "type": "motion_burst",
+    "desc": "Large motion for 3.6s (peak 10, 9 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 32.67,
+    "peak": 9.6
+  },
+  {
+    "t": 41.03,
+    "f": 1231,
+    "type": "motion_burst",
+    "desc": "Large motion for 2.2s (peak 10, 7 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 43.2,
+    "peak": 10.2
+  },
+  {
+    "t": 47.87,
+    "f": 1436,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.1s (peak 9, 3 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 48.93,
+    "peak": 9.0
+  },
+  {
+    "t": 56.37,
+    "f": 1691,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.6s (peak 9, 3 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 57.9,
+    "peak": 9.4
+  },
+  {
+    "t": 59.33,
+    "f": 1780,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.9s (peak 11, 4 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 61.23,
+    "peak": 11.2
+  },
+  {
+    "t": 60.0,
+    "f": 1800,
+    "type": "text_change",
+    "desc": "New on-screen text: Game: ave2",
+    "source": "generic"
+  },
+  {
+    "t": 62.6,
+    "f": 1878,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.6s (peak 11, 5 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 64.13,
+    "peak": 11.4
+  },
+  {
+    "t": 63.0,
+    "f": 1890,
+    "type": "text_change",
+    "desc": "New on-screen text: ley CELLAR",
+    "source": "generic"
+  },
+  {
+    "t": 65.0,
+    "f": 1950,
+    "type": "text_change",
+    "desc": "New on-screen text: Ping: 78 / Fike ENCHANTED",
+    "source": "generic"
+  },
+  {
+    "t": 66.3,
+    "f": 1989,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.8s (peak 8, 2 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 67.03,
+    "peak": 7.9
+  },
+  {
+    "t": 67.0,
+    "f": 2010,
+    "type": "text_change",
+    "desc": "New on-screen text: Beep Moor / TOM 7795, /",
+    "source": "generic"
+  },
+  {
+    "t": 68.0,
+    "f": 2040,
+    "type": "text_change",
+    "desc": "New on-screen text: Mana: / 8:",
+    "source": "generic"
+  },
+  {
+    "t": 70.0,
+    "f": 2100,
+    "type": "text_change",
+    "desc": "New on-screen text: Jana: 538 / 85:",
+    "source": "generic"
+  },
+  {
+    "t": 71.0,
+    "f": 2130,
+    "type": "text_change",
+    "desc": "New on-screen text: Ping: 63",
+    "source": "generic"
+  },
+  {
+    "t": 72.0,
+    "f": 2160,
+    "type": "text_change",
+    "desc": "New on-screen text: icy CELLAR / 28 / 852",
+    "source": "generic"
+  },
+  {
+    "t": 73.63,
+    "f": 2209,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.5s (peak 9, 4 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 75.07,
+    "peak": 8.8
+  },
+  {
+    "t": 77.2,
+    "f": 2316,
+    "type": "motion_burst",
+    "desc": "Large motion for 2.2s (peak 13, 6 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 79.33,
+    "peak": 12.7
+  },
+  {
+    "t": 116.03,
+    "f": 3481,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.8s (peak 9, 3 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 116.77,
+    "peak": 8.9
+  },
+  {
+    "t": 122.0,
+    "f": 3660,
+    "type": "text_change",
+    "desc": "New on-screen text: ANCIENTS\u201d Way / icy CELLAR",
+    "source": "generic"
+  },
+  {
+    "t": 123.0,
+    "f": 3690,
+    "type": "text_change",
+    "desc": "New on-screen text: 791 / 852",
+    "source": "generic"
+  },
+  {
+    "t": 124.0,
+    "f": 3720,
+    "type": "text_change",
+    "desc": "New on-screen text: Ping: 9\u00a2",
+    "source": "generic"
+  },
+  {
+    "t": 125.0,
+    "f": 3750,
+    "type": "text_change",
+    "desc": "New on-screen text: Mana: 737 / 8!",
+    "source": "generic"
+  },
+  {
+    "t": 127.0,
+    "f": 3810,
+    "type": "text_change",
+    "desc": "New on-screen text: @axk Sace / Beep Meer",
+    "source": "generic"
+  },
+  {
+    "t": 128.0,
+    "f": 3840,
+    "type": "text_change",
+    "desc": "New on-screen text: Game: ave2",
+    "source": "generic"
+  },
+  {
+    "t": 129.0,
+    "f": 3870,
+    "type": "text_change",
+    "desc": "New on-screen text: Ping: 62.",
+    "source": "generic"
+  },
+  {
+    "t": 133.0,
+    "f": 3990,
+    "type": "text_change",
+    "desc": "New on-screen text: FIRE ENCHANTED / ley CELLAR",
+    "source": "generic"
+  },
+  {
+    "t": 157.47,
+    "f": 4724,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.8s (peak 10, 3 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 158.27,
+    "peak": 9.5
+  },
+  {
+    "t": 180.0,
+    "f": 5400,
+    "type": "text_change",
+    "desc": "New on-screen text: Ping: 78",
+    "source": "generic"
+  },
+  {
+    "t": 184.0,
+    "f": 5520,
+    "type": "text_change",
+    "desc": "New on-screen text: Ping: 62",
+    "source": "generic"
+  },
+  {
+    "t": 185.0,
+    "f": 5550,
+    "type": "text_change",
+    "desc": "New on-screen text: ley CELLAR",
+    "source": "generic"
+  },
+  {
+    "t": 187.0,
+    "f": 5610,
+    "type": "text_change",
+    "desc": "New on-screen text: Bleep Moor",
+    "source": "generic"
+  },
+  {
+    "t": 188.0,
+    "f": 5640,
+    "type": "text_change",
+    "desc": "New on-screen text: Fine ENCHANTED",
+    "source": "generic"
+  },
+  {
+    "t": 192.0,
+    "f": 5760,
+    "type": "text_change",
+    "desc": "New on-screen text: Mana: 580 / 852",
+    "source": "generic"
+  },
+  {
+    "t": 193.0,
+    "f": 5790,
+    "type": "text_change",
+    "desc": "New on-screen text: Ping: 78 / THE ANCIENTS\u2019 Wa / \u2018Lire: 2672/7679",
+    "source": "generic"
+  },
+  {
+    "t": 196.03,
+    "f": 5881,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.7s (peak 13, 4 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 197.73,
+    "peak": 12.8
+  },
+  {
+    "t": 197.5,
+    "f": 5925,
+    "type": "silence",
+    "desc": "Silence for 8s (below -50 dBFS)",
+    "source": "generic",
+    "end": 206.0
+  },
+  {
+    "t": 199.0,
+    "f": 5970,
+    "type": "text_change",
+    "desc": "New on-screen text: \u201cLane: 2692 / 7679",
+    "source": "generic"
+  },
+  {
+    "t": 213.5,
+    "f": 6405,
+    "type": "silence",
+    "desc": "Silence for 10s (below -50 dBFS)",
+    "source": "generic",
+    "end": 223.5
+  },
+  {
+    "t": 221.9,
+    "f": 6657,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.4s (peak 9, 2 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 222.27,
+    "peak": 9.5
+  },
+  {
+    "t": 225.87,
+    "f": 6776,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.2s (peak 9, 3 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 227.03,
+    "peak": 8.5
+  },
+  {
+    "t": 228.1,
+    "f": 6843,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.8s (peak 9, 2 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 228.9,
+    "peak": 9.4
+  },
+  {
+    "t": 232.9,
+    "f": 6987,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.4s (peak 9, 2 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 233.27,
+    "peak": 9.1
+  },
+  {
+    "t": 235.37,
+    "f": 7061,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.1s (peak 10, 3 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 236.47,
+    "peak": 9.8
+  },
+  {
+    "t": 240.0,
+    "f": 7200,
+    "type": "text_change",
+    "desc": "New on-screen text: Ping: 94 / [Game] 5 Da",
+    "source": "generic"
+  },
+  {
+    "t": 242.0,
+    "f": 7260,
+    "type": "text_change",
+    "desc": "New on-screen text: Fire ENCHANTED / THE ANCIENTS\u2019 Way",
+    "source": "generic"
+  },
+  {
+    "t": 244.1,
+    "f": 7323,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.5s (peak 9, 4 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 245.53,
+    "peak": 8.7
+  },
+  {
+    "t": 246.0,
+    "f": 7380,
+    "type": "text_change",
+    "desc": "New on-screen text: ley CELLAR",
+    "source": "generic"
+  },
+  {
+    "t": 247.0,
+    "f": 7410,
+    "type": "text_change",
+    "desc": "New on-screen text: Ping: 78",
+    "source": "generic"
+  },
+  {
+    "t": 248.5,
+    "f": 7455,
+    "type": "silence",
+    "desc": "Silence for 23s (below -50 dBFS)",
+    "source": "generic",
+    "end": 271.5
+  },
+  {
+    "t": 251.0,
+    "f": 7530,
+    "type": "text_change",
+    "desc": "New on-screen text: Ping: 62",
+    "source": "generic"
+  },
+  {
+    "t": 252.73,
+    "f": 7582,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.8s (peak 15, 5 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 253.47,
+    "peak": 14.6
+  },
+  {
+    "t": 253.0,
+    "f": 7590,
+    "type": "text_change",
+    "desc": "New on-screen text: Mana: 890 / 852",
+    "source": "generic"
+  },
+  {
+    "t": 254.0,
+    "f": 7620,
+    "type": "text_change",
+    "desc": "New on-screen text: Lire: 1890 / 7679",
+    "source": "generic"
+  },
+  {
+    "t": 255.0,
+    "f": 7650,
+    "type": "text_change",
+    "desc": "New on-screen text: FIRE ENCHANTED / = tee \u20181895 /",
+    "source": "generic"
+  },
+  {
+    "t": 255.2,
+    "f": 7656,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.8s (peak 13, 3 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 255.97,
+    "peak": 12.9
+  },
+  {
+    "t": 257.13,
+    "f": 7714,
+    "type": "motion_burst",
+    "desc": "Large motion for 1.8s (peak 12, 4 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 258.87,
+    "peak": 12.2
+  },
+  {
+    "t": 262.17,
+    "f": 7865,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.6s (peak 13, 2 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 262.7,
+    "peak": 12.9
+  },
+  {
+    "t": 266.37,
+    "f": 7991,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.8s (peak 13, 3 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 267.17,
+    "peak": 13.0
+  },
+  {
+    "t": 271.47,
+    "f": 8144,
+    "type": "motion_burst",
+    "desc": "Large motion for 0.4s (peak 8, 2 hot frames; threshold 7.2)",
+    "source": "generic",
+    "end": 271.87,
+    "peak": 8.5
+  },
+  {
+    "t": 272.5,
+    "f": 8175,
+    "type": "silence",
+    "desc": "Silence for 8s (below -50 dBFS)",
+    "source": "generic",
+    "end": 280.5
+  },
+  {
+    "t": 284.9,
+    "f": 8547,
+    "type": "scene_change",
+    "desc": "Scene change (picture jumps to different content)",
+    "source": "generic"
+  },
+  {
+    "t": 292.5,
+    "f": 8775,
+    "type": "loud_peak",
+    "desc": "Loud peak -17 dBFS (+12 dB over typical): shout, impact or music hit?",
+    "source": "generic"
+  }
+]

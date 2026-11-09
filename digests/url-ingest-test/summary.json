@@ -1,0 +1,46 @@
+{
+  "video_id": "url-ingest-test",
+  "title": "LH9ikWH-WOU.part000.mp4",
+  "profile": "generic",
+  "fps": 30.0,
+  "native_fps": 30.0,
+  "duration_s": 294.6,
+  "frames": 8838,
+  "events": 76,
+  "event_counts": {
+    "loud_peak": 2,
+    "text_change": 40,
+    "motion_burst": 29,
+    "silence": 4,
+    "scene_change": 1
+  },
+  "events_by_source": {
+    "generic": 76
+  },
+  "keyframes": 145,
+  "keyframe_candidates": 285,
+  "dense_events": 32,
+  "sheets": 31,
+  "max_sheet_bytes": 240837,
+  "sheet_bytes_total": 5751663,
+  "git_bytes": 439001,
+  "transcript_lines": 24,
+  "transcript_source": "faster-whisper small int8 (language: en)",
+  "ocr_entries": 260,
+  "stats": {
+    "motion_median": 0.32,
+    "motion_threshold": 7.23,
+    "static_seconds": 0.0,
+    "ocr_runs_with_text": 295,
+    "ocr_new_text_entries": 260,
+    "ocr_lines_unique": 319,
+    "frames": 8838,
+    "cuts": 2,
+    "black_frames": 2,
+    "audio_median_db": -38.3,
+    "audio_max_db": -16.0,
+    "silence_seconds": 49.5,
+    "loud_peaks": 2
+  },
+  "runtime_s": 255
+}

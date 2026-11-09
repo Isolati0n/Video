@@ -1,0 +1,13 @@
+{
+  "video_id": "url-ingest-test",
+  "profile": "generic",
+  "fps": 30.0,
+  "native_fps": 30.0,
+  "width": 1280,
+  "height": 720,
+  "duration_s": 294.577,
+  "sheets": 31,
+  "sheet_tags": [
+    "sheets-url-ingest-test"
+  ]
+}
