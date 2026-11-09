@@ -2,12 +2,13 @@
 
 Source: faster-whisper small int8 (language: fr). Timestamps are [HH:MM:SS] from the start of the video.
 
-[00:01:55] Ok, je joue très bien maintenant. C'est le warm-up. C'est bien.
-[00:03:21] C'est assez haute. Je ne joue pas un bearergo. Je pense que cette curse est encore bonne.
-[00:04:02] Tu vois la curse ?
-[00:05:34] Comme le spirit en passant. Je pense que la curse est bien. Je pense que c'est pas mal.
-[00:05:41] Je pense que c'est pas mal. C'est trop mal. Je vais juste être RB quand je vais mourir.
-[00:05:48] Je perds mon monstre. Je pense que mes stats sont très bons
+[00:01:55] Ok, je suis joué, c'est très bien maintenant. C'est le warm-up.
+[00:01:59] C'est bien.
+[00:03:21] C'est assez haute. Je n'ai pas joué un barragore. Je pense que cette curse est bien.
+[00:04:02] Tu vois la curse, comme l'espion qui va trompé.
+[00:05:35] Ouais bro. Je pense que la curse est bien. Je sais, c'est un peu...
+[00:05:42] C'est trop bien. Je vais juste être RB quand je vais mourir. Je perds mon monstre.
+[00:05:49] Je pense que mes stats sont très bons
 [00:07:31] 3.3k HP
 [00:07:56] Je pense que j'étais à l'arrivée
 [00:08:18] Quoi ? Pourquoi j'ai été fini comme ça ? Je crois que j'ai pris l'autre nado Je pense que j'ai pris l'autre nado
