@@ -9,6 +9,7 @@ import numpy as np
 from .common import FPS, hms
 
 MAX_BYTES = int(1.5 * 1000 * 1000) - 20_000
+QUALITIES = (60, 52, 45, 38)
 
 
 def label(img: np.ndarray, text: str, color=(255, 255, 255), border=None) -> np.ndarray:
@@ -24,7 +25,9 @@ def label(img: np.ndarray, text: str, color=(255, 255, 255), border=None) -> np.
 
 
 def save_jpeg(img: np.ndarray, path: Path) -> int:
-    for q in (82, 75, 68, 60, 52, 45, 38):
+    # Quality 60 keeps text and HUD numbers legible and costs ~190 KB per 1920x1080 sheet instead
+    # of ~360 KB at 82. This is what keeps hour-long digests small in git; the hard cap is 1.5 MB.
+    for q in QUALITIES:
         ok, buf = cv2.imencode(".jpg", img, [cv2.IMWRITE_JPEG_QUALITY, q, cv2.IMWRITE_JPEG_OPTIMIZE, 1])
         if len(buf) <= MAX_BYTES:
             break

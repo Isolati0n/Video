@@ -63,6 +63,10 @@ jobs:
           sha=$(scripts/commit.sh "Zoom ${{ steps.req.outputs.video_id }} ${{ steps.zoom.outputs.path }}" "${{ steps.zoom.outputs.path }}")
           echo "sha=$sha" >> "$GITHUB_OUTPUT"
       - if: steps.req.outputs.run == 'true'
+        run: scripts/commit_index.sh
+      - if: steps.req.outputs.run == 'true'
+        env:
+          ZOOM_RELEASE: ${{ steps.zoom.outputs.release }}
         run: python -m ytdigest.notify zoom "${{ steps.req.outputs.issue }}" "${{ steps.req.outputs.video_id }}" "${{ steps.zoom.outputs.path }}" "${{ steps.zoom.outputs.frames }}" "${{ steps.zoom.outputs.sheets }}" "${{ steps.commit.outputs.sha }}"
       - if: failure() && steps.req.outputs.run == 'true'
         run: python -m ytdigest.notify failed "${{ steps.req.outputs.issue }}" "Zoom ${{ steps.req.outputs.video_id }} ${{ steps.req.outputs.range }}"

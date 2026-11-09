@@ -1,0 +1,67 @@
+name: delete
+
+# Comment "/delete <video_id>" on an issue (owner / members / collaborators only), or run manually.
+on:
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+    inputs:
+      video_id:
+        description: Video id to delete (digest, zooms, config and Releases)
+        required: true
+      issue:
+        description: Issue number to comment on (optional)
+        required: false
+
+permissions:
+  contents: write
+  issues: write
+  actions: read
+
+concurrency:
+  group: delete-${{ github.run_id }}
+  cancel-in-progress: false
+
+env:
+  DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  delete:
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.event.comment.body, '/delete')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ env.DEFAULT_BRANCH }}
+      - uses: ./.github/actions/setup
+      - id: req
+        run: python -m ytdigest.request delete
+      - if: steps.req.outputs.error != ''
+        env:
+          MSG: ${{ steps.req.outputs.error }}
+        run: python -m ytdigest.notify error "${{ steps.req.outputs.issue }}" "$MSG"
+      - id: rel
+        if: steps.req.outputs.run == 'true'
+        run: python -m ytdigest.delete "${{ steps.req.outputs.video_id }}"
+      - id: files
+        if: steps.req.outputs.run == 'true'
+        run: |
+          vid="${{ steps.req.outputs.video_id }}"
+          git rm -r -q --ignore-unmatch "digests/$vid" "zooms/$vid" "config/hud/$vid.json"
+          if git diff --cached --quiet; then echo "removed=none" >> "$GITHUB_OUTPUT"; exit 0; fi
+          git config user.name "yt-digest[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Delete digest $vid"
+          git push -q origin "HEAD:$DEFAULT_BRANCH"
+          echo "removed=files" >> "$GITHUB_OUTPUT"
+      - if: steps.req.outputs.run == 'true'
+        run: scripts/commit_index.sh
+      - if: steps.req.outputs.run == 'true'
+        run: >-
+          python -m ytdigest.notify error "${{ steps.req.outputs.issue }}"
+          "🗑️ Deleted \`${{ steps.req.outputs.video_id }}\`: git files (${{ steps.files.outputs.removed }}) and
+          ${{ steps.rel.outputs.count }} Release(s) [${{ steps.rel.outputs.releases }}]. INDEX.md updated."
+      - if: failure() && steps.req.outputs.run == 'true'
+        run: python -m ytdigest.notify failed "${{ steps.req.outputs.issue }}" "Delete ${{ steps.req.outputs.video_id }}"

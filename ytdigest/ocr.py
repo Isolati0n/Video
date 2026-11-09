@@ -53,3 +53,25 @@ def ocr_regions(crops: dict) -> dict:
         if t:
             out[k] = t
     return out
+
+
+NUM_RE = re.compile(r"(\d{1,5})\s*/\s*(\d{1,5})")
+
+
+def read_orb_numbers(crop: np.ndarray) -> tuple[int, int] | None:
+    """'Life: 1551 / 7679' / 'Mana: 582 / 852' printed above the orbs (when the game shows them)
+    -> (current, maximum), or None. Used to calibrate and verify the orb readings."""
+    if crop.size == 0:
+        return None
+    g = cv2.resize(crop.max(axis=2), None, fx=4, fy=4, interpolation=cv2.INTER_CUBIC)
+    _, bw = cv2.threshold(g, 150, 255, cv2.THRESH_BINARY)
+    try:
+        txt = pytesseract.image_to_string(
+            255 - bw, config="--oem 1 --psm 7 -c tessedit_char_whitelist=0123456789/:LifeMana ", timeout=3)
+    except Exception:
+        return None
+    m = NUM_RE.search(txt)
+    if not m:
+        return None
+    cur, mx = int(m.group(1)), int(m.group(2))
+    return (cur, mx) if 0 <= cur <= mx and mx > 0 else None

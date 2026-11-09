@@ -6,6 +6,8 @@ Digest triggers
   - comment "/hud <id> life=x,y,w,h ..."  -> set HUD regions (percent of frame) and re-run analysis
   - comment "/recalibrate <id>"       -> re-detect the HUD and re-run analysis
   - workflow_dispatch (url, issue)
+Delete trigger
+  - comment "/delete <video_id>"      -> removes digests/<id>, zooms/<id>, config/hud/<id>.json and the Releases
 Zoom trigger
   - comment "/zoom <id> H:MM:SS-H:MM:SS [fps]"
   - workflow_dispatch (video_id, range, fps, issue)
@@ -45,7 +47,9 @@ def main():
     if name == "workflow_dispatch":
         inp = ev.get("inputs", {})
         out["issue"] = inp.get("issue", "") or ""
-        if kind == "digest":
+        if kind == "delete":
+            out.update(run="true", target=inp.get("video_id", ""), mode="delete")
+        elif kind == "digest":
             out.update(run="true", target=inp.get("url", ""), mode="dispatch",
                        force="true" if inp.get("recalibrate") in (True, "true") else "false")
         else:
@@ -79,6 +83,11 @@ def main():
                 out["force"] = "true"
             if not tgt:
                 out["error"] = "No YouTube URL / video id found."
+        elif kind == "delete" and cmd == "/delete":
+            if len(words) < 2:
+                out["error"] = "Usage: /delete <video_id>"
+            else:
+                out.update(run="true", target=words[1], mode="delete")
         elif kind == "zoom" and cmd == "/zoom":
             if len(words) < 3:
                 out["error"] = "Usage: /zoom <video_id> H:MM:SS-H:MM:SS [fps]"

@@ -209,6 +209,8 @@ jobs:
           vid="${{ needs.request.outputs.video_id }}"
           sha=$(scripts/commit.sh "Digest for $vid" "digests/$vid")
           echo "sha=$sha" >> "$GITHUB_OUTPUT"
+      - name: Update INDEX.md
+        run: scripts/commit_index.sh
       - run: python -m ytdigest.notify done "${{ needs.request.outputs.issue }}" "${{ needs.request.outputs.video_id }}" "${{ steps.commit.outputs.sha }}"
 
   report-failure:

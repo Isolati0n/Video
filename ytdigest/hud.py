@@ -13,11 +13,12 @@ import numpy as np
 
 from .common import hud_config_path, load_json
 
-# Fallback layout for D2R at 16:9 (used only when detection fails).
+# Fallback layout measured on real D2R 16:9 footage (HUD is centred; the orb discs are ~98 px across
+# at 720p, at ~22% and ~71% of the width).
 DEFAULT = {
-    "life": [0.105, 0.785, 0.115, 0.205],
-    "mana": [0.780, 0.785, 0.115, 0.205],
-    "skills": [0.30, 0.90, 0.40, 0.10],
+    "life": [0.2234, 0.8222, 0.0766, 0.1389],   # 286,592 98x100 px at 1280x720
+    "mana": [0.7078, 0.8222, 0.0766, 0.1389],   # 906,592
+    "skills": [0.30, 0.87, 0.42, 0.13],
     "chat": [0.01, 0.42, 0.46, 0.36],
     "center": [0.28, 0.25, 0.44, 0.25],
     "top_right": [0.74, 0.0, 0.26, 0.20],
@@ -36,8 +37,10 @@ def px(rect, w, h):
 
 
 def liquid_masks(hsv: np.ndarray):
-    hue, s, v = hsv[..., 0], hsv[..., 1], hsv[..., 2]
-    sat = (s >= 100) & (v >= 55)
+    hue, sat_, val = hsv[..., 0], hsv[..., 1], hsv[..., 2]
+    # Liquid stays strongly saturated even where it is shaded dark (S 140-255, V 25-200); the empty
+    # part of an orb is a low-saturation brown/grey (S 40-100). Hue then picks red / green / blue.
+    sat = (sat_ >= 130) & (val >= 25)
     red = sat & ((hue <= 9) | (hue >= 168))
     green = sat & (hue >= 38) & (hue <= 85)       # poisoned life orb
     blue = sat & (hue >= 98) & (hue <= 132)
@@ -108,84 +111,127 @@ class HudReader:
         d = np.abs(small_gray.astype(np.int16) - self.ref_gray.astype(np.int16))
         return float(((d <= 28) & self.ref_mask).sum() / self.ref_mask.sum())
 
+    def to_pct(self, kind: str, raw: float) -> float:
+        """raw liquid height (0..1) -> value %. Uses the curve fitted against the on-screen numbers
+        when calibration found them, else a linear map normalised to the full level."""
+        curve = (self.cfg.get("curve") or {}).get(kind)
+        if curve and len(curve) >= 2:
+            xs, ys = zip(*curve)
+            return float(np.interp(raw, xs, ys))
+        return min(100.0, 100.0 * raw / max(0.3, self.full[kind]))
+
     def read(self, frame):
         lr, poison = self.life.read(frame)
         mr, _ = self.mana.read(frame)
-        life = min(100.0, 100.0 * lr / max(0.3, self.full["life"]))
-        mana = min(100.0, 100.0 * mr / max(0.3, self.full["mana"]))
-        return life, mana, poison, lr, mr
+        return self.to_pct("life", lr), self.to_pct("mana", mr), poison, lr, mr
 
 
 # ----------------------------------------------------------------- detection
-def _component_rect(freq: np.ndarray, region: tuple, thr: float):
-    x0, y0, x1, y1 = region
-    sub = (freq[y0:y1, x0:x1] >= thr).astype(np.uint8)
-    sub = cv2.morphologyEx(sub, cv2.MORPH_CLOSE, np.ones((5, 5), np.uint8))
-    n, lab, stats, _ = cv2.connectedComponentsWithStats(sub, 8)
-    best, best_score = None, 0
-    for i in range(1, n):
-        x, y, w, h, a = stats[i]
-        if a < 40 or w < 8 or h < 6:
-            continue
-        aspect = w / max(1, h)
-        if not 0.5 <= aspect <= 3.5:
-            continue
-        score = a * min(1.0, a / (w * h) / 0.4)
-        if score > best_score:
-            best, best_score = (x + x0, y + y0, w, h), score
-    return best
+# Geometry of D2R's HUD at 720p, measured on real footage: each orb has a small white glare spot at a
+# fixed place on the sphere, drawn on top of the liquid. The pair of spots gives position and UI scale.
+GLARE_SEP = 619.3            # px between the two spots
+GLARE_DX, GLARE_DY = 60.7, 31.1   # spot -> top-left corner of the disc's box
+ORB_W, ORB_H = 98.0, 100.0
+
+
+def find_glare(frames: list[np.ndarray]):
+    """Stable white-hot spots in the bottom 30% of the frame -> ((x1,y1),(x2,y2),scale) or None."""
+    H, W = frames[0].shape[:2]
+    acc = np.zeros((H, W), np.float32)
+    for f in frames:
+        hsv = cv2.cvtColor(f, cv2.COLOR_BGR2HSV)
+        acc += (hsv[..., 2] >= 235) & (hsv[..., 1] <= 60)
+    m = (acc / len(frames) >= 0.6).astype(np.uint8)
+    m[:int(H * 0.7)] = 0
+    n, lab, st, cen = cv2.connectedComponentsWithStats(m, 8)
+    blobs = [(cen[i], st[i][4]) for i in range(1, n)
+             if 0.00001 * W * H <= st[i][4] <= 0.0004 * W * H and 0.6 <= st[i][2] / max(1, st[i][3]) <= 1.7]
+    best = None
+    for i, (a, aa) in enumerate(blobs):
+        for b, ab in blobs[i + 1:]:
+            l, r = (a, b) if a[0] < b[0] else (b, a)
+            sep = r[0] - l[0]
+            if abs(l[1] - r[1]) > 0.01 * H or not (0.35 * W <= sep <= 0.6 * W):
+                continue
+            score = min(aa, ab)
+            if best is None or score > best[0]:
+                best = (score, tuple(l), tuple(r), sep / GLARE_SEP)
+    return None if best is None else (best[1], best[2], best[3])
 
 
 def detect(frames: list[np.ndarray]) -> tuple[dict, dict]:
     """Detect HUD regions from frames sampled across the video."""
     H, W = frames[0].shape[:2]
     sw, sh = 320, 180
-    red_f = np.zeros((sh, sw), np.float32)
-    blue_f = np.zeros((sh, sw), np.float32)
     grays = []
+    ow, oh = 640, 360  # orb search grid
+    red_u = np.zeros((oh, ow), np.float32)
+    blue_u = np.zeros((oh, ow), np.float32)
     for f in frames:
         small = cv2.resize(f, (sw, sh), interpolation=cv2.INTER_AREA)
-        hsv = cv2.cvtColor(small, cv2.COLOR_BGR2HSV)
-        r, g, b = liquid_masks(hsv)
-        red_f += r | g
-        blue_f += b
         grays.append(cv2.cvtColor(small, cv2.COLOR_BGR2GRAY))
+        hsv = cv2.cvtColor(cv2.resize(f, (ow, oh), interpolation=cv2.INTER_AREA), cv2.COLOR_BGR2HSV)
+        r, g, b = liquid_masks(hsv)
+        red_u += r | g
+        blue_u += b
     n = len(frames)
-    red_f /= n
-    blue_f /= n
     notes = {}
-    band_top = int(sh * 0.55)
-    life = mana = None
-    for thr in (0.5, 0.35, 0.2):
-        life = life or _component_rect(red_f, (0, band_top, sw // 2, sh), thr)
-        mana = mana or _component_rect(blue_f, (sw // 2, band_top, sw, sh), thr)
 
-    def orb_from(c):
-        x, y, w, h = c
-        d = max(w, h)  # liquid at mid-height spans the full diameter
-        cx, bottom = x + w / 2, y + h
-        return [cx - d / 2, bottom - d, d, d]
+    def union_orb(freq, region):
+        """Liquid occupies every part of the orb disc at some moment, so the union over time
+        (pixels that are liquid in >= ~5% of samples) outlines the whole orb."""
+        x0, y0, x1, y1 = region
+        m = (freq[y0:y1, x0:x1] >= max(2.0, 0.05 * n)).astype(np.uint8)
+        m = cv2.morphologyEx(m, cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (7, 7)))
+        cnt, lab, stats, _ = cv2.connectedComponentsWithStats(m, 8)
+        best = None
+        for i in range(1, cnt):
+            x, y, w, h, area = stats[i]
+            if not (0.05 * ow <= w <= 0.13 * ow and 0.05 * ow <= h <= 0.16 * ow):
+                continue
+            if area / (w * h) < 0.55:  # a disc fills ~78% of its box
+                continue
+            if best is None or area > best[4]:
+                best = (x + x0, y + y0, w, h, area)
+        return best
+
+    glare = find_glare(frames)
+    life = mana = None
+    if glare is None:
+        life = union_orb(red_u, (0, int(oh * 0.6), ow // 2, oh))
+        mana = union_orb(blue_u, (ow // 2, int(oh * 0.6), ow, oh))
+
+    def square(c):  # bbox -> square disc rect on the 640x360 grid
+        x, y, w, h, _ = c
+        d = max(w, h)
+        return [x + w / 2 - d / 2, y + h / 2 - d / 2, d, d]
 
     cfg = {k: list(v) for k, v in DEFAULT.items()}
-    lo = orb_from(life) if life else None
-    mo = orb_from(mana) if mana else None
-    if lo and mo:  # orbs are mirror images: reconcile size and height
+    lo = square(life) if life else None
+    mo = square(mana) if mana else None
+    if glare is not None:
+        (gx1, gy1), (gx2, gy2), scale = glare
+        for key, gx, gy in (("life", gx1, gy1), ("mana", gx2, gy2)):
+            cfg[key] = [(gx - GLARE_DX) / W, (gy - GLARE_DY) / H, ORB_W * scale / W, ORB_H * scale / H]
+        notes["method"] = f"anchored on the two orb glare spots (UI scale {scale:.2f} x 720p)"
+        lo = mo = None
+    elif lo and mo:  # same size, same height; keep each orb's own x
         d = max(lo[2], mo[2])
-        bottom = max(lo[1] + lo[3], mo[1] + mo[3])
+        cy = (lo[1] + lo[3] / 2 + mo[1] + mo[3] / 2) / 2
         lcx, mcx = lo[0] + lo[2] / 2, mo[0] + mo[2] / 2
-        lo, mo = [lcx - d / 2, bottom - d, d, d], [mcx - d / 2, bottom - d, d, d]
-        notes["method"] = "detected both orbs"
+        lo, mo = [lcx - d / 2, cy - d / 2, d, d], [mcx - d / 2, cy - d / 2, d, d]
+        notes["method"] = "detected both orbs from the union of liquid positions"
     elif lo:
-        mo = [sw - lo[0] - lo[2], lo[1], lo[2], lo[3]]
+        mo = [ow - lo[0] - lo[2], lo[1], lo[2], lo[3]]
         notes["method"] = "detected life orb, mana mirrored"
     elif mo:
-        lo = [sw - mo[0] - mo[2], mo[1], mo[2], mo[3]]
+        lo = [ow - mo[0] - mo[2], mo[1], mo[2], mo[3]]
         notes["method"] = "detected mana orb, life mirrored"
     else:
-        notes["method"] = "detection failed, using default D2R layout"
+        notes["method"] = "orb detection failed, using the default D2R layout"
     if lo:
-        cfg["life"] = [lo[0] / sw, lo[1] / sh, lo[2] / sw, lo[3] / sh]
-        cfg["mana"] = [mo[0] / sw, mo[1] / sh, mo[2] / sw, mo[3] / sh]
+        cfg["life"] = [lo[0] / ow, lo[1] / oh, lo[2] / ow, lo[3] / oh]
+        cfg["mana"] = [mo[0] / ow, mo[1] / oh, mo[2] / ow, mo[3] / oh]
 
     # skill bar / HUD panel: temporally stable, textured pixels between the orbs
     stack = np.stack(grays).astype(np.int16)
@@ -283,3 +329,32 @@ def rect_summary(cfg: dict) -> str:
         if k in cfg:
             rows.append(f"| {k} | " + ",".join(f"{v * 100:.1f}" for v in cfg[k]) + " |")
     return "| region | x,y,w,h (% of frame) |\n|---|---|\n" + "\n".join(rows)
+
+
+def number_box(rect, W, H):
+    """Where D2R prints 'Life: cur / max' / 'Mana: cur / max' above an orb."""
+    x, y, w, h = rect
+    return px([x - 0.12 * w, y - 0.28 * h, 1.27 * w, 0.26 * h], W, H)
+
+
+def fit_curve(pairs: list[tuple[float, float]]) -> list[list[float]] | None:
+    """(raw liquid height 0..1, true value 0..1) pairs -> monotone piecewise-linear curve
+    [[raw, pct], ...]: per-bin medians, so a few OCR digit slips do not matter."""
+    if len(pairs) < 12:
+        return None
+    raw = np.array([p[0] for p in pairs])
+    val = np.array([p[1] for p in pairs])
+    edges = np.linspace(0, 1.0001, 11)
+    pts = [(0.0, 0.0)]
+    for lo, hi in zip(edges, edges[1:]):
+        sel = (raw >= lo) & (raw < hi)
+        if sel.sum() >= 2:
+            pts.append((float(np.median(raw[sel])), float(np.median(val[sel])) * 100))
+    full = raw[val >= 0.985]
+    if len(full) >= 3:  # the orb at 100% sits at this raw level; anything above reads 100
+        pts = [p for p in pts if p[0] < float(np.percentile(full, 25))] + [(float(np.percentile(full, 50)), 100.0)]
+    if len(pts) < 3:
+        return None
+    xs, ys = zip(*pts)
+    ys = np.maximum.accumulate(np.clip(ys, 0, 100))
+    return [[round(x, 4), round(float(y), 2)] for x, y in zip(xs, ys)]

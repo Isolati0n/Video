@@ -9,10 +9,11 @@ from __future__ import annotations
 import argparse
 import gzip
 import json
+import os
 import re
 from pathlib import Path
 
-from .common import FPS, ROOT, digest_dir, gh_output, hms, log, parse_ts
+from .common import FPS, GH, ROOT, digest_dir, gh_output, hms, log, parse_ts
 from .sheets import grid, label, save_jpeg, tile_text
 from .video import Archive
 
@@ -54,10 +55,11 @@ def main():
     tb = min(tb, arc.duration)
     name = re.sub(r"[^0-9.]+", "-", a_s.strip()) + "_" + re.sub(r"[^0-9.]+", "-", b_s.strip())
     name += "" if fps == FPS else f"_{fps:g}fps"
-    out = ROOT / "zooms" / a.video_id / name
+    tag = f"zoom-{a.video_id}-{name}"[:120]
+    out = a.workdir / "zoom_out" / name  # sheets are bulky: they go to a Release, not to git
     out.mkdir(parents=True, exist_ok=True)
-    for old in out.glob("sheet_*.jpg"):
-        old.unlink()
+    slug = os.environ.get("GITHUB_REPOSITORY", "OWNER/REPO")
+    asset_base = f"https://github.com/{slug}/releases/download/{tag}"
     data = frame_data(a.video_id, ta, tb)
 
     batch, sheets, rows = [], 0, []
@@ -71,7 +73,7 @@ def main():
         while len(imgs) < 4:
             imgs.append(imgs[-1] * 0)
         save_jpeg(grid(imgs, 2, 2), out / fname)
-        rows.append(f"| [{fname}]({fname}) | " + " / ".join(b[0] for b in batch) + " |")
+        rows.append(f"| [{fname}]({asset_base}/{fname}) | " + " / ".join(b[0] for b in batch) + " |")
         batch = []
 
     n = 0
@@ -87,15 +89,29 @@ def main():
         if len(batch) == 4:
             flush()
     flush()
-    rel = out.relative_to(ROOT)
     (out / "index.md").write_text(
         f"# Zoom {a.video_id} {hms(ta)}-{hms(tb)} at {fps:g} fps\n\n"
         f"{n} frames at full {arc.width}x{arc.height}, 2x2 per sheet, reading order left-right, top-bottom. "
         f"Labels: HH:MM:SS.ff (frame within second at 25 fps), f = frame number at 25 fps, "
-        f"L/M = life/mana % from frames.jsonl.gz when available.\n\n"
+        f"L/M = life/mana % from frames.jsonl.gz when available. Sheets are Release assets: "
+        f"{asset_base}/sheet_NNNN.jpg\n\n"
         "| sheet | frames |\n|---|---|\n" + "\n".join(rows) + "\n")
-    log(f"{n} frames -> {sheets} sheets in {rel}")
-    gh_output(path=str(rel), frames=str(n), sheets=str(sheets))
+
+    # bulky part -> its own Release (one per zoom); only the small index.md is committed to git
+    gh = GH()
+    rel = gh.ensure_release(tag, f"Zoom {a.video_id} {hms(ta)}-{hms(tb)}",
+                            f"{n} frames at {fps:g} fps from `{a.video_id}`, {sheets} sheets.")
+    files = sorted(out.glob("sheet_*.jpg")) + [out / "index.md"]
+    for i, f in enumerate(files, 1):
+        gh.upload_asset(rel, f, "image/jpeg" if f.suffix == ".jpg" else "text/markdown")
+        if i % 25 == 0:
+            log(f"uploaded {i}/{len(files)}")
+    rel_dir = ROOT / "zooms" / a.video_id / name
+    rel_dir.mkdir(parents=True, exist_ok=True)
+    (rel_dir / "index.md").write_text((out / "index.md").read_text())
+    log(f"{n} frames -> {sheets} sheets in release {tag}")
+    gh_output(path=str(rel_dir.relative_to(ROOT)), frames=str(n), sheets=str(sheets),
+              release=f"https://github.com/{slug}/releases/tag/{tag}", tag=tag)
 
 
 if __name__ == "__main__":

@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import shutil
 import time
 from pathlib import Path
@@ -14,13 +15,17 @@ from pathlib import Path
 import cv2
 
 from . import events as E
+from .index_repo import repo_base
 from .common import FPS, digest_dir, hms, load_json, log, save_json
 from .sheets import grid, label, save_jpeg, tile_text
 from .video import Archive
 
+DEDUP_BITS = int(os.environ.get("SHEET_DEDUP_BITS", "3"))  # 0 disables
+MAX_GAP = 10  # seconds
+NO_TILE_TYPES = {"text"}  # text events stay in events.md; their 25 fps tiles add little and cost git space
 EVENT_COLORS = {"life_drop": (40, 40, 255), "death": (0, 0, 200), "life_refill": (60, 200, 60),
                 "mana_refill": (255, 140, 40), "poisoned": (60, 255, 60), "area_change": (0, 220, 255), "off_hud": (128, 128, 128),
-                "motion_burst": (255, 0, 255), "text": (255, 255, 255)}
+                "teleport": (255, 0, 255), "run_burst": (255, 128, 192), "text": (255, 255, 255)}
 
 
 def main():
@@ -64,11 +69,30 @@ def main():
 
     # --- tiles: one per second + 4 frames at 25 fps around each event
     thumbs = {int(p.stem): p for p in a.chunks_dir.rglob("thumbs/*.jpg")}
-    tiles = [(float(s), 0, None, None, p) for s, p in thumbs.items()]
+    # Static stretches (menus, stash, standing still) repeat near-identical frames. Group them by
+    # perceptual hash (idea from watch-for-me's dHash segmentation): skip a 1 fps tile whose hash is
+    # within DEDUP_BITS of the last kept tile, but always keep one every MAX_GAP seconds and
+    # everything around events, so the timeline stays continuous and git stays small.
+    ph = {r["f"] // FPS: r["phash"] for r in recs if r["f"] % FPS == 0}
+    near_event = {int(e["t"]) + d for e in ev for d in (-1, 0, 1)}
+    kept, last_sec, last_hash, dropped = [], -10**9, None, 0
+    for sec in sorted(thumbs):
+        h = int(ph[sec], 16) if sec in ph else None
+        same = (DEDUP_BITS > 0 and h is not None and last_hash is not None
+                and bin(h ^ last_hash).count("1") <= DEDUP_BITS)
+        if same and sec not in near_event and sec - last_sec < MAX_GAP:
+            dropped += 1
+            continue
+        kept.append(sec)
+        last_sec, last_hash = sec, h
+    log(f"1 fps overview tiles: kept {len(kept)}, skipped {dropped} near-identical (hash <= {DEDUP_BITS} bits)")
+    tiles = [(float(sec), 0, None, None, thumbs[sec]) for sec in kept]
     arc = Archive(vid, a.workdir, a.archive_dir)
     evdir = a.workdir / "event_frames"
     evdir.mkdir(parents=True, exist_ok=True)
     for e in ev:
+        if e["type"] in NO_TILE_TYPES:
+            continue
         t0 = (e["f"] - 1) / FPS
         for t, fr in arc.frames(max(0, t0), t0 + 3.5 / FPS, FPS, (640, 360)):
             f = int(round(t * FPS))
@@ -113,7 +137,9 @@ def main():
         return (txt[:limit] + "...") if len(txt) > limit else txt
 
     dur = arc.duration
+    slug, _, raw = repo_base()
     hdr = [f"# Digest: {title}", "",
+           f"Relative links below resolve against `{raw}/digests/{vid}/` (raw URLs).", "",
            f"- Video: {info.get('webpage_url', 'https://youtu.be/' + vid)} ({hms(dur)}), channel: {info.get('channel')}",
            f"- Archive: GitHub Release `{vid}` (720p H.264 parts + parts.json)",
            "- Files: [transcript.md](transcript.md), [events.md](events.md), `events.json`, "
@@ -134,7 +160,7 @@ def main():
 
     runtime = time.time() - a.started
     summary = {"video_id": vid, "title": title, "duration_s": round(dur, 1), "frames": len(recs),
-               "events": len(ev), "event_counts": counts, "sheets": len(sheet_rows),
+               "events": len(ev), "event_counts": counts, "sheets": len(sheet_rows), "tiles_skipped_static": dropped,
                "max_sheet_bytes": max(sizes) if sizes else 0, "transcript_lines": len(segs),
                "transcript_source": tr.get("source"), "stats": stats, "runtime_s": round(runtime)}
     save_json(out / "summary.json", summary)

@@ -1,6 +1,7 @@
 """Stage 6: derive events from frames.jsonl.gz.
 
-Event types: life_drop, life_refill, mana_refill, death, area_change, off_hud, motion_burst, text.
+Event types: life_drop, life_refill, mana_refill, poisoned, death, area_change, off_hud, teleport,
+run_burst, text.
 """
 from __future__ import annotations
 
@@ -13,11 +14,12 @@ import numpy as np
 
 from .common import FPS, hms
 
-P = {  # thresholds (life/mana in % points)
-    "drop_pts": 15, "drop_window": 0.5,
-    "refill_pts": 18, "refill_window": 0.4,
+P = {  # thresholds (life/mana in % points; shift in px at 320 wide)
+    "drop_pts": 10, "drop_window": 1.0,        # tuned on real footage: biggest 1 s fall in a 5 min PvP clip was 19 pts
+    "refill_pts": 12, "refill_window": 0.6,
     "death_life": 3, "death_hold": 0.4,
-    "motion_min_dur": 0.4, "motion_merge_gap": 1.5,
+    "teleport_motion": 5.0, "teleport_match": 0.2, "teleport_gap": 1.5,  # new view in one frame; chains merge within the gap
+    "run_px": 1.2, "run_min_dur": 0.8,         # sustained camera shift per frame (walking is ~0.2-0.5 here)
 }
 
 
@@ -54,7 +56,6 @@ def derive(recs: list[dict]) -> tuple[list[dict], dict]:
     game = np.array([r["scene"] == "game" for r in recs])
     life = np.array([np.nan if r.get("life") is None else r["life"] for r in recs], float)
     mana = np.array([np.nan if r.get("mana") is None else r["mana"] for r in recs], float)
-    motion = np.array([np.nan if r.get("motion") is None else r["motion"] for r in recs], float)
     L, M = _medfilt(life, 5), _medfilt(mana, 5)
     L[~game], M[~game] = np.nan, np.nan
     ev: list[dict] = []
@@ -158,31 +159,50 @@ def derive(recs: list[dict]) -> tuple[list[dict], dict]:
                 end=round(float(t[j]), 2))
         i = j + 1
 
-    # --- motion bursts (teleport chains, whirlwind/charge runs)
-    mg = np.where(game & ~np.isnan(motion), motion, np.nan)
+    # --- teleports and sustained fast movement (whirlwind / charge / run).
+    # Verified on real footage: a teleport is a frame where the whole view changes (motion high, match
+    # LOW because the new view shares nothing with the old one); a spell flash changes `motion` but
+    # keeps match ~1; a UI panel opening/closing is a well-matched rigid shift (match 0.3-0.6).
+    shift = np.array([np.nan if r.get("shift") is None else r["shift"] for r in recs], float)
+    match = np.array([np.nan if r.get("match") is None else r["match"] for r in recs], float)
+    mot = np.array([np.nan if r.get("motion") is None else r["motion"] for r in recs], float)
     stats = {}
-    if np.isfinite(mg).sum() > FPS * 5:
-        base = np.nanmedian(mg)
-        thr = max(4 * base, float(np.nanpercentile(mg, 97)), 1.0)
-        stats["motion_threshold"] = round(thr, 2)
-        hot = np.nan_to_num(mg) > thr
-        idx = np.where(hot)[0]
-        groups = []
-        for k in idx:
-            if groups and t[k] - t[groups[-1][-1]] <= P["motion_merge_gap"]:
-                groups[-1].append(k)
-            else:
-                groups.append([k])
-        for g in groups:
-            dur = t[g[-1]] - t[g[0]] + 1 / FPS
-            if dur < P["motion_min_dur"] and len(g) < 3:
-                continue
-            peak = float(np.nanmax(mg[g[0]:g[-1] + 1]))
-            spikes = len(g)
-            frac = spikes / max(1, (g[-1] - g[0] + 1))
-            style = "jumpy, teleport-like" if frac < 0.5 else "sustained, run/whirlwind/charge-like"
-            add(g[0], "motion_burst", f"Motion burst {dur:.1f}s, peak {peak:.0f}, {spikes} hot frames ({style})",
-                end=round(float(t[g[-1]]), 2), peak=round(peak, 1))
+    jumps = np.where(game & (np.nan_to_num(mot) >= P["teleport_motion"]) & (np.nan_to_num(match, nan=1.0) <= P["teleport_match"]))[0]
+    chains: list[list[int]] = []
+    for k in jumps:
+        if chains and t[k] - t[chains[-1][-1]] <= P["teleport_gap"]:
+            chains[-1].append(k)
+        else:
+            chains.append([k])
+    for c in chains:
+        big = float(np.nanmax(mot[c]))
+        span = t[c[-1]] - t[c[0]]
+        if len(c) == 1:
+            add(c[0], "teleport", f"View jump in one frame (motion {big:.0f}, match {match[c[0]]:.2f}): teleport?",
+                peak=round(big, 1))
+        else:
+            add(c[0], "teleport", f"{len(c)} view jumps in {span:.1f}s (teleport chain?)",
+                end=round(float(t[c[-1]]), 2), peak=round(big, 1), count=len(c))
+    steady = np.where(np.nan_to_num(match, nan=1.0) > P["teleport_match"], np.nan_to_num(shift), 0.0)
+    sm = np.convolve(np.minimum(steady, 8.0), np.ones(5) / 5, mode="same")
+    fast = game & (sm >= P["run_px"])
+    i = 0
+    while i < n:
+        if not fast[i]:
+            i += 1
+            continue
+        j = i
+        while j + 1 < n and (fast[j + 1] or (j + 1 < n and fast[min(n - 1, j + 1):min(n, j + 1 + FPS // 5)].any())):
+            j += 1
+        dur = t[j] - t[i] + 1 / FPS
+        if dur >= P["run_min_dur"]:
+            avg = float(np.mean(sm[i:j + 1]))
+            add(i, "run_burst", f"Fast movement {dur:.1f}s, avg camera shift {avg:.1f} px/frame "
+                f"(~{avg * FPS * 4:.0f} px/s at 720p; run/whirlwind/charge?)", end=round(float(t[j]), 2))
+        i = j + 1
+    if np.isfinite(shift).sum() > FPS * 5:
+        stats["shift_median_px"] = round(float(np.nanmedian(shift)), 2)
+        stats["shift_p99_px"] = round(float(np.nanpercentile(shift, 99)), 1)
 
     # --- text events: OCR lines not seen in the last ~5 s of that region
     recent: dict[str, list[tuple[float, str]]] = {}

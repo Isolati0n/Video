@@ -9,6 +9,7 @@ digests/<id>/calibration.png (annotated frame).
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 from pathlib import Path
 
 import cv2
@@ -28,6 +29,55 @@ def sample_frames(arc: Archive, n: int = 40):
         if f is not None:
             out.append((float(t), f))
     return out
+
+
+def orb_numbers_check(arc: Archive, cfg: dict, n: int = 80) -> None:
+    """Some D2R setups print 'Life: cur / max' above the orbs. If they are on screen, use them as
+    ground truth: fit the raw-height -> value curve on half of the samples and report the error on
+    the other half (held-out), then refit on all of them."""
+    from . import ocr
+    W, H = arc.width, arc.height
+    reader = hud.HudReader({**cfg, "curve": None, "hud_ref": None}, W, H)
+    d = arc.duration
+    times = np.linspace(0.04 * d, 0.96 * d, n) if d > 60 else np.linspace(0, max(0.1, d - 0.5), n)
+    rows = {"life": [], "mana": []}
+    for t in times:
+        f = arc.frame_at(float(t))
+        if f is None:
+            continue
+        raw = {"life": reader.life.read(f)[0], "mana": reader.mana.read(f)[0]}
+        for kind in rows:
+            x0, y0, x1, y1 = hud.number_box(cfg[kind], W, H)
+            got = ocr.read_orb_numbers(f[y0:y1, x0:x1])
+            if got:
+                rows[kind].append((raw[kind], got[0], got[1]))
+    notes, curves = cfg.setdefault("notes", {}), {}
+    check = {}
+    for kind, r in rows.items():
+        if len(r) < 12:
+            check[kind] = f"on-screen numbers not found ({len(r)} readable samples); linear fill used"
+            continue
+        # a digit slip can fake a different maximum: keep readings whose max is one of the 2 commonest
+        maxes = [m for _, _, m in r]
+        top = [v for v, _ in Counter(maxes).most_common(2)]
+        pairs = [(raw, cur / mx) for raw, cur, mx in r if mx in top]
+        fit, test = pairs[0::2], pairs[1::2]
+        curve = hud.fit_curve(fit)
+        if curve is None:
+            check[kind] = f"too few usable number readings ({len(pairs)}); linear fill used"
+            continue
+        xs, ys = zip(*curve)
+        err = np.array([abs(np.interp(raw, xs, ys) - 100 * v) for raw, v in test])
+        lin = np.array([abs(min(100.0, 100 * raw / 0.95) - 100 * v) for raw, v in test])
+        check[kind] = {"samples": len(pairs), "held_out_mae_pct": round(float(err.mean()), 2),
+                       "held_out_median_abs_err_pct": round(float(np.median(err)), 2),
+                       "held_out_p90_err_pct": round(float(np.percentile(err, 90)), 2),
+                       "linear_mae_pct": round(float(lin.mean()), 2)}
+        curves[kind] = hud.fit_curve(pairs)
+    if curves:
+        cfg["curve"] = curves
+    notes["orb_vs_on_screen_numbers"] = check
+    log(f"orb check: {check}")
 
 
 def apply_sets(cfg: dict, sets: list[str]) -> list[str]:
@@ -67,11 +117,14 @@ def main():
     if not samples:
         raise SystemExit("could not decode any frames")
     status = "existing"
-    if cfg is None or a.force:
+    fresh = cfg is None or a.force
+    if fresh:
         cfg, notes = hud.detect([f for _, f in samples])
         cfg["notes"] = notes
         status = "detected"
         log(f"calibration: {notes}")
+    if fresh:
+        orb_numbers_check(arc, cfg)
     changed = apply_sets(cfg, a.set)
     if changed:
         status = "updated " + ", ".join(changed)

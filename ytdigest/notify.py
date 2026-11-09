@@ -50,6 +50,31 @@ def log_tail(gh: GH, lines=60) -> str:
     return f"Job **{j['name']}** failed. Last {len(tail)} log lines:\n\n```\n" + "\n".join(tail)[-6000:] + "\n```"
 
 
+# yt-dlp failure classes (idea from watch-for-me's error mapping): a plain-words reason for the comment
+REASONS = [
+    ("private video|this video is private", "The video is private; only its owner's account can watch it."),
+    ("members[- ]only|members of this channel", "Members-only video; it cannot be fetched without a login."),
+    ("not available in your country|geo[- ]?restrict|blocked it in your country",
+     "The video is geo-blocked for the runner's country."),
+    ("video unavailable|has been removed|no longer available|has been terminated|does not exist|http error 404",
+     "The video is unavailable or was removed."),
+    ("confirm your age|age[- ]restricted", "Age-restricted video; it cannot be fetched without a login."),
+    ("live stream|premiere", "The video is a live stream / upcoming premiere; try again once it has ended."),
+    ("sign in to confirm|http error 403|http error 429",
+     "YouTube refused the download (bot check / 403 / 429) on every tunnel attempt."),
+    ("no space left", "The runner ran out of disk space."),
+]
+
+
+def explain(tail: str) -> str:
+    import re
+    low = tail.lower()
+    for pat, msg in REASONS:
+        if re.search(pat, low):
+            return msg
+    return ""
+
+
 def main():
     what, issue = sys.argv[1], sys.argv[2]
     if not issue:
@@ -93,8 +118,10 @@ def main():
         gh.comment(issue, body)
     elif what == "zoom":
         vid, path, frames, sheets, sha = a
-        gh.comment(issue, f"🔍 **Zoom ready**: [`{path}/`]({blob(sha, path)}) — {frames} frames in {sheets} "
-                          f"sheets (2x2, full 720p). [index.md]({blob(sha, path + '/index.md')})")
+        rel = os.environ.get("ZOOM_RELEASE", "")
+        gh.comment(issue, f"🔍 **Zoom ready**: {frames} frames in {sheets} sheets (2x2, full 720p).\n\n"
+                          f"- Sheets (Release assets): {rel}\n"
+                          f"- Index with direct sheet links: [`{path}/index.md`]({blob(sha, path + '/index.md')})")
     elif what == "failed":
         desc = a[0]
         tail = log_tail(gh)
@@ -104,7 +131,8 @@ def main():
                     "Re-run with `/digest`; blocks are often temporary. If it keeps failing, see README → "
                     "*YouTube access*.\n\n")
         else:
-            body = f"❌ **{desc} failed.** [Workflow run]({run_url()})\n\n"
+            why = explain(tail)
+            body = f"❌ **{desc} failed.** [Workflow run]({run_url()})\n\n" + (f"**Reason:** {why}\n\n" if why else "")
         body += tail
         gh.comment(issue, body)
     elif what == "error":

@@ -21,6 +21,7 @@ from pathlib import Path
 from .common import hms, load_json, log
 from .video import Archive
 
+MIN_CAPTION_SPAN = 0.6  # captions must reach at least 60% of the video
 TS = re.compile(r"(\d+:)?(\d{2}):(\d{2})[.,](\d{3})")
 TAG = re.compile(r"<[^>]+>")
 
@@ -107,12 +108,23 @@ def main():
     info = load_json(a.workdir / "info.json", {}) or {}
     vtt = a.workdir / "captions.vtt"
     segs = []
+    arc = None
     if vtt.exists():
         segs = parse_vtt(vtt.read_text(errors="replace"))
         ct = info.get("caption_track") or {}
         source = f"YouTube {'auto-generated' if ct.get('auto') else 'uploaded'} captions ({ct.get('lang', '?')})"
-    if not segs:
+        # Coverage check (idea from claude-video-vision): captions that stop early or are sparse
+        # must not pass as the whole commentary, so fall back to Whisper.
         arc = Archive(a.video_id, a.workdir, a.archive_dir)
+        covered = sum(max(0.0, min(s["end"], arc.duration) - s["start"]) for s in segs)
+        span = max((s["end"] for s in segs), default=0.0)
+        if span < MIN_CAPTION_SPAN * arc.duration:
+            log(f"captions end at {hms(span)} of {hms(arc.duration)}; falling back to Whisper")
+            segs = []
+        else:
+            log(f"captions cover {covered / arc.duration:.0%} of the video by time, span {hms(span)}")
+    if not segs:
+        arc = arc or Archive(a.video_id, a.workdir, a.archive_dir)
         segs, source = whisper(arc, a.workdir)
     grouped = group(segs)
     lines = [f"# Transcript: {info.get('title', a.video_id)}", "",

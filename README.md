@@ -10,7 +10,7 @@ GitHub app or a phone browser.
 1. **One-time setup**
    - In the GitHub app, open the repo → **Issues** → **Labels** and create a label called `digest`.
      (In the mobile browser it is under *Issues → Labels → New label*.)
-   - Optional: add the `YOUTUBE_COOKIES` secret (see below). Only needed if YouTube blocks the runner.
+   - Nothing else. No Google or YouTube login is ever needed (see *YouTube access* below).
 2. **Digest a video**: open a new issue. Put the YouTube link in the body, add the label
    `digest`, and submit.
 3. The bot comments when the run starts. Then it posts a **HUD calibration image** showing
@@ -26,9 +26,13 @@ GitHub app or a phone browser.
 4. When the run finishes, the bot comments with the folder path, counts and runtime.
    If something fails, it comments the last log lines instead.
 5. **Zoom into a moment**: comment `/zoom <video_id> 1:23:10-1:23:14` (optionally add an fps,
-   default 25). Full-resolution frames are committed to `zooms/<video_id>/<range>/` as 2x2 sheets,
-   and the bot replies with the path.
+   default 25). Full-resolution frames are made as 2x2 sheets and attached to a Release called
+   `zoom-<video_id>-<range>` (they are bulky, so they stay out of git). The bot replies with the
+   Release link; `zooms/<video_id>/<range>/index.md` in git holds the direct sheet links.
 6. To re-run a digest, comment `/digest` on the issue.
+7. To remove a video completely (digest files, zoom sheets, Release archive), comment
+   `/delete <video_id>`.
+8. [`INDEX.md`](INDEX.md) lists every digest with raw links, so results can be read by URL.
 
 Commands are only accepted from the repo owner, members and collaborators.
 You can also start runs from **Actions → digest / zoom → Run workflow** (fields: URL, issue number).
@@ -61,17 +65,20 @@ Videos are never committed to the repo.
 | `life`, `mana` | % read from the orb fill level (null when the HUD is not visible) |
 | `poison` | true when the life orb is green |
 | `motion` | mean absolute pixel change vs the previous frame (0–255, game area only) |
+| `shift` | global camera translation vs the previous frame in px at 320 wide (phase correlation): ~0 standing, 1–3 running, ≥10 in one frame = camera jump |
 | `cut` | true on a colour-histogram jump (scene change) |
 | `phash` | 64-bit DCT perceptual hash (hex), handy for finding repeated or near-identical frames |
 | `ocr` | `{region: text}` once per second for the chat, center and top-right areas, only when text was found |
 
 ### Event types
 
-`life_drop` (≥15 % within 0.5 s) · `life_refill` / `mana_refill` (sudden refill ≥18 % within
-0.4 s, likely a rejuvenation or full potion) · `poisoned` · `death` (empty life orb with the HUD
+`life_drop` (≥10 points within 1 s) · `life_refill` / `mana_refill` (sudden refill ≥12 points within
+0.6 s, likely a rejuvenation or full potion) · `poisoned` · `death` (empty life orb with the HUD
 visible, or death text) · `area_change` (HUD gone 0.3–30 s around a cut or black screen, or a
-new area name read by OCR) · `off_hud` (more than 30 s without the HUD) · `motion_burst` (teleport
-chains, whirlwind or charge runs) · `text` (new chat or message text).
+new area name read by OCR) · `off_hud` (more than 30 s without the HUD) · `teleport` (one-frame camera jump
+of >= 10 px at 320 wide; chains of them are merged) · `run_burst` (sustained fast camera movement:
+run, whirlwind, charge) · `text` (new chat or message text). Spell flashes change `motion` but not
+the camera `shift`, so they are not reported as teleports.
 Thresholds are at the top of `ytdigest/events.py`.
 
 ## How it runs
@@ -95,28 +102,57 @@ whisper model by `actions/cache`.
 HUD regions are stored per video as fractions of the frame in `config/hud/<video_id>.json`.
 You can also edit that file in the GitHub web editor and comment `/digest` to re-run.
 
-## If YouTube blocks the runner
+## YouTube access (no login, no cookies)
 
-GitHub runner IPs are sometimes asked to "confirm you're not a bot". When that happens the
-bot says so in the issue. To fix it, add the cookies of a logged-in YouTube session:
+GitHub's runners sit on datacenter IPs that YouTube often answers with "Sign in to confirm you're
+not a bot". This repo never uses an account. The download step (and only that step) runs through a
+free **Cloudflare WARP** tunnel set up with [wgcf](https://github.com/ViRb3/wgcf) (anonymous WARP
+account, created per attempt), so YouTube sees a Cloudflare IP instead. If YouTube still refuses
+an attempt, the job tears the tunnel down, registers a fresh one (usually a different IP) and
+tries again, up to 5 times (`scripts/download_via_warp.sh`, `scripts/warp.sh`).
 
-1. On a computer (or a phone browser with a cookies.txt exporter extension), export
-   `youtube.com` cookies in **Netscape cookies.txt** format.
-2. In the repo: **Settings → Secrets and variables → Actions → New repository secret**,
-   name `YOUTUBE_COOKIES`, and paste the whole file content.
-3. Comment `/digest` on the issue.
+What was tested without any login (details in the issue/PR history):
 
-Cookies expire. If blocks come back, export them again. Using a secondary Google account is
-a good idea.
+| option | result |
+|---|---|
+| yt-dlp from the AI sandbox | metadata works, media URLs answer 403 |
+| runner, yt-dlp default / `tv` / `mweb` / `ios` / `web_safari` clients | all refused at the bot check |
+| runner + bgutil PO-token provider | refused at the bot check before any token is requested (a token does not fix an IP-level flag) |
+| runner + Cloudflare WARP | works on most fresh tunnels; some tunnels or IPs get refused, hence the retry loop |
 
-## Repo size
+Limits to know about: WARP IPs are shared with other users, so success varies by attempt; a
+fully blocked day means re-running with `/digest` later. Set the repository variable
+`USE_WARP=false` to download without the tunnel.
 
-Contact sheets are about 0.2–0.5 MB each, roughly one sheet per 8 seconds of video plus the
-event frames. A 1-hour digest adds about 100–250 MB to the repo. Delete old `digests/<id>/`
-folders when you no longer need them. The Release keeps the video.
+## Storage
+
+In git: `index.md`, `events.md/json`, `transcript.md/json`, `frames.jsonl.gz`, `calibration.png`,
+the overview sheets, `summary.json` and the small `zooms/<id>/<range>/index.md` files.
+In Releases (not git): the archived video parts, `parts.json`, and every zoom's sheets.
+Near-identical consecutive 1 fps tiles (menus, standing still) are skipped using the perceptual
+hash (`SHEET_DEDUP_BITS`, default 3, 0 = keep all) and at least one tile every 10 s is kept.
+`/delete <video_id>` removes a digest everywhere.
 
 ## Local / offline test (optional, for developers)
 
 `python tests/synthetic.py /tmp/syn` writes a synthetic D2R-like clip with known life and mana
 values. Run `calibrate`, `analyze`, `finalize` and `zoom` with `--archive-dir /tmp/syn` against
 it. See the docstrings in `ytdigest/*.py`.
+
+## Credits
+
+Ideas adopted from two MIT-licensed projects (thank you):
+
+- [usedeepmark/watch-for-me](https://github.com/usedeepmark/watch-for-me): yt-dlp failure
+  classification and retrying only transient 403/blocked errors, and grouping near-identical frames
+  by perceptual hash instead of keeping every sample.
+- [jordanrendric/claude-video-vision](https://github.com/jordanrendric/claude-video-vision): the
+  caption coverage check (captions that stop early or are sparse fall back to local Whisper) and the
+  caption-track selection order.
+
+Tools used at run time: [yt-dlp](https://github.com/yt-dlp/yt-dlp) (Unlicense),
+[wgcf](https://github.com/ViRb3/wgcf) (MIT), [faster-whisper](https://github.com/SYSTRAN/faster-whisper)
+(MIT), ffmpeg, Tesseract, OpenCV. The bgutil PO-token provider
+([Brainicism/bgutil-ytdlp-pot-provider](https://github.com/Brainicism/bgutil-ytdlp-pot-provider),
+GPL-3.0) was evaluated only in `.github/workflows/access-test.yml`, installed at run time and not
+redistributed here; it did not help.

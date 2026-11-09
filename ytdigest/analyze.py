@@ -14,6 +14,8 @@ Record keys (one JSON object per frame):
   mana   mana % from orb fill (null unless scene == game)
   poison true when the life orb is green
   motion mean absolute pixel change vs previous frame (0..255, game area only)
+  shift  global camera translation vs previous frame, px at 320 wide (phase correlation, central game area)
+  match  0..1 structural match with the previous frame (1 = same view; low = new view, e.g. teleport)
   cut    true when the colour histogram jumps (scene change)
   phash  64-bit DCT perceptual hash (hex)
   ocr    {region: text} once per second (chat / center / top_right), only when text found
@@ -78,6 +80,9 @@ def main():
     pool = ThreadPoolExecutor(max_workers=3)
     pending: deque = deque()
     prev_gray = prev_hist = None
+    # central game area for camera tracking: excludes the party list, FPS/ping text and top-right game info
+    cx0, cx1, cy0, cy1 = int(0.10 * SW), int(0.72 * SW), int(0.12 * SH), game_rows
+    win = cv2.createHanningWindow((cx1 - cx0, cy1 - cy0), cv2.CV_32F)
     n = 0
     t0 = time.time()
     # start one frame early so the first frame of the chunk has a motion value
@@ -99,9 +104,16 @@ def main():
             hsv = cv2.cvtColor(small, cv2.COLOR_BGR2HSV)
             hist = histo(hsv)
             if prev_gray is None:
-                motion, cut = None, False
+                motion, cut, shift, match = None, False, None, None
             else:
                 motion = float(cv2.absdiff(gray[:game_rows], prev_gray[:game_rows]).mean())
+                # Camera tracking by phase correlation on the central game area:
+                #   shift = global translation in px at 320 wide (~0 standing, 1-3 running)
+                #   match = how well the two frames correlate (0..1). A spell flash changes `motion`
+                #           but keeps match ~1; a teleport shows a new view: motion high, match low.
+                (dx, dy), match = cv2.phaseCorrelate(prev_gray[cy0:cy1, cx0:cx1].astype(np.float32),
+                                                     gray[cy0:cy1, cx0:cx1].astype(np.float32), win)
+                shift = float(np.hypot(dx, dy))
                 cut = bool(cv2.compareHist(prev_hist, hist, cv2.HISTCMP_BHATTACHARYYA) > 0.45)
             prev_gray, prev_hist = gray, hist
             if t < a.start - 1e-6:
@@ -118,6 +130,8 @@ def main():
             else:
                 rec["life"] = rec["mana"] = None
             rec["motion"] = None if motion is None else round(motion, 2)
+            rec["shift"] = None if shift is None else round(shift, 1)
+            rec["match"] = None if match is None else round(float(match), 2)
             if cut:
                 rec["cut"] = True
             rec["phash"] = phash(gray)
@@ -126,7 +140,7 @@ def main():
                 sec = k // FPS
                 cv2.imwrite(str(thumbs / f"{sec:06d}.jpg"),
                             cv2.resize(frame, (640, 360), interpolation=cv2.INTER_AREA),
-                            [cv2.IMWRITE_JPEG_QUALITY, 85])
+                            [cv2.IMWRITE_JPEG_QUALITY, 88])
                 if not dark:
                     crops = {r: frame[y0:y1, x0:x1].copy() for r, (x0, y0, x1, y1) in ocr_rects.items()}
                     fut = pool.submit(ocr_regions, crops)
