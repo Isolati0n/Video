@@ -143,7 +143,7 @@ Means are higher than medians because a few of those reference numbers are OCR d
 video does not show the numbers, calibration says so and uses a linear fill map instead.
 
 Teleport detection (`teleport` events) is a heuristic: a frame where the whole game area changes and
-the new view does not match the old one. Eyeballing before/after frames of 22 sampled events, most
+the new view does not match the old one. Eyeballing before/after frames of about 15 sampled events, most
 were real view changes; false positives were UI panels opening and same-view spell effects (mostly
 filtered by the `chg` and `match` conditions). Treat the counts as "view jumps", not proof of the
 Teleport skill.
