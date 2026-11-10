@@ -33,10 +33,12 @@ def build() -> str:
         base = f"{raw}/digests/{vid}"
         counts = ", ".join(f"{k} {v}" for k, v in sorted((s.get("event_counts") or {}).items()))
         links = " · ".join([
-            f"[index]({base}/index.md)", f"[transcript]({base}/transcript.md)", f"[on-screen text]({base}/ocr.md)",
+            f"[index]({base}/index.md)", f"[on-screen text]({base}/ocr.md)",
             f"[events]({base}/events.md)", f"[frames]({base}/frames.jsonl.gz)",
             f"[thumbs]({base}/thumbs/overview_001.jpg)", f"[video]({web}/releases/tag/{vid})"]
-            + ([f"[calibration]({base}/calibration.png)"] if (d.parent / "calibration.png").exists() else []))
+            + ([f"[calibration]({base}/calibration.png)"] if (d.parent / "calibration.png").exists() else [])
+            # digests made before the visual-only change keep their files; the link is only for those
+            + ([f"[old transcript]({base}/transcript.md)"] if (d.parent / "transcript.md").exists() else []))
         n = int(s.get("sheets") or 0)
         sheets = (f"{n} sheets: [Release]({web}/releases/tag/sheets-{vid}), files "
                   f"`{web}/releases/download/sheets-{vid}/sheet_NNNN.jpg` for NNNN = 0001-{n:04d}"

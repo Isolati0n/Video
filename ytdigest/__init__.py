@@ -1,1 +1,1 @@
-"""yt-digest: turn any video into data an AI can read (transcript, on-screen text, events, frames, contact sheets)."""
+"""yt-digest: turn any video into data an AI can read (on-screen text, events, per-frame data, keyframes, contact sheets; visual data only, no audio)."""

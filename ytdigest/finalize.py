@@ -1,9 +1,9 @@
 """Stages 6-7: merge per-chunk data, derive events, choose keyframes, build sheets and the index.
 
-  python -m ytdigest.finalize <video_id> <chunks_dir> <transcript_dir> <workdir>
+  python -m ytdigest.finalize <video_id> <chunks_dir> <workdir>
          [--archive-dir DIR] [--started EPOCH] [--no-upload]
 
-In git (digests/<id>/): index.md, events.md/json, transcript.md/json, ocr.md/json,
+In git (digests/<id>/): index.md, events.md/json, ocr.md/json,
 frames.jsonl.gz, thumbs/overview_*.jpg (tiny browsable thumbnails), summary.json, meta.json.
 In Releases: the contact sheets (tag sheets-<id>, split every 900 files), reachable by URL from index.md.
 --no-upload keeps the sheets next to the digest (local testing).
@@ -22,7 +22,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 
-from . import audio, furniture, keyframes, ocr as ocrmod, profiles, videoconfig
+from . import furniture, keyframes, ocr as ocrmod, profiles, videoconfig
 from . import events as E
 from .common import GH, digest_dir, hms, load_json, log, save_json
 from .index_repo import repo_base
@@ -32,7 +32,7 @@ from .video import Archive
 SHEETS_PER_RELEASE = 900
 OVERVIEW_PER_HOUR = int(os.environ.get("OVERVIEW_PER_HOUR", "360"))   # tiny thumbnails kept in git
 COLORS = {"scene_change": (0, 220, 255), "motion_burst": (255, 0, 255), "black": (128, 128, 128),
-          "loud_peak": (0, 165, 255), "text_change": (255, 255, 255), "static": (200, 200, 0), "silence": (90, 90, 90)}
+          "text_change": (255, 255, 255), "static": (200, 200, 0)}
 
 
 def sheet_tag(vid: str, i: int) -> str:
@@ -66,7 +66,6 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("video_id")
     ap.add_argument("chunks_dir", type=Path)
-    ap.add_argument("transcript_dir", type=Path)
     ap.add_argument("workdir", type=Path)
     ap.add_argument("--archive-dir", type=Path)
     ap.add_argument("--started", type=float, default=time.time())
@@ -102,23 +101,14 @@ def main():
         log(f"OCR furniture: {len(furn)} persistent lines suppressed; {len(text)} of {n_text_raw} OCR frames still have text")
 
     # --- events: generic core + profile rules
-    a_events, a_stats = audio.audio_events(arc, fps)
-    gen, gstats = E.derive_generic(recs, fps, text, a_events)
+    gen, gstats = E.derive_generic(recs, fps, text)
     if prof.generic_event_types is not None:
         gen = [e for e in gen if e["type"] in prof.generic_event_types]
     pev, pstats = prof.derive_events(recs, fps, cfg)
     ev = sorted(gen + pev, key=lambda e: (e["t"], e["type"]))
-    stats = {**gstats, **a_stats, **pstats}
+    stats = {**gstats, **pstats}
     counts = E.write_md(ev, stats, out / "events.md", title, fps, prof.name, prof.events_note())
     save_json(out / "events.json", ev)
-
-    # --- transcript
-    for name in ("transcript.md", "transcript.json"):
-        src = a.transcript_dir / name
-        if src.exists():
-            shutil.copy(src, out / name)
-    tr = load_json(out / "transcript.json", {"segments": []}) or {"segments": []}
-    segs = tr["segments"]
 
     # --- on-screen text (timestamped, de-duplicated)
     if not text:  # a profile that reads its own text regions instead of whole-frame OCR -> same shape
@@ -254,10 +244,6 @@ def main():
         sheets_where = f"Release `sheets-{vid}`: `https://github.com/{slug}/releases/download/sheets-{vid}/sheet_NNNN.jpg`"
 
     # --- index.md
-    def excerpt(ta, tb, limit=220):
-        txt = " ".join(s["text"] for s in segs if s["end"] >= ta and s["start"] <= tb + 1)
-        return (txt[:limit] + "...") if len(txt) > limit else txt
-
     def ocr_excerpt(ta, tb, limit=160):
         txt = " | ".join(x for d in deduped if ta <= d["t"] <= tb for x in d["new"])
         return (txt[:limit] + "...") if len(txt) > limit else txt
@@ -269,7 +255,7 @@ def main():
            f"- Video: {src_line} ({hms(dur)}), channel: {info.get('channel')}",
            f"- Profile: `{prof.name}` ({prof.title}); analysed at {fps:g} fps (video is {arc.native_fps:g} fps)",
            f"- Archive: GitHub Release `{vid}` (720p H.264 parts + parts.json)",
-           "- Files: [transcript.md](transcript.md), [ocr.md](ocr.md) (on-screen text), [events.md](events.md), `events.json`, "
+           "- Files: [ocr.md](ocr.md) (on-screen text), [events.md](events.md), `events.json`, "
            "`frames.jsonl.gz` (one JSON per frame), `thumbs/overview_*.jpg` (tiny thumbnails, at most 360 per hour of video), `keyframes.json` (every keyframe with its reason and flags)"
            + (", [calibration.png](calibration.png)" if (out / "calibration.png").exists() else ""),
            f"- Sheets: {len(sheet_rows)} contact sheets (3x3 tiles of 640x360; white label = keyframe chosen by scene "
@@ -279,7 +265,7 @@ def main():
            "- Zoom: comment `/zoom " + vid + " H:MM:SS-H:MM:SS [fps]` on the issue for every frame of a range (native rate by default).",
            "- **Look at the image** column: keyframes whose OCR is a hint, not the content (`math` = formulas, `dense` = a lot of "
            "text, `low_conf` = shaky OCR). Open that tile instead of trusting `ocr.md`; flags are also in `keyframes.json`.",
-           "", "| sheet | time range | events | on-screen text | look at the image | transcript |", "|---|---|---|---|---|---|"]
+           "", "| sheet | time range | events | on-screen text | look at the image |", "|---|---|---|---|---|"]
     rows = []
     for name, ta, tb in sheet_rows:
         evs = [e for e in ev if ta <= e["t"] <= tb and e["type"] != "text_change"][:5]
@@ -287,7 +273,7 @@ def main():
         look = "<br>".join(f"{hms(k['t'])} (tile {k['tile']}): {', '.join(k['flags'])}" for k in kf_by_f.values()
                            if k.get("sheet") == name and k["flags"])
         rows.append(f"| [{name}]({sheet_url(name)}) | {hms(ta)}-{hms(tb)} | {evtxt} | "
-                    f"{ocr_excerpt(ta, tb).replace('|', '/')} | {look} | {excerpt(ta, tb).replace('|', '/')} |")
+                    f"{ocr_excerpt(ta, tb).replace('|', '/')} | {look} |")
     save_json(out / "keyframes.json", sorted(kf_by_f.values(), key=lambda k: k["t"]))
     (out / "index.md").write_text("\n".join(hdr + rows) + "\n")
 
@@ -303,8 +289,8 @@ def main():
                "slide_like": slide_like, "ocr_furniture_lines": len(furn), "ocr_low_conf_lines": low_n,
                "flagged_keyframes": sum(1 for k in kf_by_f.values() if k["flags"]),
                "hash_mask": (saved.get("hash_mask") or {}).get("rect"), "sheets": len(sheet_rows), "max_sheet_bytes": max(sizes) if sizes else 0,
-               "sheet_bytes_total": sum(sizes), "git_bytes": git_bytes, "transcript_lines": len(segs),
-               "transcript_source": tr.get("source"), "ocr_entries": len(deduped), "stats": stats, "runtime_s": round(runtime)}
+               "sheet_bytes_total": sum(sizes), "git_bytes": git_bytes,
+               "ocr_entries": len(deduped), "stats": stats, "runtime_s": round(runtime)}
     save_json(out / "summary.json", summary)
     save_json(out / "meta.json", {"video_id": vid, "profile": prof.name, "fps": fps, "native_fps": arc.native_fps,
                                   "width": arc.width, "height": arc.height, "duration_s": round(dur, 3),

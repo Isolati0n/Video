@@ -768,7 +768,7 @@ class D2RProfile(Profile):
                    "Analysed at 25 fps (D2R's tick rate).")
     fps = 25.0
     generic_ocr = False   # this profile reads its own text regions (chat, centre messages, area name)
-    generic_event_types = {"silence", "loud_peak", "static"}
+    generic_event_types = {"static"}
     dense_types = {"life_drop", "death", "life_refill", "mana_refill", "poisoned", "area_change",
                    "off_hud", "teleport", "run_burst"}
     colors = {"life_drop": (40, 40, 255), "death": (0, 0, 200), "life_refill": (60, 200, 60),

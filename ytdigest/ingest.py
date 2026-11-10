@@ -26,7 +26,7 @@ import requests
 from .common import GH, gh_output, log, save_json
 
 VIDEO_EXT = (".mp4", ".mkv", ".mov", ".webm", ".m4v", ".avi", ".ts", ".3gp")
-OURS = re.compile(r"(\.part\d{3}\.mp4$|^parts\.json$|^info\.json$|^captions\.vtt$)")
+OURS = re.compile(r"(\.part\d{3}\.mp4$|^parts\.json$|^info\.json$)")
 MAX_BYTES = 12 * 1024**3
 RESERVED_PREFIXES = ("sheets-", "zoom-")
 
@@ -96,7 +96,7 @@ def join(files: list[Path], dest: Path) -> Path:
     lst = dest.parent / "concat.txt"
     lst.write_text("".join(f"file '{f.resolve()}'\n" for f in files))
     r = subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-f", "concat", "-safe", "0",
-                        "-i", str(lst), "-c", "copy", str(dest)], capture_output=True, text=True)
+                        "-i", str(lst), "-map", "0:v:0", "-an", "-c", "copy", str(dest)], capture_output=True, text=True)
     want = sum(float(probe(f)["format"]["duration"]) for f in files)
     if r.returncode == 0 and abs(float(probe(dest)["format"]["duration"]) - want) < max(2.0, 0.01 * want):
         return dest
@@ -104,13 +104,13 @@ def join(files: list[Path], dest: Path) -> Path:
     normed = []
     for i, f in enumerate(files):
         n = dest.parent / f"norm_{i:03d}.mp4"
-        subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(f), "-vf",
+        subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(f), "-map", "0:v:0", "-vf",
                         "scale=-2:'min(720,ih)'", "-r", "30", "-c:v", "libx264", "-crf", "23", "-preset", "veryfast",
-                        "-c:a", "aac", "-b:a", "96k", str(n)], check=True)
+                        "-an", str(n)], check=True)
         normed.append(n)
     lst.write_text("".join(f"file '{n.resolve()}'\n" for n in normed))
     subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(lst),
-                    "-c", "copy", str(dest)], check=True)
+                    "-map", "0:v:0", "-an", "-c", "copy", str(dest)], check=True)
     return dest
 
 
@@ -155,7 +155,7 @@ def run(vid: str, source: str, work: Path) -> None:
     d = probe(final)
     info["duration"] = float(d["format"]["duration"])
     slim = {k: info.get(k) for k in ("id", "title", "channel", "description", "webpage_url", "duration")}
-    save_json(dl / "meta.json", {"info": slim, "cap": None})
+    save_json(dl / "meta.json", {"info": slim})
     log(f"ingested {vid}: {slim['title']} ({info['duration']:.0f}s) from {'URL' if re.match(r'https?://', source) else 'Release ' + source}")
     gh_output(ingested="true")
 

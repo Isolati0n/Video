@@ -1,8 +1,0 @@
-# Only installed by the transcript job when a video has no captions.
-# Transitive dependencies are pinned too (audio is decoded by ffmpeg, not PyAV).
-faster-whisper==1.2.1
-av==19.0.2
-ctranslate2==4.8.5
-onnxruntime==1.31.1
-tokenizers==0.23.3
-huggingface_hub==2.4.0

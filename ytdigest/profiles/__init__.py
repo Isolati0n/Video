@@ -50,7 +50,7 @@ class Profile:
     fps: float | None = None          # None = the video's native fps (capped at MAX_FPS)
     generic_ocr = True                # whole-frame OCR; a profile with its own regions can turn it off
     generic_event_types: set[str] | None = None   # None = keep every generic event type
-    dense_types: set[str] = {"scene_change", "motion_burst", "black", "loud_peak"}   # events that get dense frames
+    dense_types: set[str] = {"scene_change", "motion_burst", "black"}   # events that get dense frames
     colors: dict[str, tuple] = {}     # event type -> BGR border colour on contact sheets
 
     # -- optional hooks -------------------------------------------------------------------------

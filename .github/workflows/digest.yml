@@ -82,7 +82,6 @@ jobs:
     timeout-minutes: 330
     outputs:
       chunks: ${{ steps.arch.outputs.chunks || steps.plan.outputs.chunks }}
-      has_captions: ${{ steps.arch.outputs.has_captions || steps.plan.outputs.has_captions }}
       blocked: ${{ steps.dl.outputs.blocked }}
     steps:
       - uses: actions/checkout@v5
@@ -111,7 +110,7 @@ jobs:
         env:
           INGEST_SOURCE: ${{ needs.request.outputs.source }}
         run: python -m ytdigest.prepare ingest "${{ needs.request.outputs.video_id }}" work
-      - name: Archive to the Release (720p H.264)
+      - name: Archive to the Release (720p H.264, no audio)
         id: arch
         if: steps.plan.outputs.reused != 'true'
         run: python -m ytdigest.prepare archive "${{ needs.request.outputs.video_id }}" work
@@ -141,7 +140,6 @@ jobs:
           name: prep
           path: |
             work/info.json
-            work/captions.vtt
             work/parts.json
           if-no-files-found: ignore
           retention-days: 3
@@ -170,38 +168,8 @@ jobs:
           retention-days: 3
           compression-level: 0
 
-  transcript:
-    needs: [request, prepare]
-    runs-on: ubuntu-latest
-    timeout-minutes: 330
-    steps:
-      - uses: actions/checkout@v5
-      - uses: actions/download-artifact@v4
-        with:
-          name: prep
-          path: work
-      - if: needs.prepare.outputs.has_captions == 'true'
-        uses: ./.github/actions/setup
-      - if: needs.prepare.outputs.has_captions != 'true'
-        uses: ./.github/actions/setup
-        with:
-          apt: ffmpeg
-          pip: requirements.txt requirements-whisper.txt
-      - name: Cache whisper model
-        if: needs.prepare.outputs.has_captions != 'true'
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/huggingface
-          key: whisper-small-v1
-      - run: python -m ytdigest.transcript "${{ needs.request.outputs.video_id }}" work transcript
-      - uses: actions/upload-artifact@v4
-        with:
-          name: transcript
-          path: transcript
-          retention-days: 3
-
   finalize:
-    needs: [request, prepare, analyze, transcript]
+    needs: [request, prepare, analyze]
     runs-on: ubuntu-latest
     timeout-minutes: 240
     steps:
@@ -217,14 +185,10 @@ jobs:
           path: chunks
       - uses: actions/download-artifact@v4
         with:
-          name: transcript
-          path: transcript
-      - uses: actions/download-artifact@v4
-        with:
           name: prep
           path: work
       - name: Events, contact sheets, index
-        run: python -m ytdigest.finalize "${{ needs.request.outputs.video_id }}" chunks transcript work --started ${{ needs.request.outputs.started }}
+        run: python -m ytdigest.finalize "${{ needs.request.outputs.video_id }}" chunks work --started ${{ needs.request.outputs.started }}
       - name: Commit digest
         id: commit
         run: |
@@ -236,7 +200,7 @@ jobs:
       - run: python -m ytdigest.notify done "${{ needs.request.outputs.issue }}" "${{ needs.request.outputs.video_id }}" "${{ steps.commit.outputs.sha }}"
 
   report-failure:
-    needs: [request, prepare, analyze, transcript, finalize]
+    needs: [request, prepare, analyze, finalize]
     if: failure() && needs.request.outputs.run == 'true'
     runs-on: ubuntu-latest
     steps:

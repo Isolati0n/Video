@@ -1,4 +1,4 @@
-"""Stage 6: generic events from the stored frame data, OCR text and audio.
+"""Stage 6: generic events from the stored frame data and OCR text (visual data only; audio is never read).
 
 Generic event types (every profile gets these unless it narrows the list):
   scene_change   colour-histogram jump (a cut), rapid cut runs are merged
@@ -6,7 +6,6 @@ Generic event types (every profile gets these unless it narrows the list):
   static         the picture hardly changes for a long stretch (slide, paused, idle)
   black          black / near-black frames (fade, loading screen)
   text_change    new on-screen text (whole-frame OCR, de-duplicated)
-  silence / loud_peak   from the audio track (see audio.py)
 
 Profiles add their own events on top (see profiles/).
 """
@@ -95,7 +94,7 @@ def dedupe_text(entries: list[dict]) -> list[dict]:
     return out
 
 
-def derive_generic(recs: list[dict], fps: float, text: list[dict], audio_events: list[dict]) -> tuple[list[dict], dict]:
+def derive_generic(recs: list[dict], fps: float, text: list[dict]) -> tuple[list[dict], dict]:
     n = len(recs)
     if n == 0:
         return [], {}
@@ -215,7 +214,6 @@ def derive_generic(recs: list[dict], fps: float, text: list[dict], audio_events:
     stats.update({"ocr_runs_with_text": len(text), "ocr_new_text_entries": len(deduped),
                   "ocr_lines_unique": len({_norm(x) for d in deduped for x in d["new"]})})
 
-    ev.extend(audio_events)
     ev.sort(key=lambda e: (e["t"], e["type"]))
     stats.update({"frames": n, "cuts": int(cut.sum()), "black_frames": int(black.sum())})
     return ev, stats
@@ -227,7 +225,7 @@ def write_md(ev: list[dict], stats: dict, path: Path, title: str, fps: float, pr
         counts[e["type"]] = counts.get(e["type"], 0) + 1
     lines = [f"# Events: {title}", "",
              f"Derived by code from `frames.jsonl.gz` ({fps:g} fps, profile `{profile}`), the whole-frame OCR "
-             "and the audio track. '?' marks guesses about the cause. " + note, "",
+             "(visual data only; the audio track is not used). '?' marks guesses about the cause. " + note, "",
              "| type | count |", "|---|---|"]
     lines += [f"| {k} | {v} |" for k, v in sorted(counts.items())]
     lines += ["", "Stats: " + ", ".join(f"{k}={v}" for k, v in stats.items()), "", "## Timeline", ""]

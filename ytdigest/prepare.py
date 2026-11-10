@@ -58,25 +58,6 @@ def run_ytdlp(args: list[str], cwd: Path) -> str:
     return out
 
 
-def pick_caption(info: dict) -> tuple[str, bool] | None:
-    """Return (language key, is_auto). Manual English > manual original language >
-    auto 'orig' track (YouTube ASR in the spoken language) > auto English."""
-    lang = (info.get("language") or "en").split("-")[0]
-    subs = info.get("subtitles") or {}
-    auto = info.get("automatic_captions") or {}
-    subs = {k: v for k, v in subs.items() if k != "live_chat"}
-    for k in subs:
-        if k == "en" or k.startswith("en-"):
-            return k, False
-    for k in subs:
-        if k.split("-")[0] == lang:
-            return k, False
-    for k in (f"{lang}-orig", "en-orig", lang, "en"):
-        if k in auto:
-            return k, True
-    return None
-
-
 def ffprobe(path: Path) -> dict:
     out = subprocess.check_output(["ffprobe", "-v", "error", "-print_format", "json",
                                    "-show_format", "-show_streams", str(path)])
@@ -95,7 +76,7 @@ def snap_fps(avg: float) -> float:
 
 
 def encode_archive(src: Path, dst: Path):
-    """720p H.264 CRF 26, AAC 96k, constant frame rate at the source's rate (capped at 60), keyframe
+    """720p H.264 CRF 26, no audio track (visual data only), constant frame rate at the source's rate (capped at 60), keyframe
     every 2 s so zoom seeks are cheap. Portrait video is limited to 720 px wide instead of 720 tall.
     Phone screen recordings are variable frame rate; the fps filter makes them constant."""
     pr = ffprobe(src)
@@ -110,11 +91,10 @@ def encode_archive(src: Path, dst: Path):
     gop = max(25, int(round(fps_out * 2)))
     cmd = ["ffmpeg", "-hide_banner", "-loglevel", "error", "-stats_period", "60", "-stats", "-y",
            "-i", str(src),
-           "-map", "0:v:0", "-map", "0:a:0?",
+           "-map", "0:v:0", "-an", "-sn",
            "-vf", f"fps={fps_out:.6f},{scale}:flags=bicubic",
            "-c:v", "libx264", "-preset", "veryfast", "-crf", "26", "-pix_fmt", "yuv420p",
            "-g", str(gop), "-keyint_min", "25", "-sc_threshold", "0",
-           "-c:a", "aac", "-b:a", "96k", "-ac", "2",
            "-movflags", "+faststart", str(dst)]
     log(f"source {v['width']}x{v['height']} avg {avg:.2f} fps -> archive {fps_out:.3f} fps")
     log("+ " + " ".join(cmd))
@@ -149,7 +129,7 @@ def split_archive(full: Path, vid: str, outdir: Path, duration: float) -> list[d
                     "-segment_list_type", "csv", "-segment_format_options", "movflags=+faststart",
                     str(outdir / f"{vid}.part%03d.mp4")], check=True)
     # Part start = number of video frames before it / frame rate. Exact for constant frame rate
-    # and independent of container start offsets (B-frame delay, audio priming).
+    # and independent of container start offsets (B-frame delay).
     fps = frame_rate(full)
     parts, nframes = [], 0
     for line in lst.read_text().splitlines():
@@ -188,17 +168,6 @@ def setup(argv):
     return mode, vid, work
 
 
-def adequate_captions(vtt: Path, duration: float) -> bool:
-    """True when the captions really say something (see transcript.captions_adequate); otherwise the transcript
-    job runs Whisper (and installs it, which is what has_captions=false triggers in the workflow)."""
-    if not vtt.exists():
-        return False
-    from .transcript import captions_adequate, parse_vtt
-    ok, wpm, span = captions_adequate(parse_vtt(vtt.read_text(errors="replace")), duration)
-    log(f"captions: {wpm} words/min, span {span:.0%} -> {'used' if ok else 'not adequate, Whisper will run'}")
-    return ok
-
-
 def plan(vid: str, work: Path, gh: GH, chunk_len: float):
     """Step 1: is the video already archived in its Release? Then skip download + encode."""
     gh_output(video_id=vid)
@@ -206,23 +175,20 @@ def plan(vid: str, work: Path, gh: GH, chunk_len: float):
     if rel and any(a["name"] == "parts.json" for a in rel["assets"]):
         log(f"release {vid} already archived; skipping download")
         gh.download_asset(rel, "parts.json", work / "parts.json")
-        for name in ("info.json", "captions.vtt"):
-            if any(a["name"] == name for a in rel["assets"]):
-                gh.download_asset(rel, name, work / name)
+        if any(a["name"] == "info.json" for a in rel["assets"]):
+            gh.download_asset(rel, "info.json", work / "info.json")
         manifest = json.loads((work / "parts.json").read_text())
-        gh_output(chunks=chunk_plan(manifest["duration"], chunk_len, float(manifest.get("fps") or 30)), duration=str(manifest["duration"]),
-                  has_captions="true" if adequate_captions(work / "captions.vtt", manifest["duration"]) else "false", reused="true")
+        gh_output(chunks=chunk_plan(manifest["duration"], chunk_len, float(manifest.get("fps") or 30)), duration=str(manifest["duration"]), reused="true")
     else:
         gh_output(reused="false")
 
 
 def fetch(vid: str, work: Path):
-    """Step 2: get the source video + metadata + captions into work/dl (the only step that
+    """Step 2: get the source video + metadata into work/dl (the only step that
     talks to YouTube, so it is the only one run through the WARP tunnel)."""
     url = f"https://www.youtube.com/watch?v={vid}"
     dl = work / "dl"
     dl.mkdir(exist_ok=True)
-    cap = None
     if vid == SELFTEST_ID:  # offline self-test: a generated clip with known content, no YouTube
         secs = os.environ.get("SELFTEST_SECONDS", "90")
         subprocess.run([sys.executable, "tests/synthetic.py", str(dl / "syn"), secs], check=True)
@@ -230,30 +196,26 @@ def fetch(vid: str, work: Path):
         info = json.loads((dl / "syn" / "info.json").read_text())
         info.update(channel="yt-digest self-test", duration=float(secs), webpage_url="(synthetic)")
     else:
-        info, cap = download(url, dl, work)
+        info = download(url, dl, work)
     slim = {k: info.get(k) for k in ("id", "title", "channel", "uploader", "upload_date", "duration",
                                      "description", "webpage_url", "chapters", "language", "view_count")}
-    save_json(dl / "meta.json", {"info": slim, "cap": cap})
+    save_json(dl / "meta.json", {"info": slim})
 
 
 def download(url: str, dl: Path, work: Path):
     try:
         run_ytdlp(["--skip-download", "--write-info-json", "-o", "src.%(ext)s", url], dl)
         info = json.loads((dl / "src.info.json").read_text())
-        cap = pick_caption(info)
-        args = ["--load-info-json", "src.info.json", "-f",
-                "bv*[height<=720][vcodec^=avc1]+ba/bv*[height<=720]+ba/b[height<=720]/b",
-                "--merge-output-format", "mkv", "-o", "src.%(ext)s"]
-        if cap:
-            args += ["--write-auto-subs" if cap[1] else "--write-subs", "--sub-langs", cap[0],
-                     "--sub-format", "vtt/best", "--convert-subs", "vtt"]
-        run_ytdlp(args, dl)
+        # video stream only: the audio is never used
+        run_ytdlp(["--load-info-json", "src.info.json", "-f",
+                   "bv*[height<=720][vcodec^=avc1]/bv*[height<=720]/b[height<=720]/b",
+                   "-o", "src.%(ext)s"], dl)
     except Blocked as e:
         gh_output(blocked="true")
         (work / "blocked.txt").write_text(str(e))
         log("YouTube blocked this attempt (bot check / HTTP 403 / 429)")
         raise SystemExit(75)  # EX_TEMPFAIL: the caller may retry from a fresh network path
-    return info, cap
+    return info
 
 
 def archive(vid: str, work: Path, gh: GH, chunk_len: float):
@@ -261,16 +223,12 @@ def archive(vid: str, work: Path, gh: GH, chunk_len: float):
     url = f"https://www.youtube.com/watch?v={vid}"
     dl = work / "dl"
     meta = json.loads((dl / "meta.json").read_text())
-    slim, cap = meta["info"], meta["cap"]
+    slim = meta["info"]
     if vid == SELFTEST_ID:
         chunk_len = 30.0  # several matrix jobs
         global MAX_PART, SEG_TARGET
         MAX_PART, SEG_TARGET = 3 * 1024**2, 2 * 1024**2  # several release parts
     src = next(p for p in dl.iterdir() if p.name.startswith("src.") and p.suffix in (".mkv", ".mp4", ".webm"))
-    subs = [p for p in dl.iterdir() if p.suffix == ".vtt"]
-    if subs:
-        shutil.copy(subs[0], work / "captions.vtt")
-    slim["caption_track"] = {"lang": cap[0], "auto": cap[1]} if cap else None
     save_json(work / "info.json", slim)
 
     arch = work / "archive"
@@ -288,17 +246,16 @@ def archive(vid: str, work: Path, gh: GH, chunk_len: float):
     save_json(work / "parts.json", manifest)
 
     body = (f"Archive of [{slim['title']}]({url}) by {slim.get('channel')}\n\n"
-            f"720p H.264 CRF 26, {len(parts)} part(s). Parts are independently playable; "
+            f"720p H.264 CRF 26, no audio, {len(parts)} part(s). Parts are independently playable; "
             f"`parts.json` lists the start time of each.")
     gh.ensure_release(vid, f"{vid}: {slim['title']}"[:120], body)
     for p in parts:
         log(f"uploading {p['name']} ({p['size'] / 1e6:.0f} MB)")
         gh.upload_asset(gh.release(vid), arch / p["name"], "video/mp4")
-    for name in ("info.json", "captions.vtt", "parts.json"):  # parts.json last = archive complete
+    for name in ("info.json", "parts.json"):  # parts.json last = archive complete
         if (work / name).exists():
             gh.upload_asset(gh.release(vid), work / name)
-    gh_output(chunks=chunk_plan(duration, chunk_len, num / den), duration=str(duration),
-              has_captions="true" if adequate_captions(work / "captions.vtt", duration) else "false", reused="false")
+    gh_output(chunks=chunk_plan(duration, chunk_len, num / den), duration=str(duration), reused="false")
 
 
 def main():

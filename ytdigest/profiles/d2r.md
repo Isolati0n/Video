@@ -17,8 +17,7 @@ detector suggests it when the first frames show the D2R orb HUD (it never switch
   where the whole view changes and the new view does not match the old one: motion high, structural match low, most blocks
   changed), `run_burst` (sustained camera movement), `text` (new chat / message text).
 - **Analysis rate:** 25 fps, D2R's tick rate, whatever the video's own rate is.
-- It reads its own text regions, so it turns off whole-frame OCR, and it keeps only the generic `silence`, `loud_peak`
-  and `static` events.
+- It reads its own text regions, so it turns off whole-frame OCR, and it keeps only the generic `static` event.
 
 ## Measured
 

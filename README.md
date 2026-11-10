@@ -1,12 +1,13 @@
 # yt-digest: a general-purpose video-watching tool for AI
 
 Give it any video (a YouTube link, or a file you upload) and it produces what an AI needs to *watch* it: a
-timestamped transcript, the text that appears on screen, a list of events, frame-by-frame data, and contact sheets
+the text that appears on screen, a list of visual events, frame-by-frame data, and contact sheets
 of the footage with an index that says where to look. It works the same way on lectures, tutorials, interviews and
 talking heads, screen recordings, slide decks, vlogs and games. Anything specific to one kind of content (a game's
 health bars, say) lives in an optional **profile**; Diablo II: Resurrected PvP is just the first example.
 
-Everything runs in GitHub Actions. You only need the GitHub app or a phone browser.
+**Visual data only:** the audio track is never downloaded, stored or analysed (no transcript, no speech, no sound
+events). Everything runs in GitHub Actions. You only need the GitHub app or a phone browser.
 
 ## Phone-only quick start
 
@@ -45,7 +46,7 @@ from GitHub at all, and it is also how you digest **your own recordings** (a scr
      splitter app and attach all of them to the same Release; they are joined in file-name order
      (`part1.mp4`, `part2.mp4`, …).
 3. **Comment `/ingest my-video-1`** on any issue (add `profile: <name>` on the same line if you want a profile).
-   It runs the same pipeline from there: archive, transcript, analysis, sheets, index.
+   It runs the same pipeline from there: archive (video only), analysis, sheets, index. The file's audio, if any, is ignored and never needed.
 4. **A direct file link works too**: `/ingest https://example.com/video.mp4 as lecture1`. Only public
    `http(s)` links are fetched (not private addresses), up to 12 GB.
 
@@ -59,8 +60,7 @@ tested on a phone; the `/ingest` mechanics below them were tested, see *Measured
 
 | file | content |
 |---|---|
-| `index.md` | **Start here.** Maps every contact sheet to its time range, the events in it, the on-screen text and the transcript excerpt. Sheet links are Release URLs. |
-| `transcript.md` | `[HH:MM:SS] text`. YouTube captions when they cover the video, otherwise faster-whisper (small, int8; language detected from the loudest windows). |
+| `index.md` | **Start here.** Maps every contact sheet to its time range, the events in it and the on-screen text. Sheet links are Release URLs. |
 | `ocr.md` / `ocr.json` | On-screen text with timestamps: whole-frame OCR about once a second and on every scene change; each line is listed once, when it first appears. Slides, code, menus, chat, score counters. Low-confidence lines are marked `[?]`; text that sits at the same place through the whole video (menu bars, watermarks, overlays) is left out and listed in `ocr.json` under `furniture_suppressed`. |
 | `keyframes.json` | Every keyframe: time, why it was chosen (`first`, `scene`, `changed`, `text`, `heartbeat`), and flags for the reader (below). |
 | `events.md` / `events.json` | Timestamped events (generic + the profile's). |
@@ -115,8 +115,7 @@ A profile adds its own keys next to these (the generic profile adds none).
 
 `scene_change` (cuts; runs of rapid cuts merge) · `motion_burst` (large change that is not a cut; at most 6 per
 minute, the strongest kept) · `static` (the picture hardly changes for ≥ 20 s: a slide, a paused video) ·
-`black` (fade, loading) · `text_change` (new on-screen text) · `silence` (≥ 8 s below −50 dBFS) ·
-`loud_peak` (≥ 12 dB over the typical level). Thresholds are at the top of `ytdigest/events.py` and `audio.py`.
+`black` (fade, loading) · `text_change` (new on-screen text). Thresholds are at the top of `ytdigest/events.py`.
 
 ## Profiles
 
@@ -152,15 +151,13 @@ issue labeled "digest"  |  /ingest <tag | url>
   └─ request     parse command, profile; comment "started"
   └─ prepare     YouTube download through WARP (or ingest) → 720p H.264 archive in Release <id>
                  → profile + calibration → commit config/videos/<id>.json → comment calibration/suggestion
-       ├─ analyze[matrix]  parallel chunks: every frame, whole-frame OCR, keyframe candidates
-       └─ transcript       captions (if they cover the video) or faster-whisper
-  └─ finalize    merge → events (generic + profile + audio) → keyframes → sheets → Release sheets-<id>
+       └─ analyze[matrix]  parallel chunks: every frame, whole-frame OCR, keyframe candidates
+  └─ finalize    merge → events (generic + profile) → keyframes → sheets → Release sheets-<id>
                  → index.md, ocr.md, thumbs → commit digests/<id>/ → INDEX.md → comment
   └─ report-failure  comments the failing step's log lines (+ the phone-upload hint for download failures)
 ```
 
-Dependencies are pinned in `requirements*.txt`; pip downloads are cached by `actions/setup-python`, the Whisper
-model by `actions/cache`.
+Dependencies are pinned in `requirements*.txt`; pip downloads are cached by `actions/setup-python`.
 
 ## YouTube access (no login, no cookies)
 
@@ -184,7 +181,7 @@ does not depend on YouTube at all. Set the repository variable `USE_WARP=false` 
 
 ## Storage
 
-In git (`digests/<id>/`): `index.md`, `events.*`, `transcript.*`, `ocr.*`, `frames.jsonl.gz`,
+In git (`digests/<id>/`): `index.md`, `events.*`, `ocr.*`, `frames.jsonl.gz`,
 `thumbs/overview_*.jpg`, `summary.json`, `meta.json`, plus the small `zooms/<id>/<range>/index.md` files.
 In Releases (not git, so git history stays small): the archived video parts, `parts.json`, the contact sheets
 (`sheets-<id>`), and every zoom's sheets (`zoom-<id>-<range>`). Re-running a digest deletes and recreates its
@@ -207,19 +204,16 @@ Read this before trusting the output.
   "Blood Moor"), missing lines and some invented noise. Lines are fuzzy-deduplicated, so a real change in
   a few characters can be missed. Only English is read by default; text sizes under ~10 px at 720p are mostly lost.
   The archive is 720p, so text that needed 1080p may be unreadable.
-- **A talking head is mostly invisible to it.** It sees the words (captions, subtitles, Whisper), cuts, loudness and
-  keyframes; it does not know who speaks or what the speaker is doing. Moving hosts still make picture-driven keyframes.
-- **Silent or music-only videos have a thin transcript** (the tool says so); what is said in the pictures (recipe steps,
-  stylised overlay text) comes through OCR only in fragments.
+- **Nothing that is only said is captured.** There is no transcript and no audio analysis: speech, narration, music and
+  sound effects are invisible to it. A talking head shows up as cuts, keyframes and any burned-in subtitles or lower
+  thirds that OCR can read; it does not know who speaks or what they say. What is shown in the pictures (recipe steps,
+  stylised overlay text) comes through OCR only in fragments, so look at the images.
 - **Picture-in-picture detection needs a quiet background.** A webcam is found when it moves while the rest of the picture
   is calm (slides, screen recordings); in full-motion footage there is nothing to compare against and none is reported.
 - **Furniture suppression needs repetition.** Text that appears in half the OCR'd frames and across the whole video is
   dropped; a header that is on screen for only some sections, or one that changes slightly each time, stays.
-- **Audio events are only loudness.** `silence` and `loud_peak` cannot tell speech from music or a cheer from
-  an explosion. Whisper (small, int8) is good on clear speech, weaker on crosstalk, accents, music and game noise;
-  captions from YouTube (often auto-generated) are used when they span ≥ 60 % of the video.
 - **Event counts are not ground truth.** Thresholds are fixed numbers; a different video style may need
-  different ones (they are at the top of `ytdigest/events.py`, `audio.py`, and the profile).
+  different ones (they are at the top of `ytdigest/events.py` and the profile).
 - **The sheet selection can hide things.** Perceptual-hash dedupe skips near-identical frames; a small change
   (a number ticking over in a corner) may not make a new tile. It is still in `frames.jsonl.gz` and `ocr.md`.
 
@@ -256,24 +250,23 @@ keyframes on Melee).
 ### What the generic output captured and missed, by kind of video
 
 - **Lecture with slides and a webcam.** Captured: slide titles and statements ("Chebyshev's Inequality", "Union bound:
-  Pr[A ∨ B] ≤ Pr[A] + Pr[B]", the theorem for Hoeffding's inequality), a keyframe per slide change, the transcript (YouTube
-  captions), formulas flagged so the reader opens the image. Missed: formulas as text (garbled), the presenter's pointer, and
+  Pr[A ∨ B] ≤ Pr[A] + Pr[B]", the theorem for Hoeffding's inequality), a keyframe per slide change, formulas flagged so the reader opens the image. Missed: formulas as text (garbled), the presenter's pointer, and
   which of five quickly flicked slides mattered.
-- **Talking-head podcast with burned-in subtitles (17 min).** Captured: the subtitles read well, almost word for word as the
-  transcript ("The Power of Positive Thinking: Change Your Mindset, Change Your Life"), 35 scene changes (cuts between hosts and
-  graphics), 7 silences (80 s in all), 68 transcript lines. Subtitles changing every few seconds used to drive 136
-  text keyframes; the bottom caption strip is now ignored for keyframes (47 remain, from title cards and lower thirds).
-  Missed: who is speaking (no speaker identification), gestures and expressions, anything that is not text or loudness.
-  The hosts moving still produce picture-driven keyframes (75 `changed`).
-- **Cooking tutorial (10:46).** Captured: 19 scene cuts, 18 loud peaks, the channel branding and an
-  "Let's go!"-style overlay, the intro and outro captions. The auto-captions held 3 lines for 10 minutes ("Heat."), so the tool
-  now treats captions under 15 words a minute as inadequate and runs Whisper; it heard no narration, so the transcript stays
-  sparse and says so. Missed: the recipe. Steps, ingredients and quantities are stylised on-screen text that OCR reads in
+- **Talking-head podcast with burned-in subtitles (17 min).** Captured: the subtitles read well, almost word for word
+  ("The Power of Positive Thinking: Change Your Mindset, Change Your Life"), 35 scene changes (cuts between hosts and
+  graphics). Subtitles changing every few seconds used to drive 136 text keyframes; the bottom caption strip is now ignored
+  for keyframes (47 remain, from title cards and lower thirds). Missed: who is speaking, gestures and expressions, and
+  anything said without being shown. The hosts moving still produce picture-driven keyframes (75 `changed`).
+- **Cooking tutorial (10:46).** Captured: 19 scene cuts, the channel branding and an "Let's go!"-style overlay, the intro
+  and outro captions. Missed: the recipe. Steps, ingredients and quantities are stylised on-screen text that OCR reads in
   fragments, and the actions (rinsing clams, stirring) are only visible in the images: no data field says "washing clams".
 - **Fighting game, 54 min at 60 fps.** Captured: broadcast overlay, the match clock and the damage counters ("71% 134%"), 605
   events, dense frames at 60 fps around motion bursts. Missed: which counter belongs to which player, stocks, who won
   (what a Melee profile would add).
 - **Synthetic phone screen recording** (portrait, variable frame rate, no audio): 19 of 19 known lines read exactly.
+
+Numbers in this section were measured before the audio was removed; where a count included `silence` / `loud_peak` events
+those event types no longer exist. See *Cost and storage* for the effect of dropping audio.
 
 ### Cost and storage
 
@@ -290,8 +283,8 @@ Releases a digest cost ~140 MB per hour in git; history still holds the old vers
 ### `/ingest`, access and tests
 
 - `/ingest` on a Release with two uploaded files (synthetic phone recording, portrait 1080x2400, variable frame rate, no
-  audio): joined, normalised to 720x1600 at 30 fps, transcript step reports "no audio track", digest in 2 min 30 s. A direct
-  file URL (a public 4:55 clip, no captions so Whisper ran): 4 min 15 s. Private, loopback and cloud-metadata URLs are refused;
+  audio): joined, normalised to 720x1600 at 30 fps, digest in 2 min 30 s. A direct
+  file URL (a public 4:55 clip): 4 min 15 s. Private, loopback and cloud-metadata URLs are refused;
   `/delete` on an ingested tag removes everything generated and keeps the uploaded files. Not tested: the phone apps
   (Seal, NewPipe, the mobile release form) and files near 2 GB.
 - YouTube access: WARP succeeded on attempt 1 for every download in these tests except one video that was refused 5 times in a
@@ -308,18 +301,14 @@ Releases a digest cost ~140 MB per hour in git; history still holds the old vers
 
 ## Credits
 
-Ideas adopted from two MIT-licensed projects (thank you):
+Ideas adopted from an MIT-licensed project (thank you; an earlier version also took the caption coverage check from [jordanrendric/claude-video-vision](https://github.com/jordanrendric/claude-video-vision), since removed with the transcript):
 
 - [usedeepmark/watch-for-me](https://github.com/usedeepmark/watch-for-me): yt-dlp failure
   classification and retrying only transient 403/blocked errors, and choosing frames by grouping near-identical
   ones by perceptual hash instead of sampling at fixed intervals.
-- [jordanrendric/claude-video-vision](https://github.com/jordanrendric/claude-video-vision): the
-  caption coverage check (captions that stop early or are sparse fall back to local Whisper) and the
-  caption-track selection order.
 
 Tools used at run time: [yt-dlp](https://github.com/yt-dlp/yt-dlp) (Unlicense),
-[wgcf](https://github.com/ViRb3/wgcf) (MIT), [faster-whisper](https://github.com/SYSTRAN/faster-whisper)
-(MIT), ffmpeg, Tesseract, OpenCV. The bgutil PO-token provider
+[wgcf](https://github.com/ViRb3/wgcf) (MIT), ffmpeg, Tesseract, OpenCV. The bgutil PO-token provider
 ([Brainicism/bgutil-ytdlp-pot-provider](https://github.com/Brainicism/bgutil-ytdlp-pot-provider),
 GPL-3.0) was evaluated only in `.github/workflows/access-test.yml`, installed at run time and not
 redistributed here; it did not help.

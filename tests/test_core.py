@@ -44,7 +44,7 @@ def test_generic_events():
     text = [{"t": 10.0, "f": 300, "lines": [{"text": "Hello world slide", "conf": 90}]},
             {"t": 11.0, "f": 330, "lines": [{"text": "Hello world slide", "conf": 90}]},       # repeat: no new event
             {"t": 40.0, "f": 1200, "lines": [{"text": "Second slide title", "conf": 90}]}]
-    ev, st = E.derive_generic(recs, fps, text, [])
+    ev, st = E.derive_generic(recs, fps, text)
     kinds = [e["type"] for e in ev]
     assert kinds.count("scene_change") == 1 and kinds.count("black") == 1 and kinds.count("motion_burst") == 1, kinds
     assert kinds.count("text_change") == 2, kinds
@@ -166,13 +166,7 @@ def test_profile_line_parsing():
     assert find_profile("/digest\n`profile`: Melee") == "melee"
 
 
-def test_captions_adequate_and_caption_strip():
-    from ytdigest.transcript import captions_adequate
-    talk = [{"start": i * 4.0, "end": i * 4.0 + 3.5, "text": "we are talking about many different things here"} for i in range(150)]
-    assert captions_adequate(talk, 600)[0]
-    sparse = [{"start": 43, "end": 50, "text": "Hi everyone welcome to my kitchen"}, {"start": 123, "end": 124, "text": "Heat."},
-              {"start": 637, "end": 645, "text": "Thanks for watching see you next week"}]
-    assert not captions_adequate(sparse, 645)[0]                       # spans the video but says almost nothing
+def test_caption_strip_does_not_drive_keyframes():
     # burned-in subtitles (bottom strip) must not drive text keyframes; a changing title above them still does
     ents = []
     for t in range(60):
@@ -194,6 +188,76 @@ def test_talking_head_does_not_flood_keyframes():
 def test_d2r_profile_needs_calibration():
     p = profiles.get("d2r")
     assert p.fps == 25.0 and p.generic_ocr is False and "teleport" in p.dense_types
+
+
+def _clip(path, audio: bool, secs=12):
+    """A small 640x360 clip: moving block, a text line that changes at 6 s; optional sine audio."""
+    import subprocess
+    import cv2
+    import numpy as np
+    cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s", "640x360", "-r", "30", "-i", "-"]
+    if audio:
+        cmd += ["-f", "lavfi", "-i", "sine=frequency=440:sample_rate=44100", "-shortest", "-c:a", "aac"]
+    cmd += ["-c:v", "libx264", "-pix_fmt", "yuv420p", str(path)]
+    p = subprocess.Popen(cmd, stdin=subprocess.PIPE)
+    for i in range(secs * 30):
+        f = np.full((360, 640, 3), 40, np.uint8)
+        cv2.rectangle(f, (20 + i * 3 % 400, 200), (120 + i * 3 % 400, 300), (200, 200, 60), -1)
+        cv2.putText(f, "FIRST SLIDE TITLE" if i < 180 else "SECOND SLIDE TITLE", (30, 80), cv2.FONT_HERSHEY_SIMPLEX, 1.4, (255, 255, 255), 3)
+        p.stdin.write(f.tobytes())
+    p.stdin.close()
+    p.wait()
+
+
+def _streams(path):
+    import json
+    import subprocess
+    out = subprocess.check_output(["ffprobe", "-v", "error", "-print_format", "json", "-show_streams", str(path)])
+    return [s["codec_type"] for s in json.loads(out)["streams"]]
+
+
+def test_pipeline_completes_with_and_without_audio():
+    """Visual data only: the archive never has an audio track, and a source with no audio stream (a phone screen
+    recording) or with one goes through archive -> analysis -> finalize the same way."""
+    import json
+    import subprocess
+    import sys
+    import tempfile
+    from pathlib import Path
+    from ytdigest import prepare
+    root = Path(__file__).resolve().parent.parent
+    import shutil
+    dg = root / "digests" / "T1"          # the pipeline writes into the repo's digests/; removed again below
+    assert not dg.exists()
+    for has_audio in (True, False):
+        shutil.rmtree(dg, ignore_errors=True)
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d)
+            src = d / "src.mp4"
+            _clip(src, has_audio)
+            assert ("audio" in _streams(src)) == has_audio
+            arch = d / "work" / "archive"
+            arch.mkdir(parents=True)
+            full = arch / "T1.mp4"
+            prepare.encode_archive(src, full)
+            assert _streams(full) == ["video"], _streams(full)                        # -an: never an audio track
+            parts = prepare.split_archive(full, "T1", arch, 12.0)
+            assert all(_streams(arch / x["name"]) == ["video"] for x in parts)
+            (d / "work" / "parts.json").write_text(json.dumps({"video_id": "T1", "duration": 12.0, "width": 640, "height": 360,
+                                                              "fps": 30.0, "parts": parts}))
+            (d / "work" / "info.json").write_text(json.dumps({"title": "t", "id": "T1"}))
+            run = lambda *a: subprocess.run([sys.executable, "-m", "ytdigest." + a[0], *a[1:]], cwd=d, check=True,
+                                            env={**__import__("os").environ, "PYTHONPATH": str(root)}, capture_output=True, text=True)
+            run("analyze", "T1", "0", "12", "chunk", "--workdir", "work", "--archive-dir", str(arch))
+            run("finalize", "T1", "chunk", "work", "--archive-dir", str(arch), "--no-upload")
+            for name in ("index.md", "events.md", "events.json", "ocr.md", "frames.jsonl.gz", "keyframes.json", "summary.json"):
+                assert (dg / name).exists(), (has_audio, name)
+            assert not (dg / "transcript.md").exists()
+            types = {e["type"] for e in json.load(open(dg / "events.json"))}
+            assert not types & {"silence", "loud_peak"}, types
+            assert "SLIDE TITLE" in (dg / "ocr.md").read_text().upper()
+            assert "transcript" not in (dg / "index.md").read_text().lower()
+    shutil.rmtree(dg, ignore_errors=True)
 
 
 if __name__ == "__main__":

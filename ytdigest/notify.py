@@ -119,7 +119,7 @@ def main():
                 f"- Events: **{s.get('events')}** ({counts})\n"
                 f"- Contact sheets: {s.get('sheets')} in [Release `sheets-{vid}`]({base}/{slug}/releases/tag/sheets-{vid}) "
                 f"({(s.get('sheet_bytes_total') or 0) / 1e6:.0f} MB, not in git) · digest in git: {(s.get('git_bytes') or 0) / 1e6:.1f} MB\n"
-                f"- Transcript: {s.get('transcript_lines')} lines ({s.get('transcript_source')}) · on-screen text entries: {s.get('ocr_entries')}\n"
+                f"- On-screen text entries: {s.get('ocr_entries')}\n"
                 f"- Runtime: {rt // 60} min {rt % 60} s\n\n"
                 f"Start with [index.md]({blob(sha, f'digests/{vid}/index.md')}) (also listed in [INDEX.md]({blob(sha, 'INDEX.md')})). "
                 f"Zoom: `/zoom {vid} H:MM:SS-H:MM:SS [fps]`. [Run log]({run_url()})")
