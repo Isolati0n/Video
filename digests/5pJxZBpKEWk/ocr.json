@@ -1,0 +1,6031 @@
+{
+  "furniture_suppressed": [
+    {
+      "text": "Foundations of Machine Learning",
+      "share": 0.85,
+      "x": 320,
+      "y": 880
+    },
+    {
+      "text": "Tools Window Help",
+      "share": 0.6,
+      "x": 160,
+      "y": 0
+    },
+    {
+      "text": "& Preview File Edit View Go Tools Window Help",
+      "share": 0.51,
+      "x": 0,
+      "y": 0
+    }
+  ],
+  "entries": [
+    {
+      "t": 0.0,
+      "f": 0,
+      "new": [
+        "Wed May 28",
+        "This Lecture",
+        "Basic definitions and concepts.",
+        "Introduction to the problem of learning",
+        "Logo I",
+        "Probability tools.",
+        "Jot"
+      ],
+      "conf": [
+        93,
+        96,
+        96,
+        96,
+        76,
+        96,
+        93
+      ],
+      "low": []
+    },
+    {
+      "t": 8.0,
+      "f": 480,
+      "new": [
+        "Basic Properties",
+        "Union bound: Pr[A Vv B] < Pr[A] + Pr[B].",
+        "Inversion: if > f(e), then, for any6>0, with",
+        "probability at least 1-5, X",
+        "Jensen's inequality: if f is convex, f (E[X]) <E[f(X)] .",
+        "Expectation: if [Paix"
+      ],
+      "conf": [
+        96,
+        85,
+        82,
+        81,
+        80,
+        63
+      ],
+      "low": [
+        "Expectation: if [Paix"
+      ]
+    },
+    {
+      "t": 11.0,
+      "f": 660,
+      "new": [
+        "lie"
+      ],
+      "conf": [
+        80
+      ],
+      "low": []
+    },
+    {
+      "t": 12.0,
+      "f": 720,
+      "new": [
+        "fed May",
+        "age"
+      ],
+      "conf": [
+        68,
+        88
+      ],
+      "low": [
+        "fed May"
+      ]
+    },
+    {
+      "t": 13.0,
+      "f": 780,
+      "new": [
+        "Jot"
+      ],
+      "conf": [
+        93
+      ],
+      "low": []
+    },
+    {
+      "t": 16.0,
+      "f": 960,
+      "new": [
+        "Inversion: if Pr[X >",
+        "then, for any with",
+        "Expectation: if xX >0, ELX] if Pr[X > t] dt"
+      ],
+      "conf": [
+        85,
+        84,
+        75
+      ],
+      "low": []
+    },
+    {
+      "t": 18.0,
+      "f": 1080,
+      "new": [
+        "Wed May 28 2:02PM"
+      ],
+      "conf": [
+        88
+      ],
+      "low": []
+    },
+    {
+      "t": 21.0,
+      "f": 1260,
+      "new": [
+        "Basic Properties",
+        "Union bound: Pr[A V B} < Pr[A] + Pr[B].",
+        "Inversion: if > f(e), then, for with",
+        "probability at least 1-5, X",
+        "Jensen's inequality: if f is convex, f (E[X]) <E[f(X)] .",
+        "Expectation: if X>0 , = >"
+      ],
+      "conf": [
+        96,
+        82,
+        89,
+        91,
+        82,
+        82
+      ],
+      "low": []
+    },
+    {
+      "t": 24.0,
+      "f": 1440,
+      "new": [
+        "ofM#: ne",
+        "lia"
+      ],
+      "conf": [
+        68,
+        62
+      ],
+      "low": [
+        "ofM#: ne",
+        "lia"
+      ]
+    },
+    {
+      "t": 25.0,
+      "f": 1500,
+      "new": [
+        "lie",
+        "age"
+      ],
+      "conf": [
+        72,
+        89
+      ],
+      "low": []
+    },
+    {
+      "t": 26.0,
+      "f": 1560,
+      "new": [
+        "Jot"
+      ],
+      "conf": [
+        93
+      ],
+      "low": []
+    },
+    {
+      "t": 29.0,
+      "f": 1740,
+      "new": [
+        "Union Vv B] < Pr[A] + Pr[B]."
+      ],
+      "conf": [
+        81
+      ],
+      "low": []
+    },
+    {
+      "t": 31.0,
+      "f": 1860,
+      "new": [
+        "Wed May 28 2:02PM"
+      ],
+      "conf": [
+        86
+      ],
+      "low": []
+    },
+    {
+      "t": 34.0,
+      "f": 2040,
+      "new": [
+        "Basic Properties",
+        "Union bound: Pr[A Vv B] < Pr[A] + Pr[B].",
+        "Inversion: if > f(e), then, for with",
+        "probability at least 1-5, X",
+        "Jensen's inequality: if f is convex, f (E[X]) <E[f(X)] .",
+        "Expectation: if X>0 , = >",
+        "page30"
+      ],
+      "conf": [
+        96,
+        85,
+        88,
+        92,
+        84,
+        82,
+        86
+      ],
+      "low": []
+    },
+    {
+      "t": 36.0,
+      "f": 2160,
+      "new": [
+        "May"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 38.0,
+      "f": 2280,
+      "new": [
+        "age"
+      ],
+      "conf": [
+        89
+      ],
+      "low": []
+    },
+    {
+      "t": 40.0,
+      "f": 2400,
+      "new": [
+        "ofM#: ne"
+      ],
+      "conf": [
+        68
+      ],
+      "low": [
+        "ofM#: ne"
+      ]
+    },
+    {
+      "t": 41.0,
+      "f": 2460,
+      "new": [
+        "Jot"
+      ],
+      "conf": [
+        93
+      ],
+      "low": []
+    },
+    {
+      "t": 48.0,
+      "f": 2880,
+      "new": [
+        "Basic Properties",
+        "Union bound: Pr[A Vv B] < Pr[A] + Pr[B].",
+        "Inversion: if > ds then, for any5>0, with",
+        "probability at least 1-5, X",
+        "Jensen's inequality: if f is convex, f (E[X]) <E[f(X)] .",
+        "Expectation: if X>0 , = >"
+      ],
+      "conf": [
+        96,
+        85,
+        87,
+        90,
+        82,
+        82
+      ],
+      "low": []
+    },
+    {
+      "t": 49.0,
+      "f": 2940,
+      "new": [
+        "Wed May 28 2:02PM"
+      ],
+      "conf": [
+        86
+      ],
+      "low": []
+    },
+    {
+      "t": 50.0,
+      "f": 3000,
+      "new": [
+        "Inversion: if PrL\u00a5 > f(e), then, for with"
+      ],
+      "conf": [
+        84
+      ],
+      "low": []
+    },
+    {
+      "t": 51.0,
+      "f": 3060,
+      "new": [
+        "yed May 28",
+        "then, for any 6>0, with",
+        "Expectation: if xX >0, ELX] if Pr[X > t] dt",
+        "age"
+      ],
+      "conf": [
+        78,
+        83,
+        78,
+        91
+      ],
+      "low": []
+    },
+    {
+      "t": 55.0,
+      "f": 3300,
+      "new": [
+        "fed May",
+        "Jot"
+      ],
+      "conf": [
+        68,
+        94
+      ],
+      "low": [
+        "fed May"
+      ]
+    },
+    {
+      "t": 62.0,
+      "f": 3720,
+      "new": [
+        "Basic Properties",
+        "Union bound: Pr[A Vv B] < Pr[A] + Pr[B].",
+        "probability at least 1-5, X",
+        "Jensen's inequality: if f is convex, f (E[X]) <E[f(X)] .",
+        "Expectation: if X>0 , = >",
+        "lie"
+      ],
+      "conf": [
+        96,
+        85,
+        92,
+        83,
+        82,
+        78
+      ],
+      "low": []
+    },
+    {
+      "t": 63.0,
+      "f": 3780,
+      "new": [
+        "Inversion: if Pr[X > f(e), then, for with",
+        "rey"
+      ],
+      "conf": [
+        89,
+        67
+      ],
+      "low": [
+        "rey"
+      ]
+    },
+    {
+      "t": 64.0,
+      "f": 3840,
+      "new": [
+        "age"
+      ],
+      "conf": [
+        91
+      ],
+      "low": []
+    },
+    {
+      "t": 67.0,
+      "f": 4020,
+      "new": [
+        "& Proview",
+        "Inversion: if 2",
+        "then, for any with"
+      ],
+      "conf": [
+        64,
+        85,
+        83
+      ],
+      "low": [
+        "& Proview"
+      ]
+    },
+    {
+      "t": 68.0,
+      "f": 4080,
+      "new": [
+        "Jot",
+        "980 eon \u00ae"
+      ],
+      "conf": [
+        94,
+        64
+      ],
+      "low": [
+        "980 eon \u00ae"
+      ]
+    },
+    {
+      "t": 75.0,
+      "f": 4500,
+      "new": [
+        "Wed May",
+        "Basic Properties",
+        "Union bound: Pr[A Vv B] < Pr[A] + Pr[B].",
+        "probability at least 1-5, X",
+        "inequality: convex, f (E[X]) <E[f(X)] .",
+        "Expectation: if X>0 , = >"
+      ],
+      "conf": [
+        95,
+        96,
+        85,
+        91,
+        82,
+        82
+      ],
+      "low": []
+    },
+    {
+      "t": 76.0,
+      "f": 4560,
+      "new": [
+        "Inversion: if > f(e), then, for with",
+        "Jensen's inequality: if f is convex, f (E[X]) <E[f(X)] .",
+        "lie"
+      ],
+      "conf": [
+        90,
+        84,
+        73
+      ],
+      "low": []
+    },
+    {
+      "t": 77.0,
+      "f": 4620,
+      "new": [
+        "age"
+      ],
+      "conf": [
+        88
+      ],
+      "low": []
+    },
+    {
+      "t": 85.0,
+      "f": 5100,
+      "new": [
+        "Chebyshev\u2019s Inequality",
+        "@ Theorem: let X be a random variable with Var[X] <oo, then,",
+        "for all",
+        "Proof: Observe that",
+        "The result follows Markov's inequality.",
+        "Found:"
+      ],
+      "conf": [
+        72,
+        86,
+        94,
+        96,
+        93,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 86.0,
+      "f": 5160,
+      "new": [
+        "View",
+        "hat",
+        "@ Theorem: let X be a random variable and f a measurable",
+        "convex function. Then,",
+        "@ Proof: definition of convexity, continuity of convex",
+        "functions, and density of finite distributions.",
+        "Sty)"
+      ],
+      "conf": [
+        91,
+        66,
+        89,
+        96,
+        93,
+        96,
+        61
+      ],
+      "low": [
+        "hat",
+        "Sty)"
+      ]
+    },
+    {
+      "t": 87.0,
+      "f": 5220,
+      "new": [
+        "QuickTime Piayer"
+      ],
+      "conf": [
+        80
+      ],
+      "low": []
+    },
+    {
+      "t": 88.0,
+      "f": 5280,
+      "new": [
+        "Jot"
+      ],
+      "conf": [
+        93
+      ],
+      "low": []
+    },
+    {
+      "t": 89.0,
+      "f": 5340,
+      "new": [
+        "Jensen\u2019s Inequality"
+      ],
+      "conf": [
+        92
+      ],
+      "low": []
+    },
+    {
+      "t": 90.0,
+      "f": 5400,
+      "new": [
+        "Pal"
+      ],
+      "conf": [
+        64
+      ],
+      "low": [
+        "Pal"
+      ]
+    },
+    {
+      "t": 92.0,
+      "f": 5520,
+      "new": [
+        "Wed M",
+        "rand Log:",
+        "\u00a9 hangn"
+      ],
+      "conf": [
+        90,
+        66,
+        64
+      ],
+      "low": [
+        "rand Log:",
+        "\u00a9 hangn"
+      ]
+    },
+    {
+      "t": 94.0,
+      "f": 5640,
+      "new": [
+        "| Pee"
+      ],
+      "conf": [
+        64
+      ],
+      "low": [
+        "| Pee"
+      ]
+    },
+    {
+      "t": 95.0,
+      "f": 5700,
+      "new": [
+        "Job"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 99.0,
+      "f": 5940,
+      "new": [
+        "hat",
+        "@ Theorem: let X be a random variable and f a measurable",
+        "convex function. Then,",
+        "@ Proof: definition of convexity, continuity of convex",
+        "functions, and density of finite distributions."
+      ],
+      "conf": [
+        64,
+        87,
+        96,
+        91,
+        96
+      ],
+      "low": [
+        "hat"
+      ]
+    },
+    {
+      "t": 102.0,
+      "f": 6120,
+      "new": [
+        "Jensen\u2019s Inequality"
+      ],
+      "conf": [
+        92
+      ],
+      "low": []
+    },
+    {
+      "t": 105.0,
+      "f": 6300,
+      "new": [
+        "Wed M",
+        "Jot"
+      ],
+      "conf": [
+        90,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 110.0,
+      "f": 6600,
+      "new": [
+        "hangn"
+      ],
+      "conf": [
+        77
+      ],
+      "low": []
+    },
+    {
+      "t": 112.0,
+      "f": 6720,
+      "new": [
+        "hat",
+        "@ Theorem: let X be a random variable and f a measurable",
+        "convex function. Then,",
+        "@ Proof: definition of convexity, continuity of convex",
+        "functions, and density of finite distributions."
+      ],
+      "conf": [
+        69,
+        87,
+        96,
+        91,
+        96
+      ],
+      "low": [
+        "hat"
+      ]
+    },
+    {
+      "t": 114.0,
+      "f": 6840,
+      "new": [
+        "rand Log:",
+        "lie"
+      ],
+      "conf": [
+        63,
+        83
+      ],
+      "low": [
+        "rand Log:"
+      ]
+    },
+    {
+      "t": 115.0,
+      "f": 6900,
+      "new": [
+        "Jensen\u2019s Inequality"
+      ],
+      "conf": [
+        92
+      ],
+      "low": []
+    },
+    {
+      "t": 118.0,
+      "f": 7080,
+      "new": [
+        "Wed M",
+        "Jot"
+      ],
+      "conf": [
+        90,
+        94
+      ],
+      "low": []
+    },
+    {
+      "t": 122.0,
+      "f": 7320,
+      "new": [
+        "Six)"
+      ],
+      "conf": [
+        62
+      ],
+      "low": [
+        "Six)"
+      ]
+    },
+    {
+      "t": 123.0,
+      "f": 7380,
+      "new": [
+        "age 43"
+      ],
+      "conf": [
+        77
+      ],
+      "low": []
+    },
+    {
+      "t": 124.0,
+      "f": 7440,
+      "new": [
+        "\u00a9 hangn",
+        "9806"
+      ],
+      "conf": [
+        64,
+        83
+      ],
+      "low": [
+        "\u00a9 hangn"
+      ]
+    },
+    {
+      "t": 125.0,
+      "f": 7500,
+      "new": [
+        "hat",
+        "@ Theorem: let X be a random variable and f a measurable",
+        "convex function. Then,",
+        "@ Proof: definition of convexity, continuity of convex",
+        "functions, and density of finite distributions."
+      ],
+      "conf": [
+        66,
+        87,
+        96,
+        91,
+        96
+      ],
+      "low": [
+        "hat"
+      ]
+    },
+    {
+      "t": 128.0,
+      "f": 7680,
+      "new": [
+        "Jensen\u2019s Inequality",
+        "rand Log:"
+      ],
+      "conf": [
+        92,
+        68
+      ],
+      "low": [
+        "rand Log:"
+      ]
+    },
+    {
+      "t": 133.0,
+      "f": 7980,
+      "new": [
+        "Wed M",
+        "Jot",
+        "lie"
+      ],
+      "conf": [
+        90,
+        93,
+        83
+      ],
+      "low": []
+    },
+    {
+      "t": 138.0,
+      "f": 8280,
+      "new": [
+        "hat",
+        "@ Theorem: let X be a random variable and f a measurable",
+        "convex function. Then,",
+        "| Proof: definition oF convexity, continuity of convex",
+        "\u00a9 hangn",
+        "functions, and density of finite distributions."
+      ],
+      "conf": [
+        66,
+        87,
+        96,
+        85,
+        64,
+        96
+      ],
+      "low": [
+        "hat",
+        "\u00a9 hangn"
+      ]
+    },
+    {
+      "t": 140.0,
+      "f": 8400,
+      "new": [
+        "@ Library",
+        "Comments:",
+        "Proof: uses Hoeffding\u2019s lemma.",
+        "\u00a9 brand i",
+        "\u00a9 Hoeffding\u2019s inequality is a special case of McDiarmid\u2019s",
+        "with",
+        "hang",
+        "o = Pinal"
+      ],
+      "conf": [
+        72,
+        96,
+        88,
+        61,
+        82,
+        96,
+        95,
+        63
+      ],
+      "low": [
+        "\u00a9 brand i",
+        "o = Pinal"
+      ]
+    },
+    {
+      "t": 141.0,
+      "f": 8460,
+      "new": [
+        "Jensen\u2019s Inequality"
+      ],
+      "conf": [
+        90
+      ],
+      "low": []
+    },
+    {
+      "t": 149.0,
+      "f": 8940,
+      "new": [
+        "Concentration Inequalities",
+        "Some general tools for error analysis and bounds:",
+        "\u00a9 Hoeffding's inequality (additive).",
+        "\u00a9 Chernoff bounds (multiplicative).",
+        "e McDiarmid's inequality (more general).",
+        "Jot",
+        "of Machini",
+        "Seu"
+      ],
+      "conf": [
+        92,
+        96,
+        77,
+        86,
+        83,
+        94,
+        75,
+        67
+      ],
+      "low": [
+        "Seu"
+      ]
+    },
+    {
+      "t": 150.0,
+      "f": 9000,
+      "new": [
+        "Go Tools",
+        "Markov's Inequality",
+        "@ Theorem: let X be a non-negative random variable",
+        "@ Proof:",
+        "lie",
+        "Gee \u00ae"
+      ],
+      "conf": [
+        62,
+        90,
+        86,
+        78,
+        83,
+        68
+      ],
+      "low": [
+        "Go Tools",
+        "Gee \u00ae"
+      ]
+    },
+    {
+      "t": 151.0,
+      "f": 9060,
+      "new": [
+        "same expectation p and X; \u20ac [a,b], (a<b). Then, for anye>0,",
+        "the following inequalities hold:",
+        "Machine Learniny"
+      ],
+      "conf": [
+        76,
+        95,
+        78
+      ],
+      "low": []
+    },
+    {
+      "t": 152.0,
+      "f": 9120,
+      "new": [
+        "Wed",
+        "Basic Properties",
+        "Union bound: Pr[A v B] < Pr[A] + Pr[B].",
+        "probability at least 1-5, X",
+        "inequality: if f is cgnvex, f(E[X]) <E[f(X)] .",
+        "Expectation: if X >0, [Paix >",
+        "page"
+      ],
+      "conf": [
+        78,
+        95,
+        85,
+        88,
+        85,
+        61,
+        95
+      ],
+      "low": [
+        "Expectation: if X >0, [Paix >"
+      ]
+    },
+    {
+      "t": 153.0,
+      "f": 9180,
+      "new": [
+        "Inversion: if > f(e), then, for with"
+      ],
+      "conf": [
+        88
+      ],
+      "low": []
+    },
+    {
+      "t": 154.0,
+      "f": 9240,
+      "new": [
+        "age"
+      ],
+      "conf": [
+        90
+      ],
+      "low": []
+    },
+    {
+      "t": 157.0,
+      "f": 9420,
+      "new": [
+        "lis"
+      ],
+      "conf": [
+        72
+      ],
+      "low": []
+    },
+    {
+      "t": 164.0,
+      "f": 9840,
+      "new": [
+        "Proview File",
+        "Jot"
+      ],
+      "conf": [
+        63,
+        94
+      ],
+      "low": [
+        "Proview File"
+      ]
+    },
+    {
+      "t": 165.0,
+      "f": 9900,
+      "new": [
+        "Foundations",
+        "ChatGPT",
+        "& Share",
+        "@ New chat",
+        "Q Search chats",
+        "@ Library",
+        "\u2018can you explain this to me",
+        "88 GPTs",
+        "\u00a9 Brand Logo Identiter 6.",
+        "Thought for 5 seconds >",
+        "New project.",
+        "\u2018Sure\u2014this identity is often called the \u201ctai",
+        "integral formula\u201d for nonnegative random variables. It says",
+        "\u00a9 hangman",
+        "that for any random variable X taking values in [0, 00),",
+        "Yesterday",
+        "Search Struggles",
+        "Here's why it\u2019s true, step by step:",
+        "lia",
+        "1. Start from the usual definition",
+        "has a density f(x) on (0,00), then",
+        "Ask anything",
+        "+ 2 Tools",
+        "View plans",
+        "can"
+      ],
+      "conf": [
+        63,
+        75,
+        80,
+        69,
+        92,
+        82,
+        89,
+        78,
+        68,
+        94,
+        78,
+        90,
+        90,
+        79,
+        88,
+        95,
+        96,
+        88,
+        61,
+        94,
+        71,
+        90,
+        76,
+        90,
+        80
+      ],
+      "low": [
+        "Foundations",
+        "@ New chat",
+        "\u00a9 Brand Logo Identiter 6.",
+        "lia",
+        "has a density f(x) on (0,00), then"
+      ]
+    },
+    {
+      "t": 166.0,
+      "f": 9960,
+      "new": [
+        "File",
+        "edit",
+        "View History Bookmarks Develop Window Help.",
+        "@ Schoo!",
+        "ion",
+        "2. Rewrite x as an integral",
+        "Tools",
+        "Uni",
+        "25 28 27",
+        "eon \u00ae"
+      ],
+      "conf": [
+        68,
+        71,
+        65,
+        75,
+        90,
+        77,
+        90,
+        84,
+        81,
+        64
+      ],
+      "low": [
+        "File",
+        "edit",
+        "View History Bookmarks Develop Window Help.",
+        "eon \u00ae"
+      ]
+    },
+    {
+      "t": 167.0,
+      "f": 10020,
+      "new": [
+        "Notice that for any 2x > 0,"
+      ],
+      "conf": [
+        80
+      ],
+      "low": []
+    },
+    {
+      "t": 168.0,
+      "f": 10080,
+      "new": [
+        "Expan why"
+      ],
+      "conf": [
+        70
+      ],
+      "low": [
+        "Expan why"
+      ]
+    },
+    {
+      "t": 169.0,
+      "f": 10140,
+      "new": [
+        "ity - Exp wy SED",
+        "Lie",
+        "eon a ee \u00ae"
+      ],
+      "conf": [
+        65,
+        62,
+        64
+      ],
+      "low": [
+        "ity - Exp wy SED",
+        "Lie",
+        "eon a ee \u00ae"
+      ]
+    },
+    {
+      "t": 170.0,
+      "f": 10200,
+      "new": [
+        "\u00a9 expectes integral Formule",
+        "Zar"
+      ],
+      "conf": [
+        70,
+        65
+      ],
+      "low": [
+        "\u00a9 expectes integral Formule",
+        "Zar"
+      ]
+    },
+    {
+      "t": 171.0,
+      "f": 10260,
+      "new": [
+        "and"
+      ],
+      "conf": [
+        85
+      ],
+      "low": []
+    },
+    {
+      "t": 172.0,
+      "f": 10320,
+      "new": [
+        "B Schoo!",
+        "een \u00ae"
+      ],
+      "conf": [
+        78,
+        61
+      ],
+      "low": [
+        "een \u00ae"
+      ]
+    },
+    {
+      "t": 173.0,
+      "f": 10380,
+      "new": [
+        "- why"
+      ],
+      "conf": [
+        66
+      ],
+      "low": [
+        "- why"
+      ]
+    },
+    {
+      "t": 174.0,
+      "f": 10440,
+      "new": [
+        "= fra."
+      ],
+      "conf": [
+        71
+      ],
+      "low": [
+        "= fra."
+      ]
+    },
+    {
+      "t": 176.0,
+      "f": 10560,
+      "new": [
+        "has f(z) on [0, 00), then"
+      ],
+      "conf": [
+        71
+      ],
+      "low": [
+        "has f(z) on [0, 00), then"
+      ]
+    },
+    {
+      "t": 177.0,
+      "f": 10620,
+      "new": [
+        "more"
+      ],
+      "conf": [
+        71
+      ],
+      "low": [
+        "more"
+      ]
+    },
+    {
+      "t": 178.0,
+      "f": 10680,
+      "new": [
+        "ChatGPT 04-mini-high v",
+        "Share",
+        "Q Search chats",
+        "has a density f(z) on [0, then",
+        "@ Library",
+        "88 GPTs",
+        "New project",
+        "\u00a9 hangman",
+        "Yesterday",
+        "Job Search Struggles",
+        "\u2018Ask anything",
+        "View plans",
+        "can make mistakes. Check important nf,"
+      ],
+      "conf": [
+        70,
+        96,
+        92,
+        77,
+        81,
+        82,
+        76,
+        84,
+        96,
+        77,
+        90,
+        84,
+        71
+      ],
+      "low": [
+        "ChatGPT 04-mini-high v",
+        "can make mistakes. Check important nf,"
+      ]
+    },
+    {
+      "t": 179.0,
+      "f": 10740,
+      "new": [
+        "edit",
+        "View History Bookmarks Develop Window Help.",
+        "Foundations",
+        "Schoo!",
+        "1. Start from the usual defi",
+        "2. Rewrite x as an integral",
+        "Tools"
+      ],
+      "conf": [
+        68,
+        69,
+        60,
+        64,
+        94,
+        76,
+        86
+      ],
+      "low": [
+        "edit",
+        "View History Bookmarks Develop Window Help.",
+        "Foundations",
+        "Schoo!"
+      ]
+    },
+    {
+      "t": 186.0,
+      "f": 11160,
+      "new": [
+        "Safari File",
+        "why",
+        "\u00a9 Brand Logo Identifier",
+        "Notice that for any x > 0,",
+        "snd more"
+      ],
+      "conf": [
+        62,
+        89,
+        83,
+        86,
+        64
+      ],
+      "low": [
+        "Safari File",
+        "snd more"
+      ]
+    },
+    {
+      "t": 189.0,
+      "f": 11340,
+      "new": [
+        "B Schoo!",
+        "\u20183. Swap the order of integration (Fubini\u2019s theorem)",
+        "We can interchange the t~ and"
+      ],
+      "conf": [
+        80,
+        84,
+        84
+      ],
+      "low": []
+    },
+    {
+      "t": 190.0,
+      "f": 11400,
+      "new": [
+        "int",
+        "E[X] = [ (fra) sear",
+        "+ 2 Tools"
+      ],
+      "conf": [
+        72,
+        62,
+        66
+      ],
+      "low": [
+        "E[X] = [ (fra) sear",
+        "+ 2 Tools"
+      ]
+    },
+    {
+      "t": 191.0,
+      "f": 11460,
+      "new": [
+        "ChatGPT 04-mini-high v",
+        "\u00a9 Share",
+        "WX has a density f(2) on (0, 00), then",
+        "Q Search chats",
+        "@ Library",
+        "88 GPTs",
+        "New project.",
+        "a= fra.",
+        "\u00a9 hangman",
+        "Yesterday",
+        "Search Struggles",
+        "\u2018Ask anything",
+        "View plans",
+        "can make mistakes. Check important inf."
+      ],
+      "conf": [
+        81,
+        68,
+        74,
+        91,
+        90,
+        83,
+        80,
+        62,
+        72,
+        96,
+        96,
+        84,
+        91,
+        62
+      ],
+      "low": [
+        "\u00a9 Share",
+        "a= fra.",
+        "can make mistakes. Check important inf."
+      ]
+    },
+    {
+      "t": 192.0,
+      "f": 11520,
+      "new": [
+        "edit",
+        "View History Bookmarks Develop Window Help.",
+        "Tools",
+        "more"
+      ],
+      "conf": [
+        72,
+        70,
+        86,
+        87
+      ],
+      "low": [
+        "View History Bookmarks Develop Window Help."
+      ]
+    },
+    {
+      "t": 194.0,
+      "f": 11640,
+      "new": [
+        "File",
+        "cchatgpt.com",
+        "But"
+      ],
+      "conf": [
+        64,
+        63,
+        90
+      ],
+      "low": [
+        "File",
+        "cchatgpt.com"
+      ]
+    },
+    {
+      "t": 195.0,
+      "f": 11700,
+      "new": [
+        "vat"
+      ],
+      "conf": [
+        78
+      ],
+      "low": []
+    },
+    {
+      "t": 197.0,
+      "f": 11820,
+      "new": [
+        "114",
+        "Hence"
+      ],
+      "conf": [
+        83,
+        93
+      ],
+      "low": []
+    },
+    {
+      "t": 198.0,
+      "f": 11880,
+      "new": [
+        "for every"
+      ],
+      "conf": [
+        68
+      ],
+      "low": [
+        "for every"
+      ]
+    },
+    {
+      "t": 199.0,
+      "f": 11940,
+      "new": [
+        "\u00a9 Brand Logo Identifier 6"
+      ],
+      "conf": [
+        80
+      ],
+      "low": []
+    },
+    {
+      "t": 205.0,
+      "f": 12300,
+      "new": [
+        "edit",
+        "View History Bookmarks Develop Window Help.",
+        "why",
+        "ChatGPT 04-mini-high v",
+        "Share",
+        "Q Search chats",
+        "@ Library",
+        "88 GPTs",
+        "New project.",
+        "3. Swap the order of integration (Ful",
+        "'s theorem)",
+        "\u00a9 hangman",
+        "We can interchange the and",
+        "Yesterday",
+        "Search Struggles",
+        "\u2018Ask anything,",
+        "+ Tools",
+        "View plans",
+        "can make mistakes, Check important nf,"
+      ],
+      "conf": [
+        72,
+        71,
+        80,
+        78,
+        95,
+        92,
+        80,
+        74,
+        80,
+        93,
+        89,
+        76,
+        92,
+        95,
+        96,
+        78,
+        80,
+        90,
+        75
+      ],
+      "low": [
+        "View History Bookmarks Develop Window Help."
+      ]
+    },
+    {
+      "t": 206.0,
+      "f": 12360,
+      "new": [
+        "@ isin ~ Google Search",
+        "B Schoo!",
+        "acce"
+      ],
+      "conf": [
+        64,
+        70,
+        64
+      ],
+      "low": [
+        "@ isin ~ Google Search",
+        "B Schoo!",
+        "acce"
+      ]
+    },
+    {
+      "t": 207.0,
+      "f": 12420,
+      "new": [
+        "Safari File",
+        "But"
+      ],
+      "conf": [
+        62,
+        91
+      ],
+      "low": [
+        "Safari File"
+      ]
+    },
+    {
+      "t": 208.0,
+      "f": 12480,
+      "new": [
+        "nd more"
+      ],
+      "conf": [
+        64
+      ],
+      "low": [
+        "nd more"
+      ]
+    },
+    {
+      "t": 210.0,
+      "f": 12600,
+      "new": [
+        "Hence"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 212.0,
+      "f": 12720,
+      "new": [
+        "ity",
+        "\u00a9 Brand Logo Identifier 6.",
+        "ent"
+      ],
+      "conf": [
+        61,
+        77,
+        62
+      ],
+      "low": [
+        "ity",
+        "ent"
+      ]
+    },
+    {
+      "t": 216.0,
+      "f": 12960,
+      "new": [
+        "find mo"
+      ],
+      "conf": [
+        64
+      ],
+      "low": [
+        "find mo"
+      ]
+    },
+    {
+      "t": 217.0,
+      "f": 13020,
+      "new": [
+        "[aseres = fr"
+      ],
+      "conf": [
+        66
+      ],
+      "low": [
+        "[aseres = fr"
+      ]
+    },
+    {
+      "t": 218.0,
+      "f": 13080,
+      "new": [
+        "edit",
+        "View History Bookmarks Develop Window Help.",
+        "ChatGPT 04-mini-high v",
+        "Share",
+        "Q Search chats",
+        "@ Library",
+        "New project.",
+        "3. Swap the order of integration (Fubini's theorem)",
+        "\u00a9 hangman",
+        "We can interchange the t and",
+        "Yesterday",
+        "Search Struggles",
+        "\u2018Ask anything",
+        "Tools",
+        "View plans",
+        "CChatGPT can make mistakes, Check important nf,",
+        "joe"
+      ],
+      "conf": [
+        84,
+        70,
+        80,
+        96,
+        91,
+        80,
+        78,
+        89,
+        72,
+        87,
+        96,
+        96,
+        84,
+        92,
+        92,
+        64,
+        65
+      ],
+      "low": [
+        "View History Bookmarks Develop Window Help.",
+        "CChatGPT can make mistakes, Check important nf,",
+        "joe"
+      ]
+    },
+    {
+      "t": 220.0,
+      "f": 13200,
+      "new": [
+        "Safari File",
+        "B Schoo!",
+        "But"
+      ],
+      "conf": [
+        62,
+        81,
+        94
+      ],
+      "low": [
+        "Safari File"
+      ]
+    },
+    {
+      "t": 223.0,
+      "f": 13380,
+      "new": [
+        "Hence"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 224.0,
+      "f": 13440,
+      "new": [
+        "Foundations",
+        "why",
+        "New chat",
+        "88 GPTs"
+      ],
+      "conf": [
+        66,
+        94,
+        73,
+        83
+      ],
+      "low": [
+        "Foundations"
+      ]
+    },
+    {
+      "t": 225.0,
+      "f": 13500,
+      "new": [
+        "\u00a9 \u00a9 Brand Logo Identifier 6."
+      ],
+      "conf": [
+        69
+      ],
+      "low": [
+        "\u00a9 \u00a9 Brand Logo Identifier 6."
+      ]
+    },
+    {
+      "t": 226.0,
+      "f": 13560,
+      "new": [
+        "and",
+        "eon"
+      ],
+      "conf": [
+        91,
+        73
+      ],
+      "low": []
+    },
+    {
+      "t": 228.0,
+      "f": 13680,
+      "new": [
+        "for"
+      ],
+      "conf": [
+        68
+      ],
+      "low": [
+        "for"
+      ]
+    },
+    {
+      "t": 230.0,
+      "f": 13800,
+      "new": [
+        "EIXx] >"
+      ],
+      "conf": [
+        62
+      ],
+      "low": [
+        "EIXx] >"
+      ]
+    },
+    {
+      "t": 231.0,
+      "f": 13860,
+      "new": [
+        "edit",
+        "View History Bookmarks Develop Window Help.",
+        "ChatGPT 04-mini-high v",
+        "Share",
+        "Q Search chats",
+        "@ Library",
+        "3. Swap the order of integration (Ful",
+        "'s theorem)",
+        "New project.",
+        "\u00a9 hangman",
+        "Yesterday",
+        "Job Search Struggles",
+        "\u2018Ask anything",
+        "+ Tools",
+        "View plans",
+        "can make mistakes, Check important nf,"
+      ],
+      "conf": [
+        84,
+        71,
+        80,
+        96,
+        93,
+        82,
+        91,
+        92,
+        79,
+        76,
+        95,
+        79,
+        74,
+        70,
+        82,
+        69
+      ],
+      "low": [
+        "View History Bookmarks Develop Window Help.",
+        "+ Tools",
+        "can make mistakes, Check important nf,"
+      ]
+    },
+    {
+      "t": 232.0,
+      "f": 13920,
+      "new": [
+        "EIX] [vax >"
+      ],
+      "conf": [
+        64
+      ],
+      "low": [
+        "EIX] [vax >"
+      ]
+    },
+    {
+      "t": 233.0,
+      "f": 13980,
+      "new": [
+        "Safari File",
+        "But"
+      ],
+      "conf": [
+        62,
+        93
+      ],
+      "low": [
+        "Safari File"
+      ]
+    },
+    {
+      "t": 234.0,
+      "f": 14040,
+      "new": [
+        "File",
+        "Google Soren"
+      ],
+      "conf": [
+        64,
+        77
+      ],
+      "low": [
+        "File"
+      ]
+    },
+    {
+      "t": 236.0,
+      "f": 14160,
+      "new": [
+        "Hence"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 237.0,
+      "f": 14220,
+      "new": [
+        "why",
+        "88 GPTs",
+        "fest ty"
+      ],
+      "conf": [
+        82,
+        74,
+        67
+      ],
+      "low": [
+        "fest ty"
+      ]
+    },
+    {
+      "t": 239.0,
+      "f": 14340,
+      "new": [
+        "@ \u00a9 Brand Logo identifier .",
+        "Reply",
+        "We can interchange the and"
+      ],
+      "conf": [
+        76,
+        86,
+        89
+      ],
+      "low": []
+    },
+    {
+      "t": 240.0,
+      "f": 14400,
+      "new": [
+        "ity",
+        "@ New chat",
+        "E[X] > that"
+      ],
+      "conf": [
+        62,
+        67,
+        70
+      ],
+      "low": [
+        "ity",
+        "@ New chat",
+        "E[X] > that"
+      ]
+    },
+    {
+      "t": 241.0,
+      "f": 14460,
+      "new": [
+        "E[X] [vax > that"
+      ],
+      "conf": [
+        63
+      ],
+      "low": [
+        "E[X] [vax > that"
+      ]
+    },
+    {
+      "t": 243.0,
+      "f": 14580,
+      "new": [
+        "\u00a9 int -",
+        "= f Pr{x > dat",
+        "ted a6"
+      ],
+      "conf": [
+        66,
+        62,
+        66
+      ],
+      "low": [
+        "\u00a9 int -",
+        "= f Pr{x > dat",
+        "ted a6"
+      ]
+    },
+    {
+      "t": 244.0,
+      "f": 14640,
+      "new": [
+        "edit",
+        "View History Bookmarks Develop Window Help.",
+        "ChatGPT 04-mini-high",
+        "Share",
+        "Q Search chats",
+        "@ Library",
+        "New project.",
+        "\u00a9 hangman",
+        "Yesterday",
+        "Search Struggles",
+        "Ask anything",
+        "View plans",
+        "can make mistakos. Check inf,"
+      ],
+      "conf": [
+        68,
+        71,
+        86,
+        96,
+        93,
+        80,
+        76,
+        86,
+        95,
+        96,
+        86,
+        88,
+        64
+      ],
+      "low": [
+        "edit",
+        "View History Bookmarks Develop Window Help.",
+        "can make mistakos. Check inf,"
+      ]
+    },
+    {
+      "t": 245.0,
+      "f": 14700,
+      "new": [
+        "'s theorem)"
+      ],
+      "conf": [
+        84
+      ],
+      "low": []
+    },
+    {
+      "t": 246.0,
+      "f": 14760,
+      "new": [
+        "Foundations vanced",
+        "B Schoo!",
+        "But",
+        "\u2018Area under the tail",
+        "Tools",
+        "een \u00ae"
+      ],
+      "conf": [
+        71,
+        86,
+        93,
+        88,
+        89,
+        66
+      ],
+      "low": [
+        "Foundations vanced",
+        "een \u00ae"
+      ]
+    },
+    {
+      "t": 247.0,
+      "f": 14820,
+      "new": [
+        "Safari File",
+        "Ir Pr[X > tat."
+      ],
+      "conf": [
+        62,
+        62
+      ],
+      "low": [
+        "Safari File",
+        "Ir Pr[X > tat."
+      ]
+    },
+    {
+      "t": 248.0,
+      "f": 14880,
+      "new": [
+        "acce",
+        "more"
+      ],
+      "conf": [
+        78,
+        89
+      ],
+      "low": []
+    },
+    {
+      "t": 250.0,
+      "f": 15000,
+      "new": [
+        "Hence",
+        "Why it makes sense.",
+        "1X is usually small, then Pr[X > \u00a2] drops off quickly and the area is small. f X often takes large",
+        "values, the tail stays high for longer, and the area (j.e.\\ is large.",
+        "5, When it annlies",
+        "eon \u00ae"
+      ],
+      "conf": [
+        95,
+        84,
+        81,
+        90,
+        84,
+        66
+      ],
+      "low": [
+        "eon \u00ae"
+      ]
+    },
+    {
+      "t": 252.0,
+      "f": 15120,
+      "new": [
+        "why",
+        "Schoo!",
+        "88 GPTs",
+        "@ \u00a9 Brand Logo identifier",
+        "United ace",
+        "and more"
+      ],
+      "conf": [
+        91,
+        71,
+        75,
+        73,
+        66,
+        68
+      ],
+      "low": [
+        "Schoo!",
+        "United ace",
+        "and more"
+      ]
+    },
+    {
+      "t": 253.0,
+      "f": 15180,
+      "new": [
+        "under the tail-probability curve\u201d"
+      ],
+      "conf": [
+        80
+      ],
+      "low": []
+    },
+    {
+      "t": 254.0,
+      "f": 15240,
+      "new": [
+        "CChatGPT can make mistakes. Check important inf,"
+      ],
+      "conf": [
+        67
+      ],
+      "low": [
+        "CChatGPT can make mistakes. Check important inf,"
+      ]
+    },
+    {
+      "t": 256.0,
+      "f": 15360,
+      "new": [
+        "\u00a9 expected value integral Formula",
+        "4. Intuition",
+        "Think of the complementary CDF t > Prix > t]. The integral Pr[X > literally the \u201carea",
+        "WAS"
+      ],
+      "conf": [
+        62,
+        86,
+        85,
+        70
+      ],
+      "low": [
+        "\u00a9 expected value integral Formula",
+        "WAS"
+      ]
+    },
+    {
+      "t": 257.0,
+      "f": 15420,
+      "new": [
+        "edit",
+        "View History Bookmarks Develop Window Help.",
+        "ChatGPT 04-mini-high v",
+        "Share",
+        "Q Search chats",
+        "@ Library",
+        "New project.",
+        "\u00a9 hangman",
+        "Yesterday",
+        "Search Struggles",
+        "Ask anything",
+        "View plans"
+      ],
+      "conf": [
+        80,
+        67,
+        76,
+        96,
+        93,
+        86,
+        78,
+        66,
+        96,
+        96,
+        89,
+        91
+      ],
+      "low": [
+        "View History Bookmarks Develop Window Help.",
+        "\u00a9 hangman"
+      ]
+    },
+    {
+      "t": 258.0,
+      "f": 15480,
+      "new": [
+        "jie"
+      ],
+      "conf": [
+        63
+      ],
+      "low": [
+        "jie"
+      ]
+    },
+    {
+      "t": 259.0,
+      "f": 15540,
+      "new": [
+        "Foundations",
+        "\u2018Area under the tail",
+        "Tools"
+      ],
+      "conf": [
+        68,
+        92,
+        89
+      ],
+      "low": [
+        "Foundations"
+      ]
+    },
+    {
+      "t": 261.0,
+      "f": 15660,
+      "new": [
+        "You only need X > 0.",
+        "No density is needed\u2014as long as you can justif J, vapping intear"
+      ],
+      "conf": [
+        90,
+        81
+      ],
+      "low": []
+    },
+    {
+      "t": 262.0,
+      "f": 15720,
+      "new": [
+        "No density is needed\u2014as long as you can justif J, vapping integrals by monotone or dominated",
+        "\u00a9 Unlimited access, team feature"
+      ],
+      "conf": [
+        87,
+        81
+      ],
+      "low": []
+    },
+    {
+      "t": 265.0,
+      "f": 15900,
+      "new": [
+        "@ Safari File",
+        "Hence",
+        "> that.",
+        "88 GPTs",
+        "@ \u00a9 Brand Logo Identifier G.",
+        "Why it makes sense",
+        "is usually small, then Pr[X > t] drops off quickly and the area is small. If X often takes large",
+        "values, the tail stays high for longer, and the area E[X]) is large.",
+        "can make mistakes. nfo,"
+      ],
+      "conf": [
+        61,
+        92,
+        84,
+        84,
+        76,
+        92,
+        86,
+        91,
+        81
+      ],
+      "low": [
+        "@ Safari File"
+      ]
+    },
+    {
+      "t": 266.0,
+      "f": 15960,
+      "new": [
+        "- why",
+        "But",
+        "under the tail-probability curve\u201d",
+        "more",
+        "CChatGPT can make mistakes. nf,"
+      ],
+      "conf": [
+        74,
+        94,
+        87,
+        83,
+        76
+      ],
+      "low": []
+    },
+    {
+      "t": 267.0,
+      "f": 16020,
+      "new": [
+        "@ Schoo!",
+        "We can interchange the t~ and",
+        "[faster =",
+        "Uni",
+        "eon"
+      ],
+      "conf": [
+        76,
+        84,
+        71,
+        70,
+        65
+      ],
+      "low": [
+        "[faster =",
+        "Uni",
+        "eon"
+      ]
+    },
+    {
+      "t": 268.0,
+      "f": 16080,
+      "new": [
+        "E[X] > thd",
+        "mor",
+        "can rake mistakes. Check important inf."
+      ],
+      "conf": [
+        63,
+        84,
+        62
+      ],
+      "low": [
+        "E[X] > thd",
+        "can rake mistakes. Check important inf."
+      ]
+    },
+    {
+      "t": 269.0,
+      "f": 16140,
+      "new": [
+        "4. Intuition",
+        "Think of the complementary CDF \u00a3 > #). The integral Pr[X > dts literally the \u201carea"
+      ],
+      "conf": [
+        90,
+        86
+      ],
+      "low": []
+    },
+    {
+      "t": 270.0,
+      "f": 16200,
+      "new": [
+        "edit",
+        "View History Bookmarks Develop Window Help.",
+        "ChatGPT 04-mini-high v",
+        "Share",
+        "B Schoo!",
+        "Q Search chats",
+        "@ Library",
+        "New project",
+        "\u00a9 hangman",
+        "Yesterday",
+        "Search Struggles",
+        "\u2018Ask anything",
+        "View plans",
+        "Preview",
+        "nd more",
+        "can make"
+      ],
+      "conf": [
+        80,
+        69,
+        74,
+        96,
+        63,
+        94,
+        82,
+        80,
+        76,
+        96,
+        96,
+        85,
+        84,
+        95,
+        60,
+        90
+      ],
+      "low": [
+        "View History Bookmarks Develop Window Help.",
+        "B Schoo!",
+        "nd more"
+      ]
+    },
+    {
+      "t": 271.0,
+      "f": 16260,
+      "new": [
+        "28 2:06P)",
+        "Basic Properties",
+        "Inversion: if > then, for with",
+        "Logo Ide",
+        "probability at least 1-6,",
+        "Jensen's inequality: if f is convex, f (E[X]) <E[f(X)] .",
+        "Expectation: if X>0,"
+      ],
+      "conf": [
+        88,
+        96,
+        94,
+        88,
+        93,
+        83,
+        71
+      ],
+      "low": [
+        "Expectation: if X>0,"
+      ]
+    },
+    {
+      "t": 272.0,
+      "f": 16320,
+      "new": [
+        "Jot",
+        "lie"
+      ],
+      "conf": [
+        94,
+        77
+      ],
+      "low": []
+    },
+    {
+      "t": 275.0,
+      "f": 16500,
+      "new": [
+        "Basic Inequalities",
+        "@ Markov\u2019s inequality: if X >0 and then",
+        "@ Chebyshev\u2019s inequality: for any \u00ab>0,",
+        "i him",
+        "age",
+        "9806"
+      ],
+      "conf": [
+        96,
+        84,
+        81,
+        70,
+        89,
+        82
+      ],
+      "low": [
+        "i him"
+      ]
+    },
+    {
+      "t": 283.0,
+      "f": 16980,
+      "new": [
+        "Wed",
+        "Log"
+      ],
+      "conf": [
+        95,
+        92
+      ],
+      "low": []
+    },
+    {
+      "t": 284.0,
+      "f": 17040,
+      "new": [
+        "Tir"
+      ],
+      "conf": [
+        62
+      ],
+      "low": [
+        "Tir"
+      ]
+    },
+    {
+      "t": 285.0,
+      "f": 17100,
+      "new": [
+        "lie"
+      ],
+      "conf": [
+        68
+      ],
+      "low": [
+        "lie"
+      ]
+    },
+    {
+      "t": 286.0,
+      "f": 17160,
+      "new": [
+        "Help"
+      ],
+      "conf": [
+        68
+      ],
+      "low": [
+        "Help"
+      ]
+    },
+    {
+      "t": 288.0,
+      "f": 17280,
+      "new": [
+        "Go Tools",
+        "View",
+        "Appendix",
+        "Jot",
+        "page"
+      ],
+      "conf": [
+        64,
+        91,
+        96,
+        94,
+        95
+      ],
+      "low": [
+        "Go Tools"
+      ]
+    },
+    {
+      "t": 289.0,
+      "f": 17340,
+      "new": [
+        "Markov's Inequality",
+        "@ Theorem: let X be a non-negative random variable",
+        "with E[X]<oo, then, for all",
+        "@ Proof:"
+      ],
+      "conf": [
+        88,
+        81,
+        89,
+        89
+      ],
+      "low": []
+    },
+    {
+      "t": 291.0,
+      "f": 17460,
+      "new": [
+        "Pr[X Prix"
+      ],
+      "conf": [
+        60
+      ],
+      "low": [
+        "Pr[X Prix"
+      ]
+    },
+    {
+      "t": 292.0,
+      "f": 17520,
+      "new": [
+        "Prix =a]",
+        "age"
+      ],
+      "conf": [
+        62,
+        87
+      ],
+      "low": [
+        "Prix =a]"
+      ]
+    },
+    {
+      "t": 296.0,
+      "f": 17760,
+      "new": [
+        "Wed May 28"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 302.0,
+      "f": 18120,
+      "new": [
+        "Markov's Inequality",
+        "@ Theorem: let X be a non-negative random variable",
+        "with <oo, then, for all \u00a2>0,",
+        "@ Proof:"
+      ],
+      "conf": [
+        92,
+        86,
+        92,
+        92
+      ],
+      "low": []
+    },
+    {
+      "t": 304.0,
+      "f": 18240,
+      "new": [
+        "Jot"
+      ],
+      "conf": [
+        94
+      ],
+      "low": []
+    },
+    {
+      "t": 305.0,
+      "f": 18300,
+      "new": [
+        "McDiarmid\u2019s Inequality",
+        "(McDiarmid, 1989)",
+        "@ Theorem: let independent random variables",
+        "taking values in Uandf:U\u2122\u2014 Ra function verifying for",
+        "sup"
+      ],
+      "conf": [
+        84,
+        96,
+        91,
+        81,
+        91
+      ],
+      "low": []
+    },
+    {
+      "t": 306.0,
+      "f": 18360,
+      "new": [
+        "Go Tools",
+        "Basic Inequalities",
+        "\u2122 Chebyshev's inequality: for any",
+        "age",
+        "980s"
+      ],
+      "conf": [
+        66,
+        96,
+        76,
+        88,
+        84
+      ],
+      "low": [
+        "Go Tools"
+      ]
+    },
+    {
+      "t": 311.0,
+      "f": 18660,
+      "new": [
+        "Hoeffding\u2019s Inequality",
+        "@ Theorem: Let Xi,...,Xm be indep. rand. variables with the",
+        "same expectation and X; \u20ac[a, b], (a<b). Then, for anye>0,",
+        "the following inequalities hold:"
+      ],
+      "conf": [
+        90,
+        90,
+        84,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 312.0,
+      "f": 18720,
+      "new": [
+        "eit"
+      ],
+      "conf": [
+        64
+      ],
+      "low": [
+        "eit"
+      ]
+    },
+    {
+      "t": 315.0,
+      "f": 18900,
+      "new": [
+        "Markov's Inequality",
+        "Theorem: let X be a non-negative random variable",
+        "with <oo, then, for all \u00a2>0,",
+        "@ Proof:",
+        "Prix =a]"
+      ],
+      "conf": [
+        92,
+        90,
+        92,
+        92,
+        60
+      ],
+      "low": [
+        "Prix =a]"
+      ]
+    },
+    {
+      "t": 318.0,
+      "f": 19080,
+      "new": [
+        "Jot",
+        "980"
+      ],
+      "conf": [
+        92,
+        80
+      ],
+      "low": []
+    },
+    {
+      "t": 319.0,
+      "f": 19140,
+      "new": [
+        "age"
+      ],
+      "conf": [
+        87
+      ],
+      "low": []
+    },
+    {
+      "t": 322.0,
+      "f": 19320,
+      "new": [
+        "980s"
+      ],
+      "conf": [
+        80
+      ],
+      "low": []
+    },
+    {
+      "t": 330.0,
+      "f": 19800,
+      "new": [
+        "Markov's Inequality",
+        "@ Theorem: let X be a non-negative random variable",
+        "with <oo, then, for all \u00a2>0,",
+        "@ Proof:"
+      ],
+      "conf": [
+        92,
+        86,
+        92,
+        92
+      ],
+      "low": []
+    },
+    {
+      "t": 332.0,
+      "f": 19920,
+      "new": [
+        "Go Tools",
+        "age"
+      ],
+      "conf": [
+        66,
+        89
+      ],
+      "low": [
+        "Go Tools"
+      ]
+    },
+    {
+      "t": 333.0,
+      "f": 19980,
+      "new": [
+        "Prix =a]"
+      ],
+      "conf": [
+        66
+      ],
+      "low": [
+        "Prix =a]"
+      ]
+    },
+    {
+      "t": 343.0,
+      "f": 20580,
+      "new": [
+        "Markov's Inequality",
+        "\u2122@ Theorem: let X be a non-negative random variable",
+        "with <oo, then, for all \u00a2>0,",
+        "@ Proof:"
+      ],
+      "conf": [
+        92,
+        86,
+        85,
+        92
+      ],
+      "low": []
+    },
+    {
+      "t": 350.0,
+      "f": 21000,
+      "new": [
+        "Preview",
+        "age"
+      ],
+      "conf": [
+        96,
+        88
+      ],
+      "low": []
+    },
+    {
+      "t": 352.0,
+      "f": 21120,
+      "new": [
+        "lie"
+      ],
+      "conf": [
+        74
+      ],
+      "low": []
+    },
+    {
+      "t": 355.0,
+      "f": 21300,
+      "new": [
+        "Go Tools"
+      ],
+      "conf": [
+        64
+      ],
+      "low": [
+        "Go Tools"
+      ]
+    },
+    {
+      "t": 356.0,
+      "f": 21360,
+      "new": [
+        "Markov's Inequality",
+        "\u2122@ Theorem: let X be a non-negative random variable",
+        "with E[X] <oo, then, for all \u00a2>0,",
+        "@ Proof:"
+      ],
+      "conf": [
+        92,
+        85,
+        82,
+        92
+      ],
+      "low": []
+    },
+    {
+      "t": 360.0,
+      "f": 21600,
+      "new": [
+        "ofM#: ne",
+        "Prix =a]"
+      ],
+      "conf": [
+        73,
+        66
+      ],
+      "low": [
+        "Prix =a]"
+      ]
+    },
+    {
+      "t": 363.0,
+      "f": 21780,
+      "new": [
+        "Preview",
+        "age"
+      ],
+      "conf": [
+        96,
+        88
+      ],
+      "low": []
+    },
+    {
+      "t": 365.0,
+      "f": 21900,
+      "new": [
+        "lie"
+      ],
+      "conf": [
+        77
+      ],
+      "low": []
+    },
+    {
+      "t": 372.0,
+      "f": 22320,
+      "new": [
+        "Markov's Inequality",
+        "@ Theorem: let X be a non-negative random variable",
+        "with then, for all \u00a2>0,",
+        "@ Proof:",
+        "Gee \u00ae"
+      ],
+      "conf": [
+        92,
+        86,
+        93,
+        92,
+        64
+      ],
+      "low": [
+        "Gee \u00ae"
+      ]
+    },
+    {
+      "t": 377.0,
+      "f": 22620,
+      "new": [
+        "Preview",
+        "Go Tools",
+        "age"
+      ],
+      "conf": [
+        96,
+        64,
+        90
+      ],
+      "low": [
+        "Go Tools"
+      ]
+    },
+    {
+      "t": 379.0,
+      "f": 22740,
+      "new": [
+        "ofM#: ne",
+        "lie"
+      ],
+      "conf": [
+        72,
+        75
+      ],
+      "low": []
+    },
+    {
+      "t": 385.0,
+      "f": 23100,
+      "new": [
+        "Markov's Inequality",
+        "@ Theorem: let X be a non-negative random variable",
+        "with E[X] <oo, then, for all \u00a2>0",
+        "@ Proof:"
+      ],
+      "conf": [
+        92,
+        86,
+        78,
+        92
+      ],
+      "low": []
+    },
+    {
+      "t": 388.0,
+      "f": 23280,
+      "new": [
+        "Prix =a]",
+        "< PIX",
+        "Gee \u00ae"
+      ],
+      "conf": [
+        64,
+        66,
+        72
+      ],
+      "low": [
+        "Prix =a]",
+        "< PIX"
+      ]
+    },
+    {
+      "t": 390.0,
+      "f": 23400,
+      "new": [
+        "Preview",
+        "age"
+      ],
+      "conf": [
+        96,
+        88
+      ],
+      "low": []
+    },
+    {
+      "t": 391.0,
+      "f": 23460,
+      "new": [
+        "Wed May"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 392.0,
+      "f": 23520,
+      "new": [
+        "lie"
+      ],
+      "conf": [
+        72
+      ],
+      "low": []
+    },
+    {
+      "t": 398.0,
+      "f": 23880,
+      "new": [
+        "Markov's Inequality",
+        "@ Theorem: let X be a non-negative random variable",
+        "with E[X] <oo, then, for all \u00a2>0,",
+        "@ Proof:"
+      ],
+      "conf": [
+        92,
+        86,
+        82,
+        92
+      ],
+      "low": []
+    },
+    {
+      "t": 401.0,
+      "f": 24060,
+      "new": [
+        "Prix =a]"
+      ],
+      "conf": [
+        62
+      ],
+      "low": [
+        "Prix =a]"
+      ]
+    },
+    {
+      "t": 403.0,
+      "f": 24180,
+      "new": [
+        "Wed M",
+        "McDiarmid\u2019s Inequality",
+        "(McDiarmid, 1989)",
+        "hat",
+        "@ Theorem: let X1,...,X,, be independent random variables",
+        "taking values in f :U\u2122 \u2014 Ra function verifying for",
+        "Log",
+        "sup"
+      ],
+      "conf": [
+        74,
+        88,
+        96,
+        72,
+        88,
+        80,
+        90,
+        92
+      ],
+      "low": []
+    },
+    {
+      "t": 404.0,
+      "f": 24240,
+      "new": [
+        "Preview",
+        "Basic Inequalities",
+        "Chebyshev\u2019s inequality: for any \u00ab>0,"
+      ],
+      "conf": [
+        96,
+        96,
+        84
+      ],
+      "low": []
+    },
+    {
+      "t": 406.0,
+      "f": 24360,
+      "new": [
+        "lie"
+      ],
+      "conf": [
+        74
+      ],
+      "low": []
+    },
+    {
+      "t": 412.0,
+      "f": 24720,
+      "new": [
+        "@ Markov's inequality: if X >0 and then"
+      ],
+      "conf": [
+        78
+      ],
+      "low": []
+    },
+    {
+      "t": 417.0,
+      "f": 25020,
+      "new": [
+        "Basic Inequalities",
+        "\u2122 Chebyshev\u2019s inequality: for any \u00ab>0,"
+      ],
+      "conf": [
+        96,
+        83
+      ],
+      "low": []
+    },
+    {
+      "t": 419.0,
+      "f": 25140,
+      "new": [
+        "Help",
+        "page31"
+      ],
+      "conf": [
+        75,
+        65
+      ],
+      "low": [
+        "page31"
+      ]
+    },
+    {
+      "t": 421.0,
+      "f": 25260,
+      "new": [
+        "lie"
+      ],
+      "conf": [
+        71
+      ],
+      "low": [
+        "lie"
+      ]
+    },
+    {
+      "t": 425.0,
+      "f": 25500,
+      "new": [
+        "@ Markov's inequality: if X >0 and then"
+      ],
+      "conf": [
+        80
+      ],
+      "low": []
+    },
+    {
+      "t": 430.0,
+      "f": 25800,
+      "new": [
+        "Basic Inequalities",
+        "\u2122 Chebyshev\u2019s inequality: for any \u00ab>0,"
+      ],
+      "conf": [
+        96,
+        83
+      ],
+      "low": []
+    },
+    {
+      "t": 434.0,
+      "f": 26040,
+      "new": [
+        "lie"
+      ],
+      "conf": [
+        78
+      ],
+      "low": []
+    },
+    {
+      "t": 438.0,
+      "f": 26280,
+      "new": [
+        "@ Markov's inequality: if X >0 and then"
+      ],
+      "conf": [
+        78
+      ],
+      "low": []
+    },
+    {
+      "t": 441.0,
+      "f": 26460,
+      "new": [
+        "Gee \u00ae"
+      ],
+      "conf": [
+        61
+      ],
+      "low": [
+        "Gee \u00ae"
+      ]
+    },
+    {
+      "t": 443.0,
+      "f": 26580,
+      "new": [
+        "Basic Inequalities",
+        "\u00ae Chebyshev's inequality: for any \u00ab>0"
+      ],
+      "conf": [
+        96,
+        81
+      ],
+      "low": []
+    },
+    {
+      "t": 444.0,
+      "f": 26640,
+      "new": [
+        "Hoeffding\u2019s Inequality",
+        "Theorem: Let Xi,...,Xm be indep. rand. variables with the",
+        "same expectation p and X; \u20ac (a<b). Then, for anye>0,",
+        "the following inequalities hold:",
+        "page32"
+      ],
+      "conf": [
+        90,
+        91,
+        86,
+        96,
+        88
+      ],
+      "low": []
+    },
+    {
+      "t": 449.0,
+      "f": 26940,
+      "new": [
+        "Preview",
+        "lie"
+      ],
+      "conf": [
+        96,
+        67
+      ],
+      "low": [
+        "lie"
+      ]
+    },
+    {
+      "t": 450.0,
+      "f": 27000,
+      "new": [
+        "Wed",
+        "Libre",
+        "\u00a9 har",
+        "Appendix",
+        "Jot",
+        "page"
+      ],
+      "conf": [
+        88,
+        81,
+        68,
+        96,
+        95,
+        95
+      ],
+      "low": [
+        "\u00a9 har"
+      ]
+    },
+    {
+      "t": 451.0,
+      "f": 27060,
+      "new": [
+        "Wed M",
+        "Weak Law of Large Numbers",
+        "hat",
+        "Theorem: let (Xn)nen be a sequence of independent",
+        "random variables with the same mean / and variance",
+        "and let X;, then, for any",
+        "hangn",
+        "Proof: Since the variables are independent,",
+        "Thus, by Chebyshev's inequality,"
+      ],
+      "conf": [
+        85,
+        96,
+        67,
+        90,
+        93,
+        93,
+        76,
+        96,
+        89
+      ],
+      "low": [
+        "hat"
+      ]
+    },
+    {
+      "t": 452.0,
+      "f": 27120,
+      "new": [
+        "Tools",
+        "Concentration Inequalities",
+        "\u00a9 Chernoff bounds (multiplicative).",
+        "e McDiarmid\u2019s inequality (more general)."
+      ],
+      "conf": [
+        87,
+        96,
+        86,
+        85
+      ],
+      "low": []
+    },
+    {
+      "t": 453.0,
+      "f": 27180,
+      "new": [
+        "Corollary: for any \u00ab>0, any distribution D and any",
+        "Proof: follows directly Hoeffding\u2019s theorem.",
+        "Combining these one-sided inequalities yields"
+      ],
+      "conf": [
+        94,
+        91,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 454.0,
+      "f": 27240,
+      "new": [
+        "Go Tools",
+        "Chernoff\u2019s Inequality",
+        "@ Proof: proof based on Chernoff's bounding technique.",
+        "Pr[R(h) > < PMCS",
+        "page 40",
+        "Gee \u00ae",
+        "980s"
+      ],
+      "conf": [
+        66,
+        75,
+        88,
+        64,
+        79,
+        66,
+        82
+      ],
+      "low": [
+        "Go Tools",
+        "Pr[R(h) > < PMCS",
+        "Gee \u00ae"
+      ]
+    },
+    {
+      "t": 456.0,
+      "f": 27360,
+      "new": [
+        "Markov's Inequality",
+        "Theorem: let X be a non-negative random variable",
+        "with E[X] <oo, then, for all \u00a2>0,",
+        "@ Proof:",
+        "age"
+      ],
+      "conf": [
+        92,
+        89,
+        79,
+        82,
+        89
+      ],
+      "low": []
+    },
+    {
+      "t": 457.0,
+      "f": 27420,
+      "new": [
+        "(McDiarmid, 1989)",
+        "@ Theorem: let X1,...,X,, be independent random variables",
+        "taking values in Ra function verifying for",
+        "sup"
+      ],
+      "conf": [
+        96,
+        89,
+        94,
+        93
+      ],
+      "low": []
+    },
+    {
+      "t": 458.0,
+      "f": 27480,
+      "new": [
+        "Basic Inequalities",
+        "Chebyshev's inequality: for any \u00ab>0"
+      ],
+      "conf": [
+        96,
+        83
+      ],
+      "low": []
+    },
+    {
+      "t": 459.0,
+      "f": 27540,
+      "new": [
+        "Hoeffding\u2019s Inequality",
+        "Xm be indep. rand. variables with the",
+        "same expectation and X; \u20ac[a, (a<b). Then, for anye>0,",
+        "the following inequalities hold",
+        "ning"
+      ],
+      "conf": [
+        86,
+        94,
+        85,
+        96,
+        81
+      ],
+      "low": []
+    },
+    {
+      "t": 460.0,
+      "f": 27600,
+      "new": [
+        "9806"
+      ],
+      "conf": [
+        81
+      ],
+      "low": []
+    },
+    {
+      "t": 464.0,
+      "f": 27840,
+      "new": [
+        "Preview",
+        "age 3"
+      ],
+      "conf": [
+        96,
+        88
+      ],
+      "low": []
+    },
+    {
+      "t": 468.0,
+      "f": 28080,
+      "new": [
+        "Go Tools",
+        "the inequalities hold:",
+        "i Rog",
+        "lie",
+        "Gee \u00ae",
+        "980s"
+      ],
+      "conf": [
+        74,
+        95,
+        61,
+        82,
+        68,
+        81
+      ],
+      "low": [
+        "i Rog",
+        "Gee \u00ae"
+      ]
+    },
+    {
+      "t": 474.0,
+      "f": 28440,
+      "new": [
+        "Wed M",
+        "Hoeffding\u2019s Inequality",
+        "hat",
+        "@ Theorem: Let X1,...,Xm be indep. rand. variables with the",
+        "same expectation p and X; \u20ac (a<b). Then, for anye>0,",
+        "the follewing inequalities hold:",
+        "Log",
+        "Jot",
+        "page32"
+      ],
+      "conf": [
+        86,
+        90,
+        76,
+        88,
+        86,
+        88,
+        89,
+        94,
+        90
+      ],
+      "low": []
+    },
+    {
+      "t": 478.0,
+      "f": 28680,
+      "new": [
+        "Preview"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 481.0,
+      "f": 28860,
+      "new": [
+        "Go Tools",
+        "lie"
+      ],
+      "conf": [
+        72,
+        76
+      ],
+      "low": []
+    },
+    {
+      "t": 482.0,
+      "f": 28920,
+      "new": [
+        "age 3"
+      ],
+      "conf": [
+        89
+      ],
+      "low": []
+    },
+    {
+      "t": 485.0,
+      "f": 29100,
+      "new": [
+        "Pr < exp ("
+      ],
+      "conf": [
+        66
+      ],
+      "low": [
+        "Pr < exp ("
+      ]
+    },
+    {
+      "t": 487.0,
+      "f": 29220,
+      "new": [
+        "Hoeffding\u2019s Inequality",
+        "@ Theorem: Let X1,...,Xm be indep. rand. variables with the",
+        "same expectation p and X; \u20ac (a<b). Then, for anye>0,",
+        "the following inequalities hold:"
+      ],
+      "conf": [
+        88,
+        90,
+        85,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 491.0,
+      "f": 29460,
+      "new": [
+        "Prlu-"
+      ],
+      "conf": [
+        60
+      ],
+      "low": [
+        "Prlu-"
+      ]
+    },
+    {
+      "t": 492.0,
+      "f": 29520,
+      "new": [
+        "ofM#: ne",
+        "page 3:",
+        "Gee \u00ae"
+      ],
+      "conf": [
+        66,
+        61,
+        75
+      ],
+      "low": [
+        "ofM#: ne",
+        "page 3:"
+      ]
+    },
+    {
+      "t": 494.0,
+      "f": 29640,
+      "new": [
+        "Preview",
+        "Go Tools",
+        "lie"
+      ],
+      "conf": [
+        96,
+        72,
+        69
+      ],
+      "low": [
+        "lie"
+      ]
+    },
+    {
+      "t": 496.0,
+      "f": 29760,
+      "new": [
+        "@ Theorem: Let Xj,",
+        "age 3"
+      ],
+      "conf": [
+        76,
+        88
+      ],
+      "low": []
+    },
+    {
+      "t": 500.0,
+      "f": 30000,
+      "new": [
+        "Hoeffding\u2019s Inequality",
+        "@ Theorem: Let X1,...,Xm be indep. rand. variables with the",
+        "same expectation p and X; \u20ac (a<b). Then, for anye>0,",
+        "the following inequalities hold:"
+      ],
+      "conf": [
+        88,
+        89,
+        86,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 502.0,
+      "f": 30120,
+      "new": [
+        "Wed M",
+        "hat",
+        "Log",
+        "page32"
+      ],
+      "conf": [
+        82,
+        67,
+        89,
+        87
+      ],
+      "low": [
+        "hat"
+      ]
+    },
+    {
+      "t": 507.0,
+      "f": 30420,
+      "new": [
+        "Go Tools"
+      ],
+      "conf": [
+        61
+      ],
+      "low": [
+        "Go Tools"
+      ]
+    },
+    {
+      "t": 512.0,
+      "f": 30720,
+      "new": [
+        "ofM#: ne",
+        "lie",
+        "age32"
+      ],
+      "conf": [
+        66,
+        68,
+        84
+      ],
+      "low": [
+        "ofM#: ne",
+        "lie"
+      ]
+    },
+    {
+      "t": 513.0,
+      "f": 30780,
+      "new": [
+        "B- Wed",
+        "Preview",
+        "Hoeffding\u2019s Inequality",
+        "Theorem: Let X1,...,Xm be indep. rand. variables with the",
+        "same expectation p and X; \u20ac (a<b). Then, for anye>0,",
+        "the following inequalities hold:"
+      ],
+      "conf": [
+        67,
+        96,
+        88,
+        92,
+        85,
+        96
+      ],
+      "low": [
+        "B- Wed"
+      ]
+    },
+    {
+      "t": 514.0,
+      "f": 30840,
+      "new": [
+        "age"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 516.0,
+      "f": 30960,
+      "new": [
+        "hat",
+        "Log",
+        "& hangn",
+        "Jot",
+        "page32"
+      ],
+      "conf": [
+        76,
+        89,
+        60,
+        95,
+        88
+      ],
+      "low": [
+        "& hangn"
+      ]
+    },
+    {
+      "t": 519.0,
+      "f": 31140,
+      "new": [
+        "@ Theorem: Let Xi,"
+      ],
+      "conf": [
+        75
+      ],
+      "low": []
+    },
+    {
+      "t": 524.0,
+      "f": 31440,
+      "new": [
+        "Go Tools",
+        "Gee \u00ae"
+      ],
+      "conf": [
+        72,
+        74
+      ],
+      "low": []
+    },
+    {
+      "t": 525.0,
+      "f": 31500,
+      "new": [
+        "lie"
+      ],
+      "conf": [
+        69
+      ],
+      "low": [
+        "lie"
+      ]
+    },
+    {
+      "t": 526.0,
+      "f": 31560,
+      "new": [
+        "ofM#: ne",
+        "Hoeffding\u2019s Inequality",
+        "@ Theorem: Let X1,...,Xm be indep. rand. variables with the",
+        "same expectation p and X; \u20ac (a<b). Then, for anye>0,",
+        "the following inequalities hold:"
+      ],
+      "conf": [
+        66,
+        88,
+        88,
+        85,
+        96
+      ],
+      "low": [
+        "ofM#: ne"
+      ]
+    },
+    {
+      "t": 530.0,
+      "f": 31800,
+      "new": [
+        "Wed M",
+        "hat",
+        "Log",
+        "& hangn",
+        "Jot"
+      ],
+      "conf": [
+        85,
+        67,
+        89,
+        62,
+        95
+      ],
+      "low": [
+        "hat",
+        "& hangn"
+      ]
+    },
+    {
+      "t": 543.0,
+      "f": 32580,
+      "new": [
+        "Hoeffding\u2019s Inequality",
+        "@ Theorem: Let X1,...,Xm be indep. rand. variables with the",
+        "same expectation p and X; \u20ac (a<b). Then, for anye>0,",
+        "the following inequalities hold:",
+        "age"
+      ],
+      "conf": [
+        88,
+        88,
+        85,
+        96,
+        91
+      ],
+      "low": []
+    },
+    {
+      "t": 544.0,
+      "f": 32640,
+      "new": [
+        "Go Tools"
+      ],
+      "conf": [
+        70
+      ],
+      "low": [
+        "Go Tools"
+      ]
+    },
+    {
+      "t": 545.0,
+      "f": 32700,
+      "new": [
+        "Preview"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 546.0,
+      "f": 32760,
+      "new": [
+        "B- Wed",
+        "@ Theorem: Let Xj,",
+        "lie"
+      ],
+      "conf": [
+        70,
+        76,
+        78
+      ],
+      "low": [
+        "B- Wed"
+      ]
+    },
+    {
+      "t": 548.0,
+      "f": 32880,
+      "new": [
+        "Wed M",
+        "Log",
+        "& hangn",
+        "Jot",
+        "page32"
+      ],
+      "conf": [
+        86,
+        91,
+        62,
+        95,
+        86
+      ],
+      "low": [
+        "& hangn"
+      ]
+    },
+    {
+      "t": 552.0,
+      "f": 33120,
+      "new": [
+        "Help",
+        "age 3"
+      ],
+      "conf": [
+        60,
+        88
+      ],
+      "low": [
+        "Help"
+      ]
+    },
+    {
+      "t": 553.0,
+      "f": 33180,
+      "new": [
+        "Gee \u00ae"
+      ],
+      "conf": [
+        71
+      ],
+      "low": [
+        "Gee \u00ae"
+      ]
+    },
+    {
+      "t": 555.0,
+      "f": 33300,
+      "new": [
+        "9806"
+      ],
+      "conf": [
+        83
+      ],
+      "low": []
+    },
+    {
+      "t": 556.0,
+      "f": 33360,
+      "new": [
+        "Hoeffding\u2019s Inequality",
+        "@ Theorem: Let X1,...,Xm be indep. rand. variables with the",
+        "same expectation p and X; \u20ac (a<b). Then, for anye>0,",
+        "the following inequalities hold:"
+      ],
+      "conf": [
+        89,
+        88,
+        87,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 558.0,
+      "f": 33480,
+      "new": [
+        "hat"
+      ],
+      "conf": [
+        64
+      ],
+      "low": [
+        "hat"
+      ]
+    },
+    {
+      "t": 559.0,
+      "f": 33540,
+      "new": [
+        "Preview",
+        "@ Theorem: Let Xi,",
+        "lie"
+      ],
+      "conf": [
+        96,
+        75,
+        75
+      ],
+      "low": []
+    },
+    {
+      "t": 561.0,
+      "f": 33660,
+      "new": [
+        "McDiarmid\u2019s Inequality",
+        "(McDiarmid, 1989)",
+        "Theorem: let be independent random variables",
+        "taking values in Uand f:U\u2122\u2014 Ra function verifying for",
+        "Log",
+        "sup",
+        "Then, for all e>0,",
+        "Jot",
+        "page33"
+      ],
+      "conf": [
+        92,
+        95,
+        95,
+        88,
+        89,
+        92,
+        86,
+        94,
+        90
+      ],
+      "low": []
+    },
+    {
+      "t": 563.0,
+      "f": 33780,
+      "new": [
+        "Wed Me",
+        "Job"
+      ],
+      "conf": [
+        76,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 565.0,
+      "f": 33900,
+      "new": [
+        "Wed M"
+      ],
+      "conf": [
+        86
+      ],
+      "low": []
+    },
+    {
+      "t": 566.0,
+      "f": 33960,
+      "new": [
+        "Help",
+        "& hangn"
+      ],
+      "conf": [
+        60,
+        60
+      ],
+      "low": [
+        "Help",
+        "& hangn"
+      ]
+    },
+    {
+      "t": 568.0,
+      "f": 34080,
+      "new": [
+        "980s"
+      ],
+      "conf": [
+        81
+      ],
+      "low": []
+    },
+    {
+      "t": 576.0,
+      "f": 34560,
+      "new": [
+        "McDiarmid\u2019s Inequality",
+        "(McDiarmid, 1989)",
+        "hat",
+        "@ Theorem: let be,independent random variables",
+        "taking values in Vand Ra function verifying for",
+        "Log",
+        "sup",
+        "Then, for all e>0,",
+        "Jot",
+        "page33"
+      ],
+      "conf": [
+        84,
+        96,
+        65,
+        83,
+        92,
+        89,
+        92,
+        87,
+        93,
+        90
+      ],
+      "low": [
+        "hat"
+      ]
+    },
+    {
+      "t": 578.0,
+      "f": 34680,
+      "new": [
+        "Preview",
+        "Gee \u00ae"
+      ],
+      "conf": [
+        96,
+        64
+      ],
+      "low": [
+        "Gee \u00ae"
+      ]
+    },
+    {
+      "t": 582.0,
+      "f": 34920,
+      "new": [
+        "Wed M",
+        "lie"
+      ],
+      "conf": [
+        82,
+        68
+      ],
+      "low": [
+        "lie"
+      ]
+    },
+    {
+      "t": 584.0,
+      "f": 35040,
+      "new": [
+        "age"
+      ],
+      "conf": [
+        90
+      ],
+      "low": []
+    },
+    {
+      "t": 585.0,
+      "f": 35100,
+      "new": [
+        "hangn",
+        "BOS"
+      ],
+      "conf": [
+        73,
+        60
+      ],
+      "low": [
+        "BOS"
+      ]
+    },
+    {
+      "t": 592.0,
+      "f": 35520,
+      "new": [
+        "Preview",
+        "McDiarmid\u2019s Inequality",
+        "(McDiarmid, 1989)",
+        "@ Theorem: let be independent random variables",
+        "taking values in Vand f Gy \u2014 Ra function verifying for",
+        "sup",
+        "Then, for all e>0,",
+        "page33",
+        "9806"
+      ],
+      "conf": [
+        96,
+        85,
+        96,
+        93,
+        88,
+        89,
+        86,
+        87,
+        83
+      ],
+      "low": []
+    },
+    {
+      "t": 593.0,
+      "f": 35580,
+      "new": [
+        "Hoeffding\u2019s Inequality",
+        "@ Theorem: Let Xi,...,Xm be indep. rand. variables with the",
+        "same expectation and X; \u20ac[a, (a<b). Then, for anye>0,",
+        "the following inequalities hold:"
+      ],
+      "conf": [
+        88,
+        87,
+        88,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 594.0,
+      "f": 35640,
+      "new": [
+        "Go Tools",
+        "age 3"
+      ],
+      "conf": [
+        68,
+        86
+      ],
+      "low": [
+        "Go Tools"
+      ]
+    },
+    {
+      "t": 599.0,
+      "f": 35940,
+      "new": [
+        "hat",
+        "Log",
+        "& hangn",
+        "Jot",
+        "lie"
+      ],
+      "conf": [
+        67,
+        89,
+        60,
+        94,
+        74
+      ],
+      "low": [
+        "hat",
+        "& hangn"
+      ]
+    },
+    {
+      "t": 600.0,
+      "f": 36000,
+      "new": [
+        "Wed M"
+      ],
+      "conf": [
+        84
+      ],
+      "low": []
+    },
+    {
+      "t": 605.0,
+      "f": 36300,
+      "new": [
+        "McDiarmid\u2019s Inequality",
+        "(McDiarmid, 1989)",
+        "@ Theorem: let be independent random variables",
+        "taking values in Vand f:U\u2122\u2014 Ra function verifying for",
+        "sup",
+        "Then, for all",
+        "page33"
+      ],
+      "conf": [
+        90,
+        95,
+        92,
+        89,
+        88,
+        94,
+        90
+      ],
+      "low": []
+    },
+    {
+      "t": 606.0,
+      "f": 36360,
+      "new": [
+        "980s",
+        "BOS"
+      ],
+      "conf": [
+        81,
+        64
+      ],
+      "low": [
+        "BOS"
+      ]
+    },
+    {
+      "t": 612.0,
+      "f": 36720,
+      "new": [
+        "Log",
+        "hangn",
+        "Jot",
+        "lie"
+      ],
+      "conf": [
+        89,
+        78,
+        95,
+        80
+      ],
+      "low": []
+    },
+    {
+      "t": 613.0,
+      "f": 36780,
+      "new": [
+        "Wed M"
+      ],
+      "conf": [
+        82
+      ],
+      "low": []
+    },
+    {
+      "t": 616.0,
+      "f": 36960,
+      "new": [
+        "Preview"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 618.0,
+      "f": 37080,
+      "new": [
+        "McDiarmid\u2019s Inequality",
+        "(McDiarmid, 1989)",
+        "@ Theorem: let X1,...,X,, be independent random variables",
+        "taking values in Vand f :U\u2122 \u2014 Ra function verifying for",
+        "sup",
+        "Then, for all e>0,",
+        "page33"
+      ],
+      "conf": [
+        88,
+        96,
+        86,
+        78,
+        92,
+        84,
+        90
+      ],
+      "low": []
+    },
+    {
+      "t": 619.0,
+      "f": 37140,
+      "new": [
+        "iat"
+      ],
+      "conf": [
+        74
+      ],
+      "low": []
+    },
+    {
+      "t": 627.0,
+      "f": 37620,
+      "new": [
+        "Wed M",
+        "Log",
+        "Jot",
+        "lie"
+      ],
+      "conf": [
+        84,
+        90,
+        95,
+        76
+      ],
+      "low": []
+    },
+    {
+      "t": 628.0,
+      "f": 37680,
+      "new": [
+        "Wed Mi",
+        "hat",
+        "hangn"
+      ],
+      "conf": [
+        69,
+        65,
+        81
+      ],
+      "low": [
+        "Wed Mi",
+        "hat"
+      ]
+    },
+    {
+      "t": 630.0,
+      "f": 37800,
+      "new": [
+        "Preview"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 631.0,
+      "f": 37860,
+      "new": [
+        "McDiarmid\u2019s Inequality",
+        "(McDiarmid, 1989)",
+        "@ Theorem: let X1,...,X,, be independent random variables",
+        "taking values in Vand f Ra function verifying for",
+        "Sup",
+        "Then, for all e>0,",
+        "page33"
+      ],
+      "conf": [
+        87,
+        96,
+        87,
+        87,
+        80,
+        86,
+        90
+      ],
+      "low": []
+    },
+    {
+      "t": 632.0,
+      "f": 37920,
+      "new": [
+        "View",
+        "alin"
+      ],
+      "conf": [
+        91,
+        63
+      ],
+      "low": [
+        "alin"
+      ]
+    },
+    {
+      "t": 639.0,
+      "f": 38340,
+      "new": [
+        "Xml"
+      ],
+      "conf": [
+        60
+      ],
+      "low": [
+        "Xml"
+      ]
+    },
+    {
+      "t": 640.0,
+      "f": 38400,
+      "new": [
+        "Log",
+        "Jot"
+      ],
+      "conf": [
+        89,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 641.0,
+      "f": 38460,
+      "new": [
+        "hat"
+      ],
+      "conf": [
+        66
+      ],
+      "low": [
+        "hat"
+      ]
+    },
+    {
+      "t": 642.0,
+      "f": 38520,
+      "new": [
+        "Wed M",
+        "Job"
+      ],
+      "conf": [
+        86,
+        94
+      ],
+      "low": []
+    },
+    {
+      "t": 643.0,
+      "f": 38580,
+      "new": [
+        "Gee \u00ae"
+      ],
+      "conf": [
+        68
+      ],
+      "low": [
+        "Gee \u00ae"
+      ]
+    },
+    {
+      "t": 644.0,
+      "f": 38640,
+      "new": [
+        "McDiarmid\u2019s Inequality",
+        "(McDiarmid, 1989)",
+        "@ Theorem: let X1,...,X,, be independent random variables",
+        "taking values in Vand Ra function verifying for",
+        "sup",
+        "Then, for all e>0,",
+        "page33"
+      ],
+      "conf": [
+        84,
+        96,
+        87,
+        92,
+        92,
+        84,
+        90
+      ],
+      "low": []
+    },
+    {
+      "t": 645.0,
+      "f": 38700,
+      "new": [
+        "lie"
+      ],
+      "conf": [
+        85
+      ],
+      "low": []
+    },
+    {
+      "t": 652.0,
+      "f": 39120,
+      "new": [
+        "age 33"
+      ],
+      "conf": [
+        74
+      ],
+      "low": []
+    },
+    {
+      "t": 653.0,
+      "f": 39180,
+      "new": [
+        "Log",
+        "Jot"
+      ],
+      "conf": [
+        89,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 654.0,
+      "f": 39240,
+      "new": [
+        "hat"
+      ],
+      "conf": [
+        66
+      ],
+      "low": [
+        "hat"
+      ]
+    },
+    {
+      "t": 655.0,
+      "f": 39300,
+      "new": [
+        "Wed M"
+      ],
+      "conf": [
+        86
+      ],
+      "low": []
+    },
+    {
+      "t": 657.0,
+      "f": 39420,
+      "new": [
+        "McDiarmid\u2019s Inequality",
+        "(McDiarmid, 1989)",
+        "Theorem: let be independent random variables",
+        "taking values in Vand f Ra function verifying for",
+        "sup",
+        "Then, for all e>0,",
+        "page33"
+      ],
+      "conf": [
+        86,
+        96,
+        95,
+        86,
+        92,
+        89,
+        88
+      ],
+      "low": []
+    },
+    {
+      "t": 658.0,
+      "f": 39480,
+      "new": [
+        "lie"
+      ],
+      "conf": [
+        72
+      ],
+      "low": []
+    },
+    {
+      "t": 661.0,
+      "f": 39660,
+      "new": [
+        "Preview",
+        "Hoeffding\u2019s Inequality",
+        "\u2122 Theorem: Let X1,...,Xm be indep. rand. variables with the",
+        "same expectation X; \u20ac[a, b], (a<b). Then, for anye>0,",
+        "the following inequalities hold:"
+      ],
+      "conf": [
+        62,
+        88,
+        88,
+        84,
+        96
+      ],
+      "low": [
+        "Preview"
+      ]
+    },
+    {
+      "t": 666.0,
+      "f": 39960,
+      "new": [
+        "Jot",
+        "age"
+      ],
+      "conf": [
+        95,
+        89
+      ],
+      "low": []
+    },
+    {
+      "t": 668.0,
+      "f": 40080,
+      "new": [
+        "View pl"
+      ],
+      "conf": [
+        76
+      ],
+      "low": []
+    },
+    {
+      "t": 670.0,
+      "f": 40200,
+      "new": [
+        "Gee \u00ae"
+      ],
+      "conf": [
+        70
+      ],
+      "low": [
+        "Gee \u00ae"
+      ]
+    },
+    {
+      "t": 684.0,
+      "f": 41040,
+      "new": [
+        "Hoeffding\u2019s Inequality",
+        "@ Theorem: Let X1,...,Xm be indep. rand. variables with the",
+        "same expectation p and X; \u20ac [a,b], (a<b). Then, for anye>0,",
+        "the following inequalities hold:"
+      ],
+      "conf": [
+        88,
+        88,
+        82,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 685.0,
+      "f": 41100,
+      "new": [
+        "Wed",
+        "Mis",
+        "age"
+      ],
+      "conf": [
+        95,
+        65,
+        87
+      ],
+      "low": [
+        "Mis"
+      ]
+    },
+    {
+      "t": 686.0,
+      "f": 41160,
+      "new": [
+        "Preview",
+        "Pr < exp ("
+      ],
+      "conf": [
+        62,
+        68
+      ],
+      "low": [
+        "Preview",
+        "Pr < exp ("
+      ]
+    },
+    {
+      "t": 687.0,
+      "f": 41220,
+      "new": [
+        "McDiarmid\u2019s Inequality",
+        "(McDiarmid, 1989)",
+        "@ Theorem: let be independent random variables",
+        "taking values in Uand f :U\u2122 \u2014 Ra function verifying for",
+        "sup",
+        "Then, for all \u00ab>0,",
+        "page33"
+      ],
+      "conf": [
+        92,
+        92,
+        89,
+        84,
+        88,
+        82,
+        88
+      ],
+      "low": []
+    },
+    {
+      "t": 688.0,
+      "f": 41280,
+      "new": [
+        "hat",
+        "Log",
+        "hangn"
+      ],
+      "conf": [
+        67,
+        89,
+        76
+      ],
+      "low": [
+        "hat"
+      ]
+    },
+    {
+      "t": 694.0,
+      "f": 41640,
+      "new": [
+        "lie"
+      ],
+      "conf": [
+        66
+      ],
+      "low": [
+        "lie"
+      ]
+    },
+    {
+      "t": 697.0,
+      "f": 41820,
+      "new": [
+        "Jot"
+      ],
+      "conf": [
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 701.0,
+      "f": 42060,
+      "new": [
+        "McDiarmid\u2019s Inequality",
+        "(McDiarmid, 1989)",
+        "hat",
+        "@ Theorem: let X1,...,X,, be independent random variables",
+        "taking values in Vand function verifying for",
+        "Log",
+        "sup",
+        "hangn",
+        "Then, for all e>0,",
+        "lis",
+        "page33"
+      ],
+      "conf": [
+        84,
+        96,
+        65,
+        86,
+        93,
+        89,
+        90,
+        78,
+        86,
+        65,
+        89
+      ],
+      "low": [
+        "hat",
+        "lis"
+      ]
+    },
+    {
+      "t": 702.0,
+      "f": 42120,
+      "new": [
+        "Preview",
+        "Gee \u00ae"
+      ],
+      "conf": [
+        62,
+        70
+      ],
+      "low": [
+        "Preview",
+        "Gee \u00ae"
+      ]
+    },
+    {
+      "t": 704.0,
+      "f": 42240,
+      "new": [
+        "Wed M"
+      ],
+      "conf": [
+        78
+      ],
+      "low": []
+    },
+    {
+      "t": 706.0,
+      "f": 42360,
+      "new": [
+        "9806"
+      ],
+      "conf": [
+        81
+      ],
+      "low": []
+    },
+    {
+      "t": 709.0,
+      "f": 42540,
+      "new": [
+        "lie"
+      ],
+      "conf": [
+        68
+      ],
+      "low": [
+        "lie"
+      ]
+    },
+    {
+      "t": 711.0,
+      "f": 42660,
+      "new": [
+        "View Go"
+      ],
+      "conf": [
+        77
+      ],
+      "low": []
+    },
+    {
+      "t": 717.0,
+      "f": 43020,
+      "new": [
+        "McDiarmid\u2019s Inequality",
+        "(McDiarmid, 1989)",
+        "@ Theorem: let X1,...,X,, be independent random variables",
+        "taking values in Vand f Ra function verifying for",
+        "sup",
+        "Then, for all e>0,",
+        "page33"
+      ],
+      "conf": [
+        86,
+        96,
+        86,
+        86,
+        92,
+        88,
+        90
+      ],
+      "low": []
+    },
+    {
+      "t": 718.0,
+      "f": 43080,
+      "new": [
+        "Preview",
+        "Go Tools",
+        "Hoeffding\u2019s Inequality",
+        "same expectation and X; \u20ac[a, b], (a<b). Then, for anye>0,",
+        "the following inequalities hold:",
+        "age"
+      ],
+      "conf": [
+        62,
+        74,
+        88,
+        83,
+        96,
+        89
+      ],
+      "low": [
+        "Preview"
+      ]
+    },
+    {
+      "t": 719.0,
+      "f": 43140,
+      "new": [
+        "Window"
+      ],
+      "conf": [
+        77
+      ],
+      "low": []
+    },
+    {
+      "t": 725.0,
+      "f": 43500,
+      "new": [
+        "lie"
+      ],
+      "conf": [
+        76
+      ],
+      "low": []
+    },
+    {
+      "t": 726.0,
+      "f": 43560,
+      "new": [
+        "Wed M",
+        "hat",
+        "Log",
+        "Jot"
+      ],
+      "conf": [
+        86,
+        64,
+        89,
+        95
+      ],
+      "low": [
+        "hat"
+      ]
+    },
+    {
+      "t": 731.0,
+      "f": 43860,
+      "new": [
+        "McDiarmid\u2019s Inequality",
+        "(McDiarmid, 1989)",
+        "@ Theorem: let be independent random variables",
+        "taking values in Vand \u2014 Ra function verifying for",
+        "sup",
+        "hangn",
+        "Then, for all",
+        "\u2018ull",
+        "page33"
+      ],
+      "conf": [
+        84,
+        96,
+        91,
+        87,
+        90,
+        76,
+        94,
+        61,
+        90
+      ],
+      "low": [
+        "\u2018ull"
+      ]
+    },
+    {
+      "t": 736.0,
+      "f": 44160,
+      "new": [
+        "Wed Mi"
+      ],
+      "conf": [
+        70
+      ],
+      "low": [
+        "Wed Mi"
+      ]
+    },
+    {
+      "t": 741.0,
+      "f": 44460,
+      "new": [
+        "Log",
+        "sup fF",
+        "Jot",
+        "lie"
+      ],
+      "conf": [
+        89,
+        68,
+        94,
+        68
+      ],
+      "low": [
+        "sup fF",
+        "lie"
+      ]
+    },
+    {
+      "t": 742.0,
+      "f": 44520,
+      "new": [
+        "Wed M"
+      ],
+      "conf": [
+        78
+      ],
+      "low": []
+    },
+    {
+      "t": 745.0,
+      "f": 44700,
+      "new": [
+        "McDiarmid\u2019s Inequality",
+        "(McDiarmid, 1989)",
+        "@ Theorem: let X1,...,X,, be independent random variables",
+        "taking values in Vand Ra function verifying for",
+        "Then, for all",
+        "page33"
+      ],
+      "conf": [
+        86,
+        96,
+        86,
+        92,
+        94,
+        91
+      ],
+      "low": []
+    },
+    {
+      "t": 747.0,
+      "f": 44820,
+      "new": [
+        "sup"
+      ],
+      "conf": [
+        93
+      ],
+      "low": []
+    },
+    {
+      "t": 748.0,
+      "f": 44880,
+      "new": [
+        "Job"
+      ],
+      "conf": [
+        94
+      ],
+      "low": []
+    },
+    {
+      "t": 749.0,
+      "f": 44940,
+      "new": [
+        "Wed Mi"
+      ],
+      "conf": [
+        73
+      ],
+      "low": []
+    },
+    {
+      "t": 753.0,
+      "f": 45180,
+      "new": [
+        "hat",
+        "hangn"
+      ],
+      "conf": [
+        65,
+        70
+      ],
+      "low": [
+        "hat",
+        "hangn"
+      ]
+    },
+    {
+      "t": 754.0,
+      "f": 45240,
+      "new": [
+        "Log",
+        "Jot",
+        "980s"
+      ],
+      "conf": [
+        89,
+        95,
+        85
+      ],
+      "low": []
+    },
+    {
+      "t": 755.0,
+      "f": 45300,
+      "new": [
+        "Wed M",
+        "lie"
+      ],
+      "conf": [
+        78,
+        78
+      ],
+      "low": []
+    },
+    {
+      "t": 756.0,
+      "f": 45360,
+      "new": [
+        "Xml >q]"
+      ],
+      "conf": [
+        61
+      ],
+      "low": [
+        "Xml >q]"
+      ]
+    },
+    {
+      "t": 758.0,
+      "f": 45480,
+      "new": [
+        "McDiarmid\u2019s Inequality",
+        "(McDiarmid, 1989)",
+        "@ Theorem: let X1,...,X,, be independent random variables",
+        "taking values in Vand \u2014 Ra function verifying for",
+        "Then, for all e>0,",
+        "page33"
+      ],
+      "conf": [
+        90,
+        96,
+        85,
+        87,
+        84,
+        91
+      ],
+      "low": []
+    },
+    {
+      "t": 760.0,
+      "f": 45600,
+      "new": [
+        "sup"
+      ],
+      "conf": [
+        89
+      ],
+      "low": []
+    },
+    {
+      "t": 762.0,
+      "f": 45720,
+      "new": [
+        "Wed",
+        "@ Libr",
+        "\u00a9 her",
+        "Appendix",
+        "page"
+      ],
+      "conf": [
+        88,
+        65,
+        65,
+        96,
+        94
+      ],
+      "low": [
+        "@ Libr",
+        "\u00a9 her"
+      ]
+    },
+    {
+      "t": 763.0,
+      "f": 45780,
+      "new": [
+        "Preview",
+        "Markov's Inequality",
+        "@ Theorem: let X be a non-negative random variable",
+        "with E[X]<oo, then, for all",
+        "@ Proof:"
+      ],
+      "conf": [
+        96,
+        88,
+        87,
+        92,
+        90
+      ],
+      "low": []
+    },
+    {
+      "t": 764.0,
+      "f": 45840,
+      "new": [
+        "Chebyshev\u2019s Inequality",
+        "@ Theorem: let X be a random variable with Var[X] <oo, then,",
+        "for allt>0,"
+      ],
+      "conf": [
+        90,
+        89,
+        88
+      ],
+      "low": []
+    },
+    {
+      "t": 766.0,
+      "f": 45960,
+      "new": [
+        "for"
+      ],
+      "conf": [
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 768.0,
+      "f": 46080,
+      "new": [
+        "lie"
+      ],
+      "conf": [
+        77
+      ],
+      "low": []
+    },
+    {
+      "t": 770.0,
+      "f": 46200,
+      "new": [
+        "ofM#: ne"
+      ],
+      "conf": [
+        72
+      ],
+      "low": []
+    },
+    {
+      "t": 771.0,
+      "f": 46260,
+      "new": [
+        "~ 2 tox] = \u2014 2 tok"
+      ],
+      "conf": [
+        74
+      ],
+      "low": []
+    },
+    {
+      "t": 772.0,
+      "f": 46320,
+      "new": [
+        "Gee \u00ae"
+      ],
+      "conf": [
+        71
+      ],
+      "low": [
+        "Gee \u00ae"
+      ]
+    },
+    {
+      "t": 777.0,
+      "f": 46620,
+      "new": [
+        "Preview",
+        "Weak Law of Large Numbers",
+        "Theorem: let (X;,)nen be a sequence of independent",
+        "random variables with the same mean / and variance",
+        "Proof: Since the variables are independent,",
+        "Thus, by Chebyshev's inequality,"
+      ],
+      "conf": [
+        96,
+        96,
+        90,
+        92,
+        95,
+        84
+      ],
+      "low": []
+    },
+    {
+      "t": 778.0,
+      "f": 46680,
+      "new": [
+        "and let",
+        "Var[X,",
+        "age 3"
+      ],
+      "conf": [
+        92,
+        71,
+        79
+      ],
+      "low": [
+        "Var[X,"
+      ]
+    },
+    {
+      "t": 779.0,
+      "f": 46740,
+      "new": [
+        "Xi, then, for any \u00ab>0"
+      ],
+      "conf": [
+        86
+      ],
+      "low": []
+    },
+    {
+      "t": 782.0,
+      "f": 46920,
+      "new": [
+        "Var[Xn]"
+      ],
+      "conf": [
+        62
+      ],
+      "low": [
+        "Var[Xn]"
+      ]
+    },
+    {
+      "t": 783.0,
+      "f": 46980,
+      "new": [
+        "lie"
+      ],
+      "conf": [
+        78
+      ],
+      "low": []
+    },
+    {
+      "t": 786.0,
+      "f": 47160,
+      "new": [
+        "lim"
+      ],
+      "conf": [
+        61
+      ],
+      "low": [
+        "lim"
+      ]
+    },
+    {
+      "t": 790.0,
+      "f": 47400,
+      "new": [
+        "Weak Law of Large Numbers",
+        "Theorem: let (",
+        ")nen be a sequence of independent",
+        "random variables with the same mean / and variance o*<oo",
+        "Proof: Since the variables are independent,",
+        "iat",
+        "Thus, by Chebyshev's inequality,"
+      ],
+      "conf": [
+        96,
+        94,
+        94,
+        90,
+        96,
+        61,
+        92
+      ],
+      "low": [
+        "iat"
+      ]
+    },
+    {
+      "t": 791.0,
+      "f": 47460,
+      "new": [
+        "and let X,"
+      ],
+      "conf": [
+        76
+      ],
+      "low": []
+    },
+    {
+      "t": 792.0,
+      "f": 47520,
+      "new": [
+        "Wed May 28",
+        "hat",
+        "Xi, then, for any \u00ab>0",
+        "Log",
+        "quant",
+        "Jot"
+      ],
+      "conf": [
+        92,
+        71,
+        77,
+        90,
+        73,
+        95
+      ],
+      "low": [
+        "hat"
+      ]
+    },
+    {
+      "t": 797.0,
+      "f": 47820,
+      "new": [
+        "Var[Xn]",
+        "lie"
+      ],
+      "conf": [
+        66,
+        70
+      ],
+      "low": [
+        "Var[Xn]",
+        "lie"
+      ]
+    },
+    {
+      "t": 798.0,
+      "f": 47880,
+      "new": [
+        "Concentration Inequalities",
+        "Some general tools for error analysis and bounds:",
+        "\u00a9 Hoeffding's inequality (additive).",
+        "e Chernoff bounds (multiplicative).",
+        "e inequality (more general).",
+        "Gee \u00ae",
+        "920"
+      ],
+      "conf": [
+        95,
+        96,
+        75,
+        90,
+        91,
+        72,
+        83
+      ],
+      "low": []
+    },
+    {
+      "t": 800.0,
+      "f": 48000,
+      "new": [
+        "Logo Ide",
+        "e McDiarmid\u2019s inequality (more general)."
+      ],
+      "conf": [
+        91,
+        83
+      ],
+      "low": []
+    },
+    {
+      "t": 801.0,
+      "f": 48060,
+      "new": [
+        "gal"
+      ],
+      "conf": [
+        65
+      ],
+      "low": [
+        "gal"
+      ]
+    },
+    {
+      "t": 802.0,
+      "f": 48120,
+      "new": [
+        "een a ee"
+      ],
+      "conf": [
+        63
+      ],
+      "low": [
+        "een a ee"
+      ]
+    },
+    {
+      "t": 804.0,
+      "f": 48240,
+      "new": [
+        "Tools",
+        "Help,",
+        "Corollary: for any any distribution D and any",
+        "hypothesis h: X + {0, 1}, the following inequalities hold",
+        "Proof: follows directly Hoeffding's theorem.",
+        "Combining these one-sided inequalities yields",
+        "page39"
+      ],
+      "conf": [
+        89,
+        61,
+        95,
+        88,
+        85,
+        96,
+        87
+      ],
+      "low": [
+        "Help,"
+      ]
+    },
+    {
+      "t": 806.0,
+      "f": 48360,
+      "new": [
+        "980s"
+      ],
+      "conf": [
+        80
+      ],
+      "low": []
+    },
+    {
+      "t": 812.0,
+      "f": 48720,
+      "new": [
+        "Hoeffding\u2019s Inequality",
+        "lie"
+      ],
+      "conf": [
+        88,
+        78
+      ],
+      "low": []
+    },
+    {
+      "t": 813.0,
+      "f": 48780,
+      "new": [
+        "lel,"
+      ],
+      "conf": [
+        67
+      ],
+      "low": [
+        "lel,"
+      ]
+    },
+    {
+      "t": 815.0,
+      "f": 48900,
+      "new": [
+        "Wed May 28",
+        "Jot"
+      ],
+      "conf": [
+        93,
+        95
+      ],
+      "low": []
+    },
+    {
+      "t": 817.0,
+      "f": 49020,
+      "new": [
+        "Corollary: for any any distribution D and any",
+        "hypothesis h: X + {0, 1}, the following inequalities hold",
+        "Proof: follows directly Hoeffding's theorem.",
+        "Combining these one-sided inequalities yields"
+      ],
+      "conf": [
+        95,
+        89,
+        85,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 818.0,
+      "f": 49080,
+      "new": [
+        "Tools",
+        "Help,"
+      ],
+      "conf": [
+        89,
+        61
+      ],
+      "low": [
+        "Help,"
+      ]
+    },
+    {
+      "t": 819.0,
+      "f": 49140,
+      "new": [
+        "Go Tools"
+      ],
+      "conf": [
+        66
+      ],
+      "low": [
+        "Go Tools"
+      ]
+    },
+    {
+      "t": 827.0,
+      "f": 49620,
+      "new": [
+        "Hoeffding\u2019s Inequality",
+        "lie"
+      ],
+      "conf": [
+        88,
+        69
+      ],
+      "low": [
+        "lie"
+      ]
+    },
+    {
+      "t": 828.0,
+      "f": 49680,
+      "new": [
+        "iew pl",
+        "een a ee"
+      ],
+      "conf": [
+        66,
+        60
+      ],
+      "low": [
+        "iew pl",
+        "een a ee"
+      ]
+    },
+    {
+      "t": 829.0,
+      "f": 49740,
+      "new": [
+        "Wed May 28",
+        "@ Proof: proof based on Chernoff's bounding technique.",
+        "Jot"
+      ],
+      "conf": [
+        91,
+        86,
+        94
+      ],
+      "low": []
+    },
+    {
+      "t": 831.0,
+      "f": 49860,
+      "new": [
+        "Chernoff's Inequality",
+        "@ Theorem: for any \u00ab>0, any distribution D and any",
+        "hypothesis h: X \u2014 {0, 1}, the following inequalities hold:",
+        "page"
+      ],
+      "conf": [
+        88,
+        88,
+        91,
+        91
+      ],
+      "low": []
+    },
+    {
+      "t": 833.0,
+      "f": 49980,
+      "new": [
+        "McDiarmid\u2019s Inequality",
+        "(McDiarmid, 1989)",
+        "hat",
+        "Theorem: let be independent random variables",
+        "taking values in Uand Ra function verifying for",
+        "Log",
+        "sup",
+        "Then, for all \u00ab>0,",
+        "page4"
+      ],
+      "conf": [
+        90,
+        96,
+        69,
+        91,
+        93,
+        88,
+        92,
+        81,
+        90
+      ],
+      "low": [
+        "hat"
+      ]
+    },
+    {
+      "t": 836.0,
+      "f": 50160,
+      "new": [
+        "Wed M",
+        "Comments:",
+        "Proof: uses Hoeffding\u2019s lemma.",
+        "and Logi",
+        "with",
+        "hangm",
+        "quant",
+        "arn"
+      ],
+      "conf": [
+        80,
+        96,
+        89,
+        68,
+        96,
+        78,
+        84,
+        84
+      ],
+      "low": [
+        "and Logi"
+      ]
+    },
+    {
+      "t": 840.0,
+      "f": 50400,
+      "new": [
+        "Wed",
+        "Jensen\u2019s Inequality",
+        "Theorem: let_X be a random Variable and f a measurable",
+        "convex function. Then,",
+        "@ Proof: definition of convexity, continuity of convex",
+        "hangr",
+        "functions, and density of finite distributions.",
+        "9806"
+      ],
+      "conf": [
+        96,
+        92,
+        88,
+        96,
+        89,
+        67,
+        96,
+        80
+      ],
+      "low": [
+        "hangr"
+      ]
+    },
+    {
+      "t": 843.0,
+      "f": 50580,
+      "new": [
+        "Proof: proof based on Chernoff's bounding technique.",
+        "Jot",
+        "lis"
+      ],
+      "conf": [
+        90,
+        93,
+        65
+      ],
+      "low": [
+        "lis"
+      ]
+    },
+    {
+      "t": 844.0,
+      "f": 50640,
+      "new": [
+        "Chebyshev\u2019s Inequality",
+        "for all t>0,",
+        "The result follows Markov's inequality."
+      ],
+      "conf": [
+        89,
+        88,
+        92
+      ],
+      "low": []
+    },
+    {
+      "t": 845.0,
+      "f": 50700,
+      "new": [
+        "Hoeffding\u2019s Inequality",
+        "@ Theorem: Let Xj,",
+        "same expectation and X; \u20ac[a, b], (a<b). Then, for anye>0,",
+        "the following inequalities hold:"
+      ],
+      "conf": [
+        88,
+        76,
+        80,
+        96
+      ],
+      "low": []
+    },
+    {
+      "t": 846.0,
+      "f": 50760,
+      "new": [
+        "Basic Inequalities",
+        "Markov\u2019s inequality: if X >0 ahd then",
+        "lie"
+      ],
+      "conf": [
+        96,
+        76,
+        69
+      ],
+      "low": [
+        "lie"
+      ]
+    },
+    {
+      "t": 847.0,
+      "f": 50820,
+      "new": [
+        "Basic Properties",
+        "Union bound: Pr[A Vv B] < Pr[A] + Pr[B].",
+        "probability at least 1-6, X <",
+        "Expectation: if X>0, [Paix"
+      ],
+      "conf": [
+        96,
+        85,
+        85,
+        66
+      ],
+      "low": [
+        "Expectation: if X>0, [Paix"
+      ]
+    },
+    {
+      "t": 848.0,
+      "f": 50880,
+      "new": [
+        "Expectation: B[X] = [pax Saat."
+      ],
+      "conf": [
+        65
+      ],
+      "low": [
+        "Expectation: B[X] = [pax Saat."
+      ]
+    },
+    {
+      "t": 849.0,
+      "f": 50940,
+      "new": [
+        "@ inequality: if X >0 and e>0, then"
+      ],
+      "conf": [
+        84
+      ],
+      "low": []
+    },
+    {
+      "t": 851.0,
+      "f": 51060,
+      "new": [
+        ".; Xm be indep. rand. variables with the",
+        "age"
+      ],
+      "conf": [
+        88,
+        88
+      ],
+      "low": []
+    },
+    {
+      "t": 852.0,
+      "f": 51120,
+      "new": [
+        "Wed Mi",
+        "McDiarmid\u2019s Inequality",
+        "(McDiarmid, 1989)",
+        "@ Theorem: let be independent random variables",
+        "taking values in Uand Ra function verifying for",
+        "Log",
+        "sup",
+        "Then, for all",
+        "page33"
+      ],
+      "conf": [
+        72,
+        88,
+        92,
+        93,
+        93,
+        89,
+        93,
+        95,
+        90
+      ],
+      "low": []
+    },
+    {
+      "t": 863.0,
+      "f": 51780,
+      "new": [
+        "Wed M",
+        "hat",
+        "Jot",
+        "lie"
+      ],
+      "conf": [
+        78,
+        65,
+        95,
+        65
+      ],
+      "low": [
+        "hat",
+        "lie"
+      ]
+    },
+    {
+      "t": 866.0,
+      "f": 51960,
+      "new": [
+        "McDiarmid\u2019s Inequality",
+        "(McDiarmid, 1989)",
+        "@ Theorem: let be independent random variables",
+        "taking values in Vand f Ra function verifying for",
+        "Log",
+        "sup",
+        "Then, for all e>0,",
+        "page33"
+      ],
+      "conf": [
+        85,
+        96,
+        91,
+        87,
+        89,
+        93,
+        86,
+        90
+      ],
+      "low": []
+    }
+  ]
+}
