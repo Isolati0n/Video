@@ -1,0 +1,1344 @@
+[
+  {
+    "t": 0.0,
+    "f": 0,
+    "type": "poisoned",
+    "desc": "Poisoned (green life orb) for 19.8s",
+    "end": 19.76,
+    "source": "d2r"
+  },
+  {
+    "t": 19.48,
+    "f": 487,
+    "type": "life_drop",
+    "desc": "Life drop -100% (100% -> 0%) in 0.44s",
+    "end": 19.92,
+    "amount": 100.0,
+    "source": "d2r"
+  },
+  {
+    "t": 19.92,
+    "f": 498,
+    "type": "death",
+    "desc": "Death? life orb empty for >= 0.4s",
+    "source": "d2r"
+  },
+  {
+    "t": 24.88,
+    "f": 622,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 8, match 0.16): teleport?",
+    "peak": 7.8,
+    "source": "d2r"
+  },
+  {
+    "t": 27.84,
+    "f": 696,
+    "type": "run_burst",
+    "desc": "Fast movement 0.9s, avg camera shift 1.8 px/frame (~179 px/s at 720p; run/whirlwind/charge?)",
+    "end": 28.68,
+    "source": "d2r"
+  },
+  {
+    "t": 30.0,
+    "f": 750,
+    "type": "run_burst",
+    "desc": "Fast movement 1.2s, avg camera shift 3.0 px/frame (~303 px/s at 720p; run/whirlwind/charge?)",
+    "end": 31.16,
+    "source": "d2r"
+  },
+  {
+    "t": 50.52,
+    "f": 1263,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 7, match 0.15): teleport?",
+    "peak": 7.1,
+    "source": "d2r"
+  },
+  {
+    "t": 60.0,
+    "f": 1500,
+    "type": "text",
+    "desc": "Text (chat): (Grime a / sar mb / \u2018Game LOL",
+    "source": "d2r"
+  },
+  {
+    "t": 62.0,
+    "f": 1550,
+    "type": "text",
+    "desc": "Text (chat): te cer",
+    "source": "d2r"
+  },
+  {
+    "t": 64.0,
+    "f": 1600,
+    "type": "text",
+    "desc": "Text (chat): to cer / Imiac",
+    "source": "d2r"
+  },
+  {
+    "t": 65.0,
+    "f": 1625,
+    "type": "text",
+    "desc": "Text (chat): Game to Ger",
+    "source": "d2r"
+  },
+  {
+    "t": 66.0,
+    "f": 1650,
+    "type": "text",
+    "desc": "Text (chat): te Ger",
+    "source": "d2r"
+  },
+  {
+    "t": 67.0,
+    "f": 1675,
+    "type": "text",
+    "desc": "Text (chat): clows",
+    "source": "d2r"
+  },
+  {
+    "t": 68.64,
+    "f": 1716,
+    "type": "run_burst",
+    "desc": "Fast movement 0.8s, avg camera shift 3.0 px/frame (~302 px/s at 720p; run/whirlwind/charge?)",
+    "end": 69.4,
+    "source": "d2r"
+  },
+  {
+    "t": 69.0,
+    "f": 1725,
+    "type": "text",
+    "desc": "Text (chat): {Game: te cer",
+    "source": "d2r"
+  },
+  {
+    "t": 72.24,
+    "f": 1806,
+    "type": "run_burst",
+    "desc": "Fast movement 0.8s, avg camera shift 2.5 px/frame (~249 px/s at 720p; run/whirlwind/charge?)",
+    "end": 73.0,
+    "source": "d2r"
+  },
+  {
+    "t": 73.72,
+    "f": 1843,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 11, match 0.05): teleport?",
+    "peak": 11.3,
+    "source": "d2r"
+  },
+  {
+    "t": 75.0,
+    "f": 1875,
+    "type": "text",
+    "desc": "Text (chat): fom ove",
+    "source": "d2r"
+  },
+  {
+    "t": 76.0,
+    "f": 1900,
+    "type": "text",
+    "desc": "Text (chat): \u2018Game bve",
+    "source": "d2r"
+  },
+  {
+    "t": 79.0,
+    "f": 1975,
+    "type": "teleport",
+    "desc": "2 view jumps in 0.8s (teleport chain?)",
+    "end": 79.8,
+    "peak": 11.8,
+    "count": 2,
+    "source": "d2r"
+  },
+  {
+    "t": 84.0,
+    "f": 2100,
+    "type": "text",
+    "desc": "Text (chat): (Gane TO",
+    "source": "d2r"
+  },
+  {
+    "t": 84.48,
+    "f": 2112,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 6, match 0.20): teleport?",
+    "peak": 6.0,
+    "source": "d2r"
+  },
+  {
+    "t": 85.0,
+    "f": 2125,
+    "type": "text",
+    "desc": "Text (chat): (Game: thougnt",
+    "source": "d2r"
+  },
+  {
+    "t": 87.72,
+    "f": 2193,
+    "type": "teleport",
+    "desc": "2 view jumps in 0.4s (teleport chain?)",
+    "end": 88.12,
+    "peak": 5.7,
+    "count": 2,
+    "source": "d2r"
+  },
+  {
+    "t": 95.32,
+    "f": 2383,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 6, match 0.05): teleport?",
+    "peak": 6.3,
+    "source": "d2r"
+  },
+  {
+    "t": 106.6,
+    "f": 2665,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 6, match 0.05): teleport?",
+    "peak": 5.9,
+    "source": "d2r"
+  },
+  {
+    "t": 117.4,
+    "f": 2935,
+    "type": "teleport",
+    "desc": "3 view jumps in 1.5s (teleport chain?)",
+    "end": 118.88,
+    "peak": 11.8,
+    "count": 3,
+    "source": "d2r"
+  },
+  {
+    "t": 124.12,
+    "f": 3103,
+    "type": "teleport",
+    "desc": "2 view jumps in 1.4s (teleport chain?)",
+    "end": 125.48,
+    "peak": 7.3,
+    "count": 2,
+    "source": "d2r"
+  },
+  {
+    "t": 127.32,
+    "f": 3183,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 10, match 0.17): teleport?",
+    "peak": 10.2,
+    "source": "d2r"
+  },
+  {
+    "t": 131.64,
+    "f": 3291,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 9, match 0.18): teleport?",
+    "peak": 8.9,
+    "source": "d2r"
+  },
+  {
+    "t": 137.72,
+    "f": 3443,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 7, match 0.03): teleport?",
+    "peak": 6.6,
+    "source": "d2r"
+  },
+  {
+    "t": 140.08,
+    "f": 3502,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 6, match 0.19): teleport?",
+    "peak": 6.3,
+    "source": "d2r"
+  },
+  {
+    "t": 141.84,
+    "f": 3546,
+    "type": "run_burst",
+    "desc": "Fast movement 1.4s, avg camera shift 2.8 px/frame (~277 px/s at 720p; run/whirlwind/charge?)",
+    "end": 143.2,
+    "source": "d2r"
+  },
+  {
+    "t": 143.92,
+    "f": 3598,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 6, match 0.17): teleport?",
+    "peak": 5.8,
+    "source": "d2r"
+  },
+  {
+    "t": 150.0,
+    "f": 3750,
+    "type": "text",
+    "desc": "Text (chat): Stamina",
+    "source": "d2r"
+  },
+  {
+    "t": 156.0,
+    "f": 3900,
+    "type": "area_change",
+    "desc": "Area name: ROPY GRIP",
+    "source": "d2r"
+  },
+  {
+    "t": 177.0,
+    "f": 4425,
+    "type": "text",
+    "desc": "Text (center): tas ah",
+    "source": "d2r"
+  },
+  {
+    "t": 177.56,
+    "f": 4439,
+    "type": "run_burst",
+    "desc": "Fast movement 1.3s, avg camera shift 2.9 px/frame (~286 px/s at 720p; run/whirlwind/charge?)",
+    "end": 178.8,
+    "source": "d2r"
+  },
+  {
+    "t": 184.48,
+    "f": 4612,
+    "type": "teleport",
+    "desc": "2 view jumps in 0.8s (teleport chain?)",
+    "end": 185.28,
+    "peak": 11.1,
+    "count": 2,
+    "source": "d2r"
+  },
+  {
+    "t": 203.16,
+    "f": 5079,
+    "type": "area_change",
+    "desc": "Area change / loading: HUD gone 0.7s (dark)",
+    "end": 203.8,
+    "source": "d2r"
+  },
+  {
+    "t": 203.84,
+    "f": 5096,
+    "type": "death",
+    "desc": "Death? life orb empty for >= 0.4s",
+    "source": "d2r"
+  },
+  {
+    "t": 210.0,
+    "f": 5250,
+    "type": "text",
+    "desc": "Text (chat): On See",
+    "source": "d2r"
+  },
+  {
+    "t": 211.0,
+    "f": 5275,
+    "type": "text",
+    "desc": "Text (chat): See [PIS doesrt",
+    "source": "d2r"
+  },
+  {
+    "t": 215.0,
+    "f": 5375,
+    "type": "text",
+    "desc": "Text (chat): On have pest",
+    "source": "d2r"
+  },
+  {
+    "t": 217.12,
+    "f": 5428,
+    "type": "teleport",
+    "desc": "2 view jumps in 0.7s (teleport chain?)",
+    "end": 217.84,
+    "peak": 21.3,
+    "count": 2,
+    "source": "d2r"
+  },
+  {
+    "t": 218.72,
+    "f": 5468,
+    "type": "mana_refill",
+    "desc": "Mana refill +89% (0% -> 89%) in 0.08s (mana/rejuv potion?)",
+    "end": 218.8,
+    "amount": 88.8,
+    "source": "d2r"
+  },
+  {
+    "t": 218.76,
+    "f": 5469,
+    "type": "life_refill",
+    "desc": "Life refill +100% (0% -> 100%) in 0.04s (rejuvenation potion?)",
+    "end": 218.8,
+    "amount": 100.0,
+    "source": "d2r"
+  },
+  {
+    "t": 219.64,
+    "f": 5491,
+    "type": "run_burst",
+    "desc": "Fast movement 0.8s, avg camera shift 2.0 px/frame (~198 px/s at 720p; run/whirlwind/charge?)",
+    "end": 220.4,
+    "source": "d2r"
+  },
+  {
+    "t": 225.68,
+    "f": 5642,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 11, match 0.19): teleport?",
+    "peak": 10.5,
+    "source": "d2r"
+  },
+  {
+    "t": 229.72,
+    "f": 5743,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 9, match 0.12): teleport?",
+    "peak": 8.9,
+    "source": "d2r"
+  },
+  {
+    "t": 234.68,
+    "f": 5867,
+    "type": "mana_refill",
+    "desc": "Mana refill +14% (67% -> 81%) in 0.04s (mana/rejuv potion?)",
+    "end": 234.72,
+    "amount": 14.1,
+    "source": "d2r"
+  },
+  {
+    "t": 236.0,
+    "f": 5900,
+    "type": "mana_refill",
+    "desc": "Mana refill +12% (87% -> 99%) in 0.48s (mana/rejuv potion?)",
+    "end": 236.48,
+    "amount": 12.1,
+    "source": "d2r"
+  },
+  {
+    "t": 248.88,
+    "f": 6222,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 13, match 0.15): teleport?",
+    "peak": 13.4,
+    "source": "d2r"
+  },
+  {
+    "t": 250.28,
+    "f": 6257,
+    "type": "mana_refill",
+    "desc": "Mana refill +16% (83% -> 99%) in 0.72s (mana/rejuv potion?)",
+    "end": 251.0,
+    "amount": 16.2,
+    "source": "d2r"
+  },
+  {
+    "t": 252.96,
+    "f": 6324,
+    "type": "run_burst",
+    "desc": "Fast movement 2.1s, avg camera shift 2.4 px/frame (~237 px/s at 720p; run/whirlwind/charge?)",
+    "end": 255.0,
+    "source": "d2r"
+  },
+  {
+    "t": 255.44,
+    "f": 6386,
+    "type": "life_drop",
+    "desc": "Life drop -20% (100% -> 80%) in 0.04s",
+    "end": 255.48,
+    "amount": 19.5,
+    "source": "d2r"
+  },
+  {
+    "t": 260.0,
+    "f": 6500,
+    "type": "text",
+    "desc": "Text (chat): been infected",
+    "source": "d2r"
+  },
+  {
+    "t": 260.04,
+    "f": 6501,
+    "type": "run_burst",
+    "desc": "Fast movement 1.2s, avg camera shift 2.8 px/frame (~281 px/s at 720p; run/whirlwind/charge?)",
+    "end": 261.2,
+    "source": "d2r"
+  },
+  {
+    "t": 262.0,
+    "f": 6550,
+    "type": "text",
+    "desc": "Text (chat): infected",
+    "source": "d2r"
+  },
+  {
+    "t": 267.0,
+    "f": 6675,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 38, match 0.07): teleport?",
+    "peak": 38.3,
+    "source": "d2r"
+  },
+  {
+    "t": 268.0,
+    "f": 6700,
+    "type": "text",
+    "desc": "Text (chat): Colla",
+    "source": "d2r"
+  },
+  {
+    "t": 272.24,
+    "f": 6806,
+    "type": "run_burst",
+    "desc": "Fast movement 1.2s, avg camera shift 2.8 px/frame (~282 px/s at 720p; run/whirlwind/charge?)",
+    "end": 273.36,
+    "source": "d2r"
+  },
+  {
+    "t": 275.52,
+    "f": 6888,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 11, match 0.15): teleport?",
+    "peak": 11.1,
+    "source": "d2r"
+  },
+  {
+    "t": 280.68,
+    "f": 7017,
+    "type": "run_burst",
+    "desc": "Fast movement 1.2s, avg camera shift 1.6 px/frame (~160 px/s at 720p; run/whirlwind/charge?)",
+    "end": 281.8,
+    "source": "d2r"
+  },
+  {
+    "t": 281.2,
+    "f": 7030,
+    "type": "teleport",
+    "desc": "2 view jumps in 1.3s (teleport chain?)",
+    "end": 282.48,
+    "peak": 15.6,
+    "count": 2,
+    "source": "d2r"
+  },
+  {
+    "t": 282.68,
+    "f": 7067,
+    "type": "life_drop",
+    "desc": "Life drop -13% (74% -> 60%) in 0.12s",
+    "end": 282.8,
+    "amount": 13.4,
+    "source": "d2r"
+  },
+  {
+    "t": 284.72,
+    "f": 7118,
+    "type": "mana_refill",
+    "desc": "Mana refill +16% (60% -> 77%) in 0.60s (mana/rejuv potion?)",
+    "end": 285.32,
+    "amount": 16.2,
+    "source": "d2r"
+  },
+  {
+    "t": 285.12,
+    "f": 7128,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 18, match 0.13): teleport?",
+    "peak": 18.4,
+    "source": "d2r"
+  },
+  {
+    "t": 286.4,
+    "f": 7160,
+    "type": "mana_refill",
+    "desc": "Mana refill +17% (83% -> 100%) in 0.84s (mana/rejuv potion?)",
+    "end": 287.24,
+    "amount": 17.3,
+    "source": "d2r"
+  },
+  {
+    "t": 291.52,
+    "f": 7288,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 11, match 0.15): teleport?",
+    "peak": 11.2,
+    "source": "d2r"
+  },
+  {
+    "t": 292.68,
+    "f": 7317,
+    "type": "life_drop",
+    "desc": "Life drop -11% (63% -> 52%) in 0.04s",
+    "end": 292.72,
+    "amount": 11.1,
+    "source": "d2r"
+  },
+  {
+    "t": 295.04,
+    "f": 7376,
+    "type": "life_drop",
+    "desc": "Life drop -36% (52% -> 16%) in 0.28s",
+    "end": 295.32,
+    "amount": 35.8,
+    "source": "d2r"
+  },
+  {
+    "t": 299.52,
+    "f": 7488,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 11, match 0.08): teleport?",
+    "peak": 10.5,
+    "source": "d2r"
+  },
+  {
+    "t": 301.24,
+    "f": 7531,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 22, match 0.04): teleport?",
+    "peak": 22.4,
+    "source": "d2r"
+  },
+  {
+    "t": 303.48,
+    "f": 7587,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 15, match 0.03): teleport?",
+    "peak": 14.6,
+    "source": "d2r"
+  },
+  {
+    "t": 306.88,
+    "f": 7672,
+    "type": "mana_refill",
+    "desc": "Mana refill +51% (48% -> 99%) in 0.12s (mana/rejuv potion?)",
+    "end": 307.0,
+    "amount": 50.5,
+    "source": "d2r"
+  },
+  {
+    "t": 306.92,
+    "f": 7673,
+    "type": "life_refill",
+    "desc": "Life refill +84% (16% -> 100%) in 0.12s (rejuvenation potion?)",
+    "end": 307.04,
+    "amount": 84.3,
+    "source": "d2r"
+  },
+  {
+    "t": 310.0,
+    "f": 7750,
+    "type": "text",
+    "desc": "Text (chat): Gare] > ve neeveny",
+    "source": "d2r"
+  },
+  {
+    "t": 312.0,
+    "f": 7800,
+    "type": "text",
+    "desc": "Text (chat): sticks / wher. see wo ves",
+    "source": "d2r"
+  },
+  {
+    "t": 313.0,
+    "f": 7825,
+    "type": "text",
+    "desc": "Text (chat): Gare] ve us / WG VES",
+    "source": "d2r"
+  },
+  {
+    "t": 315.0,
+    "f": 7875,
+    "type": "text",
+    "desc": "Text (chat): \u2018ve us ng teet / see we ves",
+    "source": "d2r"
+  },
+  {
+    "t": 315.32,
+    "f": 7883,
+    "type": "poisoned",
+    "desc": "Poisoned (green life orb) for 0.8s",
+    "end": 316.08,
+    "source": "d2r"
+  },
+  {
+    "t": 316.0,
+    "f": 7900,
+    "type": "text",
+    "desc": "Text (chat): Gare] Gag",
+    "source": "d2r"
+  },
+  {
+    "t": 317.0,
+    "f": 7925,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 22, match 0.20): teleport?",
+    "peak": 22.4,
+    "source": "d2r"
+  },
+  {
+    "t": 317.0,
+    "f": 7925,
+    "type": "text",
+    "desc": "Text (chat): us oy teen / cae some",
+    "source": "d2r"
+  },
+  {
+    "t": 318.0,
+    "f": 7950,
+    "type": "text",
+    "desc": "Text (chat): Gare] q / Gare] ve bee / Guy seme",
+    "source": "d2r"
+  },
+  {
+    "t": 319.0,
+    "f": 7975,
+    "type": "text",
+    "desc": "Text (chat): ve as ng / \u2018Gavel Dx",
+    "source": "d2r"
+  },
+  {
+    "t": 319.84,
+    "f": 7996,
+    "type": "mana_refill",
+    "desc": "Mana refill +52% (48% -> 100%) in 0.16s (mana/rejuv potion?)",
+    "end": 320.0,
+    "amount": 51.6,
+    "source": "d2r"
+  },
+  {
+    "t": 320.0,
+    "f": 8000,
+    "type": "text",
+    "desc": "Text (chat): see wo ves / cag seme / Gare] Dx",
+    "source": "d2r"
+  },
+  {
+    "t": 321.0,
+    "f": 8025,
+    "type": "text",
+    "desc": "Text (chat): wo ves",
+    "source": "d2r"
+  },
+  {
+    "t": 322.0,
+    "f": 8050,
+    "type": "text",
+    "desc": "Text (chat): seme get rad",
+    "source": "d2r"
+  },
+  {
+    "t": 323.0,
+    "f": 8075,
+    "type": "text",
+    "desc": "Text (chat): Gare] w / fre qoca",
+    "source": "d2r"
+  },
+  {
+    "t": 324.0,
+    "f": 8100,
+    "type": "text",
+    "desc": "Text (chat): getmad / Gare] fre ar gocd / Gave] Hep!",
+    "source": "d2r"
+  },
+  {
+    "t": 324.32,
+    "f": 8108,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 15, match 0.18): teleport?",
+    "peak": 14.8,
+    "source": "d2r"
+  },
+  {
+    "t": 325.0,
+    "f": 8125,
+    "type": "text",
+    "desc": "Text (chat): Gare]: batys fre ar qocd / Gare]. Hew!",
+    "source": "d2r"
+  },
+  {
+    "t": 326.0,
+    "f": 8150,
+    "type": "text",
+    "desc": "Text (chat): fre ur",
+    "source": "d2r"
+  },
+  {
+    "t": 328.0,
+    "f": 8200,
+    "type": "text",
+    "desc": "Text (chat): fre goca / Gare] Heip / Gare] cco",
+    "source": "d2r"
+  },
+  {
+    "t": 329.0,
+    "f": 8225,
+    "type": "text",
+    "desc": "Text (chat): ar gocd / Gare] coc! cco (",
+    "source": "d2r"
+  },
+  {
+    "t": 331.64,
+    "f": 8291,
+    "type": "life_drop",
+    "desc": "Life drop -88% (100% -> 12%) in 0.08s",
+    "end": 331.72,
+    "amount": 87.7,
+    "source": "d2r"
+  },
+  {
+    "t": 331.96,
+    "f": 8299,
+    "type": "life_drop",
+    "desc": "Life drop -12% (12% -> 0%) in 0.80s",
+    "end": 332.76,
+    "amount": 12.3,
+    "source": "d2r"
+  },
+  {
+    "t": 332.0,
+    "f": 8300,
+    "type": "death",
+    "desc": "Death? life orb empty for >= 0.4s",
+    "source": "d2r"
+  },
+  {
+    "t": 334.0,
+    "f": 8350,
+    "type": "text",
+    "desc": "Text (chat): [Game] menace",
+    "source": "d2r"
+  },
+  {
+    "t": 371.72,
+    "f": 9293,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 13, match -0.06): teleport?",
+    "peak": 12.8,
+    "source": "d2r"
+  },
+  {
+    "t": 382.0,
+    "f": 9550,
+    "type": "text",
+    "desc": "Text (chat): pated.",
+    "source": "d2r"
+  },
+  {
+    "t": 393.68,
+    "f": 9842,
+    "type": "area_change",
+    "desc": "Area change / loading: HUD gone 1.7s (dark)",
+    "end": 395.32,
+    "source": "d2r"
+  },
+  {
+    "t": 395.52,
+    "f": 9888,
+    "type": "death",
+    "desc": "Death? life orb empty for >= 0.4s",
+    "source": "d2r"
+  },
+  {
+    "t": 395.52,
+    "f": 9888,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 15, match 0.05): teleport?",
+    "peak": 15.1,
+    "source": "d2r"
+  },
+  {
+    "t": 405.44,
+    "f": 10136,
+    "type": "mana_refill",
+    "desc": "Mana refill +100% (0% -> 100%) in 0.04s (mana/rejuv potion?)",
+    "end": 405.48,
+    "amount": 100.0,
+    "source": "d2r"
+  },
+  {
+    "t": 424.0,
+    "f": 10600,
+    "type": "text",
+    "desc": "Text (chat): Menace",
+    "source": "d2r"
+  },
+  {
+    "t": 427.0,
+    "f": 10675,
+    "type": "text",
+    "desc": "Text (center): worse",
+    "source": "d2r"
+  },
+  {
+    "t": 447.24,
+    "f": 11181,
+    "type": "run_burst",
+    "desc": "Fast movement 1.0s, avg camera shift 1.5 px/frame (~151 px/s at 720p; run/whirlwind/charge?)",
+    "end": 448.24,
+    "source": "d2r"
+  },
+  {
+    "t": 464.0,
+    "f": 11600,
+    "type": "text",
+    "desc": "Text (chat): SMOKE CIGARETTES",
+    "source": "d2r"
+  },
+  {
+    "t": 470.04,
+    "f": 11751,
+    "type": "run_burst",
+    "desc": "Fast movement 1.2s, avg camera shift 2.3 px/frame (~233 px/s at 720p; run/whirlwind/charge?)",
+    "end": 471.2,
+    "source": "d2r"
+  },
+  {
+    "t": 472.52,
+    "f": 11813,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 9, match 0.19): teleport?",
+    "peak": 9.2,
+    "source": "d2r"
+  },
+  {
+    "t": 507.16,
+    "f": 12679,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 8, match 0.14): teleport?",
+    "peak": 7.9,
+    "source": "d2r"
+  },
+  {
+    "t": 508.88,
+    "f": 12722,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 7, match 0.19): teleport?",
+    "peak": 7.4,
+    "source": "d2r"
+  },
+  {
+    "t": 521.96,
+    "f": 13049,
+    "type": "life_refill",
+    "desc": "Life refill +100% (0% -> 100%) in 0.28s (rejuvenation potion?)",
+    "end": 522.24,
+    "amount": 100.0,
+    "source": "d2r"
+  },
+  {
+    "t": 522.28,
+    "f": 13057,
+    "type": "mana_refill",
+    "desc": "Mana refill +100% (0% -> 100%) in 0.04s (mana/rejuv potion?)",
+    "end": 522.32,
+    "amount": 100.0,
+    "source": "d2r"
+  },
+  {
+    "t": 522.8,
+    "f": 13070,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 9, match 0.08): teleport?",
+    "peak": 8.6,
+    "source": "d2r"
+  },
+  {
+    "t": 523.48,
+    "f": 13087,
+    "type": "life_drop",
+    "desc": "Life drop -17% (100% -> 83%) in 0.04s",
+    "end": 523.52,
+    "amount": 17.2,
+    "source": "d2r"
+  },
+  {
+    "t": 523.88,
+    "f": 13097,
+    "type": "life_drop",
+    "desc": "Life drop -27% (83% -> 56%) in 0.68s",
+    "end": 524.56,
+    "amount": 26.9,
+    "source": "d2r"
+  },
+  {
+    "t": 524.92,
+    "f": 13123,
+    "type": "run_burst",
+    "desc": "Fast movement 1.1s, avg camera shift 2.3 px/frame (~230 px/s at 720p; run/whirlwind/charge?)",
+    "end": 526.0,
+    "source": "d2r"
+  },
+  {
+    "t": 528.68,
+    "f": 13217,
+    "type": "mana_refill",
+    "desc": "Mana refill +21% (50% -> 72%) in 0.04s (mana/rejuv potion?)",
+    "end": 528.72,
+    "amount": 21.1,
+    "source": "d2r"
+  },
+  {
+    "t": 528.84,
+    "f": 13221,
+    "type": "teleport",
+    "desc": "2 view jumps in 0.7s (teleport chain?)",
+    "end": 529.56,
+    "peak": 6.1,
+    "count": 2,
+    "source": "d2r"
+  },
+  {
+    "t": 529.52,
+    "f": 13238,
+    "type": "mana_refill",
+    "desc": "Mana refill +27% (70% -> 97%) in 0.68s (mana/rejuv potion?)",
+    "end": 530.2,
+    "amount": 27.3,
+    "source": "d2r"
+  },
+  {
+    "t": 534.6,
+    "f": 13365,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 9, match -0.06): teleport?",
+    "peak": 9.4,
+    "source": "d2r"
+  },
+  {
+    "t": 534.8,
+    "f": 13370,
+    "type": "life_refill",
+    "desc": "Life refill +60% (40% -> 100%) in 0.12s (rejuvenation potion?)",
+    "end": 534.92,
+    "amount": 59.7,
+    "source": "d2r"
+  },
+  {
+    "t": 535.56,
+    "f": 13389,
+    "type": "life_drop",
+    "desc": "Life drop -100% (100% -> 0%) in 0.40s",
+    "end": 535.96,
+    "amount": 100.0,
+    "source": "d2r"
+  },
+  {
+    "t": 535.6,
+    "f": 13390,
+    "type": "death",
+    "desc": "Death? life orb empty for >= 0.4s",
+    "source": "d2r"
+  },
+  {
+    "t": 536.72,
+    "f": 13418,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 7, match 0.04): teleport?",
+    "peak": 6.8,
+    "source": "d2r"
+  },
+  {
+    "t": 540.32,
+    "f": 13508,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 7, match 0.11): teleport?",
+    "peak": 7.2,
+    "source": "d2r"
+  },
+  {
+    "t": 543.12,
+    "f": 13578,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 8, match 0.05): teleport?",
+    "peak": 8.1,
+    "source": "d2r"
+  },
+  {
+    "t": 547.52,
+    "f": 13688,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 6, match 0.16): teleport?",
+    "peak": 5.9,
+    "source": "d2r"
+  },
+  {
+    "t": 549.0,
+    "f": 13725,
+    "type": "text",
+    "desc": "Text (center): CANCEL",
+    "source": "d2r"
+  },
+  {
+    "t": 549.88,
+    "f": 13747,
+    "type": "life_refill",
+    "desc": "Life refill +100% (0% -> 100%) in 0.04s (rejuvenation potion?)",
+    "end": 549.92,
+    "amount": 100.0,
+    "source": "d2r"
+  },
+  {
+    "t": 550.0,
+    "f": 13750,
+    "type": "mana_refill",
+    "desc": "Mana refill +100% (0% -> 100%) in 0.04s (mana/rejuv potion?)",
+    "end": 550.04,
+    "amount": 100.0,
+    "source": "d2r"
+  },
+  {
+    "t": 550.92,
+    "f": 13773,
+    "type": "area_change",
+    "desc": "Area change / loading: HUD gone 2.8s (dark)",
+    "end": 553.68,
+    "source": "d2r"
+  },
+  {
+    "t": 555.08,
+    "f": 13877,
+    "type": "life_drop",
+    "desc": "Life drop -17% (40% -> 24%) in 0.64s",
+    "end": 555.72,
+    "amount": 16.8,
+    "source": "d2r"
+  },
+  {
+    "t": 555.96,
+    "f": 13899,
+    "type": "life_drop",
+    "desc": "Life drop -24% (24% -> 0%) in 0.80s",
+    "end": 556.76,
+    "amount": 23.5,
+    "source": "d2r"
+  },
+  {
+    "t": 556.0,
+    "f": 13900,
+    "type": "death",
+    "desc": "Death? life orb empty for >= 0.4s",
+    "source": "d2r"
+  },
+  {
+    "t": 557.4,
+    "f": 13935,
+    "type": "area_change",
+    "desc": "Area change / loading: HUD gone 1.0s (dark)",
+    "end": 558.4,
+    "source": "d2r"
+  },
+  {
+    "t": 560.0,
+    "f": 14000,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 21, match 0.10): teleport?",
+    "peak": 20.6,
+    "source": "d2r"
+  },
+  {
+    "t": 560.24,
+    "f": 14006,
+    "type": "area_change",
+    "desc": "Area change / loading: HUD gone 1.4s (dark)",
+    "end": 561.6,
+    "source": "d2r"
+  },
+  {
+    "t": 569.36,
+    "f": 14234,
+    "type": "run_burst",
+    "desc": "Fast movement 0.9s, avg camera shift 3.0 px/frame (~300 px/s at 720p; run/whirlwind/charge?)",
+    "end": 570.24,
+    "source": "d2r"
+  },
+  {
+    "t": 576.88,
+    "f": 14422,
+    "type": "life_refill",
+    "desc": "Life refill +100% (0% -> 100%) in 0.04s (rejuvenation potion?)",
+    "end": 576.92,
+    "amount": 100.0,
+    "source": "d2r"
+  },
+  {
+    "t": 576.88,
+    "f": 14422,
+    "type": "mana_refill",
+    "desc": "Mana refill +99% (0% -> 99%) in 0.04s (mana/rejuv potion?)",
+    "end": 576.92,
+    "amount": 98.9,
+    "source": "d2r"
+  },
+  {
+    "t": 580.6,
+    "f": 14515,
+    "type": "life_drop",
+    "desc": "Life drop -26% (100% -> 74%) in 0.04s",
+    "end": 580.64,
+    "amount": 26.2,
+    "source": "d2r"
+  },
+  {
+    "t": 580.92,
+    "f": 14523,
+    "type": "life_drop",
+    "desc": "Life drop -67% (74% -> 7%) in 0.76s",
+    "end": 581.68,
+    "amount": 67.1,
+    "source": "d2r"
+  },
+  {
+    "t": 587.32,
+    "f": 14683,
+    "type": "life_refill",
+    "desc": "Life refill +93% (7% -> 100%) in 0.08s (rejuvenation potion?)",
+    "end": 587.4,
+    "amount": 93.3,
+    "source": "d2r"
+  },
+  {
+    "t": 589.6,
+    "f": 14740,
+    "type": "area_change",
+    "desc": "Area change / loading: HUD gone 0.8s (dark)",
+    "end": 590.32,
+    "source": "d2r"
+  },
+  {
+    "t": 591.2,
+    "f": 14780,
+    "type": "area_change",
+    "desc": "Area change / loading: HUD gone 0.3s (dark)",
+    "end": 591.48,
+    "source": "d2r"
+  },
+  {
+    "t": 591.92,
+    "f": 14798,
+    "type": "area_change",
+    "desc": "Area change / loading: HUD gone 2.6s (dark)",
+    "end": 594.44,
+    "source": "d2r"
+  },
+  {
+    "t": 602.0,
+    "f": 15050,
+    "type": "life_drop",
+    "desc": "Life drop -73% (100% -> 27%) in 0.04s",
+    "end": 602.04,
+    "amount": 73.2,
+    "source": "d2r"
+  },
+  {
+    "t": 602.56,
+    "f": 15064,
+    "type": "run_burst",
+    "desc": "Fast movement 0.9s, avg camera shift 3.9 px/frame (~393 px/s at 720p; run/whirlwind/charge?)",
+    "end": 603.44,
+    "source": "d2r"
+  },
+  {
+    "t": 602.8,
+    "f": 15070,
+    "type": "mana_refill",
+    "desc": "Mana refill +22% (75% -> 97%) in 0.04s (mana/rejuv potion?)",
+    "end": 602.84,
+    "amount": 22.2,
+    "source": "d2r"
+  },
+  {
+    "t": 604.0,
+    "f": 15100,
+    "type": "teleport",
+    "desc": "View jump in one frame (motion 11, match 0.12): teleport?",
+    "peak": 11.5,
+    "source": "d2r"
+  },
+  {
+    "t": 606.2,
+    "f": 15155,
+    "type": "area_change",
+    "desc": "Area change / loading: HUD gone 0.8s (dark)",
+    "end": 606.96,
+    "source": "d2r"
+  },
+  {
+    "t": 607.84,
+    "f": 15196,
+    "type": "area_change",
+    "desc": "Area change / loading: HUD gone 0.4s (dark)",
+    "end": 608.2,
+    "source": "d2r"
+  },
+  {
+    "t": 617.52,
+    "f": 15438,
+    "type": "mana_refill",
+    "desc": "Mana refill +14% (85% -> 99%) in 0.56s (mana/rejuv potion?)",
+    "end": 618.08,
+    "amount": 14.1,
+    "source": "d2r"
+  },
+  {
+    "t": 619.56,
+    "f": 15489,
+    "type": "life_drop",
+    "desc": "Life drop -10% (38% -> 28%) in 0.04s",
+    "end": 619.6,
+    "amount": 10.0,
+    "source": "d2r"
+  },
+  {
+    "t": 621.28,
+    "f": 15532,
+    "type": "area_change",
+    "desc": "Area change / loading: HUD gone 1.1s (dark)",
+    "end": 622.36,
+    "source": "d2r"
+  },
+  {
+    "t": 622.72,
+    "f": 15568,
+    "type": "death",
+    "desc": "Death? life orb empty for >= 0.4s",
+    "source": "d2r"
+  },
+  {
+    "t": 624.44,
+    "f": 15611,
+    "type": "area_change",
+    "desc": "Area change / loading: HUD gone 2.4s (dark)",
+    "end": 626.84,
+    "source": "d2r"
+  },
+  {
+    "t": 628.96,
+    "f": 15724,
+    "type": "area_change",
+    "desc": "Area change / loading: HUD gone 1.6s (dark)",
+    "end": 630.48,
+    "source": "d2r"
+  },
+  {
+    "t": 631.4,
+    "f": 15785,
+    "type": "poisoned",
+    "desc": "Poisoned (green life orb) for 29.6s",
+    "end": 660.96,
+    "source": "d2r"
+  },
+  {
+    "t": 631.52,
+    "f": 15788,
+    "type": "life_refill",
+    "desc": "Life refill +96% (0% -> 96%) in 0.04s (rejuvenation potion?)",
+    "end": 631.56,
+    "amount": 96.2,
+    "source": "d2r"
+  },
+  {
+    "t": 632.04,
+    "f": 15801,
+    "type": "static",
+    "desc": "Picture static for 29s (slide, paused video, idle screen)",
+    "source": "generic",
+    "end": 660.96
+  }
+]
