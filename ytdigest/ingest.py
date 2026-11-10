@@ -26,7 +26,7 @@ import requests
 from .common import GH, gh_output, log, save_json
 
 VIDEO_EXT = (".mp4", ".mkv", ".mov", ".webm", ".m4v", ".avi", ".ts", ".3gp")
-OURS = re.compile(r"(\.part\d{3}\.mp4$|^parts\.json$|^info\.json$)")
+OURS = re.compile(r"(\.part\d{3}\.mp4$|^parts\.json$|^info\.json$|^captions\.vtt$)")   # captions.vtt: legacy, from releases made before the visual-only change
 MAX_BYTES = 12 * 1024**3
 RESERVED_PREFIXES = ("sheets-", "zoom-")
 
