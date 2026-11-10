@@ -270,6 +270,17 @@ those event types no longer exist. See *Cost and storage* for the effect of drop
 
 ### Cost and storage
 
+**Visual-only archive** (audio dropped, `-an`). Same lecture (14:29, 60 fps) on Actions, archive size 40.9 MB → **29.7 MB (−27 %)**:
+the saving is the 96 kbit/s audio track. Digest from scratch: 6 min 50 s wall clock (download 21 s, archive encode 95 s, analysis
+jobs 2 × ~2 min in parallel, finalize); the separate transcript job (and the Whisper install and model cache) no longer exists, but it
+ran in parallel with the analysis, so the wall-clock change is within run-to-run noise (the earlier from-scratch run took 484 s, mostly a
+slow 4-minute download, so the two are not a controlled comparison). Output of the lecture unchanged: the same 131 events,
+87 keyframes and 363 OCR entries, minus the one `loud_peak`. The short D2R clip (4:54) archive is 44.1 MB against 43.1 MB before: YouTube
+served a slightly different video stream that day (86 % of per-frame perceptual hashes identical, brightness within 0.5), which cost more
+than the 3.5 MB of audio saved, so no saving can be claimed for that clip. D2R profile regression: the new code on the old per-frame
+data and calibration gives exactly the old events minus the audio ones (78 of 78); a fresh run on the re-downloaded video gives 74 events
+(teleport 53 → 50, mana_refill 8 → 6, text 10 → 11) because of the slightly different source and a re-fitted calibration curve.
+
 60 fps against 30 fps, same footage: the archive is about twice the size (830 MB for the 54-minute set, 922 MB per hour,
 against ~470 MB) and takes about twice as long to encode (~16 min); `frames.jsonl.gz` is 1.8x larger (2.5 MB for the set);
 analysis time is only ~10 % longer (OCR dominates); the contact sheets do not change. The Melee set took 26 min 38 s fresh
